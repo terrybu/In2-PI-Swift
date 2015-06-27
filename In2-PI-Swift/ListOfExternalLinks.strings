@@ -1,0 +1,23 @@
+/* 
+  ListOfExternalLinks.strings
+  In2-PI-Swift
+
+  Created by Terry Bu on 6/27/15.
+  Copyright (c) 2015 Terry Bu. All rights reserved.
+*/
+
+
+
+//pi magazine
+"https://www.facebook.com/pages/Passionate-IN2-Pi-Magazine/1384548091800506";
+
+
+//onnuri website
+"http://vision.onnuri.org/in2";
+
+//joobo testing download
+"http://vision.onnuri.org/in2/wp-content/uploads/sites/29/2015/03/03.29.2015-web.pdf";
+
+//podcast
+"https://itunes.apple.com/us/podcast/picommunity/id845827399?mt=2";
+
