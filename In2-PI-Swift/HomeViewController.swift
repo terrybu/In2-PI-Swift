@@ -8,8 +8,12 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,8 +25,11 @@ class HomeViewController: UIViewController {
 //     
 //        println(msg)
         
-        var navbarOnnuriLogoImage = UIImage(named: "onnuri_logo")
+        var navbarOnnuriLogoImage = UIImage(named: "in2Icon44")
         self.navigationItem.titleView = UIImageView(image: navbarOnnuriLogoImage)
+        
+        self.collectionView.registerClass(CustomReusableView.classForKeyedArchiver(), forSupplementaryViewOfKind: TerryLabelKindSupplementary, withReuseIdentifier: "test")
+        self.collectionView.registerNib(UINib(nibName:"CustomReusableView", bundle: nil), forSupplementaryViewOfKind: TerryLabelKindSupplementary, withReuseIdentifier: "test")
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +37,34 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 6
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        var cell: UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! UICollectionViewCell
+        
+        return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        
+        if kind == TerryLabelKindSupplementary {
+            var nib = UINib(nibName:"CustomReusableView", bundle: nil)
+            var customView: CustomReusableView = collectionView.dequeueReusableCellWithReuseIdentifier("test", forIndexPath:indexPath) as! CustomReusableView
+            customView.label.text = "HI"
+            return customView
+        }
+        
+        return UICollectionReusableView()
+    }
+    
+    
 
 }
 
