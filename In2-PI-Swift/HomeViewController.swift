@@ -14,11 +14,15 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let name = String(format: NSLocalizedString("name", comment: ""))
-        //this comment param for NSLocalizedString is really annoying and unnecessary because you can't set it to nil
-        let msg = String(format: NSLocalizedString("Hello %@", comment: ""), name)
-     
-        println(msg)
+        //Localization example
+//        let name = String(format: NSLocalizedString("name", comment: ""))
+//        //this comment param for NSLocalizedString is really annoying and unnecessary because you can't set it to nil
+//        let msg = String(format: NSLocalizedString("Hello %@", comment: ""), name)
+//     
+//        println(msg)
+        
+        var navbarOnnuriLogoImage = UIImage(named: "onnuri_logo")
+        self.navigationItem.titleView = UIImageView(image: navbarOnnuriLogoImage)
     }
 
     override func didReceiveMemoryWarning() {

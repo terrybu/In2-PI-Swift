@@ -16,7 +16,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="In2PiLogo" translatesAutoresizingMaskIntoConstraints="NO" id="JXf-kD-CZB">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="in2_PI_logo" translatesAutoresizingMaskIntoConstraints="NO" id="JXf-kD-CZB">
                     <rect key="frame" x="0.0" y="66" width="480" height="347"/>
                 </imageView>
             </subviews>
@@ -44,6 +44,6 @@
         </view>
     </objects>
     <resources>
-        <image name="In2PiLogo" width="2048" height="1555"/>
+        <image name="in2_PI_logo" width="2048" height="1555"/>
     </resources>
 </document>
