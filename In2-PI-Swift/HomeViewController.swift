@@ -27,9 +27,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         var navbarOnnuriLogoImage = UIImage(named: "in2Icon44")
         self.navigationItem.titleView = UIImageView(image: navbarOnnuriLogoImage)
-        
-        self.collectionView.registerClass(CustomReusableView.classForKeyedArchiver(), forSupplementaryViewOfKind: TerryLabelKindSupplementary, withReuseIdentifier: "test")
-        self.collectionView.registerNib(UINib(nibName:"CustomReusableView", bundle: nil), forSupplementaryViewOfKind: TerryLabelKindSupplementary, withReuseIdentifier: "test")
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,19 +49,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         return cell
     }
-    
-    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        
-        if kind == TerryLabelKindSupplementary {
-            var nib = UINib(nibName:"CustomReusableView", bundle: nil)
-            var customView: CustomReusableView = collectionView.dequeueReusableCellWithReuseIdentifier("test", forIndexPath:indexPath) as! CustomReusableView
-            customView.label.text = "HI"
-            return customView
-        }
-        
-        return UICollectionReusableView()
-    }
-    
     
 
 }

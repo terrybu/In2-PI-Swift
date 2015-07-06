@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MediaPlayer
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let movieURL = NSBundle.mainBundle().URLForResource("splashScreen", withExtension: "mp4")
+        
+        var myMoviePlayer = MPMoviePlayerViewController(contentURL: movieURL)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "moviePlayBackDidFinish", name: MPMoviePlayerPlaybackDidFinishNotification, object: myMoviePlayer.moviePlayer)
+        
+        myMoviePlayer.moviePlayer.controlStyle = MPMovieControlStyle.None
+        myMoviePlayer.moviePlayer.backgroundView.addSubview(UIImageView(image: UIImage(named: "launchScreenLayer4")))
+        myMoviePlayer.moviePlayer.scalingMode = MPMovieScalingMode.Fill
+        window?.rootViewController! = myMoviePlayer
+        myMoviePlayer.moviePlayer.setFullscreen(true, animated: false)
+        myMoviePlayer.moviePlayer.play()
+        
         return true
+    }
+    
+    @objc
+    private func moviePlayBackDidFinish() {
+        let navCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("RootNavController") as! UINavigationController
+        window?.rootViewController! = navCtrl
     }
 
     func applicationWillResignActive(application: UIApplication) {
