@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6CC65406029A37EE02DF222 /* libPods-In2-PI-Swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A248235468CE0471CA4C62 /* libPods-In2-PI-Swift.a */; };
 		D9B9B5791B4B1B0000DA476E /* splashScreen.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D9B9B5781B4B1B0000DA476E /* splashScreen.mp4 */; };
 		D9D3CDED1B3F20EF00C8E195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D3CDEC1B3F20EF00C8E195 /* AppDelegate.swift */; };
 		D9D3CDEF1B3F20EF00C8E195 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D3CDEE1B3F20EF00C8E195 /* HomeViewController.swift */; };
@@ -18,9 +19,6 @@
 		D9D3CE191B3F338D00C8E195 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9D3CE1B1B3F338D00C8E195 /* Localizable.strings */; };
 		D9D3CE1E1B3F372F00C8E195 /* ListOfExternalLinks.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9D3CE1D1B3F372F00C8E195 /* ListOfExternalLinks.strings */; };
 		D9D3CE211B3F4B1E00C8E195 /* HomeActionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D3CE201B3F4B1E00C8E195 /* HomeActionCollectionViewCell.swift */; };
-		D9D3CE231B3F50E000C8E195 /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D3CE221B3F50E000C8E195 /* CustomFlowLayout.swift */; };
-		D9D3CE271B3F55BF00C8E195 /* CustomReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D3CE261B3F55BF00C8E195 /* CustomReusableView.swift */; };
-		D9D3CE291B3F579C00C8E195 /* CustomReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9D3CE281B3F579C00C8E195 /* CustomReusableView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +32,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15F9BC9F44944956571DAF7B /* Pods-In2-PI-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-In2-PI-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-In2-PI-Swift/Pods-In2-PI-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		24E64E21CAF4188A4E4E9D5B /* Pods-In2-PI-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-In2-PI-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-In2-PI-Swift/Pods-In2-PI-Swift.release.xcconfig"; sourceTree = "<group>"; };
+		48A248235468CE0471CA4C62 /* libPods-In2-PI-Swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-In2-PI-Swift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9713E8B1B5ED166009D809A /* In2-PI-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "In2-PI-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		D9B9B5781B4B1B0000DA476E /* splashScreen.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = splashScreen.mp4; sourceTree = "<group>"; };
 		D9D3CDE71B3F20EF00C8E195 /* In2-PI-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "In2-PI-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D3CDEB1B3F20EF00C8E195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,9 +55,6 @@
 		D9D3CE1C1B3F339200C8E195 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D9D3CE1D1B3F372F00C8E195 /* ListOfExternalLinks.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = ListOfExternalLinks.strings; sourceTree = "<group>"; };
 		D9D3CE201B3F4B1E00C8E195 /* HomeActionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeActionCollectionViewCell.swift; sourceTree = "<group>"; };
-		D9D3CE221B3F50E000C8E195 /* CustomFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
-		D9D3CE261B3F55BF00C8E195 /* CustomReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomReusableView.swift; sourceTree = "<group>"; };
-		D9D3CE281B3F579C00C8E195 /* CustomReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomReusableView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6CC65406029A37EE02DF222 /* libPods-In2-PI-Swift.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +76,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B7163E0C1D511FACCFD241C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				15F9BC9F44944956571DAF7B /* Pods-In2-PI-Swift.debug.xcconfig */,
+				24E64E21CAF4188A4E4E9D5B /* Pods-In2-PI-Swift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A278F71670A4FDDB3D2DE747 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48A248235468CE0471CA4C62 /* libPods-In2-PI-Swift.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D9D3CDDE1B3F20EF00C8E195 = {
 			isa = PBXGroup;
 			children = (
 				D9D3CDE91B3F20EF00C8E195 /* In2-PI-Swift */,
 				D9D3CDFF1B3F20EF00C8E195 /* In2-PI-SwiftTests */,
 				D9D3CDE81B3F20EF00C8E195 /* Products */,
+				5B7163E0C1D511FACCFD241C /* Pods */,
+				A278F71670A4FDDB3D2DE747 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,15 +118,13 @@
 			children = (
 				D9D3CDEC1B3F20EF00C8E195 /* AppDelegate.swift */,
 				D9D3CDEE1B3F20EF00C8E195 /* HomeViewController.swift */,
-				D9D3CE261B3F55BF00C8E195 /* CustomReusableView.swift */,
-				D9D3CE281B3F579C00C8E195 /* CustomReusableView.xib */,
 				D9D3CE201B3F4B1E00C8E195 /* HomeActionCollectionViewCell.swift */,
 				D9D3CDF01B3F20EF00C8E195 /* Main.storyboard */,
-				D9D3CE221B3F50E000C8E195 /* CustomFlowLayout.swift */,
 				D9B9B5781B4B1B0000DA476E /* splashScreen.mp4 */,
 				D9D3CDF31B3F20EF00C8E195 /* Images.xcassets */,
 				D9D3CDF51B3F20EF00C8E195 /* LaunchScreen.xib */,
 				D9D3CDEA1B3F20EF00C8E195 /* Supporting Files */,
+				D9713E8B1B5ED166009D809A /* In2-PI-Swift-Bridging-Header.h */,
 			);
 			path = "In2-PI-Swift";
 			sourceTree = "<group>";
@@ -147,9 +164,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9D3CE061B3F20EF00C8E195 /* Build configuration list for PBXNativeTarget "In2-PI-Swift" */;
 			buildPhases = (
+				C3C4FCB0C903BE8F36E7012C /* Check Pods Manifest.lock */,
 				D9D3CDE31B3F20EF00C8E195 /* Sources */,
 				D9D3CDE41B3F20EF00C8E195 /* Frameworks */,
 				D9D3CDE51B3F20EF00C8E195 /* Resources */,
+				5D5C7C803548D63F988EE20F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -225,7 +244,6 @@
 				D9D3CE191B3F338D00C8E195 /* Localizable.strings in Resources */,
 				D9B9B5791B4B1B0000DA476E /* splashScreen.mp4 in Resources */,
 				D9D3CDF21B3F20EF00C8E195 /* Main.storyboard in Resources */,
-				D9D3CE291B3F579C00C8E195 /* CustomReusableView.xib in Resources */,
 				D9D3CE121B3F309C00C8E195 /* InfoPlist.strings in Resources */,
 				D9D3CDF71B3F20EF00C8E195 /* LaunchScreen.xib in Resources */,
 				D9D3CDF41B3F20EF00C8E195 /* Images.xcassets in Resources */,
@@ -241,15 +259,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5D5C7C803548D63F988EE20F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-In2-PI-Swift/Pods-In2-PI-Swift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3C4FCB0C903BE8F36E7012C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D9D3CDE31B3F20EF00C8E195 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9D3CE271B3F55BF00C8E195 /* CustomReusableView.swift in Sources */,
 				D9D3CDEF1B3F20EF00C8E195 /* HomeViewController.swift in Sources */,
 				D9D3CDED1B3F20EF00C8E195 /* AppDelegate.swift in Sources */,
-				D9D3CE231B3F50E000C8E195 /* CustomFlowLayout.swift in Sources */,
 				D9D3CE211B3F4B1E00C8E195 /* HomeActionCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,21 +446,28 @@
 		};
 		D9D3CE071B3F20EF00C8E195 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15F9BC9F44944956571DAF7B /* Pods-In2-PI-Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "In2-PI-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "In2-PI-Swift/In2-PI-Swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		D9D3CE081B3F20EF00C8E195 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24E64E21CAF4188A4E4E9D5B /* Pods-In2-PI-Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "In2-PI-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "In2-PI-Swift/In2-PI-Swift-Bridging-Header.h";
 			};
 			name = Release;
 		};
