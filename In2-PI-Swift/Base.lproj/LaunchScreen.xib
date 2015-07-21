@@ -9,23 +9,9 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="490" height="500"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenLayer4" translatesAutoresizingMaskIntoConstraints="NO" id="JoN-rQ-5DQ">
-                    <rect key="frame" x="0.0" y="0.0" width="490" height="500"/>
-                </imageView>
-            </subviews>
-            <constraints>
-                <constraint firstAttribute="bottom" secondItem="JoN-rQ-5DQ" secondAttribute="bottom" id="Hln-rL-KhE"/>
-                <constraint firstItem="JoN-rQ-5DQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="SCr-3k-Lzp"/>
-                <constraint firstAttribute="trailing" secondItem="JoN-rQ-5DQ" secondAttribute="trailing" id="cYb-2X-Ued"/>
-                <constraint firstItem="JoN-rQ-5DQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dF0-vW-hxR"/>
-            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="553" y="465"/>
         </view>
     </objects>
-    <resources>
-        <image name="launchScreenLayer4" width="750" height="1334"/>
-    </resources>
 </document>

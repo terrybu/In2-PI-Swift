@@ -18,15 +18,12 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //Localization example
-//        let name = String(format: NSLocalizedString("name", comment: ""))
-//        //this comment param for NSLocalizedString is really annoying and unnecessary because you can't set it to nil
-//        let msg = String(format: NSLocalizedString("Hello %@", comment: ""), name)
-//     
-//        println(msg)
-        
         var navbarOnnuriLogoImage = UIImage(named: "in2Icon44")
         self.navigationItem.titleView = UIImageView(image: navbarOnnuriLogoImage)
+        
+        var loginButton = FBSDKLoginButton()
+        loginButton.center = self.view.center
+        self.view.addSubview(loginButton)
 
     }
 
