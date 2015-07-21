@@ -21,7 +21,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="359" id="iwH-mL-kMe"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="50" minimumInteritemSpacing="10" id="Sfk-lj-We7" customClass="CustomFlowLayout" customModule="In2_PI_Swift" customModuleProvider="target">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="50" minimumInteritemSpacing="10" id="Sfk-lj-We7">
                                     <size key="itemSize" width="80" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>

@@ -17,25 +17,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+
+        #if RELEASE
+            let movieURL = NSBundle.mainBundle().URLForResource("splashScreen", withExtension: "mp4")
+    
+            var myMoviePlayer = MPMoviePlayerViewController(contentURL: movieURL)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "moviePlayBackDidFinish", name: MPMoviePlayerPlaybackDidFinishNotification, object: myMoviePlayer.moviePlayer)
+    
+            myMoviePlayer.moviePlayer.controlStyle = MPMovieControlStyle.None
+            myMoviePlayer.moviePlayer.backgroundView.addSubview(UIImageView(image: UIImage(named: "launchScreenLayer4")))
+            myMoviePlayer.moviePlayer.scalingMode = MPMovieScalingMode.Fill
+            window?.rootViewController! = myMoviePlayer
+            myMoviePlayer.moviePlayer.setFullscreen(true, animated: false)
+            myMoviePlayer.moviePlayer.play()
+        #endif
         
-        let movieURL = NSBundle.mainBundle().URLForResource("splashScreen", withExtension: "mp4")
-        
-        var myMoviePlayer = MPMoviePlayerViewController(contentURL: movieURL)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "moviePlayBackDidFinish", name: MPMoviePlayerPlaybackDidFinishNotification, object: myMoviePlayer.moviePlayer)
-        
-        myMoviePlayer.moviePlayer.controlStyle = MPMovieControlStyle.None
-        myMoviePlayer.moviePlayer.backgroundView.addSubview(UIImageView(image: UIImage(named: "launchScreenLayer4")))
-        myMoviePlayer.moviePlayer.scalingMode = MPMovieScalingMode.Fill
-        window?.rootViewController! = myMoviePlayer
-        myMoviePlayer.moviePlayer.setFullscreen(true, animated: false)
-        myMoviePlayer.moviePlayer.play()
+        let navCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("RootNavController") as! UINavigationController
+        window?.rootViewController! = navCtrl
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
-    }
     
     @objc
     private func moviePlayBackDidFinish() {
@@ -43,6 +45,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController! = navCtrl
     }
 
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

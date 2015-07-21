@@ -1,0 +1,6 @@
+framework module FBSDKLoginKit {
+  umbrella header "Pods-In2-PI-Swift-FBSDKLoginKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
