@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--In2 PI App Name-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,68 +15,12 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="d7z-Wu-LmG">
-                                <rect key="frame" x="0.0" y="300" width="600" height="236"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="359" id="iwH-mL-kMe"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="50" minimumInteritemSpacing="10" id="Sfk-lj-We7">
-                                    <size key="itemSize" width="80" height="80"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="20" minY="30" maxX="20" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="UV6-cb-hsY" customClass="HomeActionCollectionViewCell" customModule="In2_PI_Swift" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </collectionViewCell>
-                                </cells>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="iwH-mL-kMe"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="yZy-pn-RkB"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="oif-PQ-Nx2"/>
-                                </connections>
-                            </collectionView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="in2NewsSliderPic" translatesAutoresizingMaskIntoConstraints="NO" id="51c-SF-TmE">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="ho9-2O-4p4"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="d7z-Wu-LmG" firstAttribute="top" secondItem="51c-SF-TmE" secondAttribute="bottom" id="0rB-5G-VII"/>
-                            <constraint firstItem="d7z-Wu-LmG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="20Y-Qf-An0"/>
-                            <constraint firstItem="d7z-Wu-LmG" firstAttribute="trailing" secondItem="51c-SF-TmE" secondAttribute="trailing" id="BJK-Lx-eKq"/>
-                            <constraint firstItem="51c-SF-TmE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ffu-lo-PBP"/>
-                            <constraint firstAttribute="trailing" secondItem="51c-SF-TmE" secondAttribute="trailing" id="Ft9-ub-PI1"/>
-                            <constraint firstItem="d7z-Wu-LmG" firstAttribute="leading" secondItem="51c-SF-TmE" secondAttribute="leading" id="ePb-KG-zPp"/>
-                            <constraint firstItem="d7z-Wu-LmG" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="m90-LM-fCd"/>
-                            <constraint firstItem="51c-SF-TmE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="sT6-dY-biR"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="20Y-Qf-An0"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="mNO-F8-DzW"/>
-                    <connections>
-                        <outlet property="collectionView" destination="d7z-Wu-LmG" id="chv-tu-T6s"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="In2 PI App Name" id="mNO-F8-DzW">
+                        <barButtonItem key="leftBarButtonItem" image="btn_List" id="hES-da-EKD"/>
+                        <barButtonItem key="rightBarButtonItem" image="btn_Search" id="aNo-1a-Ae1"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,7 +34,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="vwa-XW-fac">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -103,6 +47,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="in2NewsSliderPic" width="1322" height="839"/>
+        <image name="btn_List" width="22" height="15"/>
+        <image name="btn_Search" width="18" height="22"/>
     </resources>
 </document>
