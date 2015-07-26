@@ -37,11 +37,9 @@ class HomeScreenViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
                 
         purpleBarSelector = UIImageView(image: UIImage(named: "selector_MyPI"))
-        let piButtonWidth = myPIButton.titleLabel!.frame.size.width
-        println(piButtonWidth)
         println(PICommunityButton.frame.width)
         println(view.frame.width)
-        purpleBarSelector.frame = CGRect(x: view.frame.width/4-piButtonWidth/2, y: myPIButton.frame.height + 4, width:piButtonWidth, height: 4)
+        purpleBarSelector.frame = CGRect(x: view.frame.width/4-18, y: myPIButton.frame.height + 2, width:48, height: 4)
         view.addSubview(purpleBarSelector)
         
         

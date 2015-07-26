@@ -21,16 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("RootNavController") as! UINavigationController
         window?.rootViewController! = navCtrl
         
-        //Navbar and Statusbar background image setup - storyboard doesn't do this wtf
-        
-        if (iOS7 || iOS8) {
-            let statusBarView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 20))
-            statusBarView.backgroundColor = UIColor(patternImage: UIImage(named:"status_bar")!)
-            window?.rootViewController?.view .addSubview(statusBarView)
-            
-        UINavigationBar.appearance().setBackgroundImage(UIImage(named: "navigation_bar"), forBarMetrics: UIBarMetrics.Default)
-        
-        #if RELEASE
+//        #if RELEASE
+//            println("release mode")
             let movieURL = NSBundle.mainBundle().URLForResource("splashScreen", withExtension: "mp4")
     
             let myMoviePlayer = MPMoviePlayerViewController(contentURL: movieURL)
@@ -42,9 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController! = myMoviePlayer
             myMoviePlayer.moviePlayer.setFullscreen(true, animated: false)
             myMoviePlayer.moviePlayer.play()
-        #endif
-
-        }
+//        #else
+//            println("debug mode")
+//            
+//        #endif
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
@@ -54,6 +47,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func moviePlayBackDidFinish() {
         let navCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("RootNavController") as! UINavigationController
         window?.rootViewController! = navCtrl
+        //Navbar and Statusbar background image setup - storyboard doesn't do this wtf
+        
+        let statusBarView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 20))
+        statusBarView.backgroundColor = UIColor(patternImage: UIImage(named:"status_bar")!)
+        window?.rootViewController?.view .addSubview(statusBarView)
+        UINavigationBar.appearance().setBackgroundImage(UIImage(named: "navigation_bar"), forBarMetrics: UIBarMetrics.Default)
     }
 
     
