@@ -9,13 +9,20 @@
         <mutableArray key="NanumBarunGothic.otf">
             <string>NanumBarunGothicOTF</string>
             <string>NanumBarunGothicOTF</string>
+            <string>NanumBarunGothicOTF</string>
+            <string>NanumBarunGothicOTF</string>
+            <string>NanumBarunGothicOTF</string>
+            <string>NanumBarunGothicOTF</string>
+            <string>NanumBarunGothicOTF</string>
+            <string>NanumBarunGothicOTF</string>
+            <string>NanumBarunGothicOTF</string>
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--In2 PI App Name-->
+        <!--HomeScreenVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="HomeScreenVC" customClass="HomeScreenViewController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -46,7 +53,7 @@
                                 <rect key="frame" x="300" y="2" width="300" height="30"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="15"/>
                                 <state key="normal" title="PI Community">
-                                    <color key="titleColor" red="0.62352941179999999" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.73333333333333328" green="0.73725490196078436" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -94,31 +101,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAC-HN-Uzt" userLabel="Worship">
-                                <rect key="frame" x="146" y="270" width="60" height="60"/>
+                                <rect key="frame" x="146" y="238" width="60" height="60"/>
                                 <state key="normal" backgroundImage="btn_Worship">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcw-H7-lL6" userLabel="Communication">
-                                <rect key="frame" x="270" y="270" width="60" height="60"/>
+                                <rect key="frame" x="270" y="238" width="60" height="60"/>
                                 <state key="normal" backgroundImage="btn_Communication">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5i-jC-gRJ" userLabel="Evangelism">
-                                <rect key="frame" x="394" y="270" width="60" height="60"/>
+                                <rect key="frame" x="394" y="238" width="60" height="60"/>
                                 <state key="normal" backgroundImage="btn_Evangelism">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6j-Le-j8f" userLabel="Social Services">
-                                <rect key="frame" x="270" y="394" width="60" height="60"/>
+                                <rect key="frame" x="270" y="362" width="60" height="60"/>
                                 <state key="normal" backgroundImage="btn_Social_Services">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s81-CE-6bz" userLabel="xButton">
-                                <rect key="frame" x="16" y="20" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s81-CE-6bz" userLabel="xButton">
+                                <rect key="frame" x="16" y="28" width="18" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="18" id="DVs-eY-zhV"/>
                                 </constraints>
@@ -130,27 +137,98 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1z-L7-mUP" userLabel="Nurture">
-                                <rect key="frame" x="270" y="146" width="60" height="60"/>
+                                <rect key="frame" x="270" y="114" width="60" height="60"/>
                                 <state key="normal" backgroundImage="btn_Nurture">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nurture" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iko-ol-yX3">
+                                <rect key="frame" x="279" y="182" width="43" height="14"/>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Worship" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQl-Lz-SBt" userLabel="Worship">
+                                <rect key="frame" x="155" y="338" width="43" height="14"/>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Communication" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8h-1a-fI6" userLabel="Communication">
+                                <rect key="frame" x="279" y="338" width="43" height="14"/>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Evangelism" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNX-ng-MUE" userLabel="Evangelism">
+                                <rect key="frame" x="403" y="338" width="43" height="14"/>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Social Services" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNJ-Xt-vnA" userLabel="Social Services">
+                                <rect key="frame" x="279" y="462" width="43" height="14"/>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOV-3q-w09" userLabel="About">
+                                <rect key="frame" x="232" y="528" width="17" height="22"/>
+                                <state key="normal" backgroundImage="btn_PI-logo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="About" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4El-qW-0GA" userLabel="About">
+                                <rect key="frame" x="225" y="542" width="43" height="14"/>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="II1-tL-aEO" userLabel="Gallery">
+                                <rect key="frame" x="344" y="528" width="29" height="22"/>
+                                <state key="normal" backgroundImage="btn_gallery">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Gallery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMu-5U-fEd" userLabel="Gallery">
+                                <rect key="frame" x="411" y="566" width="43" height="14"/>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="A5i-jC-gRJ" firstAttribute="centerY" secondItem="kcw-H7-lL6" secondAttribute="centerY" id="1sy-Xb-11B"/>
-                            <constraint firstAttribute="centerY" secondItem="kcw-H7-lL6" secondAttribute="centerY" id="97Y-VB-S7k"/>
+                            <constraint firstItem="GNJ-Xt-vnA" firstAttribute="centerX" secondItem="r6j-Le-j8f" secondAttribute="centerX" id="2ah-Jd-FRv"/>
+                            <constraint firstItem="zQl-Lz-SBt" firstAttribute="top" secondItem="QAC-HN-Uzt" secondAttribute="bottom" constant="8" id="59D-K3-3Yx"/>
+                            <constraint firstItem="QAC-HN-Uzt" firstAttribute="centerX" secondItem="zQl-Lz-SBt" secondAttribute="centerX" id="7Et-Hg-DKh"/>
+                            <constraint firstAttribute="centerY" secondItem="kcw-H7-lL6" secondAttribute="centerY" constant="32" id="97Y-VB-S7k"/>
                             <constraint firstAttribute="centerX" secondItem="kcw-H7-lL6" secondAttribute="centerX" id="BId-Yq-O23"/>
+                            <constraint firstItem="4El-qW-0GA" firstAttribute="centerX" secondItem="LOV-3q-w09" secondAttribute="centerX" id="Dl2-M7-bpc"/>
+                            <constraint firstItem="Iko-ol-yX3" firstAttribute="top" secondItem="i1z-L7-mUP" secondAttribute="bottom" constant="8" id="EoF-Gu-3Kw"/>
+                            <constraint firstItem="II1-tL-aEO" firstAttribute="centerY" secondItem="LOV-3q-w09" secondAttribute="centerY" id="Fjb-87-e53"/>
+                            <constraint firstAttribute="centerX" secondItem="LOV-3q-w09" secondAttribute="centerX" constant="60" id="HEr-pB-QH9"/>
                             <constraint firstItem="kcw-H7-lL6" firstAttribute="centerX" secondItem="i1z-L7-mUP" secondAttribute="centerX" id="I5m-Sc-ggt"/>
                             <constraint firstItem="A5i-jC-gRJ" firstAttribute="leading" secondItem="kcw-H7-lL6" secondAttribute="trailing" constant="64" id="JDg-Ig-9QH"/>
+                            <constraint firstItem="i1z-L7-mUP" firstAttribute="centerX" secondItem="Iko-ol-yX3" secondAttribute="centerX" id="KBX-wN-npH"/>
+                            <constraint firstItem="GXS-z1-sin" firstAttribute="top" secondItem="LOV-3q-w09" secondAttribute="bottom" constant="50" id="L6K-8L-ea7"/>
+                            <constraint firstItem="d8h-1a-fI6" firstAttribute="centerX" secondItem="kcw-H7-lL6" secondAttribute="centerX" id="MLp-Mx-YJz"/>
                             <constraint firstItem="r6j-Le-j8f" firstAttribute="top" secondItem="kcw-H7-lL6" secondAttribute="bottom" constant="64" id="RCB-8Z-yNO"/>
                             <constraint firstItem="r6j-Le-j8f" firstAttribute="centerX" secondItem="kcw-H7-lL6" secondAttribute="centerX" id="RkG-d4-aa6"/>
+                            <constraint firstItem="II1-tL-aEO" firstAttribute="leading" secondItem="LOV-3q-w09" secondAttribute="trailing" constant="95" id="TQm-n7-pi7"/>
                             <constraint firstItem="kcw-H7-lL6" firstAttribute="top" secondItem="i1z-L7-mUP" secondAttribute="bottom" constant="64" id="Uhl-82-ywo"/>
+                            <constraint firstItem="GNJ-Xt-vnA" firstAttribute="top" secondItem="r6j-Le-j8f" secondAttribute="bottom" constant="8" id="WkO-7m-gOg"/>
                             <constraint firstItem="GXS-z1-sin" firstAttribute="top" secondItem="s81-CE-6bz" secondAttribute="bottom" constant="550" id="c61-db-eZe"/>
+                            <constraint firstItem="pMu-5U-fEd" firstAttribute="centerX" secondItem="II1-tL-aEO" secondAttribute="centerX" id="dqh-Kw-YPX"/>
                             <constraint firstItem="kcw-H7-lL6" firstAttribute="leading" secondItem="QAC-HN-Uzt" secondAttribute="trailing" constant="64" id="fZA-B0-OUR"/>
+                            <constraint firstItem="wNX-ng-MUE" firstAttribute="centerX" secondItem="A5i-jC-gRJ" secondAttribute="centerX" id="gSf-Dj-rb8"/>
+                            <constraint firstItem="d8h-1a-fI6" firstAttribute="top" secondItem="kcw-H7-lL6" secondAttribute="bottom" constant="8" id="hf1-kb-HmT"/>
+                            <constraint firstItem="4El-qW-0GA" firstAttribute="top" secondItem="LOV-3q-w09" secondAttribute="bottom" constant="8" id="p6e-UV-Zz1"/>
+                            <constraint firstItem="wNX-ng-MUE" firstAttribute="top" secondItem="A5i-jC-gRJ" secondAttribute="bottom" constant="8" id="pYc-vp-jV4"/>
                             <constraint firstItem="s81-CE-6bz" firstAttribute="top" secondItem="C02-Xr-dce" secondAttribute="bottom" constant="8" id="rHN-Z4-ZXo"/>
                             <constraint firstItem="kcw-H7-lL6" firstAttribute="centerY" secondItem="QAC-HN-Uzt" secondAttribute="centerY" id="rbO-uz-lTK"/>
                             <constraint firstItem="s81-CE-6bz" firstAttribute="leading" secondItem="F1I-qW-hKr" secondAttribute="leadingMargin" id="rke-Is-gTP"/>
+                            <constraint firstItem="pMu-5U-fEd" firstAttribute="top" secondItem="II1-tL-aEO" secondAttribute="bottom" constant="8" id="ruS-ln-Sag"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -172,6 +250,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -188,10 +269,12 @@
         <image name="btn_Evangelism" width="60" height="60"/>
         <image name="btn_List" width="22" height="15"/>
         <image name="btn_Nurture" width="60" height="60"/>
+        <image name="btn_PI-logo" width="17" height="22"/>
         <image name="btn_Search" width="18" height="22"/>
         <image name="btn_Social_Services" width="60" height="60"/>
         <image name="btn_Worship" width="60" height="60"/>
         <image name="btn_X" width="18" height="18"/>
+        <image name="btn_gallery" width="29" height="22"/>
         <image name="sampleGray" width="600" height="600"/>
     </resources>
 </document>
