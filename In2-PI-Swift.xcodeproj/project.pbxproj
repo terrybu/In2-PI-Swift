@@ -11,6 +11,7 @@
 		D952B17B1B5EF5330089116C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B17A1B5EF5330089116C /* Constants.swift */; };
 		D952B17D1B5EF5CA0089116C /* HideKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B17C1B5EF5CA0089116C /* HideKey.swift */; };
 		D9B9B5791B4B1B0000DA476E /* splashScreen.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D9B9B5781B4B1B0000DA476E /* splashScreen.mp4 */; };
+		D9BE263D1B64A1B700C3BA7D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BE263C1B64A1B700C3BA7D /* UIColorExtension.swift */; };
 		D9D3CDED1B3F20EF00C8E195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D3CDEC1B3F20EF00C8E195 /* AppDelegate.swift */; };
 		D9D3CDEF1B3F20EF00C8E195 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D3CDEE1B3F20EF00C8E195 /* HomeScreenViewController.swift */; };
 		D9D3CDF21B3F20EF00C8E195 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9D3CDF01B3F20EF00C8E195 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		D952B17C1B5EF5CA0089116C /* HideKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKey.swift; sourceTree = "<group>"; };
 		D9713E8B1B5ED166009D809A /* In2-PI-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "In2-PI-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		D9B9B5781B4B1B0000DA476E /* splashScreen.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = splashScreen.mp4; sourceTree = "<group>"; };
+		D9BE263C1B64A1B700C3BA7D /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		D9D3CDE71B3F20EF00C8E195 /* In2-PI-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "In2-PI-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D3CDEB1B3F20EF00C8E195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9D3CDEC1B3F20EF00C8E195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,11 +130,12 @@
 		D9D3CDE91B3F20EF00C8E195 /* In2-PI-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				D9BE263C1B64A1B700C3BA7D /* UIColorExtension.swift */,
 				D9F9C7E21B645FD100F5C17D /* Resources */,
 				D9D3CDEC1B3F20EF00C8E195 /* AppDelegate.swift */,
 				D952B17A1B5EF5330089116C /* Constants.swift */,
-				D9D3CDF01B3F20EF00C8E195 /* Main.storyboard */,
 				D9F9C7E91B64873800F5C17D /* NavDrawerViewController.swift */,
+				D9D3CDF01B3F20EF00C8E195 /* Main.storyboard */,
 				D9D3CDEE1B3F20EF00C8E195 /* HomeScreenViewController.swift */,
 				D9D3CDF31B3F20EF00C8E195 /* Images.xcassets */,
 				D9FB031E1B6495C3001D813D /* Past Reference */,
@@ -351,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D952B17D1B5EF5CA0089116C /* HideKey.swift in Sources */,
+				D9BE263D1B64A1B700C3BA7D /* UIColorExtension.swift in Sources */,
 				D9F9C7EA1B64873800F5C17D /* NavDrawerViewController.swift in Sources */,
 				D9D3CDEF1B3F20EF00C8E195 /* HomeScreenViewController.swift in Sources */,
 				D9D3CDED1B3F20EF00C8E195 /* AppDelegate.swift in Sources */,

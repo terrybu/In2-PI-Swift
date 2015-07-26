@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 
-        
         let navCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("RootNavController") as! UINavigationController
         window?.rootViewController! = navCtrl
         
@@ -29,11 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             statusBarView.backgroundColor = UIColor(patternImage: UIImage(named:"status_bar")!)
             window?.rootViewController?.view .addSubview(statusBarView)
             
-
         UINavigationBar.appearance().setBackgroundImage(UIImage(named: "navigation_bar"), forBarMetrics: UIBarMetrics.Default)
-        
-        
-        
         
         #if RELEASE
             let movieURL = NSBundle.mainBundle().URLForResource("splashScreen", withExtension: "mp4")

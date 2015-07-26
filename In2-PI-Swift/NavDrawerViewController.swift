@@ -22,7 +22,6 @@ class NavDrawerViewController: UIViewController {
         let backgroundImageView = UIImageView(image: UIImage(named:"navDrawerBackground"))
         view.addSubview(backgroundImageView)
         view.sendSubviewToBack(backgroundImageView)
-        
     }
 
     override func didReceiveMemoryWarning() {
