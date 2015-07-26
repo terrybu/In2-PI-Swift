@@ -19,12 +19,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         
+        let navCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("RootNavController") as! UINavigationController
+        window?.rootViewController! = navCtrl
+        
+        //Navbar and Statusbar background image setup - storyboard doesn't do this wtf
+        
+        if (iOS7 || iOS8) {
+            let statusBarView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 20))
+            statusBarView.backgroundColor = UIColor(patternImage: UIImage(named:"status_bar")!)
+            window?.rootViewController?.view .addSubview(statusBarView)
+            
+
         UINavigationBar.appearance().setBackgroundImage(UIImage(named: "navigation_bar"), forBarMetrics: UIBarMetrics.Default)
+        
+        
+        
         
         #if RELEASE
             let movieURL = NSBundle.mainBundle().URLForResource("splashScreen", withExtension: "mp4")
     
-            var myMoviePlayer = MPMoviePlayerViewController(contentURL: movieURL)
+            let myMoviePlayer = MPMoviePlayerViewController(contentURL: movieURL)
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "moviePlayBackDidFinish", name: MPMoviePlayerPlaybackDidFinishNotification, object: myMoviePlayer.moviePlayer)
     
             myMoviePlayer.moviePlayer.controlStyle = MPMovieControlStyle.None
@@ -34,9 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             myMoviePlayer.moviePlayer.setFullscreen(true, animated: false)
             myMoviePlayer.moviePlayer.play()
         #endif
-        
-        let navCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("RootNavController") as! UINavigationController
-        window?.rootViewController! = navCtrl
+
+        }
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
