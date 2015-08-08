@@ -130,13 +130,11 @@
 		D9D3CDE91B3F20EF00C8E195 /* In2-PI-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				D9BE263C1B64A1B700C3BA7D /* UIColorExtension.swift */,
-				D9F9C7E21B645FD100F5C17D /* Resources */,
 				D9D3CDEC1B3F20EF00C8E195 /* AppDelegate.swift */,
 				D952B17A1B5EF5330089116C /* Constants.swift */,
-				D9F9C7E91B64873800F5C17D /* NavDrawerViewController.swift */,
-				D9D3CDF01B3F20EF00C8E195 /* Main.storyboard */,
-				D9D3CDEE1B3F20EF00C8E195 /* HomeScreenViewController.swift */,
+				D9DA87E71B6DC05C005D4CB6 /* View */,
+				D9DA87E81B6DC063005D4CB6 /* ViewControllers */,
+				D9F9C7E21B645FD100F5C17D /* Resources */,
 				D9D3CDF31B3F20EF00C8E195 /* Images.xcassets */,
 				D9FB031E1B6495C3001D813D /* Past Reference */,
 				D9D3CDEA1B3F20EF00C8E195 /* Supporting Files */,
@@ -173,6 +171,24 @@
 				D9D3CE011B3F20EF00C8E195 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D9DA87E71B6DC05C005D4CB6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9BE263C1B64A1B700C3BA7D /* UIColorExtension.swift */,
+				D9D3CDF01B3F20EF00C8E195 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D9DA87E81B6DC063005D4CB6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D9F9C7E91B64873800F5C17D /* NavDrawerViewController.swift */,
+				D9D3CDEE1B3F20EF00C8E195 /* HomeScreenViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		D9F9C7E21B645FD100F5C17D /* Resources */ = {

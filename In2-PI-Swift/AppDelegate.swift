@@ -8,6 +8,7 @@
 
 import UIKit
 import MediaPlayer
+import SlideMenuControllerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,10 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("RootNavController") as! UINavigationController
         window?.rootViewController! = navCtrl
         
-//        #if RELEASE
-//            println("release mode")
+        #if RELEASE
+            println("release mode")
             let movieURL = NSBundle.mainBundle().URLForResource("splashScreen", withExtension: "mp4")
-    
             let myMoviePlayer = MPMoviePlayerViewController(contentURL: movieURL)
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "moviePlayBackDidFinish", name: MPMoviePlayerPlaybackDidFinishNotification, object: myMoviePlayer.moviePlayer)
     
@@ -34,10 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController! = myMoviePlayer
             myMoviePlayer.moviePlayer.setFullscreen(true, animated: false)
             myMoviePlayer.moviePlayer.play()
-//        #else
-//            println("debug mode")
-//            
-//        #endif
+        #else
+            println("debug mode")
+            moviePlayBackDidFinish()
+
+        #endif
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
@@ -46,13 +47,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @objc
     private func moviePlayBackDidFinish() {
         let navCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("RootNavController") as! UINavigationController
-        window?.rootViewController! = navCtrl
-        //Navbar and Statusbar background image setup - storyboard doesn't do this wtf
         
+        //Navbar and Statusbar background image setup - storyboard doesn't do this wtf
         let statusBarView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 20))
         statusBarView.backgroundColor = UIColor(patternImage: UIImage(named:"status_bar")!)
         window?.rootViewController?.view .addSubview(statusBarView)
         UINavigationBar.appearance().setBackgroundImage(UIImage(named: "navigation_bar"), forBarMetrics: UIBarMetrics.Default)
+        
+        let navDrawer = UIStoryboard(name: "Main", bundle:nil).instantiateViewControllerWithIdentifier("NavDrawerStoryboardID") as! NavDrawerViewController
+//        
+//        let homeScreenVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeScreenVC") as! HomeScreenViewController
+        
+        let slideMenuController = SlideMenuController(mainViewController: navCtrl, leftMenuViewController: navDrawer)
+        slideMenuController.closeLeft()
+        
+        window?.rootViewController = slideMenuController
+        window?.makeKeyAndVisible()
     }
 
     

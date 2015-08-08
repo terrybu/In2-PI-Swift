@@ -16,6 +16,11 @@ class HomeScreenViewController: UIViewController {
     
     var purpleBarSelector: UIImageView!
     
+    @IBAction func hamburgerPressed(sender: UIBarButtonItem) {
+        
+        self.slideMenuController()?.openLeft()
+
+    }
     
     @IBAction func myPIButtonPressed(sender: UIButton) {
         sender.setTitleColor(UIColor(rgba: "#9f5cc0"), forState: UIControlState.Normal)

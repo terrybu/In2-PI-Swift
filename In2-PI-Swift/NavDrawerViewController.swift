@@ -12,7 +12,8 @@ class NavDrawerViewController: UIViewController {
     
     @IBAction
     func xButtonPressed(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+//        dismissViewControllerAnimated(true, completion: nil)
+        self.slideMenuController()?.closeLeft()
     }
 
     override func viewDidLoad() {

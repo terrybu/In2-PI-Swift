@@ -1,0 +1,6 @@
+framework module SlideMenuControllerSwift {
+  umbrella header "Pods-In2-PI-Swift-SlideMenuControllerSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

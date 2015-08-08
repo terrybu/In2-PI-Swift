@@ -6,6 +6,7 @@ target 'In2-PI-Swift' do
 	pod 'FBSDKLoginKit'
 	pod 'SwiftyJSON'
 	pod 'AFNetworking'
+	pod 'SlideMenuControllerSwift'
 end
 
 target 'In2-PI-SwiftTests' do
