@@ -31,54 +31,87 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdh-cW-Qg1">
-                                <rect key="frame" x="0.0" y="2" width="300" height="30"/>
-                                <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="15"/>
-                                <state key="normal" title="My PI">
-                                    <color key="titleColor" red="0.62352941176470589" green="0.36078431372549019" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="myPIButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bt0-ws-fFw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNv-5b-Lmj">
-                                <rect key="frame" x="300" y="2" width="300" height="30"/>
-                                <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="15"/>
-                                <state key="normal" title="PI Community">
-                                    <color key="titleColor" red="0.73333333329999995" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="PICommunityButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GbK-cP-OP8"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FXU-5A-dcq">
-                                <rect key="frame" x="0.0" y="334" width="600" height="202"/>
-                                <color key="backgroundColor" red="0.13333333333333333" green="0.10980392156862745" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleGray" translatesAutoresizingMaskIntoConstraints="NO" id="HaV-10-bD6">
-                                <rect key="frame" x="0.0" y="34" width="600" height="300"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9GM-Gh-eyB">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Gg-pQ-EGO" userLabel="Container View">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleGray" translatesAutoresizingMaskIntoConstraints="NO" id="HaV-10-bD6" userLabel="sampleGrayImageView">
+                                                <rect key="frame" x="0.0" y="30" width="600" height="300"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="QbF-HE-3jv"/>
+                                                </constraints>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FXU-5A-dcq">
+                                                <rect key="frame" x="0.0" y="330" width="600" height="400"/>
+                                                <color key="backgroundColor" red="0.13333333333333333" green="0.10980392156862745" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="400" id="xwl-5e-8pH"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdh-cW-Qg1">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="15"/>
+                                                <state key="normal" title="My PI">
+                                                    <color key="titleColor" red="0.62352941176470589" green="0.36078431372549019" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="myPIButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bt0-ws-fFw"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNv-5b-Lmj">
+                                                <rect key="frame" x="300" y="0.0" width="300" height="30"/>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="15"/>
+                                                <state key="normal" title="PI Community">
+                                                    <color key="titleColor" red="0.73333333329999995" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="PICommunityButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GbK-cP-OP8"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="FXU-5A-dcq" firstAttribute="leading" secondItem="3Gg-pQ-EGO" secondAttribute="leading" id="1mV-qL-Oxb"/>
+                                            <constraint firstItem="HaV-10-bD6" firstAttribute="leading" secondItem="3Gg-pQ-EGO" secondAttribute="leading" id="DJP-cd-ST8"/>
+                                            <constraint firstAttribute="trailing" secondItem="HaV-10-bD6" secondAttribute="trailing" id="H7P-WB-Wu9"/>
+                                            <constraint firstAttribute="trailing" secondItem="FXU-5A-dcq" secondAttribute="trailing" id="Mbs-g1-6NW"/>
+                                            <constraint firstItem="FNv-5b-Lmj" firstAttribute="width" secondItem="Xdh-cW-Qg1" secondAttribute="width" id="NqT-7o-FLw"/>
+                                            <constraint firstAttribute="width" secondItem="Xdh-cW-Qg1" secondAttribute="width" multiplier="2:1" id="Obw-EF-Waq"/>
+                                            <constraint firstItem="Xdh-cW-Qg1" firstAttribute="leading" secondItem="3Gg-pQ-EGO" secondAttribute="leading" id="RIX-tG-B4X"/>
+                                            <constraint firstItem="FNv-5b-Lmj" firstAttribute="width" relation="lessThanOrEqual" secondItem="3Gg-pQ-EGO" secondAttribute="width" multiplier="2:1" id="T4g-vj-VTT"/>
+                                            <constraint firstItem="HaV-10-bD6" firstAttribute="top" secondItem="Xdh-cW-Qg1" secondAttribute="bottom" id="f1p-i8-brO"/>
+                                            <constraint firstItem="FXU-5A-dcq" firstAttribute="top" secondItem="HaV-10-bD6" secondAttribute="bottom" id="mSq-xM-bYz"/>
+                                            <constraint firstItem="Xdh-cW-Qg1" firstAttribute="top" secondItem="3Gg-pQ-EGO" secondAttribute="top" id="mvN-9O-1fv"/>
+                                            <constraint firstItem="FNv-5b-Lmj" firstAttribute="leading" secondItem="Xdh-cW-Qg1" secondAttribute="trailing" id="nWP-Em-rVJ"/>
+                                            <constraint firstAttribute="height" constant="1000" id="tiz-WA-Q5G"/>
+                                            <constraint firstItem="FNv-5b-Lmj" firstAttribute="centerY" secondItem="Xdh-cW-Qg1" secondAttribute="centerY" id="tuh-0M-opo"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="T4g-vj-VTT"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="QbF-HE-3jv"/>
+                                    <constraint firstItem="3Gg-pQ-EGO" firstAttribute="top" secondItem="9GM-Gh-eyB" secondAttribute="top" id="2oD-1L-Fec"/>
+                                    <constraint firstAttribute="bottom" secondItem="3Gg-pQ-EGO" secondAttribute="bottom" id="ShX-k4-Jx1"/>
+                                    <constraint firstAttribute="centerX" secondItem="3Gg-pQ-EGO" secondAttribute="centerX" id="Zhf-go-TeW"/>
+                                    <constraint firstItem="3Gg-pQ-EGO" firstAttribute="leading" secondItem="9GM-Gh-eyB" secondAttribute="leading" id="o64-ag-kGZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Gg-pQ-EGO" secondAttribute="trailing" id="xFB-w7-uhN"/>
                                 </constraints>
-                            </imageView>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Xdh-cW-Qg1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="2" id="06l-Le-wH1"/>
-                            <constraint firstItem="FXU-5A-dcq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1Jo-xE-zJY"/>
-                            <constraint firstItem="Xdh-cW-Qg1" firstAttribute="centerY" secondItem="FNv-5b-Lmj" secondAttribute="centerY" id="6Z6-LI-msa"/>
-                            <constraint firstAttribute="trailing" secondItem="HaV-10-bD6" secondAttribute="trailing" id="GbQ-E4-T2d"/>
-                            <constraint firstItem="FXU-5A-dcq" firstAttribute="top" secondItem="HaV-10-bD6" secondAttribute="bottom" id="ITk-Ub-mFu"/>
-                            <constraint firstItem="Xdh-cW-Qg1" firstAttribute="width" secondItem="FNv-5b-Lmj" secondAttribute="width" id="L2W-aG-mCe"/>
-                            <constraint firstItem="HaV-10-bD6" firstAttribute="top" secondItem="Xdh-cW-Qg1" secondAttribute="bottom" constant="2" id="QtQ-NN-bOM"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FXU-5A-dcq" secondAttribute="bottom" id="X23-Rs-f1f"/>
-                            <constraint firstAttribute="width" secondItem="Xdh-cW-Qg1" secondAttribute="width" multiplier="2:1" id="aFt-df-PE6"/>
-                            <constraint firstAttribute="trailing" secondItem="FXU-5A-dcq" secondAttribute="trailing" id="psy-Iz-NRg"/>
-                            <constraint firstItem="FNv-5b-Lmj" firstAttribute="leading" secondItem="Xdh-cW-Qg1" secondAttribute="trailing" id="qKr-Iu-dI9"/>
-                            <constraint firstItem="HaV-10-bD6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uCA-zd-Iwr"/>
-                            <constraint firstAttribute="trailing" secondItem="FNv-5b-Lmj" secondAttribute="trailing" id="y2L-e1-L8J"/>
+                            <constraint firstItem="9GM-Gh-eyB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="URz-mQ-JhA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9GM-Gh-eyB" secondAttribute="bottom" id="fGN-Cu-Qp3"/>
+                            <constraint firstAttribute="trailing" secondItem="9GM-Gh-eyB" secondAttribute="trailing" id="gFI-SI-eoe"/>
+                            <constraint firstItem="9GM-Gh-eyB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="lpR-2W-luO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="In2 PI" id="mNO-F8-DzW">
