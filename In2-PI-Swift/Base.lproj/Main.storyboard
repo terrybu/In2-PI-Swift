@@ -112,25 +112,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAC-HN-Uzt" userLabel="Worship">
-                                <rect key="frame" x="36" y="198" width="60" height="60"/>
+                                <rect key="frame" x="146" y="198" width="60" height="60"/>
                                 <state key="normal" backgroundImage="btn_Worship">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcw-H7-lL6" userLabel="Communication">
-                                <rect key="frame" x="160" y="198" width="60" height="60"/>
-                                <state key="normal" backgroundImage="btn_Communication">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5i-jC-gRJ" userLabel="Evangelism">
-                                <rect key="frame" x="284" y="198" width="60" height="60"/>
+                                <rect key="frame" x="394" y="198" width="60" height="60"/>
                                 <state key="normal" backgroundImage="btn_Evangelism">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6j-Le-j8f" userLabel="Social Services">
-                                <rect key="frame" x="160" y="322" width="60" height="60"/>
+                                <rect key="frame" x="270" y="322" width="60" height="60"/>
                                 <state key="normal" backgroundImage="btn_Social_Services">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -149,65 +143,71 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1z-L7-mUP" userLabel="Nurture">
-                                <rect key="frame" x="160" y="74" width="60" height="60"/>
+                                <rect key="frame" x="270" y="74" width="60" height="60"/>
                                 <state key="normal" backgroundImage="btn_Nurture">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nurture" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iko-ol-yX3">
-                                <rect key="frame" x="169" y="142" width="43" height="14"/>
+                                <rect key="frame" x="279" y="142" width="43" height="14"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Worship" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQl-Lz-SBt" userLabel="Worship">
-                                <rect key="frame" x="43" y="266" width="46" height="14"/>
+                                <rect key="frame" x="153" y="266" width="46" height="14"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Communication" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8h-1a-fI6" userLabel="Communication">
-                                <rect key="frame" x="147" y="266" width="87" height="14"/>
+                                <rect key="frame" x="257" y="266" width="87" height="14"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evangelism" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNX-ng-MUE" userLabel="Evangelism">
-                                <rect key="frame" x="283" y="266" width="63" height="14"/>
+                                <rect key="frame" x="393" y="266" width="63" height="14"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Social Services" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNJ-Xt-vnA" userLabel="Social Services">
-                                <rect key="frame" x="150" y="390" width="81" height="14"/>
+                                <rect key="frame" x="260" y="390" width="81" height="14"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOV-3q-w09" userLabel="About">
-                                <rect key="frame" x="123" y="464" width="17" height="22"/>
+                                <rect key="frame" x="233" y="464" width="17" height="22"/>
                                 <state key="normal" backgroundImage="btn_PI-logo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4El-qW-0GA" userLabel="About">
-                                <rect key="frame" x="115" y="494" width="34" height="14"/>
+                                <rect key="frame" x="225" y="494" width="34" height="14"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="II1-tL-aEO" userLabel="Gallery">
-                                <rect key="frame" x="235" y="464" width="29" height="22"/>
+                                <rect key="frame" x="345" y="464" width="29" height="22"/>
                                 <state key="normal" backgroundImage="btn_gallery">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMu-5U-fEd" userLabel="Gallery">
-                                <rect key="frame" x="230" y="494" width="39" height="14"/>
+                                <rect key="frame" x="340" y="494" width="39" height="14"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcw-H7-lL6" userLabel="Communication">
+                                <rect key="frame" x="270" y="198" width="60" height="60"/>
+                                <state key="normal" backgroundImage="btn_Communication">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.73333333329999995" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -241,6 +241,8 @@
                             <constraint firstItem="kcw-H7-lL6" firstAttribute="leading" secondItem="QAC-HN-Uzt" secondAttribute="trailing" constant="64" id="fZA-B0-OUR"/>
                             <constraint firstItem="wNX-ng-MUE" firstAttribute="centerX" secondItem="A5i-jC-gRJ" secondAttribute="centerX" id="gSf-Dj-rb8"/>
                             <constraint firstItem="d8h-1a-fI6" firstAttribute="top" secondItem="kcw-H7-lL6" secondAttribute="bottom" constant="8" id="hf1-kb-HmT"/>
+                            <constraint firstItem="kcw-H7-lL6" firstAttribute="leading" secondItem="QAC-HN-Uzt" secondAttribute="trailing" constant="64" id="i5V-Nf-N6f"/>
+                            <constraint firstAttribute="centerX" secondItem="kcw-H7-lL6" secondAttribute="centerX" id="mx7-Sl-EIh"/>
                             <constraint firstItem="4El-qW-0GA" firstAttribute="top" secondItem="LOV-3q-w09" secondAttribute="bottom" constant="8" id="p6e-UV-Zz1"/>
                             <constraint firstItem="wNX-ng-MUE" firstAttribute="top" secondItem="A5i-jC-gRJ" secondAttribute="bottom" constant="8" id="pYc-vp-jV4"/>
                             <constraint firstItem="s81-CE-6bz" firstAttribute="top" secondItem="C02-Xr-dce" secondAttribute="bottom" constant="24" id="rHN-Z4-ZXo"/>
@@ -251,6 +253,8 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="rHN-Z4-ZXo"/>
+                                <exclude reference="VwY-xa-f9p"/>
+                                <exclude reference="7u6-EE-fui"/>
                                 <exclude reference="BId-Yq-O23"/>
                                 <exclude reference="fZA-B0-OUR"/>
                                 <exclude reference="AGL-Ae-cGU"/>

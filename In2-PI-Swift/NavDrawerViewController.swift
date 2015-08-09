@@ -19,6 +19,7 @@ class NavDrawerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
         let backgroundImageView = UIImageView(image: UIImage(named:"navDrawerBackground"))
         view.addSubview(backgroundImageView)
@@ -28,11 +29,7 @@ class NavDrawerViewController: UIViewController {
 //            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
 //        }
     }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
-        println("view will appear")
-    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

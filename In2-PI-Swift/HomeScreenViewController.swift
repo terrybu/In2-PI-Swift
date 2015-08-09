@@ -29,16 +29,12 @@ class HomeScreenViewController: UIViewController {
         
         if self.revealViewController() != nil {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
             self.revealViewController().rearViewRevealWidth = self.view.frame.size.width-20
         }
         
     }
-    
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
-        println("view will appear")
-    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
