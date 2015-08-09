@@ -37,14 +37,12 @@ PODS:
     - FBSDKCoreKit/arc
   - FBSDKLoginKit (4.4.0):
     - FBSDKCoreKit
-  - SlideMenuControllerSwift (1.2.1)
   - SwiftyJSON (2.2.0)
 
 DEPENDENCIES:
   - AFNetworking
   - FBSDKCoreKit
   - FBSDKLoginKit
-  - SlideMenuControllerSwift
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -52,7 +50,6 @@ SPEC CHECKSUMS:
   Bolts: d176cb1e0012175589e389a9db49b85e27787576
   FBSDKCoreKit: 75bdd75c980e811db218488d99dd93b7740f4474
   FBSDKLoginKit: 02a9254a4c132412fa03577b0d53e936d068a7fb
-  SlideMenuControllerSwift: be087b89d74b861d769af0d677f77c7b7b5fdde8
   SwiftyJSON: 0b3e6c07af17ff745e77e8e9984097b55c956e5c
 
 COCOAPODS: 0.37.2

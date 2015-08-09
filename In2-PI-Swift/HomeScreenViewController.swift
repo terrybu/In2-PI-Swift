@@ -13,13 +13,44 @@ class HomeScreenViewController: UIViewController {
     
     @IBOutlet weak var myPIButton: UIButton!
     @IBOutlet weak var PICommunityButton: UIButton!
-    
+    @IBOutlet weak var hamburgerButton: UIBarButtonItem!
+
     var purpleBarSelector: UIImageView!
     
-    @IBAction func hamburgerPressed(sender: UIBarButtonItem) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
         
-        self.slideMenuController()?.openLeft()
+        purpleBarSelector = UIImageView(image: UIImage(named: "selector_MyPI"))
+        println(PICommunityButton.frame.width)
+        println(view.frame.width)
+        purpleBarSelector.frame = CGRect(x: view.frame.width/4-18, y: myPIButton.frame.height + 2, width:48, height: 4)
+        view.addSubview(purpleBarSelector)
+        
+        if self.revealViewController() != nil {
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            self.revealViewController().rearViewRevealWidth = self.view.frame.size.width-20
+        }
+        
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        println("view will appear")
+    }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: IBActions
+    
+    @IBAction func hamburgerPressed(sender: UIBarButtonItem) {
+        self.revealViewController().revealToggle(sender)
+//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//        appDelegate.statusBarBackgroundView?.hidden = true
     }
     
     @IBAction func myPIButtonPressed(sender: UIButton) {
@@ -36,24 +67,7 @@ class HomeScreenViewController: UIViewController {
         
         purpleBarSelector.frame = CGRect(x: view.frame.width/2+48, y: myPIButton.frame.height + 2, width:PICommunityButton.titleLabel!.frame.size.width, height: 4)
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-                
-        purpleBarSelector = UIImageView(image: UIImage(named: "selector_MyPI"))
-        println(PICommunityButton.frame.width)
-        println(view.frame.width)
-        purpleBarSelector.frame = CGRect(x: view.frame.width/4-18, y: myPIButton.frame.height + 2, width:48, height: 4)
-        view.addSubview(purpleBarSelector)
-        
-        
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 }
 
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="T3C-MO-eqZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="e3q-jP-pwl">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -81,7 +81,7 @@
                             <constraint firstAttribute="trailing" secondItem="FNv-5b-Lmj" secondAttribute="trailing" id="y2L-e1-L8J"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="In2 PI App Name" id="mNO-F8-DzW">
+                    <navigationItem key="navigationItem" title="In2 PI" id="mNO-F8-DzW">
                         <barButtonItem key="leftBarButtonItem" image="btn_List" id="hES-da-EKD" userLabel="HamburgerBarButtonItem">
                             <connections>
                                 <action selector="hamburgerPressed:" destination="BYZ-38-t0r" id="rH7-xU-v3y"/>
@@ -91,54 +91,56 @@
                     </navigationItem>
                     <connections>
                         <outlet property="PICommunityButton" destination="FNv-5b-Lmj" id="oCA-tO-Roz"/>
+                        <outlet property="hamburgerButton" destination="hES-da-EKD" id="K9f-0I-Xcw"/>
                         <outlet property="myPIButton" destination="Xdh-cW-Qg1" id="N8f-Kg-8hA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1136" y="168"/>
+            <point key="canvasLocation" x="788" y="178"/>
         </scene>
-        <!--Nav Drawer View Controller-->
+        <!--LeftNavDrawerMenu-->
         <scene sceneID="ymH-sZ-d5F">
             <objects>
-                <viewController storyboardIdentifier="NavDrawerStoryboardID" id="sG2-Rg-tvn" customClass="NavDrawerViewController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NavDrawerStoryboardID" id="sG2-Rg-tvn" userLabel="LeftNavDrawerMenu" customClass="NavDrawerViewController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C02-Xr-dce"/>
                         <viewControllerLayoutGuide type="bottom" id="GXS-z1-sin"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="F1I-qW-hKr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAC-HN-Uzt" userLabel="Worship">
-                                <rect key="frame" x="146" y="238" width="60" height="60"/>
+                                <rect key="frame" x="36" y="198" width="60" height="60"/>
                                 <state key="normal" backgroundImage="btn_Worship">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcw-H7-lL6" userLabel="Communication">
-                                <rect key="frame" x="270" y="238" width="60" height="60"/>
+                                <rect key="frame" x="160" y="198" width="60" height="60"/>
                                 <state key="normal" backgroundImage="btn_Communication">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5i-jC-gRJ" userLabel="Evangelism">
-                                <rect key="frame" x="394" y="238" width="60" height="60"/>
+                                <rect key="frame" x="284" y="198" width="60" height="60"/>
                                 <state key="normal" backgroundImage="btn_Evangelism">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6j-Le-j8f" userLabel="Social Services">
-                                <rect key="frame" x="270" y="362" width="60" height="60"/>
+                                <rect key="frame" x="160" y="322" width="60" height="60"/>
                                 <state key="normal" backgroundImage="btn_Social_Services">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s81-CE-6bz" userLabel="xButton">
-                                <rect key="frame" x="16" y="28" width="18" height="18"/>
+                                <rect key="frame" x="16" y="32" width="18" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="18" id="DVs-eY-zhV"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" backgroundImage="btn_X">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -147,72 +149,75 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1z-L7-mUP" userLabel="Nurture">
-                                <rect key="frame" x="270" y="114" width="60" height="60"/>
+                                <rect key="frame" x="160" y="74" width="60" height="60"/>
                                 <state key="normal" backgroundImage="btn_Nurture">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nurture" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iko-ol-yX3">
-                                <rect key="frame" x="279" y="182" width="43" height="14"/>
+                                <rect key="frame" x="169" y="142" width="43" height="14"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Worship" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQl-Lz-SBt" userLabel="Worship">
-                                <rect key="frame" x="153" y="306" width="46" height="14"/>
+                                <rect key="frame" x="43" y="266" width="46" height="14"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Communication" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8h-1a-fI6" userLabel="Communication">
-                                <rect key="frame" x="257" y="306" width="87" height="14"/>
+                                <rect key="frame" x="147" y="266" width="87" height="14"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evangelism" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNX-ng-MUE" userLabel="Evangelism">
-                                <rect key="frame" x="393" y="306" width="63" height="14"/>
+                                <rect key="frame" x="283" y="266" width="63" height="14"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Social Services" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNJ-Xt-vnA" userLabel="Social Services">
-                                <rect key="frame" x="260" y="430" width="81" height="14"/>
+                                <rect key="frame" x="150" y="390" width="81" height="14"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOV-3q-w09" userLabel="About">
-                                <rect key="frame" x="232" y="528" width="17" height="22"/>
+                                <rect key="frame" x="123" y="464" width="17" height="22"/>
                                 <state key="normal" backgroundImage="btn_PI-logo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4El-qW-0GA" userLabel="About">
-                                <rect key="frame" x="224" y="558" width="34" height="14"/>
+                                <rect key="frame" x="115" y="494" width="34" height="14"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="II1-tL-aEO" userLabel="Gallery">
-                                <rect key="frame" x="344" y="528" width="29" height="22"/>
+                                <rect key="frame" x="235" y="464" width="29" height="22"/>
                                 <state key="normal" backgroundImage="btn_gallery">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMu-5U-fEd" userLabel="Gallery">
-                                <rect key="frame" x="339" y="558" width="39" height="14"/>
+                                <rect key="frame" x="230" y="494" width="39" height="14"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" red="0.73333333329999995" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="A5i-jC-gRJ" firstAttribute="centerY" secondItem="kcw-H7-lL6" secondAttribute="centerY" id="1sy-Xb-11B"/>
                             <constraint firstItem="GNJ-Xt-vnA" firstAttribute="centerX" secondItem="r6j-Le-j8f" secondAttribute="centerX" id="2ah-Jd-FRv"/>
                             <constraint firstItem="zQl-Lz-SBt" firstAttribute="top" secondItem="QAC-HN-Uzt" secondAttribute="bottom" constant="8" id="59D-K3-3Yx"/>
                             <constraint firstItem="QAC-HN-Uzt" firstAttribute="centerX" secondItem="zQl-Lz-SBt" secondAttribute="centerX" id="7Et-Hg-DKh"/>
-                            <constraint firstAttribute="centerY" secondItem="kcw-H7-lL6" secondAttribute="centerY" constant="32" id="97Y-VB-S7k"/>
+                            <constraint firstItem="kcw-H7-lL6" firstAttribute="leading" secondItem="QAC-HN-Uzt" secondAttribute="trailing" constant="64" id="7u6-EE-fui"/>
+                            <constraint firstAttribute="centerY" secondItem="kcw-H7-lL6" secondAttribute="centerY" constant="40" id="97Y-VB-S7k"/>
+                            <constraint firstItem="LOV-3q-w09" firstAttribute="leading" secondItem="F1I-qW-hKr" secondAttribute="leadingMargin" constant="100" id="AGL-Ae-cGU"/>
                             <constraint firstAttribute="centerX" secondItem="kcw-H7-lL6" secondAttribute="centerX" id="BId-Yq-O23"/>
                             <constraint firstItem="4El-qW-0GA" firstAttribute="centerX" secondItem="LOV-3q-w09" secondAttribute="centerX" id="Dl2-M7-bpc"/>
                             <constraint firstItem="Iko-ol-yX3" firstAttribute="top" secondItem="i1z-L7-mUP" secondAttribute="bottom" constant="8" id="EoF-Gu-3Kw"/>
@@ -227,7 +232,10 @@
                             <constraint firstItem="r6j-Le-j8f" firstAttribute="centerX" secondItem="kcw-H7-lL6" secondAttribute="centerX" id="RkG-d4-aa6"/>
                             <constraint firstItem="II1-tL-aEO" firstAttribute="leading" secondItem="LOV-3q-w09" secondAttribute="trailing" constant="95" id="TQm-n7-pi7"/>
                             <constraint firstItem="kcw-H7-lL6" firstAttribute="top" secondItem="i1z-L7-mUP" secondAttribute="bottom" constant="64" id="Uhl-82-ywo"/>
+                            <constraint firstItem="QAC-HN-Uzt" firstAttribute="leading" secondItem="F1I-qW-hKr" secondAttribute="leadingMargin" constant="20" id="VwY-xa-f9p"/>
                             <constraint firstItem="GNJ-Xt-vnA" firstAttribute="top" secondItem="r6j-Le-j8f" secondAttribute="bottom" constant="8" id="WkO-7m-gOg"/>
+                            <constraint firstItem="s81-CE-6bz" firstAttribute="top" secondItem="F1I-qW-hKr" secondAttribute="top" constant="32" id="YvQ-s7-Axc"/>
+                            <constraint firstItem="kcw-H7-lL6" firstAttribute="leading" secondItem="LOV-3q-w09" secondAttribute="trailing" constant="20" id="aib-0f-LdK"/>
                             <constraint firstItem="GXS-z1-sin" firstAttribute="top" secondItem="s81-CE-6bz" secondAttribute="bottom" constant="550" id="c61-db-eZe"/>
                             <constraint firstItem="pMu-5U-fEd" firstAttribute="centerX" secondItem="II1-tL-aEO" secondAttribute="centerX" id="dqh-Kw-YPX"/>
                             <constraint firstItem="kcw-H7-lL6" firstAttribute="leading" secondItem="QAC-HN-Uzt" secondAttribute="trailing" constant="64" id="fZA-B0-OUR"/>
@@ -235,21 +243,49 @@
                             <constraint firstItem="d8h-1a-fI6" firstAttribute="top" secondItem="kcw-H7-lL6" secondAttribute="bottom" constant="8" id="hf1-kb-HmT"/>
                             <constraint firstItem="4El-qW-0GA" firstAttribute="top" secondItem="LOV-3q-w09" secondAttribute="bottom" constant="8" id="p6e-UV-Zz1"/>
                             <constraint firstItem="wNX-ng-MUE" firstAttribute="top" secondItem="A5i-jC-gRJ" secondAttribute="bottom" constant="8" id="pYc-vp-jV4"/>
-                            <constraint firstItem="s81-CE-6bz" firstAttribute="top" secondItem="C02-Xr-dce" secondAttribute="bottom" constant="8" id="rHN-Z4-ZXo"/>
+                            <constraint firstItem="s81-CE-6bz" firstAttribute="top" secondItem="C02-Xr-dce" secondAttribute="bottom" constant="24" id="rHN-Z4-ZXo"/>
                             <constraint firstItem="kcw-H7-lL6" firstAttribute="centerY" secondItem="QAC-HN-Uzt" secondAttribute="centerY" id="rbO-uz-lTK"/>
                             <constraint firstItem="s81-CE-6bz" firstAttribute="leading" secondItem="F1I-qW-hKr" secondAttribute="leadingMargin" id="rke-Is-gTP"/>
                             <constraint firstItem="pMu-5U-fEd" firstAttribute="top" secondItem="II1-tL-aEO" secondAttribute="bottom" constant="8" id="ruS-ln-Sag"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="rHN-Z4-ZXo"/>
+                                <exclude reference="BId-Yq-O23"/>
+                                <exclude reference="fZA-B0-OUR"/>
+                                <exclude reference="AGL-Ae-cGU"/>
+                                <exclude reference="HEr-pB-QH9"/>
                                 <exclude reference="c61-db-eZe"/>
                             </mask>
                         </variation>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ql6-Mp-XHC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1926" y="176"/>
+            <point key="canvasLocation" x="-738" y="880"/>
+        </scene>
+        <!--ContainerSWRevealVC-->
+        <scene sceneID="hA5-VM-PBq">
+            <objects>
+                <viewController storyboardIdentifier="SWRevealViewController" id="e3q-jP-pwl" userLabel="ContainerSWRevealVC" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="geA-KH-O74"/>
+                        <viewControllerLayoutGuide type="bottom" id="qem-CM-DeJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lJM-My-Oph">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="sG2-Rg-tvn" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="oUK-3F-opS"/>
+                        <segue destination="T3C-MO-eqZ" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="aS4-OR-pls"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Vt-1P-Jl1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-738" y="178"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PuY-jW-8ar">
@@ -271,7 +307,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c7c-lr-0Iz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="332" y="168"/>
+            <point key="canvasLocation" x="-12" y="178"/>
         </scene>
     </scenes>
     <resources>

@@ -8,19 +8,19 @@
 
 import UIKit
 import MediaPlayer
-import SlideMenuControllerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var statusBarBackgroundView: UIView?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 
-        let navCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("RootNavController") as! UINavigationController
-        window?.rootViewController! = navCtrl
+        let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
+        window?.rootViewController! = revealVC
         
         #if RELEASE
             println("release mode")
@@ -46,23 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     @objc
     private func moviePlayBackDidFinish() {
-        let navCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("RootNavController") as! UINavigationController
-        
         //Navbar and Statusbar background image setup - storyboard doesn't do this wtf
-        let statusBarView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 20))
-        statusBarView.backgroundColor = UIColor(patternImage: UIImage(named:"status_bar")!)
-        window?.rootViewController?.view .addSubview(statusBarView)
+        statusBarBackgroundView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 20))
+        statusBarBackgroundView!.backgroundColor = UIColor(patternImage: UIImage(named:"status_bar")!)
+        window?.rootViewController?.view.addSubview(statusBarBackgroundView!)
         UINavigationBar.appearance().setBackgroundImage(UIImage(named: "navigation_bar"), forBarMetrics: UIBarMetrics.Default)
-        
-        let navDrawer = UIStoryboard(name: "Main", bundle:nil).instantiateViewControllerWithIdentifier("NavDrawerStoryboardID") as! NavDrawerViewController
-//        
-//        let homeScreenVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeScreenVC") as! HomeScreenViewController
-        
-        let slideMenuController = SlideMenuController(mainViewController: navCtrl, leftMenuViewController: navDrawer)
-        slideMenuController.closeLeft()
-        
-        window?.rootViewController = slideMenuController
-        window?.makeKeyAndVisible()
     }
 
     

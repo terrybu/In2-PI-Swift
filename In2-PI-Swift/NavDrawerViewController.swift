@@ -12,17 +12,26 @@ class NavDrawerViewController: UIViewController {
     
     @IBAction
     func xButtonPressed(sender: AnyObject) {
-//        dismissViewControllerAnimated(true, completion: nil)
-        self.slideMenuController()?.closeLeft()
+//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//        appDelegate.statusBarBackgroundView?.hidden = false
+        self.revealViewController().revealToggle(sender)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         let backgroundImageView = UIImageView(image: UIImage(named:"navDrawerBackground"))
         view.addSubview(backgroundImageView)
         view.sendSubviewToBack(backgroundImageView)
+        
+//        if self.revealViewController() != nil {
+//            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+//        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        println("view will appear")
     }
 
     override func didReceiveMemoryWarning() {
