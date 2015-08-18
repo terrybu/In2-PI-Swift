@@ -16,6 +16,13 @@ class NavDrawerViewController: UIViewController {
 //        appDelegate.statusBarBackgroundView?.hidden = false
         self.revealViewController().revealToggle(sender)
     }
+    
+    @IBAction
+    func worshipButtonPressed(sender: UIButton) {
+        let worshipVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("WorshipNavController") as! UINavigationController
+        revealViewController().pushFrontViewController(worshipVC, animated: true)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

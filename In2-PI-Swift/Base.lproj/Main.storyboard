@@ -243,7 +243,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="In2 PI" id="mNO-F8-DzW">
-                        <barButtonItem key="leftBarButtonItem" image="btn_List" id="hES-da-EKD" userLabel="HamburgerBarButtonItem">
+                        <barButtonItem key="leftBarButtonItem" image="hamburger" id="hES-da-EKD" userLabel="HamburgerBarButtonItem">
                             <connections>
                                 <action selector="hamburgerPressed:" destination="BYZ-38-t0r" id="rH7-xU-v3y"/>
                             </connections>
@@ -259,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="788" y="178"/>
+            <point key="canvasLocation" x="430" y="98"/>
         </scene>
         <!--LeftNavDrawerMenu-->
         <scene sceneID="ymH-sZ-d5F">
@@ -278,6 +278,9 @@
                                 <state key="normal" backgroundImage="btn_Worship">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="worshipButtonPressed:" destination="sG2-Rg-tvn" eventType="touchUpInside" id="xco-vS-e6H"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5i-jC-gRJ" userLabel="Evangelism">
                                 <rect key="frame" x="394" y="198" width="60" height="60"/>
@@ -429,7 +432,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ql6-Mp-XHC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-738" y="880"/>
+            <point key="canvasLocation" x="-1372" y="872"/>
         </scene>
         <!--ContainerSWRevealVC-->
         <scene sceneID="hA5-VM-PBq">
@@ -447,16 +450,36 @@
                     <connections>
                         <segue destination="sG2-Rg-tvn" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="oUK-3F-opS"/>
                         <segue destination="T3C-MO-eqZ" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="aS4-OR-pls"/>
+                        <segue destination="om7-B7-Wax" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="LAZ-6S-uBI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Vt-1P-Jl1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-738" y="178"/>
+            <point key="canvasLocation" x="-1360" y="16"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Worship View Controller-->
+        <scene sceneID="8a3-wH-6JY">
+            <objects>
+                <viewController storyboardIdentifier="WorshipVC" id="k3o-Eq-0C4" customClass="WorshipViewController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c39-zg-ajs"/>
+                        <viewControllerLayoutGuide type="bottom" id="CPj-2L-Cda"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eDV-y8-TqE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HKV-ej-h6O"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zf6-ef-HH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="186" y="1084"/>
+        </scene>
+        <!--RootNavController-->
         <scene sceneID="PuY-jW-8ar">
             <objects>
-                <navigationController storyboardIdentifier="RootNavController" automaticallyAdjustsScrollViewInsets="NO" id="T3C-MO-eqZ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RootNavController" automaticallyAdjustsScrollViewInsets="NO" id="T3C-MO-eqZ" userLabel="RootNavController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="vwa-XW-fac">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -473,14 +496,31 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c7c-lr-0Iz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12" y="178"/>
+            <point key="canvasLocation" x="-413" y="90"/>
+        </scene>
+        <!--WorshipNavController-->
+        <scene sceneID="ROK-q3-oda">
+            <objects>
+                <navigationController storyboardIdentifier="WorshipNavController" automaticallyAdjustsScrollViewInsets="NO" id="om7-B7-Wax" userLabel="WorshipNavController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="maf-dW-LjG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="k3o-Eq-0C4" kind="relationship" relationship="rootViewController" id="tcu-A5-JHD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5RZ-RG-tgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-589" y="1084"/>
         </scene>
     </scenes>
     <resources>
         <image name="Rectangle_category" width="103" height="28"/>
         <image name="btn_Communication" width="60" height="60"/>
         <image name="btn_Evangelism" width="60" height="60"/>
-        <image name="btn_List" width="22" height="15"/>
         <image name="btn_Nurture" width="60" height="60"/>
         <image name="btn_PI-logo" width="17" height="22"/>
         <image name="btn_Social_Services" width="60" height="60"/>
@@ -488,6 +528,7 @@
         <image name="btn_X" width="18" height="18"/>
         <image name="btn_gallery" width="29" height="22"/>
         <image name="btn_more" width="70" height="30"/>
+        <image name="hamburger" width="22" height="15"/>
         <image name="rule_ver" width="1" height="18"/>
         <image name="sampleGray" width="600" height="600"/>
     </resources>

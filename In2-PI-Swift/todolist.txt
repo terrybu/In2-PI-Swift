@@ -1,0 +1,4 @@
+1) Make Joobo tableview
+2) Download pictures from facebook page and display in collection view
+3) Finalize front page (without any unnecessary fluff)
+4) Make sermon watch video view
