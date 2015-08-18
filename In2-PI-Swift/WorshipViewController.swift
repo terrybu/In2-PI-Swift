@@ -12,16 +12,22 @@ class WorshipViewController: UIViewController {
     
     @IBAction func hamburgerPressed(sender: UIBarButtonItem) {
         self.revealViewController().revealToggle(sender)
-        //        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        //        appDelegate.statusBarBackgroundView?.hidden = true
+    }
+    
+    func homeButtonPressed() {
+        let rootNav = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("RootNavController") as! UINavigationController
+        revealViewController().pushFrontViewController(rootNav, animated: true)
     }
     
     
     override func viewDidLoad() {
-        
-        var hamburger = UIBarButtonItem(image: UIImage(named: "hamburger"), style: UIBarButtonItemStyle.Plain, target: self, action: Selector("hamburgerPressed:"))
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+
+        let hamburger = UIBarButtonItem(image: UIImage(named: "hamburger"), style: UIBarButtonItemStyle.Plain, target: self, action: Selector("hamburgerPressed:"))
         self.navigationItem.leftBarButtonItem = hamburger
-        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
+        
+        let homeButton = UIBarButtonItem(image: UIImage(named: "home"), style: UIBarButtonItemStyle.Plain, target: self, action: Selector("homeButtonPressed"))
+        self.navigationItem.rightBarButtonItem = homeButton
     }
     
     
