@@ -21,13 +21,20 @@ class WorshipViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        if self.revealViewController() != nil {
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+            self.revealViewController().rearViewRevealWidth = self.view.frame.size.width-20
+        }
+        
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
 
-        let hamburger = UIBarButtonItem(image: UIImage(named: "hamburger"), style: UIBarButtonItemStyle.Plain, target: self, action: Selector("hamburgerPressed:"))
+        let hamburger = UIBarButtonItem(image: UIImage(named: "hamburger"), style: UIBarButtonItemStyle.Done, target: self, action: Selector("hamburgerPressed:"))
         self.navigationItem.leftBarButtonItem = hamburger
         
         let homeButton = UIBarButtonItem(image: UIImage(named: "home"), style: UIBarButtonItemStyle.Plain, target: self, action: Selector("homeButtonPressed"))
         self.navigationItem.rightBarButtonItem = homeButton
+
     }
     
     

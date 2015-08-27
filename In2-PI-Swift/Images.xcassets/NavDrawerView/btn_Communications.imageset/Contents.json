@@ -2,17 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "btn_Communications.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "btn_gallery@2x.png"
+      "filename" : "btn_Communications@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "btn_Gallery@3x.png"
+      "filename" : "btn_Communications@3x.png"
     }
   ],
   "info" : {
