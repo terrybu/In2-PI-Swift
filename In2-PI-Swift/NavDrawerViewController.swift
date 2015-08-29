@@ -19,10 +19,45 @@ class NavDrawerViewController: UIViewController {
     
     @IBAction
     func worshipButtonPressed(sender: UIButton) {
-        let worshipVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("WorshipNavController") as! UINavigationController
-        revealViewController().pushFrontViewController(worshipVC, animated: true)
+        let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("WorshipNavController") as! UINavigationController
+        revealViewController().pushFrontViewController(nav, animated: true)
     }
     
+    @IBAction
+    func nurtureButtonPressed(sender: UIButton) {
+        let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("NurtureNavController") as! UINavigationController
+        revealViewController().pushFrontViewController(nav, animated: true)
+    }
+    
+    @IBAction
+    func communicationsButtonPressed(sender: UIButton) {
+        let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CommunicationsNavController") as! UINavigationController
+        revealViewController().pushFrontViewController(nav, animated: true)
+    }
+    
+    @IBAction
+    func evangelismButtonPressed(sender: UIButton) {
+        let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("EvangelismNavController") as! UINavigationController
+        revealViewController().pushFrontViewController(nav, animated: true)
+    }
+    
+    @IBAction
+    func socialServicesButtonPressed(sender: UIButton) {
+        let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SocialServicesNavController") as! UINavigationController
+        revealViewController().pushFrontViewController(nav, animated: true)
+    }
+    
+    @IBAction
+    func aboutPIButtonPressed(sender: UIButton) {
+        let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AboutPINavController") as! UINavigationController
+        revealViewController().pushFrontViewController(nav, animated: true)
+    }
+    
+    @IBAction
+    func galleryButtonPressed(sender: UIButton) {
+        let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("GalleryNavController") as! UINavigationController
+        revealViewController().pushFrontViewController(nav, animated: true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +66,7 @@ class NavDrawerViewController: UIViewController {
         let backgroundImageView = UIImageView(image: UIImage(named:"navDrawerBackground"))
         view.addSubview(backgroundImageView)
         view.sendSubviewToBack(backgroundImageView)
-        
-//        if self.revealViewController() != nil {
-//            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-//        }
+
     }
 
 

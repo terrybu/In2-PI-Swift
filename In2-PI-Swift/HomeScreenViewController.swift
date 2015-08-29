@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  HomeScreenViewController.swift
 //  In2-PI-Swift
 //
-//  Created by Terry Bu on 6/27/15.
+//  Created by Terry Bu on 8/29/15.
 //  Copyright (c) 2015 Terry Bu. All rights reserved.
 //
 
@@ -19,7 +19,7 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var articldDateLabel: UILabel!
     @IBOutlet weak var articleAuthorLabel: UILabel!
     @IBOutlet weak var QTTitleLabel: UILabel!
-
+    
     var purpleBarSelector: UIImageView!
     
     override func viewDidLoad() {
@@ -29,7 +29,7 @@ class HomeScreenViewController: UIViewController {
         if self.revealViewController() != nil {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
-            self.revealViewController().rearViewRevealWidth = self.view.frame.size.width-20
+            self.revealViewController().rearViewRevealWidth = self.view.frame.size.width-25
         }
     }
     
@@ -42,8 +42,8 @@ class HomeScreenViewController: UIViewController {
         purpleBarSelector.frame = CGRect(x: view.frame.width/4-18, y: myPIButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width:myPIButton.titleLabel!.frame.size.width, height: 4)
         view.addSubview(purpleBarSelector)
     }
-
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -53,8 +53,8 @@ class HomeScreenViewController: UIViewController {
     
     @IBAction func hamburgerPressed(sender: UIBarButtonItem) {
         self.revealViewController().revealToggle(sender)
-//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//        appDelegate.statusBarBackgroundView?.hidden = true
+        //        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        //        appDelegate.statusBarBackgroundView?.hidden = true
     }
     
     @IBAction func myPIButtonPressed(sender: UIButton) {
@@ -71,9 +71,5 @@ class HomeScreenViewController: UIViewController {
         
         purpleBarSelector.frame = CGRect(x: view.frame.width/2+48, y: myPIButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width:PICommunityButton.titleLabel!.frame.size.width, height: 4)
     }
-
+    
 }
-
-
-
-

@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		615C54D683ACF2345564DCC8 /* Pods_In2_PI_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D9D85A29F7F171A635D2C8 /* Pods_In2_PI_Swift.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D90A7AFC1B923F13003EA693 /* NurtureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90A7AFB1B923F13003EA693 /* NurtureViewController.swift */; };
+		D90A7AFE1B92406F003EA693 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90A7AFD1B92406F003EA693 /* HomeScreenViewController.swift */; };
+		D90A7B001B9240EC003EA693 /* CommunicationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90A7AFF1B9240EC003EA693 /* CommunicationsViewController.swift */; };
+		D90A7B021B924135003EA693 /* SocialServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90A7B011B924135003EA693 /* SocialServicesViewController.swift */; };
+		D90A7B041B92413F003EA693 /* EvangelismViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90A7B031B92413F003EA693 /* EvangelismViewController.swift */; };
+		D90A7B061B92415D003EA693 /* AboutPIViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90A7B051B92415D003EA693 /* AboutPIViewControlller.swift */; };
+		D90A7B081B924164003EA693 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90A7B071B924164003EA693 /* GalleryViewController.swift */; };
+		D90A7B0A1B924256003EA693 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90A7B091B924256003EA693 /* ParentViewController.swift */; };
 		D952B17B1B5EF5330089116C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B17A1B5EF5330089116C /* Constants.swift */; };
 		D952B17D1B5EF5CA0089116C /* HideKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B17C1B5EF5CA0089116C /* HideKey.swift */; };
 		D9B34A211B76F6BB00590DFB /* HomeScreenPurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */; };
@@ -17,7 +25,6 @@
 		D9B9B5791B4B1B0000DA476E /* splashScreen.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D9B9B5781B4B1B0000DA476E /* splashScreen.mp4 */; };
 		D9BE263D1B64A1B700C3BA7D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BE263C1B64A1B700C3BA7D /* UIColorExtension.swift */; };
 		D9D3CDED1B3F20EF00C8E195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D3CDEC1B3F20EF00C8E195 /* AppDelegate.swift */; };
-		D9D3CDEF1B3F20EF00C8E195 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D3CDEE1B3F20EF00C8E195 /* HomeScreenViewController.swift */; };
 		D9D3CDF21B3F20EF00C8E195 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9D3CDF01B3F20EF00C8E195 /* Main.storyboard */; };
 		D9D3CDF41B3F20EF00C8E195 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9D3CDF31B3F20EF00C8E195 /* Images.xcassets */; };
 		D9D3CDF71B3F20EF00C8E195 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9D3CDF51B3F20EF00C8E195 /* LaunchScreen.xib */; };
@@ -48,6 +55,14 @@
 		15F9BC9F44944956571DAF7B /* Pods-In2-PI-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-In2-PI-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-In2-PI-Swift/Pods-In2-PI-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		24E64E21CAF4188A4E4E9D5B /* Pods-In2-PI-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-In2-PI-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-In2-PI-Swift/Pods-In2-PI-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		54D9D85A29F7F171A635D2C8 /* Pods_In2_PI_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_In2_PI_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D90A7AFB1B923F13003EA693 /* NurtureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NurtureViewController.swift; sourceTree = "<group>"; };
+		D90A7AFD1B92406F003EA693 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		D90A7AFF1B9240EC003EA693 /* CommunicationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicationsViewController.swift; sourceTree = "<group>"; };
+		D90A7B011B924135003EA693 /* SocialServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialServicesViewController.swift; sourceTree = "<group>"; };
+		D90A7B031B92413F003EA693 /* EvangelismViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvangelismViewController.swift; sourceTree = "<group>"; };
+		D90A7B051B92415D003EA693 /* AboutPIViewControlller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPIViewControlller.swift; sourceTree = "<group>"; };
+		D90A7B071B924164003EA693 /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		D90A7B091B924256003EA693 /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		D952B17A1B5EF5330089116C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D952B17C1B5EF5CA0089116C /* HideKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKey.swift; sourceTree = "<group>"; };
 		D9713E8B1B5ED166009D809A /* In2-PI-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "In2-PI-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -61,7 +76,6 @@
 		D9D3CDE71B3F20EF00C8E195 /* In2-PI-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "In2-PI-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D3CDEB1B3F20EF00C8E195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9D3CDEC1B3F20EF00C8E195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D9D3CDEE1B3F20EF00C8E195 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		D9D3CDF11B3F20EF00C8E195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D9D3CDF31B3F20EF00C8E195 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D9D3CDF61B3F20EF00C8E195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -209,8 +223,15 @@
 			isa = PBXGroup;
 			children = (
 				D9F9C7E91B64873800F5C17D /* NavDrawerViewController.swift */,
-				D9D3CDEE1B3F20EF00C8E195 /* HomeScreenViewController.swift */,
+				D90A7AFD1B92406F003EA693 /* HomeScreenViewController.swift */,
+				D90A7B091B924256003EA693 /* ParentViewController.swift */,
 				D9D7C55A1B82D172003E48EA /* WorshipViewController.swift */,
+				D90A7AFB1B923F13003EA693 /* NurtureViewController.swift */,
+				D90A7AFF1B9240EC003EA693 /* CommunicationsViewController.swift */,
+				D90A7B031B92413F003EA693 /* EvangelismViewController.swift */,
+				D90A7B011B924135003EA693 /* SocialServicesViewController.swift */,
+				D90A7B051B92415D003EA693 /* AboutPIViewControlller.swift */,
+				D90A7B071B924164003EA693 /* GalleryViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -401,13 +422,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				D952B17D1B5EF5CA0089116C /* HideKey.swift in Sources */,
+				D90A7B0A1B924256003EA693 /* ParentViewController.swift in Sources */,
 				D9D7C55B1B82D172003E48EA /* WorshipViewController.swift in Sources */,
+				D90A7B061B92415D003EA693 /* AboutPIViewControlller.swift in Sources */,
 				D9BE263D1B64A1B700C3BA7D /* UIColorExtension.swift in Sources */,
 				D9B34A211B76F6BB00590DFB /* HomeScreenPurpleButton.swift in Sources */,
+				D90A7B081B924164003EA693 /* GalleryViewController.swift in Sources */,
 				D9F9C7EA1B64873800F5C17D /* NavDrawerViewController.swift in Sources */,
+				D90A7AFE1B92406F003EA693 /* HomeScreenViewController.swift in Sources */,
 				D9B549A81B76D7FB00BF4887 /* SWRevealViewController.m in Sources */,
-				D9D3CDEF1B3F20EF00C8E195 /* HomeScreenViewController.swift in Sources */,
+				D90A7AFC1B923F13003EA693 /* NurtureViewController.swift in Sources */,
 				D9D3CDED1B3F20EF00C8E195 /* AppDelegate.swift in Sources */,
+				D90A7B041B92413F003EA693 /* EvangelismViewController.swift in Sources */,
+				D90A7B021B924135003EA693 /* SocialServicesViewController.swift in Sources */,
+				D90A7B001B9240EC003EA693 /* CommunicationsViewController.swift in Sources */,
 				D9D3CE211B3F4B1E00C8E195 /* HomeActionCollectionViewCell.swift in Sources */,
 				D952B17B1B5EF5330089116C /* Constants.swift in Sources */,
 			);
