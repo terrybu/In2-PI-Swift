@@ -261,10 +261,10 @@
             </objects>
             <point key="canvasLocation" x="-1076" y="289"/>
         </scene>
-        <!--LeftNavDrawerMenu-->
+        <!--NavDrawerViewController-->
         <scene sceneID="ymH-sZ-d5F">
             <objects>
-                <viewController storyboardIdentifier="NavDrawerStoryboardID" id="sG2-Rg-tvn" userLabel="LeftNavDrawerMenu" customClass="NavDrawerViewController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NavDrawerStoryboardID" id="sG2-Rg-tvn" userLabel="NavDrawerViewController" customClass="NavDrawerViewController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C02-Xr-dce"/>
                         <viewControllerLayoutGuide type="bottom" id="GXS-z1-sin"/>
@@ -473,7 +473,6 @@
                         <segue destination="8ij-fq-Ohw" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="8dL-Aq-Fao"/>
                         <segue destination="aPr-rm-ddW" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="vkF-r7-Y8X"/>
                         <segue destination="xrs-ob-QtY" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="95Z-A0-6vU"/>
-                        <segue destination="OGb-Xo-dRs" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="abM-db-4rn"/>
                         <segue destination="ZRT-aZ-g95" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="lLk-sB-MVZ"/>
                     </connections>
                 </viewController>
@@ -579,7 +578,7 @@
         <!--About -->
         <scene sceneID="otr-fz-x8h">
             <objects>
-                <viewController storyboardIdentifier="AboutPIViewController" title="About " id="pFB-fa-kBo" customClass="AboutPIViewController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutPIViewController" title="About " modalPresentationStyle="formSheet" id="pFB-fa-kBo" customClass="AboutPIViewController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tEj-VJ-bZ2"/>
                         <viewControllerLayoutGuide type="bottom" id="AQR-DH-Y5C"/>
@@ -593,7 +592,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lpM-QP-qB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1119" y="4926"/>
+            <point key="canvasLocation" x="-1597" y="4878"/>
         </scene>
         <!--Gallery-->
         <scene sceneID="m9d-tp-msS">
@@ -725,24 +724,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IkO-xp-Bl7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1932" y="4218"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="RX8-1B-of6">
-            <objects>
-                <navigationController storyboardIdentifier="AboutPINavController" automaticallyAdjustsScrollViewInsets="NO" id="OGb-Xo-dRs" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h5I-3k-gV4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="pFB-fa-kBo" kind="relationship" relationship="rootViewController" id="eFy-7B-2hh"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GXU-3L-HmF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1931" y="4926"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MEg-y8-IqV">

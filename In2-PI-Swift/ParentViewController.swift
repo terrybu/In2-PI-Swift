@@ -23,7 +23,7 @@ class ParentViewController: UIViewController {
         if let revealVC = self.revealViewController() {
             self.view.addGestureRecognizer(revealVC.panGestureRecognizer())
             self.view.addGestureRecognizer(revealVC.tapGestureRecognizer())
-            revealVC.rearViewRevealWidth = self.view.frame.size.width-25
+            revealVC.rearViewRevealWidth = self.view.frame.size.width
         }
         
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()

@@ -29,7 +29,7 @@ class HomeScreenViewController: UIViewController {
         if self.revealViewController() != nil {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
-            self.revealViewController().rearViewRevealWidth = self.view.frame.size.width-25
+            self.revealViewController().rearViewRevealWidth = self.view.frame.size.width
         }
     }
     

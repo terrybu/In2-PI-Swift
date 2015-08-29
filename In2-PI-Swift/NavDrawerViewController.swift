@@ -10,12 +10,16 @@ import UIKit
 
 class NavDrawerViewController: UIViewController {
     
+    var aboutVCModal : AboutPIViewController!
+    var maskView : UIView!
+    
     @IBAction
     func xButtonPressed(sender: AnyObject) {
 //        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 //        appDelegate.statusBarBackgroundView?.hidden = false
         self.revealViewController().revealToggle(sender)
     }
+    
     
     @IBAction
     func worshipButtonPressed(sender: UIButton) {
@@ -49,9 +53,51 @@ class NavDrawerViewController: UIViewController {
     
     @IBAction
     func aboutPIButtonPressed(sender: UIButton) {
-        let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AboutPINavController") as! UINavigationController
-        revealViewController().pushFrontViewController(nav, animated: true)
+        aboutVCModal = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AboutPIViewController") as! AboutPIViewController
+        aboutVCModal.navDrawerVC = self
+        self.addChildViewController(aboutVCModal)
+
+        maskView = UIView(frame: self.view.frame)
+        maskView.backgroundColor = UIColor.clearColor()
+        self.view.addSubview(maskView)
+        
+        aboutVCModal.view.frame = CGRectMake(20, self.view.frame.height, self.view.frame.width-40, self.view.frame.height-100)
+        self.view.addSubview(aboutVCModal.view)
+        aboutVCModal.didMoveToParentViewController(self)
+
+        UIView.animateWithDuration(0.25, animations: { () -> Void in
+            self.aboutVCModal.view.frame = CGRectMake(20, 80, self.view.frame.width-40, self.view.frame.height-100)
+            self.maskView.backgroundColor = UIColor.blackColor()
+            self.maskView.alpha  = 0.60
+
+        }) { (Bool finished) -> Void in
+            
+            let gestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTap:")
+            self.view.addGestureRecognizer(gestureRecognizer)
+        }
     }
+
+    //MARK: about PI Modal
+    func closeAboutPIModal() {
+        UIView.animateWithDuration(0.25, animations: { () -> Void in
+            self.aboutVCModal.view.frame = CGRectMake(20, self.view.frame.height, self.view.frame.width-40, self.view.frame.height-100)
+            self.maskView.backgroundColor = UIColor.clearColor()
+            self.maskView.alpha = 1.0
+        }) { (Bool finished) -> Void in
+            self.aboutVCModal.view.removeFromSuperview()
+            self.aboutVCModal.removeFromParentViewController()
+            self.maskView.removeFromSuperview()
+        }
+    }
+    
+    func handleTap(gestureRecognizer: UIGestureRecognizer) {
+        let location = gestureRecognizer.locationInView(self.view)
+        println(location)
+        if (location.y < self.aboutVCModal.view.frame.origin.y) || (location.y > self.aboutVCModal.view.frame.height + self.aboutVCModal.view.frame.origin.y) || (location.x > self.aboutVCModal.view.frame.width + self.aboutVCModal.view.frame.origin.x) || (location.x < self.aboutVCModal.view.frame.origin.x) {
+            closeAboutPIModal()
+        }
+    }
+    
     
     @IBAction
     func galleryButtonPressed(sender: UIButton) {
@@ -69,21 +115,11 @@ class NavDrawerViewController: UIViewController {
 
     }
 
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
