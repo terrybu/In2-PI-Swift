@@ -166,6 +166,7 @@
 		D9D3CDE91B3F20EF00C8E195 /* In2-PI-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				D9FB031E1B6495C3001D813D /* Past Reference */,
 				D9D7C5581B82CFE4003E48EA /* todolist.txt */,
 				D9D3CDEC1B3F20EF00C8E195 /* AppDelegate.swift */,
 				D952B17A1B5EF5330089116C /* Constants.swift */,
@@ -184,11 +185,9 @@
 		D9D3CDEA1B3F20EF00C8E195 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D952B17C1B5EF5CA0089116C /* HideKey.swift */,
 				D9D3CE1B1B3F338D00C8E195 /* Localizable.strings */,
 				D9D3CE141B3F309C00C8E195 /* InfoPlist.strings */,
 				D9D3CDEB1B3F20EF00C8E195 /* Info.plist */,
-				D9D3CE1D1B3F372F00C8E195 /* ListOfExternalLinks.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -239,7 +238,6 @@
 		D9F9C7E21B645FD100F5C17D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D9FB031E1B6495C3001D813D /* Past Reference */,
 				D9D3CDF51B3F20EF00C8E195 /* LaunchScreen.xib */,
 				D9B34A221B77840700590DFB /* NanumBarunGothicLight.otf */,
 				D9B34A231B77840700590DFB /* NanumBarunGothicUltraLight.otf */,
@@ -253,6 +251,8 @@
 		D9FB031E1B6495C3001D813D /* Past Reference */ = {
 			isa = PBXGroup;
 			children = (
+				D952B17C1B5EF5CA0089116C /* HideKey.swift */,
+				D9D3CE1D1B3F372F00C8E195 /* ListOfExternalLinks.strings */,
 				D9F9C7E01B644EBA00F5C17D /* savedCodeForLater */,
 				D9D3CE201B3F4B1E00C8E195 /* HomeActionCollectionViewCell.swift */,
 			);
