@@ -13,6 +13,8 @@ class NavDrawerViewController: UIViewController {
     var aboutVCModal : AboutPIViewController!
     var maskView : UIView!
     
+    //MASK: IBActions
+    
     @IBAction
     func xButtonPressed(sender: AnyObject) {
 //        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -76,7 +78,34 @@ class NavDrawerViewController: UIViewController {
             self.view.addGestureRecognizer(gestureRecognizer)
         }
     }
-
+    
+    @IBAction
+    func galleryButtonPressed(sender: UIButton) {
+        let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("GalleryNavController") as! UINavigationController
+        revealViewController().pushFrontViewController(nav, animated: true)
+    }
+    
+    //MARK VC Methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        let backgroundImageView = UIImageView(image: UIImage(named:"navDrawerBackground"))
+        view.addSubview(backgroundImageView)
+        view.sendSubviewToBack(backgroundImageView)
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: "userJustSwipedFromRightToLeft:")
+        swipeGesture.direction = UISwipeGestureRecognizerDirection.Left
+        self.view.addGestureRecognizer(swipeGesture)
+    }
+    
+    func userJustSwipedFromRightToLeft(gesture: UISwipeGestureRecognizer) {
+        if (gesture.direction == UISwipeGestureRecognizerDirection.Left) {
+            println("swiped left")
+            self.revealViewController().revealToggleAnimated(true)
+        }
+    }
+    
+    
     //MARK: about PI Modal
     func closeAboutPIModal() {
         UIView.animateWithDuration(0.25, animations: { () -> Void in
@@ -92,28 +121,12 @@ class NavDrawerViewController: UIViewController {
     
     func handleTap(gestureRecognizer: UIGestureRecognizer) {
         let location = gestureRecognizer.locationInView(self.view)
-        println(location)
+        println("from navdrawer handleTap \(location)")
         if (location.y < self.aboutVCModal.view.frame.origin.y) || (location.y > self.aboutVCModal.view.frame.height + self.aboutVCModal.view.frame.origin.y) || (location.x > self.aboutVCModal.view.frame.width + self.aboutVCModal.view.frame.origin.x) || (location.x < self.aboutVCModal.view.frame.origin.x) {
             closeAboutPIModal()
         }
     }
-    
-    
-    @IBAction
-    func galleryButtonPressed(sender: UIButton) {
-        let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("GalleryNavController") as! UINavigationController
-        revealViewController().pushFrontViewController(nav, animated: true)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        let backgroundImageView = UIImageView(image: UIImage(named:"navDrawerBackground"))
-        view.addSubview(backgroundImageView)
-        view.sendSubviewToBack(backgroundImageView)
-
-    }
+  
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

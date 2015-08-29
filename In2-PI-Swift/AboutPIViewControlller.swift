@@ -17,7 +17,7 @@ class AboutPIViewController: ParentViewController {
     }
     
     override func didMoveToParentViewController(parent: UIViewController?) {
-        println("width \(self.view.frame.width) height \(self.view.frame.height)")
+        println("from about: width \(self.view.frame.width) height \(self.view.frame.height)")
         let button = UIButton(frame: CGRectMake(self.view.frame.width/2-15, self.view.frame.height-60, 30, 30))
         button.setImage(UIImage(named: "btn_close"), forState: .Normal)
         button.addTarget(self, action: "closeButtonPressed", forControlEvents: UIControlEvents.TouchUpInside)
