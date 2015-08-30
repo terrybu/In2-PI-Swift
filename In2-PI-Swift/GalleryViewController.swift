@@ -16,19 +16,18 @@ class GalleryViewController: ParentViewController, FacebookManagerDelegate, UICo
     
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var topImageView: UIImageView!
-    var photoObjectsArray: [JSON]?
+    var photoObjectsArray: [FBPhotoObject]?
     
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
-        let sharedFBManager = FacebookManager.sharedInstance
-        sharedFBManager.delegate = self
-        sharedFBManager.getPhotosFromFacebookAlbum()
+        FacebookManager.sharedInstance.delegate = self
+        FacebookManager.sharedInstance.getPhotosFromFacebookAlbum()
     }
     
     //MARK: FacebookManagerDelegate methods
-    func didFinishGettingFacebookPhotos(jsonArray: [JSON]) {
-        self.photoObjectsArray = jsonArray
-        let firstObjectURL = photoObjectsArray![0]["picture"].string!
+    func didFinishGettingFacebookPhotos(fbPhotoObjectArray: [FBPhotoObject]) {
+        self.photoObjectsArray = fbPhotoObjectArray
+        let firstObjectURL = photoObjectsArray![0].albumSizePicURLString
         setFirstImageToTopImageView(firstObjectURL)
         self.collectionView.reloadData()
     }
@@ -56,8 +55,8 @@ class GalleryViewController: ParentViewController, FacebookManagerDelegate, UICo
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellReuseIdentifier, forIndexPath: indexPath) as! GalleryCell
         
         // Configure the cell
-        let photoDict = photoObjectsArray![indexPath.row]
-        cell.imageView!.setImageWithURL(NSURL(string: photoDict["picture"].string!))
+        let photoObject = photoObjectsArray![indexPath.row]
+        cell.imageView!.setImageWithURL(NSURL(string: photoObject.albumSizePicURLString ))
 
         return cell
     }

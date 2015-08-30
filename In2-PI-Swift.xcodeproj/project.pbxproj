@@ -37,6 +37,7 @@
 		D9D7C55B1B82D172003E48EA /* WorshipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D7C55A1B82D172003E48EA /* WorshipViewController.swift */; };
 		D9F7F4811B93547600D86FF7 /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7F4801B93547600D86FF7 /* FacebookManager.swift */; };
 		D9F7F4831B935DFA00D86FF7 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7F4821B935DFA00D86FF7 /* GalleryCell.swift */; };
+		D9F7F4861B93687700D86FF7 /* FBPhotoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7F4851B93687700D86FF7 /* FBPhotoObject.swift */; };
 		D9F9C7E11B644EBA00F5C17D /* savedCodeForLater in Resources */ = {isa = PBXBuildFile; fileRef = D9F9C7E01B644EBA00F5C17D /* savedCodeForLater */; };
 		D9F9C7E51B645FE300F5C17D /* NanumBarunGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9F9C7E31B645FE300F5C17D /* NanumBarunGothic.otf */; };
 		D9F9C7E61B645FE300F5C17D /* NanumBarunGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9F9C7E41B645FE300F5C17D /* NanumBarunGothicBold.otf */; };
@@ -96,6 +97,7 @@
 		D9D7C55A1B82D172003E48EA /* WorshipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorshipViewController.swift; sourceTree = "<group>"; };
 		D9F7F4801B93547600D86FF7 /* FacebookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
 		D9F7F4821B935DFA00D86FF7 /* GalleryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
+		D9F7F4851B93687700D86FF7 /* FBPhotoObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBPhotoObject.swift; sourceTree = "<group>"; };
 		D9F9C7E01B644EBA00F5C17D /* savedCodeForLater */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = savedCodeForLater; sourceTree = "<group>"; };
 		D9F9C7E31B645FE300F5C17D /* NanumBarunGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothic.otf; sourceTree = "<group>"; };
 		D9F9C7E41B645FE300F5C17D /* NanumBarunGothicBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicBold.otf; sourceTree = "<group>"; };
@@ -170,7 +172,7 @@
 		D9D3CDE91B3F20EF00C8E195 /* In2-PI-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				D9FB031E1B6495C3001D813D /* Terry References */,
+				D9F7F4841B93684F00D86FF7 /* Model */,
 				D9D3CDEC1B3F20EF00C8E195 /* AppDelegate.swift */,
 				D952B17A1B5EF5330089116C /* Constants.swift */,
 				D9F7F4801B93547600D86FF7 /* FacebookManager.swift */,
@@ -178,6 +180,7 @@
 				D9D3CDF31B3F20EF00C8E195 /* Images.xcassets */,
 				D9DA87E81B6DC063005D4CB6 /* Controllers */,
 				D9DA87E71B6DC05C005D4CB6 /* View */,
+				D9FB031E1B6495C3001D813D /* Terry References */,
 				D9F7F47F1B93544400D86FF7 /* Vendor */,
 				D9F9C7E21B645FD100F5C17D /* Resources */,
 				D9D3CDEA1B3F20EF00C8E195 /* Supporting Files */,
@@ -246,6 +249,14 @@
 				D9B549A51B76D7FB00BF4887 /* SWRevealViewController */,
 			);
 			name = Vendor;
+			sourceTree = "<group>";
+		};
+		D9F7F4841B93684F00D86FF7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D9F7F4851B93687700D86FF7 /* FBPhotoObject.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		D9F9C7E21B645FD100F5C17D /* Resources */ = {
@@ -450,6 +461,7 @@
 				D90A7B041B92413F003EA693 /* EvangelismViewController.swift in Sources */,
 				D90A7B021B924135003EA693 /* SocialServicesViewController.swift in Sources */,
 				D90A7B001B9240EC003EA693 /* CommunicationsViewController.swift in Sources */,
+				D9F7F4861B93687700D86FF7 /* FBPhotoObject.swift in Sources */,
 				D9F7F4831B935DFA00D86FF7 /* GalleryCell.swift in Sources */,
 				D9F7F4811B93547600D86FF7 /* FacebookManager.swift in Sources */,
 				D9D3CE211B3F4B1E00C8E195 /* HomeActionCollectionViewCell.swift in Sources */,

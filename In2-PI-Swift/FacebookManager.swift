@@ -11,13 +11,14 @@ import FBSDKLoginKit
 import SwiftyJSON
 
 protocol FacebookManagerDelegate {
-    func didFinishGettingFacebookPhotos(jsonArray: [JSON])
+    func didFinishGettingFacebookPhotos(fbPhotoObjectArray: [FBPhotoObject])
 }
 
 class FacebookManager {
     
     static let sharedInstance = FacebookManager()
     var delegate: FacebookManagerDelegate?
+    var FBPhotoObjectsArray = [FBPhotoObject]()
     
     func getPhotosFromFacebookAlbum() {
         var paramsDictionary = [
@@ -47,8 +48,14 @@ class FacebookManager {
                     let albumPhotosJSON = JSON(albumPhotos)
                     let photos = albumPhotosJSON["photos"]
                     let photosArray = photos["data"].arrayValue
+                    println(photosArray.description)
+                    for object:JSON in photosArray {
+                        var newPicObject = FBPhotoObject(id: object["id"].string!, albumPicURLString: object["picture"].string!)
+                        self.FBPhotoObjectsArray.append(newPicObject)
+                    }
+                    
                     if let delegate = self.delegate {
-                        delegate.didFinishGettingFacebookPhotos(photosArray)
+                        delegate.didFinishGettingFacebookPhotos(self.FBPhotoObjectsArray)
                     }
                 }
             }

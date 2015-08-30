@@ -27,6 +27,9 @@ class ParentViewController: UIViewController {
         }
         
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        let textAttributes = NSMutableDictionary(capacity:1)
+        textAttributes.setObject(UIColor.whiteColor(), forKey: NSForegroundColorAttributeName)
+        navigationController?.navigationBar.titleTextAttributes = textAttributes as [NSObject : AnyObject]
         
         let hamburger = UIBarButtonItem(image: UIImage(named: "hamburger"), style: UIBarButtonItemStyle.Done, target: self, action: Selector("hamburgerPressed:"))
         navigationItem.leftBarButtonItem = hamburger
