@@ -65,5 +65,23 @@ class GalleryViewController: ParentViewController, FacebookManagerDelegate, UICo
         return cell
     }
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? GalleryCell {
+            UIView.animateWithDuration(0.1, delay: 0, options: UIViewAnimationOptions.AllowUserInteraction, animations: { () -> Void in
+                    cell.contentView.layer.borderColor = UIColor(rgba: "#9f5cc0").CGColor
+                }, completion: nil)
+        }
+
+    }
+    
+    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? GalleryCell {
+            UIView.animateWithDuration(0.1, delay: 0, options: UIViewAnimationOptions.AllowUserInteraction, animations: { () -> Void in
+                    cell.contentView.layer.borderColor = UIColor.blackColor().CGColor
+                }, completion: nil)
+        }
+    }
+
+    
     
 }

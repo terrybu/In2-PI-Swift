@@ -10,7 +10,7 @@ import Foundation
 import FBSDKLoginKit
 import SwiftyJSON
 
-let GraphPathPIMagazineFBAlbum = "1384548091800506/albums"
+let GraphPathPIMagazineFBAlbums = "1384548091800506/albums"
 
 protocol FacebookManagerDelegate {
     func didFinishGettingFacebookPhotos(fbPhotoObjectArray: [FBPhotoObject])
@@ -29,7 +29,7 @@ class FacebookManager {
         let graphPathString = "\(fbObject.id)/picture?type=normal&redirect=false"
         FBSDKGraphRequest(graphPath: graphPathString, parameters: paramsDictionary).startWithCompletionHandler { (connection, data, error) -> Void in
             if (error == nil) {
-                println(data)
+//                println(data)
                 let jsonData = JSON(data)
                 let object = jsonData["data"]
                 let url = object["url"]
@@ -46,21 +46,23 @@ class FacebookManager {
         var paramsDictionary = [
             "access_token": kAppAccessToken
         ]
-        FBSDKGraphRequest(graphPath: GraphPathPIMagazineFBAlbum, parameters: paramsDictionary).startWithCompletionHandler { (connection, data, error) -> Void in
+        FBSDKGraphRequest(graphPath: GraphPathPIMagazineFBAlbums, parameters: paramsDictionary).startWithCompletionHandler { (connection, data, error) -> Void in
             if (error == nil) {
                 let jsonData = JSON(data)
                 let albumsList = jsonData["data"]
                 let firstAlbumID = albumsList[0]["id"].stringValue
-                let lastParamsDictionary = [
+                let firstAlbumParamsDictionary = [
                     "access_token": kAppAccessToken,
-                    "fields" : "photos{picture}"
+                    "fields" : "photos.limit(50){picture}",
                 ]
-                FBSDKGraphRequest(graphPath: firstAlbumID, parameters: lastParamsDictionary).startWithCompletionHandler { (connection, albumPhotos, error) -> Void in
+                println(albumsList)
+                println(firstAlbumID)
+                FBSDKGraphRequest(graphPath: firstAlbumID, parameters: firstAlbumParamsDictionary).startWithCompletionHandler { (connection, albumPhotos, error) -> Void in
 //                    println(albumPhotos)
                     let albumPhotosJSON = JSON(albumPhotos)
                     let photos = albumPhotosJSON["photos"]
                     let photosArray = photos["data"].arrayValue
-                    println(photosArray.description)
+//                    println(photosArray.description)
                     for object:JSON in photosArray {
                         var newPicObject = FBPhotoObject(id: object["id"].stringValue, albumPicURLString: object["picture"].stringValue)
                         self.FBPhotoObjectsArray.append(newPicObject)
