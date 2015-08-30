@@ -10,7 +10,13 @@ import UIKit
 import SwiftyJSON
 import AFNetworking
 
-class GalleryViewController: ParentViewController, FacebookManagerDelegate {
+private let cellReuseIdentifier = "GalleryCell"
+
+class GalleryViewController: ParentViewController, FacebookManagerDelegate, UICollectionViewDataSource, UICollectionViewDelegate{
+    
+    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var topImageView: UIImageView!
+    var photoObjectsArray: [JSON]?
     
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
@@ -19,17 +25,36 @@ class GalleryViewController: ParentViewController, FacebookManagerDelegate {
         sharedFBManager.getPhotosFromFacebookAlbum()
     }
     
+    //MARK: FacebookManagerDelegate methods
     func didFinishGettingFacebookPhotos(jsonArray: [JSON]) {
-        var initialY: CGFloat = 50.0
-        for photoObject in jsonArray {
-            let photoURLString = photoObject["picture"].string
-            dispatch_async(dispatch_get_main_queue(),{
-                var imageView = UIImageView(frame: CGRectMake(50.0, initialY,200.0,200.0))
-                imageView.setImageWithURL(NSURL(string: photoURLString!))
-                self.view.addSubview(imageView)
-                initialY = initialY + 200
-            })
-        }
+        self.photoObjectsArray = jsonArray
+        self.collectionView.reloadData()
     }
+    
+    //MARK UICollectionView delegate methods
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        if let photoObjectsArray = self.photoObjectsArray {
+            return 1
+        }
+        return 0
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if let photoObjectsArray = self.photoObjectsArray {
+            return photoObjectsArray.count
+        }
+        return 0
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellReuseIdentifier, forIndexPath: indexPath) as! GalleryCell
+        
+        // Configure the cell
+        let photoDict = photoObjectsArray![indexPath.row]
+        cell.imageView!.setImageWithURL(NSURL(string: photoDict["picture"].string!))
+
+        return cell
+    }
+    
     
 }
