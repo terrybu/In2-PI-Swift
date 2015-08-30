@@ -21,19 +21,23 @@ class GalleryViewController: ParentViewController, FacebookManagerDelegate, UICo
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
         FacebookManager.sharedInstance.delegate = self
-        FacebookManager.sharedInstance.getPhotosFromFacebookAlbum()
+        FacebookManager.sharedInstance.getPhotosFromPIMagazineFBAlbum()
     }
     
     //MARK: FacebookManagerDelegate methods
     func didFinishGettingFacebookPhotos(fbPhotoObjectArray: [FBPhotoObject]) {
         self.photoObjectsArray = fbPhotoObjectArray
-        let firstObjectURL = photoObjectsArray![0].albumSizePicURLString
-        setFirstImageToTopImageView(firstObjectURL)
+        let firstObject = photoObjectsArray![0]
+        setMostRecentImgInNormalSizeToTopImageView(firstObject)
         self.collectionView.reloadData()
     }
     
-    private func setFirstImageToTopImageView(imageURLString: String) {
-        self.topImageView.setImageWithURL(NSURL(string: imageURLString))
+    private func setMostRecentImgInNormalSizeToTopImageView(fbObject: FBPhotoObject) {
+        //FacebookManager needs to call a new Graph API request with the object
+        FacebookManager.sharedInstance.getNormalSizePhotoURLStringFrom(fbObject
+            , completion: { (normImgUrlString) -> Void in
+                self.topImageView.setImageWithURL(NSURL(string: normImgUrlString ))
+        })
     }
     
     //MARK UICollectionView delegate methods
