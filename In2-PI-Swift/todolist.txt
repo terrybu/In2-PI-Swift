@@ -1,4 +1,12 @@
 1) Make Joobo tableview
-2) Download pictures from facebook page and display in collection view
-3) Finalize front page (without any unnecessary fluff)
-4) Make sermon watch video view
+2) Make sermon watch video view
+
+
+
+###Facebook Gallery
+- it looks fine now but it's only pulling from timeline photos album
+- that means that if a user were to create a whole new album, it won't be seen
+- instead, don't single out just one album.
+Get most 3 recently updated albums and display the most recent photos
+1384548091800506/albums?fields=created_time,updated_time,name
+

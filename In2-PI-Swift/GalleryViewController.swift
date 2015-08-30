@@ -28,11 +28,11 @@ class GalleryViewController: ParentViewController, FacebookManagerDelegate, UICo
     func didFinishGettingFacebookPhotos(fbPhotoObjectArray: [FBPhotoObject]) {
         self.photoObjectsArray = fbPhotoObjectArray
         let firstObject = photoObjectsArray![0]
-        setMostRecentImgInNormalSizeToTopImageView(firstObject)
+        setImgInNormalSizeToTopImageView(firstObject)
         self.collectionView.reloadData()
     }
     
-    private func setMostRecentImgInNormalSizeToTopImageView(fbObject: FBPhotoObject) {
+    private func setImgInNormalSizeToTopImageView(fbObject: FBPhotoObject) {
         //FacebookManager needs to call a new Graph API request with the object
         FacebookManager.sharedInstance.getNormalSizePhotoURLStringFrom(fbObject
             , completion: { (normImgUrlString) -> Void in
@@ -71,7 +71,8 @@ class GalleryViewController: ParentViewController, FacebookManagerDelegate, UICo
                     cell.contentView.layer.borderColor = UIColor(rgba: "#9f5cc0").CGColor
                 }, completion: nil)
         }
-
+        
+        setImgInNormalSizeToTopImageView(photoObjectsArray![indexPath.row])
     }
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
