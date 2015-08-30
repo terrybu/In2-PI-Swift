@@ -493,7 +493,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="HKV-ej-h6O"/>
+                    <navigationItem key="navigationItem" title="Worship" id="HKV-ej-h6O"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zf6-ef-HH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -508,11 +508,11 @@
                         <viewControllerLayoutGuide type="bottom" id="fqb-cg-FbM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yJj-G9-UTU">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="0CA-Bh-ffq"/>
+                    <navigationItem key="navigationItem" title="Nurture" id="0CA-Bh-ffq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i2e-Tk-NrT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -527,11 +527,11 @@
                         <viewControllerLayoutGuide type="bottom" id="zjS-OB-V81"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="PVR-rN-I1c">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="CgP-7z-DhQ"/>
+                    <navigationItem key="navigationItem" title="Communications" id="CgP-7z-DhQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QZ2-cC-KMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -546,11 +546,11 @@
                         <viewControllerLayoutGuide type="bottom" id="WD6-51-ubA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eqA-F1-QeE">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Xb7-sy-BVR"/>
+                    <navigationItem key="navigationItem" title="Evangelism" id="Xb7-sy-BVR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="exO-N2-nr7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -565,11 +565,11 @@
                         <viewControllerLayoutGuide type="bottom" id="OTK-ru-wrk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dJd-DN-00i">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Lt9-HP-nGU"/>
+                    <navigationItem key="navigationItem" title="Social Services" id="Lt9-HP-nGU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbN-zP-BI0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -603,33 +603,33 @@
                         <viewControllerLayoutGuide type="bottom" id="1ND-mW-led"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rtw-1S-Ev3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lZp-RD-6zL">
-                                <rect key="frame" x="0.0" y="64" width="600" height="244"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lZp-RD-6zL">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="244"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="244" id="deB-rP-1Cl"/>
                                 </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8YN-Gz-vf2">
-                                <rect key="frame" x="0.0" y="308" width="600" height="292"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PWv-BW-nH4">
-                                    <size key="itemSize" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="244" width="600" height="292"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="PWv-BW-nH4">
+                                    <size key="itemSize" width="120" height="120"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GalleryCell" id="CBG-Uz-Xc9" customClass="GalleryCell" customModule="In2_PI_Swift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6oH-A1-5Lx">
-                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -651,7 +651,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8YN-Gz-vf2" firstAttribute="top" secondItem="lZp-RD-6zL" secondAttribute="bottom" id="2Bu-Ah-w0D"/>
                             <constraint firstItem="8YN-Gz-vf2" firstAttribute="leading" secondItem="rtw-1S-Ev3" secondAttribute="leading" id="2VD-LK-bpl"/>
@@ -662,7 +662,7 @@
                             <constraint firstItem="lZp-RD-6zL" firstAttribute="top" secondItem="uvp-WI-eZ0" secondAttribute="bottom" id="eeG-2h-ppz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="JWn-dU-TCC"/>
+                    <navigationItem key="navigationItem" title="Gallery" id="JWn-dU-TCC"/>
                     <connections>
                         <outlet property="collectionView" destination="8YN-Gz-vf2" id="VKZ-7u-5Ee"/>
                         <outlet property="topImageView" destination="lZp-RD-6zL" id="NWT-FF-1wb"/>
@@ -712,12 +712,12 @@
             </objects>
             <point key="canvasLocation" x="-1932" y="1298"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--NurtureNavController-->
         <scene sceneID="FsW-qc-I7v">
             <objects>
-                <navigationController storyboardIdentifier="NurtureNavController" automaticallyAdjustsScrollViewInsets="NO" id="1eE-eD-qkJ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NurtureNavController" automaticallyAdjustsScrollViewInsets="NO" id="1eE-eD-qkJ" userLabel="NurtureNavController" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XTN-Lm-j9Y">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="XTN-Lm-j9Y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -730,12 +730,12 @@
             </objects>
             <point key="canvasLocation" x="-1927" y="2062"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--CommunicationsNavController-->
         <scene sceneID="2wd-Rh-I3n">
             <objects>
-                <navigationController storyboardIdentifier="CommunicationsNavController" automaticallyAdjustsScrollViewInsets="NO" id="8ij-fq-Ohw" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CommunicationsNavController" automaticallyAdjustsScrollViewInsets="NO" id="8ij-fq-Ohw" userLabel="CommunicationsNavController" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hyc-Xo-svU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Hyc-Xo-svU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -748,12 +748,12 @@
             </objects>
             <point key="canvasLocation" x="-1923" y="2802"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--EvangelismNavController-->
         <scene sceneID="t2K-YD-1Pl">
             <objects>
-                <navigationController storyboardIdentifier="EvangelismNavController" automaticallyAdjustsScrollViewInsets="NO" id="aPr-rm-ddW" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="EvangelismNavController" automaticallyAdjustsScrollViewInsets="NO" id="aPr-rm-ddW" userLabel="EvangelismNavController" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DsI-Uu-apa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="DsI-Uu-apa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -766,12 +766,12 @@
             </objects>
             <point key="canvasLocation" x="-1927" y="3510"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--SocialServicesNavController-->
         <scene sceneID="chA-oN-Ou7">
             <objects>
-                <navigationController storyboardIdentifier="SocialServicesNavController" automaticallyAdjustsScrollViewInsets="NO" id="xrs-ob-QtY" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SocialServicesNavController" automaticallyAdjustsScrollViewInsets="NO" id="xrs-ob-QtY" userLabel="SocialServicesNavController" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cuH-81-Pei">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="cuH-81-Pei">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -784,12 +784,12 @@
             </objects>
             <point key="canvasLocation" x="-1932" y="4218"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--GalleryNavController-->
         <scene sceneID="MEg-y8-IqV">
             <objects>
-                <navigationController storyboardIdentifier="GalleryNavController" automaticallyAdjustsScrollViewInsets="NO" id="ZRT-aZ-g95" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="GalleryNavController" automaticallyAdjustsScrollViewInsets="NO" id="ZRT-aZ-g95" userLabel="GalleryNavController" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jhw-38-mzW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="jhw-38-mzW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

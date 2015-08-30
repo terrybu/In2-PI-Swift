@@ -28,7 +28,13 @@ class GalleryViewController: ParentViewController, FacebookManagerDelegate, UICo
     //MARK: FacebookManagerDelegate methods
     func didFinishGettingFacebookPhotos(jsonArray: [JSON]) {
         self.photoObjectsArray = jsonArray
+        let firstObjectURL = photoObjectsArray![0]["picture"].string!
+        setFirstImageToTopImageView(firstObjectURL)
         self.collectionView.reloadData()
+    }
+    
+    private func setFirstImageToTopImageView(imageURLString: String) {
+        self.topImageView.setImageWithURL(NSURL(string: imageURLString))
     }
     
     //MARK UICollectionView delegate methods
