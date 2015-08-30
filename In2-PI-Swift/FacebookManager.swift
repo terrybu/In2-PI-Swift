@@ -42,7 +42,24 @@ class FacebookManager {
         }
     }
     
-    func getPhotosFromPIMagazineFBAlbum() {
+    private func getDataFromFBAlbum(albumID: String, params: [String : String], completion: (() -> Void)?) {
+        FBSDKGraphRequest(graphPath: albumID, parameters: params).startWithCompletionHandler { (connection, albumPhotos, error) -> Void in
+//            println(albumPhotos)
+            let albumPhotosJSON = JSON(albumPhotos)
+            let photos = albumPhotosJSON["photos"]
+            let photosArray = photos["data"].arrayValue
+            println(photosArray.description)
+            for object:JSON in photosArray {
+                var newPicObject = FBPhotoObject(id: object["id"].stringValue, albumPicURLString: object["picture"].stringValue)
+                self.FBPhotoObjectsArray.append(newPicObject)
+            }
+            if let completion = completion {
+                completion()
+            }
+        }
+    }
+    
+    func getPhotosFromMostRecentThreeAlbums() {
         var paramsDictionary = [
             "access_token": kAppAccessToken
         ]
@@ -51,28 +68,24 @@ class FacebookManager {
                 let jsonData = JSON(data)
                 let albumsList = jsonData["data"]
                 let firstAlbumID = albumsList[0]["id"].stringValue
-                let firstAlbumParamsDictionary = [
+                let secAlbumID = albumsList[1]["id"].stringValue
+                let thirdAlbumID = albumsList[2]["id"].stringValue
+
+                let params = [
                     "access_token": kAppAccessToken,
-                    "fields" : "photos.limit(50){picture}",
+                    "fields" : "photos.limit(20){picture}",
                 ]
-                println(albumsList)
-                println(firstAlbumID)
-                FBSDKGraphRequest(graphPath: firstAlbumID, parameters: firstAlbumParamsDictionary).startWithCompletionHandler { (connection, albumPhotos, error) -> Void in
-//                    println(albumPhotos)
-                    let albumPhotosJSON = JSON(albumPhotos)
-                    let photos = albumPhotosJSON["photos"]
-                    let photosArray = photos["data"].arrayValue
-//                    println(photosArray.description)
-                    for object:JSON in photosArray {
-                        var newPicObject = FBPhotoObject(id: object["id"].stringValue, albumPicURLString: object["picture"].stringValue)
-                        self.FBPhotoObjectsArray.append(newPicObject)
-                    }
-                    if let delegate = self.delegate {
-                        delegate.didFinishGettingFacebookPhotos(self.FBPhotoObjectsArray)
-                    }
-                }
+                self.getDataFromFBAlbum(firstAlbumID, params: params, completion: { () -> Void in
+                    self.getDataFromFBAlbum(secAlbumID, params: params, completion: { () -> Void in
+                        self.getDataFromFBAlbum(thirdAlbumID, params: params, completion: { () -> Void in
+                            self.delegate?.didFinishGettingFacebookPhotos(self.FBPhotoObjectsArray)
+                        })
+                    })
+                })
+                
             } else {
                 println(error)
+                return
             }
         }
     }

@@ -21,8 +21,14 @@ class GalleryViewController: ParentViewController, FacebookManagerDelegate, UICo
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
         FacebookManager.sharedInstance.delegate = self
-        FacebookManager.sharedInstance.getPhotosFromPIMagazineFBAlbum()
+        FacebookManager.sharedInstance.getPhotosFromMostRecentThreeAlbums()
+        topImageView.layer.shadowColor = UIColor.lightGrayColor().CGColor
+        topImageView.layer.shadowOffset = CGSizeMake(2, 2)
+        topImageView.layer.shadowOpacity = 1
+        topImageView.layer.shadowRadius = 5.0
     }
+    
+    
     
     //MARK: FacebookManagerDelegate methods
     func didFinishGettingFacebookPhotos(fbPhotoObjectArray: [FBPhotoObject]) {
@@ -39,6 +45,8 @@ class GalleryViewController: ParentViewController, FacebookManagerDelegate, UICo
                 self.topImageView.setImageWithURL(NSURL(string: normImgUrlString ))
         })
     }
+    
+    
     
     //MARK UICollectionView delegate methods
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
