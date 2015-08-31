@@ -27,7 +27,6 @@
         </mutableArray>
         <mutableArray key="NanumBarunGothicLight.otf">
             <string>NanumBarunGothicOTFLight</string>
-            <string>NanumBarunGothicOTFLight</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -163,12 +162,6 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글쓴이" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdV-7v-0m8" userLabel="articleAuthorLabel">
-                                                <rect key="frame" x="127" y="274" width="41" height="18"/>
-                                                <fontDescription key="fontDescription" name="NanumBarunGothicOTFLight" family="NanumBarunGothicOTF" pointSize="15"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기사 제목을 두줄로 이곳에 입력하십시오" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6I-0S-xgm" userLabel="articleTitleLabel">
                                                 <rect key="frame" x="16" y="179" width="217" height="82"/>
                                                 <constraints>
@@ -186,7 +179,6 @@
                                             <constraint firstItem="FXU-5A-dcq" firstAttribute="leading" secondItem="3Gg-pQ-EGO" secondAttribute="leading" id="1mV-qL-Oxb"/>
                                             <constraint firstItem="k6I-0S-xgm" firstAttribute="top" secondItem="84A-ck-fKl" secondAttribute="bottom" constant="12" id="9sA-uE-ucn"/>
                                             <constraint firstItem="HaV-10-bD6" firstAttribute="leading" secondItem="3Gg-pQ-EGO" secondAttribute="leading" id="DJP-cd-ST8"/>
-                                            <constraint firstItem="HdV-7v-0m8" firstAttribute="leading" secondItem="jvs-Nd-uLT" secondAttribute="trailing" constant="45" id="GMm-oe-ojq"/>
                                             <constraint firstAttribute="trailing" secondItem="HaV-10-bD6" secondAttribute="trailing" id="H7P-WB-Wu9"/>
                                             <constraint firstItem="jvs-Nd-uLT" firstAttribute="top" secondItem="k6I-0S-xgm" secondAttribute="bottom" constant="10" id="LBJ-06-exU"/>
                                             <constraint firstAttribute="trailing" secondItem="FXU-5A-dcq" secondAttribute="trailing" id="Mbs-g1-6NW"/>
@@ -198,7 +190,6 @@
                                             <constraint firstItem="jvs-Nd-uLT" firstAttribute="leading" secondItem="3Gg-pQ-EGO" secondAttribute="leading" constant="16" id="sie-t3-dVR"/>
                                             <constraint firstAttribute="height" constant="1000" id="tiz-WA-Q5G"/>
                                             <constraint firstItem="jvs-Nd-uLT" firstAttribute="leading" secondItem="k6I-0S-xgm" secondAttribute="leading" id="uQm-rs-zHx"/>
-                                            <constraint firstItem="FXU-5A-dcq" firstAttribute="top" secondItem="HdV-7v-0m8" secondAttribute="bottom" constant="8" symbolic="YES" id="uv2-Wm-Vh5"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -491,9 +482,63 @@
                     <view key="view" contentMode="scaleToFill" id="eDV-y8-TqE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dv8-4e-YfA">
+                                <rect key="frame" x="0.0" y="100" width="600" height="436"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JooboTableViewCell" id="Dl1-99-eP4">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dl1-99-eP4" id="5uF-pf-9sU">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="k3o-Eq-0C4" id="EYg-AR-7Xx"/>
+                                    <outlet property="delegate" destination="k3o-Eq-0C4" id="dcE-Gu-zaY"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlG-Tk-Qlg" userLabel="PlaceholderView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.48627450979999998" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="3EB-0P-3h0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mlG-Tk-Qlg" firstAttribute="leading" secondItem="eDV-y8-TqE" secondAttribute="leading" id="30P-Xz-MhL"/>
+                            <constraint firstItem="CPj-2L-Cda" firstAttribute="top" secondItem="mlG-Tk-Qlg" secondAttribute="bottom" id="9v7-IH-Kuy"/>
+                            <constraint firstItem="mlG-Tk-Qlg" firstAttribute="trailing" secondItem="dv8-4e-YfA" secondAttribute="trailing" id="9xL-a2-esI"/>
+                            <constraint firstAttribute="trailing" secondItem="dv8-4e-YfA" secondAttribute="trailing" id="Bhb-R2-VSE"/>
+                            <constraint firstAttribute="trailing" secondItem="mlG-Tk-Qlg" secondAttribute="trailing" id="BjS-we-7Xi"/>
+                            <constraint firstItem="dv8-4e-YfA" firstAttribute="top" secondItem="mlG-Tk-Qlg" secondAttribute="bottom" id="KWr-Ya-nLh"/>
+                            <constraint firstItem="CPj-2L-Cda" firstAttribute="top" secondItem="dv8-4e-YfA" secondAttribute="bottom" id="X7f-mC-83g"/>
+                            <constraint firstItem="mlG-Tk-Qlg" firstAttribute="bottom" secondItem="c39-zg-ajs" secondAttribute="bottom" id="b51-mh-BMZ"/>
+                            <constraint firstItem="mlG-Tk-Qlg" firstAttribute="top" secondItem="dv8-4e-YfA" secondAttribute="top" id="bfY-sc-gRI"/>
+                            <constraint firstItem="dv8-4e-YfA" firstAttribute="leading" secondItem="eDV-y8-TqE" secondAttribute="leading" id="brb-pr-pgE"/>
+                            <constraint firstItem="dv8-4e-YfA" firstAttribute="top" secondItem="mlG-Tk-Qlg" secondAttribute="top" id="i50-FC-Zch"/>
+                            <constraint firstItem="mlG-Tk-Qlg" firstAttribute="leading" secondItem="dv8-4e-YfA" secondAttribute="leading" id="sBu-VA-hi3"/>
+                            <constraint firstItem="mlG-Tk-Qlg" firstAttribute="top" secondItem="c39-zg-ajs" secondAttribute="bottom" id="slb-mL-bbA"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="i50-FC-Zch"/>
+                                <exclude reference="9xL-a2-esI"/>
+                                <exclude reference="b51-mh-BMZ"/>
+                                <exclude reference="bfY-sc-gRI"/>
+                                <exclude reference="sBu-VA-hi3"/>
+                                <exclude reference="9v7-IH-Kuy"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Worship" id="HKV-ej-h6O"/>
+                    <connections>
+                        <outlet property="jooboTableView" destination="dv8-4e-YfA" id="ZXR-rd-TaT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zf6-ef-HH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -592,7 +637,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lpM-QP-qB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1597" y="4878"/>
+            <point key="canvasLocation" x="-3200" y="5682"/>
         </scene>
         <!--Gallery-->
         <scene sceneID="m9d-tp-msS">
