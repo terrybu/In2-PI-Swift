@@ -526,11 +526,11 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="i50-FC-Zch"/>
                                 <exclude reference="9xL-a2-esI"/>
                                 <exclude reference="b51-mh-BMZ"/>
                                 <exclude reference="bfY-sc-gRI"/>
                                 <exclude reference="sBu-VA-hi3"/>
+                                <exclude reference="i50-FC-Zch"/>
                                 <exclude reference="9v7-IH-Kuy"/>
                             </mask>
                         </variation>

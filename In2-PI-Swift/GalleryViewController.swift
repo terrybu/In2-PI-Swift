@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 import AFNetworking
+import JTSImageViewController
 
 private let cellReuseIdentifier = "GalleryCell"
 
@@ -26,9 +27,11 @@ class GalleryViewController: ParentViewController, FacebookManagerDelegate, UICo
         topImageView.layer.shadowOffset = CGSizeMake(2, 2)
         topImageView.layer.shadowOpacity = 1
         topImageView.layer.shadowRadius = 5.0
+        let singleTap = UITapGestureRecognizer(target: self, action: Selector("displayJTSFullScreenViewForImage"))
+        singleTap.numberOfTapsRequired = 1
+        topImageView.userInteractionEnabled = true
+        topImageView.addGestureRecognizer(singleTap)
     }
-    
-    
     
     //MARK: FacebookManagerDelegate methods
     func didFinishGettingFacebookPhotos(fbPhotoObjectArray: [FBPhotoObject]) {
@@ -38,6 +41,7 @@ class GalleryViewController: ParentViewController, FacebookManagerDelegate, UICo
         self.collectionView.reloadData()
     }
     
+    //MARK: Top Image View related methods
     private func setImgInNormalSizeToTopImageView(fbObject: FBPhotoObject) {
         //FacebookManager needs to call a new Graph API request with the object
         FacebookManager.sharedInstance.getNormalSizePhotoURLStringFrom(fbObject
@@ -46,6 +50,14 @@ class GalleryViewController: ParentViewController, FacebookManagerDelegate, UICo
         })
     }
     
+    func displayJTSFullScreenViewForImage() {
+        var imageInfo = JTSImageInfo()
+        imageInfo.image = self.topImageView.image
+        imageInfo.referenceRect = self.topImageView.frame
+        imageInfo.referenceView = self.topImageView.superview
+        var imageViewer = JTSImageViewController(imageInfo: imageInfo, mode: JTSImageViewControllerMode.Image, backgroundStyle: JTSImageViewControllerBackgroundOptions.Scaled)
+        imageViewer.showFromViewController(self, transition: JTSImageViewControllerTransition._FromOriginalPosition)
+    }
     
     
     //MARK UICollectionView delegate methods
@@ -65,6 +77,9 @@ class GalleryViewController: ParentViewController, FacebookManagerDelegate, UICo
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellReuseIdentifier, forIndexPath: indexPath) as! GalleryCell
+        
+        //this should prevent flickering from happening
+        cell.imageView.image = nil
         
         // Configure the cell
         let photoObject = photoObjectsArray![indexPath.row]

@@ -6,3 +6,4 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <AFNetworking/AFNetworking.h>
 #import "SWRevealViewController.h"
+#import <JTSImageViewController/JTSImageViewController.h>
