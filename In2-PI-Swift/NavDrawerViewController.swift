@@ -13,8 +13,13 @@ class NavDrawerViewController: UIViewController {
     var maskView : UIView!
     var aboutVCModal : AboutPIViewController!
     var galleryVCNavCtrl: UINavigationController?
-    var homeVCNavCtrl: UINavigationController? 
-    
+    var homeVCNavCtrl: UINavigationController?
+    var worshipVCNavCtrl: UINavigationController?
+    var nurtureVCNavCtrl: UINavigationController?
+    var communicationsVCNavCtrl: UINavigationController?
+    var evangelismVCNavCtrl: UINavigationController?
+    var socialServicesVCNavCtrl: UINavigationController?
+
     @IBAction
     func xButtonPressed(sender: AnyObject) {
 //        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -25,32 +30,42 @@ class NavDrawerViewController: UIViewController {
     
     @IBAction
     func worshipButtonPressed(sender: UIButton) {
-        let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("WorshipNavController") as! UINavigationController
-        revealViewController().pushFrontViewController(nav, animated: true)
+        if worshipVCNavCtrl == nil {
+            worshipVCNavCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("WorshipNavController") as? UINavigationController
+        }
+        revealViewController().pushFrontViewController(worshipVCNavCtrl, animated: true)
     }
     
     @IBAction
     func nurtureButtonPressed(sender: UIButton) {
-        let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("NurtureNavController") as! UINavigationController
-        revealViewController().pushFrontViewController(nav, animated: true)
+        if nurtureVCNavCtrl == nil {
+            nurtureVCNavCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("NurtureNavController") as? UINavigationController
+        }
+        revealViewController().pushFrontViewController(nurtureVCNavCtrl, animated: true)
     }
     
     @IBAction
     func communicationsButtonPressed(sender: UIButton) {
-        let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CommunicationsNavController") as! UINavigationController
-        revealViewController().pushFrontViewController(nav, animated: true)
+        if communicationsVCNavCtrl == nil {
+            communicationsVCNavCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CommunicationsNavController") as? UINavigationController
+        }
+        revealViewController().pushFrontViewController(communicationsVCNavCtrl, animated: true)
     }
     
     @IBAction
     func evangelismButtonPressed(sender: UIButton) {
-        let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("EvangelismNavController") as! UINavigationController
-        revealViewController().pushFrontViewController(nav, animated: true)
+        if evangelismVCNavCtrl == nil {
+            evangelismVCNavCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("EvangelismNavController") as? UINavigationController
+        }
+        revealViewController().pushFrontViewController(evangelismVCNavCtrl, animated: true)
     }
     
     @IBAction
     func socialServicesButtonPressed(sender: UIButton) {
-        let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SocialServicesNavController") as! UINavigationController
-        revealViewController().pushFrontViewController(nav, animated: true)
+        if socialServicesVCNavCtrl == nil {
+            socialServicesVCNavCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SocialServicesNavController") as? UINavigationController
+        }
+        revealViewController().pushFrontViewController(socialServicesVCNavCtrl, animated: true)
     }
     
     @IBAction
