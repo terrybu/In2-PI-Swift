@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var statusBarBackgroundView: UIView?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 
@@ -37,15 +36,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         #endif
         
-    
-        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
     
     @objc
     private func moviePlayBackDidFinish() {
-        
         let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
         window?.rootViewController! = revealVC
         

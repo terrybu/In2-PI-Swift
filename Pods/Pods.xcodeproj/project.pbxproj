@@ -11,7 +11,6 @@
 		01EEAFA0B44AAE4958E864D4 /* BFWebViewAppLinkResolver.h in Headers */ = {isa = PBXBuildFile; fileRef = 672EF772C80B554D5988854A /* BFWebViewAppLinkResolver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		028B9C70927BA856DF1851CE /* FBSDKBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = AB83829A5086D89CE1704BBA /* FBSDKBase64.m */; };
 		0346934BBD908C57518E1119 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4286E3208DD06DB89328A6 /* Foundation.framework */; };
-		0562C58127C3C874924BA2A7 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44025D2689206D69B4DE5A9C /* Bolts.framework */; };
 		061CE3E8FAEA0C092F611019 /* FBSDKInternalUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = B2ECEB48095102957620880A /* FBSDKInternalUtility.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		071B3BA513C7F34912847841 /* FBSDKLoginTooltipView.h in Headers */ = {isa = PBXBuildFile; fileRef = F3CB4C03886D92A0F7317251 /* FBSDKLoginTooltipView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07EE71F7F7E9DA987BCD6390 /* FBSDKLoginButton.h in Headers */ = {isa = PBXBuildFile; fileRef = AC41F2E3B75A9777733BBEF5 /* FBSDKLoginButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -126,7 +125,6 @@
 		629656CE498759F35C9C738C /* FBSDKBridgeAPICrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9287DCA601CE083782003F08 /* FBSDKBridgeAPICrypto.m */; };
 		6341933A420761FC8EC88EB4 /* _FBSDKLoginRecoveryAttempter.h in Headers */ = {isa = PBXBuildFile; fileRef = 251B0273A09D0982BD5F8F29 /* _FBSDKLoginRecoveryAttempter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		6505A3062FE2D01CA0E02818 /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = C3C2287CD9A04F6AEB393D28 /* AFHTTPRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65C76A6B6F4880D82D705281 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44025D2689206D69B4DE5A9C /* Bolts.framework */; };
 		6655425B5D916DF693CFAC30 /* FBSDKColor.h in Headers */ = {isa = PBXBuildFile; fileRef = C3BBE59F62FA622578DF9464 /* FBSDKColor.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		6747FFE517527F6232145BBE /* FBSDKAccessTokenCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 98286971CDB08D549CCE7ED9 /* FBSDKAccessTokenCache.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		680F408371B7D0573F7B0BA8 /* FBSDKAccessTokenCacheV3_17.m in Sources */ = {isa = PBXBuildFile; fileRef = 62057F232D25BFFF845A32EB /* FBSDKAccessTokenCacheV3_17.m */; };
@@ -732,8 +730,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				448A822260C6AFD6D7A30DEA /* Bolts.framework in Frameworks */,
-				65C76A6B6F4880D82D705281 /* Bolts.framework in Frameworks */,
-				0562C58127C3C874924BA2A7 /* Bolts.framework in Frameworks */,
 				4C7222A5C0567A7A5F91AFFC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

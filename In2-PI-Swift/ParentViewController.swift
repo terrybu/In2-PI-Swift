@@ -15,8 +15,9 @@ class ParentViewController: UIViewController {
     }
 
     func homeButtonPressed() {
-        let rootNav = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("RootNavController") as! UINavigationController
-        revealViewController().pushFrontViewController(rootNav, animated: true)
+        var leftDrawer = revealViewController().rearViewController as! NavDrawerViewController
+        var homeNavCtrl = leftDrawer.homeVCNavCtrl
+        revealViewController().pushFrontViewController(homeNavCtrl!, animated: true)
     }
     
     func setUpStandardUIForViewControllers() {

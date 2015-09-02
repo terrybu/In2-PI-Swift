@@ -13,6 +13,7 @@ class NavDrawerViewController: UIViewController {
     var maskView : UIView!
     var aboutVCModal : AboutPIViewController!
     var galleryVCNavCtrl: UINavigationController?
+    var homeVCNavCtrl: UINavigationController? 
     
     @IBAction
     func xButtonPressed(sender: AnyObject) {
@@ -80,16 +81,18 @@ class NavDrawerViewController: UIViewController {
     
     @IBAction
     func galleryButtonPressed(sender: UIButton) {
-        if let galleryVCNavCtrl = galleryVCNavCtrl {
-            revealViewController().pushFrontViewController(galleryVCNavCtrl, animated: true)
-        } else {
-            galleryVCNavCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("GalleryNavController") as! UINavigationController
+        if galleryVCNavCtrl == nil {
+            galleryVCNavCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("GalleryNavController") as? UINavigationController
         }
+        revealViewController().pushFrontViewController(galleryVCNavCtrl, animated: true)
     }
     
     //MARK VC Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var homeNavCtrl = self.revealViewController().frontViewController as! UINavigationController
+        self.homeVCNavCtrl = homeNavCtrl
         
         // Do any additional setup after loading the view.
         let backgroundImageView = UIImageView(image: UIImage(named:"navDrawerBackground"))
