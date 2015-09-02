@@ -10,10 +10,9 @@ import UIKit
 
 class NavDrawerViewController: UIViewController {
     
-    var aboutVCModal : AboutPIViewController!
     var maskView : UIView!
-    
-    //MASK: IBActions
+    var aboutVCModal : AboutPIViewController!
+    var galleryVCNavCtrl: UINavigationController?
     
     @IBAction
     func xButtonPressed(sender: AnyObject) {
@@ -81,8 +80,11 @@ class NavDrawerViewController: UIViewController {
     
     @IBAction
     func galleryButtonPressed(sender: UIButton) {
-        let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("GalleryNavController") as! UINavigationController
-        revealViewController().pushFrontViewController(nav, animated: true)
+        if let galleryVCNavCtrl = galleryVCNavCtrl {
+            revealViewController().pushFrontViewController(galleryVCNavCtrl, animated: true)
+        } else {
+            galleryVCNavCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("GalleryNavController") as! UINavigationController
+        }
     }
     
     //MARK VC Methods

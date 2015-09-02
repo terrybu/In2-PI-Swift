@@ -48,7 +48,7 @@ class FacebookPhotoQuery {
             let albumPhotosJSON = JSON(albumPhotos)
             let photos = albumPhotosJSON["photos"]
             let photosArray = photos["data"].arrayValue
-            println(photosArray.description)
+//            println(photosArray.description)
             for object:JSON in photosArray {
                 var newPicObject = FBPhotoObject(id: object["id"].stringValue, albumPicURLString: object["picture"].stringValue)
                 self.FBPhotoObjectsArray.append(newPicObject)
