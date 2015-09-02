@@ -6,9 +6,8 @@
 //  Copyright (c) 2015 Terry Bu. All rights reserved.
 //
 
+//Shared Code
 let Device = UIDevice.currentDevice()
 let iosVersion = NSString(string: Device.systemVersion).doubleValue
-
 let iOS8 = iosVersion >= 8
 let iOS7 = iosVersion >= 7 && iosVersion < 8
-

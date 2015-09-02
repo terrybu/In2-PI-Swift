@@ -7,14 +7,21 @@
 //
 
 import UIKit
+import WebKit
 
 class WorshipViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var jooboTableView : UITableView!
+    @IBOutlet var topView: UIView!
     var joobosArray = [String]()
 
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
+        
+//        var wkWebView = WKWebView()
+//        wkWebView.frame = topView.frame
+//        topView.addSubview(wkWebView)
+//        wkWebView.loadRequest(NSURLRequest(URL: NSURL(string: "https://www.youtube.com/user/in2ube/videos")!))
         
         let test1 = "07/19/2015"
         let test2 = "07/12/2015"
@@ -25,10 +32,6 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-//    
-//    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "주보"
-//    }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         var headerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 40))

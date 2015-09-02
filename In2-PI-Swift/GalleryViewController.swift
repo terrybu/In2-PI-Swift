@@ -13,7 +13,7 @@ import JTSImageViewController
 
 private let cellReuseIdentifier = "GalleryCell"
 
-class GalleryViewController: ParentViewController, FacebookManagerDelegate, UICollectionViewDataSource, UICollectionViewDelegate{
+class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, UICollectionViewDataSource, UICollectionViewDelegate{
     
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var topImageView: UIImageView!
@@ -21,8 +21,8 @@ class GalleryViewController: ParentViewController, FacebookManagerDelegate, UICo
     
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
-        FacebookManager.sharedInstance.delegate = self
-        FacebookManager.sharedInstance.getPhotosFromMostRecentThreeAlbums()
+        FacebookPhotoQuery.sharedInstance.delegate = self
+        FacebookPhotoQuery.sharedInstance.getPhotosFromMostRecentThreeAlbums()
         topImageView.layer.shadowColor = UIColor.lightGrayColor().CGColor
         topImageView.layer.shadowOffset = CGSizeMake(2, 2)
         topImageView.layer.shadowOpacity = 1
@@ -33,9 +33,9 @@ class GalleryViewController: ParentViewController, FacebookManagerDelegate, UICo
         topImageView.addGestureRecognizer(singleTap)
     }
     
-    //MARK: FacebookManagerDelegate methods
-    func didFinishGettingFacebookPhotos(fbPhotoObjectArray: [FBPhotoObject]) {
-        self.photoObjectsArray = fbPhotoObjectArray
+    //MARK: FacebookPhotoQueryDelegate methods
+    func didFinishGettingFacebookPhotos(fbPhotoObjectsArray: [FBPhotoObject]) {
+        self.photoObjectsArray = fbPhotoObjectsArray
         let firstObject = photoObjectsArray![0]
         setImgInNormalSizeToTopImageView(firstObject)
         self.collectionView.reloadData()
@@ -44,7 +44,7 @@ class GalleryViewController: ParentViewController, FacebookManagerDelegate, UICo
     //MARK: Top Image View related methods
     private func setImgInNormalSizeToTopImageView(fbObject: FBPhotoObject) {
         //FacebookManager needs to call a new Graph API request with the object
-        FacebookManager.sharedInstance.getNormalSizePhotoURLStringFrom(fbObject
+        FacebookPhotoQuery.sharedInstance.getNormalSizePhotoURLStringFrom(fbObject
             , completion: { (normImgUrlString) -> Void in
                 self.topImageView.setImageWithURL(NSURL(string: normImgUrlString ))
         })
@@ -106,6 +106,8 @@ class GalleryViewController: ParentViewController, FacebookManagerDelegate, UICo
         }
     }
 
-    
+    deinit {
+        println("gallery vc deinit checking")
+    }
     
 }

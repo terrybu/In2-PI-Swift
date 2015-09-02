@@ -1,5 +1,5 @@
 //
-//  FacebookManager.swift
+//  FacebookPhotoQuery.swift
 //  In2-PI-Swift
 //
 //  Created by Terry Bu on 8/30/15.
@@ -10,16 +10,16 @@ import Foundation
 import FBSDKLoginKit
 import SwiftyJSON
 
-let GraphPathPIMagazineFBAlbums = "1384548091800506/albums"
+let kGraphPathPIMagazineAlbumsString = "1384548091800506/albums"
 
-protocol FacebookManagerDelegate {
-    func didFinishGettingFacebookPhotos(fbPhotoObjectArray: [FBPhotoObject])
+protocol FacebookPhotoQueryDelegate {
+    func didFinishGettingFacebookPhotos(fbPhotoObjectsArray: [FBPhotoObject])
 }
 
-class FacebookManager {
+class FacebookPhotoQuery {
     
-    static let sharedInstance = FacebookManager()
-    var delegate: FacebookManagerDelegate?
+    static let sharedInstance = FacebookPhotoQuery()
+    var delegate: FacebookPhotoQueryDelegate?
     var FBPhotoObjectsArray = [FBPhotoObject]()
     
     func getNormalSizePhotoURLStringFrom(fbObject: FBPhotoObject, completion: ((normImgUrlString: String) -> Void)?) {
@@ -63,7 +63,7 @@ class FacebookManager {
         var paramsDictionary = [
             "access_token": kAppAccessToken
         ]
-        FBSDKGraphRequest(graphPath: GraphPathPIMagazineFBAlbums, parameters: paramsDictionary).startWithCompletionHandler { (connection, data, error) -> Void in
+        FBSDKGraphRequest(graphPath: kGraphPathPIMagazineAlbumsString, parameters: paramsDictionary).startWithCompletionHandler { (connection, data, error) -> Void in
             if (error == nil) {
                 let jsonData = JSON(data)
                 let albumsList = jsonData["data"]

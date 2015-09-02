@@ -10,17 +10,34 @@ import UIKit
 
 private let purpleBarSelectorBelowLabelHeightPadding:CGFloat = 4
 
-class HomeScreenViewController: UIViewController {
+class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
     
+    var purpleBarSelector: UIImageView!
     @IBOutlet weak var myPIButton: UIButton!
     @IBOutlet weak var PICommunityButton: UIButton!
     @IBOutlet weak var hamburgerButton: UIBarButtonItem!
+    @IBOutlet weak var articleCategoryLabel:UILabel!
     @IBOutlet weak var articleTitleLabel:UILabel!
     @IBOutlet weak var articldDateLabel: UILabel!
-    @IBOutlet weak var articleAuthorLabel: UILabel!
     @IBOutlet weak var QTTitleLabel: UILabel!
     
-    var purpleBarSelector: UIImageView!
+    @IBAction func hamburgerPressed(sender: UIBarButtonItem) {
+        self.revealViewController().revealToggle(sender)
+        //        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        //        appDelegate.statusBarBackgroundView?.hidden = true
+    }
+    
+    @IBAction func myPIButtonPressed(sender: UIButton) {
+        sender.setTitleColor(UIColor(rgba: "#9f5cc0"), forState: UIControlState.Normal)
+        PICommunityButton.setTitleColor(UIColor(rgba: "#bbbcbc"), forState: UIControlState.Normal)
+        purpleBarSelector.frame = CGRect(x: view.frame.width/4-18, y: myPIButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width:myPIButton.titleLabel!.frame.size.width, height: 4)
+    }
+    
+    @IBAction func PICommunityButtonPressed(sender: UIButton) {
+        sender.setTitleColor(UIColor(rgba: "#9f5cc0"), forState: UIControlState.Normal)
+        myPIButton.setTitleColor(UIColor(rgba: "#bbbcbc"), forState: UIControlState.Normal)
+        purpleBarSelector.frame = CGRect(x: view.frame.width/2+48, y: myPIButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width:PICommunityButton.titleLabel!.frame.size.width, height: 4)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +48,9 @@ class HomeScreenViewController: UIViewController {
             self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
             self.revealViewController().rearViewRevealWidth = self.view.frame.size.width
         }
+        
+        FacebookFeedQuery.sharedInstance.delegate = self
+        FacebookFeedQuery.sharedInstance.getFeedFromPIMagazine()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -43,33 +63,47 @@ class HomeScreenViewController: UIViewController {
         view.addSubview(purpleBarSelector)
     }
     
+    func didFinishGettingFacebookFeedData(fbFeedObjectArray: [FBFeedObject]) {
+        let firstObject = fbFeedObjectArray[0]
+        let msg = firstObject.message
+        println(msg)
+        var categoryStr = ""
+        var firstTitleStr = ""
+        if (msg[0] == "[") {
+            println("found open bracket")
+            var categoryAppending = true
+            for (var i=1; i < count(msg); i++) {
+                if (msg[i] == "]" || count(categoryStr) >= 100) {
+                    //limit category string length
+                    //categoryStr is now done ... move on to first line title string
+                    categoryAppending = false
+                    var j = i + 1
+                    while (msg[j] != "\n") {
+                        firstTitleStr += msg[j]
+                        j += 1
+                    }
+                }
+                if (categoryAppending) {
+                    categoryStr += msg[i]
+                }
+            }
+        }
+        self.articleCategoryLabel.text = categoryStr
+        self.articleTitleLabel.text = firstTitleStr
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
+        let date = dateFormatter.dateFromString(firstObject.created_time)
+        if let date = date {
+            dateFormatter.dateFormat = "yyyy-MM-dd EEE HH:mm a"
+            self.articldDateLabel.text = dateFormatter.stringFromDate(date)
+        }
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    //MARK: IBActions
-    
-    @IBAction func hamburgerPressed(sender: UIBarButtonItem) {
-        self.revealViewController().revealToggle(sender)
-        //        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        //        appDelegate.statusBarBackgroundView?.hidden = true
-    }
-    
-    @IBAction func myPIButtonPressed(sender: UIButton) {
-        sender.setTitleColor(UIColor(rgba: "#9f5cc0"), forState: UIControlState.Normal)
-        PICommunityButton.setTitleColor(UIColor(rgba: "#bbbcbc"), forState: UIControlState.Normal)
-        
-        purpleBarSelector.frame = CGRect(x: view.frame.width/4-18, y: myPIButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width:myPIButton.titleLabel!.frame.size.width, height: 4)
-    }
-    
-    
-    @IBAction func PICommunityButtonPressed(sender: UIButton) {
-        sender.setTitleColor(UIColor(rgba: "#9f5cc0"), forState: UIControlState.Normal)
-        myPIButton.setTitleColor(UIColor(rgba: "#bbbcbc"), forState: UIControlState.Normal)
-        
-        purpleBarSelector.frame = CGRect(x: view.frame.width/2+48, y: myPIButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width:PICommunityButton.titleLabel!.frame.size.width, height: 4)
-    }
+
     
 }
