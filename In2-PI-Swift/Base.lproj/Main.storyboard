@@ -107,13 +107,18 @@
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rule_ver" translatesAutoresizingMaskIntoConstraints="NO" id="nCS-IE-M75">
                                                         <rect key="frame" x="300" y="156" width="1" height="18"/>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cn-ex-IcY">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cn-ex-IcY">
                                                         <rect key="frame" x="265" y="199" width="70" height="30"/>
                                                         <fontDescription key="fontDescription" name="NanumBarunGothicOTFBold" family="NanumBarunGothicOTF" pointSize="15"/>
                                                         <state key="normal" title="더보기" backgroundImage="btn_more">
                                                             <color key="titleColor" red="0.62352941176470589" green="0.36078431372549019" blue="0.75294117647058822" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <state key="selected" backgroundImage="btn_more_pressed">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <state key="highlighted" backgroundImage="btn_more_pressed"/>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.13333333333333333" green="0.10980392156862745" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
@@ -615,7 +620,62 @@
                     <view key="view" contentMode="scaleToFill" id="yJj-G9-UTU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TP4-FC-u3x" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="300" width="600" height="38"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9aj-r7-edb" userLabel="LeftWidget" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="338" width="300" height="198"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="1:1 제자 양육"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXF-su-KJq" userLabel="RightWidget" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                <rect key="frame" x="300" y="338" width="300" height="198"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="홀리스타"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="box_DarkPurple"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZd-k0-EaW" userLabel="placeholder">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                <color key="backgroundColor" red="0.62352941179999999" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="sR5-DE-2hg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="BXF-su-KJq" secondAttribute="trailing" id="1S8-S4-8dZ"/>
+                            <constraint firstItem="TP4-FC-u3x" firstAttribute="top" secondItem="pcV-De-r5w" secondAttribute="bottom" id="3X1-Ox-9ti"/>
+                            <constraint firstAttribute="trailing" secondItem="TP4-FC-u3x" secondAttribute="trailing" id="3hQ-kF-o9K"/>
+                            <constraint firstItem="9aj-r7-edb" firstAttribute="leading" secondItem="yJj-G9-UTU" secondAttribute="leading" id="FdD-Sr-kjM"/>
+                            <constraint firstItem="BXF-su-KJq" firstAttribute="leading" secondItem="yJj-G9-UTU" secondAttribute="leading" id="NCc-fp-u1E"/>
+                            <constraint firstAttribute="trailing" secondItem="HZd-k0-EaW" secondAttribute="trailing" id="P3z-Cx-6aN"/>
+                            <constraint firstItem="TP4-FC-u3x" firstAttribute="top" secondItem="HZd-k0-EaW" secondAttribute="bottom" id="XwK-iN-P46"/>
+                            <constraint firstItem="BXF-su-KJq" firstAttribute="width" secondItem="yJj-G9-UTU" secondAttribute="width" multiplier="0.5" id="Yaq-3j-zf8"/>
+                            <constraint firstItem="fqb-cg-FbM" firstAttribute="top" secondItem="9aj-r7-edb" secondAttribute="bottom" id="ZPJ-Ag-nga"/>
+                            <constraint firstItem="9aj-r7-edb" firstAttribute="top" secondItem="TP4-FC-u3x" secondAttribute="bottom" id="gbd-fy-jCL"/>
+                            <constraint firstItem="TP4-FC-u3x" firstAttribute="top" secondItem="HZd-k0-EaW" secondAttribute="bottom" constant="179" id="nqX-q2-YrJ"/>
+                            <constraint firstItem="HZd-k0-EaW" firstAttribute="top" secondItem="pcV-De-r5w" secondAttribute="bottom" id="oIc-on-Esv"/>
+                            <constraint firstItem="HZd-k0-EaW" firstAttribute="leading" secondItem="yJj-G9-UTU" secondAttribute="leading" id="odg-UM-4BB"/>
+                            <constraint firstItem="BXF-su-KJq" firstAttribute="leading" secondItem="9aj-r7-edb" secondAttribute="trailing" id="rgc-NL-aj5"/>
+                            <constraint firstItem="TP4-FC-u3x" firstAttribute="leading" secondItem="yJj-G9-UTU" secondAttribute="leading" id="uyR-mt-bmL"/>
+                            <constraint firstItem="9aj-r7-edb" firstAttribute="centerY" secondItem="BXF-su-KJq" secondAttribute="centerY" id="vRj-98-fgM"/>
+                            <constraint firstItem="9aj-r7-edb" firstAttribute="width" secondItem="yJj-G9-UTU" secondAttribute="width" multiplier="0.5" id="zfA-eb-dzZ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3X1-Ox-9ti"/>
+                                <exclude reference="nqX-q2-YrJ"/>
+                                <exclude reference="1S8-S4-8dZ"/>
+                                <exclude reference="NCc-fp-u1E"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Nurture" id="0CA-Bh-ffq"/>
                 </viewController>
@@ -910,6 +970,7 @@
     </scenes>
     <resources>
         <image name="Rectangle_category" width="103" height="28"/>
+        <image name="box_DarkPurple" width="189" height="198"/>
         <image name="btn_Communications" width="64" height="64"/>
         <image name="btn_Evangelism" width="64" height="64"/>
         <image name="btn_Gallery" width="40" height="30"/>
@@ -919,6 +980,7 @@
         <image name="btn_Worship" width="64" height="64"/>
         <image name="btn_X" width="18" height="18"/>
         <image name="btn_more" width="70" height="30"/>
+        <image name="btn_more_pressed" width="70" height="30"/>
         <image name="hamburger" width="22" height="15"/>
         <image name="rule_ver" width="1" height="18"/>
         <image name="sampleGray" width="600" height="600"/>
