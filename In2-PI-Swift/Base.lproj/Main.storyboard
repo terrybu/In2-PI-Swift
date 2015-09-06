@@ -494,15 +494,39 @@
                         <viewControllerLayoutGuide type="top" id="c39-zg-ajs"/>
                         <viewControllerLayoutGuide type="bottom" id="CPj-2L-Cda"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="eDV-y8-TqE">
+                    <view key="view" contentMode="scaleToFill" id="eDV-y8-TqE" userLabel="Worship View">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dv8-4e-YfA">
-                                <rect key="frame" x="0.0" y="88" width="600" height="448"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atY-6P-a2d" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="32"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="448" id="9im-OQ-44M"/>
+                                    <constraint firstAttribute="height" constant="32" id="jbz-6X-e4F"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Z59-kD-ayY" userLabel="Songs Table View">
+                                <rect key="frame" x="0.0" y="62" width="600" height="254"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongsTableViewCell" id="Fl1-XJ-Rvc">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fl1-XJ-Rvc" id="tyi-Xs-RrK">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="k3o-Eq-0C4" id="iTW-sT-6TJ"/>
+                                    <outlet property="delegate" destination="k3o-Eq-0C4" id="H6d-SV-c5a"/>
+                                </connections>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dv8-4e-YfA" userLabel="Joobo Table View">
+                                <rect key="frame" x="0.0" y="336" width="600" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="9im-OQ-44M"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JooboTableViewCell" id="Dl1-99-eP4">
@@ -518,28 +542,32 @@
                                     <outlet property="delegate" destination="k3o-Eq-0C4" id="dcE-Gu-zaY"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atY-6P-a2d" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="About 예배부"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dv8-4e-YfA" firstAttribute="top" secondItem="atY-6P-a2d" secondAttribute="bottom" id="8Ep-6O-a4L"/>
+                            <constraint firstItem="Z59-kD-ayY" firstAttribute="top" secondItem="atY-6P-a2d" secondAttribute="bottom" constant="30" id="3UB-pL-Fbs"/>
+                            <constraint firstItem="dv8-4e-YfA" firstAttribute="top" secondItem="atY-6P-a2d" secondAttribute="bottom" constant="17" id="8Ep-6O-a4L"/>
                             <constraint firstAttribute="trailing" secondItem="dv8-4e-YfA" secondAttribute="trailing" id="Bhb-R2-VSE"/>
                             <constraint firstAttribute="trailing" secondItem="atY-6P-a2d" secondAttribute="trailing" id="Pob-kK-XgQ"/>
                             <constraint firstItem="atY-6P-a2d" firstAttribute="top" secondItem="c39-zg-ajs" secondAttribute="bottom" id="SLE-sY-EvC"/>
                             <constraint firstItem="CPj-2L-Cda" firstAttribute="top" secondItem="dv8-4e-YfA" secondAttribute="bottom" id="X7f-mC-83g"/>
                             <constraint firstItem="dv8-4e-YfA" firstAttribute="leading" secondItem="eDV-y8-TqE" secondAttribute="leading" id="brb-pr-pgE"/>
+                            <constraint firstItem="Z59-kD-ayY" firstAttribute="leading" secondItem="eDV-y8-TqE" secondAttribute="leading" id="cdU-cN-0WV"/>
+                            <constraint firstItem="dv8-4e-YfA" firstAttribute="top" secondItem="Z59-kD-ayY" secondAttribute="bottom" constant="20" id="kCN-DW-xzF"/>
+                            <constraint firstAttribute="trailing" secondItem="Z59-kD-ayY" secondAttribute="trailing" id="tyt-cu-Lpm"/>
                             <constraint firstItem="atY-6P-a2d" firstAttribute="leading" secondItem="eDV-y8-TqE" secondAttribute="leading" id="vlo-YX-bfW"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8Ep-6O-a4L"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Worship" id="HKV-ej-h6O"/>
                     <connections>
+                        <outlet property="expandableAboutView" destination="atY-6P-a2d" id="cJ0-Di-1cD"/>
                         <outlet property="jooboTableView" destination="dv8-4e-YfA" id="ZXR-rd-TaT"/>
+                        <outlet property="songsTableView" destination="Z59-kD-ayY" id="bnX-V6-rkj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zf6-ef-HH4" userLabel="First Responder" sceneMemberID="firstResponder"/>

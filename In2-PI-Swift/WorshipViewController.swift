@@ -9,20 +9,19 @@
 import UIKit
 import WebKit
 
-class WorshipViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource {
+class WorshipViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource, ExpandableAboutViewDelegate {
     
     @IBOutlet var expandableAboutView: ExpandableAboutView!
+    @IBOutlet var songsTableView : UITableView!
     @IBOutlet var jooboTableView : UITableView!
     
     var joobosArray = [String]()
 
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
-        
-//        let newView = ExpandableAboutView(frame: self.view.frame)
-//        newView.aboutLabel.text = "About 예배부"
-//        view.addSubview(newView)
-//        expandableAboutView.aboutLabel.text = "sup"
+    
+        expandableAboutView.title = "About 예배부"
+        expandableAboutView.delegate = self
         
         let test1 = "07/19/2015"
         let test2 = "07/12/2015"
@@ -30,6 +29,12 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
         jooboTableView.reloadData()
     }
     
+    //MARK: Expandable View methods
+    func didPressExpandButton() {
+        println("did press expand button")
+    }
+    
+    //MARK: Joobo TableView Delegate methods
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -73,17 +78,30 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
 //    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return joobosArray.count
+        if (tableView == jooboTableView) {
+            return joobosArray.count
+        } else if (tableView == songsTableView) {
+            return 4
+        }
+        return 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let reuseIdentifier = "JooboTableViewCell"
-        let cell = jooboTableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! UITableViewCell
+        var cell: UITableViewCell
         
-        cell.textLabel!.text = joobosArray[indexPath.row]
-        cell.accessoryView = UIImageView(image: UIImage(named: "btn_download"))
-        return cell
+        if (tableView == jooboTableView) {
+            let reuseIdentifier = "JooboTableViewCell"
+            cell = jooboTableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! UITableViewCell
+            cell.textLabel!.text = joobosArray[indexPath.row]
+            cell.accessoryView = UIImageView(image: UIImage(named: "btn_download"))
+            return cell
+        } else {
+            let reuseIdentifier = "SongsTableViewCell"
+            cell = songsTableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! UITableViewCell
+            cell.textLabel!.text = "songs"
+            return cell
+        }
     }
     
     

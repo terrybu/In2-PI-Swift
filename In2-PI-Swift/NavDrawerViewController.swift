@@ -10,6 +10,7 @@ import UIKit
 
 class NavDrawerViewController: UIViewController {
     
+    var purpleStatusBar: UIView!
     var maskView : UIView!
     var aboutVCModal : AboutPIViewController!
     var galleryVCNavCtrl: UINavigationController?
@@ -22,17 +23,16 @@ class NavDrawerViewController: UIViewController {
 
     @IBAction
     func xButtonPressed(sender: AnyObject) {
-//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//        appDelegate.statusBarBackgroundView?.hidden = false
+        purpleStatusBar.hidden = true
         self.revealViewController().revealToggle(sender)
     }
-    
     
     @IBAction
     func worshipButtonPressed(sender: UIButton) {
         if worshipVCNavCtrl == nil {
             worshipVCNavCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("WorshipNavController") as? UINavigationController
         }
+        purpleStatusBar.hidden = true
         revealViewController().pushFrontViewController(worshipVCNavCtrl, animated: true)
     }
     
@@ -41,6 +41,7 @@ class NavDrawerViewController: UIViewController {
         if nurtureVCNavCtrl == nil {
             nurtureVCNavCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("NurtureNavController") as? UINavigationController
         }
+        purpleStatusBar.hidden = true
         revealViewController().pushFrontViewController(nurtureVCNavCtrl, animated: true)
     }
     
@@ -49,6 +50,7 @@ class NavDrawerViewController: UIViewController {
         if communicationsVCNavCtrl == nil {
             communicationsVCNavCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CommunicationsNavController") as? UINavigationController
         }
+        purpleStatusBar.hidden = true
         revealViewController().pushFrontViewController(communicationsVCNavCtrl, animated: true)
     }
     
@@ -57,6 +59,7 @@ class NavDrawerViewController: UIViewController {
         if evangelismVCNavCtrl == nil {
             evangelismVCNavCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("EvangelismNavController") as? UINavigationController
         }
+        purpleStatusBar.hidden = true
         revealViewController().pushFrontViewController(evangelismVCNavCtrl, animated: true)
     }
     
@@ -65,7 +68,17 @@ class NavDrawerViewController: UIViewController {
         if socialServicesVCNavCtrl == nil {
             socialServicesVCNavCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SocialServicesNavController") as? UINavigationController
         }
+        purpleStatusBar.hidden = true
         revealViewController().pushFrontViewController(socialServicesVCNavCtrl, animated: true)
+    }
+    
+    @IBAction
+    func galleryButtonPressed(sender: UIButton) {
+        if galleryVCNavCtrl == nil {
+            galleryVCNavCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("GalleryNavController") as? UINavigationController
+        }
+        purpleStatusBar.hidden = true
+        revealViewController().pushFrontViewController(galleryVCNavCtrl, animated: true)
     }
     
     @IBAction
@@ -94,17 +107,14 @@ class NavDrawerViewController: UIViewController {
         }
     }
     
-    @IBAction
-    func galleryButtonPressed(sender: UIButton) {
-        if galleryVCNavCtrl == nil {
-            galleryVCNavCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("GalleryNavController") as? UINavigationController
-        }
-        revealViewController().pushFrontViewController(galleryVCNavCtrl, animated: true)
-    }
-    
     //MARK VC Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        //        appDelegate.statusBarBackgroundView?.hidden = false
+        purpleStatusBar = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 20))
+        purpleStatusBar.backgroundColor = UIColor(rgba: "#9F5CC0")
+        appDelegate.window?.rootViewController?.view.addSubview(purpleStatusBar)
         
         var homeNavCtrl = self.revealViewController().frontViewController as! UINavigationController
         self.homeVCNavCtrl = homeNavCtrl
@@ -118,9 +128,15 @@ class NavDrawerViewController: UIViewController {
         self.view.addGestureRecognizer(swipeGesture)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        purpleStatusBar.hidden = false
+    }
+    
+    
     func userJustSwipedFromRightToLeft(gesture: UISwipeGestureRecognizer) {
         if (gesture.direction == UISwipeGestureRecognizerDirection.Left) {
             println("swiped left")
+            purpleStatusBar.hidden = true
             self.revealViewController().revealToggleAnimated(true)
         }
     }

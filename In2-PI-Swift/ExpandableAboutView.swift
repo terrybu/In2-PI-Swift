@@ -8,15 +8,25 @@
 
 import UIKit
 
+protocol ExpandableAboutViewDelegate {
+    
+    func didPressExpandButton()
+}
+
+//IBDesignable lets you use Interface Builder and Storyboard to see the changes you are making to your custom view right inside Storyboard after you make the change
+//Without it, whatever changes you make in the XIB file of your custom view won't be seen in storyboard. Rather, storyboard will always just show the initial version of what your xib used to look like. IBDesignable lets you work around that. 
+
 @IBDesignable class ExpandableAboutView: UIView {
     
     var view: UIView!
+    var delegate: ExpandableAboutViewDelegate?
     
     @IBOutlet weak var aboutLabel: UILabel!
     @IBAction func expandButtonPressed(sender: UIButton) {
-        println("sup")
+        delegate?.didPressExpandButton()
     }
     
+    //IBInspectable lets you read and write properties right in the inspector view of interface builder. Without it, there's no way for you to change properties of your custom view UI from storyboard
     @IBInspectable var title: String? {
         get {
             return aboutLabel.text

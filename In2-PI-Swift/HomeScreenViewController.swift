@@ -82,37 +82,38 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
         articleTitleLabel.userInteractionEnabled = true
         articleTitleLabel.addGestureRecognizer(tapGesture)
         
-        let msg = firstObject.message
-        println(msg)
         var categoryStr = ""
         var firstTitleStr = ""
-        if (msg[0] == "[") {
-            println("found open bracket")
-            var categoryAppending = true
-            for (var i=1; i < count(msg); i++) {
-                if (msg[i] == "]" || count(categoryStr) >= 100) {
-                    //limit category string length
-                    //categoryStr is now done ... move on to first line title string
-                    categoryAppending = false
-                    var j = i + 1
-                    while (msg[j] != "\n") {
-                        firstTitleStr += msg[j]
-                        j += 1
+        let msg = firstObject.message
+        if (!msg.isEmpty) {
+            if (msg[0] == "[") {
+                println("found open bracket")
+                var categoryAppending = true
+                for (var i=1; i < count(msg); i++) {
+                    if (msg[i] == "]" || count(categoryStr) >= 100) {
+                        //limit category string length
+                        //categoryStr is now done ... move on to first line title string
+                        categoryAppending = false
+                        var j = i + 1
+                        while (msg[j] != "\n") {
+                            firstTitleStr += msg[j]
+                            j += 1
+                        }
+                    }
+                    if (categoryAppending) {
+                        categoryStr += msg[i]
                     }
                 }
-                if (categoryAppending) {
-                    categoryStr += msg[i]
-                }
             }
-        }
-        self.articleCategoryLabel.text = categoryStr
-        self.articleTitleLabel.text = firstTitleStr
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
-        let date = dateFormatter.dateFromString(firstObject.created_time)
-        if let date = date {
-            dateFormatter.dateFormat = "yyyy-MM-dd EEE HH:mm a"
-            self.articleDateLabel.text = dateFormatter.stringFromDate(date)
+            self.articleCategoryLabel.text = categoryStr
+            self.articleTitleLabel.text = firstTitleStr
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
+            let date = dateFormatter.dateFromString(firstObject.created_time)
+            if let date = date {
+                dateFormatter.dateFormat = "yyyy-MM-dd EEE HH:mm a"
+                self.articleDateLabel.text = dateFormatter.stringFromDate(date)
+            }
         }
     }
     

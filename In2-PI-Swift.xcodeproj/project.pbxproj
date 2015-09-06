@@ -168,6 +168,30 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		D980D6F31B9BDAFC001058E9 /* Five Boros Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D90A7B091B924256003EA693 /* ParentViewController.swift */,
+				D9D7C55A1B82D172003E48EA /* WorshipViewController.swift */,
+				D90A7AFB1B923F13003EA693 /* NurtureViewController.swift */,
+				D90A7AFF1B9240EC003EA693 /* CommunicationsViewController.swift */,
+				D90A7B031B92413F003EA693 /* EvangelismViewController.swift */,
+				D90A7B011B924135003EA693 /* SocialServicesViewController.swift */,
+			);
+			name = "Five Boros Controllers";
+			sourceTree = "<group>";
+		};
+		D980D6F41B9BDB1B001058E9 /* Other Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D9F9C7E91B64873800F5C17D /* NavDrawerViewController.swift */,
+				D90A7AFD1B92406F003EA693 /* HomeScreenViewController.swift */,
+				D90A7B051B92415D003EA693 /* AboutPIViewControlller.swift */,
+				D90A7B071B924164003EA693 /* GalleryViewController.swift */,
+			);
+			name = "Other Controllers";
+			sourceTree = "<group>";
+		};
 		D9B549A51B76D7FB00BF4887 /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,16 +283,8 @@
 		D9DA87E81B6DC063005D4CB6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D9F9C7E91B64873800F5C17D /* NavDrawerViewController.swift */,
-				D90A7AFD1B92406F003EA693 /* HomeScreenViewController.swift */,
-				D90A7B091B924256003EA693 /* ParentViewController.swift */,
-				D9D7C55A1B82D172003E48EA /* WorshipViewController.swift */,
-				D90A7AFB1B923F13003EA693 /* NurtureViewController.swift */,
-				D90A7AFF1B9240EC003EA693 /* CommunicationsViewController.swift */,
-				D90A7B031B92413F003EA693 /* EvangelismViewController.swift */,
-				D90A7B011B924135003EA693 /* SocialServicesViewController.swift */,
-				D90A7B051B92415D003EA693 /* AboutPIViewControlller.swift */,
-				D90A7B071B924164003EA693 /* GalleryViewController.swift */,
+				D980D6F31B9BDAFC001058E9 /* Five Boros Controllers */,
+				D980D6F41B9BDB1B001058E9 /* Other Controllers */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
