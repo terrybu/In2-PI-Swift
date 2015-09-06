@@ -13,7 +13,13 @@ import UIKit
     var view: UIView!
     
 //    @IBOutlet weak var aboutLabel: UILabel!
-//    @IBAction func expandButtonPressed(sender: UIButton) {
+//    @IBInspectable var title: String? {
+//        get {
+//            return aboutLabel.text
+//        }
+//        set(title) {
+//            aboutLabel.text = title
+//        }
 //    }
     
      override init(frame: CGRect) {
@@ -37,7 +43,7 @@ import UIKit
     func loadViewFromNib() -> UIView {
         let bundle = NSBundle(forClass: self.dynamicType)
         let nib = UINib(nibName: "ExpandableAboutView", bundle: bundle)
-        return nib.instantiateWithOwner(self, options: nil)[0] as! UIView as UIView
+        return nib.instantiateWithOwner(self, options: nil)[0] as! UIView
     }
 
     /*

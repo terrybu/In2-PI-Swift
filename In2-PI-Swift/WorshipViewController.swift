@@ -11,7 +11,7 @@ import WebKit
 
 class WorshipViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource {
     
-//    @IBOutlet var expandableAboutView: ExpandableAboutView!
+    @IBOutlet var expandableAboutView: ExpandableAboutView!
     @IBOutlet var jooboTableView : UITableView!
     
     var joobosArray = [String]()
@@ -22,6 +22,7 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
 //        let newView = ExpandableAboutView(frame: self.view.frame)
 //        newView.aboutLabel.text = "About 예배부"
 //        view.addSubview(newView)
+//        expandableAboutView.aboutLabel.text = "sup"
         
         let test1 = "07/19/2015"
         let test2 = "07/12/2015"

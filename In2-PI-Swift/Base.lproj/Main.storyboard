@@ -519,16 +519,19 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atY-6P-a2d" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="48" width="600" height="0.0"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="About"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dv8-4e-YfA" firstAttribute="top" secondItem="atY-6P-a2d" secondAttribute="bottom" constant="40" id="8Ep-6O-a4L"/>
+                            <constraint firstItem="dv8-4e-YfA" firstAttribute="top" secondItem="atY-6P-a2d" secondAttribute="bottom" id="8Ep-6O-a4L"/>
                             <constraint firstAttribute="trailing" secondItem="dv8-4e-YfA" secondAttribute="trailing" id="Bhb-R2-VSE"/>
                             <constraint firstAttribute="trailing" secondItem="atY-6P-a2d" secondAttribute="trailing" id="Pob-kK-XgQ"/>
-                            <constraint firstItem="atY-6P-a2d" firstAttribute="top" secondItem="c39-zg-ajs" secondAttribute="bottom" constant="48" id="SLE-sY-EvC"/>
+                            <constraint firstItem="atY-6P-a2d" firstAttribute="top" secondItem="c39-zg-ajs" secondAttribute="bottom" id="SLE-sY-EvC"/>
                             <constraint firstItem="CPj-2L-Cda" firstAttribute="top" secondItem="dv8-4e-YfA" secondAttribute="bottom" id="X7f-mC-83g"/>
                             <constraint firstItem="dv8-4e-YfA" firstAttribute="leading" secondItem="eDV-y8-TqE" secondAttribute="leading" id="brb-pr-pgE"/>
                             <constraint firstItem="atY-6P-a2d" firstAttribute="leading" secondItem="eDV-y8-TqE" secondAttribute="leading" id="vlo-YX-bfW"/>

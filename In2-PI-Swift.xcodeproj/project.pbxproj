@@ -21,10 +21,10 @@
 		D95EC5241B978DF000782925 /* FacebookFeedQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5231B978DF000782925 /* FacebookFeedQuery.swift */; };
 		D95EC5261B978E6400782925 /* FBFeedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5251B978E6400782925 /* FBFeedObject.swift */; };
 		D95EC5291B97963000782925 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5281B97963000782925 /* StringExtension.swift */; };
+		D97D73F71B9BC93C00B4C845 /* ExpandableAboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D97D73F61B9BC93C00B4C845 /* ExpandableAboutView.xib */; };
 		D9B34A211B76F6BB00590DFB /* HomeScreenPurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */; };
 		D9B34A241B77840700590DFB /* NanumBarunGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9B34A221B77840700590DFB /* NanumBarunGothicLight.otf */; };
 		D9B34A251B77840700590DFB /* NanumBarunGothicUltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9B34A231B77840700590DFB /* NanumBarunGothicUltraLight.otf */; };
-		D9B5359D1B9B66A0002942CA /* ExpandableAboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9B5359C1B9B66A0002942CA /* ExpandableAboutView.xib */; };
 		D9B5359F1B9B66BE002942CA /* ExpandableAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B5359E1B9B66BE002942CA /* ExpandableAboutView.swift */; };
 		D9B549A81B76D7FB00BF4887 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B549A71B76D7FB00BF4887 /* SWRevealViewController.m */; };
 		D9B9B5791B4B1B0000DA476E /* splashScreen.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D9B9B5781B4B1B0000DA476E /* splashScreen.mp4 */; };
@@ -77,10 +77,10 @@
 		D95EC5251B978E6400782925 /* FBFeedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBFeedObject.swift; sourceTree = "<group>"; };
 		D95EC5281B97963000782925 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		D9713E8B1B5ED166009D809A /* In2-PI-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "In2-PI-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		D97D73F61B9BC93C00B4C845 /* ExpandableAboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableAboutView.xib; sourceTree = "<group>"; };
 		D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenPurpleButton.swift; sourceTree = "<group>"; };
 		D9B34A221B77840700590DFB /* NanumBarunGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicLight.otf; sourceTree = "<group>"; };
 		D9B34A231B77840700590DFB /* NanumBarunGothicUltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicUltraLight.otf; sourceTree = "<group>"; };
-		D9B5359C1B9B66A0002942CA /* ExpandableAboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableAboutView.xib; sourceTree = "<group>"; };
 		D9B5359E1B9B66BE002942CA /* ExpandableAboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableAboutView.swift; sourceTree = "<group>"; };
 		D9B549A61B76D7FB00BF4887 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		D9B549A71B76D7FB00BF4887 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -251,7 +251,7 @@
 				D9F7F4821B935DFA00D86FF7 /* GalleryCell.swift */,
 				D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */,
 				D9B5359E1B9B66BE002942CA /* ExpandableAboutView.swift */,
-				D9B5359C1B9B66A0002942CA /* ExpandableAboutView.xib */,
+				D97D73F61B9BC93C00B4C845 /* ExpandableAboutView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -403,7 +403,7 @@
 				D9D7C5591B82CFE4003E48EA /* todolist.txt in Resources */,
 				D9F9C7E51B645FE300F5C17D /* NanumBarunGothic.otf in Resources */,
 				D9B34A251B77840700590DFB /* NanumBarunGothicUltraLight.otf in Resources */,
-				D9B5359D1B9B66A0002942CA /* ExpandableAboutView.xib in Resources */,
+				D97D73F71B9BC93C00B4C845 /* ExpandableAboutView.xib in Resources */,
 				D9D3CE191B3F338D00C8E195 /* Localizable.strings in Resources */,
 				D9B9B5791B4B1B0000DA476E /* splashScreen.mp4 in Resources */,
 				D9D3CDF21B3F20EF00C8E195 /* Main.storyboard in Resources */,
