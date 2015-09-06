@@ -31,13 +31,13 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
     }
     
     @IBAction func myPIButtonPressed(sender: UIButton) {
-        sender.setTitleColor(UIColor(rgba: "#9f5cc0"), forState: UIControlState.Normal)
+        sender.setTitleColor(UIColor.In2DeepPurple(), forState: UIControlState.Normal)
         PICommunityButton.setTitleColor(UIColor(rgba: "#bbbcbc"), forState: UIControlState.Normal)
         purpleBarSelector.frame = CGRect(x: view.frame.width/4-18, y: myPIButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width:myPIButton.titleLabel!.frame.size.width, height: 4)
     }
     
     @IBAction func PICommunityButtonPressed(sender: UIButton) {
-        sender.setTitleColor(UIColor(rgba: "#9f5cc0"), forState: UIControlState.Normal)
+        sender.setTitleColor(UIColor.In2DeepPurple(), forState: UIControlState.Normal)
         myPIButton.setTitleColor(UIColor(rgba: "#bbbcbc"), forState: UIControlState.Normal)
         purpleBarSelector.frame = CGRect(x: view.frame.width/2+48, y: myPIButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width:PICommunityButton.titleLabel!.frame.size.width, height: 4)
     }

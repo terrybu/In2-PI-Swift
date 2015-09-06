@@ -45,18 +45,21 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
         headerView.backgroundColor = UIColor.whiteColor()
         var label = UILabel(frame: CGRectMake(12, 5, 50, 18))
         label.text = "주보"
+        label.font = UIFont.boldSystemFontOfSize(16)
         headerView.addSubview(label)
 
         var button = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
-        button.frame = CGRectMake(tableView.frame.size.width-100, 5, 50, 20)
+        button.frame = CGRectMake(tableView.frame.size.width - 70, 5, 50, 20)
         button.setTitle("더보기", forState: UIControlState.Normal)
-        button.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        button.titleLabel!.font = UIFont.boldSystemFontOfSize(16)
+        button.setTitleColor(UIColor.In2DeepPurple(), forState: UIControlState.Normal)
         button.addTarget(self, action: "testTarget", forControlEvents: UIControlEvents.TouchUpInside)
         headerView.addSubview(button)
         
         var moreArrowButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
-        moreArrowButton.frame = CGRectMake(tableView.frame.size.width-50, 5, 50, 20)
+        moreArrowButton.frame = CGRectMake(tableView.frame.size.width-30, 5, 30, 20)
         moreArrowButton.setImage(UIImage(named: "btn_more_B"), forState: .Normal)
+        moreArrowButton.addTarget(self, action: "testTarget", forControlEvents: UIControlEvents.TouchUpInside)
         headerView.addSubview(moreArrowButton)
         return headerView
     }

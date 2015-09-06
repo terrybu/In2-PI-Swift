@@ -9,6 +9,11 @@
 import UIKit
 
 extension UIColor {
+    
+    static func In2DeepPurple() -> UIColor {
+        return UIColor(rgba: "#9f5cc0")
+    }
+    
     convenience init(rgba: String) {
         var red:   CGFloat = 0.0
         var green: CGFloat = 0.0
@@ -51,4 +56,6 @@ extension UIColor {
         }
         self.init(red:red, green:green, blue:blue, alpha:alpha)
     }
+    
+    
 }

@@ -95,7 +95,7 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? GalleryCell {
             UIView.animateWithDuration(0.1, delay: 0, options: UIViewAnimationOptions.AllowUserInteraction, animations: { () -> Void in
-                    cell.contentView.layer.borderColor = UIColor(rgba: "#9f5cc0").CGColor
+                    cell.contentView.layer.borderColor = UIColor.In2DeepPurple().CGColor
                 }, completion: nil)
         }
         

@@ -113,7 +113,7 @@ class NavDrawerViewController: UIViewController {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         //        appDelegate.statusBarBackgroundView?.hidden = false
         purpleStatusBar = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 20))
-        purpleStatusBar.backgroundColor = UIColor(rgba: "#9F5CC0")
+        purpleStatusBar.backgroundColor = UIColor.In2DeepPurple()
         appDelegate.window?.rootViewController?.view.addSubview(purpleStatusBar)
         
         var homeNavCtrl = self.revealViewController().frontViewController as! UINavigationController
