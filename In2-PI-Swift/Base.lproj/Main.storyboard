@@ -256,8 +256,8 @@
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
                         <outlet property="PICommunityButton" destination="FNv-5b-Lmj" id="oCA-tO-Roz"/>
-                        <outlet property="articldDateLabel" destination="jvs-Nd-uLT" id="ybb-Qc-Qzh"/>
                         <outlet property="articleCategoryLabel" destination="78p-ZI-ch9" id="cCg-ct-pO9"/>
+                        <outlet property="articleDateLabel" destination="jvs-Nd-uLT" id="F0C-km-AzC"/>
                         <outlet property="articleTitleLabel" destination="k6I-0S-xgm" id="dpy-Pi-jTm"/>
                         <outlet property="hamburgerButton" destination="hES-da-EKD" id="K9f-0I-Xcw"/>
                         <outlet property="myPIButton" destination="Xdh-cW-Qg1" id="N8f-Kg-8hA"/>
@@ -499,8 +499,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dv8-4e-YfA">
-                                <rect key="frame" x="0.0" y="300" width="600" height="236"/>
+                                <rect key="frame" x="0.0" y="88" width="600" height="448"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="448" id="9im-OQ-44M"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JooboTableViewCell" id="Dl1-99-eP4">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -515,40 +518,21 @@
                                     <outlet property="delegate" destination="k3o-Eq-0C4" id="dcE-Gu-zaY"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlG-Tk-Qlg" userLabel="ContainerView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="3EB-0P-3h0"/>
-                                </constraints>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atY-6P-a2d" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="48" width="600" height="0.0"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="mlG-Tk-Qlg" firstAttribute="leading" secondItem="eDV-y8-TqE" secondAttribute="leading" id="30P-Xz-MhL"/>
-                            <constraint firstItem="CPj-2L-Cda" firstAttribute="top" secondItem="mlG-Tk-Qlg" secondAttribute="bottom" id="9v7-IH-Kuy"/>
-                            <constraint firstItem="mlG-Tk-Qlg" firstAttribute="trailing" secondItem="dv8-4e-YfA" secondAttribute="trailing" id="9xL-a2-esI"/>
+                            <constraint firstItem="dv8-4e-YfA" firstAttribute="top" secondItem="atY-6P-a2d" secondAttribute="bottom" constant="40" id="8Ep-6O-a4L"/>
                             <constraint firstAttribute="trailing" secondItem="dv8-4e-YfA" secondAttribute="trailing" id="Bhb-R2-VSE"/>
-                            <constraint firstAttribute="trailing" secondItem="mlG-Tk-Qlg" secondAttribute="trailing" id="BjS-we-7Xi"/>
-                            <constraint firstItem="dv8-4e-YfA" firstAttribute="top" secondItem="mlG-Tk-Qlg" secondAttribute="bottom" id="KWr-Ya-nLh"/>
+                            <constraint firstAttribute="trailing" secondItem="atY-6P-a2d" secondAttribute="trailing" id="Pob-kK-XgQ"/>
+                            <constraint firstItem="atY-6P-a2d" firstAttribute="top" secondItem="c39-zg-ajs" secondAttribute="bottom" constant="48" id="SLE-sY-EvC"/>
                             <constraint firstItem="CPj-2L-Cda" firstAttribute="top" secondItem="dv8-4e-YfA" secondAttribute="bottom" id="X7f-mC-83g"/>
-                            <constraint firstItem="mlG-Tk-Qlg" firstAttribute="bottom" secondItem="c39-zg-ajs" secondAttribute="bottom" id="b51-mh-BMZ"/>
-                            <constraint firstItem="mlG-Tk-Qlg" firstAttribute="top" secondItem="dv8-4e-YfA" secondAttribute="top" id="bfY-sc-gRI"/>
                             <constraint firstItem="dv8-4e-YfA" firstAttribute="leading" secondItem="eDV-y8-TqE" secondAttribute="leading" id="brb-pr-pgE"/>
-                            <constraint firstItem="dv8-4e-YfA" firstAttribute="top" secondItem="mlG-Tk-Qlg" secondAttribute="top" id="i50-FC-Zch"/>
-                            <constraint firstItem="mlG-Tk-Qlg" firstAttribute="leading" secondItem="dv8-4e-YfA" secondAttribute="leading" id="sBu-VA-hi3"/>
-                            <constraint firstItem="mlG-Tk-Qlg" firstAttribute="top" secondItem="c39-zg-ajs" secondAttribute="bottom" id="slb-mL-bbA"/>
+                            <constraint firstItem="atY-6P-a2d" firstAttribute="leading" secondItem="eDV-y8-TqE" secondAttribute="leading" id="vlo-YX-bfW"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="9xL-a2-esI"/>
-                                <exclude reference="b51-mh-BMZ"/>
-                                <exclude reference="bfY-sc-gRI"/>
-                                <exclude reference="sBu-VA-hi3"/>
-                                <exclude reference="i50-FC-Zch"/>
-                                <exclude reference="9v7-IH-Kuy"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Worship" id="HKV-ej-h6O"/>
                     <connections>

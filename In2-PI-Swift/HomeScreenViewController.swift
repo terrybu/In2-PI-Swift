@@ -13,12 +13,13 @@ private let purpleBarSelectorBelowLabelHeightPadding:CGFloat = 4
 class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
     
     var purpleBarSelector: UIImageView!
+    var firstObjectID: String!
     @IBOutlet weak var myPIButton: UIButton!
     @IBOutlet weak var PICommunityButton: UIButton!
     @IBOutlet weak var hamburgerButton: UIBarButtonItem!
     @IBOutlet weak var articleCategoryLabel:UILabel!
     @IBOutlet weak var articleTitleLabel:UILabel!
-    @IBOutlet weak var articldDateLabel: UILabel!
+    @IBOutlet weak var articleDateLabel: UILabel!
     @IBOutlet weak var QTTitleLabel: UILabel!
     
     @IBAction func hamburgerPressed(sender: UIBarButtonItem) {
@@ -42,7 +43,6 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
         if self.revealViewController() != nil {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
@@ -54,7 +54,9 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
     }
     
     override func viewDidAppear(animated: Bool) {
-        addPurpleSelectorBar()
+        if (purpleBarSelector == nil) {
+            addPurpleSelectorBar()
+        }
     }
     
     private func addPurpleSelectorBar() {
@@ -63,8 +65,23 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
         view.addSubview(purpleBarSelector)
     }
     
+    func tappedLabel(sender: UIGestureRecognizer) {
+        println(firstObjectID)
+        let postURL = "https://www.facebook.com/IN2PI/posts/1540303432891637"
+        var wkWebView = UIWebView(frame: self.view.frame)
+        wkWebView.loadRequest(NSURLRequest(URL: NSURL(string: postURL)!))
+        var emptyVC = UIViewController()
+        emptyVC.view = wkWebView
+        navigationController?.pushViewController(emptyVC, animated: true)
+    }
+    
     func didFinishGettingFacebookFeedData(fbFeedObjectArray: [FBFeedObject]) {
         let firstObject = fbFeedObjectArray[0]
+        firstObjectID = firstObject.id
+        var tapGesture = UITapGestureRecognizer(target: self, action: Selector("tappedLabel:"))
+        articleTitleLabel.userInteractionEnabled = true
+        articleTitleLabel.addGestureRecognizer(tapGesture)
+        
         let msg = firstObject.message
         println(msg)
         var categoryStr = ""
@@ -95,7 +112,7 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
         let date = dateFormatter.dateFromString(firstObject.created_time)
         if let date = date {
             dateFormatter.dateFormat = "yyyy-MM-dd EEE HH:mm a"
-            self.articldDateLabel.text = dateFormatter.stringFromDate(date)
+            self.articleDateLabel.text = dateFormatter.stringFromDate(date)
         }
     }
     

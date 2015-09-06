@@ -25,10 +25,12 @@ class FacebookFeedQuery {
     func getFeedFromPIMagazine() {
         var params = [
             "access_token": kAppAccessToken,
+            "fields": "type, message, created_time"
         ]
         FBSDKGraphRequest(graphPath: kGraphPathPIMagazineFeedString, parameters: params).startWithCompletionHandler { (connection, data, error) -> Void in
             let feedJSON = JSON(data)
             let feedObjectArray = feedJSON["data"].arrayValue
+            println(feedObjectArray)
             for object:JSON in feedObjectArray {
                 var newFeedObject = FBFeedObject(id: object["id"].stringValue, message: object["message"].stringValue, created_time: object["created_time"].stringValue)
                 self.FBFeedObjectsArray.append(newFeedObject)

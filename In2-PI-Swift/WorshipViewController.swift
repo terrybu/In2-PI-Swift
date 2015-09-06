@@ -11,17 +11,17 @@ import WebKit
 
 class WorshipViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource {
     
+//    @IBOutlet var expandableAboutView: ExpandableAboutView!
     @IBOutlet var jooboTableView : UITableView!
-    @IBOutlet var topView: UIView!
+    
     var joobosArray = [String]()
 
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
         
-//        var wkWebView = WKWebView()
-//        wkWebView.frame = topView.frame
-//        topView.addSubview(wkWebView)
-//        wkWebView.loadRequest(NSURLRequest(URL: NSURL(string: "https://www.youtube.com/user/in2ube/videos")!))
+//        let newView = ExpandableAboutView(frame: self.view.frame)
+//        newView.aboutLabel.text = "About 예배부"
+//        view.addSubview(newView)
         
         let test1 = "07/19/2015"
         let test2 = "07/12/2015"
