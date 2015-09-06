@@ -13,6 +13,7 @@ class NavDrawerViewController: UIViewController {
     var purpleStatusBar: UIView!
     var maskView : UIView!
     var aboutVCModal : AboutPIViewController!
+    var tapOutOfModalGesture: UIGestureRecognizer!
     var galleryVCNavCtrl: UINavigationController?
     var homeVCNavCtrl: UINavigationController?
     var worshipVCNavCtrl: UINavigationController?
@@ -102,16 +103,15 @@ class NavDrawerViewController: UIViewController {
 
         }) { (Bool finished) -> Void in
             
-            let gestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTap:")
-            self.view.addGestureRecognizer(gestureRecognizer)
+            self.tapOutOfModalGesture = UITapGestureRecognizer(target: self, action: "handleTap:")
+            self.view.addGestureRecognizer(self.tapOutOfModalGesture)
         }
     }
     
-    //MARK VC Methods
+    //MARK: VC Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        //        appDelegate.statusBarBackgroundView?.hidden = false
         purpleStatusBar = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 20))
         purpleStatusBar.backgroundColor = UIColor.In2DeepPurple()
         appDelegate.window?.rootViewController?.view.addSubview(purpleStatusBar)
@@ -152,6 +152,7 @@ class NavDrawerViewController: UIViewController {
             self.aboutVCModal.view.removeFromSuperview()
             self.aboutVCModal.removeFromParentViewController()
             self.maskView.removeFromSuperview()
+            self.view.removeGestureRecognizer(self.tapOutOfModalGesture)
         }
     }
     
