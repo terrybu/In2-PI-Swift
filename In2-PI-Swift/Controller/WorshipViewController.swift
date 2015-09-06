@@ -15,7 +15,6 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
     @IBOutlet var expandableAboutView: ExpandableAboutView!
     @IBOutlet var songsTableView :     UITableView!
     @IBOutlet var jooboTableView :     UITableView!
-
     var joobosArray = [String]()
 
     override func viewDidLoad() {

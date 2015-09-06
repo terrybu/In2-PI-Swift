@@ -9,7 +9,6 @@
 import UIKit
 
 protocol ExpandableAboutViewDelegate {
-    
     func didPressExpandButton()
 }
 

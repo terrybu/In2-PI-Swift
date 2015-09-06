@@ -92,17 +92,17 @@ class NavDrawerViewController: UIViewController {
         maskView.backgroundColor = UIColor.clearColor()
         self.view.addSubview(maskView)
         
-        aboutVCModal.view.frame = CGRectMake(20, self.view.frame.height, self.view.frame.width-40, self.view.frame.height-100)
+        let modalWidth = self.view.frame.width-40
+        let modalHeight = self.view.frame.height-100
+        aboutVCModal.view.frame = CGRectMake(20, self.view.frame.height, modalWidth, modalHeight)
         self.view.addSubview(aboutVCModal.view)
         aboutVCModal.didMoveToParentViewController(self)
 
         UIView.animateWithDuration(0.25, animations: { () -> Void in
-            self.aboutVCModal.view.frame = CGRectMake(20, 80, self.view.frame.width-40, self.view.frame.height-100)
+            self.aboutVCModal.view.frame = CGRectMake(20, 80, modalWidth, modalHeight)
             self.maskView.backgroundColor = UIColor.blackColor()
             self.maskView.alpha  = 0.60
-
         }) { (Bool finished) -> Void in
-            
             self.tapOutOfModalGesture = UITapGestureRecognizer(target: self, action: "handleTap:")
             self.view.addGestureRecognizer(self.tapOutOfModalGesture)
         }
