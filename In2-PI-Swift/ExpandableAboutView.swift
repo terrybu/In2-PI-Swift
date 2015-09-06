@@ -12,15 +12,19 @@ import UIKit
     
     var view: UIView!
     
-//    @IBOutlet weak var aboutLabel: UILabel!
-//    @IBInspectable var title: String? {
-//        get {
-//            return aboutLabel.text
-//        }
-//        set(title) {
-//            aboutLabel.text = title
-//        }
-//    }
+    @IBOutlet weak var aboutLabel: UILabel!
+    @IBAction func expandButtonPressed(sender: UIButton) {
+        println("sup")
+    }
+    
+    @IBInspectable var title: String? {
+        get {
+            return aboutLabel.text
+        }
+        set(title) {
+            aboutLabel.text = title
+        }
+    }
     
      override init(frame: CGRect) {
         super.init(frame: frame)

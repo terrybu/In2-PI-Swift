@@ -4,7 +4,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
+            <connections>
+                <outlet property="aboutLabel" destination="vt8-gx-oqh" id="ubl-Oo-0uw"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -21,6 +25,9 @@
                     <state key="normal" image="btn_expand">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="expandButtonPressed:" destination="-1" eventType="touchUpInside" id="fRr-yH-sHL"/>
+                    </connections>
                 </button>
             </subviews>
             <constraints>
