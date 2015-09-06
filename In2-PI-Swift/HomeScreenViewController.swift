@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 private let purpleBarSelectorBelowLabelHeightPadding:CGFloat = 4
 
 class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
     
+    var black: UIView!
     var purpleBarSelector: UIImageView!
     var firstObjectID: String!
     @IBOutlet weak var myPIButton: UIButton!
@@ -48,14 +50,19 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
             self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
             self.revealViewController().rearViewRevealWidth = self.view.frame.size.width
         }
-        
         FacebookFeedQuery.sharedInstance.delegate = self
+        black = UIView(frame: self.view.frame)
+        black.backgroundColor = UIColor.blackColor()
+        view.addSubview(black)
+        let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+        hud.labelText = "Loading..."
         FacebookFeedQuery.sharedInstance.getFeedFromPIMagazine()
     }
     
     override func viewDidAppear(animated: Bool) {
         if (purpleBarSelector == nil) {
             addPurpleSelectorBar()
+            purpleBarSelector.hidden = true
         }
     }
     
@@ -115,6 +122,9 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
                 self.articleDateLabel.text = dateFormatter.stringFromDate(date)
             }
         }
+        black.removeFromSuperview()
+        purpleBarSelector.hidden = false
+        MBProgressHUD.hideAllHUDsForView(view, animated: true)
     }
     
     

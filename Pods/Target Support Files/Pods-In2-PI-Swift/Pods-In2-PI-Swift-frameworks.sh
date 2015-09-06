@@ -53,6 +53,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'FBSDKCoreKit.framework'
   install_framework 'FBSDKLoginKit.framework'
   install_framework 'JTSImageViewController.framework'
+  install_framework 'MBProgressHUD.framework'
   install_framework 'SwiftyJSON.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -61,5 +62,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'FBSDKCoreKit.framework'
   install_framework 'FBSDKLoginKit.framework'
   install_framework 'JTSImageViewController.framework'
+  install_framework 'MBProgressHUD.framework'
   install_framework 'SwiftyJSON.framework'
 fi

@@ -8,10 +8,7 @@ target 'In2-PI-Swift' do
 	pod 'SwiftyJSON'
 	pod 'AFNetworking'
 	pod 'JTSImageViewController'
-
-end
-
-target 'In2-PI-SwiftTests' do
+    pod 'MBProgressHUD'
 
 end
 

@@ -12,8 +12,8 @@ class NurtureViewController: ParentViewController {
 
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
-        
     }
 
+    
 
 }

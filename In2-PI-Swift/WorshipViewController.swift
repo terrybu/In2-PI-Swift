@@ -9,12 +9,13 @@
 import UIKit
 import WebKit
 
+
 class WorshipViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource, ExpandableAboutViewDelegate {
-    
+
     @IBOutlet var expandableAboutView: ExpandableAboutView!
-    @IBOutlet var songsTableView : UITableView!
-    @IBOutlet var jooboTableView : UITableView!
-    
+    @IBOutlet var songsTableView :     UITableView!
+    @IBOutlet var jooboTableView :     UITableView!
+
     var joobosArray = [String]()
 
     override func viewDidLoad() {

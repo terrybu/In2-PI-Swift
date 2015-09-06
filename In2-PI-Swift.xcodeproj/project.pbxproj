@@ -76,7 +76,7 @@
 		D95EC5231B978DF000782925 /* FacebookFeedQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookFeedQuery.swift; sourceTree = "<group>"; };
 		D95EC5251B978E6400782925 /* FBFeedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBFeedObject.swift; sourceTree = "<group>"; };
 		D95EC5281B97963000782925 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		D9713E8B1B5ED166009D809A /* In2-PI-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "In2-PI-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		D9713E8B1B5ED166009D809A /* In2-PI-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "In2-PI-Swift-Bridging-Header.h"; path = "In2-PI-Swift/In2-PI-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		D97D73F61B9BC93C00B4C845 /* ExpandableAboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableAboutView.xib; sourceTree = "<group>"; };
 		D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenPurpleButton.swift; sourceTree = "<group>"; };
 		D9B34A221B77840700590DFB /* NanumBarunGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicLight.otf; sourceTree = "<group>"; };
@@ -184,8 +184,6 @@
 		D980D6F41B9BDB1B001058E9 /* Other Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D9F9C7E91B64873800F5C17D /* NavDrawerViewController.swift */,
-				D90A7AFD1B92406F003EA693 /* HomeScreenViewController.swift */,
 				D90A7B051B92415D003EA693 /* AboutPIViewControlller.swift */,
 				D90A7B071B924164003EA693 /* GalleryViewController.swift */,
 			);
@@ -205,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				D9D3CDE91B3F20EF00C8E195 /* In2-PI-Swift */,
+				D9713E8B1B5ED166009D809A /* In2-PI-Swift-Bridging-Header.h */,
 				D9D3CDFF1B3F20EF00C8E195 /* In2-PI-SwiftTests */,
 				D9D3CDE81B3F20EF00C8E195 /* Products */,
 				5B7163E0C1D511FACCFD241C /* Pods */,
@@ -244,7 +243,6 @@
 		D9D3CDEA1B3F20EF00C8E195 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D9713E8B1B5ED166009D809A /* In2-PI-Swift-Bridging-Header.h */,
 				D9D3CE1B1B3F338D00C8E195 /* Localizable.strings */,
 				D9D3CE141B3F309C00C8E195 /* InfoPlist.strings */,
 				D9D3CDEB1B3F20EF00C8E195 /* Info.plist */,
@@ -283,6 +281,8 @@
 		D9DA87E81B6DC063005D4CB6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D9F9C7E91B64873800F5C17D /* NavDrawerViewController.swift */,
+				D90A7AFD1B92406F003EA693 /* HomeScreenViewController.swift */,
 				D980D6F31B9BDAFC001058E9 /* Five Boros Controllers */,
 				D980D6F41B9BDB1B001058E9 /* Other Controllers */,
 			);

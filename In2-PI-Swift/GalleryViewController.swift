@@ -10,6 +10,7 @@ import UIKit
 import SwiftyJSON
 import AFNetworking
 import JTSImageViewController
+import MBProgressHUD
 
 private let cellReuseIdentifier = "GalleryCell"
 
@@ -22,6 +23,8 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
         FacebookPhotoQuery.sharedInstance.delegate = self
+        let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+        hud.labelText = "Loading..."
         FacebookPhotoQuery.sharedInstance.getPhotosFromMostRecentThreeAlbums()
         topImageView.layer.shadowColor = UIColor.lightGrayColor().CGColor
         topImageView.layer.shadowOffset = CGSizeMake(2, 2)
@@ -39,6 +42,7 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
         let firstObject = photoObjectsArray![0]
         setImgInNormalSizeToTopImageView(firstObject)
         self.collectionView.reloadData()
+        MBProgressHUD.hideAllHUDsForView(view, animated: true)
     }
     
     //MARK: Top Image View related methods
