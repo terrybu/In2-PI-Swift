@@ -77,7 +77,7 @@
 		D95EC5231B978DF000782925 /* FacebookFeedQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookFeedQuery.swift; sourceTree = "<group>"; };
 		D95EC5251B978E6400782925 /* FBFeedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBFeedObject.swift; sourceTree = "<group>"; };
 		D95EC5281B97963000782925 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		D9713E8B1B5ED166009D809A /* In2-PI-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "In2-PI-Swift-Bridging-Header.h"; path = "In2-PI-Swift/In2-PI-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		D9713E8B1B5ED166009D809A /* In2-PI-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "In2-PI-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		D97D73F61B9BC93C00B4C845 /* ExpandableAboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableAboutView.xib; sourceTree = "<group>"; };
 		D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenPurpleButton.swift; sourceTree = "<group>"; };
 		D9B34A221B77840700590DFB /* NanumBarunGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicLight.otf; sourceTree = "<group>"; };
@@ -150,13 +150,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D95EC5221B978C0A00782925 /* Facebook */ = {
+		D95EC5221B978C0A00782925 /* Facebook Query Objects */ = {
 			isa = PBXGroup;
 			children = (
 				D9F7F4801B93547600D86FF7 /* FacebookPhotoQuery.swift */,
 				D95EC5231B978DF000782925 /* FacebookFeedQuery.swift */,
 			);
-			name = Facebook;
+			name = "Facebook Query Objects";
 			sourceTree = "<group>";
 		};
 		D95EC5271B97961200782925 /* Extensions */ = {
@@ -165,7 +165,7 @@
 				D9BE263C1B64A1B700C3BA7D /* UIColorExtension.swift */,
 				D95EC5281B97963000782925 /* StringExtension.swift */,
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D980D6F31B9BDAFC001058E9 /* Five Boros Controllers */ = {
@@ -203,7 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				D9D3CDE91B3F20EF00C8E195 /* In2-PI-Swift */,
-				D9713E8B1B5ED166009D809A /* In2-PI-Swift-Bridging-Header.h */,
 				D9D3CDFF1B3F20EF00C8E195 /* In2-PI-SwiftTests */,
 				D9D3CDE81B3F20EF00C8E195 /* Products */,
 				5B7163E0C1D511FACCFD241C /* Pods */,
@@ -230,7 +229,6 @@
 				D9F7F4841B93684F00D86FF7 /* Model */,
 				D9DA87E71B6DC05C005D4CB6 /* View */,
 				D9DA87E81B6DC063005D4CB6 /* Controller */,
-				D95EC5221B978C0A00782925 /* Facebook */,
 				D95EC5271B97961200782925 /* Extensions */,
 				D9FB031E1B6495C3001D813D /* Terry References */,
 				D9F7F47F1B93544400D86FF7 /* Vendor */,
@@ -243,6 +241,7 @@
 		D9D3CDEA1B3F20EF00C8E195 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D9713E8B1B5ED166009D809A /* In2-PI-Swift-Bridging-Header.h */,
 				D9D3CE1B1B3F338D00C8E195 /* Localizable.strings */,
 				D9D3CE141B3F309C00C8E195 /* InfoPlist.strings */,
 				D9D3CDEB1B3F20EF00C8E195 /* Info.plist */,
@@ -275,7 +274,7 @@
 				D9B5359E1B9B66BE002942CA /* ExpandableAboutView.swift */,
 				D97D73F61B9BC93C00B4C845 /* ExpandableAboutView.xib */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		D9DA87E81B6DC063005D4CB6 /* Controller */ = {
@@ -286,7 +285,7 @@
 				D980D6F31B9BDAFC001058E9 /* Five Boros Controllers */,
 				D980D6F41B9BDB1B001058E9 /* Other Controllers */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		D9F7F47F1B93544400D86FF7 /* Vendor */ = {
@@ -294,16 +293,17 @@
 			children = (
 				D9B549A51B76D7FB00BF4887 /* SWRevealViewController */,
 			);
-			name = Vendor;
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 		D9F7F4841B93684F00D86FF7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D95EC5221B978C0A00782925 /* Facebook Query Objects */,
 				D9F7F4851B93687700D86FF7 /* FBPhotoObject.swift */,
 				D95EC5251B978E6400782925 /* FBFeedObject.swift */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D9F9C7E21B645FD100F5C17D /* Resources */ = {
@@ -316,7 +316,7 @@
 				D9F9C7E41B645FE300F5C17D /* NanumBarunGothicBold.otf */,
 				D9B9B5781B4B1B0000DA476E /* splashScreen.mp4 */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		D9FB031E1B6495C3001D813D /* Terry References */ = {
@@ -328,7 +328,7 @@
 				D9F9C7E01B644EBA00F5C17D /* savedCodeForLater */,
 				D9D3CE201B3F4B1E00C8E195 /* HomeActionCollectionViewCell.swift */,
 			);
-			name = "Terry References";
+			path = "Terry References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -556,7 +556,8 @@
 				D9D3CE111B3F307F00C8E195 /* ko */,
 			);
 			name = LaunchScreen.xib;
-			sourceTree = "<group>";
+			path = "In2-PI-Swift";
+			sourceTree = SOURCE_ROOT;
 		};
 		D9D3CE141B3F309C00C8E195 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
