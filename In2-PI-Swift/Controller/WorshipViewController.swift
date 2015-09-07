@@ -10,19 +10,20 @@ import UIKit
 import WebKit
 
 
-class WorshipViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource, ExpandableAboutViewDelegate {
+class WorshipViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource, ExpandableAboutBarDelegate {
 
-    @IBOutlet var expandableAboutView: ExpandableAboutView!
+    @IBOutlet var expandableAboutBar: ExpandableAboutBar!
     @IBOutlet var songsTableView :     UITableView!
     @IBOutlet var jooboTableView :     UITableView!
+    var hiddenExpandingView: UIView!
     var songsArray = [String]()
     var joobosArray = [String]()
 
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
     
-        expandableAboutView.title = "About 예배부"
-        expandableAboutView.delegate = self
+        expandableAboutBar.title = "About 예배부"
+        expandableAboutBar.delegate = self
         
         songsArray = ["Hillsong - Above All", "예수전도단 - 좋으신 하나님", "예수전도단 - 주 나의 왕"]
         let test1 = "07/19/2015"
@@ -31,9 +32,34 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
         jooboTableView.reloadData()
     }
     
-    //MARK: Expandable View methods
+    //MARK: ExpandableAboutBar methods
     func didPressExpandButton() {
-        println("did press expand button")
+        if !expandableAboutBar.expanded {
+            println("did press expand button when it wasn't expanded")
+            hiddenExpandingView = ExpandingAboutView(frame: CGRectMake(0, self.expandableAboutBar.frame.size.height, self.view.frame.width, 0), titleString: "test", introductionText: "test")
+            hiddenExpandingView.clipsToBounds = true
+
+            self.view.addSubview(hiddenExpandingView)
+            hiddenExpandingView.backgroundColor = UIColor.whiteColor()
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
+                var newFrame = self.hiddenExpandingView.frame
+                newFrame.size.height += 200
+                self.hiddenExpandingView.frame = newFrame
+                }) { (Bool completed) -> Void in
+                   self.expandableAboutBar.expanded = true
+            }
+        }
+        else {
+            println("did press expand button when it WAS expanded")
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
+                var newFrame = self.hiddenExpandingView.frame
+                newFrame.size.height = 0
+                self.hiddenExpandingView.frame = newFrame
+                }) { (Bool completed) -> Void in
+                    self.expandableAboutBar.expanded = false
+//                    self.hiddenExpandingView.hidden = true
+                }
+        }
     }
     
     //MARK: Joobo TableView Delegate methods

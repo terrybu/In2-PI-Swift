@@ -9,7 +9,7 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExpandableAboutBar" customModule="In2_PI_Swift" customModuleProvider="target">
             <connections>
                 <outlet property="aboutLabel" destination="vt8-gx-oqh" id="ubl-Oo-0uw"/>
             </connections>

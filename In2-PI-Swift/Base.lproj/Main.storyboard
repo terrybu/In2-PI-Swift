@@ -494,7 +494,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atY-6P-a2d" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atY-6P-a2d" userLabel="ExpandableAboutBar" customClass="ExpandableAboutBar" customModule="In2_PI_Swift" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="32"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -561,7 +561,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Worship" id="HKV-ej-h6O"/>
                     <connections>
-                        <outlet property="expandableAboutView" destination="atY-6P-a2d" id="cJ0-Di-1cD"/>
+                        <outlet property="expandableAboutBar" destination="atY-6P-a2d" id="RbX-rG-eni"/>
                         <outlet property="jooboTableView" destination="dv8-4e-YfA" id="ZXR-rd-TaT"/>
                         <outlet property="songsTableView" destination="Z59-kD-ayY" id="bnX-V6-rkj"/>
                     </connections>
@@ -612,7 +612,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TP4-FC-u3x" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TP4-FC-u3x" customClass="ExpandableAboutBar" customModule="In2_PI_Swift" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="306" width="600" height="32"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
