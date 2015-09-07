@@ -15,6 +15,7 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
     @IBOutlet var expandableAboutView: ExpandableAboutView!
     @IBOutlet var songsTableView :     UITableView!
     @IBOutlet var jooboTableView :     UITableView!
+    var songsArray = [String]()
     var joobosArray = [String]()
 
     override func viewDidLoad() {
@@ -23,6 +24,7 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
         expandableAboutView.title = "About 예배부"
         expandableAboutView.delegate = self
         
+        songsArray = ["Hillsong - Above All", "예수전도단 - 좋으신 하나님", "예수전도단 - 주 나의 왕"]
         let test1 = "07/19/2015"
         let test2 = "07/12/2015"
         joobosArray = [test1, test2]
@@ -40,27 +42,33 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        var headerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 40))
-        headerView.backgroundColor = UIColor.whiteColor()
-        var label = UILabel(frame: CGRectMake(12, 5, 50, 18))
-        label.text = "주보"
-        label.font = UIFont.boldSystemFontOfSize(16)
-        headerView.addSubview(label)
-
-        var button = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
-        button.frame = CGRectMake(tableView.frame.size.width - 70, 5, 50, 20)
-        button.setTitle("더보기", forState: UIControlState.Normal)
-        button.titleLabel!.font = UIFont.boldSystemFontOfSize(16)
-        button.setTitleColor(UIColor.In2DeepPurple(), forState: UIControlState.Normal)
-        button.addTarget(self, action: "testTarget", forControlEvents: UIControlEvents.TouchUpInside)
-        headerView.addSubview(button)
-        
-        var moreArrowButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
-        moreArrowButton.frame = CGRectMake(tableView.frame.size.width-30, 5, 30, 20)
-        moreArrowButton.setImage(UIImage(named: "btn_more_B"), forState: .Normal)
-        moreArrowButton.addTarget(self, action: "testTarget", forControlEvents: UIControlEvents.TouchUpInside)
-        headerView.addSubview(moreArrowButton)
-        return headerView
+            var headerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 40))
+            headerView.backgroundColor = UIColor.whiteColor()
+            var label: UILabel
+            if (tableView == jooboTableView) {
+                label = UILabel(frame: CGRectMake(12, 5, 50, 18))
+                label.text = "주보"
+            } else {
+                label = UILabel(frame: CGRectMake(12, 5, 200, 18))
+                label.text = "071915 예배 찬양 리스트"
+            }
+            label.font = UIFont.boldSystemFontOfSize(16)
+            headerView.addSubview(label)
+            
+            var button = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+            button.frame = CGRectMake(tableView.frame.size.width - 70, 5, 50, 20)
+            button.setTitle("더보기", forState: UIControlState.Normal)
+            button.titleLabel!.font = UIFont.boldSystemFontOfSize(16)
+            button.setTitleColor(UIColor.In2DeepPurple(), forState: UIControlState.Normal)
+            button.addTarget(self, action: "testTarget", forControlEvents: UIControlEvents.TouchUpInside)
+            headerView.addSubview(button)
+            
+            var moreArrowButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+            moreArrowButton.frame = CGRectMake(tableView.frame.size.width-30, 5, 30, 20)
+            moreArrowButton.setImage(UIImage(named: "btn_more_B"), forState: .Normal)
+            moreArrowButton.addTarget(self, action: "testTarget", forControlEvents: UIControlEvents.TouchUpInside)
+            headerView.addSubview(moreArrowButton)
+            return headerView
     }
     
     func testTarget() {
@@ -84,7 +92,7 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
         if (tableView == jooboTableView) {
             return joobosArray.count
         } else if (tableView == songsTableView) {
-            return 4
+            return 3
         }
         return 0
     }
@@ -102,7 +110,7 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
         } else {
             let reuseIdentifier = "SongsTableViewCell"
             cell = songsTableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! UITableViewCell
-            cell.textLabel!.text = "songs"
+            cell.textLabel!.text = songsArray[indexPath.row]
             return cell
         }
     }
