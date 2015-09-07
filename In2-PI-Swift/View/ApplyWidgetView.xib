@@ -28,7 +28,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFe-da-PWl">
-                    <rect key="frame" x="115" y="120" width="70" height="30"/>
+                    <rect key="frame" x="115" y="115" width="70" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                     <state key="normal" title="신청" backgroundImage="btn_Apply_white">
@@ -50,7 +50,7 @@
                 <constraint firstAttribute="trailing" secondItem="DO5-xH-aPD" secondAttribute="trailing" id="Ue9-fd-QRY"/>
                 <constraint firstItem="DO5-xH-aPD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="apJ-Dd-ZTH"/>
                 <constraint firstItem="DO5-xH-aPD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bMf-2Y-fMV"/>
-                <constraint firstItem="dFe-da-PWl" firstAttribute="top" secondItem="7PD-nC-7Ux" secondAttribute="bottom" constant="40" id="ku0-jL-g1H"/>
+                <constraint firstItem="dFe-da-PWl" firstAttribute="top" secondItem="7PD-nC-7Ux" secondAttribute="bottom" constant="35" id="ku0-jL-g1H"/>
                 <constraint firstAttribute="centerX" secondItem="7PD-nC-7Ux" secondAttribute="centerX" id="qfW-qo-wOD"/>
                 <constraint firstAttribute="centerX" secondItem="dFe-da-PWl" secondAttribute="centerX" id="xgy-6E-Aya"/>
             </constraints>

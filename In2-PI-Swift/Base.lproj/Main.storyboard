@@ -613,8 +613,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TP4-FC-u3x" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="300" width="600" height="38"/>
+                                <rect key="frame" x="0.0" y="306" width="600" height="32"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="oXB-wE-xMD"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="About 예배부"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9aj-r7-edb" userLabel="LeftWidget" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="338" width="300" height="198"/>
@@ -632,16 +638,22 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZd-k0-EaW" userLabel="placeholder">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="306"/>
                                 <color key="backgroundColor" red="0.62352941179999999" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="sR5-DE-2hg"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="sR5-DE-2hg"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="BXF-su-KJq" secondAttribute="trailing" id="1S8-S4-8dZ"/>
+                            <constraint firstItem="TP4-FC-u3x" firstAttribute="top" secondItem="yJj-G9-UTU" secondAttribute="top" constant="300" id="3Hp-7R-fyb"/>
                             <constraint firstItem="TP4-FC-u3x" firstAttribute="top" secondItem="pcV-De-r5w" secondAttribute="bottom" id="3X1-Ox-9ti"/>
                             <constraint firstAttribute="trailing" secondItem="TP4-FC-u3x" secondAttribute="trailing" id="3hQ-kF-o9K"/>
                             <constraint firstItem="9aj-r7-edb" firstAttribute="leading" secondItem="yJj-G9-UTU" secondAttribute="leading" id="FdD-Sr-kjM"/>
@@ -661,6 +673,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="3Hp-7R-fyb"/>
                                 <exclude reference="3X1-Ox-9ti"/>
                                 <exclude reference="nqX-q2-YrJ"/>
                                 <exclude reference="1S8-S4-8dZ"/>
