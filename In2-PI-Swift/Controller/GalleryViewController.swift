@@ -25,6 +25,7 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
         FacebookPhotoQuery.sharedInstance.delegate = self
         let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
         hud.labelText = "Loading..."
+        hideViews()
         FacebookPhotoQuery.sharedInstance.getPhotosFromMostRecentThreeAlbums()
         topImageView.layer.shadowColor = UIColor.lightGrayColor().CGColor
         topImageView.layer.shadowOffset = CGSizeMake(2, 2)
@@ -36,6 +37,15 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
         topImageView.addGestureRecognizer(singleTap)
     }
     
+    private func hideViews() {
+        topImageView.hidden = true
+        collectionView.hidden = true
+    }
+    private func unhideViews() {
+        topImageView.hidden = false
+        collectionView.hidden = false
+    }
+    
     //MARK: FacebookPhotoQueryDelegate methods
     func didFinishGettingFacebookPhotos(fbPhotoObjectsArray: [FBPhotoObject]) {
         self.photoObjectsArray = fbPhotoObjectsArray
@@ -43,6 +53,7 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
         setImgInNormalSizeToTopImageView(firstObject)
         self.collectionView.reloadData()
         MBProgressHUD.hideAllHUDsForView(view, animated: true)
+        unhideViews()
     }
     
     //MARK: Top Image View related methods

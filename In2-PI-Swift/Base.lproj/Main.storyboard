@@ -144,7 +144,7 @@
                                                 <rect key="frame" x="16" y="139" width="89" height="28"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78p-ZI-ch9" userLabel="categoryLabel">
-                                                        <rect key="frame" x="-11" y="-18" width="110" height="63"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="110" height="63"/>
                                                         <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="16"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
