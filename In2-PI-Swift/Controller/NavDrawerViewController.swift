@@ -10,6 +10,7 @@ import UIKit
 
 class NavDrawerViewController: UIViewController {
     
+    //MARK: Properties 
     var purpleStatusBar: UIView!
     var maskView : UIView!
     var aboutVCModal : AboutPIViewController!
@@ -21,7 +22,65 @@ class NavDrawerViewController: UIViewController {
     var communicationsVCNavCtrl: UINavigationController?
     var evangelismVCNavCtrl: UINavigationController?
     var socialServicesVCNavCtrl: UINavigationController?
-
+    
+    //MARK: View Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        purpleStatusBar = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 20))
+        purpleStatusBar.backgroundColor = UIColor.In2DeepPurple()
+        appDelegate.window?.rootViewController?.view.addSubview(purpleStatusBar)
+        
+        var homeNavCtrl = self.revealViewController().frontViewController as! UINavigationController
+        self.homeVCNavCtrl = homeNavCtrl
+        
+        // Do any additional setup after loading the view.
+        let backgroundImageView = UIImageView(image: UIImage(named:"navDrawerBackground"))
+        view.addSubview(backgroundImageView)
+        view.sendSubviewToBack(backgroundImageView)
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: "userJustSwipedFromRightToLeft:")
+        swipeGesture.direction = UISwipeGestureRecognizerDirection.Left
+        self.view.addGestureRecognizer(swipeGesture)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        purpleStatusBar.hidden = false
+    }
+    
+    
+    func userJustSwipedFromRightToLeft(gesture: UISwipeGestureRecognizer) {
+        if (gesture.direction == UISwipeGestureRecognizerDirection.Left) {
+            println("swiped left")
+            purpleStatusBar.hidden = true
+            self.revealViewController().revealToggleAnimated(true)
+        }
+    }
+    
+    
+    //MARK: about PI Modal
+    func closeAboutPIModal() {
+        UIView.animateWithDuration(0.25, animations: { () -> Void in
+            self.aboutVCModal.view.frame = CGRectMake(20, self.view.frame.height, self.view.frame.width-40, self.view.frame.height-100)
+            self.maskView.backgroundColor = UIColor.clearColor()
+            self.maskView.alpha = 1.0
+        }) { (Bool finished) -> Void in
+            self.aboutVCModal.view.removeFromSuperview()
+            self.aboutVCModal.removeFromParentViewController()
+            self.maskView.removeFromSuperview()
+            self.view.removeGestureRecognizer(self.tapOutOfModalGesture)
+        }
+    }
+    
+    func handleTap(gestureRecognizer: UIGestureRecognizer) {
+        let location = gestureRecognizer.locationInView(self.view)
+        println("from navdrawer handleTap \(location)")
+        if (location.y < self.aboutVCModal.view.frame.origin.y) || (location.y > self.aboutVCModal.view.frame.height + self.aboutVCModal.view.frame.origin.y) || (location.x > self.aboutVCModal.view.frame.width + self.aboutVCModal.view.frame.origin.x) || (location.x < self.aboutVCModal.view.frame.origin.x) {
+            closeAboutPIModal()
+        }
+    }
+    
+    // MARK: IBActions
+    
     @IBAction
     func xButtonPressed(sender: AnyObject) {
         purpleStatusBar.hidden = true
@@ -87,7 +146,7 @@ class NavDrawerViewController: UIViewController {
         aboutVCModal = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AboutPIViewController") as! AboutPIViewController
         aboutVCModal.navDrawerVC = self
         self.addChildViewController(aboutVCModal)
-
+        
         maskView = UIView(frame: self.view.frame)
         maskView.backgroundColor = UIColor.clearColor()
         self.view.addSubview(maskView)
@@ -97,73 +156,17 @@ class NavDrawerViewController: UIViewController {
         aboutVCModal.view.frame = CGRectMake(20, self.view.frame.height, modalWidth, modalHeight)
         self.view.addSubview(aboutVCModal.view)
         aboutVCModal.didMoveToParentViewController(self)
-
+        
         UIView.animateWithDuration(0.25, animations: { () -> Void in
             self.aboutVCModal.view.frame = CGRectMake(20, 80, modalWidth, modalHeight)
             self.maskView.backgroundColor = UIColor.blackColor()
             self.maskView.alpha  = 0.60
-        }) { (Bool finished) -> Void in
-            self.tapOutOfModalGesture = UITapGestureRecognizer(target: self, action: "handleTap:")
-            self.view.addGestureRecognizer(self.tapOutOfModalGesture)
+            }) { (Bool finished) -> Void in
+                self.tapOutOfModalGesture = UITapGestureRecognizer(target: self, action: "handleTap:")
+                self.view.addGestureRecognizer(self.tapOutOfModalGesture)
         }
     }
     
-    //MARK: VC Methods
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        purpleStatusBar = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 20))
-        purpleStatusBar.backgroundColor = UIColor.In2DeepPurple()
-        appDelegate.window?.rootViewController?.view.addSubview(purpleStatusBar)
-        
-        var homeNavCtrl = self.revealViewController().frontViewController as! UINavigationController
-        self.homeVCNavCtrl = homeNavCtrl
-        
-        // Do any additional setup after loading the view.
-        let backgroundImageView = UIImageView(image: UIImage(named:"navDrawerBackground"))
-        view.addSubview(backgroundImageView)
-        view.sendSubviewToBack(backgroundImageView)
-        let swipeGesture = UISwipeGestureRecognizer(target: self, action: "userJustSwipedFromRightToLeft:")
-        swipeGesture.direction = UISwipeGestureRecognizerDirection.Left
-        self.view.addGestureRecognizer(swipeGesture)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        purpleStatusBar.hidden = false
-    }
-    
-    
-    func userJustSwipedFromRightToLeft(gesture: UISwipeGestureRecognizer) {
-        if (gesture.direction == UISwipeGestureRecognizerDirection.Left) {
-            println("swiped left")
-            purpleStatusBar.hidden = true
-            self.revealViewController().revealToggleAnimated(true)
-        }
-    }
-    
-    
-    //MARK: about PI Modal
-    func closeAboutPIModal() {
-        UIView.animateWithDuration(0.25, animations: { () -> Void in
-            self.aboutVCModal.view.frame = CGRectMake(20, self.view.frame.height, self.view.frame.width-40, self.view.frame.height-100)
-            self.maskView.backgroundColor = UIColor.clearColor()
-            self.maskView.alpha = 1.0
-        }) { (Bool finished) -> Void in
-            self.aboutVCModal.view.removeFromSuperview()
-            self.aboutVCModal.removeFromParentViewController()
-            self.maskView.removeFromSuperview()
-            self.view.removeGestureRecognizer(self.tapOutOfModalGesture)
-        }
-    }
-    
-    func handleTap(gestureRecognizer: UIGestureRecognizer) {
-        let location = gestureRecognizer.locationInView(self.view)
-        println("from navdrawer handleTap \(location)")
-        if (location.y < self.aboutVCModal.view.frame.origin.y) || (location.y > self.aboutVCModal.view.frame.height + self.aboutVCModal.view.frame.origin.y) || (location.x > self.aboutVCModal.view.frame.width + self.aboutVCModal.view.frame.origin.x) || (location.x < self.aboutVCModal.view.frame.origin.x) {
-            closeAboutPIModal()
-        }
-    }
-  
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

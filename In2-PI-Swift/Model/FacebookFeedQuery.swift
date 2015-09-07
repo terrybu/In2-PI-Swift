@@ -38,4 +38,9 @@ class FacebookFeedQuery {
             self.delegate?.didFinishGettingFacebookFeedData(self.FBFeedObjectsArray)
         }
     }
+    
+//    func articleTitleStringParser(message: String) -> String {
+//        return
+//    }
+    
 }

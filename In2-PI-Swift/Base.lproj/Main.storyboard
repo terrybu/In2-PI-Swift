@@ -140,24 +140,6 @@
                                                     </mask>
                                                 </variation>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="84A-ck-fKl" userLabel="categoryBox">
-                                                <rect key="frame" x="16" y="139" width="89" height="28"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78p-ZI-ch9" userLabel="categoryLabel">
-                                                        <rect key="frame" x="0.0" y="0.0" width="110" height="63"/>
-                                                        <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="16"/>
-                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rectangle_category" translatesAutoresizingMaskIntoConstraints="NO" id="pTO-PM-oWJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="89" height="28"/>
-                                                    </imageView>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="89" id="cYa-gC-NFl"/>
-                                                    <constraint firstAttribute="height" constant="28" id="vGq-zy-ogs"/>
-                                                </constraints>
-                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08/08/15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvs-Nd-uLT" userLabel="articleDateLabel">
                                                 <rect key="frame" x="16" y="271" width="66" height="21"/>
                                                 <constraints>
@@ -188,17 +170,25 @@
                                                     </mask>
                                                 </variation>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78p-ZI-ch9" userLabel="articleCategoryLabel" customClass="PaddedLabel" customModule="In2_PI_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="126" width="67" height="33"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="33" id="zSS-hE-hi9"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="16"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="HaV-10-bD6" firstAttribute="leading" secondItem="84A-ck-fKl" secondAttribute="trailing" constant="-142" id="1eS-TQ-yrc"/>
                                             <constraint firstItem="FXU-5A-dcq" firstAttribute="leading" secondItem="3Gg-pQ-EGO" secondAttribute="leading" id="1mV-qL-Oxb"/>
-                                            <constraint firstItem="k6I-0S-xgm" firstAttribute="top" secondItem="84A-ck-fKl" secondAttribute="bottom" constant="12" id="9sA-uE-ucn"/>
+                                            <constraint firstItem="78p-ZI-ch9" firstAttribute="leading" secondItem="k6I-0S-xgm" secondAttribute="leading" id="Cco-hA-ZOm"/>
                                             <constraint firstItem="HaV-10-bD6" firstAttribute="leading" secondItem="3Gg-pQ-EGO" secondAttribute="leading" id="DJP-cd-ST8"/>
                                             <constraint firstAttribute="trailing" secondItem="HaV-10-bD6" secondAttribute="trailing" id="H7P-WB-Wu9"/>
+                                            <constraint firstItem="78p-ZI-ch9" firstAttribute="width" secondItem="k6I-0S-xgm" secondAttribute="width" multiplier="0.75" id="K1Q-sM-Bvx"/>
                                             <constraint firstItem="jvs-Nd-uLT" firstAttribute="top" secondItem="k6I-0S-xgm" secondAttribute="bottom" constant="10" id="LBJ-06-exU"/>
                                             <constraint firstAttribute="trailing" secondItem="FXU-5A-dcq" secondAttribute="trailing" id="Mbs-g1-6NW"/>
-                                            <constraint firstItem="84A-ck-fKl" firstAttribute="leading" secondItem="k6I-0S-xgm" secondAttribute="leading" id="Mda-Li-UqX"/>
                                             <constraint firstItem="HaV-10-bD6" firstAttribute="leading" secondItem="k6I-0S-xgm" secondAttribute="trailing" constant="-289" id="ckY-dU-x0Q"/>
                                             <constraint firstItem="HaV-10-bD6" firstAttribute="top" secondItem="3Gg-pQ-EGO" secondAttribute="top" id="dmC-re-DsS"/>
                                             <constraint firstItem="k6I-0S-xgm" firstAttribute="width" secondItem="3Gg-pQ-EGO" secondAttribute="width" multiplier="0.9" id="m2H-WS-6Tf"/>
@@ -207,11 +197,12 @@
                                             <constraint firstItem="jvs-Nd-uLT" firstAttribute="leading" secondItem="3Gg-pQ-EGO" secondAttribute="leading" constant="16" id="sie-t3-dVR"/>
                                             <constraint firstAttribute="height" constant="700" id="tiz-WA-Q5G"/>
                                             <constraint firstItem="jvs-Nd-uLT" firstAttribute="leading" secondItem="k6I-0S-xgm" secondAttribute="leading" id="uQm-rs-zHx"/>
+                                            <constraint firstItem="k6I-0S-xgm" firstAttribute="top" secondItem="78p-ZI-ch9" secondAttribute="bottom" constant="20" id="udg-pW-Dir"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="1eS-TQ-yrc"/>
                                                 <exclude reference="ckY-dU-x0Q"/>
+                                                <exclude reference="K1Q-sM-Bvx"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -969,7 +960,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Rectangle_category" width="103" height="28"/>
         <image name="box_DarkPurple" width="189" height="198"/>
         <image name="btn_Communications" width="64" height="64"/>
         <image name="btn_Evangelism" width="64" height="64"/>
