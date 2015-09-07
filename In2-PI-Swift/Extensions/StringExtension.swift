@@ -8,12 +8,9 @@
 
 extension String {
     
-    subscript (i: Int) -> Character {
-        return self[advance(self.startIndex, i)]
-    }
-    
-    subscript (i: Int) -> String {
-        return String(self[i] as Character)
+    subscript(integerIndex: Int) -> String {
+        let index = advance(startIndex, integerIndex)
+        return String(self[index] as Character)
     }
     
     subscript (r: Range<Int>) -> String {

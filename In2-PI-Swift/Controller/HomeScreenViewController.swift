@@ -66,7 +66,9 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
     
     func tappedLabel(sender: UIGestureRecognizer) {
         println(firstObjectID)
-        let postURL = "https://www.facebook.com/IN2PI/posts/1540303432891637"
+        //postURL has to nick out the second part of the _ string from firstObjectID
+        var postURLParam = firstObjectID.componentsSeparatedByString("_").last
+        let postURL = "https://www.facebook.com/IN2PI/posts/\(postURLParam!)"
         var wkWebView = UIWebView(frame: self.view.frame)
         wkWebView.loadRequest(NSURLRequest(URL: NSURL(string: postURL)!))
         var emptyVC = UIViewController()
@@ -91,30 +93,24 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
     
     func parseMessageForLabels(firstObject: FBFeedObject) {
         var categoryStr = ""
-        var firstTitleStr = ""
+        var firstTitleStr: String?
         let msg = firstObject.message
         if (!msg.isEmpty) {
             if (msg[0] == "[") {
                 println("found open bracket")
-                var categoryAppending = true
                 for (var i=1; i < count(msg); i++) {
-                    if (msg[i] == "]" || count(categoryStr) >= 100) {
-                        //limit category string length
-                        //categoryStr now done - move on to first line title string
-                        categoryAppending = false
-                        var j = i + 1
-                        while (msg[j] != "\n") {
-                            firstTitleStr += msg[j]
-                            j += 1
-                        }
-                    }
-                    if (categoryAppending) {
-                        categoryStr += msg[i]
+                    categoryStr += msg[i]
+                    var j = i + 1
+                    if (msg[j] == "]" || count(categoryStr) >= 100) {
+                        firstTitleStr = parseFirstLineTitleString(msg[j+1..<count(msg)])
+                        break
                     }
                 }
             }
             articleCategoryLabel.text = categoryStr
-            articleTitleLabel.text = firstTitleStr
+            if let str = firstTitleStr {
+                articleTitleLabel.text = firstTitleStr
+            }
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
             let date = dateFormatter.dateFromString(firstObject.created_time)
@@ -123,6 +119,31 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
                 articleDateLabel.text = dateFormatter.stringFromDate(date)
             }
         }
+    }
+    
+    func parseFirstLineTitleString(msg: String) -> String {
+        //Given a string that starts with an empty space and then a sententece followed by \n or just \n Title \n ... return thet tile.
+        // " blahblahblah \n" --> should return blahblahblah
+        // " \n blahblahblah \n" should also return blahblahblah
+        var result = ""
+        var startingStr = msg[1..<count(msg)]
+        if (startingStr[0] == "\n") {
+            //if it finds \n immediately (which means author inserted a new line between category and title, we just jump and start from the next line
+            var i = 1;
+            while (startingStr[i] != "\n") {
+                result += startingStr[i]
+                i++;
+            }
+        }
+        else {
+            //otherwise, we go right for the first line
+            var i = 0;
+            while (startingStr[i] != "\n") {
+                result += startingStr[i]
+                i++;
+            }
+        }
+        return result
     }
     
     
