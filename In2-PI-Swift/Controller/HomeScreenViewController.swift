@@ -39,7 +39,12 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
         articleCategoryLabel.edgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
         blackOverlayUntilFBDataFinishedLoading()
         FacebookFeedQuery.sharedInstance.delegate = self
-        FacebookFeedQuery.sharedInstance.getFeedFromPIMagazine()
+        FacebookFeedQuery.sharedInstance.getFeedFromPIMagazine { (error) -> Void in
+            if error != nil {
+                println(error.description)
+                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+            }
+        }
     }
     
     private func blackOverlayUntilFBDataFinishedLoading() {

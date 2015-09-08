@@ -8,6 +8,7 @@
 
 import UIKit
 import XCTest
+//import In2_PI_Swift
 
 class In2_PI_SwiftTests: XCTestCase {
     
@@ -26,11 +27,5 @@ class In2_PI_SwiftTests: XCTestCase {
         XCTAssert(true, "Pass")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
-    }
     
 }

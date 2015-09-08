@@ -30,6 +30,7 @@
 		D9965A7C1B9E386C00AB4A74 /* ExpandingAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9965A7B1B9E386C00AB4A74 /* ExpandingAboutView.swift */; };
 		D9965A7E1B9E5A3600AB4A74 /* FacebookArticleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9965A7D1B9E5A3600AB4A74 /* FacebookArticleView.xib */; };
 		D9965A801B9E5DB600AB4A74 /* FacebookArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9965A7F1B9E5DB600AB4A74 /* FacebookArticleView.swift */; };
+		D99EF24F1B9F59FD00026D66 /* FacebookQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99EF24E1B9F59FD00026D66 /* FacebookQuery.swift */; };
 		D9B34A211B76F6BB00590DFB /* HomeScreenPurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */; };
 		D9B34A241B77840700590DFB /* NanumBarunGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9B34A221B77840700590DFB /* NanumBarunGothicLight.otf */; };
 		D9B34A251B77840700590DFB /* NanumBarunGothicUltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9B34A231B77840700590DFB /* NanumBarunGothicUltraLight.otf */; };
@@ -90,6 +91,7 @@
 		D9965A7B1B9E386C00AB4A74 /* ExpandingAboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandingAboutView.swift; sourceTree = "<group>"; };
 		D9965A7D1B9E5A3600AB4A74 /* FacebookArticleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookArticleView.xib; sourceTree = "<group>"; };
 		D9965A7F1B9E5DB600AB4A74 /* FacebookArticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookArticleView.swift; sourceTree = "<group>"; };
+		D99EF24E1B9F59FD00026D66 /* FacebookQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookQuery.swift; sourceTree = "<group>"; };
 		D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenPurpleButton.swift; sourceTree = "<group>"; };
 		D9B34A221B77840700590DFB /* NanumBarunGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicLight.otf; sourceTree = "<group>"; };
 		D9B34A231B77840700590DFB /* NanumBarunGothicUltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicUltraLight.otf; sourceTree = "<group>"; };
@@ -164,8 +166,9 @@
 		D95EC5221B978C0A00782925 /* Facebook Query Objects */ = {
 			isa = PBXGroup;
 			children = (
-				D9F7F4801B93547600D86FF7 /* FacebookPhotoQuery.swift */,
+				D99EF24E1B9F59FD00026D66 /* FacebookQuery.swift */,
 				D95EC5231B978DF000782925 /* FacebookFeedQuery.swift */,
+				D9F7F4801B93547600D86FF7 /* FacebookPhotoQuery.swift */,
 			);
 			name = "Facebook Query Objects";
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				D9B549A81B76D7FB00BF4887 /* SWRevealViewController.m in Sources */,
 				D90A7AFC1B923F13003EA693 /* NurtureViewController.swift in Sources */,
 				D9D3CDED1B3F20EF00C8E195 /* AppDelegate.swift in Sources */,
+				D99EF24F1B9F59FD00026D66 /* FacebookQuery.swift in Sources */,
 				D90A7B041B92413F003EA693 /* EvangelismViewController.swift in Sources */,
 				D90A7B021B924135003EA693 /* SocialServicesViewController.swift in Sources */,
 				D90A7B001B9240EC003EA693 /* CommunicationsViewController.swift in Sources */,
@@ -638,6 +642,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -683,6 +688,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
