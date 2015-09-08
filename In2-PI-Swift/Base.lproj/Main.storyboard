@@ -491,17 +491,17 @@
                         <viewControllerLayoutGuide type="bottom" id="CPj-2L-Cda"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eDV-y8-TqE" userLabel="Worship View">
-                        <rect key="frame" x="0.0" y="64" width="600" height="936"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Yl-0R-4ks">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="936"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVQ-jT-Ckx" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVQ-jT-Ckx" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atY-6P-a2d" userLabel="ExpandableAboutBar" customClass="ExpandableAboutBar" customModule="In2_PI_Swift" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="32"/>
+                                                <rect key="frame" x="0.0" y="20" width="600" height="32"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="0m5-Q6-ZV4"/>
@@ -514,10 +514,10 @@
                                                 </variation>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Z59-kD-ayY" userLabel="Songs Table View">
-                                                <rect key="frame" x="0.0" y="52" width="600" height="400"/>
+                                                <rect key="frame" x="0.0" y="72" width="600" height="300"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="400" id="cLI-3P-8mW"/>
+                                                    <constraint firstAttribute="height" constant="300" id="cLI-3P-8mW"/>
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongsTableViewCell" id="Fl1-XJ-Rvc">
@@ -534,7 +534,7 @@
                                                 </connections>
                                             </tableView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dv8-4e-YfA" userLabel="Joobo Table View">
-                                                <rect key="frame" x="0.0" y="472" width="600" height="328"/>
+                                                <rect key="frame" x="0.0" y="392" width="600" height="208"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="9im-OQ-44M"/>
@@ -562,12 +562,12 @@
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="atY-6P-a2d" firstAttribute="leading" secondItem="pVQ-jT-Ckx" secondAttribute="leading" id="35R-O8-R9A"/>
-                                            <constraint firstAttribute="height" constant="800" id="3Ng-UB-oZE"/>
+                                            <constraint firstAttribute="height" constant="600" id="3Ng-UB-oZE"/>
                                             <constraint firstItem="Z59-kD-ayY" firstAttribute="leading" secondItem="pVQ-jT-Ckx" secondAttribute="leading" id="63B-w0-Prz"/>
                                             <constraint firstItem="dv8-4e-YfA" firstAttribute="top" secondItem="Z59-kD-ayY" secondAttribute="bottom" constant="20" id="9EF-AW-IaJ"/>
                                             <constraint firstAttribute="trailing" secondItem="atY-6P-a2d" secondAttribute="trailing" id="AD9-Eh-PQy"/>
                                             <constraint firstItem="dv8-4e-YfA" firstAttribute="leading" secondItem="pVQ-jT-Ckx" secondAttribute="leading" id="HMN-bE-iMb"/>
-                                            <constraint firstItem="atY-6P-a2d" firstAttribute="top" secondItem="pVQ-jT-Ckx" secondAttribute="top" id="Nmb-uh-Obx"/>
+                                            <constraint firstItem="atY-6P-a2d" firstAttribute="top" secondItem="pVQ-jT-Ckx" secondAttribute="top" constant="20" id="Nmb-uh-Obx"/>
                                             <constraint firstAttribute="trailing" secondItem="Z59-kD-ayY" secondAttribute="trailing" id="WU4-Ct-OiP"/>
                                             <constraint firstAttribute="trailing" secondItem="dv8-4e-YfA" secondAttribute="trailing" id="j7F-1A-kiz"/>
                                             <constraint firstItem="Z59-kD-ayY" firstAttribute="top" secondItem="atY-6P-a2d" secondAttribute="bottom" constant="20" id="n6m-rP-ECX"/>
@@ -594,8 +594,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Worship" id="HKV-ej-h6O"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="1000"/>
+                    <size key="freeformSize" width="600" height="600"/>
                     <connections>
+                        <outlet property="constraintContentViewHeight" destination="3Ng-UB-oZE" id="PVt-Hs-MPJ"/>
+                        <outlet property="constraintVerticalSpacingBarToTableview" destination="n6m-rP-ECX" id="Djx-qK-gae"/>
+                        <outlet property="contentView" destination="pVQ-jT-Ckx" id="4lC-8O-xEV"/>
                         <outlet property="expandableAboutBar" destination="atY-6P-a2d" id="RbX-rG-eni"/>
                         <outlet property="jooboTableView" destination="dv8-4e-YfA" id="ZXR-rd-TaT"/>
                         <outlet property="songsTableView" destination="Z59-kD-ayY" id="bnX-V6-rkj"/>

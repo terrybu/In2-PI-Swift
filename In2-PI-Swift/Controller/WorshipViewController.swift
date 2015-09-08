@@ -12,13 +12,19 @@ import WebKit
 
 class WorshipViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource, ExpandableAboutBarDelegate {
 
+    @IBOutlet var contentView: UIView! 
     @IBOutlet var expandableAboutBar: ExpandableAboutBar!
     @IBOutlet var songsTableView :     UITableView!
     @IBOutlet var jooboTableView :     UITableView!
     var hiddenExpandingView: UIView!
     var songsArray = [String]()
     var joobosArray = [String]()
-
+    
+    //Constraints
+    @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var constraintVerticalSpacingBarToTableview: NSLayoutConstraint!
+    
+    
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
     
@@ -36,15 +42,19 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
     func didPressExpandButton() {
         if !expandableAboutBar.expanded {
             println("did press expand button when it wasn't expanded")
-            hiddenExpandingView = ExpandingAboutView(frame: CGRectMake(0, self.expandableAboutBar.frame.size.height, self.view.frame.width, 0), titleString: "test", introductionText: "test")
+            hiddenExpandingView = ExpandingAboutView(frame: CGRectMake(0, self.expandableAboutBar.frame.origin.y + self.expandableAboutBar.frame.size.height, self.view.frame.width, 0), titleString: "test", introductionText: "test")
             hiddenExpandingView.clipsToBounds = true
 
-            self.view.addSubview(hiddenExpandingView)
+            self.contentView.addSubview(hiddenExpandingView)
             hiddenExpandingView.backgroundColor = UIColor.whiteColor()
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 var newFrame = self.hiddenExpandingView.frame
                 newFrame.size.height += 200
                 self.hiddenExpandingView.frame = newFrame
+                self.constraintVerticalSpacingBarToTableview.constant += 200
+                self.constraintContentViewHeight.constant += 200
+                self.view.layoutIfNeeded()
+                
                 }) { (Bool completed) -> Void in
                    self.expandableAboutBar.expanded = true
             }
@@ -55,9 +65,11 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
                 var newFrame = self.hiddenExpandingView.frame
                 newFrame.size.height = 0
                 self.hiddenExpandingView.frame = newFrame
+                self.constraintVerticalSpacingBarToTableview.constant -= 200
+                self.constraintContentViewHeight.constant -= 200
+                self.view.layoutIfNeeded()
                 }) { (Bool completed) -> Void in
                     self.expandableAboutBar.expanded = false
-//                    self.hiddenExpandingView.hidden = true
                 }
         }
     }
