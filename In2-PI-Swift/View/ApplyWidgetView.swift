@@ -11,10 +11,17 @@ import UIKit
 @IBDesignable class ApplyWidgetView: UIView {
 
     var view: UIView!
+    var applyButtonPressedHandler: ((sender: UIButton) -> Void)?
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
 
-    @IBInspectable var title: String? {
+    @IBAction func applyButtonPressed(sender: UIButton) {
+        if let handler = applyButtonPressedHandler {
+            handler(sender: sender)
+        }
+    }
+    
+    var title: String? {
         get {
             return titleLabel.text
         }
@@ -22,7 +29,7 @@ import UIKit
             titleLabel.text = title
         }
     }
-    @IBInspectable var backgroundImage: UIImage? {
+    var backgroundImage: UIImage? {
         get {
             return backgroundImageView.image
         }

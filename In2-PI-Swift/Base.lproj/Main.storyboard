@@ -720,6 +720,9 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Nurture" id="0CA-Bh-ffq"/>
+                    <connections>
+                        <outlet property="leftApplyWidget" destination="9aj-r7-edb" id="uEH-gq-nZy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i2e-Tk-NrT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
