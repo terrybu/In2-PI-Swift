@@ -28,6 +28,8 @@
 		D98FEFB41B9C0C8E003614A7 /* ApplyWidgetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98FEFB31B9C0C8E003614A7 /* ApplyWidgetView.xib */; };
 		D9965A791B9E1D6800AB4A74 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9965A781B9E1D6800AB4A74 /* PaddedLabel.swift */; };
 		D9965A7C1B9E386C00AB4A74 /* ExpandingAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9965A7B1B9E386C00AB4A74 /* ExpandingAboutView.swift */; };
+		D9965A7E1B9E5A3600AB4A74 /* FacebookArticleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9965A7D1B9E5A3600AB4A74 /* FacebookArticleView.xib */; };
+		D9965A801B9E5DB600AB4A74 /* FacebookArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9965A7F1B9E5DB600AB4A74 /* FacebookArticleView.swift */; };
 		D9B34A211B76F6BB00590DFB /* HomeScreenPurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */; };
 		D9B34A241B77840700590DFB /* NanumBarunGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9B34A221B77840700590DFB /* NanumBarunGothicLight.otf */; };
 		D9B34A251B77840700590DFB /* NanumBarunGothicUltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9B34A231B77840700590DFB /* NanumBarunGothicUltraLight.otf */; };
@@ -86,6 +88,8 @@
 		D98FEFB31B9C0C8E003614A7 /* ApplyWidgetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplyWidgetView.xib; sourceTree = "<group>"; };
 		D9965A781B9E1D6800AB4A74 /* PaddedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
 		D9965A7B1B9E386C00AB4A74 /* ExpandingAboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandingAboutView.swift; sourceTree = "<group>"; };
+		D9965A7D1B9E5A3600AB4A74 /* FacebookArticleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookArticleView.xib; sourceTree = "<group>"; };
+		D9965A7F1B9E5DB600AB4A74 /* FacebookArticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookArticleView.swift; sourceTree = "<group>"; };
 		D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenPurpleButton.swift; sourceTree = "<group>"; };
 		D9B34A221B77840700590DFB /* NanumBarunGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicLight.otf; sourceTree = "<group>"; };
 		D9B34A231B77840700590DFB /* NanumBarunGothicUltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicUltraLight.otf; sourceTree = "<group>"; };
@@ -295,6 +299,8 @@
 		D9DA87E71B6DC05C005D4CB6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D9965A7D1B9E5A3600AB4A74 /* FacebookArticleView.xib */,
+				D9965A7F1B9E5DB600AB4A74 /* FacebookArticleView.swift */,
 				D9965A781B9E1D6800AB4A74 /* PaddedLabel.swift */,
 				D9F7F4821B935DFA00D86FF7 /* GalleryCell.swift */,
 				D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */,
@@ -444,6 +450,7 @@
 			files = (
 				D98FEFB01B9C077F003614A7 /* Main.storyboard in Resources */,
 				D9D3CE1E1B3F372F00C8E195 /* ListOfExternalLinks.strings in Resources */,
+				D9965A7E1B9E5A3600AB4A74 /* FacebookArticleView.xib in Resources */,
 				D9D7C5591B82CFE4003E48EA /* todolist.txt in Resources */,
 				D9F9C7E51B645FE300F5C17D /* NanumBarunGothic.otf in Resources */,
 				D9B34A251B77840700590DFB /* NanumBarunGothicUltraLight.otf in Resources */,
@@ -522,6 +529,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9965A791B9E1D6800AB4A74 /* PaddedLabel.swift in Sources */,
+				D9965A801B9E5DB600AB4A74 /* FacebookArticleView.swift in Sources */,
 				D952B17D1B5EF5CA0089116C /* HideKey.swift in Sources */,
 				D92295951B9BF87000C34A66 /* WorshipViewController.swift in Sources */,
 				D90A7B0A1B924256003EA693 /* ParentViewController.swift in Sources */,
