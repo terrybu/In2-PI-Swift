@@ -1,5 +1,5 @@
 //
-//  ExpandableAboutBar.swift
+//  ExpandableAboutView.swift
 //  In2-PI-Swift
 //
 //  Created by Terry Bu on 9/5/15.
@@ -8,31 +8,50 @@
 
 import UIKit
 
-protocol ExpandableAboutBarDelegate {
+protocol ExpandableAboutViewDelegate {
     func didPressExpandButton()
 }
 
 //IBDesignable lets you use Interface Builder and Storyboard to see the changes you are making to your custom view right inside Storyboard after you make the change
 //Without it, whatever changes you make in the XIB file of your custom view won't be seen in storyboard. Rather, storyboard will always just show the initial version of what your xib used to look like. IBDesignable lets you work around that. 
 
-class ExpandableAboutBar: UIView {
+@IBDesignable class ExpandableAboutView: UIView {
     
     var view: UIView!
-    var delegate: ExpandableAboutBarDelegate?
+    var delegate: ExpandableAboutViewDelegate?
     var expanded: Bool
     
     @IBOutlet weak var aboutLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var textView: UITextView!
+    
     @IBAction func expandButtonPressed(sender: UIButton) {
         delegate?.didPressExpandButton()
     }
     
     //IBInspectable lets you read and write properties right in the inspector view of interface builder. Without it, there's no way for you to change properties of your custom view UI from storyboard
-    @IBInspectable var title: String? {
+    @IBInspectable var aboutLabelTitle: String? {
         get {
             return aboutLabel.text
         }
-        set(title) {
-            aboutLabel.text = title
+        set(aboutLabelTitle) {
+            aboutLabel.text = aboutLabelTitle
+        }
+    }
+    @IBInspectable var titleLabeltitle: String? {
+        get {
+            return titleLabel.text
+        }
+        set(titleLabeltitle) {
+            titleLabel.text = titleLabeltitle
+        }
+    }
+    @IBInspectable var textViewContentText: String? {
+        get {
+            return textView.text
+        }
+        set(textViewContentText) {
+            textView.text = textViewContentText
         }
     }
     
@@ -57,16 +76,8 @@ class ExpandableAboutBar: UIView {
     
     func loadViewFromNib() -> UIView {
         let bundle = NSBundle(forClass: self.dynamicType)
-        let nib = UINib(nibName: "ExpandableAboutBar", bundle: bundle)
+        let nib = UINib(nibName: "ExpandableAboutView", bundle: bundle)
         return nib.instantiateWithOwner(self, options: nil)[0] as! UIView
     }
-
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
 
 }

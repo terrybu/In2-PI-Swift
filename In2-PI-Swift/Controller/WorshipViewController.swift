@@ -9,11 +9,15 @@
 import UIKit
 import WebKit
 
+private let kOriginalAboutViewHeight: CGFloat = 32.0
+private let kExpandedAboutViewHeight: CGFloat = 300.0
+private let kContentViewHeightAdjustment: CGFloat = kExpandedAboutViewHeight - kOriginalAboutViewHeight
+private let kOriginalContentViewHeight: CGFloat = 1000
 
-class WorshipViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource, ExpandableAboutBarDelegate {
+class WorshipViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource, ExpandableAboutViewDelegate {
 
     @IBOutlet var contentView: UIView! 
-    @IBOutlet var expandableAboutBar: ExpandableAboutBar!
+    @IBOutlet var expandableAboutView: ExpandableAboutView!
     @IBOutlet var songsTableView :     UITableView!
     @IBOutlet var jooboTableView :     UITableView!
     var hiddenExpandingView: UIView!
@@ -21,15 +25,14 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
     var joobosArray = [String]()
     
     //Constraints
+    @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
     @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var constraintVerticalSpacingBarToTableview: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
     
-        expandableAboutBar.title = "About 예배부"
-        expandableAboutBar.delegate = self
+        expandableAboutView.delegate = self
         
         songsArray = ["Hillsong - Above All", "예수전도단 - 좋으신 하나님", "예수전도단 - 주 나의 왕"]
         let test1 = "07/19/2015"
@@ -40,36 +43,27 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
     
     //MARK: ExpandableAboutBar methods
     func didPressExpandButton() {
-        if !expandableAboutBar.expanded {
+        if !expandableAboutView.expanded {
             println("did press expand button when it wasn't expanded")
-            hiddenExpandingView = ExpandingAboutView(frame: CGRectMake(0, self.expandableAboutBar.frame.origin.y + self.expandableAboutBar.frame.size.height, self.view.frame.width, 0), titleString: "test", introductionText: "test")
-            hiddenExpandingView.clipsToBounds = true
 
-            self.contentView.addSubview(hiddenExpandingView)
-            hiddenExpandingView.backgroundColor = UIColor.whiteColor()
             UIView.animateWithDuration(0.5, animations: { () -> Void in
-                var newFrame = self.hiddenExpandingView.frame
-                newFrame.size.height += 200
-                self.hiddenExpandingView.frame = newFrame
-                self.constraintVerticalSpacingBarToTableview.constant += 200
-                self.constraintContentViewHeight.constant += 200
+                self.constraintHeightExpandableView.constant = kExpandedAboutViewHeight
+                self.constraintContentViewHeight.constant += kContentViewHeightAdjustment
                 self.view.layoutIfNeeded()
                 
                 }) { (Bool completed) -> Void in
-                   self.expandableAboutBar.expanded = true
+                   self.expandableAboutView.expanded = true
             }
         }
         else {
             println("did press expand button when it WAS expanded")
             UIView.animateWithDuration(0.5, animations: { () -> Void in
-                var newFrame = self.hiddenExpandingView.frame
-                newFrame.size.height = 0
-                self.hiddenExpandingView.frame = newFrame
-                self.constraintVerticalSpacingBarToTableview.constant -= 200
-                self.constraintContentViewHeight.constant -= 200
+                self.constraintHeightExpandableView.constant = kOriginalAboutViewHeight
+                self.constraintContentViewHeight.constant =  kOriginalContentViewHeight
                 self.view.layoutIfNeeded()
+
                 }) { (Bool completed) -> Void in
-                    self.expandableAboutBar.expanded = false
+                    self.expandableAboutView.expanded = false
                 }
         }
     }

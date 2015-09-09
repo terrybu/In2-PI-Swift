@@ -22,22 +22,21 @@
 		D95EC5241B978DF000782925 /* FacebookFeedQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5231B978DF000782925 /* FacebookFeedQuery.swift */; };
 		D95EC5261B978E6400782925 /* FBFeedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5251B978E6400782925 /* FBFeedObject.swift */; };
 		D95EC5291B97963000782925 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5281B97963000782925 /* StringExtension.swift */; };
-		D97D73F71B9BC93C00B4C845 /* ExpandableAboutBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D97D73F61B9BC93C00B4C845 /* ExpandableAboutBar.xib */; };
 		D98FEFB01B9C077F003614A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9D3CDF01B3F20EF00C8E195 /* Main.storyboard */; };
 		D98FEFB21B9C0C65003614A7 /* ApplyWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FEFB11B9C0C65003614A7 /* ApplyWidgetView.swift */; };
 		D98FEFB41B9C0C8E003614A7 /* ApplyWidgetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98FEFB31B9C0C8E003614A7 /* ApplyWidgetView.xib */; };
 		D9965A791B9E1D6800AB4A74 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9965A781B9E1D6800AB4A74 /* PaddedLabel.swift */; };
-		D9965A7C1B9E386C00AB4A74 /* ExpandingAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9965A7B1B9E386C00AB4A74 /* ExpandingAboutView.swift */; };
 		D9965A7E1B9E5A3600AB4A74 /* FacebookArticleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9965A7D1B9E5A3600AB4A74 /* FacebookArticleView.xib */; };
 		D9965A801B9E5DB600AB4A74 /* FacebookArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9965A7F1B9E5DB600AB4A74 /* FacebookArticleView.swift */; };
 		D99EF24F1B9F59FD00026D66 /* FacebookQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99EF24E1B9F59FD00026D66 /* FacebookQuery.swift */; };
 		D9B34A211B76F6BB00590DFB /* HomeScreenPurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */; };
 		D9B34A241B77840700590DFB /* NanumBarunGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9B34A221B77840700590DFB /* NanumBarunGothicLight.otf */; };
 		D9B34A251B77840700590DFB /* NanumBarunGothicUltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9B34A231B77840700590DFB /* NanumBarunGothicUltraLight.otf */; };
-		D9B5359F1B9B66BE002942CA /* ExpandableAboutBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B5359E1B9B66BE002942CA /* ExpandableAboutBar.swift */; };
 		D9B549A81B76D7FB00BF4887 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B549A71B76D7FB00BF4887 /* SWRevealViewController.m */; };
 		D9B9B5791B4B1B0000DA476E /* splashScreen.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D9B9B5781B4B1B0000DA476E /* splashScreen.mp4 */; };
 		D9BE263D1B64A1B700C3BA7D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BE263C1B64A1B700C3BA7D /* UIColorExtension.swift */; };
+		D9C7563E1BA0C2A000EC22CF /* ExpandableAboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9C7563D1BA0C2A000EC22CF /* ExpandableAboutView.xib */; };
+		D9C756401BA0C2C800EC22CF /* ExpandableAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7563F1BA0C2C800EC22CF /* ExpandableAboutView.swift */; };
 		D9D3CDED1B3F20EF00C8E195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D3CDEC1B3F20EF00C8E195 /* AppDelegate.swift */; };
 		D9D3CDF41B3F20EF00C8E195 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9D3CDF31B3F20EF00C8E195 /* Images.xcassets */; };
 		D9D3CE031B3F20EF00C8E195 /* In2_PI_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D3CE021B3F20EF00C8E195 /* In2_PI_SwiftTests.swift */; };
@@ -84,22 +83,21 @@
 		D95EC5251B978E6400782925 /* FBFeedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBFeedObject.swift; sourceTree = "<group>"; };
 		D95EC5281B97963000782925 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		D9713E8B1B5ED166009D809A /* In2-PI-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "In2-PI-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
-		D97D73F61B9BC93C00B4C845 /* ExpandableAboutBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableAboutBar.xib; sourceTree = "<group>"; };
 		D98FEFB11B9C0C65003614A7 /* ApplyWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyWidgetView.swift; sourceTree = "<group>"; };
 		D98FEFB31B9C0C8E003614A7 /* ApplyWidgetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplyWidgetView.xib; sourceTree = "<group>"; };
 		D9965A781B9E1D6800AB4A74 /* PaddedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
-		D9965A7B1B9E386C00AB4A74 /* ExpandingAboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandingAboutView.swift; sourceTree = "<group>"; };
 		D9965A7D1B9E5A3600AB4A74 /* FacebookArticleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookArticleView.xib; sourceTree = "<group>"; };
 		D9965A7F1B9E5DB600AB4A74 /* FacebookArticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookArticleView.swift; sourceTree = "<group>"; };
 		D99EF24E1B9F59FD00026D66 /* FacebookQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookQuery.swift; sourceTree = "<group>"; };
 		D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenPurpleButton.swift; sourceTree = "<group>"; };
 		D9B34A221B77840700590DFB /* NanumBarunGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicLight.otf; sourceTree = "<group>"; };
 		D9B34A231B77840700590DFB /* NanumBarunGothicUltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicUltraLight.otf; sourceTree = "<group>"; };
-		D9B5359E1B9B66BE002942CA /* ExpandableAboutBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableAboutBar.swift; sourceTree = "<group>"; };
 		D9B549A61B76D7FB00BF4887 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		D9B549A71B76D7FB00BF4887 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		D9B9B5781B4B1B0000DA476E /* splashScreen.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = splashScreen.mp4; sourceTree = "<group>"; };
 		D9BE263C1B64A1B700C3BA7D /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		D9C7563D1BA0C2A000EC22CF /* ExpandableAboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableAboutView.xib; sourceTree = "<group>"; };
+		D9C7563F1BA0C2C800EC22CF /* ExpandableAboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableAboutView.swift; sourceTree = "<group>"; };
 		D9D3CDE71B3F20EF00C8E195 /* In2-PI-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "In2-PI-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D3CDEB1B3F20EF00C8E195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9D3CDEC1B3F20EF00C8E195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -231,6 +229,29 @@
 			path = SWRevealViewController;
 			sourceTree = "<group>";
 		};
+		D9C756411BA0C2EB00EC22CF /* Custom Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				D9C7563D1BA0C2A000EC22CF /* ExpandableAboutView.xib */,
+				D9C7563F1BA0C2C800EC22CF /* ExpandableAboutView.swift */,
+				D9965A7D1B9E5A3600AB4A74 /* FacebookArticleView.xib */,
+				D9965A7F1B9E5DB600AB4A74 /* FacebookArticleView.swift */,
+				D98FEFB31B9C0C8E003614A7 /* ApplyWidgetView.xib */,
+				D98FEFB11B9C0C65003614A7 /* ApplyWidgetView.swift */,
+			);
+			name = "Custom Widgets";
+			sourceTree = "<group>";
+		};
+		D9C756421BA0C2F300EC22CF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D9965A781B9E1D6800AB4A74 /* PaddedLabel.swift */,
+				D9F7F4821B935DFA00D86FF7 /* GalleryCell.swift */,
+				D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
 		D9D3CDDE1B3F20EF00C8E195 = {
 			isa = PBXGroup;
 			children = (
@@ -302,16 +323,8 @@
 		D9DA87E71B6DC05C005D4CB6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D9965A7D1B9E5A3600AB4A74 /* FacebookArticleView.xib */,
-				D9965A7F1B9E5DB600AB4A74 /* FacebookArticleView.swift */,
-				D9965A781B9E1D6800AB4A74 /* PaddedLabel.swift */,
-				D9F7F4821B935DFA00D86FF7 /* GalleryCell.swift */,
-				D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */,
-				D9B5359E1B9B66BE002942CA /* ExpandableAboutBar.swift */,
-				D97D73F61B9BC93C00B4C845 /* ExpandableAboutBar.xib */,
-				D9965A7B1B9E386C00AB4A74 /* ExpandingAboutView.swift */,
-				D98FEFB11B9C0C65003614A7 /* ApplyWidgetView.swift */,
-				D98FEFB31B9C0C8E003614A7 /* ApplyWidgetView.xib */,
+				D9C756411BA0C2EB00EC22CF /* Custom Widgets */,
+				D9C756421BA0C2F300EC22CF /* Components */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -453,11 +466,11 @@
 			files = (
 				D98FEFB01B9C077F003614A7 /* Main.storyboard in Resources */,
 				D9D3CE1E1B3F372F00C8E195 /* ListOfExternalLinks.strings in Resources */,
+				D9C7563E1BA0C2A000EC22CF /* ExpandableAboutView.xib in Resources */,
 				D9965A7E1B9E5A3600AB4A74 /* FacebookArticleView.xib in Resources */,
 				D9D7C5591B82CFE4003E48EA /* todolist.txt in Resources */,
 				D9F9C7E51B645FE300F5C17D /* NanumBarunGothic.otf in Resources */,
 				D9B34A251B77840700590DFB /* NanumBarunGothicUltraLight.otf in Resources */,
-				D97D73F71B9BC93C00B4C845 /* ExpandableAboutBar.xib in Resources */,
 				D9D3CE191B3F338D00C8E195 /* Localizable.strings in Resources */,
 				D98FEFB41B9C0C8E003614A7 /* ApplyWidgetView.xib in Resources */,
 				D9B9B5791B4B1B0000DA476E /* splashScreen.mp4 in Resources */,
@@ -537,6 +550,7 @@
 				D92295951B9BF87000C34A66 /* WorshipViewController.swift in Sources */,
 				D90A7B0A1B924256003EA693 /* ParentViewController.swift in Sources */,
 				D90A7B061B92415D003EA693 /* AboutPIViewControlller.swift in Sources */,
+				D9C756401BA0C2C800EC22CF /* ExpandableAboutView.swift in Sources */,
 				D95EC5241B978DF000782925 /* FacebookFeedQuery.swift in Sources */,
 				D98FEFB21B9C0C65003614A7 /* ApplyWidgetView.swift in Sources */,
 				D9BE263D1B64A1B700C3BA7D /* UIColorExtension.swift in Sources */,
@@ -553,12 +567,10 @@
 				D90A7B001B9240EC003EA693 /* CommunicationsViewController.swift in Sources */,
 				D9F7F4861B93687700D86FF7 /* FBPhotoObject.swift in Sources */,
 				D9F7F4831B935DFA00D86FF7 /* GalleryCell.swift in Sources */,
-				D9965A7C1B9E386C00AB4A74 /* ExpandingAboutView.swift in Sources */,
 				D9F7F4811B93547600D86FF7 /* FacebookPhotoQuery.swift in Sources */,
 				D9D3CE211B3F4B1E00C8E195 /* HomeActionCollectionViewCell.swift in Sources */,
 				D95EC5261B978E6400782925 /* FBFeedObject.swift in Sources */,
 				D95EC5291B97963000782925 /* StringExtension.swift in Sources */,
-				D9B5359F1B9B66BE002942CA /* ExpandableAboutBar.swift in Sources */,
 				D952B17B1B5EF5330089116C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

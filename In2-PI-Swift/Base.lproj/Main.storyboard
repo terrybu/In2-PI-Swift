@@ -500,13 +500,20 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVQ-jT-Ckx" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atY-6P-a2d" userLabel="ExpandableAboutBar" customClass="ExpandableAboutBar" customModule="In2_PI_Swift" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atY-6P-a2d" userLabel="ExpandableAboutView" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="20" width="600" height="32"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="0m5-Q6-ZV4"/>
                                                     <constraint firstAttribute="height" constant="32" id="jbz-6X-e4F"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="aboutLabelTitle" value="About 예배부"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleLabeltitle" value="TestTitle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="textViewContentText">
+                                                        <string key="value">dpfjaspifjipsdfjpiqfjqpifjipwqfjipwfjipwefjiwepfjiwpeqfjewpfjweqipfewjqfpjwefpwejfiewfjewpfjewqpfwejifwejpfwjeiqpfjwefjwepfjweifjwepifjwepqfjwepqfjwepfjwepifjweipfjweiqfjiewfpjewfpewqfqwjf</string>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <variation key="default">
                                                     <mask key="constraints">
                                                         <exclude reference="jbz-6X-e4F"/>
@@ -597,9 +604,9 @@
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="constraintContentViewHeight" destination="3Ng-UB-oZE" id="PVt-Hs-MPJ"/>
-                        <outlet property="constraintVerticalSpacingBarToTableview" destination="n6m-rP-ECX" id="Djx-qK-gae"/>
+                        <outlet property="constraintHeightExpandableView" destination="0m5-Q6-ZV4" id="290-m6-VXT"/>
                         <outlet property="contentView" destination="pVQ-jT-Ckx" id="4lC-8O-xEV"/>
-                        <outlet property="expandableAboutBar" destination="atY-6P-a2d" id="RbX-rG-eni"/>
+                        <outlet property="expandableAboutView" destination="atY-6P-a2d" id="DYp-Wg-8kZ"/>
                         <outlet property="jooboTableView" destination="dv8-4e-YfA" id="ZXR-rd-TaT"/>
                         <outlet property="songsTableView" destination="Z59-kD-ayY" id="bnX-V6-rkj"/>
                     </connections>
@@ -834,7 +841,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QZ2-cC-KMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1107" y="2771"/>
+            <point key="canvasLocation" x="-1120" y="2871"/>
         </scene>
         <!--Evangelism-->
         <scene sceneID="pVk-Y1-gKf">
