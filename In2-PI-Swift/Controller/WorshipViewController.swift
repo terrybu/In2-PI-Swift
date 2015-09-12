@@ -32,7 +32,6 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
         setUpStandardUIForViewControllers()
     
         expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: self.constraintHeightExpandableView, constraintContentViewHeight: self.constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: kExpandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
-//        expandableAboutView.delegate = self
         
         songsArray = ["Hillsong - Above All", "예수전도단 - 좋으신 하나님", "예수전도단 - 주 나의 왕"]
         let test1 = "07/19/2015"

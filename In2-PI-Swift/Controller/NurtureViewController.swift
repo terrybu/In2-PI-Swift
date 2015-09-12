@@ -13,7 +13,7 @@ private let kOriginalAboutViewHeight: CGFloat = 32.0
 private let kExpandedAboutViewHeight: CGFloat = 300.0
 private let kOriginalContentViewHeight: CGFloat = 300
 
-class NurtureViewController: ParentViewController, MFMailComposeViewControllerDelegate, ExpandableAboutViewDelegate {
+class NurtureViewController: ParentViewController, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var leftNurtureApplyWidget: ApplyWidgetView!
     @IBOutlet weak var rightHolyStarApplyWidget: ApplyWidgetView!
@@ -32,8 +32,12 @@ class NurtureViewController: ParentViewController, MFMailComposeViewControllerDe
         rightHolyStarApplyWidget.applyButtonPressedHandler = {(sender) -> Void in
             self.sendMail(sender)
         }
+        setUpExpandableAboutView()
+    }
+    
+    private func setUpExpandableAboutView() {
         expandableAboutView.clipsToBounds = true
-        expandableAboutView.delegate = self
+        expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: kExpandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
     }
     
     func didPressExpandButton() {
