@@ -11,11 +11,15 @@ import MessageUI
 
 class NurtureViewController: ParentViewController, MFMailComposeViewControllerDelegate {
     
-    @IBOutlet weak var leftApplyWidget: ApplyWidgetView!
+    @IBOutlet weak var leftNurtureApplyWidget: ApplyWidgetView!
+    @IBOutlet weak var rightHolyStarApplyWidget: ApplyWidgetView!
     
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
-        leftApplyWidget.applyButtonPressedHandler = {(sender) -> Void in
+        leftNurtureApplyWidget.applyButtonPressedHandler = {(sender) -> Void in
+            self.sendMail(sender)
+        }
+        rightHolyStarApplyWidget.applyButtonPressedHandler = {(sender) -> Void in
             self.sendMail(sender)
         }
     }

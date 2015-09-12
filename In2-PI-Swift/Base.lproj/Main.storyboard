@@ -733,7 +733,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Nurture" id="0CA-Bh-ffq"/>
                     <connections>
-                        <outlet property="leftApplyWidget" destination="9aj-r7-edb" id="uEH-gq-nZy"/>
+                        <outlet property="leftNurtureApplyWidget" destination="9aj-r7-edb" id="BoD-WK-55j"/>
+                        <outlet property="rightHolyStarApplyWidget" destination="BXF-su-KJq" id="I97-W5-3Qf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i2e-Tk-NrT" userLabel="First Responder" sceneMemberID="firstResponder"/>
