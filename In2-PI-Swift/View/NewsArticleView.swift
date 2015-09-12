@@ -1,5 +1,5 @@
 //
-//  FacebookArticleView.swift
+//  NewsArticleView
 //  In2-PI-Swift
 //
 //  Created by Terry Bu on 9/7/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class FacebookArticleView: UIView {
+@IBDesignable class NewsArticleView: UIView {
     
     var view: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -53,7 +53,7 @@ import UIKit
     
     func loadViewFromNib() -> UIView {
         let bundle = NSBundle(forClass: self.dynamicType)
-        let nib = UINib(nibName: "FacebookArticleView", bundle: bundle)
+        let nib = UINib(nibName: "NewsArticleView", bundle: bundle)
         return nib.instantiateWithOwner(self, options: nil)[0] as! UIView
     }
     
