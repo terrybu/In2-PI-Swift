@@ -12,6 +12,7 @@ import UIKit
 
     var view: UIView!
     var applyButtonPressedHandler: ((sender: UIButton) -> Void)?
+    
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
 
@@ -21,7 +22,7 @@ import UIKit
         }
     }
     
-    var title: String? {
+    @IBInspectable var title: String? {
         get {
             return titleLabel.text
         }
@@ -29,7 +30,7 @@ import UIKit
             titleLabel.text = title
         }
     }
-    var backgroundImage: UIImage? {
+    @IBInspectable var backgroundImage: UIImage? {
         get {
             return backgroundImageView.image
         }
@@ -52,7 +53,6 @@ import UIKit
         view = loadViewFromNib()
         view.frame = bounds
         view.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
-        
         addSubview(view)
     }
     

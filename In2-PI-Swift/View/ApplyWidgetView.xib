@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Box_purple" translatesAutoresizingMaskIntoConstraints="NO" id="DO5-xH-aPD">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DO5-xH-aPD">
                     <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7PD-nC-7Ux" userLabel="titleLabel">
@@ -67,7 +67,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Box_purple" width="188" height="198"/>
         <image name="btn_Apply_white" width="70" height="30"/>
         <image name="btn_Apply_white_pressed" width="70" height="30"/>
     </resources>
