@@ -120,7 +120,7 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
             let date = dateFormatter.dateFromString(firstObject.created_time)
             if let date = date {
-                dateFormatter.dateFormat = "yyyy-MM-dd EEE HH:mm a"
+                dateFormatter.dateFormat = "yyyy-MM-dd EEE hh:mm a"
                 articleDateLabel.text = dateFormatter.stringFromDate(date)
             }
         }

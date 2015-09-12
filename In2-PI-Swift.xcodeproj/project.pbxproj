@@ -48,6 +48,8 @@
 		D9F7F4811B93547600D86FF7 /* FacebookPhotoQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7F4801B93547600D86FF7 /* FacebookPhotoQuery.swift */; };
 		D9F7F4831B935DFA00D86FF7 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7F4821B935DFA00D86FF7 /* GalleryCell.swift */; };
 		D9F7F4861B93687700D86FF7 /* FBPhotoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7F4851B93687700D86FF7 /* FBPhotoObject.swift */; };
+		D9F8C4701BA4BE4300881B94 /* TodaysQTWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8C46F1BA4BE4300881B94 /* TodaysQTWidget.swift */; settings = {ASSET_TAGS = (); }; };
+		D9F8C4761BA4C33200881B94 /* TodaysQTWidget.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9F8C4751BA4C33200881B94 /* TodaysQTWidget.xib */; settings = {ASSET_TAGS = (); }; };
 		D9F9C7E11B644EBA00F5C17D /* savedCodeForLater in Resources */ = {isa = PBXBuildFile; fileRef = D9F9C7E01B644EBA00F5C17D /* savedCodeForLater */; };
 		D9F9C7E51B645FE300F5C17D /* NanumBarunGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9F9C7E31B645FE300F5C17D /* NanumBarunGothic.otf */; };
 		D9F9C7E61B645FE300F5C17D /* NanumBarunGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9F9C7E41B645FE300F5C17D /* NanumBarunGothicBold.otf */; };
@@ -119,6 +121,8 @@
 		D9F7F4801B93547600D86FF7 /* FacebookPhotoQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookPhotoQuery.swift; sourceTree = "<group>"; };
 		D9F7F4821B935DFA00D86FF7 /* GalleryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
 		D9F7F4851B93687700D86FF7 /* FBPhotoObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBPhotoObject.swift; sourceTree = "<group>"; };
+		D9F8C46F1BA4BE4300881B94 /* TodaysQTWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysQTWidget.swift; sourceTree = "<group>"; };
+		D9F8C4751BA4C33200881B94 /* TodaysQTWidget.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodaysQTWidget.xib; sourceTree = "<group>"; };
 		D9F9C7E01B644EBA00F5C17D /* savedCodeForLater */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = savedCodeForLater; sourceTree = "<group>"; };
 		D9F9C7E31B645FE300F5C17D /* NanumBarunGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothic.otf; sourceTree = "<group>"; };
 		D9F9C7E41B645FE300F5C17D /* NanumBarunGothicBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicBold.otf; sourceTree = "<group>"; };
@@ -232,12 +236,14 @@
 		D9C756411BA0C2EB00EC22CF /* Custom Widgets */ = {
 			isa = PBXGroup;
 			children = (
-				D9C7563D1BA0C2A000EC22CF /* ExpandableAboutView.xib */,
 				D9C7563F1BA0C2C800EC22CF /* ExpandableAboutView.swift */,
-				D9965A7D1B9E5A3600AB4A74 /* FacebookArticleView.xib */,
+				D9C7563D1BA0C2A000EC22CF /* ExpandableAboutView.xib */,
 				D9965A7F1B9E5DB600AB4A74 /* FacebookArticleView.swift */,
-				D98FEFB31B9C0C8E003614A7 /* ApplyWidgetView.xib */,
+				D9965A7D1B9E5A3600AB4A74 /* FacebookArticleView.xib */,
 				D98FEFB11B9C0C65003614A7 /* ApplyWidgetView.swift */,
+				D98FEFB31B9C0C8E003614A7 /* ApplyWidgetView.xib */,
+				D9F8C46F1BA4BE4300881B94 /* TodaysQTWidget.swift */,
+				D9F8C4751BA4C33200881B94 /* TodaysQTWidget.xib */,
 			);
 			name = "Custom Widgets";
 			sourceTree = "<group>";
@@ -476,6 +482,7 @@
 				D9D3CE191B3F338D00C8E195 /* Localizable.strings in Resources */,
 				D98FEFB41B9C0C8E003614A7 /* ApplyWidgetView.xib in Resources */,
 				D9B9B5791B4B1B0000DA476E /* splashScreen.mp4 in Resources */,
+				D9F8C4761BA4C33200881B94 /* TodaysQTWidget.xib in Resources */,
 				D9F9C7E61B645FE300F5C17D /* NanumBarunGothicBold.otf in Resources */,
 				D9B34A241B77840700590DFB /* NanumBarunGothicLight.otf in Resources */,
 				D9D3CE121B3F309C00C8E195 /* InfoPlist.strings in Resources */,
@@ -560,6 +567,7 @@
 				D90A7B081B924164003EA693 /* GalleryViewController.swift in Sources */,
 				D9F9C7EA1B64873800F5C17D /* NavDrawerViewController.swift in Sources */,
 				D90A7AFE1B92406F003EA693 /* HomeScreenViewController.swift in Sources */,
+				D9F8C4701BA4BE4300881B94 /* TodaysQTWidget.swift in Sources */,
 				D9B549A81B76D7FB00BF4887 /* SWRevealViewController.m in Sources */,
 				D90A7AFC1B923F13003EA693 /* NurtureViewController.swift in Sources */,
 				D9D3CDED1B3F20EF00C8E195 /* AppDelegate.swift in Sources */,
