@@ -295,10 +295,10 @@
 		D9D3CDEA1B3F20EF00C8E195 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D9D3CDEB1B3F20EF00C8E195 /* Info.plist */,
 				D9713E8B1B5ED166009D809A /* In2-PI-Swift-Bridging-Header.h */,
 				D9D3CE1B1B3F338D00C8E195 /* Localizable.strings */,
 				D9D3CE141B3F309C00C8E195 /* InfoPlist.strings */,
-				D9D3CDEB1B3F20EF00C8E195 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -427,7 +427,9 @@
 		D9D3CDDF1B3F20EF00C8E195 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Terry Bu";
 				TargetAttributes = {
 					D9D3CDE61B3F20EF00C8E195 = {
@@ -656,6 +658,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -727,6 +730,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "In2-PI-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.terrybu.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "In2-PI-Swift/In2-PI-Swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -742,6 +746,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "In2-PI-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.terrybu.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "In2-PI-Swift/In2-PI-Swift-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -762,6 +767,7 @@
 				);
 				INFOPLIST_FILE = "In2-PI-SwiftTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.terrybu.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/In2-PI-Swift.app/In2-PI-Swift";
 			};
@@ -777,6 +783,7 @@
 				);
 				INFOPLIST_FILE = "In2-PI-SwiftTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.terrybu.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/In2-PI-Swift.app/In2-PI-Swift";
 			};

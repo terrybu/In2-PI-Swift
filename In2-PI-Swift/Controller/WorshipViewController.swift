@@ -44,7 +44,7 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
     //MARK: ExpandableAboutBar methods
     func didPressExpandButton() {
         if !expandableAboutView.expanded {
-            println("did press expand button when it wasn't expanded")
+            print("did press expand button when it wasn't expanded")
 
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 self.constraintHeightExpandableView.constant = kExpandedAboutViewHeight
@@ -56,7 +56,7 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
             }
         }
         else {
-            println("did press expand button when it WAS expanded")
+            print("did press expand button when it WAS expanded")
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 self.constraintHeightExpandableView.constant = kOriginalAboutViewHeight
                 self.constraintContentViewHeight.constant =  kOriginalContentViewHeight
@@ -74,7 +74,7 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-            var headerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 40))
+            let headerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 40))
             headerView.backgroundColor = UIColor.whiteColor()
             var label: UILabel
             if (tableView == jooboTableView) {
@@ -87,7 +87,7 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
             label.font = UIFont.boldSystemFontOfSize(16)
             headerView.addSubview(label)
             
-            var button = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+            let button = UIButton(type: UIButtonType.Custom)
             button.frame = CGRectMake(tableView.frame.size.width - 70, 5, 50, 20)
             button.setTitle("더보기", forState: UIControlState.Normal)
             button.titleLabel!.font = UIFont.boldSystemFontOfSize(16)
@@ -95,7 +95,7 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
             button.addTarget(self, action: "testTarget", forControlEvents: UIControlEvents.TouchUpInside)
             headerView.addSubview(button)
             
-            var moreArrowButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+            let moreArrowButton = UIButton(type: UIButtonType.Custom)
             moreArrowButton.frame = CGRectMake(tableView.frame.size.width-30, 5, 30, 20)
             moreArrowButton.setImage(UIImage(named: "btn_more_B"), forState: .Normal)
             moreArrowButton.addTarget(self, action: "testTarget", forControlEvents: UIControlEvents.TouchUpInside)
@@ -104,7 +104,7 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
     }
     
     func testTarget() {
-        println("testing")
+        print("testing")
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -135,13 +135,13 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
         
         if (tableView == jooboTableView) {
             let reuseIdentifier = "JooboTableViewCell"
-            cell = jooboTableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! UITableViewCell
+            cell = jooboTableView.dequeueReusableCellWithIdentifier(reuseIdentifier)!
             cell.textLabel!.text = joobosArray[indexPath.row]
             cell.accessoryView = UIImageView(image: UIImage(named: "btn_download"))
             return cell
         } else {
             let reuseIdentifier = "SongsTableViewCell"
-            cell = songsTableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! UITableViewCell
+            cell = songsTableView.dequeueReusableCellWithIdentifier(reuseIdentifier)!
             cell.textLabel!.text = songsArray[indexPath.row]
             return cell
         }

@@ -21,16 +21,13 @@ class NurtureViewController: ParentViewController, MFMailComposeViewControllerDe
     }
     
     @IBAction func sendMail(sender: AnyObject) {
-        var picker = MFMailComposeViewController()
+        let picker = MFMailComposeViewController()
         picker.mailComposeDelegate = self
         picker.setToRecipients(["test@gmail.com"])
         picker.setSubject("신청서")
         picker.setMessageBody("texttexttexttexttexttexttexttexttexttext", isHTML: false)
-        
         picker.navigationBar.tintColor = UIColor.whiteColor()
-        let textAttributes = NSMutableDictionary(capacity:1)
-        textAttributes.setObject(UIColor.whiteColor(), forKey: NSForegroundColorAttributeName)
-        picker.navigationBar.titleTextAttributes = textAttributes as [NSObject : AnyObject]
+        picker.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
 
         presentViewController(picker, animated: true, completion: {() -> Void in
 //            var status = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 20))
@@ -40,7 +37,7 @@ class NurtureViewController: ParentViewController, MFMailComposeViewControllerDe
         
     }
     
-    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     

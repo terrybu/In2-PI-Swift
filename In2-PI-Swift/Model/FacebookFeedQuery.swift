@@ -21,7 +21,7 @@ class FacebookFeedQuery: FacebookQuery {
     var FBFeedObjectsArray = [FBFeedObject]()
     
     func getFeedFromPIMagazine(errorCompletionBlock: ((error: NSError!) -> Void)? ) {
-        var params = [
+        let params = [
             "access_token": kAppAccessToken,
             "fields": "type, message, created_time"
         ]
@@ -29,9 +29,9 @@ class FacebookFeedQuery: FacebookQuery {
             params: params,
             onSuccess: { (feedJSON) -> Void in
                 let feedObjectArray = feedJSON["data"].arrayValue
-                println(feedObjectArray)
+                print(feedObjectArray)
                 for object:JSON in feedObjectArray {
-                    var newFeedObject = FBFeedObject(
+                    let newFeedObject = FBFeedObject(
                         id: object["id"].stringValue,
                         message: object["message"].stringValue,
                         created_time: object["created_time"].stringValue

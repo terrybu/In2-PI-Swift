@@ -41,7 +41,7 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
         FacebookFeedQuery.sharedInstance.delegate = self
         FacebookFeedQuery.sharedInstance.getFeedFromPIMagazine { (error) -> Void in
             if error != nil {
-                println(error.description)
+                print(error.description)
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
             }
         }
@@ -70,13 +70,13 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
     }
     
     func tappedLabel(sender: UIGestureRecognizer) {
-        println(firstObjectID)
+        print(firstObjectID)
         //postURL has to nick out the second part of the _ string from firstObjectID
-        var postURLParam = firstObjectID.componentsSeparatedByString("_").last
+        let postURLParam = firstObjectID.componentsSeparatedByString("_").last
         let postURL = "https://www.facebook.com/IN2PI/posts/\(postURLParam!)"
-        var wkWebView = UIWebView(frame: self.view.frame)
+        let wkWebView = UIWebView(frame: self.view.frame)
         wkWebView.loadRequest(NSURLRequest(URL: NSURL(string: postURL)!))
-        var emptyVC = UIViewController()
+        let emptyVC = UIViewController()
         emptyVC.view = wkWebView
         navigationController?.pushViewController(emptyVC, animated: true)
     }
@@ -87,7 +87,7 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
         parseMessageForLabels(firstObject)
         firstObjectID = firstObject.id
         
-        var tapGesture = UITapGestureRecognizer(target: self, action: Selector("tappedLabel:"))
+        let tapGesture = UITapGestureRecognizer(target: self, action: Selector("tappedLabel:"))
         articleTitleLabel.userInteractionEnabled = true
         articleTitleLabel.addGestureRecognizer(tapGesture)
         
@@ -102,18 +102,18 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
         let msg = firstObject.message
         if (!msg.isEmpty) {
             if (msg[0] == "[") {
-                println("found open bracket")
-                for (var i=1; i < count(msg); i++) {
+                print("found open bracket")
+                for (var i=1; i < msg.characters.count; i++) {
                     categoryStr += msg[i]
-                    var j = i + 1
-                    if (msg[j] == "]" || count(categoryStr) >= 100) {
-                        firstTitleStr = parseFirstLineTitleString(msg[j+1..<count(msg)])
+                    let j = i + 1
+                    if (msg[j] == "]" || categoryStr.characters.count >= 100) {
+                        firstTitleStr = parseFirstLineTitleString(msg[j+1..<msg.characters.count])
                         break
                     }
                 }
             }
             articleCategoryLabel.text = categoryStr
-            if let str = firstTitleStr {
+            if let _ = firstTitleStr {
                 articleTitleLabel.text = firstTitleStr
             }
             let dateFormatter = NSDateFormatter()
@@ -131,7 +131,7 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
         // " blahblahblah \n" --> should return blahblahblah
         // " \n blahblahblah \n" should also return blahblahblah
         var result = ""
-        var startingStr = msg[1..<count(msg)]
+        let startingStr = msg[1..<msg.characters.count]
         if (startingStr[0] == "\n") {
             //if it finds \n immediately (which means author inserted a new line between category and title, we just jump and start from the next line
             var i = 1;

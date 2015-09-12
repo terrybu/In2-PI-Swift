@@ -31,7 +31,7 @@ class NavDrawerViewController: UIViewController {
         purpleStatusBar.backgroundColor = UIColor.In2DeepPurple()
         appDelegate.window?.rootViewController?.view.addSubview(purpleStatusBar)
         
-        var homeNavCtrl = self.revealViewController().frontViewController as! UINavigationController
+        let homeNavCtrl = self.revealViewController().frontViewController as! UINavigationController
         self.homeVCNavCtrl = homeNavCtrl
         
         // Do any additional setup after loading the view.
@@ -50,7 +50,7 @@ class NavDrawerViewController: UIViewController {
     
     func userJustSwipedFromRightToLeft(gesture: UISwipeGestureRecognizer) {
         if (gesture.direction == UISwipeGestureRecognizerDirection.Left) {
-            println("swiped left")
+            print("swiped left")
             purpleStatusBar.hidden = true
             self.revealViewController().revealToggleAnimated(true)
         }
@@ -73,7 +73,7 @@ class NavDrawerViewController: UIViewController {
     
     func handleTap(gestureRecognizer: UIGestureRecognizer) {
         let location = gestureRecognizer.locationInView(self.view)
-        println("from navdrawer handleTap \(location)")
+        print("from navdrawer handleTap \(location)")
         if (location.y < self.aboutVCModal.view.frame.origin.y) || (location.y > self.aboutVCModal.view.frame.height + self.aboutVCModal.view.frame.origin.y) || (location.x > self.aboutVCModal.view.frame.width + self.aboutVCModal.view.frame.origin.x) || (location.x < self.aboutVCModal.view.frame.origin.x) {
             closeAboutPIModal()
         }

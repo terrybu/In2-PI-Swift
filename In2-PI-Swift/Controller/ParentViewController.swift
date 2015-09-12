@@ -15,8 +15,8 @@ class ParentViewController: UIViewController {
     }
 
     func homeButtonPressed() {
-        var leftDrawer = revealViewController().rearViewController as! NavDrawerViewController
-        var homeNavCtrl = leftDrawer.homeVCNavCtrl
+        let leftDrawer = revealViewController().rearViewController as! NavDrawerViewController
+        let homeNavCtrl = leftDrawer.homeVCNavCtrl
         revealViewController().pushFrontViewController(homeNavCtrl!, animated: true)
     }
     
@@ -28,9 +28,7 @@ class ParentViewController: UIViewController {
         }
         
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        let textAttributes = NSMutableDictionary(capacity:1)
-        textAttributes.setObject(UIColor.whiteColor(), forKey: NSForegroundColorAttributeName)
-        navigationController?.navigationBar.titleTextAttributes = textAttributes as [NSObject : AnyObject]
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         
         let hamburger = UIBarButtonItem(image: UIImage(named: "hamburger"), style: UIBarButtonItemStyle.Done, target: self, action: Selector("hamburgerPressed:"))
         navigationItem.leftBarButtonItem = hamburger

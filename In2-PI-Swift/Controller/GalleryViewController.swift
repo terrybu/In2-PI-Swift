@@ -28,7 +28,7 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
         hideViews()
         FacebookPhotoQuery.sharedInstance.getPhotosFromMostRecentThreeAlbums { (error) -> Void in
             if (error != nil) {
-                println(error.description)
+                print(error.description)
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
             }
         }
@@ -71,12 +71,12 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
     }
     
     func displayJTSFullScreenViewForImage() {
-        var imageInfo = JTSImageInfo()
+        let imageInfo = JTSImageInfo()
         imageInfo.image = self.topImageView.image
         imageInfo.referenceRect = self.topImageView.frame
         imageInfo.referenceView = self.topImageView.superview
         var imageViewer = JTSImageViewController(imageInfo: imageInfo, mode: JTSImageViewControllerMode.Image, backgroundStyle: JTSImageViewControllerBackgroundOptions.Scaled)
-        imageViewer.showFromViewController(self, transition: JTSImageViewControllerTransition._FromOriginalPosition)
+        imageViewer.showFromViewController(self, transition: JTSImageViewControllerTransition.FromOriginalPosition)
     }
     
     
@@ -127,7 +127,7 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
     }
 
     deinit {
-        println("gallery vc deinit checking")
+        print("gallery vc deinit checking")
     }
     
 }

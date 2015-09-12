@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             myMoviePlayer.moviePlayer.setFullscreen(true, animated: false)
             myMoviePlayer.moviePlayer.play()
         #else
-            println("debug mode")
+            print("debug mode")
             moviePlayBackDidFinish()
 
         #endif
@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
     }
     

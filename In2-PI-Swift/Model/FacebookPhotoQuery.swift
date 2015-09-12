@@ -22,7 +22,7 @@ class FacebookPhotoQuery: FacebookQuery {
     
     
     func getPhotosFromMostRecentThreeAlbums(completion: ((error: NSError!) -> Void)?) {
-        var params = [
+        let params = [
             "access_token": kAppAccessToken
         ]
         super.getFBDataJSON(kGraphPathPIMagazineAlbumsString, params: params,
@@ -58,7 +58,7 @@ class FacebookPhotoQuery: FacebookQuery {
             let photosArray = photos["data"].arrayValue
             //            println(photosArray.description)
             for object:JSON in photosArray {
-                var newPicObject = FBPhotoObject(id: object["id"].stringValue, albumPicURLString: object["picture"].stringValue)
+                let newPicObject = FBPhotoObject(id: object["id"].stringValue, albumPicURLString: object["picture"].stringValue)
                 self.FBPhotoObjectsArray.append(newPicObject)
             }
             if let completion = completion {
@@ -68,7 +68,7 @@ class FacebookPhotoQuery: FacebookQuery {
     }
     
     func getNormalSizePhotoURLStringFrom(fbObject: FBPhotoObject, completion: ((normImgUrlString: String) -> Void)?) {
-        var paramsDictionary = [
+        let paramsDictionary = [
             "access_token": kAppAccessToken,
         ]
         let graphPathString = "\(fbObject.id)/picture?type=normal&redirect=false"

@@ -11,7 +11,7 @@ import UIKit
 class HomeActionCollectionViewCell: UICollectionViewCell {
     
     
-    override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes!) {
+    override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
         
         self.layer.cornerRadius = 20
         

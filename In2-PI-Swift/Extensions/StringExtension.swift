@@ -9,11 +9,11 @@
 extension String {
     
     subscript(integerIndex: Int) -> String {
-        let index = advance(startIndex, integerIndex)
+        let index = startIndex.advancedBy(integerIndex)
         return String(self[index] as Character)
     }
     
     subscript (r: Range<Int>) -> String {
-        return substringWithRange(Range(start: advance(startIndex, r.startIndex), end: advance(startIndex, r.endIndex)))
+        return substringWithRange(Range(start: startIndex.advancedBy(r.startIndex), end: startIndex.advancedBy(r.endIndex)))
     }
 }
