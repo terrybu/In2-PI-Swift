@@ -50,6 +50,7 @@
 		D9F7F4861B93687700D86FF7 /* FBPhotoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7F4851B93687700D86FF7 /* FBPhotoObject.swift */; };
 		D9F8C4701BA4BE4300881B94 /* TodaysQTWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8C46F1BA4BE4300881B94 /* TodaysQTWidget.swift */; settings = {ASSET_TAGS = (); }; };
 		D9F8C4761BA4C33200881B94 /* TodaysQTWidget.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9F8C4751BA4C33200881B94 /* TodaysQTWidget.xib */; settings = {ASSET_TAGS = (); }; };
+		D9F8C4781BA4CFF800881B94 /* ExpandableAboutViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8C4771BA4CFF800881B94 /* ExpandableAboutViewHandler.swift */; settings = {ASSET_TAGS = (); }; };
 		D9F9C7E11B644EBA00F5C17D /* savedCodeForLater in Resources */ = {isa = PBXBuildFile; fileRef = D9F9C7E01B644EBA00F5C17D /* savedCodeForLater */; };
 		D9F9C7E51B645FE300F5C17D /* NanumBarunGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9F9C7E31B645FE300F5C17D /* NanumBarunGothic.otf */; };
 		D9F9C7E61B645FE300F5C17D /* NanumBarunGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9F9C7E41B645FE300F5C17D /* NanumBarunGothicBold.otf */; };
@@ -123,6 +124,7 @@
 		D9F7F4851B93687700D86FF7 /* FBPhotoObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBPhotoObject.swift; sourceTree = "<group>"; };
 		D9F8C46F1BA4BE4300881B94 /* TodaysQTWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysQTWidget.swift; sourceTree = "<group>"; };
 		D9F8C4751BA4C33200881B94 /* TodaysQTWidget.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodaysQTWidget.xib; sourceTree = "<group>"; };
+		D9F8C4771BA4CFF800881B94 /* ExpandableAboutViewHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableAboutViewHandler.swift; sourceTree = "<group>"; };
 		D9F9C7E01B644EBA00F5C17D /* savedCodeForLater */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = savedCodeForLater; sourceTree = "<group>"; };
 		D9F9C7E31B645FE300F5C17D /* NanumBarunGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothic.otf; sourceTree = "<group>"; };
 		D9F9C7E41B645FE300F5C17D /* NanumBarunGothicBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicBold.otf; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 			children = (
 				D9F9C7E91B64873800F5C17D /* NavDrawerViewController.swift */,
 				D90A7AFD1B92406F003EA693 /* HomeScreenViewController.swift */,
+				D9F8C4771BA4CFF800881B94 /* ExpandableAboutViewHandler.swift */,
 				D980D6F31B9BDAFC001058E9 /* Five Boros Controllers */,
 				D980D6F41B9BDB1B001058E9 /* Other Controllers */,
 			);
@@ -572,6 +575,7 @@
 				D90A7AFC1B923F13003EA693 /* NurtureViewController.swift in Sources */,
 				D9D3CDED1B3F20EF00C8E195 /* AppDelegate.swift in Sources */,
 				D99EF24F1B9F59FD00026D66 /* FacebookQuery.swift in Sources */,
+				D9F8C4781BA4CFF800881B94 /* ExpandableAboutViewHandler.swift in Sources */,
 				D90A7B041B92413F003EA693 /* EvangelismViewController.swift in Sources */,
 				D90A7B021B924135003EA693 /* SocialServicesViewController.swift in Sources */,
 				D90A7B001B9240EC003EA693 /* CommunicationsViewController.swift in Sources */,

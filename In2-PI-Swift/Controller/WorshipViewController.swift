@@ -13,7 +13,7 @@ private let kOriginalAboutViewHeight: CGFloat = 32.0
 private let kExpandedAboutViewHeight: CGFloat = 300.0
 private let kOriginalContentViewHeight: CGFloat = 600
 
-class WorshipViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource, ExpandableAboutViewDelegate {
+class WorshipViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var contentView: UIView! 
     @IBOutlet var expandableAboutView: ExpandableAboutView!
@@ -31,7 +31,8 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
     
-        expandableAboutView.delegate = self
+        expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: self.constraintHeightExpandableView, constraintContentViewHeight: self.constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: kExpandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
+//        expandableAboutView.delegate = self
         
         songsArray = ["Hillsong - Above All", "예수전도단 - 좋으신 하나님", "예수전도단 - 주 나의 왕"]
         let test1 = "07/19/2015"
@@ -40,32 +41,7 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
         jooboTableView.reloadData()
     }
     
-    //MARK: ExpandableAboutBar methods
-    func didPressExpandButton() {
-        if !expandableAboutView.expanded {
-            print("did press expand button when it wasn't expanded")
 
-            UIView.animateWithDuration(0.5, animations: { () -> Void in
-                self.constraintHeightExpandableView.constant = kExpandedAboutViewHeight
-                self.constraintContentViewHeight.constant += kExpandedAboutViewHeight - kOriginalAboutViewHeight
-                self.view.layoutIfNeeded()
-                
-                }) { (Bool completed) -> Void in
-                   self.expandableAboutView.expanded = true
-            }
-        }
-        else {
-            print("did press expand button when it WAS expanded")
-            UIView.animateWithDuration(0.5, animations: { () -> Void in
-                self.constraintHeightExpandableView.constant = kOriginalAboutViewHeight
-                self.constraintContentViewHeight.constant =  kOriginalContentViewHeight
-                self.view.layoutIfNeeded()
-
-                }) { (Bool completed) -> Void in
-                    self.expandableAboutView.expanded = false
-                }
-        }
-    }
     
     //MARK: Joobo TableView Delegate methods
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
