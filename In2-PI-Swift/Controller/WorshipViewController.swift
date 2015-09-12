@@ -11,7 +11,6 @@ import WebKit
 
 private let kOriginalAboutViewHeight: CGFloat = 32.0
 private let kExpandedAboutViewHeight: CGFloat = 300.0
-private let kContentViewHeightAdjustment: CGFloat = kExpandedAboutViewHeight - kOriginalAboutViewHeight
 private let kOriginalContentViewHeight: CGFloat = 600
 
 class WorshipViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource, ExpandableAboutViewDelegate {
@@ -48,7 +47,7 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
 
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 self.constraintHeightExpandableView.constant = kExpandedAboutViewHeight
-                self.constraintContentViewHeight.constant += kContentViewHeightAdjustment
+                self.constraintContentViewHeight.constant += kExpandedAboutViewHeight - kOriginalAboutViewHeight
                 self.view.layoutIfNeeded()
                 
                 }) { (Bool completed) -> Void in

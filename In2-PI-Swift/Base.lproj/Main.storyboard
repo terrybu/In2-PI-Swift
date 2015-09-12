@@ -447,7 +447,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atY-6P-a2d" userLabel="ExpandableAboutView" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="20" width="600" height="32"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="32"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="0m5-Q6-ZV4"/>
@@ -467,7 +467,7 @@
                                                 </variation>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Z59-kD-ayY" userLabel="Songs Table View">
-                                                <rect key="frame" x="0.0" y="72" width="600" height="300"/>
+                                                <rect key="frame" x="0.0" y="52" width="600" height="300"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="cLI-3P-8mW"/>
@@ -488,7 +488,7 @@
                                                 </connections>
                                             </tableView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dv8-4e-YfA" userLabel="Joobo Table View">
-                                                <rect key="frame" x="0.0" y="392" width="600" height="208"/>
+                                                <rect key="frame" x="0.0" y="372" width="600" height="228"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="9im-OQ-44M"/>
@@ -522,7 +522,7 @@
                                             <constraint firstItem="dv8-4e-YfA" firstAttribute="top" secondItem="Z59-kD-ayY" secondAttribute="bottom" constant="20" id="9EF-AW-IaJ"/>
                                             <constraint firstAttribute="trailing" secondItem="atY-6P-a2d" secondAttribute="trailing" id="AD9-Eh-PQy"/>
                                             <constraint firstItem="dv8-4e-YfA" firstAttribute="leading" secondItem="pVQ-jT-Ckx" secondAttribute="leading" id="HMN-bE-iMb"/>
-                                            <constraint firstItem="atY-6P-a2d" firstAttribute="top" secondItem="pVQ-jT-Ckx" secondAttribute="top" constant="20" id="Nmb-uh-Obx"/>
+                                            <constraint firstItem="atY-6P-a2d" firstAttribute="top" secondItem="pVQ-jT-Ckx" secondAttribute="top" id="Nmb-uh-Obx"/>
                                             <constraint firstAttribute="trailing" secondItem="Z59-kD-ayY" secondAttribute="trailing" id="WU4-Ct-OiP"/>
                                             <constraint firstAttribute="trailing" secondItem="dv8-4e-YfA" secondAttribute="trailing" id="j7F-1A-kiz"/>
                                             <constraint firstItem="Z59-kD-ayY" firstAttribute="top" secondItem="atY-6P-a2d" secondAttribute="bottom" constant="20" id="n6m-rP-ECX"/>
@@ -607,32 +607,7 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TP4-FC-u3x" customClass="ExpandableAboutBar" customModule="In2_PI_Swift" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="306" width="600" height="32"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="oXB-wE-xMD"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="About 예배부"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9aj-r7-edb" userLabel="LeftWidget" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="338" width="300" height="198"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="1:1 제자 양육"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BXF-su-KJq" userLabel="RightWidget" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
-                                <rect key="frame" x="300" y="338" width="300" height="198"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="홀리스타"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="box_DarkPurple"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZd-k0-EaW" userLabel="placeholder" customClass="TodaysQTWidget" customModule="In2_PI_Swift" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZd-k0-EaW" userLabel="Todays QT Widget" customClass="TodaysQTWidget" customModule="In2_PI_Swift" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                 <color key="backgroundColor" red="0.62352941179999999" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -645,40 +620,101 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8C-Hs-Jb5">
+                                <rect key="frame" x="0.0" y="300" width="600" height="236"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldl-U4-aPo" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TP4-FC-u3x" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="32"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="oXB-wE-xMD"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="About 예배부"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXF-su-KJq" userLabel="RightWidget" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="300" y="32" width="300" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="홀리스타"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="box_DarkPurple"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9aj-r7-edb" userLabel="LeftWidget" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="32" width="300" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="euE-gP-XBx"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="1:1 제자 양육"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="TP4-FC-u3x" firstAttribute="top" secondItem="ldl-U4-aPo" secondAttribute="top" id="5Ft-kC-Aw3"/>
+                                            <constraint firstItem="9aj-r7-edb" firstAttribute="top" secondItem="TP4-FC-u3x" secondAttribute="bottom" id="Anl-c1-dF4"/>
+                                            <constraint firstItem="BXF-su-KJq" firstAttribute="width" secondItem="9aj-r7-edb" secondAttribute="width" id="Lnc-8n-WjK"/>
+                                            <constraint firstAttribute="trailing" secondItem="BXF-su-KJq" secondAttribute="trailing" id="NDl-2a-AFb"/>
+                                            <constraint firstItem="9aj-r7-edb" firstAttribute="width" secondItem="ldl-U4-aPo" secondAttribute="width" multiplier="0.5" id="Qwq-WK-myj"/>
+                                            <constraint firstItem="BXF-su-KJq" firstAttribute="top" secondItem="9aj-r7-edb" secondAttribute="top" id="Rqa-2W-aRI"/>
+                                            <constraint firstItem="BXF-su-KJq" firstAttribute="height" secondItem="9aj-r7-edb" secondAttribute="height" id="UdK-YN-fem"/>
+                                            <constraint firstItem="9aj-r7-edb" firstAttribute="leading" secondItem="ldl-U4-aPo" secondAttribute="leading" id="b02-gB-af2"/>
+                                            <constraint firstAttribute="bottom" secondItem="9aj-r7-edb" secondAttribute="bottom" id="dv4-2i-22S"/>
+                                            <constraint firstItem="TP4-FC-u3x" firstAttribute="leading" secondItem="ldl-U4-aPo" secondAttribute="leading" id="erm-Jg-0VQ"/>
+                                            <constraint firstAttribute="height" constant="300" id="ghV-De-o2X"/>
+                                            <constraint firstItem="BXF-su-KJq" firstAttribute="height" secondItem="9aj-r7-edb" secondAttribute="height" id="hCd-2A-iat"/>
+                                            <constraint firstItem="BXF-su-KJq" firstAttribute="height" secondItem="9aj-r7-edb" secondAttribute="height" id="hy6-EX-7Cv"/>
+                                            <constraint firstItem="BXF-su-KJq" firstAttribute="top" secondItem="TP4-FC-u3x" secondAttribute="bottom" id="mOQ-56-zA4"/>
+                                            <constraint firstAttribute="trailing" secondItem="TP4-FC-u3x" secondAttribute="trailing" id="wus-tX-t9w"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="dv4-2i-22S"/>
+                                                <exclude reference="Rqa-2W-aRI"/>
+                                                <exclude reference="hCd-2A-iat"/>
+                                                <exclude reference="hy6-EX-7Cv"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ldl-U4-aPo" firstAttribute="centerX" secondItem="c8C-Hs-Jb5" secondAttribute="centerX" id="2y9-I1-5mC"/>
+                                    <constraint firstAttribute="trailing" secondItem="ldl-U4-aPo" secondAttribute="trailing" id="Oci-43-ltc"/>
+                                    <constraint firstAttribute="bottom" secondItem="ldl-U4-aPo" secondAttribute="bottom" id="cQX-3V-dJj"/>
+                                    <constraint firstItem="ldl-U4-aPo" firstAttribute="top" secondItem="c8C-Hs-Jb5" secondAttribute="top" id="eh6-M9-Bd4"/>
+                                    <constraint firstItem="ldl-U4-aPo" firstAttribute="leading" secondItem="c8C-Hs-Jb5" secondAttribute="leading" id="mEb-lR-r99"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="BXF-su-KJq" secondAttribute="trailing" id="1S8-S4-8dZ"/>
-                            <constraint firstItem="TP4-FC-u3x" firstAttribute="top" secondItem="yJj-G9-UTU" secondAttribute="top" constant="300" id="3Hp-7R-fyb"/>
-                            <constraint firstItem="TP4-FC-u3x" firstAttribute="top" secondItem="pcV-De-r5w" secondAttribute="bottom" id="3X1-Ox-9ti"/>
-                            <constraint firstAttribute="trailing" secondItem="TP4-FC-u3x" secondAttribute="trailing" id="3hQ-kF-o9K"/>
-                            <constraint firstItem="9aj-r7-edb" firstAttribute="leading" secondItem="yJj-G9-UTU" secondAttribute="leading" id="FdD-Sr-kjM"/>
-                            <constraint firstItem="BXF-su-KJq" firstAttribute="leading" secondItem="yJj-G9-UTU" secondAttribute="leading" id="NCc-fp-u1E"/>
+                            <constraint firstItem="fqb-cg-FbM" firstAttribute="top" secondItem="c8C-Hs-Jb5" secondAttribute="bottom" id="8zw-IU-ar5"/>
+                            <constraint firstItem="c8C-Hs-Jb5" firstAttribute="top" secondItem="pcV-De-r5w" secondAttribute="bottom" id="C5H-8Y-Mpb"/>
+                            <constraint firstItem="c8C-Hs-Jb5" firstAttribute="leading" secondItem="yJj-G9-UTU" secondAttribute="leading" id="GIB-VA-Jhg"/>
+                            <constraint firstItem="c8C-Hs-Jb5" firstAttribute="top" secondItem="HZd-k0-EaW" secondAttribute="bottom" id="K4Z-PR-teH"/>
                             <constraint firstAttribute="trailing" secondItem="HZd-k0-EaW" secondAttribute="trailing" id="P3z-Cx-6aN"/>
-                            <constraint firstItem="TP4-FC-u3x" firstAttribute="top" secondItem="HZd-k0-EaW" secondAttribute="bottom" id="XwK-iN-P46"/>
-                            <constraint firstItem="BXF-su-KJq" firstAttribute="width" secondItem="yJj-G9-UTU" secondAttribute="width" multiplier="0.5" id="Yaq-3j-zf8"/>
-                            <constraint firstItem="fqb-cg-FbM" firstAttribute="top" secondItem="9aj-r7-edb" secondAttribute="bottom" id="ZPJ-Ag-nga"/>
-                            <constraint firstItem="9aj-r7-edb" firstAttribute="top" secondItem="TP4-FC-u3x" secondAttribute="bottom" id="gbd-fy-jCL"/>
-                            <constraint firstItem="TP4-FC-u3x" firstAttribute="top" secondItem="HZd-k0-EaW" secondAttribute="bottom" constant="179" id="nqX-q2-YrJ"/>
                             <constraint firstItem="HZd-k0-EaW" firstAttribute="top" secondItem="pcV-De-r5w" secondAttribute="bottom" id="oIc-on-Esv"/>
                             <constraint firstItem="HZd-k0-EaW" firstAttribute="leading" secondItem="yJj-G9-UTU" secondAttribute="leading" id="odg-UM-4BB"/>
-                            <constraint firstItem="BXF-su-KJq" firstAttribute="leading" secondItem="9aj-r7-edb" secondAttribute="trailing" id="rgc-NL-aj5"/>
-                            <constraint firstItem="TP4-FC-u3x" firstAttribute="leading" secondItem="yJj-G9-UTU" secondAttribute="leading" id="uyR-mt-bmL"/>
-                            <constraint firstItem="9aj-r7-edb" firstAttribute="centerY" secondItem="BXF-su-KJq" secondAttribute="centerY" id="vRj-98-fgM"/>
-                            <constraint firstItem="9aj-r7-edb" firstAttribute="width" secondItem="yJj-G9-UTU" secondAttribute="width" multiplier="0.5" id="zfA-eb-dzZ"/>
+                            <constraint firstAttribute="trailing" secondItem="c8C-Hs-Jb5" secondAttribute="trailing" id="pDE-j3-Q6d"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="3Hp-7R-fyb"/>
-                                <exclude reference="3X1-Ox-9ti"/>
-                                <exclude reference="nqX-q2-YrJ"/>
-                                <exclude reference="1S8-S4-8dZ"/>
-                                <exclude reference="NCc-fp-u1E"/>
+                                <exclude reference="C5H-8Y-Mpb"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Nurture" id="0CA-Bh-ffq"/>
                     <connections>
+                        <outlet property="constraintContentViewHeight" destination="ghV-De-o2X" id="xYl-Dd-916"/>
+                        <outlet property="constraintHeightExpandableView" destination="oXB-wE-xMD" id="CyJ-P1-sbE"/>
+                        <outlet property="contentView" destination="ldl-U4-aPo" id="ZmT-ta-Xg9"/>
+                        <outlet property="expandableAboutView" destination="TP4-FC-u3x" id="Zso-vw-7hB"/>
                         <outlet property="leftNurtureApplyWidget" destination="9aj-r7-edb" id="BoD-WK-55j"/>
                         <outlet property="rightHolyStarApplyWidget" destination="BXF-su-KJq" id="I97-W5-3Qf"/>
                     </connections>

@@ -9,10 +9,20 @@
 import UIKit
 import MessageUI
 
-class NurtureViewController: ParentViewController, MFMailComposeViewControllerDelegate {
+private let kOriginalAboutViewHeight: CGFloat = 32.0
+private let kExpandedAboutViewHeight: CGFloat = 300.0
+private let kOriginalContentViewHeight: CGFloat = 300
+
+class NurtureViewController: ParentViewController, MFMailComposeViewControllerDelegate, ExpandableAboutViewDelegate {
     
     @IBOutlet weak var leftNurtureApplyWidget: ApplyWidgetView!
     @IBOutlet weak var rightHolyStarApplyWidget: ApplyWidgetView!
+    
+    //For expandable view 
+    @IBOutlet var contentView: UIView!
+    @IBOutlet var expandableAboutView: ExpandableAboutView!
+    @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
+    @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
@@ -21,6 +31,34 @@ class NurtureViewController: ParentViewController, MFMailComposeViewControllerDe
         }
         rightHolyStarApplyWidget.applyButtonPressedHandler = {(sender) -> Void in
             self.sendMail(sender)
+        }
+        expandableAboutView.clipsToBounds = true
+        expandableAboutView.delegate = self
+    }
+    
+    func didPressExpandButton() {
+        if !expandableAboutView.expanded {
+            print("did press expand button when it wasn't expanded")
+            
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
+                self.constraintHeightExpandableView.constant = kExpandedAboutViewHeight
+                self.constraintContentViewHeight.constant += kExpandedAboutViewHeight - kOriginalAboutViewHeight
+                self.view.layoutIfNeeded()
+                
+                }) { (Bool completed) -> Void in
+                    self.expandableAboutView.expanded = true
+            }
+        }
+        else {
+            print("did press expand button when it WAS expanded")
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
+                self.constraintHeightExpandableView.constant = kOriginalAboutViewHeight
+                self.constraintContentViewHeight.constant =  kOriginalContentViewHeight
+                self.view.layoutIfNeeded()
+                
+                }) { (Bool completed) -> Void in
+                    self.expandableAboutView.expanded = false
+            }
         }
     }
     
