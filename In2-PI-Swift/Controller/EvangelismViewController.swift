@@ -14,11 +14,11 @@ private let kOriginalContentViewHeight: CGFloat = 600
 
 class EvangelismViewController: ParentViewController {
     
-    @IBOutlet var contentView: UIView!
-    @IBOutlet var expandableAboutView: ExpandableAboutView!
-    //Constraints
-    @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
-    @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
+//    @IBOutlet var contentView: UIView!
+//    @IBOutlet var expandableAboutView: ExpandableAboutView!
+//    //Constraints
+//    @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
+//    @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
@@ -26,8 +26,8 @@ class EvangelismViewController: ParentViewController {
     }
     
     private func setUpExpandableAboutView() {
-        expandableAboutView.clipsToBounds = true
-        expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: kExpandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
+//        expandableAboutView.clipsToBounds = true
+//        expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: kExpandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
     }
     
 }
