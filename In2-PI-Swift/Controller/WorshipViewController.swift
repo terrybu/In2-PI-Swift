@@ -12,7 +12,7 @@ import WebKit
 private let kOriginalAboutViewHeight: CGFloat = 32.0
 private let kExpandedAboutViewHeight: CGFloat = 300.0
 private let kContentViewHeightAdjustment: CGFloat = kExpandedAboutViewHeight - kOriginalAboutViewHeight
-private let kOriginalContentViewHeight: CGFloat = 1000
+private let kOriginalContentViewHeight: CGFloat = 600
 
 class WorshipViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource, ExpandableAboutViewDelegate {
 
