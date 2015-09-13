@@ -20,6 +20,10 @@
             <string>NanumBarunGothicOTF</string>
             <string>NanumBarunGothicOTF</string>
             <string>NanumBarunGothicOTF</string>
+            <string>NanumBarunGothicOTF</string>
+        </mutableArray>
+        <mutableArray key="NanumBarunGothicBold.otf">
+            <string>NanumBarunGothicOTFBold</string>
         </mutableArray>
         <mutableArray key="NanumBarunGothicLight.otf">
             <string>NanumBarunGothicOTFLight</string>
@@ -632,12 +636,16 @@
                                                     <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="Box_purple"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7k-eM-S6m" customClass="NewsArticleView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7k-eM-S6m" customClass="EvangelismApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="532" width="600" height="200"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="BSF-SO-qJc"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="categoryTitle" value="양육부 소식"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="타이틀을 이곳에 입력하세요"/>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZd-k0-EaW" userLabel="Todays QT Widget" customClass="TodaysQTWidget" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
@@ -878,6 +886,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7dl-AZ-g3d" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="605"/>
                                         <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider_0.3pt" translatesAutoresizingMaskIntoConstraints="NO" id="QUh-lq-rOx">
+                                                <rect key="frame" x="0.0" y="342" width="600" height="1"/>
+                                            </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_bg" translatesAutoresizingMaskIntoConstraints="NO" id="CEu-sA-eF1">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                                 <constraints>
@@ -891,9 +902,39 @@
                                                     <constraint firstAttribute="height" constant="32" id="pC3-zy-icE"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8o-TD-haP">
-                                                <rect key="frame" x="0.0" y="332" width="600" height="273"/>
-                                                <color key="backgroundColor" red="0.62352941179999999" green="0.36078431370000003" blue="0.75294117650000003" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frw-Mk-C4M">
+                                                <rect key="frame" x="279" y="42" width="43" height="20"/>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothicOTFBold" family="NanumBarunGothicOTF" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="선교부 소식 타이틀" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0C4-jp-jmH">
+                                                <rect key="frame" x="213" y="87" width="175" height="72"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="175" id="qWR-Q8-qKx"/>
+                                                    <constraint firstAttribute="height" constant="80" id="wGg-ym-923"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="31"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="wGg-ym-923"/>
+                                                    </mask>
+                                                </variation>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVP-Me-66w">
+                                                <rect key="frame" x="266" y="219" width="70" height="30"/>
+                                                <state key="normal" title="더보기" backgroundImage="btn_more_white">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rule_ver" translatesAutoresizingMaskIntoConstraints="NO" id="WMu-M8-9Ih">
+                                                <rect key="frame" x="300" y="174" width="1" height="21"/>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8o-TD-haP" customClass="EvangelismApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="353" width="600" height="252"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="400" id="gXp-r1-UO7"/>
                                                 </constraints>
@@ -906,22 +947,36 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="frw-Mk-C4M" firstAttribute="top" secondItem="7dl-AZ-g3d" secondAttribute="top" constant="42" id="2hC-JY-R7p"/>
                                             <constraint firstAttribute="trailing" secondItem="CEu-sA-eF1" secondAttribute="trailing" id="3YS-F9-xFx"/>
                                             <constraint firstItem="CEu-sA-eF1" firstAttribute="leading" secondItem="7dl-AZ-g3d" secondAttribute="leading" id="4Ii-P4-xAj"/>
+                                            <constraint firstItem="nVP-Me-66w" firstAttribute="centerX" secondItem="0C4-jp-jmH" secondAttribute="centerX" id="8vg-7f-alL"/>
+                                            <constraint firstItem="0C4-jp-jmH" firstAttribute="top" secondItem="frw-Mk-C4M" secondAttribute="bottom" constant="25" id="A3J-Gp-Gw4"/>
                                             <constraint firstItem="Qly-Gp-4y0" firstAttribute="leading" secondItem="7dl-AZ-g3d" secondAttribute="leading" id="AYO-gI-7iN"/>
+                                            <constraint firstItem="W8o-TD-haP" firstAttribute="top" secondItem="QUh-lq-rOx" secondAttribute="bottom" constant="10" id="Fjm-2u-EGp"/>
                                             <constraint firstAttribute="trailing" secondItem="Qly-Gp-4y0" secondAttribute="trailing" id="K12-fn-3QW"/>
                                             <constraint firstAttribute="bottom" secondItem="W8o-TD-haP" secondAttribute="bottom" id="M8Q-a3-HHy"/>
-                                            <constraint firstItem="W8o-TD-haP" firstAttribute="top" secondItem="Qly-Gp-4y0" secondAttribute="bottom" id="MKM-mr-uRz"/>
+                                            <constraint firstItem="W8o-TD-haP" firstAttribute="top" secondItem="Qly-Gp-4y0" secondAttribute="bottom" constant="5" id="MKM-mr-uRz"/>
                                             <constraint firstAttribute="trailing" secondItem="W8o-TD-haP" secondAttribute="trailing" id="O6m-jY-Ykg"/>
+                                            <constraint firstItem="nVP-Me-66w" firstAttribute="top" secondItem="0C4-jp-jmH" secondAttribute="bottom" constant="60" id="VLs-qz-x53"/>
                                             <constraint firstItem="Qly-Gp-4y0" firstAttribute="top" secondItem="CEu-sA-eF1" secondAttribute="bottom" id="Yus-Jp-Xo4"/>
+                                            <constraint firstItem="WMu-M8-9Ih" firstAttribute="centerX" secondItem="0C4-jp-jmH" secondAttribute="centerX" id="bWb-u5-LiN"/>
                                             <constraint firstItem="W8o-TD-haP" firstAttribute="bottom" secondItem="Qly-Gp-4y0" secondAttribute="bottom" id="cL7-Qc-YGC"/>
                                             <constraint firstItem="W8o-TD-haP" firstAttribute="leading" secondItem="7dl-AZ-g3d" secondAttribute="leading" id="fZq-mc-6ht"/>
+                                            <constraint firstItem="WMu-M8-9Ih" firstAttribute="top" secondItem="0C4-jp-jmH" secondAttribute="bottom" constant="15" id="fpP-s1-74C"/>
+                                            <constraint firstAttribute="trailing" secondItem="QUh-lq-rOx" secondAttribute="trailing" id="g9P-YS-7aA"/>
+                                            <constraint firstItem="QUh-lq-rOx" firstAttribute="leading" secondItem="7dl-AZ-g3d" secondAttribute="leading" id="hZe-ib-kl0"/>
+                                            <constraint firstItem="nVP-Me-66w" firstAttribute="top" secondItem="WMu-M8-9Ih" secondAttribute="bottom" constant="24" id="icX-XG-C7g"/>
                                             <constraint firstAttribute="height" constant="605" id="itP-1v-EcH"/>
+                                            <constraint firstItem="frw-Mk-C4M" firstAttribute="centerX" secondItem="7dl-AZ-g3d" secondAttribute="centerX" id="jx1-E9-BEu"/>
                                             <constraint firstItem="CEu-sA-eF1" firstAttribute="top" secondItem="7dl-AZ-g3d" secondAttribute="top" id="k53-vh-1IC"/>
                                             <constraint firstItem="W8o-TD-haP" firstAttribute="top" secondItem="Qly-Gp-4y0" secondAttribute="bottom" id="sJM-zD-WhF"/>
+                                            <constraint firstItem="0C4-jp-jmH" firstAttribute="centerX" secondItem="7dl-AZ-g3d" secondAttribute="centerX" id="xfu-Xc-XYC"/>
+                                            <constraint firstItem="QUh-lq-rOx" firstAttribute="top" secondItem="Qly-Gp-4y0" secondAttribute="bottom" constant="10" id="zdc-Gd-3Kh"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="MKM-mr-uRz"/>
                                                 <exclude reference="cL7-Qc-YGC"/>
                                                 <exclude reference="sJM-zD-WhF"/>
                                             </mask>
@@ -969,16 +1024,26 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WCt-o5-MMH">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WCt-o5-MMH">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TeX-0v-hKw" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="605"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZr-DP-yu9" userLabel="PlaceholderForCalendar">
                                                 <rect key="frame" x="0.0" y="52" width="600" height="200"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALENDAR???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7C-Bm-BMl">
+                                                        <rect key="frame" x="217" y="73" width="166" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" red="0.62352941179999999" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="u7C-Bm-BMl" firstAttribute="top" secondItem="aZr-DP-yu9" secondAttribute="top" constant="73" id="8Hu-xK-07o"/>
+                                                    <constraint firstItem="u7C-Bm-BMl" firstAttribute="centerX" secondItem="aZr-DP-yu9" secondAttribute="centerX" id="azA-AT-GCR"/>
                                                     <constraint firstAttribute="height" constant="200" id="esV-dZ-jgU"/>
                                                 </constraints>
                                             </view>
@@ -990,15 +1055,15 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Bm-1l-Zm5" userLabel="BetterFutureApply" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
-                                                <rect key="frame" x="300" y="413" width="300" height="187"/>
+                                                <rect key="frame" x="300" y="418" width="300" height="187"/>
                                                 <color key="backgroundColor" red="0.62352941179999999" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Better Future"/>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="rectangle_BetterFuture"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FQQ-Ls-qMi">
-                                                <rect key="frame" x="0.0" y="252" width="600" height="148"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FQQ-Ls-qMi">
+                                                <rect key="frame" x="0.0" y="252" width="600" height="146"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="208" id="YP9-If-5OH"/>
@@ -1028,7 +1093,7 @@
                                                 </connections>
                                             </tableView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hE-u1-Fs8" userLabel="BetterWorldApply" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="413" width="300" height="187"/>
+                                                <rect key="frame" x="0.0" y="418" width="300" height="187"/>
                                                 <color key="backgroundColor" red="1" green="0.70196078429999997" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="mOo-Ia-d0e"/>
@@ -1048,7 +1113,7 @@
                                         </subviews>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="600" id="17e-pv-XGG"/>
+                                            <constraint firstAttribute="height" constant="605" id="17e-pv-XGG"/>
                                             <constraint firstItem="aZr-DP-yu9" firstAttribute="top" secondItem="7Bm-1l-Zm5" secondAttribute="bottom" id="2B1-zY-K4c"/>
                                             <constraint firstItem="aZr-DP-yu9" firstAttribute="top" secondItem="9hE-u1-Fs8" secondAttribute="bottom" id="9pP-Jh-WoN"/>
                                             <constraint firstItem="MdS-at-YMQ" firstAttribute="leading" secondItem="TeX-0v-hKw" secondAttribute="leading" id="CcR-Z5-uwY"/>
@@ -1068,6 +1133,7 @@
                                             <constraint firstAttribute="bottom" secondItem="9hE-u1-Fs8" secondAttribute="bottom" id="hp1-dq-RaE"/>
                                             <constraint firstItem="9hE-u1-Fs8" firstAttribute="width" secondItem="TeX-0v-hKw" secondAttribute="width" multiplier="0.5" id="qfS-Mz-FMh"/>
                                             <constraint firstItem="FQQ-Ls-qMi" firstAttribute="top" secondItem="aZr-DP-yu9" secondAttribute="bottom" id="sGG-Xb-dhe"/>
+                                            <constraint firstItem="9hE-u1-Fs8" firstAttribute="top" secondItem="FQQ-Ls-qMi" secondAttribute="bottom" constant="20" id="uIY-gz-HCh"/>
                                             <constraint firstItem="aZr-DP-yu9" firstAttribute="leading" secondItem="TeX-0v-hKw" secondAttribute="leading" id="zxA-KB-qsW"/>
                                         </constraints>
                                         <variation key="default">
@@ -1348,10 +1414,13 @@
         <image name="btn_SocialServices" width="64" height="64"/>
         <image name="btn_Worship" width="64" height="64"/>
         <image name="btn_X" width="18" height="18"/>
+        <image name="btn_more_white" width="70" height="30"/>
+        <image name="divider_0.3pt" width="341" height="1"/>
         <image name="hamburger" width="22" height="15"/>
         <image name="img_bg" width="600" height="600"/>
         <image name="rectangle_BetterFuture" width="187" height="187"/>
         <image name="rectangle_BetterWorld" width="187" height="187"/>
+        <image name="rule_ver" width="1" height="18"/>
         <image name="sampleGray" width="600" height="600"/>
     </resources>
 </document>

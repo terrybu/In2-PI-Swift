@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vt8-gx-oqh" userLabel="AboutLabel">
-                    <rect key="frame" x="8" y="6" width="45" height="19"/>
+                    <rect key="frame" x="20" y="6" width="45" height="19"/>
                     <fontDescription key="fontDescription" name="NanumBarunGothicOTFBold" family="NanumBarunGothicOTF" pointSize="16"/>
                     <color key="textColor" red="0.62352941179999999" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -37,13 +37,13 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TitleLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CcP-eQ-vUK">
-                    <rect key="frame" x="8" y="50" width="75" height="21"/>
+                    <rect key="frame" x="20" y="50" width="75" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bK-sB-FoZ">
-                    <rect key="frame" x="8" y="77" width="584" height="200"/>
+                    <rect key="frame" x="20" y="77" width="572" height="200"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="Rpe-ux-Byd"/>
@@ -56,7 +56,7 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="6bK-sB-FoZ" secondAttribute="bottom" id="35q-mX-nTj"/>
                 <constraint firstItem="6bK-sB-FoZ" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="3IW-dG-vDO"/>
-                <constraint firstItem="vt8-gx-oqh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="D9p-jc-aE7"/>
+                <constraint firstItem="vt8-gx-oqh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="D9p-jc-aE7"/>
                 <constraint firstItem="vt8-gx-oqh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="DUS-LW-DX7"/>
                 <constraint firstItem="CcP-eQ-vUK" firstAttribute="top" secondItem="vt8-gx-oqh" secondAttribute="bottom" constant="25" id="FBj-P3-ftE"/>
                 <constraint firstItem="vt8-gx-oqh" firstAttribute="leading" secondItem="CcP-eQ-vUK" secondAttribute="leading" id="MVS-ZB-sA1"/>

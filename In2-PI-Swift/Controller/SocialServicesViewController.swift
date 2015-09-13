@@ -10,7 +10,7 @@ import UIKit
 
 private let kOriginalAboutViewHeight: CGFloat = 32.0
 private let kExpandedAboutViewHeight: CGFloat = 300.0
-private let kOriginalContentViewHeight: CGFloat = 600
+private let kOriginalContentViewHeight: CGFloat = 605
 
 class SocialServicesViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource{
    
