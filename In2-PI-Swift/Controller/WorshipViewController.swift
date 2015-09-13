@@ -120,5 +120,33 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
         }
     }
     
+    //MARK: UITableViewDelegate
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+            if (tableView == jooboTableView) {
+                print("joobo tv")
+
+                let url : NSURL! = NSURL(string: "http://vision.onnuri.org/in2/wp-content/uploads/sites/29/2015/08/08.02-%EC%A3%BC%EB%B3%B4web.pdf")
+                let webView = UIWebView(frame: view.frame)
+                webView.loadRequest(NSURLRequest(URL: url))
+                let vc = UIViewController()
+                vc.view = webView
+                navigationController?.pushViewController(vc, animated: true)
+            }
+            else {
+                print("songs tv")
+                let nameSong = songsTableView.cellForRowAtIndexPath(indexPath)?.textLabel!.text
+                let escaped = nameSong!.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
+                let urlString = "https://www.youtube.com/results?search_query=" + escaped!
+                let url : NSURL! = NSURL(string: urlString)
+                let webView = UIWebView(frame: view.frame)
+                webView.loadRequest(NSURLRequest(URL: url))
+                let vc = UIViewController()
+                vc.view = webView
+                navigationController?.pushViewController(vc, animated: true)
+            }
+    }
+    
+    
+
 }
