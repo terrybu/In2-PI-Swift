@@ -27,6 +27,7 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
         hud.labelText = "Loading..."
         hideViews()
         FacebookPhotoQuery.sharedInstance.getPhotosFromMostRecentThreeAlbums { (error) -> Void in
+            
             if (error != nil) {
                 print(error.description)
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
@@ -40,6 +41,30 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
         singleTap.numberOfTapsRequired = 1
         topImageView.userInteractionEnabled = true
         topImageView.addGestureRecognizer(singleTap)
+        
+        
+        let doubleTapGesture = UITapGestureRecognizer(target: self, action: "processDoubleTap:")
+        doubleTapGesture.numberOfTapsRequired = 2
+        doubleTapGesture.numberOfTouchesRequired = 1
+        doubleTapGesture.delaysTouchesBegan = true
+        view.addGestureRecognizer(doubleTapGesture)
+    }
+    
+    func processDoubleTap(sender: UITapGestureRecognizer) {
+        if (sender.state == UIGestureRecognizerState.Ended) {
+            let point = sender.locationInView(collectionView)
+            let indexPath = collectionView.indexPathForItemAtPoint(point)
+            if let indexPath = indexPath  {
+                print("\(indexPath.row)")
+                self.displayJTSFullScreenViewForImageCurrentlyInTopImgView()
+
+//                setImgInNormalSizeToTopImageView(photoObjectsArray![indexPath.row], completion: { () -> Void in
+//                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                        self.displayJTSFullScreenViewForImageCurrentlyInTopImgView()
+//                    })
+//                })
+            }
+        }
     }
     
     private func hideViews() {
@@ -55,22 +80,27 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
     func didFinishGettingFacebookPhotos(fbPhotoObjectsArray: [FBPhotoObject]) {
         self.photoObjectsArray = fbPhotoObjectsArray
         let firstObject = photoObjectsArray![0]
-        setImgInNormalSizeToTopImageView(firstObject)
+        setImgInNormalSizeToTopImageView(firstObject, completion: {
+            MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+            self.unhideViews()
+        })
         self.collectionView.reloadData()
     }
     
     //MARK: Top Image View related methods
-    private func setImgInNormalSizeToTopImageView(fbObject: FBPhotoObject) {
+    private func setImgInNormalSizeToTopImageView(fbPhotoObject: FBPhotoObject, completion: (() -> Void)?) {
         //FacebookManager needs to call a new Graph API request with the object
-        FacebookPhotoQuery.sharedInstance.getNormalSizePhotoURLStringFrom(fbObject
+        MBProgressHUD.showHUDAddedTo(view, animated: true)
+        FacebookPhotoQuery.sharedInstance.getNormalSizePhotoURLStringFrom(fbPhotoObject
             , completion: { (normImgUrlString) -> Void in
                 self.topImageView.setImageWithURL(NSURL(string: normImgUrlString ))
-                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                self.unhideViews()
+                if let completion = completion {
+                    completion()
+                }
         })
     }
     
-    func displayJTSFullScreenViewForImage() {
+    func displayJTSFullScreenViewForImageCurrentlyInTopImgView() {
         let imageInfo = JTSImageInfo()
         imageInfo.image = self.topImageView.image
         imageInfo.referenceRect = self.topImageView.frame
@@ -105,9 +135,10 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
         // Configure the cell
         let photoObject = photoObjectsArray![indexPath.row]
         cell.imageView!.setImageWithURL(NSURL(string: photoObject.albumSizePicURLString ))
-
+        
         return cell
     }
+
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? GalleryCell {
@@ -116,7 +147,9 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
                 }, completion: nil)
         }
         
-        setImgInNormalSizeToTopImageView(photoObjectsArray![indexPath.row])
+        setImgInNormalSizeToTopImageView(photoObjectsArray![indexPath.row], completion:{
+            MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+        })
     }
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
