@@ -75,18 +75,19 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
         imageInfo.image = self.topImageView.image
         imageInfo.referenceRect = self.topImageView.frame
         imageInfo.referenceView = self.topImageView.superview
-        var imageViewer = JTSImageViewController(imageInfo: imageInfo, mode: JTSImageViewControllerMode.Image, backgroundStyle: JTSImageViewControllerBackgroundOptions.Scaled)
+        let imageViewer = JTSImageViewController(imageInfo: imageInfo, mode: JTSImageViewControllerMode.Image, backgroundStyle: JTSImageViewControllerBackgroundOptions.Scaled)
         imageViewer.showFromViewController(self, transition: JTSImageViewControllerTransition.FromOriginalPosition)
     }
     
     
-    //MARK UICollectionView delegate methods
+    //MARK: UICollectionView delegate methods
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        if let photoObjectsArray = self.photoObjectsArray {
+        if (self.photoObjectsArray != nil) {
             return 1
         }
         return 0
     }
+    
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let photoObjectsArray = self.photoObjectsArray {
@@ -124,6 +125,13 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
                     cell.contentView.layer.borderColor = UIColor.blackColor().CGColor
                 }, completion: nil)
         }
+    }
+    
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+            let screenWidth = view.frame.size.width - 20 //20 for padding
+            return CGSize(width: screenWidth/3, height: 120.0)
     }
 
     deinit {
