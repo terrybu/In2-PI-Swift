@@ -10,7 +10,7 @@ import UIKit
 
 class AboutPIViewController: ParentViewController {
     
-    var navDrawerVC : NavDrawerViewController?
+    var navDrawerVC : LeftNavDrawerController?
     
     override func didMoveToParentViewController(parent: UIViewController?) {
 //        println("from about: width \(self.view.frame.width) height \(self.view.frame.height)")

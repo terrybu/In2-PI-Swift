@@ -56,7 +56,7 @@
 		D9F9C7E11B644EBA00F5C17D /* savedCodeForLater in Resources */ = {isa = PBXBuildFile; fileRef = D9F9C7E01B644EBA00F5C17D /* savedCodeForLater */; };
 		D9F9C7E51B645FE300F5C17D /* NanumBarunGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9F9C7E31B645FE300F5C17D /* NanumBarunGothic.otf */; };
 		D9F9C7E61B645FE300F5C17D /* NanumBarunGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9F9C7E41B645FE300F5C17D /* NanumBarunGothicBold.otf */; };
-		D9F9C7EA1B64873800F5C17D /* NavDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F9C7E91B64873800F5C17D /* NavDrawerViewController.swift */; };
+		D9F9C7EA1B64873800F5C17D /* LeftNavDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F9C7E91B64873800F5C17D /* LeftNavDrawerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,7 +132,7 @@
 		D9F9C7E01B644EBA00F5C17D /* savedCodeForLater */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = savedCodeForLater; sourceTree = "<group>"; };
 		D9F9C7E31B645FE300F5C17D /* NanumBarunGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothic.otf; sourceTree = "<group>"; };
 		D9F9C7E41B645FE300F5C17D /* NanumBarunGothicBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicBold.otf; sourceTree = "<group>"; };
-		D9F9C7E91B64873800F5C17D /* NavDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavDrawerViewController.swift; sourceTree = "<group>"; };
+		D9F9C7E91B64873800F5C17D /* LeftNavDrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftNavDrawerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,7 +347,7 @@
 		D9DA87E81B6DC063005D4CB6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D9F9C7E91B64873800F5C17D /* NavDrawerViewController.swift */,
+				D9F9C7E91B64873800F5C17D /* LeftNavDrawerController.swift */,
 				D90A7AFD1B92406F003EA693 /* HomeScreenViewController.swift */,
 				D980D6F31B9BDAFC001058E9 /* Five Boros Controllers */,
 				D980D6F41B9BDB1B001058E9 /* Other Controllers */,
@@ -575,7 +575,7 @@
 				D9BE263D1B64A1B700C3BA7D /* UIColorExtension.swift in Sources */,
 				D9B34A211B76F6BB00590DFB /* HomeScreenPurpleButton.swift in Sources */,
 				D90A7B081B924164003EA693 /* GalleryViewController.swift in Sources */,
-				D9F9C7EA1B64873800F5C17D /* NavDrawerViewController.swift in Sources */,
+				D9F9C7EA1B64873800F5C17D /* LeftNavDrawerController.swift in Sources */,
 				D90A7AFE1B92406F003EA693 /* HomeScreenViewController.swift in Sources */,
 				D9F8C4701BA4BE4300881B94 /* TodaysQTWidget.swift in Sources */,
 				D9B549A81B76D7FB00BF4887 /* SWRevealViewController.m in Sources */,

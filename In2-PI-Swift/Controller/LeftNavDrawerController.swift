@@ -1,5 +1,5 @@
 //
-//  NavDrawerViewController.swift
+//  LeftNavDrawerController.swift
 //  In2-PI-Swift
 //
 //  Created by Terry Bu on 7/25/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NavDrawerViewController: UIViewController {
+class LeftNavDrawerController: UIViewController {
     
     //MARK: Properties 
     var purpleStatusBar: UIView!

@@ -15,7 +15,7 @@ class ParentViewController: UIViewController {
     }
 
     func homeButtonPressed() {
-        let leftDrawer = revealViewController().rearViewController as! NavDrawerViewController
+        let leftDrawer = revealViewController().rearViewController as! LeftNavDrawerController
         let homeNavCtrl = leftDrawer.homeVCNavCtrl
         revealViewController().pushFrontViewController(homeNavCtrl!, animated: true)
     }

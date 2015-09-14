@@ -8,12 +8,13 @@
 
 import UIKit
 import WebKit
+import SafariServices
 
 private let kOriginalAboutViewHeight: CGFloat = 32.0
 private let kExpandedAboutViewHeight: CGFloat = 300.0
 private let kOriginalContentViewHeight: CGFloat = 600
 
-class WorshipViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource {
+class WorshipViewController: ParentViewController, SFSafariViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var contentView: UIView! 
     @IBOutlet var expandableAboutView: ExpandableAboutView!
@@ -139,14 +140,29 @@ class WorshipViewController: ParentViewController, UITableViewDelegate, UITableV
                 let escaped = nameSong!.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
                 let urlString = "https://www.youtube.com/results?search_query=" + escaped!
                 let url : NSURL! = NSURL(string: urlString)
-                let webView = UIWebView(frame: view.frame)
-                webView.loadRequest(NSURLRequest(URL: url))
-                let vc = UIViewController()
-                vc.view = webView
-                navigationController?.pushViewController(vc, animated: true)
+
+                if #available(iOS 9.0, *) {
+                    let sfVC = SFSafariViewController(URL: url, entersReaderIfAvailable: true)
+                    sfVC.delegate = self
+                    //Show the browser
+                    self.presentViewController(sfVC, animated: true, completion: nil)
+                } else {
+                    // Fallback on earlier versions
+                    let webView = UIWebView(frame: view.frame)
+                    webView.loadRequest(NSURLRequest(URL: url))
+                    let vc = UIViewController()
+                    vc.view = webView
+                    navigationController?.pushViewController(vc, animated: true)
+                }
             }
     }
     
+    //Delegate method for dismissing it
+    @available(iOS 9.0, *)
+    func safariViewControllerDidFinish(controller: SFSafariViewController)
+    {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     
 
 }
