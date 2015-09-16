@@ -16,7 +16,7 @@ private let kOriginalContentViewHeight: CGFloat = 600
 
 class WorshipViewController: ParentViewController, SFSafariViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet var contentView: UIView! 
+    @IBOutlet var contentView: UIView! //this property might not actually be needed ..
     @IBOutlet var expandableAboutView: ExpandableAboutView!
     @IBOutlet var songsTableView :     UITableView!
     @IBOutlet var jooboTableView :     UITableView!
