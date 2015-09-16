@@ -21,12 +21,6 @@ class ParentViewController: UIViewController {
     }
     
     func setUpStandardUIForViewControllers() {
-        if let revealVC = self.revealViewController() {
-            self.view.addGestureRecognizer(revealVC.panGestureRecognizer())
-            self.view.addGestureRecognizer(revealVC.tapGestureRecognizer())
-            revealVC.rearViewRevealWidth = self.view.frame.size.width
-        }
-        
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         
@@ -36,6 +30,19 @@ class ParentViewController: UIViewController {
         let homeButton = UIBarButtonItem(image: UIImage(named: "home"), style: UIBarButtonItemStyle.Plain, target: self, action: Selector("homeButtonPressed"))
         navigationItem.rightBarButtonItem = homeButton
     }
-        
+    
+    func setUpPanGestureForVC() {
+        if let revealVC = self.revealViewController() {
+            self.view.addGestureRecognizer(revealVC.panGestureRecognizer())
+            self.view.addGestureRecognizer(revealVC.tapGestureRecognizer())
+            revealVC.rearViewRevealWidth = self.view.frame.size.width
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        setUpPanGestureForVC()
+        print("parent vc viewdidappear")
+    }
+    
     
 }

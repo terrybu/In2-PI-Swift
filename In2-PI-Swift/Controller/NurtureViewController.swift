@@ -26,13 +26,13 @@ class NurtureViewController: ParentViewController, MFMailComposeViewControllerDe
     
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
+        setUpExpandableAboutView()
         leftNurtureApplyWidget.applyButtonPressedHandler = {(sender) -> Void in
             self.sendMail(sender)
         }
         rightHolyStarApplyWidget.applyButtonPressedHandler = {(sender) -> Void in
             self.sendMail(sender)
         }
-        setUpExpandableAboutView()
     }
     
     private func setUpExpandableAboutView() {

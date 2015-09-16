@@ -30,8 +30,7 @@ class WorshipViewController: ParentViewController, SFSafariViewControllerDelegat
     
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
-    
-        expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: self.constraintHeightExpandableView, constraintContentViewHeight: self.constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: kExpandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
+        setUpExpandableAboutView()
         
         songsArray = ["Hillsong - Above All", "예수전도단 - 좋으신 하나님", "예수전도단 - 주 나의 왕"]
         let test1 = "07/19/2015"
@@ -40,7 +39,16 @@ class WorshipViewController: ParentViewController, SFSafariViewControllerDelegat
         jooboTableView.reloadData()
     }
     
-
+    private func setUpExpandableAboutView() {
+        expandableAboutView.clipsToBounds = true
+        expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: kExpandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        print("worship vc viewdidappear")
+    }
+    
     
     //MARK: Joobo TableView Delegate methods
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

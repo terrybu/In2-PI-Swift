@@ -15,14 +15,14 @@ class LeftNavDrawerController: UIViewController {
     var maskView : UIView!
     var aboutVCModal : AboutPIViewController!
     var tapOutOfModalGesture: UIGestureRecognizer!
-    var galleryVCNavCtrl: UINavigationController?
     var homeVCNavCtrl: UINavigationController?
     var worshipVCNavCtrl: UINavigationController?
     var nurtureVCNavCtrl: UINavigationController?
     var communicationsVCNavCtrl: UINavigationController?
     var evangelismVCNavCtrl: UINavigationController?
     var socialServicesVCNavCtrl: UINavigationController?
-    
+    var galleryVCNavCtrl: UINavigationController?
+
     //MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()

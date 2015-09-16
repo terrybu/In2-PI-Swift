@@ -29,11 +29,6 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        if revealViewController() != nil {
-            view.addGestureRecognizer(revealViewController().panGestureRecognizer())
-            view.addGestureRecognizer(revealViewController().tapGestureRecognizer())
-            revealViewController().rearViewRevealWidth = view.frame.size.width
-        }
         articleCategoryLabel.layer.borderWidth = 1
         articleCategoryLabel.layer.borderColor = UIColor.whiteColor().CGColor
         articleCategoryLabel.edgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
@@ -59,6 +54,11 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
         if (purpleBarSelector == nil) {
             addPurpleSelectorBar()
             purpleBarSelector.hidden = true
+        }
+        if revealViewController() != nil {
+            view.addGestureRecognizer(revealViewController().panGestureRecognizer())
+            view.addGestureRecognizer(revealViewController().tapGestureRecognizer())
+            revealViewController().rearViewRevealWidth = view.frame.size.width
         }
     }
     

@@ -518,7 +518,7 @@
                                                 </connections>
                                             </tableView>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="atY-6P-a2d" firstAttribute="leading" secondItem="pVQ-jT-Ckx" secondAttribute="leading" id="35R-O8-R9A"/>
                                             <constraint firstAttribute="height" constant="600" id="3Ng-UB-oZE"/>
@@ -635,7 +635,9 @@
                                                     <constraint firstAttribute="height" constant="32" id="oXB-wE-xMD"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="About 예배부"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="aboutLabelTitle" value="About 양육부"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleLabeltitle" value="양육부 소개 타이틀"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="textViewContentText" value="양육부 소개 콘텐츠 dfdjapfjspfsdjfipsafjsapifjipfjiapsfidpsfjipafjiafjpasfjiasfjpdfapf"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
@@ -1022,7 +1024,7 @@
                                                     <constraint firstAttribute="height" constant="32" id="t7k-X8-m0G"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Bm-1l-Zm5" userLabel="BetterFutureApply" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Bm-1l-Zm5" userLabel="BetterFutureApply" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="300" y="418" width="300" height="187"/>
                                                 <color key="backgroundColor" red="0.62352941179999999" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <userDefinedRuntimeAttributes>
@@ -1030,7 +1032,7 @@
                                                     <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="rectangle_BetterFuture"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FQQ-Ls-qMi">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FQQ-Ls-qMi">
                                                 <rect key="frame" x="0.0" y="252" width="600" height="146"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -1060,7 +1062,7 @@
                                                     <outlet property="delegate" destination="68E-Sr-2Ow" id="6cM-NL-V0Z"/>
                                                 </connections>
                                             </tableView>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9hE-u1-Fs8" userLabel="BetterWorldApply" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hE-u1-Fs8" userLabel="BetterWorldApply" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="418" width="300" height="187"/>
                                                 <color key="backgroundColor" red="1" green="0.70196078429999997" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -1079,7 +1081,7 @@
                                                 </variation>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="605" id="17e-pv-XGG"/>
                                             <constraint firstItem="aZr-DP-yu9" firstAttribute="top" secondItem="7Bm-1l-Zm5" secondAttribute="bottom" id="2B1-zY-K4c"/>
