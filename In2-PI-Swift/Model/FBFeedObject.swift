@@ -13,11 +13,13 @@ class FBFeedObject {
     var id: String
     var message: String
     var created_time: String
+    var type: String
     
-    init(id: String, message: String, created_time: String) {
+    init(id: String, message: String, created_time: String, type: String) {
         self.id = id
         self.message = message
         self.created_time = created_time
+        self.type = type
     }
     
 }

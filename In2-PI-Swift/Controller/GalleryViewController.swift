@@ -42,7 +42,6 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
         topImageView.userInteractionEnabled = true
         topImageView.addGestureRecognizer(singleTap)
         
-        
         let doubleTapGesture = UITapGestureRecognizer(target: self, action: "processDoubleTap:")
         doubleTapGesture.numberOfTapsRequired = 2
         doubleTapGesture.numberOfTouchesRequired = 1
@@ -57,12 +56,6 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
             if let indexPath = indexPath  {
                 print("\(indexPath.row)")
                 self.displayJTSFullScreenViewForImageCurrentlyInTopImgView()
-
-//                setImgInNormalSizeToTopImageView(photoObjectsArray![indexPath.row], completion: { () -> Void in
-//                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//                        self.displayJTSFullScreenViewForImageCurrentlyInTopImgView()
-//                    })
-//                })
             }
         }
     }

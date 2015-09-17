@@ -755,74 +755,36 @@
                                                     <constraint firstAttribute="height" constant="32" id="djw-L0-Wki"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ETk-L9-aPG" customClass="NewsArticleView" customModule="In2_PI_Swift" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="611" width="600" height="289"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hwC-fN-xf5">
+                                                <rect key="frame" x="0.0" y="32" width="600" height="868"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="250" id="zOz-9T-eWf"/>
-                                                </constraints>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="zOz-9T-eWf"/>
-                                                    </mask>
-                                                </variation>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQg-mH-yFS" customClass="NewsArticleView" customModule="In2_PI_Swift" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="321" width="600" height="290"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="250" id="JEG-V2-ljs"/>
-                                                </constraints>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="JEG-V2-ljs"/>
-                                                    </mask>
-                                                </variation>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E9e-0a-3Ad" customClass="NewsArticleView" customModule="In2_PI_Swift" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="32" width="600" height="289"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="250" id="k7k-ZV-SLX"/>
-                                                </constraints>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="k7k-ZV-SLX"/>
-                                                    </mask>
-                                                </variation>
-                                            </view>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommunicationsCell" id="TAb-4m-Wmt">
+                                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TAb-4m-Wmt" id="nDN-Bs-YXu">
+                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="0qb-bZ-sK5" id="1gX-XI-UQL"/>
+                                                    <outlet property="delegate" destination="0qb-bZ-sK5" id="tMz-E3-3Wn"/>
+                                                </connections>
+                                            </tableView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="ETk-L9-aPG" secondAttribute="trailing" id="4O5-Kv-Qzx"/>
-                                            <constraint firstItem="E9e-0a-3Ad" firstAttribute="trailing" secondItem="YQg-mH-yFS" secondAttribute="trailing" id="7Wj-eS-724"/>
-                                            <constraint firstItem="ETk-L9-aPG" firstAttribute="top" secondItem="YQg-mH-yFS" secondAttribute="bottom" id="DUp-aJ-ukq"/>
-                                            <constraint firstAttribute="trailing" secondItem="YQg-mH-yFS" secondAttribute="trailing" id="GCe-aV-YGK"/>
-                                            <constraint firstItem="YQg-mH-yFS" firstAttribute="top" secondItem="E9e-0a-3Ad" secondAttribute="bottom" id="LCn-dV-24u"/>
-                                            <constraint firstItem="E9e-0a-3Ad" firstAttribute="top" secondItem="YW1-Xb-bsg" secondAttribute="bottom" id="OBP-cg-jOv"/>
+                                            <constraint firstItem="hwC-fN-xf5" firstAttribute="top" secondItem="YW1-Xb-bsg" secondAttribute="bottom" id="5oa-nu-Cvb"/>
+                                            <constraint firstAttribute="bottom" secondItem="hwC-fN-xf5" secondAttribute="bottom" id="5wE-Tq-by5"/>
                                             <constraint firstAttribute="trailing" secondItem="YW1-Xb-bsg" secondAttribute="trailing" id="T3m-Mt-g1M"/>
-                                            <constraint firstItem="YQg-mH-yFS" firstAttribute="height" secondItem="ETk-L9-aPG" secondAttribute="height" id="U7g-gr-w7D"/>
-                                            <constraint firstItem="E9e-0a-3Ad" firstAttribute="leading" secondItem="5GS-lr-KSQ" secondAttribute="leading" id="WuC-4O-rYq"/>
-                                            <constraint firstItem="ETk-L9-aPG" firstAttribute="leading" secondItem="5GS-lr-KSQ" secondAttribute="leading" id="csV-pY-x0J"/>
+                                            <constraint firstAttribute="trailing" secondItem="hwC-fN-xf5" secondAttribute="trailing" id="Whx-IG-mgU"/>
+                                            <constraint firstItem="hwC-fN-xf5" firstAttribute="leading" secondItem="5GS-lr-KSQ" secondAttribute="leading" id="Z8s-Zf-HGH"/>
                                             <constraint firstItem="YW1-Xb-bsg" firstAttribute="top" secondItem="5GS-lr-KSQ" secondAttribute="top" id="ewc-d9-6v0"/>
-                                            <constraint firstItem="YQg-mH-yFS" firstAttribute="leading" secondItem="5GS-lr-KSQ" secondAttribute="leading" id="eyU-bc-egM"/>
-                                            <constraint firstAttribute="bottom" secondItem="ETk-L9-aPG" secondAttribute="bottom" id="fSJ-h3-hZs"/>
-                                            <constraint firstItem="ETk-L9-aPG" firstAttribute="top" secondItem="E9e-0a-3Ad" secondAttribute="bottom" id="flA-Ov-saK"/>
-                                            <constraint firstItem="E9e-0a-3Ad" firstAttribute="leading" secondItem="YQg-mH-yFS" secondAttribute="leading" id="gsG-cj-8cl"/>
-                                            <constraint firstItem="E9e-0a-3Ad" firstAttribute="height" secondItem="YQg-mH-yFS" secondAttribute="height" id="kLp-iR-BEP"/>
                                             <constraint firstAttribute="height" constant="900" id="u2Z-cP-fPD"/>
                                             <constraint firstItem="YW1-Xb-bsg" firstAttribute="leading" secondItem="5GS-lr-KSQ" secondAttribute="leading" id="utR-yy-wKz"/>
-                                            <constraint firstItem="E9e-0a-3Ad" firstAttribute="top" secondItem="5GS-lr-KSQ" secondAttribute="top" id="x6r-5F-ngV"/>
-                                            <constraint firstAttribute="trailing" secondItem="E9e-0a-3Ad" secondAttribute="trailing" id="zgZ-xz-xc2"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="7Wj-eS-724"/>
-                                                <exclude reference="gsG-cj-8cl"/>
-                                                <exclude reference="x6r-5F-ngV"/>
-                                                <exclude reference="flA-Ov-saK"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                 </subviews>
                                 <constraints>

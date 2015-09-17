@@ -9,6 +9,9 @@ import FBSDKLoginKit
 import SwiftyJSON
 
 let kGraphPathPIMagazineAlbumsString = "1384548091800506/albums"
+let kParamsOnlyAccessToken = [
+    "access_token": kAppAccessToken
+]
 
 protocol FacebookPhotoQueryDelegate {
     func didFinishGettingFacebookPhotos(fbPhotoObjectsArray: [FBPhotoObject])
@@ -22,10 +25,8 @@ class FacebookPhotoQuery: FacebookQuery {
     
     
     func getPhotosFromMostRecentThreeAlbums(completion: ((error: NSError!) -> Void)?) {
-        let params = [
-            "access_token": kAppAccessToken
-        ]
-        super.getFBDataJSON(kGraphPathPIMagazineAlbumsString, params: params,
+
+        super.getFBDataJSON(kGraphPathPIMagazineAlbumsString, params: kParamsOnlyAccessToken,
             onSuccess: { (jsonData) -> Void in
                 let albumsList = jsonData["data"]
                 let firstAlbumID = albumsList[0]["id"].stringValue
@@ -68,12 +69,8 @@ class FacebookPhotoQuery: FacebookQuery {
     }
     
     func getNormalSizePhotoURLStringFrom(fbObject: FBPhotoObject, completion: ((normImgUrlString: String) -> Void)?) {
-        let paramsDictionary = [
-            "access_token": kAppAccessToken,
-        ]
         let graphPathString = "\(fbObject.id)/picture?type=normal&redirect=false"
-        
-        super.getFBDataJSON(graphPathString, params: paramsDictionary,
+        super.getFBDataJSON(graphPathString, params: kParamsOnlyAccessToken,
             onSuccess: { (jsonData) -> Void in
               let object = jsonData["data"]
               let url = object["url"]

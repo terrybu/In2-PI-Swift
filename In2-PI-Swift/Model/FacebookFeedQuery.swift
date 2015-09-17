@@ -34,7 +34,8 @@ class FacebookFeedQuery: FacebookQuery {
                     let newFeedObject = FBFeedObject(
                         id: object["id"].stringValue,
                         message: object["message"].stringValue,
-                        created_time: object["created_time"].stringValue
+                        created_time: object["created_time"].stringValue,
+                        type: object["type"].stringValue
                     )
                     self.FBFeedObjectsArray.append(newFeedObject)
                 }
@@ -45,5 +46,6 @@ class FacebookFeedQuery: FacebookQuery {
             }
         })
     }
+    
     
 }
