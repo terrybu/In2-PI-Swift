@@ -10,13 +10,13 @@ import UIKit
 
 private let kOriginalAboutViewHeight: CGFloat = 32.0
 private let kExpandedAboutViewHeight: CGFloat = 300.0
-private let kOriginalContentViewHeight: CGFloat = 900
 
 class CommunicationsViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
     var feedObjectsArray: [FBFeedObject]?
-
+    var contentViewHeightBasedOnTableView: CGFloat = 0
+    
     //For expandable view
     @IBOutlet var contentView: UIView!
     @IBOutlet var expandableAboutView: ExpandableAboutView!
@@ -25,14 +25,21 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
     
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
-        setUpExpandableAboutView()
         tableView.registerNib(UINib(nibName: "CommunicationsTableViewCell", bundle: nil), forCellReuseIdentifier: "CommunicationsCell")
         self.feedObjectsArray = FacebookFeedQuery.sharedInstance.FBFeedObjectsArray
+        if let feedObjectsArray = feedObjectsArray {
+            contentViewHeightBasedOnTableView = CGFloat(feedObjectsArray.count * 200)
+            constraintContentViewHeight.constant = contentViewHeightBasedOnTableView
+            view.layoutIfNeeded()
+//            contentView.frame.size = CGSize(width: view.frame.size.width, height: contentViewHeightBasedOnTableView)
+        }
+        setUpExpandableAboutView()
+
     }
     
     private func setUpExpandableAboutView() {
         expandableAboutView.clipsToBounds = true
-        expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: kExpandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
+        expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: kExpandedAboutViewHeight, originalContentViewHeight: contentViewHeightBasedOnTableView)
     }
     
     
