@@ -13,6 +13,7 @@ class CommunicationsTableViewCell: UITableViewCell {
     @IBOutlet weak var articleCategoryLabel: PaddedLabel!
     @IBOutlet weak var articleTitleLabel: UILabel!
     @IBOutlet weak var articleDateLabel: UILabel!
+    @IBOutlet weak var backgroundImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

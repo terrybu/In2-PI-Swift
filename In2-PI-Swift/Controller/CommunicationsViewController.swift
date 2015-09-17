@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 private let kOriginalAboutViewHeight: CGFloat = 32.0
 private let kExpandedAboutViewHeight: CGFloat = 300.0
@@ -21,15 +22,21 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
     @IBOutlet var expandableAboutView: ExpandableAboutView!
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
     
+    var cache: NSCache = NSCache()
+    var operationManager: AFHTTPRequestOperationManager?
+    
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
         tableView.registerNib(UINib(nibName: "CommunicationsTableViewCell", bundle: nil), forCellReuseIdentifier: "CommunicationsCell")
         self.feedObjectsArray = FacebookFeedQuery.sharedInstance.FBFeedObjectsArray
-  
+        
         setUpExpandableAboutView()
-
+        
+        operationManager = AFHTTPRequestOperationManager()
+        operationManager!.responseSerializer = AFImageResponseSerializer()
     }
     
+    //MARK: ExpandableAboutViewDelegate
     private func setUpExpandableAboutView() {
         expandableAboutView.clipsToBounds = true
         expandableAboutView.delegate = self
@@ -57,7 +64,7 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
                     self.expandableAboutView.expanded = false
             }
         }
-
+        
     }
     
     
@@ -76,13 +83,44 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CommunicationsCell", forIndexPath: indexPath) as! CommunicationsTableViewCell
-        configureCell(cell, forRowAtIndexPath: indexPath)
+        
+        print("cell For row is excuting for indexpath: \(indexPath.row)")
+
+        configureCell(cell, indexPath: indexPath)
         return cell
     }
     
-    func configureCell(cell: CommunicationsTableViewCell, forRowAtIndexPath: NSIndexPath) {
-        let feedObject = feedObjectsArray![forRowAtIndexPath.row]
+    func configureCell(cell: CommunicationsTableViewCell, indexPath: NSIndexPath) {
+        let feedObject = feedObjectsArray![indexPath.row]
         FacebookFeedQuery.sharedInstance.parseMessageForLabels(feedObject, articleCategoryLabel: cell.articleCategoryLabel, articleTitleLabel: cell.articleTitleLabel, articleDateLabel: cell.articleDateLabel)
+        if feedObject.type == "photo" {
+            cell.tag = indexPath.row            
+            if cache.objectForKey("\(indexPath.row)") != nil{
+                let img = cache.objectForKey("\(indexPath.row)") as! UIImage
+                cell.backgroundImageView.image = img
+            } else {
+                cell.backgroundImageView.image = nil
+                FacebookPhotoQuery.sharedInstance.getNormalSizePhotoURLStringForCommunicationsFrom(feedObject.id, completion: { (normImgUrlString) -> Void in
+//                    cell.backgroundImageView.setImageWithURL(NSURL(string: normImgUrlString))
+                    self.operationManager?.GET(normImgUrlString, parameters: nil, success: { (operation, responseObject) -> Void in
+                            //success
+                        if cell.tag == indexPath.row  {
+                            print("afnetworking image download finished for indexpath: \(indexPath.row)")
+
+                            self.cache.setObject(responseObject, forKey: "\(indexPath.row)")
+                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                self.tableView .reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+                            })
+                        }
+                    }, failure: { (operation, error) -> Void in
+                            print(error)
+                    })
+
+                })
+            }
+        } else {
+            cell.backgroundImageView.image = UIImage(named:"sampleGray")
+        }
     }
     
     

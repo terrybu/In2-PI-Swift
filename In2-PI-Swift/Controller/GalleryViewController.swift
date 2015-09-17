@@ -84,7 +84,7 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
     private func setImgInNormalSizeToTopImageView(fbPhotoObject: FBPhotoObject, completion: (() -> Void)?) {
         //FacebookManager needs to call a new Graph API request with the object
         MBProgressHUD.showHUDAddedTo(view, animated: true)
-        FacebookPhotoQuery.sharedInstance.getNormalSizePhotoURLStringFrom(fbPhotoObject
+        FacebookPhotoQuery.sharedInstance.getNormalSizePhotoURLStringFrom(fbPhotoObject.id
             , completion: { (normImgUrlString) -> Void in
                 self.topImageView.setImageWithURL(NSURL(string: normImgUrlString ))
                 if let completion = completion {

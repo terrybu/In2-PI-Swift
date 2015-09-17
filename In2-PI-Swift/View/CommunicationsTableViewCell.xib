@@ -112,6 +112,7 @@
                 <outlet property="articleCategoryLabel" destination="2rI-Nj-XmX" id="OS9-xZ-ekN"/>
                 <outlet property="articleDateLabel" destination="qvn-FI-h7n" id="RBJ-YZ-UJR"/>
                 <outlet property="articleTitleLabel" destination="Ata-Uz-puk" id="ocO-Mi-D5i"/>
+                <outlet property="backgroundImageView" destination="eIM-7J-zGf" id="bs8-H2-KGc"/>
             </connections>
         </tableViewCell>
     </objects>
