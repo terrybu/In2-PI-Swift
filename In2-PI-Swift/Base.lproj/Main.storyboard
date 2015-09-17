@@ -742,79 +742,58 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="836"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FhZ-49-IRr">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="836"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5GS-lr-KSQ" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="900"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YW1-Xb-bsg" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="32"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="32" id="djw-L0-Wki"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="aboutLabelTitle" value="About 소통부"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleLabeltitle" value="테스트"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hwC-fN-xf5">
-                                                <rect key="frame" x="0.0" y="32" width="600" height="868"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TAb-4m-Wmt" customClass="CommunicationsTableViewCell" customModule="In2_PI_Swift" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="600" height="200"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TAb-4m-Wmt" id="nDN-Bs-YXu">
-                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                        </tableViewCellContentView>
-                                                    </tableViewCell>
-                                                </prototypes>
-                                                <connections>
-                                                    <outlet property="dataSource" destination="0qb-bZ-sK5" id="1gX-XI-UQL"/>
-                                                    <outlet property="delegate" destination="0qb-bZ-sK5" id="tMz-E3-3Wn"/>
-                                                </connections>
-                                            </tableView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="hwC-fN-xf5" firstAttribute="top" secondItem="YW1-Xb-bsg" secondAttribute="bottom" id="5oa-nu-Cvb"/>
-                                            <constraint firstAttribute="bottom" secondItem="hwC-fN-xf5" secondAttribute="bottom" id="5wE-Tq-by5"/>
-                                            <constraint firstAttribute="trailing" secondItem="YW1-Xb-bsg" secondAttribute="trailing" id="T3m-Mt-g1M"/>
-                                            <constraint firstAttribute="trailing" secondItem="hwC-fN-xf5" secondAttribute="trailing" id="Whx-IG-mgU"/>
-                                            <constraint firstItem="hwC-fN-xf5" firstAttribute="leading" secondItem="5GS-lr-KSQ" secondAttribute="leading" id="Z8s-Zf-HGH"/>
-                                            <constraint firstItem="YW1-Xb-bsg" firstAttribute="top" secondItem="5GS-lr-KSQ" secondAttribute="top" id="ewc-d9-6v0"/>
-                                            <constraint firstAttribute="height" constant="900" id="u2Z-cP-fPD"/>
-                                            <constraint firstItem="YW1-Xb-bsg" firstAttribute="leading" secondItem="5GS-lr-KSQ" secondAttribute="leading" id="utR-yy-wKz"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YW1-Xb-bsg" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="5GS-lr-KSQ" secondAttribute="trailing" id="114-mP-cQY"/>
-                                    <constraint firstItem="5GS-lr-KSQ" firstAttribute="leading" secondItem="FhZ-49-IRr" secondAttribute="leading" id="j42-xS-tCs"/>
-                                    <constraint firstAttribute="centerX" secondItem="5GS-lr-KSQ" secondAttribute="centerX" id="oZ9-2L-gOy"/>
-                                    <constraint firstAttribute="bottom" secondItem="5GS-lr-KSQ" secondAttribute="bottom" id="p0O-lQ-5qk"/>
-                                    <constraint firstItem="5GS-lr-KSQ" firstAttribute="top" secondItem="FhZ-49-IRr" secondAttribute="top" id="p14-uI-2NT"/>
+                                    <constraint firstAttribute="height" constant="32" id="djw-L0-Wki"/>
                                 </constraints>
-                            </scrollView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="aboutLabelTitle" value="About 소통부"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleLabeltitle" value="테스트"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hwC-fN-xf5">
+                                <rect key="frame" x="0.0" y="32" width="600" height="804"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TAb-4m-Wmt" customClass="CommunicationsTableViewCell" customModule="In2_PI_Swift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TAb-4m-Wmt" id="nDN-Bs-YXu">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="0qb-bZ-sK5" id="1gX-XI-UQL"/>
+                                    <outlet property="delegate" destination="0qb-bZ-sK5" id="tMz-E3-3Wn"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FhZ-49-IRr" firstAttribute="leading" secondItem="PVR-rN-I1c" secondAttribute="leading" id="6lh-6p-CHX"/>
-                            <constraint firstAttribute="trailing" secondItem="FhZ-49-IRr" secondAttribute="trailing" id="CNS-C7-xDp"/>
-                            <constraint firstItem="zjS-OB-V81" firstAttribute="top" secondItem="FhZ-49-IRr" secondAttribute="bottom" id="lPa-Eh-ddu"/>
-                            <constraint firstItem="FhZ-49-IRr" firstAttribute="top" secondItem="Fnw-UQ-41w" secondAttribute="bottom" id="o3P-RU-0mH"/>
+                            <constraint firstAttribute="bottom" secondItem="hwC-fN-xf5" secondAttribute="bottom" id="T7T-LR-Wyk"/>
+                            <constraint firstItem="hwC-fN-xf5" firstAttribute="top" secondItem="PVR-rN-I1c" secondAttribute="top" id="Wtt-rD-OpX"/>
+                            <constraint firstItem="YW1-Xb-bsg" firstAttribute="top" secondItem="Fnw-UQ-41w" secondAttribute="bottom" id="Yai-tX-ytF"/>
+                            <constraint firstItem="hwC-fN-xf5" firstAttribute="top" secondItem="YW1-Xb-bsg" secondAttribute="bottom" id="aqh-ue-J7Z"/>
+                            <constraint firstAttribute="trailing" secondItem="hwC-fN-xf5" secondAttribute="trailing" id="ePf-tf-Pfd"/>
+                            <constraint firstItem="YW1-Xb-bsg" firstAttribute="leading" secondItem="PVR-rN-I1c" secondAttribute="leading" id="evf-Mf-cPM"/>
+                            <constraint firstAttribute="trailing" secondItem="YW1-Xb-bsg" secondAttribute="trailing" id="sSR-Zg-8Om"/>
+                            <constraint firstItem="hwC-fN-xf5" firstAttribute="leading" secondItem="PVR-rN-I1c" secondAttribute="leading" id="ymM-uL-YWr"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Wtt-rD-OpX"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="소통부" id="CgP-7z-DhQ"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="900"/>
                     <connections>
-                        <outlet property="constraintContentViewHeight" destination="u2Z-cP-fPD" id="IbR-Jq-1O1"/>
                         <outlet property="constraintHeightExpandableView" destination="djw-L0-Wki" id="xEl-na-ygl"/>
-                        <outlet property="contentView" destination="5GS-lr-KSQ" id="NmJ-C6-tLT"/>
                         <outlet property="expandableAboutView" destination="YW1-Xb-bsg" id="SLe-CU-owP"/>
                         <outlet property="tableView" destination="hwC-fN-xf5" id="nR4-W7-JWi"/>
                     </connections>

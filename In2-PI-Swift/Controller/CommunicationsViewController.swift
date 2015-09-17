@@ -11,35 +11,53 @@ import UIKit
 private let kOriginalAboutViewHeight: CGFloat = 32.0
 private let kExpandedAboutViewHeight: CGFloat = 300.0
 
-class CommunicationsViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource {
+class CommunicationsViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource, ExpandableAboutViewDelegate{
     
     @IBOutlet var tableView: UITableView!
     var feedObjectsArray: [FBFeedObject]?
     var contentViewHeightBasedOnTableView: CGFloat = 0
     
     //For expandable view
-    @IBOutlet var contentView: UIView!
     @IBOutlet var expandableAboutView: ExpandableAboutView!
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
-    @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
         tableView.registerNib(UINib(nibName: "CommunicationsTableViewCell", bundle: nil), forCellReuseIdentifier: "CommunicationsCell")
         self.feedObjectsArray = FacebookFeedQuery.sharedInstance.FBFeedObjectsArray
-        if let feedObjectsArray = feedObjectsArray {
-            contentViewHeightBasedOnTableView = CGFloat(feedObjectsArray.count * 200)
-            constraintContentViewHeight.constant = contentViewHeightBasedOnTableView
-            view.layoutIfNeeded()
-//            contentView.frame.size = CGSize(width: view.frame.size.width, height: contentViewHeightBasedOnTableView)
-        }
+  
         setUpExpandableAboutView()
 
     }
     
     private func setUpExpandableAboutView() {
         expandableAboutView.clipsToBounds = true
-        expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: kExpandedAboutViewHeight, originalContentViewHeight: contentViewHeightBasedOnTableView)
+        expandableAboutView.delegate = self
+    }
+    
+    func didPressExpandButton() {
+        if !expandableAboutView.expanded {
+            print("did press expand button when it wasn't expanded")
+            
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
+                self.constraintHeightExpandableView.constant = kExpandedAboutViewHeight
+                self.view.layoutIfNeeded()
+                
+                }) { (Bool completed) -> Void in
+                    self.expandableAboutView.expanded = true
+            }
+        }
+        else {
+            print("did press expand button when it WAS expanded")
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
+                self.constraintHeightExpandableView.constant = kOriginalAboutViewHeight
+                self.view.layoutIfNeeded()
+                
+                }) { (Bool completed) -> Void in
+                    self.expandableAboutView.expanded = false
+            }
+        }
+
     }
     
     

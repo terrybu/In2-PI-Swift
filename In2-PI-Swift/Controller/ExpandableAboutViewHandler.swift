@@ -27,6 +27,15 @@ class ExpandableAboutViewHandler: ExpandableAboutViewDelegate {
         self.expandedAboutViewHeight = expandedAboutViewHeight
         self.originalContentViewHeight = originalContentViewHeight
     }
+//    
+//    init(viewControllerView: UIView, expandableView: ExpandableAboutView, constraintExpandableViewHeight: NSLayoutConstraint, originalAboutViewHeight: CGFloat, expandedAboutViewHeight: CGFloat) {
+//        
+//        self.viewControllerView = viewControllerView
+//        self.expandableView = expandableView
+//        self.constraintExpandableViewHeight = constraintExpandableViewHeight
+//        self.originalAboutViewHeight = originalAboutViewHeight
+//        self.expandedAboutViewHeight = expandedAboutViewHeight
+//    }
     
     func didPressExpandButton() {
         if !expandableView.expanded {
