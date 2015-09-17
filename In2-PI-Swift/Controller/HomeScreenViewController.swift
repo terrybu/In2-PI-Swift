@@ -84,7 +84,7 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
     //MARK: FacebookFeedQueryDelegate 
     func didFinishGettingFacebookFeedData(fbFeedObjectArray: [FBFeedObject]) {
         let firstObject = fbFeedObjectArray[0]
-        parseMessageForLabels(firstObject)
+        FacebookFeedQuery.sharedInstance.parseMessageForLabels(firstObject, articleCategoryLabel: articleCategoryLabel, articleTitleLabel: articleTitleLabel, articleDateLabel: articleDateLabel)
         firstObjectID = firstObject.id
         
         let tapGesture = UITapGestureRecognizer(target: self, action: Selector("tappedLabel:"))
@@ -95,63 +95,8 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
         purpleBarSelector.hidden = false
         MBProgressHUD.hideAllHUDsForView(view, animated: true)
     }
-    
-    func parseMessageForLabels(firstObject: FBFeedObject) {
-        var categoryStr = ""
-        var firstTitleStr: String?
-        let msg = firstObject.message
-        if (!msg.isEmpty) {
-            if (msg[0] == "[") {
-                print("found open bracket")
-                for (var i=1; i < msg.characters.count; i++) {
-                    categoryStr += msg[i]
-                    let j = i + 1
-                    if (msg[j] == "]" || categoryStr.characters.count >= 100) {
-                        firstTitleStr = parseFirstLineTitleString(msg[j+1..<msg.characters.count])
-                        break
-                    }
-                }
-            }
-            articleCategoryLabel.text = categoryStr
-            if let _ = firstTitleStr {
-                articleTitleLabel.text = firstTitleStr
-            }
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
-            let date = dateFormatter.dateFromString(firstObject.created_time)
-            if let date = date {
-                dateFormatter.dateFormat = "yyyy-MM-dd EEE hh:mm a"
-                articleDateLabel.text = dateFormatter.stringFromDate(date)
-            }
-        }
-    }
-    
-    func parseFirstLineTitleString(msg: String) -> String {
-        //Given a string that starts with an empty space and then a sententece followed by \n or just \n Title \n ... return thet tile.
-        // " blahblahblah \n" --> should return blahblahblah
-        // " \n blahblahblah \n" should also return blahblahblah
-        var result = ""
-        let startingStr = msg[1..<msg.characters.count]
-        if (startingStr[0] == "\n") {
-            //if it finds \n immediately (which means author inserted a new line between category and title, we just jump and start from the next line
-            var i = 1;
-            while (startingStr[i] != "\n") {
-                result += startingStr[i]
-                i++;
-            }
-        }
-        else {
-            //otherwise, we go right for the first line
-            var i = 0;
-            while (startingStr[i] != "\n") {
-                result += startingStr[i]
-                i++;
-            }
-        }
-        return result
-    }
-    
-    
+
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

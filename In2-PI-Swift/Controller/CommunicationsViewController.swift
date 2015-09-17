@@ -14,6 +14,7 @@ private let kOriginalContentViewHeight: CGFloat = 900
 
 class CommunicationsViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet var tableView: UITableView!
     var feedObjectsArray: [FBFeedObject]?
 
     //For expandable view
@@ -25,12 +26,15 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
         setUpExpandableAboutView()
+        tableView.registerNib(UINib(nibName: "CommunicationsTableViewCell", bundle: nil), forCellReuseIdentifier: "CommunicationsCell")
+        self.feedObjectsArray = FacebookFeedQuery.sharedInstance.FBFeedObjectsArray
     }
     
     private func setUpExpandableAboutView() {
         expandableAboutView.clipsToBounds = true
         expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: kExpandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
     }
+    
     
     //MARK: UITableViewDataSource
     
@@ -39,20 +43,21 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let feedObjectsArray = feedObjectsArray else {
+        guard let feedObjectsArray = self.feedObjectsArray else {
             return 0
         }
         return feedObjectsArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CommunicationsCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("CommunicationsCell", forIndexPath: indexPath) as! CommunicationsTableViewCell
         configureCell(cell, forRowAtIndexPath: indexPath)
         return cell
     }
     
-    func configureCell(cell: UITableViewCell, forRowAtIndexPath: NSIndexPath) {
-        
+    func configureCell(cell: CommunicationsTableViewCell, forRowAtIndexPath: NSIndexPath) {
+        let feedObject = feedObjectsArray![forRowAtIndexPath.row]
+        FacebookFeedQuery.sharedInstance.parseMessageForLabels(feedObject, articleCategoryLabel: cell.articleCategoryLabel, articleTitleLabel: cell.articleTitleLabel, articleDateLabel: cell.articleDateLabel)
     }
     
     

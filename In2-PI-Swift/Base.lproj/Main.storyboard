@@ -754,16 +754,20 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="djw-L0-Wki"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="aboutLabelTitle" value="About 소통부"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleLabeltitle" value="테스트"/>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hwC-fN-xf5">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hwC-fN-xf5">
                                                 <rect key="frame" x="0.0" y="32" width="600" height="868"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommunicationsCell" id="TAb-4m-Wmt">
-                                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TAb-4m-Wmt" customClass="CommunicationsTableViewCell" customModule="In2_PI_Swift" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="28" width="600" height="200"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TAb-4m-Wmt" id="nDN-Bs-YXu">
-                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </tableViewCellContentView>
                                                     </tableViewCell>
@@ -812,6 +816,7 @@
                         <outlet property="constraintHeightExpandableView" destination="djw-L0-Wki" id="xEl-na-ygl"/>
                         <outlet property="contentView" destination="5GS-lr-KSQ" id="NmJ-C6-tLT"/>
                         <outlet property="expandableAboutView" destination="YW1-Xb-bsg" id="SLe-CU-owP"/>
+                        <outlet property="tableView" destination="hwC-fN-xf5" id="nR4-W7-JWi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QZ2-cC-KMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
