@@ -1,5 +1,5 @@
 //
-//  FBPhotoObject.swift
+//  FBPhoto.swift
 //  In2-PI-Swift
 //
 //  Created by Terry Bu on 8/30/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FBPhotoObject {
+class FBPhoto {
     
     var id: String
     var albumSizePicURLString: String

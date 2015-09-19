@@ -22,7 +22,7 @@ class WorshipViewController: ParentViewController, SFSafariViewControllerDelegat
     @IBOutlet var songsTableView :     UITableView!
     @IBOutlet var jooboTableView :     UITableView!
     var songsArray = [String]()
-    var joobosArray = [String]()
+    var joobosArray = [Joobo]()
     
     //Constraints
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
@@ -34,24 +34,43 @@ class WorshipViewController: ParentViewController, SFSafariViewControllerDelegat
         setUpExpandableAboutView()
         
         songsArray = ["Hillsong - Above All", "예수전도단 - 좋으신 하나님", "예수전도단 - 주 나의 왕"]
-        let test1 = "07/19/2015"
-        let test2 = "07/12/2015"
         
+//        let test1 = "07/19/2015"
+//        let test2 = "07/12/2015"
+//        joobosArray = [test1, test2]
         getDataFromImportIOAPIForJoobos()
-        joobosArray = [test1, test2]
         jooboTableView.reloadData()
     }
     
     private func getDataFromImportIOAPIForJoobos() {
-        let manager = AFHTTPRequestOperationManager()
-        manager.GET("https://api.import.io/store/data/3bc15cdb-dbc3-4e1a-b937-df3c2a68dbbc/_query?input/webpage/url=http%3A%2F%2Fvision.onnuri.org%2Fin2%2Farchives%2Fsunday_bulletin_category%2Fsunday-bulletin&_user=0a668a36-6aa0-4bf7-a33f-4aa867422551&_apikey=0a668a366aa04bf7a33f4aa86742255106cd4c765c1dc526570f30d171b722431f993ad7303c4f09ce394851f9fc53aecb7bf49dd2f2f02cd8e0624fa8dedf188642ab734d5c9159f291501b1b381633", parameters: nil,
-            success: { (operation, responseObject) -> Void in
-//                print(responseObject)
-                print(JSON(responseObject))
-            },
-            failure: { (operation, error) -> Void in
+        let url = NSURL(string: "https://api.import.io/store/data/3bc15cdb-dbc3-4e1a-b937-df3c2a68dbbc/_query?input/webpage/url=http%3A%2F%2Fvision.onnuri.org%2Fin2%2Farchives%2Fsunday_bulletin_category%2Fsunday-bulletin&_user=0a668a36-6aa0-4bf7-a33f-4aa867422551&_apikey=0a668a366aa04bf7a33f4aa86742255106cd4c765c1dc526570f30d171b722431f993ad7303c4f09ce394851f9fc53aecb7bf49dd2f2f02cd8e0624fa8dedf188642ab734d5c9159f291501b1b381633")
+        
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {
+            (data, response, error) in
+            if error == nil {
+                let jsonData = JSON(data:data!)
+                print(jsonData)
+                let resultsArray = jsonData["results"].arrayValue
+                print(resultsArray)
+                
+                for dict:JSON in resultsArray {
+                    let title = dict["tit_link/_text"].stringValue
+                    let dateString = dict["tit_link_numbers"].arrayValue[0].stringValue
+                    let url = dict["tit_link"].stringValue
+                    let newJoobo = Joobo(title: title, url: url, dateString: dateString)
+                    self.joobosArray.append(newJoobo)
+                }
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.jooboTableView.reloadData()
+                    })
+                })
+            } else {
                 print(error)
-            })
+            }
+        }
+        
+        task.resume()
     }
     
     private func setUpExpandableAboutView() {
@@ -133,7 +152,7 @@ class WorshipViewController: ParentViewController, SFSafariViewControllerDelegat
         if (tableView == jooboTableView) {
             let reuseIdentifier = "JooboTableViewCell"
             cell = jooboTableView.dequeueReusableCellWithIdentifier(reuseIdentifier)!
-            cell.textLabel!.text = joobosArray[indexPath.row]
+            cell.textLabel!.text = joobosArray[indexPath.row].title
             cell.accessoryView = UIImageView(image: UIImage(named: "btn_download"))
             return cell
         } else {

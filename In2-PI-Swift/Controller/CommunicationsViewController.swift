@@ -15,7 +15,7 @@ private let kExpandedAboutViewHeight: CGFloat = 300.0
 class CommunicationsViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource, ExpandableAboutViewDelegate{
     
     @IBOutlet var tableView: UITableView!
-    var feedObjectsArray: [FBFeedObject]?
+    var feedObjectsArray: [FBFeedArticle]?
     var contentViewHeightBasedOnTableView: CGFloat = 0
     
     //For expandable view

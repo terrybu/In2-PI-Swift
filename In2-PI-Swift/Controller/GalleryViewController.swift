@@ -18,7 +18,7 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
     
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var topImageView: UIImageView!
-    var photoObjectsArray: [FBPhotoObject]?
+    var photoObjectsArray: [FBPhoto]?
     
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
@@ -70,7 +70,7 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
     }
     
     //MARK: FacebookPhotoQueryDelegate methods
-    func didFinishGettingFacebookPhotos(fbPhotoObjectsArray: [FBPhotoObject]) {
+    func didFinishGettingFacebookPhotos(fbPhotoObjectsArray: [FBPhoto]) {
         self.photoObjectsArray = fbPhotoObjectsArray
         let firstObject = photoObjectsArray![0]
         setImgInNormalSizeToTopImageView(firstObject, completion: {
@@ -81,7 +81,7 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
     }
     
     //MARK: Top Image View related methods
-    private func setImgInNormalSizeToTopImageView(fbPhotoObject: FBPhotoObject, completion: (() -> Void)?) {
+    private func setImgInNormalSizeToTopImageView(fbPhotoObject: FBPhoto, completion: (() -> Void)?) {
         //FacebookManager needs to call a new Graph API request with the object
         MBProgressHUD.showHUDAddedTo(view, animated: true)
         FacebookPhotoQuery.sharedInstance.getNormalSizePhotoURLStringFrom(fbPhotoObject.id

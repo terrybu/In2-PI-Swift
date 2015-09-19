@@ -17,14 +17,14 @@ enum FacebookError: ErrorType {
 }
 
 protocol FacebookPhotoQueryDelegate {
-    func didFinishGettingFacebookPhotos(fbPhotoObjectsArray: [FBPhotoObject])
+    func didFinishGettingFacebookPhotos(fbPhotoObjectsArray: [FBPhoto])
 }
 
 class FacebookPhotoQuery: FacebookQuery {
     
     static let sharedInstance = FacebookPhotoQuery()
     var delegate: FacebookPhotoQueryDelegate?
-    var FBPhotoObjectsArray = [FBPhotoObject]()
+    var FBPhotoObjectsArray = [FBPhoto]()
     
     
     func getPhotosFromMostRecentThreeAlbums(completion: ((error: NSError!) -> Void)?) {
@@ -62,7 +62,7 @@ class FacebookPhotoQuery: FacebookQuery {
             let photosArray = photos["data"].arrayValue
             //            println(photosArray.description)
             for object:JSON in photosArray {
-                let newPicObject = FBPhotoObject(id: object["id"].stringValue, albumPicURLString: object["picture"].stringValue)
+                let newPicObject = FBPhoto(id: object["id"].stringValue, albumPicURLString: object["picture"].stringValue)
                 self.FBPhotoObjectsArray.append(newPicObject)
             }
             if let completion = completion {

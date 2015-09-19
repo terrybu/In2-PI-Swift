@@ -1,5 +1,5 @@
 //
-//  FBFeedObject.swift
+//  FBFeedArticle.swift
 //  In2-PI-Swift
 //
 //  Created by Terry Bu on 9/2/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FBFeedObject {
+class FBFeedArticle {
     
     var id: String
     var message: String

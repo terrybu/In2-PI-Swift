@@ -11,14 +11,14 @@ import SwiftyJSON
 private let kGraphPathPIMagazineFeedString = "1384548091800506/feed"
 
 protocol FacebookFeedQueryDelegate {
-    func didFinishGettingFacebookFeedData(fbFeedObjectsArray: [FBFeedObject])
+    func didFinishGettingFacebookFeedData(fbFeedObjectsArray: [FBFeedArticle])
 }
 
 class FacebookFeedQuery: FacebookQuery {
     
     static let sharedInstance = FacebookFeedQuery()
     var delegate: FacebookFeedQueryDelegate?
-    var FBFeedObjectsArray = [FBFeedObject]()
+    var FBFeedObjectsArray = [FBFeedArticle]()
     
     func getFeedFromPIMagazine(errorCompletionBlock: ((error: NSError!) -> Void)? ) {
         let params = [
@@ -31,7 +31,7 @@ class FacebookFeedQuery: FacebookQuery {
                 let feedObjectArray = feedJSON["data"].arrayValue
                 print(feedObjectArray)
                 for object:JSON in feedObjectArray {
-                    let newFeedObject = FBFeedObject(
+                    let newFeedObject = FBFeedArticle(
                         id: object["id"].stringValue,
                         message: object["message"].stringValue,
                         created_time: object["created_time"].stringValue,
@@ -47,7 +47,7 @@ class FacebookFeedQuery: FacebookQuery {
         })
     }
     
-    func parseMessageForLabels(feedObject: FBFeedObject, articleCategoryLabel: UILabel, articleTitleLabel: UILabel, articleDateLabel: UILabel) -> Void {
+    func parseMessageForLabels(feedObject: FBFeedArticle, articleCategoryLabel: UILabel, articleTitleLabel: UILabel, articleDateLabel: UILabel) -> Void {
         var categoryStr = ""
         var firstTitleStr: String?
         let msg = feedObject.message

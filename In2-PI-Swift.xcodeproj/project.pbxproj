@@ -16,11 +16,12 @@
 		D90A7B061B92415D003EA693 /* AboutPIViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90A7B051B92415D003EA693 /* AboutPIViewControlller.swift */; };
 		D90A7B081B924164003EA693 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90A7B071B924164003EA693 /* GalleryViewController.swift */; };
 		D90A7B0A1B924256003EA693 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90A7B091B924256003EA693 /* ParentViewController.swift */; };
+		D910DD881BADFF2500E8A99F /* Joobo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D910DD871BADFF2500E8A99F /* Joobo.swift */; settings = {ASSET_TAGS = (); }; };
 		D92295951B9BF87000C34A66 /* WorshipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92295941B9BF87000C34A66 /* WorshipViewController.swift */; };
 		D952B17B1B5EF5330089116C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B17A1B5EF5330089116C /* Constants.swift */; };
 		D952B17D1B5EF5CA0089116C /* HideKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B17C1B5EF5CA0089116C /* HideKey.swift */; };
 		D95EC5241B978DF000782925 /* FacebookFeedQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5231B978DF000782925 /* FacebookFeedQuery.swift */; };
-		D95EC5261B978E6400782925 /* FBFeedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5251B978E6400782925 /* FBFeedObject.swift */; };
+		D95EC5261B978E6400782925 /* FBFeedArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5251B978E6400782925 /* FBFeedArticle.swift */; };
 		D95EC5291B97963000782925 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5281B97963000782925 /* StringExtension.swift */; };
 		D97C16991BAA3E990095CB0A /* CommunicationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C16971BAA3E990095CB0A /* CommunicationsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		D97C169A1BAA3E990095CB0A /* CommunicationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D97C16981BAA3E990095CB0A /* CommunicationsTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
@@ -52,7 +53,7 @@
 		D9EF135F1BAA44B4006D7F78 /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF135E1BAA44B4006D7F78 /* CustomDateFormatter.swift */; settings = {ASSET_TAGS = (); }; };
 		D9F7F4811B93547600D86FF7 /* FacebookPhotoQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7F4801B93547600D86FF7 /* FacebookPhotoQuery.swift */; };
 		D9F7F4831B935DFA00D86FF7 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7F4821B935DFA00D86FF7 /* GalleryCell.swift */; };
-		D9F7F4861B93687700D86FF7 /* FBPhotoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7F4851B93687700D86FF7 /* FBPhotoObject.swift */; };
+		D9F7F4861B93687700D86FF7 /* FBPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7F4851B93687700D86FF7 /* FBPhoto.swift */; };
 		D9F8C4701BA4BE4300881B94 /* TodaysQTWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8C46F1BA4BE4300881B94 /* TodaysQTWidget.swift */; settings = {ASSET_TAGS = (); }; };
 		D9F8C4761BA4C33200881B94 /* TodaysQTWidget.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9F8C4751BA4C33200881B94 /* TodaysQTWidget.xib */; settings = {ASSET_TAGS = (); }; };
 		D9F8C4781BA4CFF800881B94 /* ExpandableAboutViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8C4771BA4CFF800881B94 /* ExpandableAboutViewHandler.swift */; settings = {ASSET_TAGS = (); }; };
@@ -84,11 +85,12 @@
 		D90A7B051B92415D003EA693 /* AboutPIViewControlller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPIViewControlller.swift; sourceTree = "<group>"; };
 		D90A7B071B924164003EA693 /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		D90A7B091B924256003EA693 /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
+		D910DD871BADFF2500E8A99F /* Joobo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joobo.swift; sourceTree = "<group>"; };
 		D92295941B9BF87000C34A66 /* WorshipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorshipViewController.swift; sourceTree = "<group>"; };
 		D952B17A1B5EF5330089116C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D952B17C1B5EF5CA0089116C /* HideKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKey.swift; sourceTree = "<group>"; };
 		D95EC5231B978DF000782925 /* FacebookFeedQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookFeedQuery.swift; sourceTree = "<group>"; };
-		D95EC5251B978E6400782925 /* FBFeedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBFeedObject.swift; sourceTree = "<group>"; };
+		D95EC5251B978E6400782925 /* FBFeedArticle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBFeedArticle.swift; sourceTree = "<group>"; };
 		D95EC5281B97963000782925 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		D9713E8B1B5ED166009D809A /* In2-PI-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "In2-PI-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		D97C16971BAA3E990095CB0A /* CommunicationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicationsTableViewCell.swift; sourceTree = "<group>"; };
@@ -131,7 +133,7 @@
 		D9EF135E1BAA44B4006D7F78 /* CustomDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
 		D9F7F4801B93547600D86FF7 /* FacebookPhotoQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookPhotoQuery.swift; sourceTree = "<group>"; };
 		D9F7F4821B935DFA00D86FF7 /* GalleryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
-		D9F7F4851B93687700D86FF7 /* FBPhotoObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBPhotoObject.swift; sourceTree = "<group>"; };
+		D9F7F4851B93687700D86FF7 /* FBPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBPhoto.swift; sourceTree = "<group>"; };
 		D9F8C46F1BA4BE4300881B94 /* TodaysQTWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysQTWidget.swift; sourceTree = "<group>"; };
 		D9F8C4751BA4C33200881B94 /* TodaysQTWidget.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodaysQTWidget.xib; sourceTree = "<group>"; };
 		D9F8C4771BA4CFF800881B94 /* ExpandableAboutViewHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpandableAboutViewHandler.swift; path = ../Controller/ExpandableAboutViewHandler.swift; sourceTree = "<group>"; };
@@ -177,14 +179,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D95EC5221B978C0A00782925 /* Facebook Query Objects */ = {
+		D910DD861BADFE2800E8A99F /* Facebook Objects */ = {
+			isa = PBXGroup;
+			children = (
+				D95EC5221B978C0A00782925 /* Facebook Query */,
+				D9F7F4851B93687700D86FF7 /* FBPhoto.swift */,
+				D95EC5251B978E6400782925 /* FBFeedArticle.swift */,
+			);
+			name = "Facebook Objects";
+			sourceTree = "<group>";
+		};
+		D95EC5221B978C0A00782925 /* Facebook Query */ = {
 			isa = PBXGroup;
 			children = (
 				D99EF24E1B9F59FD00026D66 /* FacebookQuery.swift */,
 				D95EC5231B978DF000782925 /* FacebookFeedQuery.swift */,
 				D9F7F4801B93547600D86FF7 /* FacebookPhotoQuery.swift */,
 			);
-			name = "Facebook Query Objects";
+			name = "Facebook Query";
 			sourceTree = "<group>";
 		};
 		D95EC5271B97961200782925 /* Extensions */ = {
@@ -227,13 +239,6 @@
 				D9F9C7E41B645FE300F5C17D /* NanumBarunGothicBold.otf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		D9965A7A1B9E249200AB4A74 /* Custom Manager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Custom Manager";
 			sourceTree = "<group>";
 		};
 		D9B549A51B76D7FB00BF4887 /* SWRevealViewController */ = {
@@ -305,7 +310,6 @@
 				D9F7F4841B93684F00D86FF7 /* Model */,
 				D9DA87E71B6DC05C005D4CB6 /* View */,
 				D9DA87E81B6DC063005D4CB6 /* Controller */,
-				D9965A7A1B9E249200AB4A74 /* Custom Manager */,
 				D95EC5271B97961200782925 /* Extensions */,
 				D9FB031E1B6495C3001D813D /* Terry References */,
 				D9F7F47F1B93544400D86FF7 /* Vendor */,
@@ -374,10 +378,9 @@
 		D9F7F4841B93684F00D86FF7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D95EC5221B978C0A00782925 /* Facebook Query Objects */,
-				D9F7F4851B93687700D86FF7 /* FBPhotoObject.swift */,
-				D95EC5251B978E6400782925 /* FBFeedObject.swift */,
+				D910DD861BADFE2800E8A99F /* Facebook Objects */,
 				D9EF135E1BAA44B4006D7F78 /* CustomDateFormatter.swift */,
+				D910DD871BADFF2500E8A99F /* Joobo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 				D9B34A211B76F6BB00590DFB /* HomeScreenPurpleButton.swift in Sources */,
 				D90A7B081B924164003EA693 /* GalleryViewController.swift in Sources */,
 				D9F9C7EA1B64873800F5C17D /* LeftNavDrawerController.swift in Sources */,
+				D910DD881BADFF2500E8A99F /* Joobo.swift in Sources */,
 				D90A7AFE1B92406F003EA693 /* HomeScreenViewController.swift in Sources */,
 				D9F8C4701BA4BE4300881B94 /* TodaysQTWidget.swift in Sources */,
 				D9B549A81B76D7FB00BF4887 /* SWRevealViewController.m in Sources */,
@@ -597,12 +601,12 @@
 				D90A7B041B92413F003EA693 /* EvangelismViewController.swift in Sources */,
 				D90A7B021B924135003EA693 /* SocialServicesViewController.swift in Sources */,
 				D90A7B001B9240EC003EA693 /* CommunicationsViewController.swift in Sources */,
-				D9F7F4861B93687700D86FF7 /* FBPhotoObject.swift in Sources */,
+				D9F7F4861B93687700D86FF7 /* FBPhoto.swift in Sources */,
 				D97C16991BAA3E990095CB0A /* CommunicationsTableViewCell.swift in Sources */,
 				D9F7F4831B935DFA00D86FF7 /* GalleryCell.swift in Sources */,
 				D9F7F4811B93547600D86FF7 /* FacebookPhotoQuery.swift in Sources */,
 				D9D3CE211B3F4B1E00C8E195 /* HomeActionCollectionViewCell.swift in Sources */,
-				D95EC5261B978E6400782925 /* FBFeedObject.swift in Sources */,
+				D95EC5261B978E6400782925 /* FBFeedArticle.swift in Sources */,
 				D95EC5291B97963000782925 /* StringExtension.swift in Sources */,
 				D952B17B1B5EF5330089116C /* Constants.swift in Sources */,
 				D9DA047A1BA5B69100F434F4 /* EvangelismApplyWidgetView.swift in Sources */,

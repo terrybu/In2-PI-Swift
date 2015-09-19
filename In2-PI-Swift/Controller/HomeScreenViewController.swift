@@ -82,7 +82,7 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
     }
     
     //MARK: FacebookFeedQueryDelegate 
-    func didFinishGettingFacebookFeedData(fbFeedObjectArray: [FBFeedObject]) {
+    func didFinishGettingFacebookFeedData(fbFeedObjectArray: [FBFeedArticle]) {
         let firstObject = fbFeedObjectArray[0]
         FacebookFeedQuery.sharedInstance.parseMessageForLabels(firstObject, articleCategoryLabel: articleCategoryLabel, articleTitleLabel: articleTitleLabel, articleDateLabel: articleDateLabel)
         firstObjectID = firstObject.id
