@@ -51,7 +51,8 @@ class WorshipViewController: ParentViewController, SFSafariViewControllerDelegat
                 print(resultsArray)
                 for dict:JSON in resultsArray {
                     let title = dict["tit_link/_text"].stringValue
-                    let dateString = dict["tit_link_numbers"].arrayValue[0].stringValue
+                    let datesArray = dict["tit_link_numbers"].arrayValue
+                    let dateString = "\(datesArray[0].stringValue) \(datesArray[1].stringValue) \(datesArray[2].stringValue)"
                     let url = dict["tit_link"].stringValue
                     let newJoobo = Joobo(title: title, url: url, dateString: dateString)
                     self.joobosArray.append(newJoobo)
@@ -121,15 +122,6 @@ class WorshipViewController: ParentViewController, SFSafariViewControllerDelegat
         return 30
     }
     
-//    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-//        var header:UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-//        var button = UIButton(frame: CGRectMake(0, 0, 50, 18))
-//        button.titleLabel!.text = "test button"
-//        view.addSubview(button)
-////        view.tintColor = UIColor(rgba: "#2D2D2D")
-////        header.textLabel.textColor = UIColor.bl()
-//    }
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (tableView == jooboTableView) {
             return joobosArray.count
@@ -162,15 +154,20 @@ class WorshipViewController: ParentViewController, SFSafariViewControllerDelegat
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
             if (tableView == jooboTableView) {
                 print("joobo tv")
+                let joobo = joobosArray[indexPath.row]
+                print(joobo.dateString)
 
                 let url : NSURL! = NSURL(string: "http://vision.onnuri.org/in2/wp-content/uploads/sites/29/2015/08/08.02-%EC%A3%BC%EB%B3%B4web.pdf")
+                
+                
+                
                 let webView = UIWebView(frame: view.frame)
                 webView.loadRequest(NSURLRequest(URL: url))
                 let vc = UIViewController()
                 vc.view = webView
                 navigationController?.pushViewController(vc, animated: true)
             }
-            else {
+            else if (tableView == songsTableView) {
                 print("songs tv")
                 let nameSong = songsTableView.cellForRowAtIndexPath(indexPath)?.textLabel!.text
                 let escaped = nameSong!.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
