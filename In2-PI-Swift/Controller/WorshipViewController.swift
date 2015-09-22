@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import Foundation
 
 private let kOriginalAboutViewHeight: CGFloat = 32.0
 private let kExpandedAboutViewHeight: CGFloat = 300.0
@@ -145,6 +146,10 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
                 
                 let url : NSURL! = NSURL(string: WeeklyProgramDownloader.sharedInstance.getURLStringForSingleProgramDownload(weeklyProgram.dateString))
                 
+                HttpFileDownloader.sharedInstance.loadFileAsync(url, completion:{(path:String, error:NSError!) in
+                    print("pdf downloaded to: \(path)")
+                })
+                
                 let webView = UIWebView(frame: view.frame)
                 webView.loadRequest(NSURLRequest(URL: url))
                 let vc = UIViewController()
@@ -181,5 +186,5 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-
+    
 }

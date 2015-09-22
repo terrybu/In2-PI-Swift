@@ -32,6 +32,7 @@
 		D9965A7E1B9E5A3600AB4A74 /* NewsArticleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9965A7D1B9E5A3600AB4A74 /* NewsArticleView.xib */; };
 		D9965A801B9E5DB600AB4A74 /* NewsArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9965A7F1B9E5DB600AB4A74 /* NewsArticleView.swift */; };
 		D99991A71BB1AF0E0022EF10 /* WeeklyProgramDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99991A61BB1AF0E0022EF10 /* WeeklyProgramDownloader.swift */; settings = {ASSET_TAGS = (); }; };
+		D99991A91BB1BEF90022EF10 /* HttpFileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99991A81BB1BEF90022EF10 /* HttpFileDownloader.swift */; settings = {ASSET_TAGS = (); }; };
 		D99EF24F1B9F59FD00026D66 /* FacebookQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99EF24E1B9F59FD00026D66 /* FacebookQuery.swift */; };
 		D9B34A211B76F6BB00590DFB /* HomeScreenPurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */; };
 		D9B34A241B77840700590DFB /* NanumBarunGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9B34A221B77840700590DFB /* NanumBarunGothicLight.otf */; };
@@ -102,6 +103,7 @@
 		D9965A7D1B9E5A3600AB4A74 /* NewsArticleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsArticleView.xib; sourceTree = "<group>"; };
 		D9965A7F1B9E5DB600AB4A74 /* NewsArticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsArticleView.swift; sourceTree = "<group>"; };
 		D99991A61BB1AF0E0022EF10 /* WeeklyProgramDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyProgramDownloader.swift; sourceTree = "<group>"; };
+		D99991A81BB1BEF90022EF10 /* HttpFileDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpFileDownloader.swift; sourceTree = "<group>"; };
 		D99EF24E1B9F59FD00026D66 /* FacebookQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookQuery.swift; sourceTree = "<group>"; };
 		D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenPurpleButton.swift; sourceTree = "<group>"; };
 		D9B34A221B77840700590DFB /* NanumBarunGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicLight.otf; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 				D910DD871BADFF2500E8A99F /* WeeklyProgram.swift */,
 				D99991A61BB1AF0E0022EF10 /* WeeklyProgramDownloader.swift */,
 				D9EF135E1BAA44B4006D7F78 /* CustomDateFormatter.swift */,
+				D99991A81BB1BEF90022EF10 /* HttpFileDownloader.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				D90A7B041B92413F003EA693 /* EvangelismViewController.swift in Sources */,
 				D90A7B021B924135003EA693 /* SocialServicesViewController.swift in Sources */,
 				D90A7B001B9240EC003EA693 /* CommunicationsViewController.swift in Sources */,
+				D99991A91BB1BEF90022EF10 /* HttpFileDownloader.swift in Sources */,
 				D9F7F4861B93687700D86FF7 /* FBPhoto.swift in Sources */,
 				D97C16991BAA3E990095CB0A /* CommunicationsTableViewCell.swift in Sources */,
 				D9F7F4831B935DFA00D86FF7 /* GalleryCell.swift in Sources */,
