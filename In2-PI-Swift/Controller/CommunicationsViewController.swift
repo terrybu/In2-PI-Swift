@@ -86,7 +86,12 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
         let cell = tableView.dequeueReusableCellWithIdentifier("CommunicationsCell", forIndexPath: indexPath) as! CommunicationsTableViewCell
         
         print("cell For row is excuting for indexpath: \(indexPath.row)")
-
+        if cell.blackOverlay == nil {
+            cell.blackOverlay = UIView(frame:cell.backgroundImageView.frame)
+            cell.blackOverlay!.backgroundColor = UIColor.blackColor()
+            cell.blackOverlay!.alpha = 0.1
+            cell.backgroundImageView.addSubview(cell.blackOverlay!)
+        }
         configureCell(cell, indexPath: indexPath)
         return cell
     }
@@ -98,6 +103,7 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
             if cache.objectForKey("\(indexPath.row)") != nil{
                 let img = cache.objectForKey("\(indexPath.row)") as! UIImage
                 cell.backgroundImageView.image = img
+                
             } else {
                 cell.backgroundImageView.image = nil
                 let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)

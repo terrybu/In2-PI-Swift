@@ -14,6 +14,7 @@ class CommunicationsTableViewCell: UITableViewCell {
     @IBOutlet weak var articleTitleLabel: UILabel!
     @IBOutlet weak var articleDateLabel: UILabel!
     @IBOutlet weak var backgroundImageView: UIImageView!
+    var blackOverlay: UIView?
 
     override func awakeFromNib() {
         super.awakeFromNib()
