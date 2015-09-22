@@ -9,7 +9,6 @@
 import UIKit
 
 private let kOriginalAboutViewHeight: CGFloat = 32.0
-private let kExpandedAboutViewHeight: CGFloat = 300.0
 private let kOriginalContentViewHeight: CGFloat = 605
 
 class SocialServicesViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource{
@@ -19,15 +18,18 @@ class SocialServicesViewController: ParentViewController, UITableViewDelegate, U
     //Constraints
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
     @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
+    private var expandedAboutViewHeight: CGFloat = 0
     
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
+        
+        expandedAboutViewHeight = expandableAboutView.aboutLabel.frame.size.height + expandableAboutView.textView.frame.size.height + 10
         setUpExpandableAboutView()
     }
     
     private func setUpExpandableAboutView() {
         expandableAboutView.clipsToBounds = true
-        expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: kExpandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
+        expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: expandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
     }
     
     //MARK: UITableViewDataSource

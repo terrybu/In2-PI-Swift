@@ -10,7 +10,6 @@ import UIKit
 import AFNetworking
 
 private let kOriginalAboutViewHeight: CGFloat = 32.0
-private let kExpandedAboutViewHeight: CGFloat = 300.0
 
 class CommunicationsViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource, ExpandableAboutViewDelegate{
     
@@ -24,12 +23,14 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
     
     var cache: NSCache = NSCache()
     var operationManager: AFHTTPRequestOperationManager?
-    
+    var expandedAboutViewHeight:CGFloat = 0
+
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
         tableView.registerNib(UINib(nibName: "CommunicationsTableViewCell", bundle: nil), forCellReuseIdentifier: "CommunicationsCell")
         self.feedObjectsArray = FacebookFeedQuery.sharedInstance.FBFeedObjectsArray
         
+        expandedAboutViewHeight = expandableAboutView.aboutLabel.frame.size.height + expandableAboutView.textView.frame.size.height + 10
         setUpExpandableAboutView()
         
         operationManager = AFHTTPRequestOperationManager()
@@ -47,7 +48,7 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
             print("did press expand button when it wasn't expanded")
             
             UIView.animateWithDuration(0.5, animations: { () -> Void in
-                self.constraintHeightExpandableView.constant = kExpandedAboutViewHeight
+                self.constraintHeightExpandableView.constant = self.expandedAboutViewHeight
                 self.view.layoutIfNeeded()
                 
                 }) { (Bool completed) -> Void in
@@ -94,26 +95,28 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
         let feedObject = feedObjectsArray![indexPath.row]
         FacebookFeedQuery.sharedInstance.parseMessageForLabels(feedObject, articleCategoryLabel: cell.articleCategoryLabel, articleTitleLabel: cell.articleTitleLabel, articleDateLabel: cell.articleDateLabel)
         if feedObject.type == "photo" {
-            cell.tag = indexPath.row            
             if cache.objectForKey("\(indexPath.row)") != nil{
                 let img = cache.objectForKey("\(indexPath.row)") as! UIImage
                 cell.backgroundImageView.image = img
             } else {
                 cell.backgroundImageView.image = nil
+                let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+                activityIndicator.center = view.center
+                view.addSubview(activityIndicator)
+                activityIndicator.startAnimating()
                 FacebookPhotoQuery.sharedInstance.getNormalSizePhotoURLStringForCommunicationsFrom(feedObject.id, completion: { (normImgUrlString) -> Void in
-//                    cell.backgroundImageView.setImageWithURL(NSURL(string: normImgUrlString))
                     self.operationManager?.GET(normImgUrlString, parameters: nil, success: { (operation, responseObject) -> Void in
                             //success
-                        if cell.tag == indexPath.row  {
                             print("afnetworking image download finished for indexpath: \(indexPath.row)")
 
                             self.cache.setObject(responseObject, forKey: "\(indexPath.row)")
                             dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                activityIndicator.stopAnimating()
                                 self.tableView .reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
                             })
-                        }
                     }, failure: { (operation, error) -> Void in
                             print(error)
+                        activityIndicator.stopAnimating()
                     })
 
                 })

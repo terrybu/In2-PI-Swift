@@ -458,10 +458,12 @@
                                                     <constraint firstAttribute="height" constant="32" id="jbz-6X-e4F"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="aboutLabelTitle" value="About 예배부"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleLabeltitle" value="TestTitle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="aboutLabelTitle" value="About 예배보로"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleLabeltitle" value="예배보로는 &quot;한 마음 한 뜻&quot;"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="textViewContentText">
-                                                        <string key="value">dpfjaspifjipsdfjpiqfjqpifjipwqfjipwfjipwefjiwepfjiwpeqfjewpfjweqipfewjqfpjwefpwejfiewfjewpfjewqpfwejifwejpfwjeiqpfjwefjwepfjweifjwepifjwepqfjwepqfjwepfjwepifjweipfjweiqfjiewfpjewfpewqfqwjf</string>
+                                                        <string key="value">"같은 생각을 품고 같은 사랑을 나타내며 한마음으로 같은 것을 생각함으로 내 기쁨을 충만하게 하십시오." - 빌립보서 2:2
+
+중보기도팀, 셋업팀, 웰컴팀, 찬양팀, 가스펠콰이어팀, 예배진행팀으로 구성된 예배보로는 자신의 예배가 우리의 예배가 되어 매주 예배를 "함께" 준비하는 보로입니다.</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <variation key="default">
@@ -635,9 +637,13 @@
                                                     <constraint firstAttribute="height" constant="32" id="oXB-wE-xMD"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="aboutLabelTitle" value="About 양육부"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleLabeltitle" value="양육부 소개 타이틀"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="textViewContentText" value="양육부 소개 콘텐츠 dfdjapfjspfsdjfipsafjsapifjipfjiapsfidpsfjipafjiafjpasfjiasfjpdfapf"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="aboutLabelTitle" value="About 양육보로"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleLabeltitle" value="양육보로는 &quot;사랑♡&quot;"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="textViewContentText">
+                                                        <string key="value">"주의 말씀은 내 발에 등이요 내 길에 빛이니이다." -시편 119:105
+
+새가족팀, 홀리스타, 교재개발팀, 일대일 제자양육을 맡고 있는 양육보로는 말씀 안에서 함께 성장하며 믿음과 사랑의 통로가 되는 공동체를 꿈꿉니다.</string>
+                                                    </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
@@ -749,8 +755,13 @@
                                     <constraint firstAttribute="height" constant="32" id="djw-L0-Wki"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="aboutLabelTitle" value="About 소통부"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="titleLabeltitle" value="테스트"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="aboutLabelTitle" value="About 소통보로"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleLabeltitle" value="소통보로는 &quot;너와 나의 연결고리!&quot;"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="textViewContentText">
+                                        <string key="value">"그리스도로부터 온몸이 각 마디를 통해 함께 연결되고 결합됩니다. 각 지체가 맡은 분량대로 기능하는 가운데 그 몸을 자라게 하며 사랑 가운데 스스로를 세워갑니다." -에베소서 4:16
+ 
+파이매거진, 앱&amp;웹팀, 광고&amp;기획팀이 속한 소통보로는 예수님의 사랑을 서로서로 소통하는 공동체를 만들기 위해 힘씁니다.</string>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hwC-fN-xf5">
@@ -835,6 +846,15 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="pC3-zy-icE"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="aboutLabelTitle" value="About 선교보로"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleLabeltitle" value="선교보로, &quot;선교는 사람 살려&quot;"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="textViewContentText">
+                                                        <string key="value">“오직 성령이 너희에게 임하시면 너희가 권능을 받고 예루살렘과 온 유대와 사마리아와 땅끝까지 이르러 내 증인이 되리라.” -사도행전 1:8
+ 
+단기선교, 직장인선교, 북한선교, 문화선교, 글로벌이슈 사역을 통해 여러분의 전문성, 재능, 취미로 사람을 살립니다. </string>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frw-Mk-C4M">
                                                 <rect key="frame" x="279" y="42" width="43" height="20"/>
@@ -987,6 +1007,15 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="t7k-X8-m0G"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="aboutLabelTitle" value="About 긍휼보로"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleLabeltitle" value="긍휼보로, &quot;Compassion to Passion!&quot;"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="textViewContentText">
+                                                        <string key="value">“마음을 다하고 지혜를 다하고 힘을 다하여 하나님을 사랑하는 것과 또 이웃을 제 몸과 같이 사랑하는 것이 전체로 드리는 모든 번제물과 기타 제물보다 나으니이다.” -마가복음 12:33
+ 
+밀알 선교팀, Better Future, Better Day, Better K-Town, 밥팀, 꽃팀, 워십댄스팀을 통해 긍휼보로는 하나님께서 주신 마음으로 이웃을 섬기는 보로입니다.</string>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Bm-1l-Zm5" userLabel="BetterFutureApply" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="300" y="418" width="300" height="187"/>

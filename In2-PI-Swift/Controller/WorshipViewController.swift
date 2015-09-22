@@ -11,7 +11,6 @@ import SafariServices
 import Foundation
 
 private let kOriginalAboutViewHeight: CGFloat = 32.0
-private let kExpandedAboutViewHeight: CGFloat = 300.0
 private let kOriginalContentViewHeight: CGFloat = 600
 
 class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelegate ,SFSafariViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
@@ -28,9 +27,12 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
     @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
     
+    var expandedAboutViewHeight:CGFloat = 0 
     
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
+        
+        expandedAboutViewHeight = expandableAboutView.aboutLabel.frame.size.height + expandableAboutView.textView.frame.size.height + 10
         setUpExpandableAboutView()
         
         songsArray = ["Hillsong - Above All", "예수전도단 - 좋으신 하나님", "예수전도단 - 주 나의 왕"]
@@ -47,7 +49,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     
     private func setUpExpandableAboutView() {
         expandableAboutView.clipsToBounds = true
-        expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: kExpandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
+        expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: expandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
     }
     
     override func viewDidAppear(animated: Bool) {

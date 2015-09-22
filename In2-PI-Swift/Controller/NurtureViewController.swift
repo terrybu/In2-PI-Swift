@@ -10,7 +10,6 @@ import UIKit
 import MessageUI
 
 private let kOriginalAboutViewHeight: CGFloat = 32.0
-private let kExpandedAboutViewHeight: CGFloat = 300.0
 private let kOriginalContentViewHeight: CGFloat = 300
 
 class NurtureViewController: ParentViewController, MFMailComposeViewControllerDelegate {
@@ -23,9 +22,11 @@ class NurtureViewController: ParentViewController, MFMailComposeViewControllerDe
     @IBOutlet var expandableAboutView: ExpandableAboutView!
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
     @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
-    
+    var expandedAboutViewHeight:CGFloat = 0
+
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
+        expandedAboutViewHeight = expandableAboutView.aboutLabel.frame.size.height + expandableAboutView.textView.frame.size.height + 10
         setUpExpandableAboutView()
         leftNurtureApplyWidget.applyButtonPressedHandler = {(sender) -> Void in
             self.sendMail(sender)
@@ -37,7 +38,7 @@ class NurtureViewController: ParentViewController, MFMailComposeViewControllerDe
     
     private func setUpExpandableAboutView() {
         expandableAboutView.clipsToBounds = true
-        expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: kExpandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
+        expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: expandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
     }
     
     func didPressExpandButton() {
@@ -45,8 +46,8 @@ class NurtureViewController: ParentViewController, MFMailComposeViewControllerDe
             print("did press expand button when it wasn't expanded")
             
             UIView.animateWithDuration(0.5, animations: { () -> Void in
-                self.constraintHeightExpandableView.constant = kExpandedAboutViewHeight
-                self.constraintContentViewHeight.constant += kExpandedAboutViewHeight - kOriginalAboutViewHeight
+                self.constraintHeightExpandableView.constant = self.expandedAboutViewHeight
+                self.constraintContentViewHeight.constant += self.expandedAboutViewHeight - kOriginalAboutViewHeight
                 self.view.layoutIfNeeded()
                 
                 }) { (Bool completed) -> Void in
