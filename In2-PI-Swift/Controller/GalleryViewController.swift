@@ -37,7 +37,7 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
         topImageView.layer.shadowOffset = CGSizeMake(2, 2)
         topImageView.layer.shadowOpacity = 1
         topImageView.layer.shadowRadius = 5.0
-        let singleTap = UITapGestureRecognizer(target: self, action: Selector("displayJTSFullScreenViewForImage"))
+        let singleTap = UITapGestureRecognizer(target: self, action: Selector("displayJTSFullScreenViewForImageCurrentlyInTopImgView"))
         singleTap.numberOfTapsRequired = 1
         topImageView.userInteractionEnabled = true
         topImageView.addGestureRecognizer(singleTap)
