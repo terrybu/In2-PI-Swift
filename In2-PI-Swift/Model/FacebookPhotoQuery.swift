@@ -12,9 +12,6 @@ let kGraphPathPIMagazineAlbumsString = "1384548091800506/albums"
 let kParamsOnlyAccessToken = [
     "access_token": kAppAccessToken
 ]
-enum FacebookError: ErrorType {
-    case Empty
-}
 
 protocol FacebookPhotoQueryDelegate {
     func didFinishGettingFacebookPhotos(fbPhotoObjectsArray: [FBPhoto])
@@ -25,8 +22,6 @@ class FacebookPhotoQuery: FacebookQuery {
     static let sharedInstance = FacebookPhotoQuery()
     var delegate: FacebookPhotoQueryDelegate?
     var FBPhotoObjectsArray = [FBPhoto]()
-    
-    
     func getPhotosFromMostRecentThreeAlbums(completion: ((error: NSError!) -> Void)?) {
 
         super.getFBDataJSON(kGraphPathPIMagazineAlbumsString, params: kParamsOnlyAccessToken,

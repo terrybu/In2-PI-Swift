@@ -31,6 +31,7 @@
 		D9965A791B9E1D6800AB4A74 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9965A781B9E1D6800AB4A74 /* PaddedLabel.swift */; };
 		D9965A7E1B9E5A3600AB4A74 /* NewsArticleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9965A7D1B9E5A3600AB4A74 /* NewsArticleView.xib */; };
 		D9965A801B9E5DB600AB4A74 /* NewsArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9965A7F1B9E5DB600AB4A74 /* NewsArticleView.swift */; };
+		D99991A71BB1AF0E0022EF10 /* WeeklyProgramDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99991A61BB1AF0E0022EF10 /* WeeklyProgramDownloader.swift */; settings = {ASSET_TAGS = (); }; };
 		D99EF24F1B9F59FD00026D66 /* FacebookQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99EF24E1B9F59FD00026D66 /* FacebookQuery.swift */; };
 		D9B34A211B76F6BB00590DFB /* HomeScreenPurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */; };
 		D9B34A241B77840700590DFB /* NanumBarunGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9B34A221B77840700590DFB /* NanumBarunGothicLight.otf */; };
@@ -100,6 +101,7 @@
 		D9965A781B9E1D6800AB4A74 /* PaddedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
 		D9965A7D1B9E5A3600AB4A74 /* NewsArticleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsArticleView.xib; sourceTree = "<group>"; };
 		D9965A7F1B9E5DB600AB4A74 /* NewsArticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsArticleView.swift; sourceTree = "<group>"; };
+		D99991A61BB1AF0E0022EF10 /* WeeklyProgramDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyProgramDownloader.swift; sourceTree = "<group>"; };
 		D99EF24E1B9F59FD00026D66 /* FacebookQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookQuery.swift; sourceTree = "<group>"; };
 		D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenPurpleButton.swift; sourceTree = "<group>"; };
 		D9B34A221B77840700590DFB /* NanumBarunGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicLight.otf; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 			children = (
 				D910DD861BADFE2800E8A99F /* Facebook Objects */,
 				D910DD871BADFF2500E8A99F /* WeeklyProgram.swift */,
+				D99991A61BB1AF0E0022EF10 /* WeeklyProgramDownloader.swift */,
 				D9EF135E1BAA44B4006D7F78 /* CustomDateFormatter.swift */,
 			);
 			path = Model;
@@ -578,6 +581,7 @@
 			files = (
 				D9965A791B9E1D6800AB4A74 /* PaddedLabel.swift in Sources */,
 				D9965A801B9E5DB600AB4A74 /* NewsArticleView.swift in Sources */,
+				D99991A71BB1AF0E0022EF10 /* WeeklyProgramDownloader.swift in Sources */,
 				D952B17D1B5EF5CA0089116C /* HideKey.swift in Sources */,
 				D92295951B9BF87000C34A66 /* WorshipViewController.swift in Sources */,
 				D90A7B0A1B924256003EA693 /* ParentViewController.swift in Sources */,
