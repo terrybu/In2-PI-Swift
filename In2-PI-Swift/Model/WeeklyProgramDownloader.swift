@@ -13,7 +13,6 @@ private let kImportIOURLForScrapingTenRecentWeeklyPrograms =  "https://api.impor
 
 protocol WeeklyProgramDownloaderDelegate {
     func didFinishDownloadinglistOfTenWeeklyProgramsFromImportIO(downloadedProgramsArray: [WeeklyProgram]?)
-    
 }
 
 class WeeklyProgramDownloader {
@@ -33,10 +32,12 @@ class WeeklyProgramDownloader {
                 print(resultsArray)
                 for dict:JSON in resultsArray {
                     let title = dict["tit_link/_text"].stringValue
-                    let datesArray = dict["tit_link_numbers"].arrayValue
-                    let dateString = "\(datesArray[0].stringValue) \(datesArray[1].stringValue) \(datesArray[2].stringValue)"
+//                    let datesArray = dict["tit_link_numbers"].arrayValue
+//                    let dateString = "\(datesArray[0].stringValue) \(datesArray[1].stringValue) \(datesArray[2].stringValue)"
+                    let datesArray = dict["txt_link_numbers/_source"].arrayValue
+                    let dateString = datesArray.last?.stringValue
                     let url = dict["tit_link"].stringValue
-                    let newWeeklyProgram = WeeklyProgram(title: title, url: url, dateString: dateString)
+                    let newWeeklyProgram = WeeklyProgram(title: title, url: url, dateString: dateString!)
                     self.weeklyProgramsArray.append(newWeeklyProgram)
                 }
                 self.delegate?.didFinishDownloadinglistOfTenWeeklyProgramsFromImportIO(self.weeklyProgramsArray)
@@ -44,6 +45,17 @@ class WeeklyProgramDownloader {
             failure: { (task:NSURLSessionDataTask!, error:NSError!) -> Void in
                 print(error)
         })
+    }
+    
+    func getURLStringForSingleProgramDownload(dateString: String) -> String {
+        let base = "http://vision.onnuri.org/in2/wp-content/uploads/sites/29"
+        //2015/08/08.02
+        let year = dateString[6...9]
+        let month = dateString[0...1]
+        let monthDotDay = dateString[0...4]
+        let ending = "-%EC%A3%BC%EB%B3%B4web.pdf"
+        
+        return "\(base)/\(year)/\(month)/\(monthDotDay)\(ending)"
     }
     
 }

@@ -140,11 +140,10 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
             if (tableView == weeklyProgramsTableView) {
-                let joobo = weeklyProgramsArray[indexPath.row]
-                print(joobo.dateString)
-
-                let url : NSURL! = NSURL(string: "http://vision.onnuri.org/in2/wp-content/uploads/sites/29/2015/08/08.02-%EC%A3%BC%EB%B3%B4web.pdf")
+                let weeklyProgram = weeklyProgramsArray[indexPath.row]
+                print(weeklyProgram.dateString)
                 
+                let url : NSURL! = NSURL(string: WeeklyProgramDownloader.sharedInstance.getURLStringForSingleProgramDownload(weeklyProgram.dateString))
                 
                 let webView = UIWebView(frame: view.frame)
                 webView.loadRequest(NSURLRequest(URL: url))
