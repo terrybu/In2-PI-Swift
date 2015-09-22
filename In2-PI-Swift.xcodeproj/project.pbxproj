@@ -16,7 +16,7 @@
 		D90A7B061B92415D003EA693 /* AboutPIViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90A7B051B92415D003EA693 /* AboutPIViewControlller.swift */; };
 		D90A7B081B924164003EA693 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90A7B071B924164003EA693 /* GalleryViewController.swift */; };
 		D90A7B0A1B924256003EA693 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90A7B091B924256003EA693 /* ParentViewController.swift */; };
-		D910DD881BADFF2500E8A99F /* Joobo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D910DD871BADFF2500E8A99F /* Joobo.swift */; settings = {ASSET_TAGS = (); }; };
+		D910DD881BADFF2500E8A99F /* WeeklyProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = D910DD871BADFF2500E8A99F /* WeeklyProgram.swift */; settings = {ASSET_TAGS = (); }; };
 		D92295951B9BF87000C34A66 /* WorshipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92295941B9BF87000C34A66 /* WorshipViewController.swift */; };
 		D952B17B1B5EF5330089116C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B17A1B5EF5330089116C /* Constants.swift */; };
 		D952B17D1B5EF5CA0089116C /* HideKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B17C1B5EF5CA0089116C /* HideKey.swift */; };
@@ -85,7 +85,7 @@
 		D90A7B051B92415D003EA693 /* AboutPIViewControlller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPIViewControlller.swift; sourceTree = "<group>"; };
 		D90A7B071B924164003EA693 /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		D90A7B091B924256003EA693 /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
-		D910DD871BADFF2500E8A99F /* Joobo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joobo.swift; sourceTree = "<group>"; };
+		D910DD871BADFF2500E8A99F /* WeeklyProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyProgram.swift; sourceTree = "<group>"; };
 		D92295941B9BF87000C34A66 /* WorshipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorshipViewController.swift; sourceTree = "<group>"; };
 		D952B17A1B5EF5330089116C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D952B17C1B5EF5CA0089116C /* HideKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKey.swift; sourceTree = "<group>"; };
@@ -379,8 +379,8 @@
 			isa = PBXGroup;
 			children = (
 				D910DD861BADFE2800E8A99F /* Facebook Objects */,
+				D910DD871BADFF2500E8A99F /* WeeklyProgram.swift */,
 				D9EF135E1BAA44B4006D7F78 /* CustomDateFormatter.swift */,
-				D910DD871BADFF2500E8A99F /* Joobo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -589,7 +589,7 @@
 				D9B34A211B76F6BB00590DFB /* HomeScreenPurpleButton.swift in Sources */,
 				D90A7B081B924164003EA693 /* GalleryViewController.swift in Sources */,
 				D9F9C7EA1B64873800F5C17D /* LeftNavDrawerController.swift in Sources */,
-				D910DD881BADFF2500E8A99F /* Joobo.swift in Sources */,
+				D910DD881BADFF2500E8A99F /* WeeklyProgram.swift in Sources */,
 				D90A7AFE1B92406F003EA693 /* HomeScreenViewController.swift in Sources */,
 				D9F8C4701BA4BE4300881B94 /* TodaysQTWidget.swift in Sources */,
 				D9B549A81B76D7FB00BF4887 /* SWRevealViewController.m in Sources */,

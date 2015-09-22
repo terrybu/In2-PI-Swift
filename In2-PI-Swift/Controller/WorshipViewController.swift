@@ -20,9 +20,9 @@ class WorshipViewController: ParentViewController, SFSafariViewControllerDelegat
     @IBOutlet var contentView: UIView! //this property might not actually be needed ..
     @IBOutlet var expandableAboutView: ExpandableAboutView!
     @IBOutlet var songsTableView :     UITableView!
-    @IBOutlet var jooboTableView :     UITableView!
+    @IBOutlet var weeklyProgramsTableView :     UITableView!
     var songsArray = [String]()
-    var joobosArray = [Joobo]()
+    var weeklyProgramsArray = [WeeklyProgram]()
     
     //Constraints
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
@@ -35,11 +35,11 @@ class WorshipViewController: ParentViewController, SFSafariViewControllerDelegat
         
         songsArray = ["Hillsong - Above All", "예수전도단 - 좋으신 하나님", "예수전도단 - 주 나의 왕"]
         
-        getDataFromImportIOAPIForJoobos()
-        jooboTableView.reloadData()
+        getDataFromImportIOAPIForWeeklyPrograms()
+        weeklyProgramsTableView.reloadData()
     }
     
-    private func getDataFromImportIOAPIForJoobos() {
+    private func getDataFromImportIOAPIForWeeklyPrograms() {
         let url = NSURL(string: "https://api.import.io")
         let manager = AFHTTPSessionManager(baseURL: url)
         manager.requestSerializer = AFJSONRequestSerializer()
@@ -54,12 +54,12 @@ class WorshipViewController: ParentViewController, SFSafariViewControllerDelegat
                     let datesArray = dict["tit_link_numbers"].arrayValue
                     let dateString = "\(datesArray[0].stringValue) \(datesArray[1].stringValue) \(datesArray[2].stringValue)"
                     let url = dict["tit_link"].stringValue
-                    let newJoobo = Joobo(title: title, url: url, dateString: dateString)
-                    self.joobosArray.append(newJoobo)
+                    let newWeeklyProgram = WeeklyProgram(title: title, url: url, dateString: dateString)
+                    self.weeklyProgramsArray.append(newWeeklyProgram)
                 }
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        self.jooboTableView.reloadData()
+                        self.weeklyProgramsTableView.reloadData()
                     })
                 })
             },
@@ -79,7 +79,7 @@ class WorshipViewController: ParentViewController, SFSafariViewControllerDelegat
     }
     
     
-    //MARK: Joobo TableView Delegate methods
+    //MARK: WeeklyPrograms TableView Delegate methods
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -88,7 +88,7 @@ class WorshipViewController: ParentViewController, SFSafariViewControllerDelegat
             let headerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 40))
             headerView.backgroundColor = UIColor.whiteColor()
             var label: UILabel
-            if (tableView == jooboTableView) {
+            if (tableView == weeklyProgramsTableView) {
                 label = UILabel(frame: CGRectMake(12, 5, 50, 18))
                 label.text = "주보"
             } else {
@@ -123,8 +123,8 @@ class WorshipViewController: ParentViewController, SFSafariViewControllerDelegat
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (tableView == jooboTableView) {
-            return joobosArray.count
+        if (tableView == weeklyProgramsTableView) {
+            return weeklyProgramsArray.count
         } else if (tableView == songsTableView) {
             return 3
         }
@@ -135,10 +135,10 @@ class WorshipViewController: ParentViewController, SFSafariViewControllerDelegat
         
         var cell: UITableViewCell
         
-        if (tableView == jooboTableView) {
-            let reuseIdentifier = "JooboTableViewCell"
-            cell = jooboTableView.dequeueReusableCellWithIdentifier(reuseIdentifier)!
-            cell.textLabel!.text = joobosArray[indexPath.row].title
+        if (tableView == weeklyProgramsTableView) {
+            let reuseIdentifier = "WeeklyProgramsTableViewCell"
+            cell = weeklyProgramsTableView.dequeueReusableCellWithIdentifier(reuseIdentifier)!
+            cell.textLabel!.text = weeklyProgramsArray[indexPath.row].title
             cell.accessoryView = UIImageView(image: UIImage(named: "btn_download"))
             return cell
         } else {
@@ -152,13 +152,11 @@ class WorshipViewController: ParentViewController, SFSafariViewControllerDelegat
     //MARK: UITableViewDelegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-            if (tableView == jooboTableView) {
-                print("joobo tv")
-                let joobo = joobosArray[indexPath.row]
+            if (tableView == weeklyProgramsTableView) {
+                let joobo = weeklyProgramsArray[indexPath.row]
                 print(joobo.dateString)
 
                 let url : NSURL! = NSURL(string: "http://vision.onnuri.org/in2/wp-content/uploads/sites/29/2015/08/08.02-%EC%A3%BC%EB%B3%B4web.pdf")
-                
                 
                 
                 let webView = UIWebView(frame: view.frame)

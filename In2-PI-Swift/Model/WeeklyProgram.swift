@@ -1,5 +1,5 @@
 //
-//  Joobo.swift
+//  WeeklyProgram.swift
 //  In2-PI-Swift
 //
 //  Created by Terry Bu on 9/19/15.
@@ -8,7 +8,8 @@
 
 import UIKit
 
-class Joobo {
+class WeeklyProgram {
+    //주보
     var title: String
     var url: String
     var dateString: String

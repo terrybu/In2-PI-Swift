@@ -491,14 +491,14 @@
                                                     <outlet property="delegate" destination="k3o-Eq-0C4" id="H6d-SV-c5a"/>
                                                 </connections>
                                             </tableView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dv8-4e-YfA" userLabel="Joobo Table View">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dv8-4e-YfA" userLabel="WeeklyProgramsTableView">
                                                 <rect key="frame" x="0.0" y="372" width="600" height="228"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="9im-OQ-44M"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JooboTableViewCell" id="Dl1-99-eP4">
+                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeeklyProgramsTableViewCell" id="Dl1-99-eP4">
                                                         <rect key="frame" x="0.0" y="40" width="600" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dl1-99-eP4" id="5uF-pf-9sU">
@@ -559,8 +559,8 @@
                         <outlet property="constraintHeightExpandableView" destination="0m5-Q6-ZV4" id="290-m6-VXT"/>
                         <outlet property="contentView" destination="pVQ-jT-Ckx" id="4lC-8O-xEV"/>
                         <outlet property="expandableAboutView" destination="atY-6P-a2d" id="DYp-Wg-8kZ"/>
-                        <outlet property="jooboTableView" destination="dv8-4e-YfA" id="ZXR-rd-TaT"/>
                         <outlet property="songsTableView" destination="Z59-kD-ayY" id="bnX-V6-rkj"/>
+                        <outlet property="weeklyProgramsTableView" destination="dv8-4e-YfA" id="rnb-Bq-l9n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zf6-ef-HH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
