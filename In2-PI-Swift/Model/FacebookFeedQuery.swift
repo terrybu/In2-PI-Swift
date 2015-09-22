@@ -49,7 +49,7 @@ class FacebookFeedQuery: FacebookQuery {
     
     func parseMessageForLabels(feedObject: FBFeedArticle, articleCategoryLabel: UILabel, articleTitleLabel: UILabel, articleDateLabel: UILabel) -> Void {
         var categoryStr = ""
-        var firstTitleStr: String?
+        var firstTitleStr = ""
         let msg = feedObject.message
         if (!msg.isEmpty) {
             if (msg[0] == "[") {
@@ -58,15 +58,21 @@ class FacebookFeedQuery: FacebookQuery {
                     categoryStr += msg[i]
                     let j = i + 1
                     if (msg[j] == "]" || categoryStr.characters.count >= 100) {
-                        firstTitleStr = parseFirstLineTitleString(msg[j+1..<msg.characters.count])
+                        firstTitleStr = parseFirstLineTitleString(msg[j..<msg.characters.count])
+                        break
+                    }
+                }
+            } else {
+                categoryStr = "Misc."
+                for (var i=0; i < msg.characters.count; i++) {
+                    firstTitleStr += msg[i]
+                    if firstTitleStr.characters.count > 100 {
                         break
                     }
                 }
             }
             articleCategoryLabel.text = categoryStr
-            if let firstTitleStr = firstTitleStr {
-                articleTitleLabel.text = firstTitleStr
-            }
+            articleTitleLabel.text = firstTitleStr
             
             articleDateLabel.text = CustomDateFormatter.sharedInstance.convertFBCreatedTimeDateToOurFormattedString(feedObject)
         }
@@ -78,16 +84,32 @@ class FacebookFeedQuery: FacebookQuery {
         // " \n blahblahblah \n" should also return blahblahblah
         var result = ""
         let startingStr = msg[1..<msg.characters.count]
-        if (startingStr[0] == "\n") {
-            //if it finds \n immediately (which means author inserted a new line between category and title, we just jump and start from the next line
-            var i = 1;
+        if (startingStr[0] == "\n" || startingStr[1] == "\n") {
+            //if it finds \n immediately (which means author inserted a new line between category and title, we jump that index, and start from the following character
+            //this covers case where "[title] \n fjpsadfjdpsfapjf \n "
+            var i = 1
+            if (startingStr[1] == "\n") {
+                i = 2
+            }
             while (startingStr[i] != "\n") {
                 result += startingStr[i]
-                i++;
+                i++
+            }
+            //to address the case of "[title] \n   \n adsfsd" (where writer used two lines after title)
+            let trimmedString = result.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+            //in that above case, it will be completely full of whitespaces because it jumped the first \n and then stopped before that second \n ... so in that case, trimmed string will return "" 
+            if trimmedString == "" {
+                i += 1
+                result = ""
+                while (startingStr[i] != "\n" && i < 50) {
+                    result += startingStr[i]
+                    i++
+                }
             }
         }
         else {
             //otherwise, we go right for the first line
+            //this covers case where "[title] asjdfsafp \n"
             var i = 0;
             while (startingStr[i] != "\n") {
                 result += startingStr[i]

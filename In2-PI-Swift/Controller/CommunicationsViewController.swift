@@ -89,10 +89,16 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
         if cell.blackOverlay == nil {
             cell.blackOverlay = UIView(frame:cell.backgroundImageView.frame)
             cell.blackOverlay!.backgroundColor = UIColor.blackColor()
-            cell.blackOverlay!.alpha = 0.1
+            cell.blackOverlay!.alpha = 0.20
             cell.backgroundImageView.addSubview(cell.blackOverlay!)
         }
+        cell.tag = indexPath.row
         configureCell(cell, indexPath: indexPath)
+        
+        let tap = UITapGestureRecognizer(target: self, action: "tappedCell:")
+        cell.userInteractionEnabled = true
+        cell.addGestureRecognizer(tap)
+        
         return cell
     }
     
@@ -112,19 +118,24 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
                 activityIndicator.startAnimating()
                 FacebookPhotoQuery.sharedInstance.getNormalSizePhotoURLStringForCommunicationsFrom(feedObject.id, completion: { (normImgUrlString) -> Void in
                     self.operationManager?.GET(normImgUrlString, parameters: nil, success: { (operation, responseObject) -> Void in
-                            //success
-                            print("afnetworking image download finished for indexpath: \(indexPath.row)")
+                        //success
+                        print("afnetworking image download finished for indexpath: \(indexPath.row)")
+                        activityIndicator.stopAnimating()
 
+                        if cell.tag == indexPath.row {
                             self.cache.setObject(responseObject, forKey: "\(indexPath.row)")
                             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                activityIndicator.stopAnimating()
                                 self.tableView .reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
                             })
-                    }, failure: { (operation, error) -> Void in
+                        }
+                    }, failure: {
+                        (operation, error) -> Void in
                             print(error)
-                        activityIndicator.stopAnimating()
-                    })
-
+                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                activityIndicator.stopAnimating()
+                            })
+                        }
+                    )
                 })
             }
         } else {
@@ -132,5 +143,22 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
         }
     }
     
+    func tappedCell(sender: UIGestureRecognizer) {
+        //postURL has to nick out the second part of the _ string from firstObjectID
+        let i = sender.view?.tag
+        let feedObject = feedObjectsArray![i!]
+        let postURLParam = feedObject.id.componentsSeparatedByString("_").last
+        let postURL = "https://www.facebook.com/IN2PI/posts/\(postURLParam!)"
+        let wkWebView = UIWebView(frame: self.view.frame)
+        wkWebView.loadRequest(NSURLRequest(URL: NSURL(string: postURL)!))
+        let emptyVC = UIViewController()
+        emptyVC.view = wkWebView
+        navigationController?.pushViewController(emptyVC, animated: true)
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let feedArticle = feedObjectsArray![indexPath.row] as FBFeedArticle
+        print(feedArticle)
+    }
     
 }
