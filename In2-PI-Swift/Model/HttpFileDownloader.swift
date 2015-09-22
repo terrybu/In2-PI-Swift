@@ -47,7 +47,7 @@ class HttpFileDownloader {
             let task = session.dataTaskWithRequest(request, completionHandler: { (data:NSData?, response:NSURLResponse?, error:NSError?) -> Void in
                 if (error == nil) {
                     if let response = response as? NSHTTPURLResponse {
-                        print("response=\(response)")
+                        print("response status code \(response.statusCode) ... response =\(response)")
                         if response.statusCode == 200 {
                             if data!.writeToURL(destinationUrl, atomically: true) {
                                 print("file saved [\(destinationUrl.path!)]")
@@ -57,6 +57,11 @@ class HttpFileDownloader {
                                 let error = NSError(domain:"Error saving file", code:1001, userInfo:nil)
                                 completion(path: destinationUrl.path!, error:error)
                             }
+                        } else if response.statusCode == 404 {
+                            let errorText = "Request was not successful ... response status code \(response.statusCode) ... Not writing to file"
+                            print(errorText)
+                            let error = NSError(domain: "Request to URL failed with internal server error", code: response.statusCode, userInfo: [NSLocalizedDescriptionKey : errorText])
+                            completion(path: destinationUrl.path!, error: error)
                         }
                     }
                 }

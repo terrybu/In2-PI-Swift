@@ -53,9 +53,19 @@ class WeeklyProgramDownloader {
         let year = dateString[6...9]
         let month = dateString[0...1]
         let monthDotDay = dateString[0...4]
-        let ending = "-%EC%A3%BC%EB%B3%B4web.pdf"
+        let ending = "-%EC%A3%BC%EB%B3%B4web.pdf" //-주보web.pdf ... since early June, this formatting is always there .. (but not last day of May)
         
         return "\(base)/\(year)/\(month)/\(monthDotDay)\(ending)"
     }
+//    
+//    func getURLStringForSingleProgramDownloadWithoutEnding(dateString: String) -> String {
+//        let base = "http://vision.onnuri.org/in2/wp-content/uploads/sites/29"
+//        //2015/08/08.02
+//        let year = dateString[6...9]
+//        let month = dateString[0...1]
+//        let monthDotDay = dateString[0...4]
+//        
+//        return "\(base)/\(year)/\(month)/\(monthDotDay).pdf"
+//    }
     
 }

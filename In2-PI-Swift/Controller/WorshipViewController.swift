@@ -147,14 +147,23 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
                 let url : NSURL! = NSURL(string: WeeklyProgramDownloader.sharedInstance.getURLStringForSingleProgramDownload(weeklyProgram.dateString))
                 
                 HttpFileDownloader.sharedInstance.loadFileAsync(url, completion:{(path:String, error:NSError!) in
-                    print("pdf downloaded to: \(path)")
+                    if error == nil {
+                        print("pdf downloaded to: \(path)")
+                        let fileURL = NSURL.fileURLWithPath(path)
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            self.displayPDFInWebView(fileURL)
+                        })
+                    } else if error.code == 404 {
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+
+                        let alertController = UIAlertController(title: "Downloading Problem", message: "Oops! Looks like that file is not available right now :(", preferredStyle: UIAlertControllerStyle.Alert)
+                        let okay = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
+                        alertController.addAction(okay)
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                        })
+                    }
+
                 })
-                
-                let webView = UIWebView(frame: view.frame)
-                webView.loadRequest(NSURLRequest(URL: url))
-                let vc = UIViewController()
-                vc.view = webView
-                navigationController?.pushViewController(vc, animated: true)
             }
             else if (tableView == songsTableView) {
                 print("songs tv")
@@ -178,8 +187,17 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
                 }
             }
     }
+    private func displayPDFInWebView(fileURL: NSURL) {
+        let webView = UIWebView(frame: self.view.frame)
+        webView.scalesPageToFit = true
+        webView.loadRequest(NSURLRequest(URL: fileURL))
+        let vc = UIViewController()
+        vc.view = webView
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
     
-    //Delegate method for dismissing it
+    //Delegate method for dismissing safari vc
     @available(iOS 9.0, *)
     func safariViewControllerDidFinish(controller: SFSafariViewController)
     {
