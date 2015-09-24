@@ -99,7 +99,7 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
     
     func configureCell(cell: CommunicationsTableViewCell, indexPath: NSIndexPath) {
         let feedObject = feedObjectsArray![indexPath.row]
-        FacebookFeedQuery.sharedInstance.parseMessageForLabels(feedObject, articleCategoryLabel: cell.articleCategoryLabel, articleTitleLabel: cell.articleTitleLabel, articleDateLabel: cell.articleDateLabel)
+        FacebookFeedQuery.sharedInstance.parseMessageForLabels(feedObject, articleCategoryLabel: cell.categoryLabel, articleTitleLabel: cell.titleLabel, articleDateLabel: cell.dateLabel)
         if feedObject.type == "photo" {
             if cache.objectForKey("\(indexPath.row)") != nil{
                 let img = cache.objectForKey("\(indexPath.row)") as! UIImage

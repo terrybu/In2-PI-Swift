@@ -20,19 +20,13 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
     @IBOutlet weak var myPIButton: UIButton!
     @IBOutlet weak var PICommunityButton: UIButton!
     @IBOutlet weak var hamburgerButton: UIBarButtonItem!
-    @IBOutlet weak var articleCategoryLabel:PaddedLabel!
-    @IBOutlet weak var articleTitleLabel:UILabel!
-    @IBOutlet weak var articleDateLabel: UILabel!
-    @IBOutlet weak var articleImageView: UIImageView!
-    @IBOutlet weak var QTTitleLabel: UILabel!
+
+    @IBOutlet weak var newsArticleView: NewsArticleView!
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        articleCategoryLabel.layer.borderWidth = 1
-        articleCategoryLabel.layer.borderColor = UIColor.whiteColor().CGColor
-        articleCategoryLabel.edgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
         blackOverlayUntilFBDataFinishedLoading()
         FacebookFeedQuery.sharedInstance.delegate = self
         FacebookFeedQuery.sharedInstance.getFeedFromPIMagazine { (error) -> Void in
@@ -85,15 +79,15 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
     //MARK: FacebookFeedQueryDelegate 
     func didFinishGettingFacebookFeedData(fbFeedObjectArray: [FBFeedArticle]) {
         let tapGesture = UITapGestureRecognizer(target: self, action: Selector("tappedLabel:"))
-        articleTitleLabel.userInteractionEnabled = true
-        articleTitleLabel.addGestureRecognizer(tapGesture)
+        newsArticleView.userInteractionEnabled = true
+        newsArticleView.addGestureRecognizer(tapGesture)
         
         let firstObject = fbFeedObjectArray[0]
-        FacebookFeedQuery.sharedInstance.parseMessageForLabels(firstObject, articleCategoryLabel: articleCategoryLabel, articleTitleLabel: articleTitleLabel, articleDateLabel: articleDateLabel)
+        FacebookFeedQuery.sharedInstance.parseMessageForLabels(firstObject, articleCategoryLabel: newsArticleView.categoryLabel, articleTitleLabel: newsArticleView.titleLabel, articleDateLabel: newsArticleView.dateLabel)
         firstObjectID = firstObject.id
         if firstObject.type == "photo" {
             FacebookPhotoQuery.sharedInstance.getNormalSizePhotoURLStringForCommunicationsFrom(firstObject.id, completion: { (normImgUrlString) -> Void in
-                    self.articleImageView.setImageWithURL(NSURL(string: normImgUrlString))
+                    self.newsArticleView.backgroundImageView.setImageWithURL(NSURL(string: normImgUrlString))
                     self.black.removeFromSuperview()
                     self.purpleBarSelector.hidden = false
                     MBProgressHUD.hideAllHUDsForView(self.view, animated: true)

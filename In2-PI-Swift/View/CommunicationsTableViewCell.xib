@@ -109,10 +109,10 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="articleCategoryLabel" destination="2rI-Nj-XmX" id="OS9-xZ-ekN"/>
-                <outlet property="articleDateLabel" destination="qvn-FI-h7n" id="RBJ-YZ-UJR"/>
-                <outlet property="articleTitleLabel" destination="Ata-Uz-puk" id="ocO-Mi-D5i"/>
-                <outlet property="backgroundImageView" destination="eIM-7J-zGf" id="bs8-H2-KGc"/>
+                <outlet property="backgroundImageView" destination="eIM-7J-zGf" id="anW-sx-Jrr"/>
+                <outlet property="categoryLabel" destination="2rI-Nj-XmX" id="Jmh-Fk-Chr"/>
+                <outlet property="dateLabel" destination="qvn-FI-h7n" id="Kaw-X4-2Gp"/>
+                <outlet property="titleLabel" destination="Ata-Uz-puk" id="5uL-38-pNm"/>
             </connections>
         </tableViewCell>
     </objects>

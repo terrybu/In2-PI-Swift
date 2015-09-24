@@ -12,7 +12,7 @@ import UIKit
     
     var view: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
-    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var categoryLabel: PaddedLabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
@@ -47,7 +47,6 @@ import UIKit
         view = loadViewFromNib()
         view.frame = bounds
         view.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
-        
         addSubview(view)
     }
     
@@ -55,6 +54,12 @@ import UIKit
         let bundle = NSBundle(forClass: self.dynamicType)
         let nib = UINib(nibName: "NewsArticleView", bundle: bundle)
         return nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+    }
+    
+    override func awakeFromNib() {
+        categoryLabel.layer.borderWidth = 1
+        categoryLabel.layer.borderColor = UIColor.whiteColor().CGColor
+        categoryLabel.edgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
     }
     
 }

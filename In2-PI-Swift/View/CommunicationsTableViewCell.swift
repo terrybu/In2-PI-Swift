@@ -10,15 +10,20 @@ import UIKit
 
 class CommunicationsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var articleCategoryLabel: PaddedLabel!
-    @IBOutlet weak var articleTitleLabel: UILabel!
-    @IBOutlet weak var articleDateLabel: UILabel!
+    @IBOutlet weak var categoryLabel: PaddedLabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var backgroundImageView: UIImageView!
     var blackOverlay: UIView?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        categoryLabel.layer.borderWidth = 1
+        categoryLabel.layer.borderColor = UIColor.whiteColor().CGColor
+        categoryLabel.edgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
+        
         blackOverlay = UIView(frame:self.backgroundImageView.frame)
         blackOverlay!.backgroundColor = UIColor.blackColor()
         blackOverlay!.alpha = 0.3
