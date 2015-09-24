@@ -86,12 +86,7 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
         let cell = tableView.dequeueReusableCellWithIdentifier("CommunicationsCell", forIndexPath: indexPath) as! CommunicationsTableViewCell
         
         print("cell For row is excuting for indexpath: \(indexPath.row)")
-        if cell.blackOverlay == nil {
-            cell.blackOverlay = UIView(frame:cell.backgroundImageView.frame)
-            cell.blackOverlay!.backgroundColor = UIColor.blackColor()
-            cell.blackOverlay!.alpha = 0.20
-            cell.backgroundImageView.addSubview(cell.blackOverlay!)
-        }
+        
         cell.tag = indexPath.row
         configureCell(cell, indexPath: indexPath)
         

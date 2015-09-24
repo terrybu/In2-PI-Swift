@@ -19,6 +19,10 @@ class CommunicationsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        blackOverlay = UIView(frame:self.backgroundImageView.frame)
+        blackOverlay!.backgroundColor = UIColor.blackColor()
+        blackOverlay!.alpha = 0.3
+        backgroundImageView.addSubview(self.blackOverlay!)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
