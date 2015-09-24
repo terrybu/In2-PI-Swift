@@ -15,7 +15,8 @@ import UIKit
     @IBOutlet weak var categoryLabel: PaddedLabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    
+    var blackOverlay: UIView?
+
     var title: String? {
         get {
             return titleLabel.text

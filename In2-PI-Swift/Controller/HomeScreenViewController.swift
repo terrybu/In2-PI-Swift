@@ -22,11 +22,13 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
     @IBOutlet weak var hamburgerButton: UIBarButtonItem!
 
     @IBOutlet weak var newsArticleView: NewsArticleView!
+    var imageBlackOverlay: UIView?
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        //Do any additional setup after loading the view, typically from a nib.
+        //this is BEFORE autolayout applied
         blackOverlayUntilFBDataFinishedLoading()
         FacebookFeedQuery.sharedInstance.delegate = self
         FacebookFeedQuery.sharedInstance.getFeedFromPIMagazine { (error) -> Void in
@@ -34,6 +36,21 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
                 print(error.description)
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
             }
+        }
+        print("view did load + \(newsArticleView.backgroundImageView.frame.size)")
+    }
+    
+    override func viewDidLayoutSubviews() {
+        //for post autolayout actions
+        //        var frame = newsArticleView.backgroundImageView.frame
+        //frame.size = CGSize(width: frame.size.width, height: frame.size.height+300)
+        print("view did layout + \(newsArticleView.backgroundImageView.frame.size)")
+
+        if imageBlackOverlay == nil {
+            imageBlackOverlay = UIView(frame:newsArticleView.frame)
+            imageBlackOverlay!.backgroundColor = UIColor.blackColor()
+            imageBlackOverlay!.alpha = 0.4
+            newsArticleView.backgroundImageView.addSubview(imageBlackOverlay!)
         }
     }
     
