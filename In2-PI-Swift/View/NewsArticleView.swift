@@ -61,6 +61,13 @@ import UIKit
         categoryLabel.layer.borderWidth = 1
         categoryLabel.layer.borderColor = UIColor.whiteColor().CGColor
         categoryLabel.edgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
+        
+        if blackOverlay == nil {
+            blackOverlay = UIView(frame:self.frame)
+            blackOverlay!.backgroundColor = UIColor.blackColor()
+            blackOverlay!.alpha = 0.4
+            self.backgroundImageView.addSubview(blackOverlay!)
+        }
     }
     
 }

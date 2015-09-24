@@ -40,20 +40,6 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
         print("view did load + \(newsArticleView.backgroundImageView.frame.size)")
     }
     
-    override func viewDidLayoutSubviews() {
-        //for post autolayout actions
-        //        var frame = newsArticleView.backgroundImageView.frame
-        //frame.size = CGSize(width: frame.size.width, height: frame.size.height+300)
-        print("view did layout + \(newsArticleView.backgroundImageView.frame.size)")
-
-        if imageBlackOverlay == nil {
-            imageBlackOverlay = UIView(frame:newsArticleView.frame)
-            imageBlackOverlay!.backgroundColor = UIColor.blackColor()
-            imageBlackOverlay!.alpha = 0.4
-            newsArticleView.backgroundImageView.addSubview(imageBlackOverlay!)
-        }
-    }
-    
     private func blackOverlayUntilFBDataFinishedLoading() {
         black = UIView(frame: view.frame)
         black.backgroundColor = UIColor.blackColor()
