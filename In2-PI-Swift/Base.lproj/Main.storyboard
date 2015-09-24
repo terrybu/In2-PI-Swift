@@ -204,6 +204,7 @@
                         <outlet property="PICommunityButton" destination="FNv-5b-Lmj" id="oCA-tO-Roz"/>
                         <outlet property="articleCategoryLabel" destination="78p-ZI-ch9" id="cCg-ct-pO9"/>
                         <outlet property="articleDateLabel" destination="jvs-Nd-uLT" id="F0C-km-AzC"/>
+                        <outlet property="articleImageView" destination="HaV-10-bD6" id="xo0-6G-e1Z"/>
                         <outlet property="articleTitleLabel" destination="k6I-0S-xgm" id="dpy-Pi-jTm"/>
                         <outlet property="hamburgerButton" destination="hES-da-EKD" id="K9f-0I-Xcw"/>
                         <outlet property="myPIButton" destination="Xdh-cW-Qg1" id="N8f-Kg-8hA"/>

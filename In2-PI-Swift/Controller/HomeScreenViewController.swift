@@ -23,6 +23,7 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
     @IBOutlet weak var articleCategoryLabel:PaddedLabel!
     @IBOutlet weak var articleTitleLabel:UILabel!
     @IBOutlet weak var articleDateLabel: UILabel!
+    @IBOutlet weak var articleImageView: UIImageView!
     @IBOutlet weak var QTTitleLabel: UILabel!
     
     // MARK: View Life Cycle
@@ -83,17 +84,22 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
     
     //MARK: FacebookFeedQueryDelegate 
     func didFinishGettingFacebookFeedData(fbFeedObjectArray: [FBFeedArticle]) {
-        let firstObject = fbFeedObjectArray[0]
-        FacebookFeedQuery.sharedInstance.parseMessageForLabels(firstObject, articleCategoryLabel: articleCategoryLabel, articleTitleLabel: articleTitleLabel, articleDateLabel: articleDateLabel)
-        firstObjectID = firstObject.id
-        
         let tapGesture = UITapGestureRecognizer(target: self, action: Selector("tappedLabel:"))
         articleTitleLabel.userInteractionEnabled = true
         articleTitleLabel.addGestureRecognizer(tapGesture)
         
-        black.removeFromSuperview()
-        purpleBarSelector.hidden = false
-        MBProgressHUD.hideAllHUDsForView(view, animated: true)
+        let firstObject = fbFeedObjectArray[0]
+        FacebookFeedQuery.sharedInstance.parseMessageForLabels(firstObject, articleCategoryLabel: articleCategoryLabel, articleTitleLabel: articleTitleLabel, articleDateLabel: articleDateLabel)
+        firstObjectID = firstObject.id
+        if firstObject.type == "photo" {
+            FacebookPhotoQuery.sharedInstance.getNormalSizePhotoURLStringForCommunicationsFrom(firstObject.id, completion: { (normImgUrlString) -> Void in
+                    self.articleImageView.setImageWithURL(NSURL(string: normImgUrlString))
+                    self.black.removeFromSuperview()
+                    self.purpleBarSelector.hidden = false
+                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+            })
+            
+        }
     }
 
         
