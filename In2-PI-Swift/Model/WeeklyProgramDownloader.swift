@@ -62,11 +62,17 @@ class WeeklyProgramDownloader {
                         let answerString = child.objectForKey("href")
                         //need to sanitize it 
                         print(answerString)
-                        let beginning = answerString[0...70]
-                        let koreanWordJooboSanitized = answerString[71...72].stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
-                        let end = answerString[73...76]
-                        print(beginning + koreanWordJooboSanitized! + end)
-                        return beginning + koreanWordJooboSanitized! + end
+                        let strLen = answerString.characters.count
+                        for var i = strLen-1; i >= 0; i-- {
+                            let char = answerString[i]
+                            if char == "보" {
+                                let koreanWordJooboSanitized = answerString[i-1...i].stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
+                                let beginning = answerString[0...i-2]
+                                let end = answerString[i+1...strLen-1]
+                                print(beginning + koreanWordJooboSanitized! + end)
+                                return beginning + koreanWordJooboSanitized! + end
+                            }
+                        }
                 }
             }
         }
