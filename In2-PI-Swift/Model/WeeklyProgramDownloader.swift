@@ -32,8 +32,6 @@ class WeeklyProgramDownloader {
                 print(resultsArray)
                 for dict:JSON in resultsArray {
                     let title = dict["tit_link/_text"].stringValue
-//                    let datesArray = dict["tit_link_numbers"].arrayValue
-//                    let dateString = "\(datesArray[0].stringValue) \(datesArray[1].stringValue) \(datesArray[2].stringValue)"
                     let datesArray = dict["txt_link_numbers/_source"].arrayValue
                     let dateString = datesArray.last?.stringValue
                     let url = dict["tit_link"].stringValue
@@ -48,12 +46,18 @@ class WeeklyProgramDownloader {
     }
     
     func getURLStringForSingleProgramDownload(dateString: String) -> String {
+        //my logic here needs work
+        //this is not scalable because i'm basically guessing at the url format 
+        //but a lot of things could go wrong where the URL gets messed up
+        //*for example, if Samuel uploads on September a programme from AUgust, it will be under 29/2015/09/08/08.02 instead of 29/2015/08/08.02
+        //instead you must go to that page, scrape to get the precise pdf link and then connect it here
+        
         let base = "http://vision.onnuri.org/in2/wp-content/uploads/sites/29"
         //2015/08/08.02
         let year = dateString[6...9]
         let month = dateString[0...1]
         let monthDotDay = dateString[0...4]
-        let ending = "-%EC%A3%BC%EB%B3%B4web.pdf" //-주보web.pdf ... since early June, this formatting is always there .. (but not last day of May)
+        let ending = "-%EC%A3%BC%EB%B3%B4.pdf" //-주보web.pdf ... since early June, this formatting is always there .. (but not last day of May)
         
         return "\(base)/\(year)/\(month)/\(monthDotDay)\(ending)"
     }

@@ -90,16 +90,17 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
         firstObjectID = firstObject.id
         if firstObject.type == "photo" {
             FacebookPhotoQuery.sharedInstance.getNormalSizePhotoURLStringForCommunicationsFrom(firstObject.id, completion: { (normImgUrlString) -> Void in
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.newsArticleView.backgroundImageView.setImageWithURL(NSURL(string: normImgUrlString))
-                    self.black.removeFromSuperview()
-                    self.purpleBarSelector.hidden = false
-                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                })
             })
-            
         }
+        self.black.removeFromSuperview()
+        self.purpleBarSelector.hidden = false
+        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
     }
 
-        
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
