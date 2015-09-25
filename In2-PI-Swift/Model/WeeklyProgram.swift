@@ -11,12 +11,12 @@ import UIKit
 class WeeklyProgram {
     //주보
     var title: String
-    var url: String
+    var pdfDownloadURL: String
     var dateString: String
     
-    init(title: String, url: String, dateString: String) {
+    init(title: String, pdfDownloadURL: String, dateString: String) {
         self.title = title
-        self.url = url
+        self.pdfDownloadURL = pdfDownloadURL
         self.dateString = dateString
     }
     

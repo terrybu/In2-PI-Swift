@@ -142,32 +142,33 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     //MARK: UITableViewDelegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-            if (tableView == weeklyProgramsTableView) {
+            if tableView == weeklyProgramsTableView {
                 let weeklyProgram = weeklyProgramsArray[indexPath.row]
                 print(weeklyProgram.dateString)
                 
-                let url : NSURL! = NSURL(string: WeeklyProgramDownloader.sharedInstance.getURLStringForSingleProgramDownload(weeklyProgram.dateString))
+                let pdfdownloadURLString = WeeklyProgramDownloader.sharedInstance.getURLStringForSingleProgramDownload(weeklyProgram.pdfDownloadURL)
                 
-                HttpFileDownloader.sharedInstance.loadFileAsync(url, completion:{(path:String, error:NSError!) in
-                    if error == nil {
-                        print("pdf downloaded to: \(path)")
-                        let fileURL = NSURL.fileURLWithPath(path)
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            self.displayPDFInWebView(fileURL)
-                        })
-                    } else if error.code == 404 {
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-
-                        let alertController = UIAlertController(title: "Downloading Problem", message: "Oops! Looks like that file is not available right now :(", preferredStyle: UIAlertControllerStyle.Alert)
-                        let okay = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
-                        alertController.addAction(okay)
-                        self.presentViewController(alertController, animated: true, completion: nil)
-                        })
-                    }
-
-                })
-            }
-            else if (tableView == songsTableView) {
+                if let pdfdownloadURLString = pdfdownloadURLString {
+                    let url = NSURL(string:pdfdownloadURLString)
+                    HttpFileDownloader.sharedInstance.loadFileAsync(url!, completion:{(path:String, error:NSError!) in
+                        if error == nil {
+                            print("pdf downloaded to: \(path)")
+                            let fileURL = NSURL.fileURLWithPath(path)
+                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                self.displayPDFInWebView(fileURL)
+                            })
+                        } else if error.code == 404 {
+                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                
+                                let alertController = UIAlertController(title: "Downloading Problem", message: "Oops! Looks like that file is not available right now :(", preferredStyle: UIAlertControllerStyle.Alert)
+                                let okay = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
+                                alertController.addAction(okay)
+                                self.presentViewController(alertController, animated: true, completion: nil)
+                            })
+                        }
+                    })
+                }
+            } else if tableView == songsTableView {
                 print("songs tv")
                 let nameSong = songsTableView.cellForRowAtIndexPath(indexPath)?.textLabel!.text
                 let escaped = nameSong!.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())

@@ -7,3 +7,6 @@
 #import <AFNetworking/AFNetworking.h>
 #import "SWRevealViewController.h"
 #import <JTSImageViewController/JTSImageViewController.h>
+#import "TFHpple.h"
+#import "TFHppleElement.h"
+#import "XPathQuery.h"

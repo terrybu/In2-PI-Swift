@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		615C54D683ACF2345564DCC8 /* Pods_In2_PI_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D9D85A29F7F171A635D2C8 /* Pods_In2_PI_Swift.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D90A08231BB5D4BD0033DD6B /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = D90A081E1BB5D4BD0033DD6B /* TFHpple.m */; settings = {ASSET_TAGS = (); }; };
+		D90A08241BB5D4BD0033DD6B /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D90A08201BB5D4BD0033DD6B /* TFHppleElement.m */; settings = {ASSET_TAGS = (); }; };
+		D90A08251BB5D4BD0033DD6B /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = D90A08221BB5D4BD0033DD6B /* XPathQuery.m */; settings = {ASSET_TAGS = (); }; };
+		D90A08271BB5D5810033DD6B /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D90A08261BB5D5810033DD6B /* libxml2.2.tbd */; };
 		D90A7AFC1B923F13003EA693 /* NurtureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90A7AFB1B923F13003EA693 /* NurtureViewController.swift */; };
 		D90A7AFE1B92406F003EA693 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90A7AFD1B92406F003EA693 /* HomeScreenViewController.swift */; };
 		D90A7B001B9240EC003EA693 /* CommunicationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90A7AFF1B9240EC003EA693 /* CommunicationsViewController.swift */; };
@@ -79,6 +83,13 @@
 		15F9BC9F44944956571DAF7B /* Pods-In2-PI-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-In2-PI-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-In2-PI-Swift/Pods-In2-PI-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		24E64E21CAF4188A4E4E9D5B /* Pods-In2-PI-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-In2-PI-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-In2-PI-Swift/Pods-In2-PI-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		54D9D85A29F7F171A635D2C8 /* Pods_In2_PI_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_In2_PI_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D90A081D1BB5D4BD0033DD6B /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		D90A081E1BB5D4BD0033DD6B /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		D90A081F1BB5D4BD0033DD6B /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		D90A08201BB5D4BD0033DD6B /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		D90A08211BB5D4BD0033DD6B /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		D90A08221BB5D4BD0033DD6B /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		D90A08261BB5D5810033DD6B /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		D90A7AFB1B923F13003EA693 /* NurtureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NurtureViewController.swift; sourceTree = "<group>"; };
 		D90A7AFD1B92406F003EA693 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		D90A7AFF1B9240EC003EA693 /* CommunicationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicationsViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D90A08271BB5D5810033DD6B /* libxml2.2.tbd in Frameworks */,
 				615C54D683ACF2345564DCC8 /* Pods_In2_PI_Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,9 +190,24 @@
 		A278F71670A4FDDB3D2DE747 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D90A08261BB5D5810033DD6B /* libxml2.2.tbd */,
 				54D9D85A29F7F171A635D2C8 /* Pods_In2_PI_Swift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D90A081C1BB5D4BD0033DD6B /* Hpple */ = {
+			isa = PBXGroup;
+			children = (
+				D90A081D1BB5D4BD0033DD6B /* TFHpple.h */,
+				D90A081E1BB5D4BD0033DD6B /* TFHpple.m */,
+				D90A081F1BB5D4BD0033DD6B /* TFHppleElement.h */,
+				D90A08201BB5D4BD0033DD6B /* TFHppleElement.m */,
+				D90A08211BB5D4BD0033DD6B /* XPathQuery.h */,
+				D90A08221BB5D4BD0033DD6B /* XPathQuery.m */,
+			);
+			name = Hpple;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		D910DD861BADFE2800E8A99F /* Facebook Objects */ = {
@@ -323,7 +350,7 @@
 				D9DA87E81B6DC063005D4CB6 /* Controller */,
 				D95EC5271B97961200782925 /* Extensions */,
 				D9FB031E1B6495C3001D813D /* Terry References */,
-				D9F7F47F1B93544400D86FF7 /* Vendor */,
+				D9F7F47F1B93544400D86FF7 /* Third Party */,
 				D9F9C7E21B645FD100F5C17D /* Resources */,
 				D9D3CDEA1B3F20EF00C8E195 /* Supporting Files */,
 			);
@@ -379,11 +406,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		D9F7F47F1B93544400D86FF7 /* Vendor */ = {
+		D9F7F47F1B93544400D86FF7 /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
+				D90A081C1BB5D4BD0033DD6B /* Hpple */,
 				D9B549A51B76D7FB00BF4887 /* SWRevealViewController */,
 			);
+			name = "Third Party";
 			path = Vendor;
 			sourceTree = "<group>";
 		};
@@ -590,6 +619,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D90A08241BB5D4BD0033DD6B /* TFHppleElement.m in Sources */,
 				D9965A791B9E1D6800AB4A74 /* PaddedLabel.swift in Sources */,
 				D9965A801B9E5DB600AB4A74 /* NewsArticleView.swift in Sources */,
 				D99991A71BB1AF0E0022EF10 /* WeeklyProgramDownloader.swift in Sources */,
@@ -611,6 +641,7 @@
 				D90A7AFC1B923F13003EA693 /* NurtureViewController.swift in Sources */,
 				D9D3CDED1B3F20EF00C8E195 /* AppDelegate.swift in Sources */,
 				D99EF24F1B9F59FD00026D66 /* FacebookQuery.swift in Sources */,
+				D90A08231BB5D4BD0033DD6B /* TFHpple.m in Sources */,
 				D9F8C4781BA4CFF800881B94 /* ExpandableAboutViewHandler.swift in Sources */,
 				D9EF135F1BAA44B4006D7F78 /* CustomDateFormatter.swift in Sources */,
 				D90A7B041B92413F003EA693 /* EvangelismViewController.swift in Sources */,
@@ -622,6 +653,7 @@
 				D9F7F4831B935DFA00D86FF7 /* GalleryCell.swift in Sources */,
 				D9F7F4811B93547600D86FF7 /* FacebookPhotoQuery.swift in Sources */,
 				D9D3CE211B3F4B1E00C8E195 /* HomeActionCollectionViewCell.swift in Sources */,
+				D90A08251BB5D4BD0033DD6B /* XPathQuery.m in Sources */,
 				D95EC5261B978E6400782925 /* FBFeedArticle.swift in Sources */,
 				D95EC5291B97963000782925 /* StringExtension.swift in Sources */,
 				D952B17B1B5EF5330089116C /* Constants.swift in Sources */,
@@ -780,6 +812,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "In2-PI-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.terrybu.$(PRODUCT_NAME:rfc1034identifier)";
@@ -796,6 +829,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "In2-PI-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.terrybu.$(PRODUCT_NAME:rfc1034identifier)";

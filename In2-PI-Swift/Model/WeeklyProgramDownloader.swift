@@ -34,8 +34,8 @@ class WeeklyProgramDownloader {
                     let title = dict["tit_link/_text"].stringValue
                     let datesArray = dict["txt_link_numbers/_source"].arrayValue
                     let dateString = datesArray.last?.stringValue
-                    let url = dict["tit_link"].stringValue
-                    let newWeeklyProgram = WeeklyProgram(title: title, url: url, dateString: dateString!)
+                    let pdfDownloadURL = dict["tit_link"].stringValue
+                    let newWeeklyProgram = WeeklyProgram(title: title, pdfDownloadURL: pdfDownloadURL, dateString: dateString!)
                     self.weeklyProgramsArray.append(newWeeklyProgram)
                 }
                 self.delegate?.didFinishDownloadinglistOfTenWeeklyProgramsFromImportIO(self.weeklyProgramsArray)
@@ -45,31 +45,40 @@ class WeeklyProgramDownloader {
         })
     }
     
-    func getURLStringForSingleProgramDownload(dateString: String) -> String {
+    func getURLStringForSingleProgramDownload(pdfDownloadURL: String) -> String?{
         //my logic here needs work
         //this is not scalable because i'm basically guessing at the url format 
-        //but a lot of things could go wrong where the URL gets messed up
-        //*for example, if Samuel uploads on September a programme from AUgust, it will be under 29/2015/09/08/08.02 instead of 29/2015/08/08.02
-        //instead you must go to that page, scrape to get the precise pdf link and then connect it here
+        //but a lot of things could go wrong if the URL ever gets messed up
+        //*for example, if Samuel uploads on September a programme from August, it will be under 29/2015/09/08/08.02 instead of 29/2015/08/08.02 due to wordpress rules
+        //instead to be more exact, you must go to that page, scrape to get the precise pdf link and then connect it here
         
-        let base = "http://vision.onnuri.org/in2/wp-content/uploads/sites/29"
-        //2015/08/08.02
-        let year = dateString[6...9]
-        let month = dateString[0...1]
-        let monthDotDay = dateString[0...4]
-        let ending = "-%EC%A3%BC%EB%B3%B4.pdf" //-주보web.pdf ... since early June, this formatting is always there .. (but not last day of May)
+        let hppleParser = getSourceFileOfPageWithProgrammePDFDownloadLink(pdfDownloadURL)
+        let xPathQueryString = "//div[@class='cview editor']/p"
+        let divNodes = hppleParser?.searchWithXPathQuery(xPathQueryString) as! [TFHppleElement]
+        for element: TFHppleElement in divNodes {
+            for child: TFHppleElement in element.children as! [TFHppleElement
+                ] {
+                if child.tagName == "a" {
+                        let answerString = child.objectForKey("href")
+                        //need to sanitize it 
+                        print(answerString)
+                        let beginning = answerString[0...70]
+                        let koreanWordJooboSanitized = answerString[71...72].stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
+                        let end = answerString[73...76]
+                        print(beginning + koreanWordJooboSanitized! + end)
+                        return beginning + koreanWordJooboSanitized! + end
+                }
+            }
+        }
         
-        return "\(base)/\(year)/\(month)/\(monthDotDay)\(ending)"
+        return nil
     }
-//    
-//    func getURLStringForSingleProgramDownloadWithoutEnding(dateString: String) -> String {
-//        let base = "http://vision.onnuri.org/in2/wp-content/uploads/sites/29"
-//        //2015/08/08.02
-//        let year = dateString[6...9]
-//        let month = dateString[0...1]
-//        let monthDotDay = dateString[0...4]
-//        
-//        return "\(base)/\(year)/\(month)/\(monthDotDay).pdf"
-//    }
-    
+
+    private func getSourceFileOfPageWithProgrammePDFDownloadLink(pdfDownloadURL: String) -> TFHpple? {
+        let data = NSData(contentsOfURL: NSURL(string: pdfDownloadURL)!)
+        if let data = data {
+            return TFHpple(HTMLData: data)
+        }
+        return nil
+    }
 }
