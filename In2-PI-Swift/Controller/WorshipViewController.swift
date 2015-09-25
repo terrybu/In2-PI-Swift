@@ -9,6 +9,7 @@
 import UIKit
 import SafariServices
 import Foundation
+import MBProgressHUD
 
 private let kOriginalAboutViewHeight: CGFloat = 32.0
 private let kOriginalContentViewHeight: CGFloat = 600
@@ -144,29 +145,40 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
             if tableView == weeklyProgramsTableView {
                 let weeklyProgram = weeklyProgramsArray[indexPath.row]
-                print(weeklyProgram.dateString)
                 
-                let pdfdownloadURLString = WeeklyProgramDownloader.sharedInstance.getURLStringForSingleProgramDownload(weeklyProgram.pdfDownloadURL)
-                
-                if let pdfdownloadURLString = pdfdownloadURLString {
-                    let url = NSURL(string:pdfdownloadURLString)
-                    HttpFileDownloader.sharedInstance.loadFileAsync(url!, completion:{(path:String, error:NSError!) in
-                        if error == nil {
-                            print("pdf downloaded to: \(path)")
-                            let fileURL = NSURL.fileURLWithPath(path)
-                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                self.displayPDFInWebView(fileURL)
-                            })
-                        } else if error.code == 404 {
-                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                
-                                let alertController = UIAlertController(title: "Downloading Problem", message: "Oops! Looks like that file is not available right now :(", preferredStyle: UIAlertControllerStyle.Alert)
-                                let okay = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
-                                alertController.addAction(okay)
-                                self.presentViewController(alertController, animated: true, completion: nil)
-                            })
-                        }
+                if weeklyProgram.cached  {
+                    displayPDFInWebView(NSURL.fileURLWithPath(weeklyProgram.cachedPath!))
+                } else {
+                    let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+                    hud.mode = MBProgressHUDMode.AnnularDeterminate
+                    doSomethingInBackgroundWithProgressCallback({ (progress) -> Void? in
+                        hud.progress = progress
+                        }, completionCallback: { () -> Void? in
+                            hud.hide(true)
                     })
+                    
+                    let pdfdownloadURLString = WeeklyProgramDownloader.sharedInstance.getURLStringForSingleProgramDownload(weeklyProgram.pdfDownloadURL)
+                    if let pdfdownloadURLString = pdfdownloadURLString {
+                        let url = NSURL(string:pdfdownloadURLString)
+                        HttpFileDownloader.sharedInstance.loadFileAsync(url!, completion:{(path:String, error:NSError!) in
+                            if error == nil {
+                                print("pdf downloaded to: \(path)")
+                                weeklyProgram.cached = true
+                                weeklyProgram.cachedPath = path
+                                let fileURL = NSURL.fileURLWithPath(path)
+                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                    self.displayPDFInWebView(fileURL)
+                                })
+                            } else if error.code == 404 {
+                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                    let alertController = UIAlertController(title: "Downloading Problem", message: "Oops! Looks like that file is not available right now :(", preferredStyle: UIAlertControllerStyle.Alert)
+                                    let okay = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
+                                    alertController.addAction(okay)
+                                    self.presentViewController(alertController, animated: true, completion: nil)
+                                })
+                            }
+                        })
+                    }
                 }
             } else if tableView == songsTableView {
                 print("songs tv")
@@ -199,6 +211,20 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
+    private func doSomethingInBackgroundWithProgressCallback(progressCallback: (progress: Float) -> Void?, completionCallback: () -> Void?) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
+            var i: Float = 0
+            while i < 1.0 {
+                i += 0.1
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    progressCallback(progress: i)
+                })
+            }
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                completionCallback()
+            })
+        })
+    }
     
     //Delegate method for dismissing safari vc
     @available(iOS 9.0, *)

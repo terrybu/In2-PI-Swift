@@ -13,11 +13,15 @@ class WeeklyProgram {
     var title: String
     var pdfDownloadURL: String
     var dateString: String
+    var cached: Bool
+    var cachedPath: String?
     
     init(title: String, pdfDownloadURL: String, dateString: String) {
         self.title = title
         self.pdfDownloadURL = pdfDownloadURL
         self.dateString = dateString
+        self.cached = false
+        self.cachedPath = nil
     }
     
 
