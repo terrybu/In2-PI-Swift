@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AboutPIViewController: ParentViewController {
+class AboutPIViewController: UIViewController {
     
     var navDrawerVC : LeftNavDrawerController?
     

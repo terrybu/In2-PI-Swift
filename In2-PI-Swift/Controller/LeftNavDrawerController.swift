@@ -14,7 +14,6 @@ class LeftNavDrawerController: UIViewController {
     var purpleStatusBar: UIView!
     var maskView : UIView!
     var aboutVCModal : AboutPIViewController!
-    var tapOutOfModalGesture: UIGestureRecognizer!
     var homeVCNavCtrl: UINavigationController?
     var worshipVCNavCtrl: UINavigationController?
     var nurtureVCNavCtrl: UINavigationController?
@@ -22,6 +21,9 @@ class LeftNavDrawerController: UIViewController {
     var evangelismVCNavCtrl: UINavigationController?
     var socialServicesVCNavCtrl: UINavigationController?
     var galleryVCNavCtrl: UINavigationController?
+    
+    var tapOutOfModalGesture: UIGestureRecognizer!
+    var swipeGestureRightToLeft: UISwipeGestureRecognizer!
 
     //MARK: View Life Cycle
     override func viewDidLoad() {
@@ -38,9 +40,9 @@ class LeftNavDrawerController: UIViewController {
         let backgroundImageView = UIImageView(image: UIImage(named:"navDrawerBackground"))
         view.addSubview(backgroundImageView)
         view.sendSubviewToBack(backgroundImageView)
-        let swipeGesture = UISwipeGestureRecognizer(target: self, action: "userJustSwipedFromRightToLeft:")
-        swipeGesture.direction = UISwipeGestureRecognizerDirection.Left
-        self.view.addGestureRecognizer(swipeGesture)
+        swipeGestureRightToLeft = UISwipeGestureRecognizer(target: self, action: "userJustSwipedFromRightToLeft:")
+        swipeGestureRightToLeft.direction = UISwipeGestureRecognizerDirection.Left
+        self.view.addGestureRecognizer(swipeGestureRightToLeft)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -68,6 +70,7 @@ class LeftNavDrawerController: UIViewController {
             self.aboutVCModal.removeFromParentViewController()
             self.maskView.removeFromSuperview()
             self.view.removeGestureRecognizer(self.tapOutOfModalGesture)
+            self.view.addGestureRecognizer(self.swipeGestureRightToLeft)
         }
     }
     
@@ -143,6 +146,8 @@ class LeftNavDrawerController: UIViewController {
     
     @IBAction
     func aboutPIButtonPressed(sender: UIButton) {
+        self.view.removeGestureRecognizer(self.swipeGestureRightToLeft)
+        
         aboutVCModal = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AboutPIViewController") as! AboutPIViewController
         aboutVCModal.navDrawerVC = self
         self.addChildViewController(aboutVCModal)
