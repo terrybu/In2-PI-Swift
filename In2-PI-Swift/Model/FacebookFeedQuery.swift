@@ -58,7 +58,10 @@ class FacebookFeedQuery: FacebookQuery {
                     categoryStr += msg[i]
                     let j = i + 1
                     if (msg[j] == "]" || categoryStr.characters.count >= 100) {
-                        firstTitleStr = parseFirstLineTitleString(msg[j..<msg.characters.count])
+                        if msg[j..<msg.characters.count].characters.count > 0 {
+                            let titleStringSegment = msg[j..<msg.characters.count-1]
+                            firstTitleStr = parseFirstLineTitleString(titleStringSegment)
+                        }
                         break
                     }
                 }
@@ -111,9 +114,10 @@ class FacebookFeedQuery: FacebookQuery {
             //otherwise, we go right for the first line
             //this covers case where "[title] asjdfsafp \n"
             var i = 0;
-            while (startingStr[i] != "\n") {
+            let count = startingStr.characters.count
+            while i <= count - 1 && startingStr[i] != "\n" {
                 result += startingStr[i]
-                i++;
+                i++
             }
         }
         return result
