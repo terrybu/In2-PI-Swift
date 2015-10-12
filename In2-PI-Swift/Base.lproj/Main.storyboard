@@ -341,10 +341,10 @@
                                 <exclude reference="BId-Yq-O23"/>
                                 <exclude reference="fZA-B0-OUR"/>
                                 <exclude reference="i5V-Nf-N6f"/>
-                                <exclude reference="JDg-Ig-9QH"/>
                                 <exclude reference="AGL-Ae-cGU"/>
                                 <exclude reference="HEr-pB-QH9"/>
                                 <exclude reference="c61-db-eZe"/>
+                                <exclude reference="JDg-Ig-9QH"/>
                             </mask>
                         </variation>
                     </view>
@@ -369,7 +369,7 @@
                     </view>
                     <connections>
                         <segue destination="sG2-Rg-tvn" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="oUK-3F-opS"/>
-                        <segue destination="T3C-MO-eqZ" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="aS4-OR-pls"/>
+                        <segue destination="T3C-MO-eqZ" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" animates="NO" id="aS4-OR-pls"/>
                         <segue destination="om7-B7-Wax" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="LAZ-6S-uBI"/>
                         <segue destination="1eE-eD-qkJ" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="My8-EG-Xci"/>
                         <segue destination="8ij-fq-Ohw" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="8dL-Aq-Fao"/>
@@ -1185,10 +1185,10 @@
             </objects>
             <point key="canvasLocation" x="-1119" y="5618"/>
         </scene>
-        <!--RootNavController-->
+        <!--HomeNavController-->
         <scene sceneID="PuY-jW-8ar">
             <objects>
-                <navigationController storyboardIdentifier="RootNavController" automaticallyAdjustsScrollViewInsets="NO" id="T3C-MO-eqZ" userLabel="RootNavController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeNavController" automaticallyAdjustsScrollViewInsets="NO" id="T3C-MO-eqZ" userLabel="HomeNavController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="vwa-XW-fac">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

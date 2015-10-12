@@ -9,6 +9,7 @@
 import UIKit
 import MediaPlayer
 import HockeySDK
+import AVKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,15 +21,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         #if RELEASE
-            println("release mode")
+            print("release mode")
             let movieURL = NSBundle.mainBundle().URLForResource("splashScreen", withExtension: "mp4")
             let myMoviePlayer = MPMoviePlayerViewController(contentURL: movieURL)
+            
+            // Remove the movie player view controller from the "playback did finish" notification observers
+            NSNotificationCenter.defaultCenter().removeObserver(myMoviePlayer, name: MPMoviePlayerPlaybackDidFinishNotification, object: myMoviePlayer.moviePlayer)
+
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "moviePlayBackDidFinish", name: MPMoviePlayerPlaybackDidFinishNotification, object: myMoviePlayer.moviePlayer)
     
             myMoviePlayer.moviePlayer.controlStyle = MPMovieControlStyle.None
             myMoviePlayer.moviePlayer.backgroundView.addSubview(UIImageView(image: UIImage(named: "launchScreenLayer4")))
             myMoviePlayer.moviePlayer.scalingMode = MPMovieScalingMode.Fill
-            window?.rootViewController! = myMoviePlayer
+            window?.rootViewController = myMoviePlayer
             myMoviePlayer.moviePlayer.setFullscreen(true, animated: false)
             myMoviePlayer.moviePlayer.play()
         #else
@@ -43,17 +48,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
-    
     @objc
     private func moviePlayBackDidFinish() {
         let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
-        window?.rootViewController! = revealVC
-        
+        window?.rootViewController = revealVC
+
         //Navbar and Statusbar background image setup - storyboard doesn't do this wtf
+        UINavigationBar.appearance().setBackgroundImage(UIImage(named: "navigation_bar"), forBarMetrics: UIBarMetrics.Default)
+        
         statusBarBackgroundView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 20))
         statusBarBackgroundView!.backgroundColor = UIColor(patternImage: UIImage(named:"status_bar")!)
         window?.rootViewController?.view.addSubview(statusBarBackgroundView!)
-        UINavigationBar.appearance().setBackgroundImage(UIImage(named: "navigation_bar"), forBarMetrics: UIBarMetrics.Default)
     }
 
     
