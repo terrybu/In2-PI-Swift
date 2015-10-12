@@ -10,3 +10,4 @@
 #import "TFHpple.h"
 #import "TFHppleElement.h"
 #import "XPathQuery.h"
+#import <HockeySDK/HockeySDK.h>

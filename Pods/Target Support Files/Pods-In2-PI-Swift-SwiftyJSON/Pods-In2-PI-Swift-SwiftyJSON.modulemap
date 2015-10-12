@@ -1,6 +1,0 @@
-framework module SwiftyJSON {
-  umbrella header "Pods-In2-PI-Swift-SwiftyJSON-umbrella.h"
-
-  export *
-  module * { export * }
-}

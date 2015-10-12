@@ -8,6 +8,7 @@
 
 import UIKit
 import MediaPlayer
+import HockeySDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,8 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #else
             print("debug mode")
             moviePlayBackDidFinish()
-
         #endif
+        
+        BITHockeyManager.sharedHockeyManager().configureWithIdentifier   ("397fac4ea6ec1293bbf6b3aa1828b806")
+        BITHockeyManager.sharedHockeyManager().startManager()
+        BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }

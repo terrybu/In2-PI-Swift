@@ -1,6 +1,0 @@
-framework module FBSDKCoreKit {
-  umbrella header "Pods-In2-PI-Swift-FBSDKCoreKit-umbrella.h"
-
-  export *
-  module * { export * }
-}

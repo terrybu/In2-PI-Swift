@@ -1,6 +1,0 @@
-framework module AFNetworking {
-  umbrella header "Pods-In2-PI-Swift-AFNetworking-umbrella.h"
-
-  export *
-  module * { export * }
-}
