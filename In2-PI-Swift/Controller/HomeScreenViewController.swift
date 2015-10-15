@@ -17,8 +17,8 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
     var black: UIView!
     var purpleBarSelector: UIImageView!
     var firstObjectID: String!
-    @IBOutlet weak var myPIButton: UIButton!
-    @IBOutlet weak var PICommunityButton: UIButton!
+    @IBOutlet weak var myFeedButton: UIButton!
+    @IBOutlet weak var piFeedButton: UIButton!
 
     @IBOutlet weak var newsArticleView: NewsArticleView!
     var imageBlackOverlay: UIView?
@@ -69,7 +69,7 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
     //MARK: Custom Methods
     private func addPurpleSelectorBar() {
         purpleBarSelector = UIImageView(image: UIImage(named: "selector_MyPI"))
-        purpleBarSelector.frame = CGRect(x: view.frame.width/4-18, y: myPIButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width:myPIButton.titleLabel!.frame.size.width, height: 4)
+        purpleBarSelector.frame = CGRect(x: view.frame.width/4-18, y: myFeedButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width:myFeedButton.titleLabel!.frame.size.width, height: 4)
         view.addSubview(purpleBarSelector)
     }
     
@@ -113,16 +113,16 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
     }
     
     
-    @IBAction func myPIButtonPressed(sender: UIButton) {
+    @IBAction func myFeedButtonPressed(sender: UIButton) {
         sender.setTitleColor(UIColor.In2DeepPurple(), forState: UIControlState.Normal)
-        PICommunityButton.setTitleColor(UIColor(rgba: "#bbbcbc"), forState: UIControlState.Normal)
-        purpleBarSelector.frame = CGRect(x: view.frame.width/4-18, y: myPIButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width:myPIButton.titleLabel!.frame.size.width, height: 4)
+        piFeedButton.setTitleColor(UIColor(rgba: "#bbbcbc"), forState: UIControlState.Normal)
+        purpleBarSelector.frame = CGRect(x: view.frame.width/4-18, y: myFeedButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width:myFeedButton.titleLabel!.frame.size.width, height: 4)
     }
     
-    @IBAction func PICommunityButtonPressed(sender: UIButton) {
+    @IBAction func piFeedButtonPressed(sender: UIButton) {
         sender.setTitleColor(UIColor.In2DeepPurple(), forState: UIControlState.Normal)
-        myPIButton.setTitleColor(UIColor(rgba: "#bbbcbc"), forState: UIControlState.Normal)
-        purpleBarSelector.frame = CGRect(x: view.frame.width/2+48, y: myPIButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width:PICommunityButton.titleLabel!.frame.size.width, height: 4)
+        myFeedButton.setTitleColor(UIColor(rgba: "#bbbcbc"), forState: UIControlState.Normal)
+        purpleBarSelector.frame = CGRect(x: view.frame.width/2+48, y: myFeedButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width:piFeedButton.titleLabel!.frame.size.width, height: 4)
     }
 
     
