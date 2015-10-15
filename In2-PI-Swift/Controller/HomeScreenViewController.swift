@@ -11,7 +11,7 @@ import MBProgressHUD
 
 private let purpleBarSelectorBelowLabelHeightPadding:CGFloat = 4
 
-class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
+class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate {
     
     // MARK: Properties
     var black: UIView!
@@ -19,7 +19,6 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
     var firstObjectID: String!
     @IBOutlet weak var myPIButton: UIButton!
     @IBOutlet weak var PICommunityButton: UIButton!
-    @IBOutlet weak var hamburgerButton: UIBarButtonItem!
 
     @IBOutlet weak var newsArticleView: NewsArticleView!
     var imageBlackOverlay: UIView?
@@ -30,7 +29,8 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
         //Do any additional setup after loading the view, typically from a nib.
         //this is BEFORE autolayout applied
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "navigation_bar"), forBarMetrics: UIBarMetrics.Default)
+        setUpUniqueUIForHomeVC()
+        
         blackOverlayUntilFBDataFinishedLoading()
         FacebookFeedQuery.sharedInstance.delegate = self
         FacebookFeedQuery.sharedInstance.getFeedFromPIMagazine { (error) -> Void in
@@ -42,6 +42,14 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
         print("view did load + \(newsArticleView.backgroundImageView.frame.size)")
     }
     
+    private func setUpUniqueUIForHomeVC() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "navigation_bar"), forBarMetrics: UIBarMetrics.Default)
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        let hamburger = UIBarButtonItem(image: UIImage(named: "hamburger"), style: UIBarButtonItemStyle.Done, target: self, action: Selector("hamburgerPressed:"))
+        navigationItem.leftBarButtonItem = hamburger
+    }
+    
     private func blackOverlayUntilFBDataFinishedLoading() {
         black = UIView(frame: view.frame)
         black.backgroundColor = UIColor.blackColor()
@@ -51,14 +59,10 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
     }
     
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
         if (purpleBarSelector == nil) {
             addPurpleSelectorBar()
             purpleBarSelector.hidden = true
-        }
-        if revealViewController() != nil {
-            view.addGestureRecognizer(revealViewController().panGestureRecognizer())
-            view.addGestureRecognizer(revealViewController().tapGestureRecognizer())
-            revealViewController().rearViewRevealWidth = view.frame.size.width
         }
     }
     
@@ -108,12 +112,6 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: IBActions
-    @IBAction func hamburgerPressed(sender: UIBarButtonItem) {
-        revealViewController().revealToggle(sender)
-        //        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        //        appDelegate.statusBarBackgroundView?.hidden = true
-    }
     
     @IBAction func myPIButtonPressed(sender: UIButton) {
         sender.setTitleColor(UIColor.In2DeepPurple(), forState: UIControlState.Normal)

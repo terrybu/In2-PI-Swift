@@ -31,17 +31,15 @@ class ParentViewController: UIViewController {
         navigationItem.rightBarButtonItem = homeButton
     }
     
-    func setUpPanGestureForVC() {
+    func setUpLeftNavDrawerMenuWidth() {
         if let revealVC = self.revealViewController() {
-            self.view.addGestureRecognizer(revealVC.panGestureRecognizer())
-            self.view.addGestureRecognizer(revealVC.tapGestureRecognizer())
             revealVC.rearViewRevealWidth = self.view.frame.size.width
         }
     }
     
     override func viewDidAppear(animated: Bool) {
-        setUpPanGestureForVC()
-        print("parent vc viewdidappear")
+        setUpLeftNavDrawerMenuWidth()
+//        print("parent vc viewdidappear")
     }
     
     
