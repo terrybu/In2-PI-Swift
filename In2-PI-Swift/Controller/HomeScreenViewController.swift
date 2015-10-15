@@ -29,6 +29,8 @@ class HomeScreenViewController: UIViewController, FacebookFeedQueryDelegate {
         super.viewDidLoad()
         //Do any additional setup after loading the view, typically from a nib.
         //this is BEFORE autolayout applied
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "navigation_bar"), forBarMetrics: UIBarMetrics.Default)
         blackOverlayUntilFBDataFinishedLoading()
         FacebookFeedQuery.sharedInstance.delegate = self
         FacebookFeedQuery.sharedInstance.getFeedFromPIMagazine { (error) -> Void in
