@@ -69,7 +69,7 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
     //MARK: Custom Methods
     private func addPurpleSelectorBar() {
         purpleBarSelector = UIImageView(image: UIImage(named: "selector_MyPI"))
-        purpleBarSelector.frame = CGRect(x: view.frame.width/4-18, y: myFeedButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width:myFeedButton.titleLabel!.frame.size.width, height: 4)
+        purpleBarSelector.frame = CGRect(x: 0, y: myFeedButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width: self.view.frame.width/2, height: 4)
         view.addSubview(purpleBarSelector)
     }
     
@@ -116,13 +116,13 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
     @IBAction func myFeedButtonPressed(sender: UIButton) {
         sender.setTitleColor(UIColor.In2DeepPurple(), forState: UIControlState.Normal)
         piFeedButton.setTitleColor(UIColor(rgba: "#bbbcbc"), forState: UIControlState.Normal)
-        purpleBarSelector.frame = CGRect(x: view.frame.width/4-18, y: myFeedButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width:myFeedButton.titleLabel!.frame.size.width, height: 4)
+        purpleBarSelector.frame = CGRect(x: 0, y: myFeedButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width:view.frame.size.width/2, height: 4)
     }
     
     @IBAction func piFeedButtonPressed(sender: UIButton) {
         sender.setTitleColor(UIColor.In2DeepPurple(), forState: UIControlState.Normal)
         myFeedButton.setTitleColor(UIColor(rgba: "#bbbcbc"), forState: UIControlState.Normal)
-        purpleBarSelector.frame = CGRect(x: view.frame.width/2+48, y: myFeedButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width:piFeedButton.titleLabel!.frame.size.width, height: 4)
+        purpleBarSelector.frame = CGRect(x: view.frame.width/2, y: myFeedButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width:view.frame.size.width/2, height: 4)
     }
 
     
