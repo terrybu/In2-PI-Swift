@@ -74,11 +74,15 @@ class FacebookFeedQuery: FacebookQuery {
                     }
                 }
             }
-            articleCategoryLabel.text = categoryStr
-            articleTitleLabel.text = firstTitleStr
-            
-            articleDateLabel.text = CustomDateFormatter.sharedInstance.convertFBCreatedTimeDateToOurFormattedString(feedObject)
+        } else {
+            categoryStr = "No Category"
+            firstTitleStr = "No Title"
         }
+        articleCategoryLabel.text = categoryStr
+        articleTitleLabel.text = firstTitleStr
+        articleDateLabel.text = CustomDateFormatter.sharedInstance.convertFBCreatedTimeDateToOurFormattedString(feedObject)
+        
+        return
     }
     
     private func parseFirstLineTitleString(msg: String) -> String {

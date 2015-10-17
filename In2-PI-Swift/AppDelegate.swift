@@ -23,6 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         #if RELEASE
             print("release mode")
+            BITHockeyManager.sharedHockeyManager().configureWithIdentifier   ("397fac4ea6ec1293bbf6b3aa1828b806")
+            BITHockeyManager.sharedHockeyManager().startManager()
+            BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
+            
             let movieURL = NSBundle.mainBundle().URLForResource("splashScreen", withExtension: "mp4")
             let moviePlayerItem = AVPlayerItem(URL: movieURL!)
             let moviePlayer = AVPlayer(playerItem: moviePlayerItem)
@@ -36,10 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("debug mode")
             moviePlayBackDidFinish()
         #endif
-        
-        BITHockeyManager.sharedHockeyManager().configureWithIdentifier   ("397fac4ea6ec1293bbf6b3aa1828b806")
-        BITHockeyManager.sharedHockeyManager().startManager()
-        BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
