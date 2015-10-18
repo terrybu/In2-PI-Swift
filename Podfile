@@ -2,7 +2,7 @@ platform :ios, '8.0'
 inhibit_all_warnings!
 use_frameworks!
 
-link_with 'In2-PI-Swift', 'In2-PI-SwiftTests'
+link_with 'In2-PI-Swift'
 
 target 'In2-PI-Swift' do
 	pod 'FBSDKCoreKit'
@@ -11,6 +11,7 @@ target 'In2-PI-Swift' do
 	pod 'AFNetworking'
 	pod 'JTSImageViewController'
     pod 'MBProgressHUD'
-    pod "HockeySDK"
+    pod 'HockeySDK'
+    pod 'HMSegmentedControl'
 end
 

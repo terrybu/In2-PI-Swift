@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		615C54D683ACF2345564DCC8 /* Pods_In2_PI_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D9D85A29F7F171A635D2C8 /* Pods_In2_PI_Swift.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		615C54D683ACF2345564DCC8 /* Pods_In2_PI_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D9D85A29F7F171A635D2C8 /* Pods_In2_PI_Swift.framework */; };
 		D90A08231BB5D4BD0033DD6B /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = D90A081E1BB5D4BD0033DD6B /* TFHpple.m */; settings = {ASSET_TAGS = (); }; };
 		D90A08241BB5D4BD0033DD6B /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D90A08201BB5D4BD0033DD6B /* TFHppleElement.m */; settings = {ASSET_TAGS = (); }; };
 		D90A08251BB5D4BD0033DD6B /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = D90A08221BB5D4BD0033DD6B /* XPathQuery.m */; settings = {ASSET_TAGS = (); }; };

@@ -805,7 +805,7 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="선교부 소식 타이틀" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0C4-jp-jmH">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="선교부 소식 타이틀" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0C4-jp-jmH">
                                                 <rect key="frame" x="213" y="87" width="175" height="72"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="175" id="qWR-Q8-qKx"/>
@@ -820,13 +820,13 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVP-Me-66w">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVP-Me-66w">
                                                 <rect key="frame" x="266" y="219" width="70" height="30"/>
                                                 <state key="normal" title="더보기" backgroundImage="btn_more_white">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rule_ver" translatesAutoresizingMaskIntoConstraints="NO" id="WMu-M8-9Ih">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="rule_ver" translatesAutoresizingMaskIntoConstraints="NO" id="WMu-M8-9Ih">
                                                 <rect key="frame" x="300" y="174" width="1" height="21"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8o-TD-haP" customClass="EvangelismApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
@@ -960,7 +960,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Bm-1l-Zm5" userLabel="BetterFutureApply" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Bm-1l-Zm5" userLabel="BetterFutureApply" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="300" y="418" width="300" height="187"/>
                                                 <color key="backgroundColor" red="0.62352941179999999" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <userDefinedRuntimeAttributes>
@@ -968,7 +968,7 @@
                                                     <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="rectangle_BetterFuture"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FQQ-Ls-qMi">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FQQ-Ls-qMi">
                                                 <rect key="frame" x="0.0" y="252" width="600" height="146"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -998,7 +998,7 @@
                                                     <outlet property="delegate" destination="68E-Sr-2Ow" id="6cM-NL-V0Z"/>
                                                 </connections>
                                             </tableView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hE-u1-Fs8" userLabel="BetterWorldApply" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9hE-u1-Fs8" userLabel="BetterWorldApply" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="418" width="300" height="187"/>
                                                 <color key="backgroundColor" red="1" green="0.70196078429999997" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>

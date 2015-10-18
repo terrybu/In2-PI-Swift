@@ -11,3 +11,4 @@
 #import "TFHppleElement.h"
 #import "XPathQuery.h"
 #import <HockeySDK/HockeySDK.h>
+#import <HMSegmentedControl/HMSegmentedControl.h>
