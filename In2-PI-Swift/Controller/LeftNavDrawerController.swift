@@ -21,8 +21,6 @@ class LeftNavDrawerController: UIViewController {
     var evangelismVCNavCtrl: UINavigationController?
     var socialServicesVCNavCtrl: UINavigationController?
     var galleryVCNavCtrl: UINavigationController?
-    
-    var tapOutOfModalGesture: UIGestureRecognizer!
     var swipeGestureRightToLeft: UISwipeGestureRecognizer!
 
     //MARK: View Life Cycle
@@ -69,7 +67,6 @@ class LeftNavDrawerController: UIViewController {
             self.aboutVCModal.view.removeFromSuperview()
             self.aboutVCModal.removeFromParentViewController()
             self.maskView.removeFromSuperview()
-            self.view.removeGestureRecognizer(self.tapOutOfModalGesture)
             self.view.addGestureRecognizer(self.swipeGestureRightToLeft)
         }
     }
@@ -167,8 +164,6 @@ class LeftNavDrawerController: UIViewController {
             self.maskView.backgroundColor = UIColor.blackColor()
             self.maskView.alpha  = 0.60
             }) { (Bool finished) -> Void in
-                self.tapOutOfModalGesture = UITapGestureRecognizer(target: self, action: "handleTap:")
-                self.view.addGestureRecognizer(self.tapOutOfModalGesture)
         }
     }
     
