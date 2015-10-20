@@ -27,11 +27,7 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         //Do any additional setup after loading the view, typically from a nib.
-        //this is BEFORE autolayout applied
-        
-        let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
-        presentViewController(loginVC, animated: true, completion: nil)
-        
+
         setUpUniqueUIForHomeVC()
         
         blackOverlayUntilFBDataFinishedLoading()

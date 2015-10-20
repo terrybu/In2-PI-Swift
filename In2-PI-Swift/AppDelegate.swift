@@ -58,10 +58,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     @objc
     private func moviePlayBackDidFinish() {
-        let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
-        revealVCView = revealVC.view
-        revealVC.view.hidden = true
-        window?.rootViewController = revealVC
+//        let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
+        let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
+        loginVC.dismissBlock = {
+            let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
+            self.window?.rootViewController = revealVC
+            print("dismiss block executing from appdelegate")
+            self.setUpNavBarAndStatusBarImages()
+        }
+        window?.rootViewController = loginVC
         
         setUpNavBarAndStatusBarImages()
     }

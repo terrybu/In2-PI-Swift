@@ -11,6 +11,8 @@ import Parse
 
 class LoginViewController: UIViewController {
     
+    var dismissBlock : (() -> Void)?
+    
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBAction func didPressLoginbutton() {
@@ -21,11 +23,9 @@ class LoginViewController: UIViewController {
             PFUser.logInWithUsernameInBackground(username!, password: password!) { (user, error) -> Void in
                 if let user = user {
                     print(user)
-                    self.dismissViewControllerAnimated(false, completion: { () -> Void in
-                        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                        appDelegate.revealVCView.hidden = false
-                    })
-                    
+                    if let dismissBlock = self.dismissBlock {
+                        dismissBlock()
+                    }
                 } else {
                     print(error)
                 }
