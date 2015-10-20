@@ -10,7 +10,8 @@ import UIKit
 import MediaPlayer
 import HockeySDK
 import AVKit
-
+import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,11 +22,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        // Initialize Parse.
+        Parse.setApplicationId("kcmNwFnHHDfanE4xbzZYzufPe5Cz74z1O4wftbej",
+            clientKey: "VYQRtVcSJWUhGhjuLuy8kA7HKQ7rzbHa7Y37Work")
+        // [Optional] Power your app with Local Datastore. For more info, go to
+        // https://parse.com/docs/ios_guide#localdatastore/iOS
+        Parse.enableLocalDatastore()
+        
         #if RELEASE
             print("release mode")
             BITHockeyManager.sharedHockeyManager().configureWithIdentifier   ("397fac4ea6ec1293bbf6b3aa1828b806")
             BITHockeyManager.sharedHockeyManager().startManager()
             BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
+            // [Optional] Track statistics around application opens.
+            PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
             
             let movieURL = NSBundle.mainBundle().URLForResource("splashScreen", withExtension: "mp4")
             let moviePlayerItem = AVPlayerItem(URL: movieURL!)

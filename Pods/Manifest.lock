@@ -43,6 +43,8 @@ PODS:
   - HockeySDK/AllFeaturesLib (3.8.2)
   - JTSImageViewController (1.4)
   - MBProgressHUD (0.9.1)
+  - Parse (1.8.1):
+    - Bolts/Tasks (>= 1.2.0)
   - SwiftyJSON (2.2.0)
 
 DEPENDENCIES:
@@ -53,6 +55,7 @@ DEPENDENCIES:
   - HockeySDK
   - JTSImageViewController
   - MBProgressHUD
+  - Parse
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -64,6 +67,7 @@ SPEC CHECKSUMS:
   HockeySDK: 9f4ac41263acf9d8a4d59491a7f17af16529b935
   JTSImageViewController: 6a367b144e257db02cdfacdba78d684377d3777b
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  Parse: 2155953b1565494095d5fa5c83b3c77f2c677c09
   SwiftyJSON: 0b3e6c07af17ff745e77e8e9984097b55c956e5c
 
 COCOAPODS: 0.39.0

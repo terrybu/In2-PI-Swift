@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Parse
 
 class LoginViewController: UIViewController {
 
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
-
+    @IBAction func didPressLoginbutton() {
+        
+    }
     
     override func viewDidLoad() {
         let backgroundGradientImageView = UIImageView(image: UIImage(named: "bg_gradient"))

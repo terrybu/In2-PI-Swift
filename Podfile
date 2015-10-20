@@ -13,5 +13,6 @@ target 'In2-PI-Swift' do
     pod 'MBProgressHUD'
     pod 'HockeySDK'
     pod 'HMSegmentedControl'
+    pod 'Parse'
 end
 

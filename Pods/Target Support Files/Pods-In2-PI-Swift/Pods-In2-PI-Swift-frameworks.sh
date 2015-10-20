@@ -91,6 +91,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-In2-PI-Swift/HMSegmentedControl.framework"
   install_framework "Pods-In2-PI-Swift/JTSImageViewController.framework"
   install_framework "Pods-In2-PI-Swift/MBProgressHUD.framework"
+  install_framework "Pods-In2-PI-Swift/Parse.framework"
   install_framework "Pods-In2-PI-Swift/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -101,5 +102,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-In2-PI-Swift/HMSegmentedControl.framework"
   install_framework "Pods-In2-PI-Swift/JTSImageViewController.framework"
   install_framework "Pods-In2-PI-Swift/MBProgressHUD.framework"
+  install_framework "Pods-In2-PI-Swift/Parse.framework"
   install_framework "Pods-In2-PI-Swift/SwiftyJSON.framework"
 fi
