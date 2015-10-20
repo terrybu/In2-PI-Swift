@@ -10,10 +10,19 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet var usernameTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
+
+    
     override func viewDidLoad() {
         let backgroundGradientImageView = UIImageView(image: UIImage(named: "bg_gradient"))
         backgroundGradientImageView.frame = view.frame
         view.insertSubview(backgroundGradientImageView, atIndex: 0)
+        
+        let usernamePlaceHolderStr = NSAttributedString(string: "Username", attributes: [NSForegroundColorAttributeName:UIColor(white: 1, alpha: 0.5)])
+        usernameTextField.attributedPlaceholder = usernamePlaceHolderStr
+        let passwordPlaceHolderStr = NSAttributedString(string: "Password", attributes: [NSForegroundColorAttributeName:UIColor(white: 1, alpha: 0.5)])
+        passwordTextField.attributedPlaceholder = passwordPlaceHolderStr
     }
     
     

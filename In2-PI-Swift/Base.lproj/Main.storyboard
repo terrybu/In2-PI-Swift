@@ -469,6 +469,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="pd4-vX-eq3" id="jXI-mj-7de"/>
+                        <outlet property="usernameTextField" destination="73T-ut-Q8n" id="7HH-XP-brC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8Q-49-jHo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
