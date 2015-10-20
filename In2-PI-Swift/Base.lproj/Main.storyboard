@@ -19,6 +19,9 @@
             <string>NanumBarunGothicOTF</string>
             <string>NanumBarunGothicOTF</string>
             <string>NanumBarunGothicOTF</string>
+            <string>NanumBarunGothicOTF</string>
+            <string>NanumBarunGothicOTF</string>
+            <string>NanumBarunGothicOTF</string>
         </mutableArray>
         <mutableArray key="NanumBarunGothicBold.otf">
             <string>NanumBarunGothicOTFBold</string>
@@ -347,10 +350,10 @@
             </objects>
             <point key="canvasLocation" x="-2655" y="-688"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="uLR-9R-Dxn">
             <objects>
-                <viewController id="zSA-Ao-mdc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="zSA-Ao-mdc" customClass="LoginViewController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="t8S-2X-G7P"/>
                         <viewControllerLayoutGuide type="bottom" id="zM7-e1-M3y"/>
@@ -358,7 +361,113 @@
                     <view key="view" contentMode="scaleToFill" id="pOC-lM-ov6">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="piTempLogo" translatesAutoresizingMaskIntoConstraints="NO" id="b0J-WK-QzO">
+                                <rect key="frame" x="225" y="60" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="19Y-Ng-3a5"/>
+                                    <constraint firstAttribute="height" constant="150" id="i1g-4e-LAc"/>
+                                </constraints>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="icon_user" translatesAutoresizingMaskIntoConstraints="NO" id="Ng3-eT-hd7">
+                                <rect key="frame" x="106" y="272" width="12" height="15"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" image="icon_PW" translatesAutoresizingMaskIntoConstraints="NO" id="L8X-kF-6N4">
+                                <rect key="frame" x="106" y="316" width="12" height="15"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edu-xg-v8Q">
+                                <rect key="frame" x="90" y="371" width="420" height="42"/>
+                                <state key="normal" backgroundImage="btn_Log-In"/>
+                                <state key="highlighted" backgroundImage="btn_Log-In_on"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87h-Nl-B2b">
+                                <rect key="frame" x="174" y="453" width="189" height="20"/>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehY-Ah-AVg">
+                                <rect key="frame" x="371" y="447" width="61" height="32"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="underline_Sign-Up" translatesAutoresizingMaskIntoConstraints="NO" id="nP3-Jw-vG5">
+                                <rect key="frame" x="369" y="479" width="65" height="1"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pd4-vX-eq3">
+                                <rect key="frame" x="135" y="313" width="200" height="19"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="XZa-Lw-Iqb"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="XZa-Lw-Iqb"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="73T-ut-Q8n">
+                                <rect key="frame" x="135" y="270" width="200" height="19"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="6ka-v6-fg1"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="87h-Nl-B2b" firstAttribute="centerX" secondItem="pOC-lM-ov6" secondAttribute="centerX" id="1jU-Bl-DhQ"/>
+                            <constraint firstItem="zM7-e1-M3y" firstAttribute="top" secondItem="87h-Nl-B2b" secondAttribute="bottom" constant="40" id="1vx-vO-4eU"/>
+                            <constraint firstItem="edu-xg-v8Q" firstAttribute="leading" secondItem="pOC-lM-ov6" secondAttribute="leadingMargin" constant="100" id="6DF-ud-ilm"/>
+                            <constraint firstItem="b0J-WK-QzO" firstAttribute="centerX" secondItem="pOC-lM-ov6" secondAttribute="centerX" id="7mt-gr-TVD"/>
+                            <constraint firstItem="edu-xg-v8Q" firstAttribute="centerX" secondItem="pOC-lM-ov6" secondAttribute="centerX" id="9hO-PQ-8vm"/>
+                            <constraint firstItem="pd4-vX-eq3" firstAttribute="leading" secondItem="73T-ut-Q8n" secondAttribute="leading" id="AE5-O9-1AK"/>
+                            <constraint firstItem="73T-ut-Q8n" firstAttribute="centerY" secondItem="Ng3-eT-hd7" secondAttribute="centerY" id="BcL-rZ-20I"/>
+                            <constraint firstItem="73T-ut-Q8n" firstAttribute="leading" secondItem="Ng3-eT-hd7" secondAttribute="trailing" constant="17" id="CL0-BD-cPD"/>
+                            <constraint firstItem="73T-ut-Q8n" firstAttribute="top" secondItem="b0J-WK-QzO" secondAttribute="bottom" constant="60" id="CcR-Zd-oxY"/>
+                            <constraint firstItem="edu-xg-v8Q" firstAttribute="width" secondItem="pOC-lM-ov6" secondAttribute="width" multiplier="0.7" id="DOb-4j-2jg"/>
+                            <constraint firstItem="pd4-vX-eq3" firstAttribute="top" secondItem="73T-ut-Q8n" secondAttribute="bottom" constant="24" id="Hel-fz-2Ze"/>
+                            <constraint firstItem="Ng3-eT-hd7" firstAttribute="leading" secondItem="edu-xg-v8Q" secondAttribute="leading" constant="16" id="Kxt-sp-mZk"/>
+                            <constraint firstItem="nP3-Jw-vG5" firstAttribute="centerX" secondItem="ehY-Ah-AVg" secondAttribute="centerX" id="Ll3-K4-Kul"/>
+                            <constraint firstItem="pd4-vX-eq3" firstAttribute="width" secondItem="73T-ut-Q8n" secondAttribute="width" id="Mw1-Zh-n9l"/>
+                            <constraint firstItem="87h-Nl-B2b" firstAttribute="leading" secondItem="edu-xg-v8Q" secondAttribute="leading" constant="32" id="Syf-w7-1xz"/>
+                            <constraint firstItem="b0J-WK-QzO" firstAttribute="top" secondItem="t8S-2X-G7P" secondAttribute="bottom" constant="40" id="VaW-FP-Yum"/>
+                            <constraint firstItem="ehY-Ah-AVg" firstAttribute="leading" secondItem="87h-Nl-B2b" secondAttribute="trailing" constant="8" id="hlk-zj-vlj"/>
+                            <constraint firstItem="87h-Nl-B2b" firstAttribute="top" secondItem="edu-xg-v8Q" secondAttribute="bottom" constant="40" id="nRu-ay-Eb1"/>
+                            <constraint firstItem="Ng3-eT-hd7" firstAttribute="leading" secondItem="pOC-lM-ov6" secondAttribute="leadingMargin" constant="30" id="nVd-cq-LQk"/>
+                            <constraint firstItem="nP3-Jw-vG5" firstAttribute="top" secondItem="ehY-Ah-AVg" secondAttribute="bottom" id="nzq-gH-qJH"/>
+                            <constraint firstItem="pd4-vX-eq3" firstAttribute="centerY" secondItem="L8X-kF-6N4" secondAttribute="centerY" id="oDG-ki-dwJ"/>
+                            <constraint firstItem="L8X-kF-6N4" firstAttribute="leading" secondItem="Ng3-eT-hd7" secondAttribute="leading" id="pXD-Zc-1OS"/>
+                            <constraint firstItem="87h-Nl-B2b" firstAttribute="centerX" secondItem="pOC-lM-ov6" secondAttribute="centerX" constant="-32" id="rCm-uO-g2x"/>
+                            <constraint firstItem="87h-Nl-B2b" firstAttribute="top" secondItem="edu-xg-v8Q" secondAttribute="bottom" constant="40" id="tgQ-hT-Ofo"/>
+                            <constraint firstItem="edu-xg-v8Q" firstAttribute="top" secondItem="pd4-vX-eq3" secondAttribute="bottom" constant="39" id="vvS-Q4-rMk"/>
+                            <constraint firstItem="ehY-Ah-AVg" firstAttribute="centerY" secondItem="87h-Nl-B2b" secondAttribute="centerY" id="wUL-TK-04U"/>
+                            <constraint firstItem="pd4-vX-eq3" firstAttribute="trailing" secondItem="73T-ut-Q8n" secondAttribute="trailing" id="wzO-Fq-Ebf"/>
+                            <constraint firstItem="pd4-vX-eq3" firstAttribute="leading" secondItem="L8X-kF-6N4" secondAttribute="trailing" constant="17" id="xP1-av-25R"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="edu-xg-v8Q" secondAttribute="trailing" constant="100" id="y2Y-og-2jt"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="nVd-cq-LQk"/>
+                                <exclude reference="wzO-Fq-Ebf"/>
+                                <exclude reference="6DF-ud-ilm"/>
+                                <exclude reference="y2Y-og-2jt"/>
+                                <exclude reference="1jU-Bl-DhQ"/>
+                                <exclude reference="Syf-w7-1xz"/>
+                                <exclude reference="nRu-ay-Eb1"/>
+                                <exclude reference="1vx-vO-4eU"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8Q-49-jHo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -978,7 +1087,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Bm-1l-Zm5" userLabel="BetterFutureApply" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Bm-1l-Zm5" userLabel="BetterFutureApply" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="300" y="418" width="300" height="187"/>
                                                 <color key="backgroundColor" red="0.62352941179999999" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <userDefinedRuntimeAttributes>
@@ -986,7 +1095,7 @@
                                                     <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="rectangle_BetterFuture"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FQQ-Ls-qMi">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FQQ-Ls-qMi">
                                                 <rect key="frame" x="0.0" y="252" width="600" height="146"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -1016,7 +1125,7 @@
                                                     <outlet property="delegate" destination="68E-Sr-2Ow" id="6cM-NL-V0Z"/>
                                                 </connections>
                                             </tableView>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9hE-u1-Fs8" userLabel="BetterWorldApply" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hE-u1-Fs8" userLabel="BetterWorldApply" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="418" width="300" height="187"/>
                                                 <color key="backgroundColor" red="1" green="0.70196078429999997" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -1333,6 +1442,8 @@
         <image name="btn_Communications" width="64" height="64"/>
         <image name="btn_Evangelism" width="64" height="64"/>
         <image name="btn_Gallery" width="40" height="30"/>
+        <image name="btn_Log-In" width="264" height="42"/>
+        <image name="btn_Log-In_on" width="264" height="42"/>
         <image name="btn_Nurture" width="64" height="64"/>
         <image name="btn_PI" width="23" height="30"/>
         <image name="btn_SocialServices" width="64" height="64"/>
@@ -1340,9 +1451,13 @@
         <image name="btn_X" width="18" height="18"/>
         <image name="btn_more_white" width="70" height="30"/>
         <image name="divider_0.3pt" width="341" height="1"/>
+        <image name="icon_PW" width="12" height="15"/>
+        <image name="icon_user" width="12" height="15"/>
         <image name="img_bg" width="600" height="600"/>
+        <image name="piTempLogo" width="54" height="55"/>
         <image name="rectangle_BetterFuture" width="187" height="187"/>
         <image name="rectangle_BetterWorld" width="187" height="187"/>
         <image name="rule_ver" width="1" height="18"/>
+        <image name="underline_Sign-Up" width="65" height="1"/>
     </resources>
 </document>
