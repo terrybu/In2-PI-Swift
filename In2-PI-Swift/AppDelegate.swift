@@ -18,16 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var statusBarBackgroundView: UIView?
+    var revealVCView: UIView!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        // Initialize Parse.
-        Parse.setApplicationId("kcmNwFnHHDfanE4xbzZYzufPe5Cz74z1O4wftbej",
-            clientKey: "VYQRtVcSJWUhGhjuLuy8kA7HKQ7rzbHa7Y37Work")
         // [Optional] Power your app with Local Datastore. For more info, go to
         // https://parse.com/docs/ios_guide#localdatastore/iOS
         Parse.enableLocalDatastore()
+        // Initialize Parse.
+        Parse.setApplicationId("kcmNwFnHHDfanE4xbzZYzufPe5Cz74z1O4wftbej",
+            clientKey: "VYQRtVcSJWUhGhjuLuy8kA7HKQ7rzbHa7Y37Work")
+ 
         
         #if RELEASE
             print("release mode")
@@ -56,12 +58,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     @objc
     private func moviePlayBackDidFinish() {
-        let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
-        window!.rootViewController = loginVC
+        let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
+        revealVCView = revealVC.view
+        revealVC.view.hidden = true
+        window?.rootViewController = revealVC
         
-//        let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
-//        window?.rootViewController = revealVC
-
         setUpNavBarAndStatusBarImages()
     }
     

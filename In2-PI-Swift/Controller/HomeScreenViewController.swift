@@ -29,6 +29,9 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
         //Do any additional setup after loading the view, typically from a nib.
         //this is BEFORE autolayout applied
         
+        let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
+        presentViewController(loginVC, animated: true, completion: nil)
+        
         setUpUniqueUIForHomeVC()
         
         blackOverlayUntilFBDataFinishedLoading()
@@ -48,6 +51,9 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         let hamburger = UIBarButtonItem(image: UIImage(named: "hamburger"), style: UIBarButtonItemStyle.Done, target: self, action: Selector("hamburgerPressed:"))
         navigationItem.leftBarButtonItem = hamburger
+        
+        addPurpleSelectorBar()
+        purpleBarSelector.hidden = true
     }
     
     private func blackOverlayUntilFBDataFinishedLoading() {
