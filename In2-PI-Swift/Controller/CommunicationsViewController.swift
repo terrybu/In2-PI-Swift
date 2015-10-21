@@ -15,7 +15,6 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
     
     @IBOutlet var tableView: UITableView!
     var feedObjectsArray: [FBFeedArticle]?
-    var contentViewHeightBasedOnTableView: CGFloat = 0
     
     //For expandable view
     @IBOutlet var expandableAboutView: ExpandableAboutView!
