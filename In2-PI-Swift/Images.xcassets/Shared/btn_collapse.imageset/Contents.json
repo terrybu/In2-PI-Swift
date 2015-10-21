@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "in2NewsSliderPic.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "btn_collapse.png",
       "scale" : "2x"
     },
     {

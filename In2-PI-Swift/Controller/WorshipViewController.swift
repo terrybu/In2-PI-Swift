@@ -30,6 +30,8 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     
     var expandedAboutViewHeight:CGFloat = 0 
     
+    
+    //MARK: LifeCycle
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
         
@@ -48,14 +50,14 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         WeeklyProgramDownloader.sharedInstance.getTenRecentWeeklyProgramsListFromImportIO()
     }
     
-    private func setUpExpandableAboutView() {
-        expandableAboutView.clipsToBounds = true
-        expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: expandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
-    }
-    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         print("worship vc viewdidappear")
+    }
+    
+    private func setUpExpandableAboutView() {
+        expandableAboutView.clipsToBounds = true
+        expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: expandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
     }
     
     

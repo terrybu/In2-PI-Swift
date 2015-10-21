@@ -41,31 +41,7 @@ class NurtureViewController: ParentViewController, MFMailComposeViewControllerDe
         expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: expandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
     }
     
-    func didPressExpandButton() {
-        if !expandableAboutView.expanded {
-            print("did press expand button when it wasn't expanded")
-            
-            UIView.animateWithDuration(0.5, animations: { () -> Void in
-                self.constraintHeightExpandableView.constant = self.expandedAboutViewHeight
-                self.constraintContentViewHeight.constant += self.expandedAboutViewHeight - kOriginalAboutViewHeight
-                self.view.layoutIfNeeded()
-                
-                }) { (Bool completed) -> Void in
-                    self.expandableAboutView.expanded = true
-            }
-        }
-        else {
-            print("did press expand button when it WAS expanded")
-            UIView.animateWithDuration(0.5, animations: { () -> Void in
-                self.constraintHeightExpandableView.constant = kOriginalAboutViewHeight
-                self.constraintContentViewHeight.constant =  kOriginalContentViewHeight
-                self.view.layoutIfNeeded()
-                
-                }) { (Bool completed) -> Void in
-                    self.expandableAboutView.expanded = false
-            }
-        }
-    }
+
     
     @IBAction func sendMail(sender: AnyObject) {
         let picker = MFMailComposeViewController()
