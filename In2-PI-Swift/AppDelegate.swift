@@ -72,6 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
 //            self.window?.rootViewController = revealVC
 //        #endif
+            let loginNavCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginVCNavigationController") as! UINavigationController
             let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
             loginVC.dismissBlock = {
                 let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
@@ -79,7 +80,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("dismiss block executing from appdelegate")
                 self.setUpNavBarAndStatusBarImages()
             }
-            window?.rootViewController = loginVC
+            loginNavCtrl.viewControllers = [loginVC]
+            window?.rootViewController = loginNavCtrl
 
 
         

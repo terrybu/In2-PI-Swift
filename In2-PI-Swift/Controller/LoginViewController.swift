@@ -45,6 +45,11 @@ class LoginViewController: UIViewController {
         passwordTextField.attributedPlaceholder = passwordPlaceHolderStr
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        self.navigationController?.navigationBarHidden = true
+    }
+    
     
     
 }
