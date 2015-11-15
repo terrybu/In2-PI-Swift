@@ -28,6 +28,7 @@
 		D95EC5241B978DF000782925 /* FacebookFeedQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5231B978DF000782925 /* FacebookFeedQuery.swift */; };
 		D95EC5261B978E6400782925 /* FBFeedArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5251B978E6400782925 /* FBFeedArticle.swift */; };
 		D95EC5291B97963000782925 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5281B97963000782925 /* StringExtension.swift */; };
+		D97839821BF9305B00E4A834 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97839811BF9305B00E4A834 /* SignUpViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D97C16991BAA3E990095CB0A /* CommunicationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C16971BAA3E990095CB0A /* CommunicationsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		D97C169A1BAA3E990095CB0A /* CommunicationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D97C16981BAA3E990095CB0A /* CommunicationsTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		D98FEFB01B9C077F003614A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9D3CDF01B3F20EF00C8E195 /* Main.storyboard */; };
@@ -108,6 +109,7 @@
 		D95EC5251B978E6400782925 /* FBFeedArticle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBFeedArticle.swift; sourceTree = "<group>"; };
 		D95EC5281B97963000782925 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		D9713E8B1B5ED166009D809A /* In2-PI-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "In2-PI-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		D97839811BF9305B00E4A834 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D97C16971BAA3E990095CB0A /* CommunicationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicationsTableViewCell.swift; sourceTree = "<group>"; };
 		D97C16981BAA3E990095CB0A /* CommunicationsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunicationsTableViewCell.xib; sourceTree = "<group>"; };
 		D98FEFB11B9C0C65003614A7 /* ApplyWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyWidgetView.swift; sourceTree = "<group>"; };
@@ -239,6 +241,15 @@
 				D95EC5281B97963000782925 /* StringExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D97839801BF9304700E4A834 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				D92B56341BD5C8930085208F /* LoginViewController.swift */,
+				D97839811BF9305B00E4A834 /* SignUpViewController.swift */,
+			);
+			name = Authentication;
 			sourceTree = "<group>";
 		};
 		D980D6F31B9BDAFC001058E9 /* Five Boros Controllers */ = {
@@ -400,7 +411,7 @@
 		D9DA87E81B6DC063005D4CB6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D92B56341BD5C8930085208F /* LoginViewController.swift */,
+				D97839801BF9304700E4A834 /* Authentication */,
 				D9F9C7E91B64873800F5C17D /* LeftNavDrawerController.swift */,
 				D90A7AFD1B92406F003EA693 /* HomeScreenViewController.swift */,
 				D980D6F31B9BDAFC001058E9 /* Five Boros Controllers */,
@@ -631,6 +642,7 @@
 				D92295951B9BF87000C34A66 /* WorshipViewController.swift in Sources */,
 				D90A7B0A1B924256003EA693 /* ParentViewController.swift in Sources */,
 				D90A7B061B92415D003EA693 /* AboutPIViewControlller.swift in Sources */,
+				D97839821BF9305B00E4A834 /* SignUpViewController.swift in Sources */,
 				D9C756401BA0C2C800EC22CF /* ExpandableAboutView.swift in Sources */,
 				D95EC5241B978DF000782925 /* FacebookFeedQuery.swift in Sources */,
 				D98FEFB21B9C0C65003614A7 /* ApplyWidgetView.swift in Sources */,
