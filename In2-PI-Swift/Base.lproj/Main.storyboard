@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="e3q-jP-pwl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="e3q-jP-pwl">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -42,6 +42,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdh-cW-Qg1" customClass="HomeScreenPurpleButton" customModule="In2_PI_Swift" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="6" width="300" height="30"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="3Pc-No-KSp"/>
                                     <constraint firstAttribute="width" secondItem="Xdh-cW-Qg1" secondAttribute="height" multiplier="10:1" id="gZv-n4-bAC"/>
@@ -62,6 +63,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNv-5b-Lmj">
                                 <rect key="frame" x="300" y="6" width="300" height="30"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="15"/>
                                 <state key="normal" title="PI Feed">
                                     <color key="titleColor" red="0.73333333329999995" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -79,6 +81,7 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1OI-qH-uNG" customClass="NewsArticleView" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="350"/>
+                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="bYt-ZF-21v"/>
@@ -91,9 +94,11 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n3R-u9-z7n" userLabel="Todays QTWidget" customClass="TodaysQTWidget" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="350" width="600" height="350"/>
+                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                         </subviews>
+                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="1OI-qH-uNG" firstAttribute="height" secondItem="3Gg-pQ-EGO" secondAttribute="height" multiplier="0.5" id="75J-py-bt7"/>
@@ -108,6 +113,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <animations/>
                                 <constraints>
                                     <constraint firstItem="3Gg-pQ-EGO" firstAttribute="top" secondItem="9GM-Gh-eyB" secondAttribute="top" id="2oD-1L-Fec"/>
                                     <constraint firstAttribute="bottom" secondItem="3Gg-pQ-EGO" secondAttribute="bottom" id="ShX-k4-Jx1"/>
@@ -117,6 +123,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9GM-Gh-eyB" firstAttribute="top" secondItem="Xdh-cW-Qg1" secondAttribute="bottom" id="1hl-Xs-kgC"/>
@@ -169,6 +176,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAC-HN-Uzt" userLabel="Worship">
                                 <rect key="frame" x="20" y="196" width="64" height="64"/>
+                                <animations/>
                                 <state key="normal" backgroundImage="btn_Worship">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -178,6 +186,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5i-jC-gRJ" userLabel="Evangelism">
                                 <rect key="frame" x="516" y="196" width="64" height="64"/>
+                                <animations/>
                                 <state key="normal" backgroundImage="btn_Evangelism">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -187,6 +196,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6j-Le-j8f" userLabel="Social Services">
                                 <rect key="frame" x="268" y="324" width="64" height="64"/>
+                                <animations/>
                                 <state key="normal" backgroundImage="btn_SocialServices">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -196,6 +206,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s81-CE-6bz" userLabel="xButton">
                                 <rect key="frame" x="16" y="32" width="18" height="18"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="18" id="DVs-eY-zhV"/>
                                 </constraints>
@@ -209,6 +220,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1z-L7-mUP" userLabel="Nurture">
                                 <rect key="frame" x="268" y="68" width="64" height="64"/>
+                                <animations/>
                                 <state key="normal" backgroundImage="btn_Nurture">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -218,36 +230,42 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nurture" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iko-ol-yX3">
                                 <rect key="frame" x="274" y="140" width="54" height="18"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Worship" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQl-Lz-SBt" userLabel="Worship">
                                 <rect key="frame" x="24" y="268" width="57" height="18"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Communications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8h-1a-fI6" userLabel="Communication">
                                 <rect key="frame" x="243" y="268" width="116" height="18"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evangelism" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNX-ng-MUE" userLabel="Evangelism">
                                 <rect key="frame" x="509" y="268" width="79" height="18"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Social Services" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNJ-Xt-vnA" userLabel="Social Services">
                                 <rect key="frame" x="250" y="396" width="102" height="18"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOV-3q-w09" userLabel="About">
                                 <rect key="frame" x="225" y="456" width="23" height="30"/>
+                                <animations/>
                                 <state key="normal" backgroundImage="btn_PI">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -257,12 +275,14 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About PI" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4El-qW-0GA" userLabel="About">
                                 <rect key="frame" x="208" y="494" width="58" height="18"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="II1-tL-aEO" userLabel="Gallery">
                                 <rect key="frame" x="343" y="456" width="40" height="30"/>
+                                <animations/>
                                 <state key="normal" backgroundImage="btn_Gallery">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -272,6 +292,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcw-H7-lL6" userLabel="Communication">
                                 <rect key="frame" x="268" y="196" width="64" height="64"/>
+                                <animations/>
                                 <state key="normal" backgroundImage="btn_Communications">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -281,11 +302,13 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMu-5U-fEd" userLabel="Gallery">
                                 <rect key="frame" x="339" y="494" width="49" height="18"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.73333333329999995" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="A5i-jC-gRJ" firstAttribute="centerY" secondItem="kcw-H7-lL6" secondAttribute="centerY" id="1sy-Xb-11B"/>
@@ -364,6 +387,7 @@
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="piTempLogo" translatesAutoresizingMaskIntoConstraints="NO" id="b0J-WK-QzO">
                                 <rect key="frame" x="225" y="60" width="150" height="150"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="19Y-Ng-3a5"/>
                                     <constraint firstAttribute="height" constant="150" id="i1g-4e-LAc"/>
@@ -371,12 +395,15 @@
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="icon_user" translatesAutoresizingMaskIntoConstraints="NO" id="Ng3-eT-hd7">
                                 <rect key="frame" x="106" y="272" width="12" height="15"/>
+                                <animations/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" image="icon_PW" translatesAutoresizingMaskIntoConstraints="NO" id="L8X-kF-6N4">
                                 <rect key="frame" x="106" y="316" width="12" height="15"/>
+                                <animations/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edu-xg-v8Q">
                                 <rect key="frame" x="90" y="371" width="420" height="42"/>
+                                <animations/>
                                 <state key="normal" backgroundImage="btn_Log-In"/>
                                 <state key="highlighted" backgroundImage="btn_Log-In_on"/>
                                 <connections>
@@ -385,12 +412,14 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87h-Nl-B2b">
                                 <rect key="frame" x="174" y="453" width="189" height="20"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehY-Ah-AVg">
                                 <rect key="frame" x="371" y="447" width="61" height="32"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -398,9 +427,11 @@
                             </button>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="underline_Sign-Up" translatesAutoresizingMaskIntoConstraints="NO" id="nP3-Jw-vG5">
                                 <rect key="frame" x="369" y="479" width="65" height="1"/>
+                                <animations/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pd4-vX-eq3">
                                 <rect key="frame" x="135" y="313" width="200" height="19"/>
+                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -417,6 +448,7 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="73T-ut-Q8n">
                                 <rect key="frame" x="135" y="270" width="200" height="19"/>
+                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -427,6 +459,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="87h-Nl-B2b" firstAttribute="centerX" secondItem="pOC-lM-ov6" secondAttribute="centerX" id="1jU-Bl-DhQ"/>
@@ -492,6 +525,7 @@
                     <view key="view" contentMode="scaleToFill" id="lJM-My-Oph">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
@@ -529,6 +563,7 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atY-6P-a2d" userLabel="ExpandableAboutView" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="32"/>
+                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="0m5-Q6-ZV4"/>
@@ -551,6 +586,7 @@
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Z59-kD-ayY" userLabel="Songs Table View">
                                                 <rect key="frame" x="0.0" y="52" width="600" height="300"/>
+                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="cLI-3P-8mW"/>
@@ -562,7 +598,9 @@
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fl1-XJ-Rvc" id="tyi-Xs-RrK">
                                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                                             <autoresizingMask key="autoresizingMask"/>
+                                                            <animations/>
                                                         </tableViewCellContentView>
+                                                        <animations/>
                                                     </tableViewCell>
                                                 </prototypes>
                                                 <connections>
@@ -572,6 +610,7 @@
                                             </tableView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dv8-4e-YfA" userLabel="WeeklyProgramsTableView">
                                                 <rect key="frame" x="0.0" y="372" width="600" height="228"/>
+                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="9im-OQ-44M"/>
@@ -583,7 +622,9 @@
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dl1-99-eP4" id="5uF-pf-9sU">
                                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                                             <autoresizingMask key="autoresizingMask"/>
+                                                            <animations/>
                                                         </tableViewCellContentView>
+                                                        <animations/>
                                                     </tableViewCell>
                                                 </prototypes>
                                                 <variation key="default">
@@ -597,6 +638,7 @@
                                                 </connections>
                                             </tableView>
                                         </subviews>
+                                        <animations/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="atY-6P-a2d" firstAttribute="leading" secondItem="pVQ-jT-Ckx" secondAttribute="leading" id="35R-O8-R9A"/>
@@ -613,6 +655,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="pVQ-jT-Ckx" secondAttribute="bottom" id="4Ml-eA-VJS"/>
                                     <constraint firstAttribute="trailing" secondItem="pVQ-jT-Ckx" secondAttribute="trailing" id="Kqy-LD-AIA"/>
@@ -622,6 +665,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6Yl-0R-4ks" firstAttribute="top" secondItem="c39-zg-ajs" secondAttribute="bottom" id="A3E-Pg-Vs0"/>
@@ -666,6 +710,7 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXF-su-KJq" userLabel="RightWidget" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="300" y="332" width="300" height="200"/>
+                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="홀리스타"/>
@@ -674,6 +719,7 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9aj-r7-edb" userLabel="LeftWidget" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="332" width="300" height="200"/>
+                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="euE-gP-XBx"/>
@@ -685,6 +731,7 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7k-eM-S6m" customClass="EvangelismApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="532" width="600" height="200"/>
+                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="BSF-SO-qJc"/>
@@ -696,6 +743,7 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZd-k0-EaW" userLabel="Todays QT Widget" customClass="TodaysQTWidget" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                                <animations/>
                                                 <color key="backgroundColor" red="0.62352941179999999" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="eXy-fx-gS2"/>
@@ -709,6 +757,7 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TP4-FC-u3x" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="300" width="600" height="32"/>
+                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="oXB-wE-xMD"/>
@@ -724,6 +773,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
+                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="TP4-FC-u3x" firstAttribute="top" secondItem="ldl-U4-aPo" secondAttribute="top" id="5Ft-kC-Aw3"/>
@@ -768,6 +818,7 @@
                                         </variation>
                                     </view>
                                 </subviews>
+                                <animations/>
                                 <constraints>
                                     <constraint firstItem="ldl-U4-aPo" firstAttribute="centerX" secondItem="c8C-Hs-Jb5" secondAttribute="centerX" id="2y9-I1-5mC"/>
                                     <constraint firstAttribute="trailing" secondItem="ldl-U4-aPo" secondAttribute="trailing" id="Oci-43-ltc"/>
@@ -783,6 +834,7 @@
                                 </variation>
                             </scrollView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fqb-cg-FbM" firstAttribute="top" secondItem="c8C-Hs-Jb5" secondAttribute="bottom" id="8zw-IU-ar5"/>
@@ -827,6 +879,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YW1-Xb-bsg" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="32"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="djw-L0-Wki"/>
@@ -843,6 +896,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hwC-fN-xf5">
                                 <rect key="frame" x="0.0" y="32" width="600" height="804"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TAb-4m-Wmt" customClass="CommunicationsTableViewCell" customModule="In2_PI_Swift" customModuleProvider="target">
@@ -851,7 +905,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TAb-4m-Wmt" id="nDN-Bs-YXu">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
                                         </tableViewCellContentView>
+                                        <animations/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -860,6 +916,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="hwC-fN-xf5" secondAttribute="bottom" id="T7T-LR-Wyk"/>
@@ -910,15 +967,18 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider_0.3pt" translatesAutoresizingMaskIntoConstraints="NO" id="QUh-lq-rOx">
                                                 <rect key="frame" x="0.0" y="342" width="600" height="1"/>
+                                                <animations/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_bg" translatesAutoresizingMaskIntoConstraints="NO" id="CEu-sA-eF1">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="Z0W-jg-0Yc"/>
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qly-Gp-4y0" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="300" width="600" height="32"/>
+                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="pC3-zy-icE"/>
@@ -935,12 +995,14 @@
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frw-Mk-C4M">
                                                 <rect key="frame" x="279" y="42" width="43" height="20"/>
+                                                <animations/>
                                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTFBold" family="NanumBarunGothicOTF" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="선교부 소식 타이틀" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0C4-jp-jmH">
                                                 <rect key="frame" x="213" y="87" width="175" height="72"/>
+                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="175" id="qWR-Q8-qKx"/>
                                                     <constraint firstAttribute="height" constant="80" id="wGg-ym-923"/>
@@ -956,15 +1018,18 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVP-Me-66w">
                                                 <rect key="frame" x="266" y="219" width="70" height="30"/>
+                                                <animations/>
                                                 <state key="normal" title="더보기" backgroundImage="btn_more_white">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rule_ver" translatesAutoresizingMaskIntoConstraints="NO" id="WMu-M8-9Ih">
                                                 <rect key="frame" x="300" y="174" width="1" height="21"/>
+                                                <animations/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8o-TD-haP" customClass="EvangelismApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="353" width="600" height="252"/>
+                                                <animations/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="400" id="gXp-r1-UO7"/>
@@ -976,6 +1041,7 @@
                                                 </variation>
                                             </view>
                                         </subviews>
+                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="frw-Mk-C4M" firstAttribute="top" secondItem="7dl-AZ-g3d" secondAttribute="top" constant="42" id="2hC-JY-R7p"/>
@@ -1014,6 +1080,7 @@
                                         </variation>
                                     </view>
                                 </subviews>
+                                <animations/>
                                 <constraints>
                                     <constraint firstItem="7dl-AZ-g3d" firstAttribute="leading" secondItem="UCR-C1-HB2" secondAttribute="leading" id="8IP-uC-Vz4"/>
                                     <constraint firstAttribute="bottom" secondItem="7dl-AZ-g3d" secondAttribute="bottom" id="9uf-Mo-N6D"/>
@@ -1023,6 +1090,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UCR-C1-HB2" firstAttribute="leading" secondItem="eqA-F1-QeE" secondAttribute="leading" id="3Cw-aX-eg6"/>
@@ -1066,11 +1134,13 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALENDAR???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7C-Bm-BMl">
                                                         <rect key="frame" x="217" y="73" width="166" height="30"/>
+                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
+                                                <animations/>
                                                 <color key="backgroundColor" red="0.62352941179999999" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="u7C-Bm-BMl" firstAttribute="top" secondItem="aZr-DP-yu9" secondAttribute="top" constant="73" id="8Hu-xK-07o"/>
@@ -1080,6 +1150,7 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MdS-at-YMQ" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="32"/>
+                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="t7k-X8-m0G"/>
@@ -1096,6 +1167,7 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Bm-1l-Zm5" userLabel="BetterFutureApply" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="300" y="418" width="300" height="187"/>
+                                                <animations/>
                                                 <color key="backgroundColor" red="0.62352941179999999" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Better Future"/>
@@ -1104,6 +1176,7 @@
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FQQ-Ls-qMi">
                                                 <rect key="frame" x="0.0" y="252" width="600" height="146"/>
+                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="208" id="YP9-If-5OH"/>
@@ -1117,7 +1190,9 @@
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1AQ-M7-B4K" id="fJJ-Du-EbM">
                                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                                             <autoresizingMask key="autoresizingMask"/>
+                                                            <animations/>
                                                         </tableViewCellContentView>
+                                                        <animations/>
                                                     </tableViewCell>
                                                 </prototypes>
                                                 <variation key="default">
@@ -1134,6 +1209,7 @@
                                             </tableView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hE-u1-Fs8" userLabel="BetterWorldApply" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="418" width="300" height="187"/>
+                                                <animations/>
                                                 <color key="backgroundColor" red="1" green="0.70196078429999997" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="mOo-Ia-d0e"/>
@@ -1151,6 +1227,7 @@
                                                 </variation>
                                             </view>
                                         </subviews>
+                                        <animations/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="605" id="17e-pv-XGG"/>
@@ -1186,6 +1263,7 @@
                                         </variation>
                                     </view>
                                 </subviews>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="TeX-0v-hKw" secondAttribute="bottom" id="02p-RQ-H30"/>
                                     <constraint firstItem="TeX-0v-hKw" firstAttribute="leading" secondItem="WCt-o5-MMH" secondAttribute="leading" id="0jG-sg-0WG"/>
@@ -1195,6 +1273,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="OTK-ru-wrk" firstAttribute="top" secondItem="WCt-o5-MMH" secondAttribute="bottom" id="2H2-ve-pqR"/>
@@ -1226,6 +1305,7 @@
                     <view key="view" contentMode="scaleToFill" id="CsJ-cH-lxU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="rkI-RV-fvW"/>
@@ -1248,12 +1328,14 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lZp-RD-6zL">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="244"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="244" id="deB-rP-1Cl"/>
                                 </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" delaysContentTouches="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8YN-Gz-vf2">
                                 <rect key="frame" x="0.0" y="249" width="600" height="287"/>
+                                <animations/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="PWv-BW-nH4">
                                     <size key="itemSize" width="120" height="120"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -1270,10 +1352,13 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6oH-A1-5Lx">
                                                     <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                    <animations/>
                                                 </imageView>
                                             </subviews>
+                                            <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstItem="6oH-A1-5Lx" firstAttribute="leading" secondItem="CBG-Uz-Xc9" secondAttribute="leading" id="Tbt-dL-xii"/>
                                             <constraint firstAttribute="trailing" secondItem="6oH-A1-5Lx" secondAttribute="trailing" id="rop-fV-Cmz"/>
@@ -1291,6 +1376,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8YN-Gz-vf2" firstAttribute="top" secondItem="lZp-RD-6zL" secondAttribute="bottom" constant="5" id="2Bu-Ah-w0D"/>
@@ -1320,6 +1406,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="vwa-XW-fac">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1342,6 +1429,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="maf-dW-LjG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1360,6 +1448,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="XTN-Lm-j9Y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1378,6 +1467,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Hyc-Xo-svU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1396,6 +1486,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="DsI-Uu-apa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1414,6 +1505,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="cuH-81-Pei">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1432,6 +1524,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="jhw-38-mzW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
