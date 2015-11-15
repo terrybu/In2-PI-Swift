@@ -9,6 +9,11 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
+    
+    @IBOutlet var firstNameTextField:PaddedTextField!
+    @IBOutlet var lastNameTextField:PaddedTextField!
+    @IBOutlet var userNameTextField:PaddedTextField!
+    @IBOutlet var passwordTextField:PaddedTextField!
 
     
     @IBAction func backArrowButton(sender: AnyObject) {
@@ -19,7 +24,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
     }
     
     override func viewDidAppear(animated: Bool) {

@@ -23,6 +23,7 @@
 		D910DD881BADFF2500E8A99F /* WeeklyProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = D910DD871BADFF2500E8A99F /* WeeklyProgram.swift */; settings = {ASSET_TAGS = (); }; };
 		D92295951B9BF87000C34A66 /* WorshipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92295941B9BF87000C34A66 /* WorshipViewController.swift */; };
 		D92B56351BD5C8930085208F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92B56341BD5C8930085208F /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D92D316A1BF9429C00040F1A /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92D31691BF9429C00040F1A /* PaddedTextField.swift */; settings = {ASSET_TAGS = (); }; };
 		D952B17B1B5EF5330089116C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B17A1B5EF5330089116C /* Constants.swift */; };
 		D952B17D1B5EF5CA0089116C /* HideKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B17C1B5EF5CA0089116C /* HideKey.swift */; };
 		D95EC5241B978DF000782925 /* FacebookFeedQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5231B978DF000782925 /* FacebookFeedQuery.swift */; };
@@ -103,6 +104,7 @@
 		D910DD871BADFF2500E8A99F /* WeeklyProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyProgram.swift; sourceTree = "<group>"; };
 		D92295941B9BF87000C34A66 /* WorshipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorshipViewController.swift; sourceTree = "<group>"; };
 		D92B56341BD5C8930085208F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D92D31691BF9429C00040F1A /* PaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		D952B17A1B5EF5330089116C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D952B17C1B5EF5CA0089116C /* HideKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKey.swift; sourceTree = "<group>"; };
 		D95EC5231B978DF000782925 /* FacebookFeedQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookFeedQuery.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				D9965A781B9E1D6800AB4A74 /* PaddedLabel.swift */,
+				D92D31691BF9429C00040F1A /* PaddedTextField.swift */,
 				D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */,
 			);
 			name = Components;
@@ -647,6 +650,7 @@
 				D95EC5241B978DF000782925 /* FacebookFeedQuery.swift in Sources */,
 				D98FEFB21B9C0C65003614A7 /* ApplyWidgetView.swift in Sources */,
 				D9BE263D1B64A1B700C3BA7D /* UIColorExtension.swift in Sources */,
+				D92D316A1BF9429C00040F1A /* PaddedTextField.swift in Sources */,
 				D9B34A211B76F6BB00590DFB /* HomeScreenPurpleButton.swift in Sources */,
 				D90A7B081B924164003EA693 /* GalleryViewController.swift in Sources */,
 				D9F9C7EA1B64873800F5C17D /* LeftNavDrawerController.swift in Sources */,
