@@ -9,7 +9,7 @@
 import Parse
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet var firstNameTextField:PaddedTextField!
     @IBOutlet var lastNameTextField:PaddedTextField!
@@ -89,16 +89,15 @@ class SignUpViewController: UIViewController {
 
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        userNameTextField.delegate = self
+        passwordTextField.delegate = self
+        emailTextField.delegate = self
 
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
-    }
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -106,14 +105,19 @@ class SignUpViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
+    /**
+    * Called when 'return' key pressed. return NO to ignore.
     */
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    /**
+    * Called when the user click on the view (outside the UITextField).
+    */
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
 }
