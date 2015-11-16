@@ -52,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("debug mode")
             moviePlayBackDidFinish()
         #endif
+     
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
@@ -82,13 +83,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             loginNavCtrl.viewControllers = [loginVC]
             window?.rootViewController = loginNavCtrl
-
-
-        
-        setUpNavBarAndStatusBarImages()
+            setUpNavBarAndStatusBarImages()
     }
     
-    private func setUpNavBarAndStatusBarImages() {
+    func setUpNavBarAndStatusBarImages() {
         UINavigationBar.appearance().setBackgroundImage(UIImage(named: "navigation_bar"), forBarMetrics: UIBarMetrics.Default)
         statusBarBackgroundView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 20))
         statusBarBackgroundView!.backgroundColor = UIColor(patternImage: UIImage(named:"status_bar")!)

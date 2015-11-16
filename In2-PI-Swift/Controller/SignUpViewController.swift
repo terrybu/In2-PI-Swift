@@ -63,16 +63,25 @@ class SignUpViewController: UIViewController {
                 spinner.stopAnimating()
                 if ((error) != nil) {
                     //error case
-                    var alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
-                    alert.show()
+                    let alertController = UIAlertController(title: "Please Try Again", message: "\(error!.localizedDescription)", preferredStyle: UIAlertControllerStyle.Alert)
+                    let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+                    alertController.addAction(ok)
+                    alertController.view.tintColor = UIColor.In2DeepPurple()
+                    self.presentViewController(alertController, animated: true, completion: nil)
                 } else {
                     //success case
-                    var alert = UIAlertView(title: "Success", message: "Signed Up", delegate: self, cancelButtonTitle: "OK")
-                    alert.show()
+                    let userName = PFUser.currentUser()!.username!
+                    let alertController = UIAlertController(title: "Success", message: "\(userName)님, 가입/로그인에 성공하셨습니다", preferredStyle: UIAlertControllerStyle.Alert)
+                    let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+                    alertController.addAction(ok)
+                    alertController.view.tintColor = UIColor.In2DeepPurple()
+                    self.presentViewController(alertController, animated: true, completion: nil)
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         //do some success navigation
-                        print("sign up success!!")
-                        
+                        let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
+                        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                        appDelegate.window!.rootViewController = revealVC
+                        appDelegate.setUpNavBarAndStatusBarImages()
                     })
                 }
             })
