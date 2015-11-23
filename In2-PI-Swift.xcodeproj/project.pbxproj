@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		615C54D683ACF2345564DCC8 /* Pods_In2_PI_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D9D85A29F7F171A635D2C8 /* Pods_In2_PI_Swift.framework */; };
+		D904A3F51C02EB9A005A6EA3 /* HideKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D904A3F41C02EB9A005A6EA3 /* HideKey.swift */; settings = {ASSET_TAGS = (); }; };
 		D90A08231BB5D4BD0033DD6B /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = D90A081E1BB5D4BD0033DD6B /* TFHpple.m */; settings = {ASSET_TAGS = (); }; };
 		D90A08241BB5D4BD0033DD6B /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D90A08201BB5D4BD0033DD6B /* TFHppleElement.m */; settings = {ASSET_TAGS = (); }; };
 		D90A08251BB5D4BD0033DD6B /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = D90A08221BB5D4BD0033DD6B /* XPathQuery.m */; settings = {ASSET_TAGS = (); }; };
@@ -25,7 +26,6 @@
 		D92B56351BD5C8930085208F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92B56341BD5C8930085208F /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D92D316A1BF9429C00040F1A /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92D31691BF9429C00040F1A /* PaddedTextField.swift */; settings = {ASSET_TAGS = (); }; };
 		D952B17B1B5EF5330089116C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B17A1B5EF5330089116C /* Constants.swift */; };
-		D952B17D1B5EF5CA0089116C /* HideKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B17C1B5EF5CA0089116C /* HideKey.swift */; };
 		D95EC5241B978DF000782925 /* FacebookFeedQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5231B978DF000782925 /* FacebookFeedQuery.swift */; };
 		D95EC5261B978E6400782925 /* FBFeedArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5251B978E6400782925 /* FBFeedArticle.swift */; };
 		D95EC5291B97963000782925 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5281B97963000782925 /* StringExtension.swift */; };
@@ -86,6 +86,7 @@
 		15F9BC9F44944956571DAF7B /* Pods-In2-PI-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-In2-PI-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-In2-PI-Swift/Pods-In2-PI-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		24E64E21CAF4188A4E4E9D5B /* Pods-In2-PI-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-In2-PI-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-In2-PI-Swift/Pods-In2-PI-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		54D9D85A29F7F171A635D2C8 /* Pods_In2_PI_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_In2_PI_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D904A3F41C02EB9A005A6EA3 /* HideKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKey.swift; sourceTree = "<group>"; };
 		D90A081D1BB5D4BD0033DD6B /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
 		D90A081E1BB5D4BD0033DD6B /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
 		D90A081F1BB5D4BD0033DD6B /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
@@ -106,7 +107,6 @@
 		D92B56341BD5C8930085208F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D92D31691BF9429C00040F1A /* PaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		D952B17A1B5EF5330089116C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		D952B17C1B5EF5CA0089116C /* HideKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKey.swift; sourceTree = "<group>"; };
 		D95EC5231B978DF000782925 /* FacebookFeedQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookFeedQuery.swift; sourceTree = "<group>"; };
 		D95EC5251B978E6400782925 /* FBFeedArticle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBFeedArticle.swift; sourceTree = "<group>"; };
 		D95EC5281B97963000782925 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -459,10 +459,10 @@
 			isa = PBXGroup;
 			children = (
 				D9D7C5581B82CFE4003E48EA /* todolist.txt */,
-				D952B17C1B5EF5CA0089116C /* HideKey.swift */,
 				D9D3CE1D1B3F372F00C8E195 /* ListOfExternalLinks.strings */,
 				D9F9C7E01B644EBA00F5C17D /* savedCodeForLater */,
 				D9D3CE201B3F4B1E00C8E195 /* HomeActionCollectionViewCell.swift */,
+				D904A3F41C02EB9A005A6EA3 /* HideKey.swift */,
 			);
 			path = "Terry References";
 			sourceTree = "<group>";
@@ -641,7 +641,6 @@
 				D9965A791B9E1D6800AB4A74 /* PaddedLabel.swift in Sources */,
 				D9965A801B9E5DB600AB4A74 /* NewsArticleView.swift in Sources */,
 				D99991A71BB1AF0E0022EF10 /* WeeklyProgramDownloader.swift in Sources */,
-				D952B17D1B5EF5CA0089116C /* HideKey.swift in Sources */,
 				D92295951B9BF87000C34A66 /* WorshipViewController.swift in Sources */,
 				D90A7B0A1B924256003EA693 /* ParentViewController.swift in Sources */,
 				D90A7B061B92415D003EA693 /* AboutPIViewControlller.swift in Sources */,
@@ -657,6 +656,7 @@
 				D910DD881BADFF2500E8A99F /* WeeklyProgram.swift in Sources */,
 				D90A7AFE1B92406F003EA693 /* HomeScreenViewController.swift in Sources */,
 				D9F8C4701BA4BE4300881B94 /* TodaysQTWidget.swift in Sources */,
+				D904A3F51C02EB9A005A6EA3 /* HideKey.swift in Sources */,
 				D9B549A81B76D7FB00BF4887 /* SWRevealViewController.m in Sources */,
 				D90A7AFC1B923F13003EA693 /* NurtureViewController.swift in Sources */,
 				D9D3CDED1B3F20EF00C8E195 /* AppDelegate.swift in Sources */,
