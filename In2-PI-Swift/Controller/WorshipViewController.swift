@@ -150,13 +150,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
                 if weeklyProgram.cached  {
                     displayPDFInWebView(NSURL.fileURLWithPath(weeklyProgram.cachedPath!))
                 } else {
-//                    let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
-//                    hud.mode = MBProgressHUDMode.AnnularDeterminate
-//                    doSomethingInBackgroundWithProgressCallback({ (progress) -> Void? in
-//                        hud.progress = progress
-//                        }, completionCallback: { () -> Void? in
-//                            hud.hide(true)
-//                    })
+                    let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
                     print(weeklyProgram.pdfDownloadLinkPageOnnuriOrgURL)
                     //weeklyProgram.pdfDownloadURL has the PAGE on vision.onnuri.org that contains the link to the PDF. 
                     //a weeklyProgram object from our weeklyprogramsArray is retrieved from import.io scraper I made that just searches for a list of URLs to hit to get to the LINK page
@@ -171,10 +165,12 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
                                 weeklyProgram.cachedPath = path
                                 let fileURL = NSURL.fileURLWithPath(path)
                                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                                     self.displayPDFInWebView(fileURL)
                                 })
                             } else if error.code == 404 {
                                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                                     let alertController = UIAlertController(title: "Downloading Problem", message: "Oops! Looks like that file is not available right now :(", preferredStyle: UIAlertControllerStyle.Alert)
                                     let okay = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
                                     alertController.addAction(okay)
