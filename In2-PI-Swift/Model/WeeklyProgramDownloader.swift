@@ -35,7 +35,7 @@ class WeeklyProgramDownloader {
                     let datesArray = dict["txt_link_numbers/_source"].arrayValue
                     let dateString = datesArray.last?.stringValue
                     let pdfDownloadURL = dict["tit_link"].stringValue
-                    let newWeeklyProgram = WeeklyProgram(title: title, pdfDownloadURL: pdfDownloadURL, dateString: dateString!)
+                    let newWeeklyProgram = WeeklyProgram(title: title, pdfDownloadLinkPageOnnuriOrgURL: pdfDownloadURL, dateString: dateString!)
                     self.weeklyProgramsArray.append(newWeeklyProgram)
                 }
                 self.delegate?.didFinishDownloadinglistOfTenWeeklyProgramsFromImportIO(self.weeklyProgramsArray)
@@ -44,35 +44,57 @@ class WeeklyProgramDownloader {
                 print(error)
         })
     }
+    /**
+    This method goes through the entire HTML source file to get our direct downlaod PDF URL for weekly program on vision.onnuri.org.
     
-    func getURLStringForSingleProgramDownload(pdfDownloadURL: String) -> String?{
-        //my logic here needs work
-        //this is not scalable because i'm basically guessing at the url format 
+    - parameter pdfDownloadPageURL: This is the url of the PAGE where the direct download URL resides
+    
+    - returns: PDF direct download link
+    */
+    func getURLStringForSingleProgramDownload(pdfDownloadPageURL: String) -> String?{
+        //the logic in this method is not scalable because i'm basically guessing at the url format
         //but a lot of things could go wrong if the URL ever gets messed up
         //*for example, if Samuel uploads on September a programme from August, it will be under 29/2015/09/08/08.02 instead of 29/2015/08/08.02 due to wordpress rules
         //instead to be more exact, you must go to that page, scrape to get the precise pdf link and then connect it here
+        //Anyhow, scraping off vision.onnuri.org to get these PDFs is a very brute-force method and only a temporary solution.
         
-        let hppleParser = getSourceFileOfPageWithProgrammePDFDownloadLink(pdfDownloadURL)
+        let hppleParser = getSourceFileOfPageWithProgrammePDFDownloadLink(pdfDownloadPageURL)
+        //basically we are parsing out the entire HTML document of the vision.onnuri.org page with the link to a single weekly program 
+        //we are trying to identify the one link
+        
         let xPathQueryString = "//div[@class='cview editor']/p"
         let divNodes = hppleParser?.searchWithXPathQuery(xPathQueryString) as! [TFHppleElement]
         for element: TFHppleElement in divNodes {
             for child: TFHppleElement in element.children as! [TFHppleElement
                 ] {
+                
+                //Note that Hpple will not catch the link correctly sometimes because as you can see from our xPathQueryString above, we are looking for the case where the <a href> tag resides inside a div with class 'cview editor'
+                //If somebody on the wordpress side makes a mistake and for some weird reason puts the <a href> tag inside another div, Hpple will fail to catch because <div class="cview editor"> will have ended prematurely
+                    
+                    
                 if child.tagName == "a" {
-                        let answerString = child.objectForKey("href")
-                        //need to sanitize it 
-                        print(answerString)
-                        let strLen = answerString.characters.count
+                        let aHrefLinkStringForDirectDownloadPDF = child.objectForKey("href")
+                        print(aHrefLinkStringForDirectDownloadPDF)
+                        //it gets tricky here to accommodate all edge cases
+                        //usually, the pdf name would end with korean characters -주보
+                        //but no, sometimes it's just like 11.27.2015
+                    
+                        //this forloop below should catch if korean characters was ever used in the PDF direct download URL and then return a sanitized version of that to return to WorshipVC
+                        //for all other cases, shouldn't I just return the
+                        let strLen = aHrefLinkStringForDirectDownloadPDF.characters.count
                         for var i = strLen-1; i >= 0; i-- {
-                            let char = answerString[i]
+                            let char = aHrefLinkStringForDirectDownloadPDF[i]
                             if char == "보" {
-                                let koreanWordJooboSanitized = answerString[i-1...i].stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
-                                let beginning = answerString[0...i-2]
-                                let end = answerString[i+1...strLen-1]
+                                let koreanWordJooboSanitized = aHrefLinkStringForDirectDownloadPDF[i-1...i].stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
+                                let beginning = aHrefLinkStringForDirectDownloadPDF[0...i-2]
+                                let end = aHrefLinkStringForDirectDownloadPDF[i+1...strLen-1]
                                 print(beginning + koreanWordJooboSanitized! + end)
                                 return beginning + koreanWordJooboSanitized! + end
                             }
                         }
+                        //if this check goes through without last character equaling "보" 
+                        //just return the aHrefLinkString
+                        return aHrefLinkStringForDirectDownloadPDF
                 }
             }
         }

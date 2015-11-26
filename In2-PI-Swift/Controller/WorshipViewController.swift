@@ -143,7 +143,6 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     }
     
     //MARK: UITableViewDelegate
-    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
             if tableView == weeklyProgramsTableView {
                 let weeklyProgram = weeklyProgramsArray[indexPath.row]
@@ -151,15 +150,18 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
                 if weeklyProgram.cached  {
                     displayPDFInWebView(NSURL.fileURLWithPath(weeklyProgram.cachedPath!))
                 } else {
-                    let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
-                    hud.mode = MBProgressHUDMode.AnnularDeterminate
-                    doSomethingInBackgroundWithProgressCallback({ (progress) -> Void? in
-                        hud.progress = progress
-                        }, completionCallback: { () -> Void? in
-                            hud.hide(true)
-                    })
+//                    let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+//                    hud.mode = MBProgressHUDMode.AnnularDeterminate
+//                    doSomethingInBackgroundWithProgressCallback({ (progress) -> Void? in
+//                        hud.progress = progress
+//                        }, completionCallback: { () -> Void? in
+//                            hud.hide(true)
+//                    })
+                    print(weeklyProgram.pdfDownloadLinkPageOnnuriOrgURL)
+                    //weeklyProgram.pdfDownloadURL has the PAGE on vision.onnuri.org that contains the link to the PDF. 
+                    //a weeklyProgram object from our weeklyprogramsArray is retrieved from import.io scraper I made that just searches for a list of URLs to hit to get to the LINK page
                     
-                    let pdfdownloadURLString = WeeklyProgramDownloader.sharedInstance.getURLStringForSingleProgramDownload(weeklyProgram.pdfDownloadURL)
+                    let pdfdownloadURLString = WeeklyProgramDownloader.sharedInstance.getURLStringForSingleProgramDownload(weeklyProgram.pdfDownloadLinkPageOnnuriOrgURL)
                     if let pdfdownloadURLString = pdfdownloadURLString {
                         let url = NSURL(string:pdfdownloadURLString)
                         HttpFileDownloader.sharedInstance.loadFileAsync(url!, completion:{(path:String, error:NSError!) in

@@ -11,14 +11,14 @@ import UIKit
 class WeeklyProgram {
     //주보
     var title: String
-    var pdfDownloadURL: String
+    var pdfDownloadLinkPageOnnuriOrgURL: String
     var dateString: String
     var cached: Bool
     var cachedPath: String?
     
-    init(title: String, pdfDownloadURL: String, dateString: String) {
+    init(title: String, pdfDownloadLinkPageOnnuriOrgURL: String, dateString: String) {
         self.title = title
-        self.pdfDownloadURL = pdfDownloadURL
+        self.pdfDownloadLinkPageOnnuriOrgURL = pdfDownloadLinkPageOnnuriOrgURL
         self.dateString = dateString
         self.cached = false
         self.cachedPath = nil
