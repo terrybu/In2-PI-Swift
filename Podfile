@@ -10,9 +10,9 @@ target 'In2-PI-Swift' do
 	pod 'SwiftyJSON'
 	pod 'AFNetworking'
 	pod 'JTSImageViewController'
-    pod 'MBProgressHUD'
-    pod 'HockeySDK'
-    pod 'HMSegmentedControl'
-    pod 'Parse'
+    	pod 'MBProgressHUD'
+   	pod 'HockeySDK'
+   	pod 'HMSegmentedControl'
+   	pod 'Parse'
 end
 

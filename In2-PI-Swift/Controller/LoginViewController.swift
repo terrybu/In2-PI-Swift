@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import MBProgressHUD
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -20,6 +21,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let password = passwordTextField.text
         
         if username != nil && password != nil {
+            let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+            hud.color = UIColor.clearColor()
             PFUser.logInWithUsernameInBackground(username!, password: password!) { (user, error) -> Void in
                 if let user = user {
                     print(user)
@@ -29,6 +32,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 } else {
                     print(error)
                 }
+                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
             }
         }
      
