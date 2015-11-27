@@ -23,6 +23,8 @@
 		D90A7B0A1B924256003EA693 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90A7B091B924256003EA693 /* ParentViewController.swift */; };
 		D910DD881BADFF2500E8A99F /* WeeklyProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = D910DD871BADFF2500E8A99F /* WeeklyProgram.swift */; settings = {ASSET_TAGS = (); }; };
 		D92295951B9BF87000C34A66 /* WorshipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92295941B9BF87000C34A66 /* WorshipViewController.swift */; };
+		D92938021C07F2820040BD6D /* PurpleSegmentedControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92938011C07F2820040BD6D /* PurpleSegmentedControlView.xib */; settings = {ASSET_TAGS = (); }; };
+		D92938041C07F3C10040BD6D /* PurpleSegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92938031C07F3C10040BD6D /* PurpleSegmentedControlView.swift */; settings = {ASSET_TAGS = (); }; };
 		D92B56351BD5C8930085208F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92B56341BD5C8930085208F /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D92D316A1BF9429C00040F1A /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92D31691BF9429C00040F1A /* PaddedTextField.swift */; settings = {ASSET_TAGS = (); }; };
 		D952B17B1B5EF5330089116C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B17A1B5EF5330089116C /* Constants.swift */; };
@@ -41,7 +43,6 @@
 		D99991A71BB1AF0E0022EF10 /* WeeklyProgramDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99991A61BB1AF0E0022EF10 /* WeeklyProgramDownloader.swift */; settings = {ASSET_TAGS = (); }; };
 		D99991A91BB1BEF90022EF10 /* HttpFileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99991A81BB1BEF90022EF10 /* HttpFileDownloader.swift */; settings = {ASSET_TAGS = (); }; };
 		D99EF24F1B9F59FD00026D66 /* FacebookQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99EF24E1B9F59FD00026D66 /* FacebookQuery.swift */; };
-		D9B34A211B76F6BB00590DFB /* HomeScreenPurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */; };
 		D9B34A241B77840700590DFB /* NanumBarunGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9B34A221B77840700590DFB /* NanumBarunGothicLight.otf */; };
 		D9B34A251B77840700590DFB /* NanumBarunGothicUltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9B34A231B77840700590DFB /* NanumBarunGothicUltraLight.otf */; };
 		D9B549A81B76D7FB00BF4887 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B549A71B76D7FB00BF4887 /* SWRevealViewController.m */; };
@@ -102,6 +103,8 @@
 		D90A7B091B924256003EA693 /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		D910DD871BADFF2500E8A99F /* WeeklyProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyProgram.swift; sourceTree = "<group>"; };
 		D92295941B9BF87000C34A66 /* WorshipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorshipViewController.swift; sourceTree = "<group>"; };
+		D92938011C07F2820040BD6D /* PurpleSegmentedControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurpleSegmentedControlView.xib; sourceTree = "<group>"; };
+		D92938031C07F3C10040BD6D /* PurpleSegmentedControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurpleSegmentedControlView.swift; sourceTree = "<group>"; };
 		D92B56341BD5C8930085208F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D92D31691BF9429C00040F1A /* PaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		D952B17A1B5EF5330089116C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -120,7 +123,6 @@
 		D99991A61BB1AF0E0022EF10 /* WeeklyProgramDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyProgramDownloader.swift; sourceTree = "<group>"; };
 		D99991A81BB1BEF90022EF10 /* HttpFileDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpFileDownloader.swift; sourceTree = "<group>"; };
 		D99EF24E1B9F59FD00026D66 /* FacebookQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookQuery.swift; sourceTree = "<group>"; };
-		D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenPurpleButton.swift; sourceTree = "<group>"; };
 		D9B34A221B77840700590DFB /* NanumBarunGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicLight.otf; sourceTree = "<group>"; };
 		D9B34A231B77840700590DFB /* NanumBarunGothicUltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicUltraLight.otf; sourceTree = "<group>"; };
 		D9B549A61B76D7FB00BF4887 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -325,7 +327,8 @@
 			children = (
 				D9965A781B9E1D6800AB4A74 /* PaddedLabel.swift */,
 				D92D31691BF9429C00040F1A /* PaddedTextField.swift */,
-				D9B34A201B76F6BB00590DFB /* HomeScreenPurpleButton.swift */,
+				D92938031C07F3C10040BD6D /* PurpleSegmentedControlView.swift */,
+				D92938011C07F2820040BD6D /* PurpleSegmentedControlView.xib */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				D9B9B5791B4B1B0000DA476E /* splashScreen.mp4 in Resources */,
 				D9F8C4761BA4C33200881B94 /* TodaysQTWidget.xib in Resources */,
 				D9F9C7E61B645FE300F5C17D /* NanumBarunGothicBold.otf in Resources */,
+				D92938021C07F2820040BD6D /* PurpleSegmentedControlView.xib in Resources */,
 				D97C169A1BAA3E990095CB0A /* CommunicationsTableViewCell.xib in Resources */,
 				D9B34A241B77840700590DFB /* NanumBarunGothicLight.otf in Resources */,
 				D9D3CE121B3F309C00C8E195 /* InfoPlist.strings in Resources */,
@@ -643,10 +647,10 @@
 				D98FEFB21B9C0C65003614A7 /* ApplyWidgetView.swift in Sources */,
 				D9BE263D1B64A1B700C3BA7D /* UIColorExtension.swift in Sources */,
 				D92D316A1BF9429C00040F1A /* PaddedTextField.swift in Sources */,
-				D9B34A211B76F6BB00590DFB /* HomeScreenPurpleButton.swift in Sources */,
 				D90A7B081B924164003EA693 /* GalleryViewController.swift in Sources */,
 				D9F9C7EA1B64873800F5C17D /* LeftNavDrawerController.swift in Sources */,
 				D910DD881BADFF2500E8A99F /* WeeklyProgram.swift in Sources */,
+				D92938041C07F3C10040BD6D /* PurpleSegmentedControlView.swift in Sources */,
 				D90A7AFE1B92406F003EA693 /* HomeScreenViewController.swift in Sources */,
 				D9F8C4701BA4BE4300881B94 /* TodaysQTWidget.swift in Sources */,
 				D904A3F51C02EB9A005A6EA3 /* HideKey.swift in Sources */,

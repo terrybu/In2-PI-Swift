@@ -3,14 +3,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="NanumBarunGothic.otf">
-            <string>NanumBarunGothicOTF</string>
-            <string>NanumBarunGothicOTF</string>
             <string>NanumBarunGothicOTF</string>
             <string>NanumBarunGothicOTF</string>
             <string>NanumBarunGothicOTF</string>
@@ -40,39 +37,6 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdh-cW-Qg1" customClass="HomeScreenPurpleButton" customModule="In2_PI_Swift" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="6" width="300" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="3Pc-No-KSp"/>
-                                    <constraint firstAttribute="width" secondItem="Xdh-cW-Qg1" secondAttribute="height" multiplier="10:1" id="gZv-n4-bAC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="15"/>
-                                <state key="normal" title="My Feed">
-                                    <color key="titleColor" red="0.62352941176470589" green="0.36078431372549019" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="gZv-n4-bAC"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="myFeedButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZeF-g2-N9d"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNv-5b-Lmj">
-                                <rect key="frame" x="300" y="6" width="300" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="15"/>
-                                <state key="normal" title="PI Feed">
-                                    <color key="titleColor" red="0.73333333329999995" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="piFeedButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xPo-70-xdK"/>
-                                </connections>
-                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9GM-Gh-eyB">
                                 <rect key="frame" x="0.0" y="36" width="600" height="700"/>
                                 <subviews>
@@ -122,29 +86,29 @@
                                     <constraint firstAttribute="trailing" secondItem="3Gg-pQ-EGO" secondAttribute="trailing" id="xFB-w7-uhN"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vo2-3s-J4b" customClass="PurpleSegmentedControlView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="36"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="zAM-ze-XDo"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9GM-Gh-eyB" firstAttribute="top" secondItem="Xdh-cW-Qg1" secondAttribute="bottom" id="1hl-Xs-kgC"/>
-                            <constraint firstItem="FNv-5b-Lmj" firstAttribute="leading" secondItem="Xdh-cW-Qg1" secondAttribute="trailing" id="3PX-eg-iSj"/>
-                            <constraint firstItem="FNv-5b-Lmj" firstAttribute="height" secondItem="Xdh-cW-Qg1" secondAttribute="height" id="3yN-WT-tSJ"/>
+                            <constraint firstAttribute="trailing" secondItem="vo2-3s-J4b" secondAttribute="trailing" id="5o1-Mn-bz2"/>
                             <constraint firstItem="9GM-Gh-eyB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8Za-If-eyj"/>
+                            <constraint firstItem="vo2-3s-J4b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IHj-gC-Aer"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9GM-Gh-eyB" secondAttribute="bottom" id="LkG-V4-MRq"/>
-                            <constraint firstAttribute="width" secondItem="Xdh-cW-Qg1" secondAttribute="width" multiplier="2:1" id="NDY-e3-flN"/>
-                            <constraint firstItem="FNv-5b-Lmj" firstAttribute="width" secondItem="Xdh-cW-Qg1" secondAttribute="width" id="NKE-Oc-ZO5"/>
+                            <constraint firstItem="vo2-3s-J4b" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="SHr-Vp-BSU"/>
                             <constraint firstItem="9GM-Gh-eyB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="URz-mQ-JhA"/>
-                            <constraint firstItem="Xdh-cW-Qg1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WV2-ZW-M3u"/>
-                            <constraint firstAttribute="width" secondItem="Xdh-cW-Qg1" secondAttribute="width" multiplier="2:1" id="fna-nA-VSu"/>
                             <constraint firstAttribute="trailing" secondItem="9GM-Gh-eyB" secondAttribute="trailing" id="gFI-SI-eoe"/>
-                            <constraint firstItem="FNv-5b-Lmj" firstAttribute="centerY" secondItem="Xdh-cW-Qg1" secondAttribute="centerY" id="ruY-6g-4GM"/>
-                            <constraint firstItem="Xdh-cW-Qg1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="w97-ZZ-2pU"/>
-                            <constraint firstItem="Xdh-cW-Qg1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="6" id="xU8-1L-jMf"/>
+                            <constraint firstItem="9GM-Gh-eyB" firstAttribute="top" secondItem="vo2-3s-J4b" secondAttribute="bottom" id="mjR-4U-bca"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="fna-nA-VSu"/>
-                                <exclude reference="w97-ZZ-2pU"/>
                                 <exclude reference="8Za-If-eyj"/>
                             </mask>
                         </variation>
@@ -153,9 +117,8 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
-                        <outlet property="myFeedButton" destination="Xdh-cW-Qg1" id="r0A-qg-hpP"/>
                         <outlet property="newsArticleView" destination="1OI-qH-uNG" id="TP0-8i-LoB"/>
-                        <outlet property="piFeedButton" destination="FNv-5b-Lmj" id="4Zk-ik-lZy"/>
+                        <outlet property="purpleSegmentedControlView" destination="vo2-3s-J4b" id="gGd-5K-ZrF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

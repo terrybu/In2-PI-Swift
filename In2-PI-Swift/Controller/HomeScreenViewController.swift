@@ -9,24 +9,21 @@
 import UIKit
 import MBProgressHUD
 
-private let purpleBarSelectorBelowLabelHeightPadding:CGFloat = 4
-
-class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate {
+class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate, PurpleSegmentedControlViewDelegate {
     
     // MARK: Properties
     var black: UIView!
-    var purpleBarSelector: UIImageView!
     var firstObjectID: String!
-    @IBOutlet weak var myFeedButton: UIButton!
-    @IBOutlet weak var piFeedButton: UIButton!
-    @IBOutlet weak var newsArticleView: NewsArticleView!
     var imageBlackOverlay: UIView?
-    
+    @IBOutlet var purpleSegmentedControlView: PurpleSegmentedControlView!
+    @IBOutlet weak var newsArticleView: NewsArticleView!
+
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         //Do any additional setup after loading the view, typically from a nib.
-
+        purpleSegmentedControlView.delegate = self
+        
         setUpUniqueUIForHomeVC()
         
         blackOverlayUntilFBDataFinishedLoading()
@@ -46,9 +43,6 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         let hamburger = UIBarButtonItem(image: UIImage(named: "hamburger"), style: UIBarButtonItemStyle.Done, target: self, action: Selector("hamburgerPressed:"))
         navigationItem.leftBarButtonItem = hamburger
-        
-        addPurpleSelectorBar()
-        purpleBarSelector.hidden = true
     }
     
     private func blackOverlayUntilFBDataFinishedLoading() {
@@ -59,20 +53,6 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
         hud.labelText = "Loading..."
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
-        if (purpleBarSelector == nil) {
-            addPurpleSelectorBar()
-            purpleBarSelector.hidden = true
-        }
-    }
-    
-    //MARK: Custom Methods
-    private func addPurpleSelectorBar() {
-        purpleBarSelector = UIImageView(image: UIImage(named: "selector_MyPI"))
-        purpleBarSelector.frame = CGRect(x: 0, y: myFeedButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width: self.view.frame.width/2, height: 4)
-        view.addSubview(purpleBarSelector)
-    }
     
     func tappedNewsArticleView(sender: UIGestureRecognizer) {
         print(firstObjectID)
@@ -103,28 +83,22 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
             })
         }
         self.black.removeFromSuperview()
-        self.purpleBarSelector.hidden = false
         MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
     }
-
+    
+    //MARK: PurpleSegmentedControlViewDelegate
+    func didPressMyFeedButton() {
+        print("did press my feed")
+    }
+    func didPressPIFeedButton() {
+        print("did press pi feed")
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
-    @IBAction func myFeedButtonPressed(sender: UIButton) {
-        sender.setTitleColor(UIColor.In2DeepPurple(), forState: UIControlState.Normal)
-        piFeedButton.setTitleColor(UIColor(rgba: "#bbbcbc"), forState: UIControlState.Normal)
-        purpleBarSelector.frame = CGRect(x: 0, y: myFeedButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width:view.frame.size.width/2, height: 4)
-    }
-    
-    @IBAction func piFeedButtonPressed(sender: UIButton) {
-        sender.setTitleColor(UIColor.In2DeepPurple(), forState: UIControlState.Normal)
-        myFeedButton.setTitleColor(UIColor(rgba: "#bbbcbc"), forState: UIControlState.Normal)
-        purpleBarSelector.frame = CGRect(x: view.frame.width/2, y: myFeedButton.frame.height + purpleBarSelectorBelowLabelHeightPadding, width:view.frame.size.width/2, height: 4)
-    }
 
     
 }
