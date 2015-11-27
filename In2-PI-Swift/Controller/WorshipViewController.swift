@@ -22,6 +22,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     @IBOutlet var weeklyProgramsTableView :     UITableView!
     var songsArray = [String]()
     var weeklyProgramsArray = [WeeklyProgram]()
+    var headerTitleStringForPraiseSongsListSection: String?
     let indicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
     
     //Constraints
@@ -54,11 +55,19 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     func getPraiseSongNamesFromFacebook() -> [String] {
         var songsArray = [String]()
         
-        let feedArticles = FacebookFeedQuery.sharedInstance.FBFeedObjectsArray
-        for article in feedArticles {
-            print(article.type)
+        let feedPostObjects = FacebookFeedQuery.sharedInstance.FBFeedObjectsArray
+        for postObject in feedPostObjects {
+            if postObject.parsedCategory == "PI찬양" {
+                if postObject.type == "status" {
+                    print("found status")
+                    print(postObject.message)
+                    print("first line title" + postObject.parsedTitle!)
+                    headerTitleStringForPraiseSongsListSection = postObject.parsedTitle
+                    //parse
+                    
+                }
+            }
         }
-        
         
         return songsArray
     }
@@ -94,7 +103,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
                 label.text = "주보"
             } else {
                 label = UILabel(frame: CGRectMake(12, 5, 200, 18))
-                label.text = "071915 예배 찬양 리스트"
+                label.text = headerTitleStringForPraiseSongsListSection!
             }
             label.font = UIFont.boldSystemFontOfSize(16)
             headerView.addSubview(label)

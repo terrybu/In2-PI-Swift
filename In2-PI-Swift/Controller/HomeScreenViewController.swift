@@ -67,13 +67,15 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate,
     }
     
     //MARK: FacebookFeedQueryDelegate 
-    func didFinishGettingFacebookFeedData(fbFeedObjectArray: [FBFeedArticle]) {
+    func didFinishGettingFacebookFeedData(fbFeedObjectArray: [FBFeedPost]) {
         let tapGesture = UITapGestureRecognizer(target: self, action: Selector("tappedNewsArticleView:"))
         newsArticleView.userInteractionEnabled = true
         newsArticleView.addGestureRecognizer(tapGesture)
         
         let firstObject = fbFeedObjectArray[0]
-        FacebookFeedQuery.sharedInstance.parseMessageForLabels(firstObject, articleCategoryLabel: newsArticleView.categoryLabel, articleTitleLabel: newsArticleView.titleLabel, articleDateLabel: newsArticleView.dateLabel)
+        newsArticleView.categoryLabel.text = firstObject.parsedCategory
+        newsArticleView.titleLabel.text = firstObject.parsedTitle
+        newsArticleView.dateLabel.text = firstObject.parsedDate
         firstObjectID = firstObject.id
         if firstObject.type == "photo" {
             FacebookPhotoQuery.sharedInstance.getNormalSizePhotoURLStringForCommunicationsFrom(firstObject.id, completion: { (normImgUrlString) -> Void in

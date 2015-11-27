@@ -29,7 +29,7 @@
 		D92D316A1BF9429C00040F1A /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92D31691BF9429C00040F1A /* PaddedTextField.swift */; settings = {ASSET_TAGS = (); }; };
 		D952B17B1B5EF5330089116C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B17A1B5EF5330089116C /* Constants.swift */; };
 		D95EC5241B978DF000782925 /* FacebookFeedQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5231B978DF000782925 /* FacebookFeedQuery.swift */; };
-		D95EC5261B978E6400782925 /* FBFeedArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5251B978E6400782925 /* FBFeedArticle.swift */; };
+		D95EC5261B978E6400782925 /* FBFeedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5251B978E6400782925 /* FBFeedPost.swift */; };
 		D95EC5291B97963000782925 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5281B97963000782925 /* StringExtension.swift */; };
 		D97839821BF9305B00E4A834 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97839811BF9305B00E4A834 /* SignUpViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D97C16991BAA3E990095CB0A /* CommunicationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C16971BAA3E990095CB0A /* CommunicationsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
@@ -109,7 +109,7 @@
 		D92D31691BF9429C00040F1A /* PaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		D952B17A1B5EF5330089116C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D95EC5231B978DF000782925 /* FacebookFeedQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookFeedQuery.swift; sourceTree = "<group>"; };
-		D95EC5251B978E6400782925 /* FBFeedArticle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBFeedArticle.swift; sourceTree = "<group>"; };
+		D95EC5251B978E6400782925 /* FBFeedPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBFeedPost.swift; sourceTree = "<group>"; };
 		D95EC5281B97963000782925 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		D9713E8B1B5ED166009D809A /* In2-PI-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "In2-PI-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		D97839811BF9305B00E4A834 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -219,7 +219,7 @@
 			children = (
 				D95EC5221B978C0A00782925 /* Facebook Query */,
 				D9F7F4851B93687700D86FF7 /* FBPhoto.swift */,
-				D95EC5251B978E6400782925 /* FBFeedArticle.swift */,
+				D95EC5251B978E6400782925 /* FBFeedPost.swift */,
 			);
 			name = "Facebook Objects";
 			sourceTree = "<group>";
@@ -671,7 +671,7 @@
 				D9F7F4831B935DFA00D86FF7 /* GalleryCell.swift in Sources */,
 				D9F7F4811B93547600D86FF7 /* FacebookPhotoQuery.swift in Sources */,
 				D90A08251BB5D4BD0033DD6B /* XPathQuery.m in Sources */,
-				D95EC5261B978E6400782925 /* FBFeedArticle.swift in Sources */,
+				D95EC5261B978E6400782925 /* FBFeedPost.swift in Sources */,
 				D95EC5291B97963000782925 /* StringExtension.swift in Sources */,
 				D952B17B1B5EF5330089116C /* Constants.swift in Sources */,
 				D9DA047A1BA5B69100F434F4 /* EvangelismApplyWidgetView.swift in Sources */,

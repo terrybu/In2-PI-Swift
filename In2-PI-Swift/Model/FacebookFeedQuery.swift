@@ -11,14 +11,14 @@ import SwiftyJSON
 private let kGraphPathPIMagazineFeedString = "1384548091800506/feed"
 
 protocol FacebookFeedQueryDelegate {
-    func didFinishGettingFacebookFeedData(fbFeedObjectsArray: [FBFeedArticle])
+    func didFinishGettingFacebookFeedData(fbFeedObjectsArray: [FBFeedPost])
 }
 
 class FacebookFeedQuery: FacebookQuery {
     
     static let sharedInstance = FacebookFeedQuery()
     var delegate: FacebookFeedQueryDelegate?
-    var FBFeedObjectsArray = [FBFeedArticle]()
+    var FBFeedObjectsArray = [FBFeedPost]()
     
     func getFeedFromPIMagazine(errorCompletionBlock: ((error: NSError!) -> Void)? ) {
         let params = [
@@ -31,12 +31,13 @@ class FacebookFeedQuery: FacebookQuery {
                 let feedObjectArray = feedJSON["data"].arrayValue
 //                print(feedObjectArray)
                 for object:JSON in feedObjectArray {
-                    let newFeedObject = FBFeedArticle(
+                    let newFeedObject = FBFeedPost(
                         id: object["id"].stringValue,
                         message: object["message"].stringValue,
                         created_time: object["created_time"].stringValue,
                         type: object["type"].stringValue
                     )
+                    self.parseTitleCategoryDateForFeedArticle(newFeedObject)
                     self.FBFeedObjectsArray.append(newFeedObject)
                 }
             self.delegate?.didFinishGettingFacebookFeedData(self.FBFeedObjectsArray)
@@ -47,13 +48,12 @@ class FacebookFeedQuery: FacebookQuery {
         })
     }
     
-    func parseMessageForLabels(feedObject: FBFeedArticle, articleCategoryLabel: UILabel, articleTitleLabel: UILabel, articleDateLabel: UILabel) -> Void {
+    private func parseTitleCategoryDateForFeedArticle(newFeedArticleObject: FBFeedPost) {
         var categoryStr = ""
         var firstTitleStr = ""
-        let msg = feedObject.message
+        let msg = newFeedArticleObject.message
         if (!msg.isEmpty) {
             if (msg[0] == "[") {
-//                print("found open bracket")
                 for (var i=1; i < msg.characters.count; i++) {
                     categoryStr += msg[i]
                     let j = i + 1
@@ -78,11 +78,10 @@ class FacebookFeedQuery: FacebookQuery {
             categoryStr = "No Category"
             firstTitleStr = "No Title"
         }
-        articleCategoryLabel.text = categoryStr
-        articleTitleLabel.text = firstTitleStr
-        articleDateLabel.text = CustomDateFormatter.sharedInstance.convertFBCreatedTimeDateToOurFormattedString(feedObject)
-        
-        return
+        newFeedArticleObject.parsedCategory = categoryStr
+        newFeedArticleObject.parsedTitle = firstTitleStr
+        newFeedArticleObject.parsedDate = CustomDateFormatter.sharedInstance.convertFBCreatedTimeDateToOurFormattedString(newFeedArticleObject)
+
     }
     
     /**

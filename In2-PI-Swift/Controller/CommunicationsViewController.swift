@@ -14,7 +14,7 @@ private let kOriginalAboutViewHeight: CGFloat = 32.0
 class CommunicationsViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource, ExpandableAboutViewDelegate{
     
     @IBOutlet var tableView: UITableView!
-    var feedObjectsArray: [FBFeedArticle]?
+    var feedObjectsArray: [FBFeedPost]?
     
     //For expandable view
     @IBOutlet var expandableAboutView: ExpandableAboutView!
@@ -43,9 +43,7 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
     }
     
     func didPressExpandButton() {
-        if !expandableAboutView.expanded {
-            print("did press expand button when it wasn't expanded")
-            
+        if !expandableAboutView.expanded {            
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 self.constraintHeightExpandableView.constant = self.expandedAboutViewHeight
                 self.view.layoutIfNeeded()
@@ -55,11 +53,9 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
             }
         }
         else {
-            print("did press expand button when it WAS expanded")
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 self.constraintHeightExpandableView.constant = kOriginalAboutViewHeight
                 self.view.layoutIfNeeded()
-                
                 }) { (Bool completed) -> Void in
                     self.expandableAboutView.expanded = false
             }
@@ -98,7 +94,10 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
     
     func configureCell(cell: CommunicationsTableViewCell, indexPath: NSIndexPath) {
         let feedObject = feedObjectsArray![indexPath.row]
-        FacebookFeedQuery.sharedInstance.parseMessageForLabels(feedObject, articleCategoryLabel: cell.categoryLabel, articleTitleLabel: cell.titleLabel, articleDateLabel: cell.dateLabel)
+        cell.categoryLabel.text = feedObject.parsedCategory
+        cell.titleLabel.text = feedObject.parsedTitle
+        cell.dateLabel.text = feedObject.parsedDate
+
         if feedObject.type == "photo" {
             if cache.objectForKey("\(indexPath.row)") != nil{
                 let img = cache.objectForKey("\(indexPath.row)") as! UIImage
@@ -113,7 +112,7 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
                 FacebookPhotoQuery.sharedInstance.getNormalSizePhotoURLStringForCommunicationsFrom(feedObject.id, completion: { (normImgUrlString) -> Void in
                     self.operationManager?.GET(normImgUrlString, parameters: nil, success: { (operation, responseObject) -> Void in
                         //success
-                        print("afnetworking image download finished for indexpath: \(indexPath.row)")
+//                        print("afnetworking image download finished for indexpath: \(indexPath.row)")
                         activityIndicator.stopAnimating()
 
                         if cell.tag == indexPath.row {
@@ -151,7 +150,7 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let feedArticle = feedObjectsArray![indexPath.row] as FBFeedArticle
+        let feedArticle = feedObjectsArray![indexPath.row] as FBFeedPost
         print(feedArticle)
     }
     

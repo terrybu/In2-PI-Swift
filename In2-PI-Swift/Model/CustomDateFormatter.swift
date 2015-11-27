@@ -11,7 +11,7 @@ class CustomDateFormatter {
     static let sharedInstance = CustomDateFormatter()
     let dateFormatter = NSDateFormatter()
     
-    func convertFBCreatedTimeDateToOurFormattedString(feedObject: FBFeedArticle) -> String? {
+    func convertFBCreatedTimeDateToOurFormattedString(feedObject: FBFeedPost) -> String? {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
         let date = dateFormatter.dateFromString(feedObject.created_time)
         if let date = date {
