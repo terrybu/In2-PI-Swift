@@ -29,7 +29,7 @@ class WeeklyProgramDownloader {
             success: { (task:NSURLSessionDataTask!, responseObject:AnyObject!) -> Void in
                 let jsonData = JSON(responseObject)
                 let resultsArray = jsonData["results"].arrayValue
-                print(resultsArray)
+//                print(resultsArray)
                 for dict:JSON in resultsArray {
                     let title = dict["tit_link/_text"].stringValue
                     let datesArray = dict["txt_link_numbers/_source"].arrayValue
@@ -74,7 +74,7 @@ class WeeklyProgramDownloader {
                     
                 if child.tagName == "a" {
                         let aHrefLinkStringForDirectDownloadPDF = child.objectForKey("href")
-                        print(aHrefLinkStringForDirectDownloadPDF)
+//                        print(aHrefLinkStringForDirectDownloadPDF)
                         //it gets tricky here to accommodate all edge cases
                         //usually, the pdf name would end with korean characters -주보
                         //but no, sometimes it's just like 11.27.2015
@@ -88,7 +88,7 @@ class WeeklyProgramDownloader {
                                 let koreanWordJooboSanitized = aHrefLinkStringForDirectDownloadPDF[i-1...i].stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
                                 let beginning = aHrefLinkStringForDirectDownloadPDF[0...i-2]
                                 let end = aHrefLinkStringForDirectDownloadPDF[i+1...strLen-1]
-                                print(beginning + koreanWordJooboSanitized! + end)
+//                                print(beginning + koreanWordJooboSanitized! + end)
                                 return beginning + koreanWordJooboSanitized! + end
                             }
                         }

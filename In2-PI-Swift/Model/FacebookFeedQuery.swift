@@ -29,7 +29,7 @@ class FacebookFeedQuery: FacebookQuery {
             params: params,
             onSuccess: { (feedJSON) -> Void in
                 let feedObjectArray = feedJSON["data"].arrayValue
-                print(feedObjectArray)
+//                print(feedObjectArray)
                 for object:JSON in feedObjectArray {
                     let newFeedObject = FBFeedArticle(
                         id: object["id"].stringValue,
@@ -53,7 +53,7 @@ class FacebookFeedQuery: FacebookQuery {
         let msg = feedObject.message
         if (!msg.isEmpty) {
             if (msg[0] == "[") {
-                print("found open bracket")
+//                print("found open bracket")
                 for (var i=1; i < msg.characters.count; i++) {
                     categoryStr += msg[i]
                     let j = i + 1

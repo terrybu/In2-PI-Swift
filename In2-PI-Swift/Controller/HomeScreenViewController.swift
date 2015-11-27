@@ -34,7 +34,7 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate,
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
             }
         }
-        print("view did load + \(newsArticleView.backgroundImageView.frame.size)")
+//        print("view did load + \(newsArticleView.backgroundImageView.frame.size)")
     }
     
     private func setUpUniqueUIForHomeVC() {

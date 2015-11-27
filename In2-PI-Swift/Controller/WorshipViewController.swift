@@ -54,7 +54,10 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     func getPraiseSongNamesFromFacebook() -> [String] {
         var songsArray = [String]()
         
-        
+        let feedArticles = FacebookFeedQuery.sharedInstance.FBFeedObjectsArray
+        for article in feedArticles {
+            print(article.type)
+        }
         
         
         return songsArray
