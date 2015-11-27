@@ -38,6 +38,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         expandedAboutViewHeight = expandableAboutView.aboutLabel.frame.size.height + expandableAboutView.textView.frame.size.height + 10
         setUpExpandableAboutView()
         
+        getPraiseSongNamesFromFacebook()
         songsArray = ["Hillsong - Above All", "예수전도단 - 좋으신 하나님", "예수전도단 - 주 나의 왕"]
         
         if weeklyProgramsArray.isEmpty {
@@ -50,10 +51,15 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         WeeklyProgramDownloader.sharedInstance.getTenRecentWeeklyProgramsListFromImportIO()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
-        print("worship vc viewdidappear")
+    func getPraiseSongNamesFromFacebook() -> [String] {
+        var songsArray = [String]()
+        
+        
+        
+        
+        return songsArray
     }
+
     
     private func setUpExpandableAboutView() {
         expandableAboutView.clipsToBounds = true

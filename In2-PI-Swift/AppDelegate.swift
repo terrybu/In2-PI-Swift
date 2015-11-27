@@ -59,20 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     @objc
     private func moviePlayBackDidFinish() {
-//        #if RELEASE
-//            let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
-//            loginVC.dismissBlock = {
-//                let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
-//                self.window?.rootViewController = revealVC
-//                print("dismiss block executing from appdelegate")
-//                self.setUpNavBarAndStatusBarImages()
-//            }
-//            window?.rootViewController = loginVC
-//        #else
-//            //NO LOGIN FOR DEBUG JUST FOR NOW - comment it out to test Login screen
-//            let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
-//            self.window?.rootViewController = revealVC
-//        #endif
+        #if RELEASE
             let loginNavCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginVCNavigationController") as! UINavigationController
             let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
             loginVC.dismissBlock = {
@@ -83,6 +70,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             loginNavCtrl.viewControllers = [loginVC]
             window?.rootViewController = loginNavCtrl
+        #else
+            //NO LOGIN FOR DEBUG JUST FOR NOW - comment it out to test Login screen
+            let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
+            self.window?.rootViewController = revealVC
+        #endif
             setUpNavBarAndStatusBarImages()
     }
     

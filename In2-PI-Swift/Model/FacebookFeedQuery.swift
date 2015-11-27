@@ -85,12 +85,20 @@ class FacebookFeedQuery: FacebookQuery {
         return
     }
     
-    private func parseFirstLineTitleString(msg: String) -> String {
-        //Given a string that starts with an empty space and then a sententece followed by \n or just \n Title \n ... return thet tile.
+    /**
+    This method basically looks at the Facebook post body where [Category] FirstLineTitle
+    Sometimes, PI communications team posts it in different formats so it's hard addressing the edge cases. Must collaborate with them properly to maintain the format.
+    
+    - parameter facebookPostMessageBodyWithoutCategoryBracket:
+    
+    - returns: Returns a short string that represents the Title fo that Facebook article view
+    */
+    private func parseFirstLineTitleString(facebookPostMessageBodyWithoutCategoryBracket: String) -> String {
+        //Given a string that starts with an empty space and then a sententece followed by \n or just \n Title \n ... return thet title.
         // " blahblahblah \n" --> should return blahblahblah
         // " \n blahblahblah \n" should also return blahblahblah
         var result = ""
-        let startingStr = msg[1..<msg.characters.count]
+        let startingStr = facebookPostMessageBodyWithoutCategoryBracket[1..<facebookPostMessageBodyWithoutCategoryBracket.characters.count]
         if (startingStr[0] == "\n" || startingStr[1] == "\n") {
             //if it finds \n immediately (which means author inserted a new line between category and title, we jump that index, and start from the following character
             //this covers case where "[title] \n fjpsadfjdpsfapjf \n "
@@ -101,6 +109,13 @@ class FacebookFeedQuery: FacebookQuery {
             while (startingStr[i] != "\n") {
                 result += startingStr[i]
                 i++
+                //this loop was crashing the app when param string was
+                //[PI공지]
+                // 땡스기빙 당일인 이번주 목요일(11/26)에는 미드타운 40가 파리파게트와 아스토리아의 홀리스타가 없음을 알려드립니다.
+                //***Somehow that was causing /n/n at the first part of the string and then no more /n throughout the rest of the string 
+                if i >= startingStr.characters.count {
+                    break
+                }
             }
             //to address the case of "[title] \n   \n adsfsd" (where writer used two lines after title)
             let trimmedString = result.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
