@@ -28,9 +28,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     //Constraints
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
     @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
-    
     var expandedAboutViewHeight:CGFloat = 0 
-    
     
     //MARK: LifeCycle
     override func viewDidLoad() {
@@ -39,7 +37,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         expandedAboutViewHeight = expandableAboutView.aboutLabel.frame.size.height + expandableAboutView.textView.frame.size.height + 10
         setUpExpandableAboutView()
         
-        getPraiseSongNamesFromFacebook()
+        getPraiseSongNamesListAndHeaderFromFacebook()
         songsArray = ["Hillsong - Above All", "예수전도단 - 좋으신 하나님", "예수전도단 - 주 나의 왕"]
         
         if weeklyProgramsArray.isEmpty {
@@ -52,26 +50,40 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         WeeklyProgramDownloader.sharedInstance.getTenRecentWeeklyProgramsListFromImportIO()
     }
     
-    func getPraiseSongNamesFromFacebook() -> [String] {
-        var songsArray = [String]()
-        
+    func getPraiseSongNamesListAndHeaderFromFacebook() {
         let feedPostObjects = FacebookFeedQuery.sharedInstance.FBFeedObjectsArray
         for postObject in feedPostObjects {
             if postObject.parsedCategory == "PI찬양" {
                 if postObject.type == "status" {
-                    print("found status")
-                    print(postObject.message)
-                    print("first line title" + postObject.parsedTitle!)
+                    parseEachLineOfPraiseSongPostBodyMessageToFillSongsArray(postObject.message)
                     headerTitleStringForPraiseSongsListSection = postObject.parsedTitle
-                    //parse
+                    break
                     
                 }
             }
         }
-        
-        return songsArray
     }
-
+    
+    private func parseEachLineOfPraiseSongPostBodyMessageToFillSongsArray(postBody: String) {
+        var i = 0
+        while i < postBody.characters.count {
+            var char = postBody[i]
+            if char == "\n" {
+                var songName = ""
+                var startingIndexForSongName = i + 2
+                var j = startingIndexForSongName
+                while postBody[j] != "\n" {
+                    songName += postBody[j]
+                    j++
+                }
+                songsArray.append(songName)
+                break
+            }
+            i++
+        }
+        print(songsArray)
+    }
+    
     
     private func setUpExpandableAboutView() {
         expandableAboutView.clipsToBounds = true
@@ -199,7 +211,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
                     }
                 }
             } else if tableView == songsTableView {
-                print("songs tv")
+//                print("songs tv")
                 let nameSong = songsTableView.cellForRowAtIndexPath(indexPath)?.textLabel!.text
                 let escaped = nameSong!.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
                 let urlString = "https://www.youtube.com/results?search_query=" + escaped!
@@ -227,21 +239,6 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         let vc = UIViewController()
         vc.view = webView
         self.navigationController?.pushViewController(vc, animated: true)
-    }
-
-    private func doSomethingInBackgroundWithProgressCallback(progressCallback: (progress: Float) -> Void?, completionCallback: () -> Void?) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
-            var i: Float = 0
-            while i < 1.0 {
-                i += 0.1
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    progressCallback(progress: i)
-                })
-            }
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                completionCallback()
-            })
-        })
     }
     
     //Delegate method for dismissing safari vc
