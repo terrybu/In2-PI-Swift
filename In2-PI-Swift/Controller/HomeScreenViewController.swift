@@ -19,7 +19,6 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
     var firstObjectID: String!
     @IBOutlet weak var myFeedButton: UIButton!
     @IBOutlet weak var piFeedButton: UIButton!
-
     @IBOutlet weak var newsArticleView: NewsArticleView!
     var imageBlackOverlay: UIView?
     
@@ -75,7 +74,7 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
         view.addSubview(purpleBarSelector)
     }
     
-    func tappedLabel(sender: UIGestureRecognizer) {
+    func tappedNewsArticleView(sender: UIGestureRecognizer) {
         print(firstObjectID)
         //postURL has to nick out the second part of the _ string from firstObjectID
         let postURLParam = firstObjectID.componentsSeparatedByString("_").last
@@ -89,7 +88,7 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
     
     //MARK: FacebookFeedQueryDelegate 
     func didFinishGettingFacebookFeedData(fbFeedObjectArray: [FBFeedArticle]) {
-        let tapGesture = UITapGestureRecognizer(target: self, action: Selector("tappedLabel:"))
+        let tapGesture = UITapGestureRecognizer(target: self, action: Selector("tappedNewsArticleView:"))
         newsArticleView.userInteractionEnabled = true
         newsArticleView.addGestureRecognizer(tapGesture)
         
