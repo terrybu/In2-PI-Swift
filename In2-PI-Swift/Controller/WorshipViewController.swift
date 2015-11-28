@@ -20,7 +20,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     @IBOutlet var expandableAboutView: ExpandableAboutView!
     @IBOutlet var songsTableView :     UITableView!
     @IBOutlet var weeklyProgramsTableView :     UITableView!
-    var songsArray = [String]()
+    var songObjectsArray = [PraiseSong]()
     var weeklyProgramsArray = [WeeklyProgram]()
     var headerTitleStringForPraiseSongsListSection: String?
     let indicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
@@ -38,7 +38,6 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         setUpExpandableAboutView()
         
         getPraiseSongNamesListAndHeaderFromFacebook()
-        songsArray = ["Hillsong - Above All", "예수전도단 - 좋으신 하나님", "예수전도단 - 주 나의 왕"]
         
         if weeklyProgramsArray.isEmpty {
             indicator.center = CGPointMake(view.center.x, weeklyProgramsTableView.center.y)
@@ -52,36 +51,52 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     
     func getPraiseSongNamesListAndHeaderFromFacebook() {
         let feedPostObjects = FacebookFeedQuery.sharedInstance.FBFeedObjectsArray
+        let thisWeeksPraiseSongsListFeedPost: FBFeedPost
         for postObject in feedPostObjects {
             if postObject.parsedCategory == "PI찬양" {
                 if postObject.type == "status" {
                     parseEachLineOfPraiseSongPostBodyMessageToFillSongsArray(postObject.message)
                     headerTitleStringForPraiseSongsListSection = postObject.parsedTitle
                     break
-                    
                 }
             }
         }
     }
     
+    /**
+    This method parses out the message body of a facebook post with category "PI찬양" so that it detects song names and their respective youtube URLs
+    
+    - parameter postBody: Body message of the post
+    */
     private func parseEachLineOfPraiseSongPostBodyMessageToFillSongsArray(postBody: String) {
         var i = 0
+        var newSongName = ""
         while i < postBody.characters.count {
-            var char = postBody[i]
-            if char == "\n" {
-                var songName = ""
-                var startingIndexForSongName = i + 2
-                var j = startingIndexForSongName
-                while postBody[j] != "\n" {
-                    songName += postBody[j]
-                    j++
+            if postBody[i] == "\n" {
+                if postBody[i+1] == "\n" {
+                    //found a double linebreak
+                    var newSongObject = PraiseSong(songTitle: newSongName)
+                    var j = i + 2
+                    newSongName = ""
+                    while postBody[j] != "\n" {
+                        newSongName += postBody[j]
+                        j++
+                    }
+                    newSongObject.songTitle = newSongName
+                    //this is where we can start the logic after we end the first "songtitle" scraping? because j+1 is now the youtube URL
+                    var k = j + 1
+                    var newYouTubeURL = ""
+                    while k < postBody.characters.count && postBody[k] != "\n" {
+                        newYouTubeURL += postBody[k]
+                        k++
+                    }
+                    newSongObject.songYouTubeURL = newYouTubeURL
+                    songObjectsArray.append(newSongObject)
                 }
-                songsArray.append(songName)
-                break
             }
             i++
         }
-        print(songsArray)
+        print(songObjectsArray)
     }
     
     
@@ -148,7 +163,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         if (tableView == weeklyProgramsTableView) {
             return weeklyProgramsArray.count
         } else if (tableView == songsTableView) {
-            return 3
+            return songObjectsArray.count
         }
         return 0
     }
@@ -167,7 +182,8 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         } else {
             let reuseIdentifier = "SongsTableViewCell"
             cell = songsTableView.dequeueReusableCellWithIdentifier(reuseIdentifier)!
-            cell.textLabel!.text = songsArray[indexPath.row]
+            let songObject = songObjectsArray[indexPath.row]
+            cell.textLabel!.text = songObject.songTitle!
         }
         return cell
     }
@@ -211,21 +227,25 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
                     }
                 }
             } else if tableView == songsTableView {
-//                print("songs tv")
-                let nameSong = songsTableView.cellForRowAtIndexPath(indexPath)?.textLabel!.text
-                let escaped = nameSong!.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
-                let urlString = "https://www.youtube.com/results?search_query=" + escaped!
-                let url : NSURL! = NSURL(string: urlString)
-
+                //below was when we were just doing a general search of the praise song name on youtube as a query and showing user the results
+//                let nameSong = songsTableView.cellForRowAtIndexPath(indexPath)?.textLabel!.text
+//                let escaped = nameSong!.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
+//                let urlString = "https://www.youtube.com/results?search_query=" + escaped!
+//                let url : NSURL! = NSURL(string: urlString)
+                let songObject = songObjectsArray[indexPath.row]
+                let url = NSURL(string: songObject.songYouTubeURL!)
+                
                 if #available(iOS 9.0, *) {
-                    let sfVC = SFSafariViewController(URL: url, entersReaderIfAvailable: true)
+                    let sfVC = SFSafariViewController(URL: url!, entersReaderIfAvailable: true)
                     sfVC.delegate = self
-                    //Show the browser
                     self.presentViewController(sfVC, animated: true, completion: nil)
+                    //in case anybody prefers right to left push viewcontroller animation transition (below) 
+//                    navigationController?.pushViewController(sfVC, animated: true)
+
                 } else {
                     // Fallback on earlier versions
                     let webView = UIWebView(frame: view.frame)
-                    webView.loadRequest(NSURLRequest(URL: url))
+                    webView.loadRequest(NSURLRequest(URL: url!))
                     let vc = UIViewController()
                     vc.view = webView
                     navigationController?.pushViewController(vc, animated: true)

@@ -10,13 +10,11 @@ import Foundation
 
 class PraiseSong {
     
-    var songTitle: String
-    var songYouTubeURL: String
+    var songTitle: String?
+    var songYouTubeURL: String?
     
-    
-    init(songTitle: String, songYouTubeURL: String) {
+    init(songTitle: String) {
         self.songTitle = songTitle
-        self.songYouTubeURL = songYouTubeURL
     }
     
 }
