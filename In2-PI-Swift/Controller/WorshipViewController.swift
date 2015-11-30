@@ -129,8 +129,12 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
                 label = UILabel(frame: CGRectMake(12, 5, 50, 18))
                 label.text = "주보"
             } else {
-                label = UILabel(frame: CGRectMake(12, 5, 200, 18))
-                label.text = headerTitleStringForPraiseSongsListSection!
+                label = UILabel(frame: CGRectMake(12, 5, 300, 18))
+                if let headerTitle = headerTitleStringForPraiseSongsListSection {
+                    label.text = headerTitle
+                } else {
+                    label.text = "인터넷 연결이 실패했습니다"
+                }
             }
             label.font = UIFont.boldSystemFontOfSize(16)
             headerView.addSubview(label)
@@ -175,7 +179,6 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         if (tableView == weeklyProgramsTableView) {
             let reuseIdentifier = "WeeklyProgramsTableViewCell"
             cell = weeklyProgramsTableView.dequeueReusableCellWithIdentifier(reuseIdentifier)!
-
                 cell.textLabel!.text = weeklyProgramsArray[indexPath.row].title
                 cell.accessoryView = UIImageView(image: UIImage(named: "btn_download"))
 

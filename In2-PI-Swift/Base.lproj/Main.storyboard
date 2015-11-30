@@ -1097,7 +1097,7 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="선교부 소식 타이틀" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0C4-jp-jmH">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="선교부 소식 타이틀" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0C4-jp-jmH">
                                                 <rect key="frame" x="213" y="87" width="175" height="72"/>
                                                 <animations/>
                                                 <constraints>
@@ -1113,14 +1113,14 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVP-Me-66w">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVP-Me-66w">
                                                 <rect key="frame" x="266" y="219" width="70" height="30"/>
                                                 <animations/>
                                                 <state key="normal" title="더보기" backgroundImage="btn_more_white">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="rule_ver" translatesAutoresizingMaskIntoConstraints="NO" id="WMu-M8-9Ih">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rule_ver" translatesAutoresizingMaskIntoConstraints="NO" id="WMu-M8-9Ih">
                                                 <rect key="frame" x="300" y="174" width="1" height="21"/>
                                                 <animations/>
                                             </imageView>
@@ -1400,16 +1400,43 @@
                         <viewControllerLayoutGuide type="bottom" id="AQR-DH-Y5C"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CsJ-cH-lxU">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iDy-FS-K1P" customClass="HMSegmentedControl">
+                                <rect key="frame" x="0.0" y="64" width="600" height="50"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Q6I-s2-jyq"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gm0-K4-ATo">
+                                <rect key="frame" x="0.0" y="114" width="600" height="486"/>
+                                <animations/>
+                            </scrollView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AQR-DH-Y5C" firstAttribute="top" secondItem="Gm0-K4-ATo" secondAttribute="bottom" id="BI8-04-A8w"/>
+                            <constraint firstItem="iDy-FS-K1P" firstAttribute="top" secondItem="tEj-VJ-bZ2" secondAttribute="bottom" id="Oaf-9K-367"/>
+                            <constraint firstAttribute="trailing" secondItem="iDy-FS-K1P" secondAttribute="trailing" id="RU1-J7-sYB"/>
+                            <constraint firstItem="iDy-FS-K1P" firstAttribute="leading" secondItem="CsJ-cH-lxU" secondAttribute="leading" id="WAg-Cc-w19"/>
+                            <constraint firstAttribute="trailing" secondItem="Gm0-K4-ATo" secondAttribute="trailing" id="cmt-2L-u33"/>
+                            <constraint firstItem="Gm0-K4-ATo" firstAttribute="top" secondItem="iDy-FS-K1P" secondAttribute="bottom" id="wIH-uV-TFp"/>
+                            <constraint firstItem="Gm0-K4-ATo" firstAttribute="leading" secondItem="CsJ-cH-lxU" secondAttribute="leading" id="yT9-jo-H31"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="rkI-RV-fvW"/>
+                    <navigationItem key="navigationItem" title="About PI" id="rkI-RV-fvW"/>
+                    <connections>
+                        <outlet property="horizontalScrollView" destination="Gm0-K4-ATo" id="k9t-wS-peK"/>
+                        <outlet property="segmentedControl" destination="iDy-FS-K1P" id="0Yu-va-wbl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lpM-QP-qB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3200" y="5682"/>
+            <point key="canvasLocation" x="-244" y="6298"/>
         </scene>
         <!--Gallery-->
         <scene sceneID="m9d-tp-msS">
@@ -1493,7 +1520,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sKk-Af-780" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1119" y="5618"/>
+            <point key="canvasLocation" x="-307" y="5618"/>
         </scene>
         <!--HomeNavController-->
         <scene sceneID="PuY-jW-8ar">
@@ -1630,7 +1657,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IA6-N1-baI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1931" y="5618"/>
+            <point key="canvasLocation" x="-1119" y="5618"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="buU-sq-iBp">
@@ -1650,6 +1677,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z2H-js-coB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-5615" y="1068"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Z1Y-DI-EvW">
+            <objects>
+                <navigationController storyboardIdentifier="AboutVCNavCtrl" automaticallyAdjustsScrollViewInsets="NO" id="YGh-dc-eyh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="qnA-fM-v8K">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pFB-fa-kBo" kind="relationship" relationship="rootViewController" id="j7P-d2-Zf1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hGo-sr-tsm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1056" y="6298"/>
         </scene>
     </scenes>
     <resources>

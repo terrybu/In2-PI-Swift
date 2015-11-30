@@ -13,7 +13,7 @@ class LeftNavDrawerController: UIViewController {
     //MARK: Properties 
     var purpleStatusBar: UIView!
     var maskView : UIView!
-    var aboutVCModal : AboutPIViewController!
+    var aboutVCNavCtrl : UINavigationController?
     var homeVCNavCtrl: UINavigationController?
     var worshipVCNavCtrl: UINavigationController?
     var nurtureVCNavCtrl: UINavigationController?
@@ -57,30 +57,7 @@ class LeftNavDrawerController: UIViewController {
     }
     
     
-    //MARK: about PI Modal
-    func closeAboutPIModal() {
-        UIView.animateWithDuration(0.25, animations: { () -> Void in
-            self.aboutVCModal.view.frame = CGRectMake(20, self.view.frame.height, self.view.frame.width-40, self.view.frame.height-100)
-            self.maskView.backgroundColor = UIColor.clearColor()
-            self.maskView.alpha = 1.0
-        }) { (Bool finished) -> Void in
-            self.aboutVCModal.view.removeFromSuperview()
-            self.aboutVCModal.removeFromParentViewController()
-            self.maskView.removeFromSuperview()
-            self.view.addGestureRecognizer(self.swipeGestureRightToLeft)
-        }
-    }
-    
-    func handleTap(gestureRecognizer: UIGestureRecognizer) {
-        let location = gestureRecognizer.locationInView(self.view)
-        print("from navdrawer handleTap \(location)")
-        if (location.y < self.aboutVCModal.view.frame.origin.y) || (location.y > self.aboutVCModal.view.frame.height + self.aboutVCModal.view.frame.origin.y) || (location.x > self.aboutVCModal.view.frame.width + self.aboutVCModal.view.frame.origin.x) || (location.x < self.aboutVCModal.view.frame.origin.x) {
-            closeAboutPIModal()
-        }
-    }
-    
     // MARK: IBActions
-    
     @IBAction
     func xButtonPressed(sender: AnyObject) {
         purpleStatusBar.hidden = true
@@ -143,28 +120,11 @@ class LeftNavDrawerController: UIViewController {
     
     @IBAction
     func aboutPIButtonPressed(sender: UIButton) {
-        self.view.removeGestureRecognizer(self.swipeGestureRightToLeft)
-        
-        aboutVCModal = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AboutPIViewController") as! AboutPIViewController
-        aboutVCModal.navDrawerVC = self
-        self.addChildViewController(aboutVCModal)
-        
-        maskView = UIView(frame: self.view.frame)
-        maskView.backgroundColor = UIColor.clearColor()
-        self.view.addSubview(maskView)
-        
-        let modalWidth = self.view.frame.width-40
-        let modalHeight = self.view.frame.height-100
-        aboutVCModal.view.frame = CGRectMake(20, self.view.frame.height, modalWidth, modalHeight)
-        self.view.addSubview(aboutVCModal.view)
-        aboutVCModal.didMoveToParentViewController(self)
-        
-        UIView.animateWithDuration(0.25, animations: { () -> Void in
-            self.aboutVCModal.view.frame = CGRectMake(20, 80, modalWidth, modalHeight)
-            self.maskView.backgroundColor = UIColor.blackColor()
-            self.maskView.alpha  = 0.60
-            }) { (Bool finished) -> Void in
+        if aboutVCNavCtrl == nil {
+            aboutVCNavCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AboutVCNavCtrl") as? UINavigationController
         }
+        purpleStatusBar.hidden = true
+        revealViewController().pushFrontViewController(aboutVCNavCtrl, animated: true)
     }
     
 
