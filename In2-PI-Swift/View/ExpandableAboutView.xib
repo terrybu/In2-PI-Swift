@@ -24,8 +24,8 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="250"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bK-sB-FoZ">
-                    <rect key="frame" x="16" y="93" width="576" height="195"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bK-sB-FoZ">
+                    <rect key="frame" x="16" y="93" width="576" height="157"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -97,9 +97,11 @@
                 <constraint firstItem="6bK-sB-FoZ" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="3IW-dG-vDO"/>
                 <constraint firstItem="NQz-O6-15V" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="9Wz-kT-fzE"/>
                 <constraint firstAttribute="bottom" secondItem="6bK-sB-FoZ" secondAttribute="bottom" constant="12" id="GZi-mY-NlM"/>
+                <constraint firstAttribute="bottom" secondItem="6bK-sB-FoZ" secondAttribute="bottom" id="RCv-cH-N5o"/>
                 <constraint firstAttribute="trailing" secondItem="NQz-O6-15V" secondAttribute="trailing" id="ROb-x8-fqr"/>
                 <constraint firstItem="6bK-sB-FoZ" firstAttribute="leading" secondItem="CcP-eQ-vUK" secondAttribute="leading" id="S4f-Up-eyZ"/>
                 <constraint firstItem="CcP-eQ-vUK" firstAttribute="leading" secondItem="vt8-gx-oqh" secondAttribute="leading" id="UBm-M0-AYf"/>
+                <constraint firstItem="CcP-eQ-vUK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="66" id="VPT-lT-NoV"/>
                 <constraint firstItem="NQz-O6-15V" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="i4A-bn-ji4"/>
                 <constraint firstItem="6bK-sB-FoZ" firstAttribute="top" secondItem="CcP-eQ-vUK" secondAttribute="bottom" constant="6" id="l5u-kV-dW9"/>
                 <constraint firstItem="CcP-eQ-vUK" firstAttribute="top" secondItem="NQz-O6-15V" secondAttribute="bottom" constant="12" id="xpS-dI-ETf"/>
@@ -109,6 +111,7 @@
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="35q-mX-nTj"/>
+                    <exclude reference="GZi-mY-NlM"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="289" y="174"/>
