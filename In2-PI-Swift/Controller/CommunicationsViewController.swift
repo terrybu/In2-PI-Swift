@@ -35,7 +35,7 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
     
     //MARK: ExpandableAboutViewDelegate
     private func setUpExpandableAboutView() {
-        expandedAboutViewHeight = kOriginalAboutViewHeight + expandableAboutView.textView.frame.size.height
+        expandedAboutViewHeight = kOriginalAboutViewHeight + expandableAboutView.textView.frame.size.height + 30 
         expandableAboutView.clipsToBounds = true
         expandableAboutView.delegate = self
     }
