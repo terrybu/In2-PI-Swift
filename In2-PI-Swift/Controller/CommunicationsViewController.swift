@@ -9,8 +9,6 @@
 import UIKit
 import AFNetworking
 
-private let kOriginalAboutViewHeight: CGFloat = 32.0
-
 class CommunicationsViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource, ExpandableAboutViewDelegate{
     
     @IBOutlet var tableView: UITableView!
@@ -29,7 +27,6 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
         tableView.registerNib(UINib(nibName: "CommunicationsTableViewCell", bundle: nil), forCellReuseIdentifier: "CommunicationsCell")
         self.feedObjectsArray = FacebookFeedQuery.sharedInstance.FBFeedObjectsArray
         
-        expandedAboutViewHeight = expandableAboutView.aboutLabel.frame.size.height + expandableAboutView.textView.frame.size.height + 10
         setUpExpandableAboutView()
         
         operationManager = AFHTTPRequestOperationManager()
@@ -38,6 +35,7 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
     
     //MARK: ExpandableAboutViewDelegate
     private func setUpExpandableAboutView() {
+        expandedAboutViewHeight = kOriginalAboutViewHeight + expandableAboutView.textView.frame.size.height
         expandableAboutView.clipsToBounds = true
         expandableAboutView.delegate = self
     }

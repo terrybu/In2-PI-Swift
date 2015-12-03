@@ -71,7 +71,7 @@ class AboutPIViewController: ParentViewController, UIScrollViewDelegate{
     private func commonSetUpCodeCanvas(x: CGFloat, headerTitle: String) -> UIView {
         let width = CGRectGetWidth(self.view.frame)
         let height = view.frame.size.height - 60
-        let incompleteViewCanvas = UIView(frame: CGRect(x: x, y: 20, width: width, height: height))
+        let incompleteViewCanvas = UIView(frame: CGRect(x: x, y: 30, width: width, height: height))
         let bigBoldHeaderLabel = UILabel(frame: CGRectMake(kLeftSidePadding, 0, self.view.frame.width-30, 25))
         bigBoldHeaderLabel.text = headerTitle
         bigBoldHeaderLabel.font = UIFont(name: "NanumBarunGothicOTFBold", size: 25)

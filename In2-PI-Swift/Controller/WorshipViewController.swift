@@ -11,8 +11,7 @@ import SafariServices
 import Foundation
 import MBProgressHUD
 
-private let kOriginalAboutViewHeight: CGFloat = 32.0
-private let kOriginalContentViewHeight: CGFloat = 600
+private let kOriginalContentViewHeight: CGFloat = 1000
 
 class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelegate ,SFSafariViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
 
@@ -33,8 +32,6 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     //MARK: LifeCycle
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
-        
-        expandedAboutViewHeight = expandableAboutView.aboutLabel.frame.size.height + expandableAboutView.textView.frame.size.height + 10
         setUpExpandableAboutView()
         
         getPraiseSongNamesListAndHeaderFromFacebook()
@@ -101,6 +98,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     
     
     private func setUpExpandableAboutView() {
+        expandedAboutViewHeight = kOriginalAboutViewHeight + expandableAboutView.textView.frame.size.height
         expandableAboutView.clipsToBounds = true
         expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: expandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
     }

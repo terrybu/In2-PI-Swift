@@ -257,10 +257,10 @@
 		D980D6F31B9BDAFC001058E9 /* Five Boros Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D97839801BF9304700E4A834 /* Authentication */,
 				D90A7B091B924256003EA693 /* ParentViewController.swift */,
 				D92295941B9BF87000C34A66 /* WorshipViewController.swift */,
 				D90A7AFB1B923F13003EA693 /* NurtureViewController.swift */,
-				D97839801BF9304700E4A834 /* Authentication */,
 				D90A7AFF1B9240EC003EA693 /* CommunicationsViewController.swift */,
 				D90A7B031B92413F003EA693 /* EvangelismViewController.swift */,
 				D90A7B011B924135003EA693 /* SocialServicesViewController.swift */,

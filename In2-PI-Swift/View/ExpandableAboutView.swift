@@ -31,7 +31,7 @@ protocol ExpandableAboutViewDelegate {
         if expanded == false {
             arrowImageButton.setImage(UIImage(named: "btn_collapse"), forState: UIControlState.Normal)
         } else {
-              arrowImageButton.setImage(UIImage(named: "btn_expand"), forState: UIControlState.Normal)
+              arrowImageButton.setImage(UIImage(named: "btn_down_w"), forState: UIControlState.Normal)
         }
         delegate?.didPressExpandButton()
     }
