@@ -12,9 +12,15 @@ import HockeySDK
 import AVKit
 import Parse
 import Bolts
+import EAIntroView
+
+private let sampleDescription1 = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+private let sampleDescription2 = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.";
+private let sampleDescription3 = "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.";
+private let sampleDescription4 = "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit.";
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, EAIntroDelegate {
 
     var window: UIWindow?
     var statusBarBackgroundView: UIView?
@@ -74,6 +80,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //NO LOGIN FOR DEBUG JUST FOR NOW - comment it out to test Login screen
             let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
             self.window?.rootViewController = revealVC
+            
+            //Walkthrough testing
+            let walkthroughVC = UIViewController()
+            let navigationCtrl = UINavigationController(rootViewController: walkthroughVC)
+            walkthroughVC.view.frame = window!.frame
+            let page1 = EAIntroPage()
+            page1.desc = sampleDescription1
+            page1.descPositionY = navigationCtrl.view.bounds.size.height - 120
+            walkthroughVC.title = "Welcome"
+            navigationCtrl.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+            
+            let page2 = EAIntroPage()
+            page2.title = "This is page 2";
+            page2.desc = sampleDescription2;
+            
+            let page3 = EAIntroPage()
+            page3.title = "This is page 3";
+            page3.desc = sampleDescription3;
+            
+            let page4 = EAIntroPage()
+            page4.title = "This is page 4";
+            page4.desc = sampleDescription4;
+            
+            let introView = EAIntroView(frame: navigationCtrl.view.bounds, andPages: [page1,page2,page3,page4])
+            introView.delegate = self
+            introView.pageControlY = navigationCtrl.view.bounds.size.height - 200;
+//            let walkthroughBackgroundImage1 = UIImageView(image: UIImage(named: "img_slider 01"))
+//            introView.titleView = walkthroughBackgroundImage1;
+//            introView.titleViewY = 100;
+            
+//            introView.bgImage = UIImage(named: "img_slider 01")
+            
+            
+            
+            introView.showInView(navigationCtrl.view, animateDuration: 0.3)
+            self.window?.rootViewController = navigationCtrl
+            
+            
+
         #endif
             setUpNavBarAndStatusBarImages()
     }
@@ -113,6 +158,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    //MARK: EAIntroViewDelegate 
+    func introDidFinish(introView: EAIntroView!) {
+        print("intro walkthrough finished")
+    }
 
 }
 
