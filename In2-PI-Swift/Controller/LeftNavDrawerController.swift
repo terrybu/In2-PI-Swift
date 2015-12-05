@@ -31,6 +31,7 @@ class LeftNavDrawerController: UIViewController {
         purpleStatusBar.backgroundColor = UIColor.In2DeepPurple()
         appDelegate.window?.rootViewController?.view.addSubview(purpleStatusBar)
         
+        
         let homeNavCtrl = self.revealViewController().frontViewController as! UINavigationController
         self.homeVCNavCtrl = homeNavCtrl
         
@@ -41,6 +42,10 @@ class LeftNavDrawerController: UIViewController {
         swipeGestureRightToLeft = UISwipeGestureRecognizer(target: self, action: "userJustSwipedFromRightToLeft:")
         swipeGestureRightToLeft.direction = UISwipeGestureRecognizerDirection.Left
         self.view.addGestureRecognizer(swipeGestureRightToLeft)
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+       return UIStatusBarStyle.LightContent
     }
     
     override func viewWillAppear(animated: Bool) {
