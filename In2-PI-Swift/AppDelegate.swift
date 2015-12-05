@@ -14,10 +14,9 @@ import Parse
 import Bolts
 import EAIntroView
 
-private let sampleDescription1 = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-private let sampleDescription2 = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.";
-private let sampleDescription3 = "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.";
-private let sampleDescription4 = "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit.";
+private let sampleDescription1 = "Get latest updates on your favorite In2 PI stories and contents in MY FEED tab.";
+private let sampleDescription2 = "Stay up to date on new things happening around In2 PI in the PI FEED tab.";
+private let sampleDescription3 = "Tap the Menu icon to navigate around the app and access app settings.";
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, EAIntroDelegate {
@@ -85,9 +84,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, EAIntroDelegate {
             let walkthroughVC = UIViewController()
             walkthroughVC.view.frame = window!.frame
             walkthroughVC.title = "Welcome"
-            let navigationCtrl = UINavigationController(rootViewController: walkthroughVC)
-            navigationCtrl.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
             
+//            let navigationCtrl = UINavigationController(rootViewController: walkthroughVC)
+//            navigationCtrl.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
             //This below code gets rid of bottom 1px border from navigation bar, so we can make it look like a bottom border never exists
             //couldn't get the border to disappear for some reason. it stayed white.
 //            navigationCtrl.navigationBar.setBackgroundImage(UIImage(), forBarPosition: UIBarPosition.Any, barMetrics: UIBarMetrics.Default)
@@ -100,10 +99,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, EAIntroDelegate {
             page1.titlePositionY = walkthroughVC.view.frame.size.height - 30
             page1.desc = sampleDescription1
             //setting position on these work weirdly. Higher the number, Higher it goes up toward top of screen. Lower the number, more it sticks to bottom of screen
-            page1.descPositionY = walkthroughVC.view.frame.size.height - 30 - 48
+            page1.descPositionY = walkthroughVC.view.frame.size.height - 30 - 32
             let walkthroughImageView1 = UIImageView(image: UIImage(named: "walkthroughImage1"))
             page1.titleIconView = walkthroughImageView1
-            page1.titleIconPositionY = walkthroughVC.view.frame.size.height - walkthroughImageView1.frame.size.height
+            if DeviceType.IS_IPHONE_5 || DeviceType.IS_IPHONE_4_OR_LESS{
+                page1.titleIconPositionY = walkthroughVC.view.frame.size.height - walkthroughImageView1.frame.size.height + 50
+            } else {
+                page1.titleIconPositionY = walkthroughVC.view.frame.size.height - walkthroughImageView1.frame.size.height
+            }
+            
             
             let page2 = EAIntroPage()
             page2.title = "This is page 2";
@@ -119,11 +123,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, EAIntroDelegate {
             introView.delegate = self
             introView.pageControlY = walkthroughVC.view.frame.size.height - 30 - 48 - 64;
             introView.bgImage = UIImage(named: "bg_gradient")
+            let btn = UIButton(type: UIButtonType.Custom)
+            btn.setBackgroundImage(UIImage(named: "btn_X"), forState: UIControlState.Normal)
+            btn.frame = CGRectMake(0, 0, 24, 20)
+            introView.skipButton = btn
+            introView.skipButtonY = walkthroughVC.view.frame.size.height - 30
+            introView.skipButtonAlignment = EAViewAlignment.Right
+            
             introView.showInView(walkthroughVC.view, animateDuration: 0.3)
             self.window?.rootViewController = walkthroughVC
             
         #endif
             setUpNavBarAndStatusBarImages()
+    }
+    
+    private func setUpPageForEAIntroPage() -> EAIntroPage {
+        let page = EAIntroPage()
+        
+        return page
     }
     
     //MARK: EAIntroViewDelegate
