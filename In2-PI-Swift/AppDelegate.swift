@@ -64,8 +64,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, EAIntroDelegate {
     
     @objc
     private func moviePlayBackDidFinish() {
-        
-        
         #if RELEASE
             let loginNavCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginVCNavigationController") as! UINavigationController
             let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
@@ -80,39 +78,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate, EAIntroDelegate {
         #else
             //NO LOGIN FOR DEBUG JUST FOR NOW - comment it out to test Login screen
             
-            //Walkthrough testing
-            let walkthroughVC = WalkthroughViewController()
-            walkthroughVC.view.frame = window!.frame
-           // walkthroughVC.title = "Welcome"
-//            let navigationCtrl = UINavigationController(rootViewController: walkthroughVC)
-//            navigationCtrl.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
-            //This below code gets rid of bottom 1px border from navigation bar, so we can make it look like a bottom border never exists
-            //couldn't get the border to disappear for some reason. it stayed white.
-//            navigationCtrl.navigationBar.setBackgroundImage(UIImage(), forBarPosition: UIBarPosition.Any, barMetrics: UIBarMetrics.Default)
-//            navigationCtrl.navigationBar.shadowImage = UIImage()
-//            navigationCtrl.navigationBar.clipsToBounds = true
-//            navigationCtrl.navigationBar.translucent = false
-            
-            let page1 = setUpPageForEAIntroPage(walkthroughVC, title: "Welcome", description: sampleDescription1, imageName: "walkthroughImage1")
-            let page2 = setUpPageForEAIntroPage(walkthroughVC, title: "PI Feed", description: sampleDescription2, imageName: "walkthroughImage2") ;
-            let page3 = setUpPageForEAIntroPage(walkthroughVC, title: "Navigation Drawer", description: sampleDescription3, imageName: "walkthroughImage3") ;
-            
-            let introView = EAIntroView(frame: walkthroughVC.view.frame, andPages: [page1,page2,page3])
-            //if you want to the navigation bar way
-            //let introView = EAIntroView(frame: walkthroughVC.view.frame, andPages: [page1,page2,page3,page4])
-            introView.delegate = self
-            introView.pageControlY = walkthroughVC.view.frame.size.height - 30 - 48 - 64;
-            introView.bgImage = UIImage(named: "bg_gradient")
-            let btn = UIButton(type: UIButtonType.Custom)
-            btn.setBackgroundImage(UIImage(named: "btn_X"), forState: UIControlState.Normal)
-            btn.frame = CGRectMake(0, 0, 24, 20)
-            introView.skipButton = btn
-            introView.skipButtonY = walkthroughVC.view.frame.size.height - 30
-            introView.skipButtonAlignment = EAViewAlignment.Right
-            
-            introView.showInView(walkthroughVC.view, animateDuration: 0.3)
-            self.window?.rootViewController = walkthroughVC
+            let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey(kfirstLaunchKeyForWalkthroughCheck)
+            if firstLaunch  {
+                print("Not first launch. Take him straight to login or home screen without walkthrough")
+                introDidFinish(nil)
+            }
+            else {
+                print("First launch, setting NSUserDefault AND displaying walkthrough screen")
+                NSUserDefaults.standardUserDefaults().setBool(true, forKey: kfirstLaunchKeyForWalkthroughCheck)
+                displayWalkthroughScreen()
+            }
         #endif
+    }
+    
+    
+    //MARK: Walkthrough
+    private func displayWalkthroughScreen() {
+        //Walkthrough Screen setup
+        let walkthroughVC = WalkthroughViewController()
+        walkthroughVC.view.frame = window!.frame
+        let page1 = setUpPageForEAIntroPage(walkthroughVC, title: "Welcome", description: sampleDescription1, imageName: "walkthroughImage1")
+        let page2 = setUpPageForEAIntroPage(walkthroughVC, title: "PI Feed", description: sampleDescription2, imageName: "walkthroughImage2") ;
+        let page3 = setUpPageForEAIntroPage(walkthroughVC, title: "Navigation Drawer", description: sampleDescription3, imageName: "walkthroughImage3") ;
+        
+        let introView = EAIntroView(frame: walkthroughVC.view.frame, andPages: [page1,page2,page3])
+        //if you want to the navigation bar way
+        //let introView = EAIntroView(frame: walkthroughVC.view.frame, andPages: [page1,page2,page3,page4])
+        introView.delegate = self
+        introView.pageControlY = walkthroughVC.view.frame.size.height - 30 - 48 - 64;
+        introView.bgImage = UIImage(named: "bg_gradient")
+        let btn = UIButton(type: UIButtonType.Custom)
+        btn.setBackgroundImage(UIImage(named: "btn_X"), forState: UIControlState.Normal)
+        btn.frame = CGRectMake(0, 0, 24, 20)
+        introView.skipButton = btn
+        introView.skipButtonY = walkthroughVC.view.frame.size.height - 30
+        introView.skipButtonAlignment = EAViewAlignment.Right
+        
+        introView.showInView(walkthroughVC.view, animateDuration: 0.3)
+        self.window?.rootViewController = walkthroughVC
     }
     
     private func setUpPageForEAIntroPage(walkthroughVC: UIViewController, title: String, description: String, imageName: String) -> EAIntroPage {
@@ -137,7 +140,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, EAIntroDelegate {
     
     //MARK: EAIntroViewDelegate
     func introDidFinish(introView: EAIntroView!) {
-        print("intro walkthrough finished")
+        print("intro walkthrough finished or wasn't needed")
         let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
         self.window?.rootViewController = revealVC
         setUpNavBarAndStatusBarImages()
