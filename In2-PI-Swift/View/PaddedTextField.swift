@@ -22,7 +22,7 @@ class PaddedTextField: UITextField {
     
     func addCustomPaddingAndBorderUI() {
         //Place your initialization code here
-        var leftView:UIView = UIView(frame: CGRectMake(0, 0, 8, 1))
+        let leftView:UIView = UIView(frame: CGRectMake(0, 0, 8, 1))
         leftView.backgroundColor = UIColor.clearColor()
         self.leftView = leftView;
         self.leftViewMode = UITextFieldViewMode.Always;

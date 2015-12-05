@@ -23,11 +23,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     }
     
     @IBAction func signUpButtonPressed(sender: AnyObject) {
-        var firstName = self.firstNameTextField.text
-        var lastName = self.lastNameTextField.text
-        var username = self.userNameTextField.text
-        var password = self.passwordTextField.text
-        var email = self.emailTextField.text
+        let firstName = self.firstNameTextField.text
+        let lastName = self.lastNameTextField.text
+        let username = self.userNameTextField.text
+        let password = self.passwordTextField.text
+        let email = self.emailTextField.text
         // Validate the text fields
 //        if username?.characters.count < 5 {
 //            var alert = UIAlertView(title: "Invalid", message: "Username must be greater than 5 characters", delegate: self, cancelButtonTitle: "OK")
@@ -41,15 +41,15 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
 //        } else 
         
         if email?.characters.count < 8 {
-            var alert = UIAlertView(title: "Invalid", message: "Please enter a valid email address", delegate: self, cancelButtonTitle: "OK")
+            let alert = UIAlertView(title: "Invalid", message: "Please enter a valid email address", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
         } else {
             // Run a spinner to show a task in progress
-            var spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0, 0, 150, 150)) as UIActivityIndicatorView
+            let spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0, 0, 150, 150)) as UIActivityIndicatorView
             spinner.startAnimating()
             
-            var newUser = PFUser()
+            let newUser = PFUser()
             newUser.username = username
             newUser.password = password
             newUser.setValue(firstName, forKey: "firstName")

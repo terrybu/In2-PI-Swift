@@ -83,13 +83,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, EAIntroDelegate {
             
             //Walkthrough testing
             let walkthroughVC = UIViewController()
-            let navigationCtrl = UINavigationController(rootViewController: walkthroughVC)
             walkthroughVC.view.frame = window!.frame
-            let page1 = EAIntroPage()
-            page1.desc = sampleDescription1
-            page1.descPositionY = navigationCtrl.view.bounds.size.height - 120
             walkthroughVC.title = "Welcome"
+            let navigationCtrl = UINavigationController(rootViewController: walkthroughVC)
             navigationCtrl.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+            
+            //This below code gets rid of bottom 1px border from navigation bar, so we can make it look like a bottom border never exists
+            //couldn't get the border to disappear for some reason. it stayed white.
+//            navigationCtrl.navigationBar.setBackgroundImage(UIImage(), forBarPosition: UIBarPosition.Any, barMetrics: UIBarMetrics.Default)
+//            navigationCtrl.navigationBar.shadowImage = UIImage()
+//            navigationCtrl.navigationBar.clipsToBounds = true
+//            navigationCtrl.navigationBar.translucent = false
+            
+            let page1 = EAIntroPage()
+            page1.title = "Welcome"
+            page1.titlePositionY = walkthroughVC.view.frame.size.height - 30
+            page1.desc = sampleDescription1
+            //setting position on these work weirdly. Higher the number, Higher it goes up toward top of screen. Lower the number, more it sticks to bottom of screen
+            page1.descPositionY = walkthroughVC.view.frame.size.height - 30 - 48
+            let walkthroughImageView1 = UIImageView(image: UIImage(named: "walkthroughImage1"))
+            page1.titleIconView = walkthroughImageView1
+            page1.titleIconPositionY = walkthroughVC.view.frame.size.height - walkthroughImageView1.frame.size.height
             
             let page2 = EAIntroPage()
             page2.title = "This is page 2";
@@ -99,28 +113,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, EAIntroDelegate {
             page3.title = "This is page 3";
             page3.desc = sampleDescription3;
             
-            let page4 = EAIntroPage()
-            page4.title = "This is page 4";
-            page4.desc = sampleDescription4;
-            
-            let introView = EAIntroView(frame: navigationCtrl.view.bounds, andPages: [page1,page2,page3,page4])
+            let introView = EAIntroView(frame: walkthroughVC.view.frame, andPages: [page1,page2,page3])
+            //if you want to the navigation bar way
+            //let introView = EAIntroView(frame: walkthroughVC.view.frame, andPages: [page1,page2,page3,page4])
             introView.delegate = self
-            introView.pageControlY = navigationCtrl.view.bounds.size.height - 200;
-//            let walkthroughBackgroundImage1 = UIImageView(image: UIImage(named: "img_slider 01"))
-//            introView.titleView = walkthroughBackgroundImage1;
-//            introView.titleViewY = 100;
+            introView.pageControlY = walkthroughVC.view.frame.size.height - 30 - 48 - 64;
+            introView.bgImage = UIImage(named: "bg_gradient")
+            introView.showInView(walkthroughVC.view, animateDuration: 0.3)
+            self.window?.rootViewController = walkthroughVC
             
-//            introView.bgImage = UIImage(named: "img_slider 01")
-            
-            
-            
-            introView.showInView(navigationCtrl.view, animateDuration: 0.3)
-            self.window?.rootViewController = navigationCtrl
-            
-            
-
         #endif
             setUpNavBarAndStatusBarImages()
+    }
+    
+    //MARK: EAIntroViewDelegate
+    func introDidFinish(introView: EAIntroView!) {
+        print("intro walkthrough finished")
     }
     
     func setUpNavBarAndStatusBarImages() {
@@ -158,10 +166,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, EAIntroDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    //MARK: EAIntroViewDelegate 
-    func introDidFinish(introView: EAIntroView!) {
-        print("intro walkthrough finished")
-    }
+
 
 }
 
