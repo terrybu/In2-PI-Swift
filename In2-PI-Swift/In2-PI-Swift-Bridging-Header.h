@@ -13,3 +13,4 @@
 #import <HockeySDK/HockeySDK.h>
 #import <HMSegmentedControl/HMSegmentedControl.h>
 #import <Parse/Parse.h>
+#import <EAIntroView/EAIntroView.h>

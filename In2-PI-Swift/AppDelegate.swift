@@ -12,9 +12,14 @@ import HockeySDK
 import AVKit
 import Parse
 import Bolts
+import EAIntroView
+
+private let sampleDescription1 = "Get latest updates on your favorite In2 PI stories and contents in MY FEED tab.";
+private let sampleDescription2 = "Stay up to date on new things happening around In2 PI in the PI FEED tab.";
+private let sampleDescription3 = "Tap the Menu icon to navigate around the app and access app settings.";
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, EAIntroDelegate {
 
     var window: UIWindow?
     var statusBarBackgroundView: UIView?
@@ -72,10 +77,69 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = loginNavCtrl
         #else
             //NO LOGIN FOR DEBUG JUST FOR NOW - comment it out to test Login screen
-            let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
-            self.window?.rootViewController = revealVC
+            
+            //Walkthrough testing
+            let walkthroughVC = UIViewController()
+            walkthroughVC.view.frame = window!.frame
+           // walkthroughVC.title = "Welcome"
+//            let navigationCtrl = UINavigationController(rootViewController: walkthroughVC)
+//            navigationCtrl.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+            //This below code gets rid of bottom 1px border from navigation bar, so we can make it look like a bottom border never exists
+            //couldn't get the border to disappear for some reason. it stayed white.
+//            navigationCtrl.navigationBar.setBackgroundImage(UIImage(), forBarPosition: UIBarPosition.Any, barMetrics: UIBarMetrics.Default)
+//            navigationCtrl.navigationBar.shadowImage = UIImage()
+//            navigationCtrl.navigationBar.clipsToBounds = true
+//            navigationCtrl.navigationBar.translucent = false
+            
+            let page1 = setUpPageForEAIntroPage(walkthroughVC, title: "Welcome", description: sampleDescription1, imageName: "walkthroughImage1")
+            let page2 = setUpPageForEAIntroPage(walkthroughVC, title: "PI Feed", description: sampleDescription2, imageName: "walkthroughImage2") ;
+            let page3 = setUpPageForEAIntroPage(walkthroughVC, title: "Navigation Drawer", description: sampleDescription3, imageName: "walkthroughImage3") ;
+            
+            let introView = EAIntroView(frame: walkthroughVC.view.frame, andPages: [page1,page2,page3])
+            //if you want to the navigation bar way
+            //let introView = EAIntroView(frame: walkthroughVC.view.frame, andPages: [page1,page2,page3,page4])
+            introView.delegate = self
+            introView.pageControlY = walkthroughVC.view.frame.size.height - 30 - 48 - 64;
+            introView.bgImage = UIImage(named: "bg_gradient")
+            let btn = UIButton(type: UIButtonType.Custom)
+            btn.setBackgroundImage(UIImage(named: "btn_X"), forState: UIControlState.Normal)
+            btn.frame = CGRectMake(0, 0, 24, 20)
+            introView.skipButton = btn
+            introView.skipButtonY = walkthroughVC.view.frame.size.height - 30
+            introView.skipButtonAlignment = EAViewAlignment.Right
+            
+            introView.showInView(walkthroughVC.view, animateDuration: 0.3)
+            self.window?.rootViewController = walkthroughVC
         #endif
-            setUpNavBarAndStatusBarImages()
+    }
+    
+    private func setUpPageForEAIntroPage(walkthroughVC: UIViewController, title: String, description: String, imageName: String) -> EAIntroPage {
+        let page = EAIntroPage()
+        page.title = title
+        page.titlePositionY = walkthroughVC.view.frame.size.height - 30
+        page.titleFont = UIFont(name: "NanumBarunGothicOTF", size: 21.0)
+        page.desc = description
+        page.descFont = UIFont(name: "NanumBarunGothicOTF", size: 20.0 * 6/8)
+        page.descWidth = walkthroughVC.view.frame.size.width * 0.75
+        //setting position on these work weirdly. Higher the number, Higher it goes up toward top of screen. Lower the number, more it sticks to bottom of screen
+        page.descPositionY = walkthroughVC.view.frame.size.height - 30 - 32
+        let walkthroughImageView = UIImageView(image: UIImage(named: imageName))
+        page.titleIconView = walkthroughImageView
+        if DeviceType.IS_IPHONE_5 || DeviceType.IS_IPHONE_4_OR_LESS{
+            page.titleIconPositionY = walkthroughVC.view.frame.size.height - walkthroughImageView.frame.size.height + 50
+        } else {
+            page.titleIconPositionY = walkthroughVC.view.frame.size.height - walkthroughImageView.frame.size.height
+        }
+        return page
+    }
+    
+    //MARK: EAIntroViewDelegate
+    func introDidFinish(introView: EAIntroView!) {
+        print("intro walkthrough finished")
+        let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
+        self.window?.rootViewController = revealVC
+        setUpNavBarAndStatusBarImages()
+
     }
     
     func setUpNavBarAndStatusBarImages() {
@@ -112,6 +176,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+
 
 
 }

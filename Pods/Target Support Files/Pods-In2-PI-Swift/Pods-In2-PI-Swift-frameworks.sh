@@ -86,6 +86,8 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-In2-PI-Swift/AFNetworking.framework"
   install_framework "Pods-In2-PI-Swift/Bolts.framework"
+  install_framework "Pods-In2-PI-Swift/EAIntroView.framework"
+  install_framework "Pods-In2-PI-Swift/EARestrictedScrollView.framework"
   install_framework "Pods-In2-PI-Swift/FBSDKCoreKit.framework"
   install_framework "Pods-In2-PI-Swift/FBSDKLoginKit.framework"
   install_framework "Pods-In2-PI-Swift/HMSegmentedControl.framework"
@@ -97,6 +99,8 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-In2-PI-Swift/AFNetworking.framework"
   install_framework "Pods-In2-PI-Swift/Bolts.framework"
+  install_framework "Pods-In2-PI-Swift/EAIntroView.framework"
+  install_framework "Pods-In2-PI-Swift/EARestrictedScrollView.framework"
   install_framework "Pods-In2-PI-Swift/FBSDKCoreKit.framework"
   install_framework "Pods-In2-PI-Swift/FBSDKLoginKit.framework"
   install_framework "Pods-In2-PI-Swift/HMSegmentedControl.framework"

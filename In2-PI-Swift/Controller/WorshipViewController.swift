@@ -48,7 +48,6 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     
     func getPraiseSongNamesListAndHeaderFromFacebook() {
         let feedPostObjects = FacebookFeedQuery.sharedInstance.FBFeedObjectsArray
-        let thisWeeksPraiseSongsListFeedPost: FBFeedPost
         for postObject in feedPostObjects {
             if postObject.parsedCategory == "PI찬양" {
                 if postObject.type == "status" {
@@ -72,7 +71,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
             if postBody[i] == "\n" {
                 if postBody[i+1] == "\n" {
                     //found a double linebreak
-                    var newSongObject = PraiseSong(songTitle: newSongName)
+                    let newSongObject = PraiseSong(songTitle: newSongName)
                     var j = i + 2
                     newSongName = ""
                     while postBody[j] != "\n" {
