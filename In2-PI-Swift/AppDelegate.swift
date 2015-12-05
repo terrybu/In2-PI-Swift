@@ -64,6 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, EAIntroDelegate {
     
     @objc
     private func moviePlayBackDidFinish() {
+        
+        
         #if RELEASE
             let loginNavCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginVCNavigationController") as! UINavigationController
             let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
@@ -79,7 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, EAIntroDelegate {
             //NO LOGIN FOR DEBUG JUST FOR NOW - comment it out to test Login screen
             
             //Walkthrough testing
-            let walkthroughVC = UIViewController()
+            let walkthroughVC = WalkthroughViewController()
             walkthroughVC.view.frame = window!.frame
            // walkthroughVC.title = "Welcome"
 //            let navigationCtrl = UINavigationController(rootViewController: walkthroughVC)
@@ -139,7 +141,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, EAIntroDelegate {
         let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
         self.window?.rootViewController = revealVC
         setUpNavBarAndStatusBarImages()
-
     }
     
     func setUpNavBarAndStatusBarImages() {
