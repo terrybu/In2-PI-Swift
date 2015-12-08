@@ -233,22 +233,23 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
 //                let urlString = "https://www.youtube.com/results?search_query=" + escaped!
 //                let url : NSURL! = NSURL(string: urlString)
                 let songObject = songObjectsArray[indexPath.row]
-                let url = NSURL(string: songObject.songYouTubeURL!)
-                
-                if #available(iOS 9.0, *) {
-                    let sfVC = SFSafariViewController(URL: url!, entersReaderIfAvailable: true)
-                    sfVC.delegate = self
-                    self.presentViewController(sfVC, animated: true, completion: nil)
-                    //in case anybody prefers right to left push viewcontroller animation transition (below) 
-//                    navigationController?.pushViewController(sfVC, animated: true)
-
-                } else {
-                    // Fallback on earlier versions
-                    let webView = UIWebView(frame: view.frame)
-                    webView.loadRequest(NSURLRequest(URL: url!))
-                    let vc = UIViewController()
-                    vc.view = webView
-                    navigationController?.pushViewController(vc, animated: true)
+                if let songURLString = songObject.songYouTubeURL {
+                    let trimSpacesFromURLString = songURLString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+                    let url = NSURL(string: trimSpacesFromURLString)
+                    if #available(iOS 9.0, *) {
+                        let sfVC = SFSafariViewController(URL: url!, entersReaderIfAvailable: true)
+                        sfVC.delegate = self
+                        self.presentViewController(sfVC, animated: true, completion: nil)
+                        //in case anybody prefers right to left push viewcontroller animation transition (below)
+                        //                    navigationController?.pushViewController(sfVC, animated: true)
+                    } else {
+                        // Fallback on earlier versions
+                        let webView = UIWebView(frame: view.frame)
+                        webView.loadRequest(NSURLRequest(URL: url!))
+                        let vc = UIViewController()
+                        vc.view = webView
+                        navigationController?.pushViewController(vc, animated: true)
+                    }
                 }
             }
     }

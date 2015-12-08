@@ -1337,14 +1337,14 @@ extension JSON {
     @available(*, unavailable, renamed="uInt")
     public var unsignedInteger: Int? {
         get {
-            return self.number?.unsignedIntegerValue
+            return self.number as! Int
         }
     }
     
     @available(*, unavailable, renamed="uIntValue")
     public var unsignedIntegerValue: Int {
         get {
-            return self.numberValue.unsignedIntegerValue
+            return self.numberValue as Int
         }
     }
 }
