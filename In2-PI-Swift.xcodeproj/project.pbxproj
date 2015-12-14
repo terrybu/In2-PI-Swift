@@ -369,9 +369,9 @@
 				D9DA87E71B6DC05C005D4CB6 /* View */,
 				D9DA87E81B6DC063005D4CB6 /* Controller */,
 				D95EC5271B97961200782925 /* Extensions */,
-				D9FB031E1B6495C3001D813D /* Terry References */,
 				D9F9C7E21B645FD100F5C17D /* Resources */,
 				D9F7F47F1B93544400D86FF7 /* Third Party */,
+				D9FB031E1B6495C3001D813D /* Terry References */,
 				D9D3CDEA1B3F20EF00C8E195 /* Supporting Files */,
 			);
 			path = "In2-PI-Swift";

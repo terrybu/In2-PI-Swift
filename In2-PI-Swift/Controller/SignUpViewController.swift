@@ -16,10 +16,34 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet var userNameTextField:PaddedTextField!
     @IBOutlet var passwordTextField:PaddedTextField!
     @IBOutlet var emailTextField:PaddedTextField!
-
     
-    @IBAction func backArrowButton(sender: AnyObject) {
-        navigationController?.popViewControllerAnimated(true)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        userNameTextField.delegate = self
+        passwordTextField.delegate = self
+        emailTextField.delegate = self
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "navBarSignUp"), forBarMetrics: UIBarMetrics.Default)
+        navigationController?.navigationBar.translucent = false
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        let statusBarBackgroundView = UIView(frame: CGRect(x: 0, y: -20, width: UIScreen.mainScreen().bounds.size.width, height: 20))
+        statusBarBackgroundView.backgroundColor = UIColor(patternImage: UIImage(named:"status_bar")!)
+        self.navigationController?.navigationBar.addSubview(statusBarBackgroundView)
+        
+        let backButton = UIBarButtonItem(image: UIImage(named: "btn_back"), style: UIBarButtonItemStyle.Plain, target: self, action: "backButtonPressed")
+        navigationItem.leftBarButtonItem = backButton
+    }
+    
+    func backButtonPressed() {
+        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func signUpButtonPressed(sender: AnyObject) {
@@ -29,16 +53,16 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         let password = self.passwordTextField.text
         let email = self.emailTextField.text
         // Validate the text fields
-//        if username?.characters.count < 5 {
-//            var alert = UIAlertView(title: "Invalid", message: "Username must be greater than 5 characters", delegate: self, cancelButtonTitle: "OK")
-//            alert.show()
-//            
-//        } else 
-//        if password?.characters.count < 8 {
-//            var alert = UIAlertView(title: "Invalid", message: "Password must be greater than 8 characters", delegate: self, cancelButtonTitle: "OK")
-//            alert.show()
+        //        if username?.characters.count < 5 {
+        //            var alert = UIAlertView(title: "Invalid", message: "Username must be greater than 5 characters", delegate: self, cancelButtonTitle: "OK")
+        //            alert.show()
+        //
+        //        } else
+        //        if password?.characters.count < 8 {
+        //            var alert = UIAlertView(title: "Invalid", message: "Password must be greater than 8 characters", delegate: self, cancelButtonTitle: "OK")
+        //            alert.show()
         
-//        } else 
+        //        } else
         
         if email?.characters.count < 8 {
             let alert = UIAlertView(title: "Invalid", message: "Please enter a valid email address", delegate: self, cancelButtonTitle: "OK")
@@ -86,25 +110,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
                 }
             })
         }
-
+        
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        firstNameTextField.delegate = self
-        lastNameTextField.delegate = self
-        userNameTextField.delegate = self
-        passwordTextField.delegate = self
-        emailTextField.delegate = self
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
 
+    //MARK: UITextFieldDelegate Methods
+    
     /**
     * Called when 'return' key pressed. return NO to ignore.
     */

@@ -59,7 +59,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @objc
     private func moviePlayBackDidFinish() {
 //        #if RELEASE
-            let loginNavCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginVCNavigationController") as! UINavigationController
             let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
             loginVC.dismissBlock = {
                 let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey(kfirstLaunchKeyForWalkthroughCheck)
@@ -76,8 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     WalkthroughManager.sharedInstance.displayWalkthroughScreen(self.window)
                 }
             }
-            loginNavCtrl.viewControllers = [loginVC]
-            window?.rootViewController = loginNavCtrl
+            window?.rootViewController = loginVC
 //        #else
         
 
