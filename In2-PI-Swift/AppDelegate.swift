@@ -30,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("kcmNwFnHHDfanE4xbzZYzufPe5Cz74z1O4wftbej",
             clientKey: "VYQRtVcSJWUhGhjuLuy8kA7HKQ7rzbHa7Y37Work")
  
-        
         #if RELEASE
             print("release mode")
             BITHockeyManager.sharedHockeyManager().configureWithIdentifier   ("397fac4ea6ec1293bbf6b3aa1828b806")

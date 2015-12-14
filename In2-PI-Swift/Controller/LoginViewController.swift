@@ -16,12 +16,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
+    
     @IBAction func didPressLoginbutton() {
         let username = usernameTextField.text
         let password = passwordTextField.text
         
         if username != nil && password != nil {
             let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+            hud.labelText = "로그인 실행중입니다."
             hud.color = UIColor.clearColor()
             PFUser.logInWithUsernameInBackground(username!, password: password!) { (user, error) -> Void in
                 if let user = user {
@@ -31,11 +33,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     }
                 } else {
                     print(error)
+                    let alertController = UIAlertController(title: "\(error!.localizedDescription)", message: "로그인이 실패하였습니다. Username, Password 의 입력을 다시 확인해 주세요.", preferredStyle: UIAlertControllerStyle.Alert)
+                    let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+                    alertController.addAction(ok)
+                    alertController.view.tintColor = UIColor.In2DeepPurple()
+                    self.presentViewController(alertController, animated: true, completion: nil)
                 }
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
             }
         }
-     
     }
     
     override func viewDidLoad() {

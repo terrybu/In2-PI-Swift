@@ -50,7 +50,7 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate,
         black.backgroundColor = UIColor.blackColor()
         view.addSubview(black)
         let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
-        hud.labelText = "Loading..."
+        hud.labelText = "로딩중입니다. 잠시만 기다려주세요."
     }
     
     
