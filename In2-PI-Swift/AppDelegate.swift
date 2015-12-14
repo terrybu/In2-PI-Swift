@@ -58,28 +58,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     @objc
     private func moviePlayBackDidFinish() {
-//        #if RELEASE
             let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
             loginVC.dismissBlock = {
-                let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey(kfirstLaunchKeyForWalkthroughCheck)
-                if firstLaunch  {
-                    print("Not first launch. Take him straight to login or home screen without walkthrough")
-                    let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
-                    self.window?.rootViewController = revealVC
-                    print("dismiss block executing from appdelegate")
-                    self.setUpNavBarAndStatusBarImages()
-                }
-                else {
-                    print("First launch, setting NSUserDefault AND displaying walkthrough screen")
-                    NSUserDefaults.standardUserDefaults().setBool(true, forKey: kfirstLaunchKeyForWalkthroughCheck)
-                    WalkthroughManager.sharedInstance.displayWalkthroughScreen(self.window)
-                }
+                WalkthroughManager.sharedInstance.checkFirstLaunchAndShowWalkthroughIfTrue(self.window)
             }
             window?.rootViewController = loginVC
-//        #else
-        
-
-//        #endif
     }
     
     

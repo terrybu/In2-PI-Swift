@@ -41,6 +41,19 @@ class WalkthroughManager: NSObject, EAIntroDelegate{
         window?.rootViewController = walkthroughVC
     }
     
+    func checkFirstLaunchAndShowWalkthroughIfTrue(window: UIWindow?) {
+        let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey(kfirstLaunchKeyForWalkthroughCheck)
+        if firstLaunch == false {
+            print("Not first launch. Take him straight to login or home screen without walkthrough")
+            showHomeScreen()
+        }
+        else {
+            print("First launch, setting NSUserDefault AND displaying walkthrough screen")
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: kfirstLaunchKeyForWalkthroughCheck)
+            WalkthroughManager.sharedInstance.displayWalkthroughScreen(window)
+        }
+    }
+    
     private func setUpPageForEAIntroPage(walkthroughVC: UIViewController, title: String, description: String, imageName: String) -> EAIntroPage {
         let page = EAIntroPage()
         page.title = title
@@ -64,6 +77,10 @@ class WalkthroughManager: NSObject, EAIntroDelegate{
     //MARK: EAIntroViewDelegate
     @objc func introDidFinish(introView: EAIntroView!) {
         print("intro walkthrough finished or wasn't needed")
+        showHomeScreen()
+    }
+    
+    func showHomeScreen() {
         let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.window?.rootViewController = revealVC
