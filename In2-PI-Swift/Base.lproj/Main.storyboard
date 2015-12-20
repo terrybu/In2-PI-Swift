@@ -1349,8 +1349,8 @@
                                     <constraint firstAttribute="height" constant="50" id="Q6I-s2-jyq"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gm0-K4-ATo">
-                                <rect key="frame" x="0.0" y="114" width="600" height="486"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gm0-K4-ATo">
+                                <rect key="frame" x="0.0" y="50" width="600" height="486"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

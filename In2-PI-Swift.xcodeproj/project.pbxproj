@@ -39,6 +39,8 @@
 		D989C5201C26ECB10051ACFE /* NanumBarunGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D989C51C1C26ECB10051ACFE /* NanumBarunGothic.otf */; };
 		D989C5211C26ECB10051ACFE /* NanumBarunGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D989C51D1C26ECB10051ACFE /* NanumBarunGothicBold.otf */; };
 		D989C5221C26ECB10051ACFE /* NanumBarunGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D989C51E1C26ECB10051ACFE /* NanumBarunGothicLight.otf */; };
+		D989C5271C2700500051ACFE /* HolyStarIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D989C5251C2700500051ACFE /* HolyStarIntroViewController.swift */; };
+		D989C5281C2700500051ACFE /* HolyStarIntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D989C5261C2700500051ACFE /* HolyStarIntroViewController.xib */; };
 		D98FEFB01B9C077F003614A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9D3CDF01B3F20EF00C8E195 /* Main.storyboard */; };
 		D98FEFB21B9C0C65003614A7 /* ApplyWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FEFB11B9C0C65003614A7 /* ApplyWidgetView.swift */; };
 		D98FEFB41B9C0C8E003614A7 /* ApplyWidgetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98FEFB31B9C0C8E003614A7 /* ApplyWidgetView.xib */; };
@@ -122,6 +124,8 @@
 		D989C51C1C26ECB10051ACFE /* NanumBarunGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothic.otf; sourceTree = "<group>"; };
 		D989C51D1C26ECB10051ACFE /* NanumBarunGothicBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicBold.otf; sourceTree = "<group>"; };
 		D989C51E1C26ECB10051ACFE /* NanumBarunGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicLight.otf; sourceTree = "<group>"; };
+		D989C5251C2700500051ACFE /* HolyStarIntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolyStarIntroViewController.swift; sourceTree = "<group>"; };
+		D989C5261C2700500051ACFE /* HolyStarIntroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HolyStarIntroViewController.xib; sourceTree = "<group>"; };
 		D98FEFB11B9C0C65003614A7 /* ApplyWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyWidgetView.swift; sourceTree = "<group>"; };
 		D98FEFB31B9C0C8E003614A7 /* ApplyWidgetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplyWidgetView.xib; sourceTree = "<group>"; };
 		D9965A781B9E1D6800AB4A74 /* PaddedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
@@ -259,6 +263,7 @@
 		D980D6F31B9BDAFC001058E9 /* Five Boros Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D989C5241C2700310051ACFE /* HolyStarIntro */,
 				D90A7B091B924256003EA693 /* ParentViewController.swift */,
 				D92295941B9BF87000C34A66 /* WorshipViewController.swift */,
 				D90A7AFB1B923F13003EA693 /* NurtureViewController.swift */,
@@ -269,13 +274,13 @@
 			name = "Five Boros Controllers";
 			sourceTree = "<group>";
 		};
-		D980D6F41B9BDB1B001058E9 /* Other Controllers */ = {
+		D989C5241C2700310051ACFE /* HolyStarIntro */ = {
 			isa = PBXGroup;
 			children = (
-				D90A7B051B92415D003EA693 /* AboutPIViewControlller.swift */,
-				D90A7B071B924164003EA693 /* GalleryViewController.swift */,
+				D989C5251C2700500051ACFE /* HolyStarIntroViewController.swift */,
+				D989C5261C2700500051ACFE /* HolyStarIntroViewController.xib */,
 			);
-			name = "Other Controllers";
+			name = HolyStarIntro;
 			sourceTree = "<group>";
 		};
 		D98FEFAE1B9C0723003614A7 /* Fonts */ = {
@@ -419,8 +424,9 @@
 				D9DE0D4A1C138DFF00A58749 /* WalkthroughViewController.swift */,
 				D9F9C7E91B64873800F5C17D /* LeftNavDrawerController.swift */,
 				D90A7AFD1B92406F003EA693 /* HomeScreenViewController.swift */,
+				D90A7B051B92415D003EA693 /* AboutPIViewControlller.swift */,
+				D90A7B071B924164003EA693 /* GalleryViewController.swift */,
 				D980D6F31B9BDAFC001058E9 /* Five Boros Controllers */,
-				D980D6F41B9BDB1B001058E9 /* Other Controllers */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -568,6 +574,7 @@
 				D98FEFB41B9C0C8E003614A7 /* ApplyWidgetView.xib in Resources */,
 				D9B9B5791B4B1B0000DA476E /* splashScreen.mp4 in Resources */,
 				D9F8C4761BA4C33200881B94 /* TodaysQTWidget.xib in Resources */,
+				D989C5281C2700500051ACFE /* HolyStarIntroViewController.xib in Resources */,
 				D92938021C07F2820040BD6D /* PurpleSegmentedControlView.xib in Resources */,
 				D97C169A1BAA3E990095CB0A /* CommunicationsTableViewCell.xib in Resources */,
 				D9D3CE121B3F309C00C8E195 /* InfoPlist.strings in Resources */,
@@ -678,6 +685,7 @@
 				D97C16991BAA3E990095CB0A /* CommunicationsTableViewCell.swift in Sources */,
 				D9F7F4831B935DFA00D86FF7 /* GalleryCell.swift in Sources */,
 				D9F7F4811B93547600D86FF7 /* FacebookPhotoQuery.swift in Sources */,
+				D989C5271C2700500051ACFE /* HolyStarIntroViewController.swift in Sources */,
 				D90A08251BB5D4BD0033DD6B /* XPathQuery.m in Sources */,
 				D95EC5261B978E6400782925 /* FBFeedPost.swift in Sources */,
 				D95EC5291B97963000782925 /* StringExtension.swift in Sources */,

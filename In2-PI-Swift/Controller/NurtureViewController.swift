@@ -30,11 +30,8 @@ class NurtureViewController: ParentViewController, MFMailComposeViewControllerDe
             self.sendMail(sender)
         }
         rightHolyStarApplyWidget.applyButtonPressedHandler = {(sender) -> Void in
-            self.sendMail(sender)
+            self.openHolyStarIntroViewController()
         }
-//        rightHolyStarApplyWidget.applyButton.setBackgroundImage(UIImage(named: "btn_more_s"), forState: UIControlState.Normal)
-        
-        
     }
     
     private func setUpExpandableAboutView() {
@@ -43,6 +40,11 @@ class NurtureViewController: ParentViewController, MFMailComposeViewControllerDe
         expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: expandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
     }
     
+    private func openHolyStarIntroViewController() {
+        let holyStarVC = HolyStarIntroViewController(nibName: "HolyStarIntroViewController", bundle: nil)
+        holyStarVC.title = "홀리스타"
+        self.navigationController?.pushViewController(holyStarVC, animated: true)
+    }
 
     
     @IBAction func sendMail(sender: AnyObject) {

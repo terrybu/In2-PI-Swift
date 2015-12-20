@@ -20,16 +20,19 @@ class ParentViewController: UIViewController {
         revealViewController().pushFrontViewController(homeNavCtrl!, animated: true)
     }
     
-    func setUpStandardUIForViewControllers() {
-        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
-        
+    class func makeNavBarHairLineBarWhiteAndShort(navController: UINavigationController, view: UIView) {
         //hairline nav
-        self.navigationController!.navigationBar.shadowImage = UIImage()
+        navController.navigationBar.shadowImage = UIImage()
         let whiteHairLineCustom = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 0.5))
         whiteHairLineCustom.backgroundColor = UIColor.whiteColor()
         whiteHairLineCustom.alpha = 0.5
         view.addSubview(whiteHairLineCustom)
+    }
+    
+    func setUpStandardUIForViewControllers() {
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        ParentViewController.makeNavBarHairLineBarWhiteAndShort(self.navigationController!, view: view)
         
         let hamburger = UIBarButtonItem(image: UIImage(named: "hamburger"), style: UIBarButtonItemStyle.Done, target: self, action: Selector("hamburgerPressed:"))
         navigationItem.leftBarButtonItem = hamburger
