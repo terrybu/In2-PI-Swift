@@ -15,6 +15,7 @@ import UIKit
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var applyButton: UIButton!
 
     @IBAction func applyButtonPressed(sender: UIButton) {
         if let handler = applyButtonPressedHandler {
@@ -38,6 +39,23 @@ import UIKit
             backgroundImageView.image = image
         }
     }
+    @IBInspectable var applyButtonTitle: String? {
+        get {
+            return applyButton.titleLabel?.text
+        }
+        set(title) {
+            applyButton.setTitle(title, forState: UIControlState.Normal)
+        }
+    }
+    @IBInspectable var applyButtonImage: UIImage? {
+        get {
+            return applyButton.backgroundImageForState(UIControlState.Normal)
+        }
+        set(image) {
+            applyButton.setBackgroundImage(image, forState: UIControlState.Normal)
+        }
+    }
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)

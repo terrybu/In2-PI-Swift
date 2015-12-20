@@ -32,6 +32,9 @@ class NurtureViewController: ParentViewController, MFMailComposeViewControllerDe
         rightHolyStarApplyWidget.applyButtonPressedHandler = {(sender) -> Void in
             self.sendMail(sender)
         }
+//        rightHolyStarApplyWidget.applyButton.setBackgroundImage(UIImage(named: "btn_more_s"), forState: UIControlState.Normal)
+        
+        
     }
     
     private func setUpExpandableAboutView() {
