@@ -102,7 +102,6 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: expandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
     }
     
-    
     //MARK: WeeklyProgramDownloader Delegate methods
     func didFinishDownloadinglistOfTenWeeklyProgramsFromImportIO(downloadedProgramsArray: [WeeklyProgram]?) {
         if let downloadedProgramsArray = downloadedProgramsArray {
@@ -113,51 +112,9 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         }
     }
     
-    //MARK: WeeklyPrograms TableView Delegate methods
+    //MARK: UITableViewDataSource Methods
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
-    }
-    
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-            let headerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 40))
-            headerView.backgroundColor = UIColor.whiteColor()
-            var label: UILabel
-            if (tableView == weeklyProgramsTableView) {
-                label = UILabel(frame: CGRectMake(12, 5, 50, 18))
-                label.text = "주보"
-            } else {
-                label = UILabel(frame: CGRectMake(12, 5, 300, 18))
-                if let headerTitle = headerTitleStringForPraiseSongsListSection {
-                    label.text = headerTitle
-                } else {
-                    label.text = "인터넷 연결이 실패했습니다"
-                }
-            }
-            label.font = UIFont.boldSystemFontOfSize(16)
-            headerView.addSubview(label)
-            
-            let button = UIButton(type: UIButtonType.Custom)
-            button.frame = CGRectMake(tableView.frame.size.width - 70, 5, 50, 20)
-            button.setTitle("더보기", forState: UIControlState.Normal)
-            button.titleLabel!.font = UIFont.boldSystemFontOfSize(16)
-            button.setTitleColor(UIColor.In2DeepPurple(), forState: UIControlState.Normal)
-            button.addTarget(self, action: "testTarget", forControlEvents: UIControlEvents.TouchUpInside)
-            headerView.addSubview(button)
-            
-            let moreArrowButton = UIButton(type: UIButtonType.Custom)
-            moreArrowButton.frame = CGRectMake(tableView.frame.size.width-30, 5, 30, 20)
-            moreArrowButton.setImage(UIImage(named: "btn_more_B"), forState: .Normal)
-            moreArrowButton.addTarget(self, action: "testTarget", forControlEvents: UIControlEvents.TouchUpInside)
-            headerView.addSubview(moreArrowButton)
-            return headerView
-    }
-    
-    func testTarget() {
-        print("testing")
-    }
-    
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -189,10 +146,55 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     }
     
     //MARK: UITableViewDelegate
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 40))
+        headerView.backgroundColor = UIColor.whiteColor()
+        var label: UILabel
+        if (tableView == weeklyProgramsTableView) {
+            label = UILabel(frame: CGRectMake(12, 5, 50, 18))
+            label.text = "주보"
+            //"See more arrow button" to the right of section header
+            let button = UIButton(type: UIButtonType.Custom)
+            button.frame = CGRectMake(tableView.frame.size.width - 70, 5, 50, 20)
+            button.setTitle("더보기", forState: UIControlState.Normal)
+            button.titleLabel!.font = UIFont.boldSystemFontOfSize(16)
+            button.setTitleColor(UIColor.In2DeepPurple(), forState: UIControlState.Normal)
+            button.addTarget(self, action: "seeMoreArrowWasPressed", forControlEvents: UIControlEvents.TouchUpInside)
+            headerView.addSubview(button)
+            let moreArrowButton = UIButton(type: UIButtonType.Custom)
+            moreArrowButton.frame = CGRectMake(tableView.frame.size.width-30, 5, 30, 20)
+            moreArrowButton.setImage(UIImage(named: "btn_more_B"), forState: .Normal)
+            moreArrowButton.addTarget(self, action: "seeMoreArrowWasPressed", forControlEvents: UIControlEvents.TouchUpInside)
+            headerView.addSubview(moreArrowButton)
+        } else {
+            label = UILabel(frame: CGRectMake(12, 5, 300, 18))
+            if let headerTitle = headerTitleStringForPraiseSongsListSection {
+                label.text = headerTitle
+            } else {
+                label.text = "인터넷 연결이 실패했습니다"
+            }
+        }
+        label.font = UIFont(name: "NanumBarunGothicOTF", size: 17)
+        headerView.addSubview(label)
+        
+        return headerView
+    }
+    
+    func seeMoreArrowWasPressed() {
+        print("seeMoreArrowWasPressed")
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 44
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
             if tableView == weeklyProgramsTableView {
                 let weeklyProgram = weeklyProgramsArray[indexPath.row]
-                
                 if weeklyProgram.cached  {
                     displayPDFInWebView(NSURL.fileURLWithPath(weeklyProgram.cachedPath!))
                 } else {
