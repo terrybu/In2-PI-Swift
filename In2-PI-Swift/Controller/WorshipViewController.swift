@@ -174,7 +174,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
                 label.text = "인터넷 연결이 실패했습니다"
             }
         }
-        label.font = UIFont(name: "NanumBarunGothicOTF", size: 17)
+        label.font = UIFont.boldSystemFontOfSize(17)
         headerView.addSubview(label)
         
         return headerView
@@ -238,23 +238,30 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
                 if let songURLString = songObject.songYouTubeURL {
                     let trimSpacesFromURLString = songURLString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
                     let url = NSURL(string: trimSpacesFromURLString)
-                    if #available(iOS 9.0, *) {
-                        let sfVC = SFSafariViewController(URL: url!, entersReaderIfAvailable: true)
-                        sfVC.delegate = self
-                        self.presentViewController(sfVC, animated: true, completion: nil)
-                        //in case anybody prefers right to left push viewcontroller animation transition (below)
-                        //                    navigationController?.pushViewController(sfVC, animated: true)
-                    } else {
-                        // Fallback on earlier versions
-                        let webView = UIWebView(frame: view.frame)
-                        webView.loadRequest(NSURLRequest(URL: url!))
-                        let vc = UIViewController()
-                        vc.view = webView
-                        navigationController?.pushViewController(vc, animated: true)
+                    if let url = url {
+                        presentSFSafariVCIfAvailable(url)
                     }
                 }
             }
     }
+    
+    private func presentSFSafariVCIfAvailable(url: NSURL) {
+        if #available(iOS 9.0, *) {
+            let sfVC = SFSafariViewController(URL: url, entersReaderIfAvailable: true)
+            sfVC.delegate = self
+            self.presentViewController(sfVC, animated: true, completion: nil)
+            //in case anybody prefers right to left push viewcontroller animation transition (below)
+            //navigationController?.pushViewController(sfVC, animated: true)
+        } else {
+            // Fallback on earlier versions
+            let webView = UIWebView(frame: view.frame)
+            webView.loadRequest(NSURLRequest(URL: url))
+            let vc = UIViewController()
+            vc.view = webView
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     private func displayPDFInWebView(fileURL: NSURL) {
         let webView = UIWebView(frame: self.view.frame)
         webView.scalesPageToFit = true
@@ -271,5 +278,9 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    //MARK: IBActions
+    @IBAction func didPressSeeMoreWorshipVideos() {
+        presentSFSafariVCIfAvailable(NSURL(string: "https://www.youtube.com/user/in2ube/videos")!)
+    }
     
 }
