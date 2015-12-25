@@ -621,7 +621,7 @@
                                                 </variation>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Z59-kD-ayY" userLabel="Songs Table View">
-                                                <rect key="frame" x="0.0" y="122" width="600" height="200"/>
+                                                <rect key="frame" x="0.0" y="114" width="600" height="200"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="1lQ-Z4-86b"/>
@@ -684,7 +684,7 @@
                                             <constraint firstItem="Z59-kD-ayY" firstAttribute="top" secondItem="atY-6P-a2d" secondAttribute="bottom" constant="64" id="5ql-6Y-5zi"/>
                                             <constraint firstItem="Z59-kD-ayY" firstAttribute="leading" secondItem="pVQ-jT-Ckx" secondAttribute="leading" id="63B-w0-Prz"/>
                                             <constraint firstAttribute="bottom" secondItem="dv8-4e-YfA" secondAttribute="bottom" id="89D-yo-h4R"/>
-                                            <constraint firstItem="dv8-4e-YfA" firstAttribute="top" secondItem="Z59-kD-ayY" secondAttribute="bottom" constant="20" id="9EF-AW-IaJ"/>
+                                            <constraint firstItem="dv8-4e-YfA" firstAttribute="top" secondItem="Z59-kD-ayY" secondAttribute="bottom" constant="12" id="9EF-AW-IaJ"/>
                                             <constraint firstAttribute="trailing" secondItem="atY-6P-a2d" secondAttribute="trailing" id="AD9-Eh-PQy"/>
                                             <constraint firstItem="dv8-4e-YfA" firstAttribute="leading" secondItem="pVQ-jT-Ckx" secondAttribute="leading" id="HMN-bE-iMb"/>
                                             <constraint firstItem="atY-6P-a2d" firstAttribute="top" secondItem="pVQ-jT-Ckx" secondAttribute="top" id="Nmb-uh-Obx"/>
@@ -736,7 +736,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="pVQ-jT-Ckx" secondAttribute="bottom" id="4Ml-eA-VJS"/>
-                                    <constraint firstItem="Z59-kD-ayY" firstAttribute="top" secondItem="ZWI-nL-skI" secondAttribute="bottom" constant="20" id="EZV-Zy-HcT"/>
+                                    <constraint firstItem="Z59-kD-ayY" firstAttribute="top" secondItem="ZWI-nL-skI" secondAttribute="bottom" constant="12" id="EZV-Zy-HcT"/>
                                     <constraint firstAttribute="trailing" secondItem="pVQ-jT-Ckx" secondAttribute="trailing" id="Kqy-LD-AIA"/>
                                     <constraint firstItem="ZWI-nL-skI" firstAttribute="leading" secondItem="6Yl-0R-4ks" secondAttribute="leading" id="V0m-Ng-7z7"/>
                                     <constraint firstItem="pVQ-jT-Ckx" firstAttribute="leading" secondItem="6Yl-0R-4ks" secondAttribute="leading" id="VIU-AQ-0qQ"/>
@@ -815,7 +815,7 @@
                                                     <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="Box_purple"/>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="applyButtonImage" value="btn_Apply_white"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="applyButtonTitle" value="신청"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="양육보로 사역 신청서"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="양육보로 사역"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p7k-eM-S6m" customClass="EvangelismApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">

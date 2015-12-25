@@ -1,7 +1,11 @@
-###Facebook Gallery
-- it looks fine now but it's only pulling from timeline photos album
-- that means that if a user were to create a whole new album, it won't be seen
-- instead, don't single out just one album.
-Get most 3 recently updated albums and display the most recent photos
-1384548091800506/albums?fields=created_time,updated_time,name
 
+12.25.2015 ToDos before a good release
+1) Worship VC needs a "Apply Card" at the end
+2) Same with communications vc + Social Services VC
+3) Evangelism card can be done now .. [PI 선교] look into it
+4) *** NurtureVC does not have a News card ... go back into the past ... dig up a news like 새가족공지 and make it [PI 양육]?
+5) last big piece is 긍휼부 칼렌더.
+
+Bonus
+- Getting Weekly Programs accessory view to properly display which pdfs were actually already downloaded into the device
+- News?

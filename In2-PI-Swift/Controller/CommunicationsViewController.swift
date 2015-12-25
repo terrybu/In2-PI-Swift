@@ -78,8 +78,6 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CommunicationsCell", forIndexPath: indexPath) as! CommunicationsTableViewCell
         
-        print("cell For row is excuting for indexpath: \(indexPath.row)")
-        
         cell.tag = indexPath.row
         configureCell(cell, indexPath: indexPath)
         
@@ -110,7 +108,6 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
                 FacebookPhotoQuery.sharedInstance.getNormalSizePhotoURLStringForCommunicationsFrom(feedObject.id, completion: { (normImgUrlString) -> Void in
                     self.operationManager?.GET(normImgUrlString, parameters: nil, success: { (operation, responseObject) -> Void in
                         //success
-//                        print("afnetworking image download finished for indexpath: \(indexPath.row)")
                         activityIndicator.stopAnimating()
 
                         if cell.tag == indexPath.row {

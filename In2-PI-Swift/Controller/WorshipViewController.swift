@@ -44,6 +44,8 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         
         WeeklyProgramDownloader.sharedInstance.delegate = self
         WeeklyProgramDownloader.sharedInstance.getTenRecentWeeklyProgramsListFromImportIO()
+        
+
     }
     
     func getPraiseSongNamesListAndHeaderFromFacebook() {
@@ -133,9 +135,11 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         if (tableView == weeklyProgramsTableView) {
             let reuseIdentifier = "WeeklyProgramsTableViewCell"
             cell = weeklyProgramsTableView.dequeueReusableCellWithIdentifier(reuseIdentifier)!
-                cell.textLabel!.text = weeklyProgramsArray[indexPath.row].title
+            let program = weeklyProgramsArray[indexPath.row]
+            cell.textLabel!.text = program.title
+            if !program.cached {
                 cell.accessoryView = UIImageView(image: UIImage(named: "btn_download"))
-
+            }
         } else {
             let reuseIdentifier = "SongsTableViewCell"
             cell = songsTableView.dequeueReusableCellWithIdentifier(reuseIdentifier)!
@@ -208,7 +212,6 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
                         let url = NSURL(string:pdfdownloadURLString)
                         HttpFileDownloader.sharedInstance.loadFileAsync(url!, completion:{(path:String, error:NSError!) in
                             if error == nil {
-                                print("pdf downloaded to: \(path)")
                                 weeklyProgram.cached = true
                                 weeklyProgram.cachedPath = path
                                 let fileURL = NSURL.fileURLWithPath(path)

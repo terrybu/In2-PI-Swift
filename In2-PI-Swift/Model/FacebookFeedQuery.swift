@@ -75,7 +75,7 @@ class FacebookFeedQuery: FacebookQuery {
                 }
             }
         } else {
-            categoryStr = "No Category"
+            categoryStr = "Misc."
             firstTitleStr = "No Title"
         }
         newFeedArticleObject.parsedCategory = categoryStr

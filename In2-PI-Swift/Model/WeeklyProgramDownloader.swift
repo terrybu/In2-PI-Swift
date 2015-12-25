@@ -22,6 +22,20 @@ class WeeklyProgramDownloader {
     var weeklyProgramsArray = [WeeklyProgram]()
     
     func getTenRecentWeeklyProgramsListFromImportIO() {
+//        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+//        let documentDirectory = paths[0]
+//        let fileManager = NSFileManager.defaultManager()
+//        var arrayOfSavedPDfTitles = [String]()
+//        do {
+//            try arrayOfSavedPDfTitles = fileManager.contentsOfDirectoryAtPath(documentDirectory)
+//        }
+//        catch let error as NSError {
+//            error.description
+//        }
+        //I was in the process of trying to tell on WorshipVC tableview load which pdfs were already saved to documents directory and which weren't
+        //But turns out these PDFs when they get saved to the doucments directory have original PDF file names so isn't it difficult to match up what's saved in documents directory to a program in the tableview row
+        //This would be a nice to have but ... not an emergency for now.
+        
         let manager = AFHTTPSessionManager()
         manager.requestSerializer = AFJSONRequestSerializer()
         manager.responseSerializer = AFJSONResponseSerializer()
@@ -29,7 +43,6 @@ class WeeklyProgramDownloader {
             success: { (task:NSURLSessionDataTask!, responseObject:AnyObject!) -> Void in
                 let jsonData = JSON(responseObject)
                 let resultsArray = jsonData["results"].arrayValue
-//                print(resultsArray)
                 for dict:JSON in resultsArray {
                     let title = dict["tit_link/_text"].stringValue
                     let datesArray = dict["txt_link_numbers/_source"].arrayValue

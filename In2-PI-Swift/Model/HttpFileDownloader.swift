@@ -16,11 +16,11 @@ class HttpFileDownloader {
         let documentsUrl =  NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first
         let destinationUrl = documentsUrl!.URLByAppendingPathComponent(url.lastPathComponent!)
         if NSFileManager().fileExistsAtPath(destinationUrl.path!) {
-            print("file already exists [\(destinationUrl.path!)]")
+            print("PDF already exists at [\(destinationUrl.path!)]")
             completion(path: destinationUrl.path!, error:nil)
         } else if let dataFromURL = NSData(contentsOfURL: url){
             if dataFromURL.writeToURL(destinationUrl, atomically: true) {
-                print("file saved [\(destinationUrl.path!)]")
+                print("PDF saved for first time to [\(destinationUrl.path!)]")
                 completion(path: destinationUrl.path!, error:nil)
             } else {
                 print("error saving file")
@@ -37,7 +37,7 @@ class HttpFileDownloader {
         let documentsUrl =  NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first
         let destinationUrl = documentsUrl!.URLByAppendingPathComponent(url.lastPathComponent!)
         if NSFileManager().fileExistsAtPath(destinationUrl.path!) {
-            print("file already exists [\(destinationUrl.path!)]")
+            print("PDF already exists at [\(destinationUrl.path!)]")
             completion(path: destinationUrl.path!, error:nil)
         } else {
             let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
@@ -50,7 +50,7 @@ class HttpFileDownloader {
                         print("response status code \(response.statusCode) ... response =\(response)")
                         if response.statusCode == 200 {
                             if data!.writeToURL(destinationUrl, atomically: true) {
-                                print("file saved [\(destinationUrl.path!)]")
+                                print("PDF saved for fisrt time to [\(destinationUrl.path!)]")
                                 completion(path: destinationUrl.path!, error:error)
                             } else {
                                 print("error saving file")
