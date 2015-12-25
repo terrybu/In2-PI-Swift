@@ -812,10 +812,10 @@
                                                     <constraint firstAttribute="height" constant="200" id="euE-gP-XBx"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="1:1 제자 양육"/>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="Box_purple"/>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="applyButtonImage" value="btn_Apply_white"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="applyButtonTitle" value="신청"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="양육보로 사역 신청서"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p7k-eM-S6m" customClass="EvangelismApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">

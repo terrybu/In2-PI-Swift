@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import MessageUI
+import SafariServices
 
 private let kOriginalContentViewHeight: CGFloat = 300
 
-class NurtureViewController: ParentViewController, MFMailComposeViewControllerDelegate {
+class NurtureViewController: ParentViewController, SFSafariViewControllerDelegate {
     
     @IBOutlet weak var leftNurtureApplyWidget: ApplyWidgetView!
     @IBOutlet weak var rightHolyStarApplyWidget: ApplyWidgetView!
@@ -27,10 +27,27 @@ class NurtureViewController: ParentViewController, MFMailComposeViewControllerDe
         setUpStandardUIForViewControllers()
         setUpExpandableAboutView()
         leftNurtureApplyWidget.applyButtonPressedHandler = {(sender) -> Void in
-            self.sendMail(sender)
+            self.presentSFSafariVCIfAvailable(NSURL(string:"https://docs.google.com/forms/d/1PCWAVYTbycFUQM6eUMDOqnJamYyV9oAp1HbB7VqLDE4/viewform?c=0&w=1")!)
         }
         rightHolyStarApplyWidget.applyButtonPressedHandler = {(sender) -> Void in
             self.openHolyStarIntroViewController()
+        }
+    }
+    
+    private func presentSFSafariVCIfAvailable(url: NSURL) {
+        if #available(iOS 9.0, *) {
+            let sfVC = SFSafariViewController(URL: url, entersReaderIfAvailable: true)
+            sfVC.delegate = self
+            self.presentViewController(sfVC, animated: true, completion: nil)
+            //in case anybody prefers right to left push viewcontroller animation transition (below)
+            //navigationController?.pushViewController(sfVC, animated: true)
+        } else {
+            // Fallback on earlier versions
+            let webView = UIWebView(frame: view.frame)
+            webView.loadRequest(NSURLRequest(URL: url))
+            let vc = UIViewController()
+            vc.view = webView
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
     
@@ -46,27 +63,6 @@ class NurtureViewController: ParentViewController, MFMailComposeViewControllerDe
         self.navigationController?.pushViewController(holyStarVC, animated: true)
     }
 
-    
-    @IBAction func sendMail(sender: AnyObject) {
-        let picker = MFMailComposeViewController()
-        picker.mailComposeDelegate = self
-        picker.setToRecipients(["test@gmail.com"])
-        picker.setSubject("신청서")
-        picker.setMessageBody("texttexttexttexttexttexttexttexttexttext", isHTML: false)
-        picker.navigationBar.tintColor = UIColor.whiteColor()
-        picker.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
-
-        presentViewController(picker, animated: true, completion: {() -> Void in
-//            var status = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 20))
-//            status.backgroundColor = UIColor(patternImage: UIImage(named:"status_bar")!)
-//            self.navigationController!.navigationBar.barStyle
-        })
-        
-    }
-    
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
     
 
 }

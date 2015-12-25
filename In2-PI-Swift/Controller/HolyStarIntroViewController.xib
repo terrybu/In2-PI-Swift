@@ -52,8 +52,8 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
                 </textView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxv-ML-sTg">
-                    <rect key="frame" x="16" y="40" width="568" height="110"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxv-ML-sTg">
+                    <rect key="frame" x="16" y="32" width="568" height="110"/>
                     <string key="text">Holy Star 
  매주 평일 아침에 모여 '생명의 삶'으로 주님의 말씀을 함께 묵상하고 하루를 여는 QT 나눔 모임입니다.</string>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
@@ -72,7 +72,7 @@
                 <constraint firstItem="Pxv-ML-sTg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="R3C-75-Gne"/>
                 <constraint firstItem="erZ-Kl-LIJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="exQ-9o-Mts"/>
                 <constraint firstItem="Pxv-ML-sTg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fCj-ac-ikh"/>
-                <constraint firstItem="Pxv-ML-sTg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="fV1-xr-oPX"/>
+                <constraint firstItem="Pxv-ML-sTg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="32" id="fV1-xr-oPX"/>
                 <constraint firstItem="Nti-OT-8Mi" firstAttribute="top" secondItem="uIk-sf-bbR" secondAttribute="bottom" constant="8" id="fhT-ST-Lcd"/>
                 <constraint firstItem="erZ-Kl-LIJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="rsV-pn-GEo"/>
                 <constraint firstAttribute="trailing" secondItem="Nti-OT-8Mi" secondAttribute="trailing" constant="8" id="vRO-Mj-pfS"/>
