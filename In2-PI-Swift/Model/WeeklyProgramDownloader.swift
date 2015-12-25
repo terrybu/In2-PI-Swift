@@ -35,7 +35,7 @@ class WeeklyProgramDownloader {
                     let datesArray = dict["txt_link_numbers/_source"].arrayValue
                     let dateString = datesArray.last?.stringValue
                     let pdfDownloadURL = dict["tit_link"].stringValue
-                    let newWeeklyProgram = WeeklyProgram(title: title, pdfDownloadLinkPageOnnuriOrgURL: pdfDownloadURL, dateString: dateString!)
+                    let newWeeklyProgram = WeeklyProgram(title: title, pdfDownloadLinkPageOnnuriOrgURL: pdfDownloadURL, dateString: dateString)
                     self.weeklyProgramsArray.append(newWeeklyProgram)
                 }
                 self.delegate?.didFinishDownloadinglistOfTenWeeklyProgramsFromImportIO(self.weeklyProgramsArray)
