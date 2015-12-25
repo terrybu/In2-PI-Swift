@@ -1,8 +1,3 @@
-1) Make Joobo tableview
-2) Make sermon watch video view
-
-
-
 ###Facebook Gallery
 - it looks fine now but it's only pulling from timeline photos album
 - that means that if a user were to create a whole new album, it won't be seen

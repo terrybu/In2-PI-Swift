@@ -36,9 +36,6 @@
 		D97C169A1BAA3E990095CB0A /* CommunicationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D97C16981BAA3E990095CB0A /* CommunicationsTableViewCell.xib */; };
 		D985E04D1C0924E60057C51E /* PraiseSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = D985E04C1C0924E60057C51E /* PraiseSong.swift */; };
 		D986F4D91C1E4E9A00C00F7B /* WalkthroughManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986F4D81C1E4E9A00C00F7B /* WalkthroughManager.swift */; };
-		D989C5201C26ECB10051ACFE /* NanumBarunGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D989C51C1C26ECB10051ACFE /* NanumBarunGothic.otf */; };
-		D989C5211C26ECB10051ACFE /* NanumBarunGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D989C51D1C26ECB10051ACFE /* NanumBarunGothicBold.otf */; };
-		D989C5221C26ECB10051ACFE /* NanumBarunGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D989C51E1C26ECB10051ACFE /* NanumBarunGothicLight.otf */; };
 		D989C5271C2700500051ACFE /* HolyStarIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D989C5251C2700500051ACFE /* HolyStarIntroViewController.swift */; };
 		D989C5281C2700500051ACFE /* HolyStarIntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D989C5261C2700500051ACFE /* HolyStarIntroViewController.xib */; };
 		D98FEFB01B9C077F003614A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9D3CDF01B3F20EF00C8E195 /* Main.storyboard */; };
@@ -50,6 +47,8 @@
 		D99991A71BB1AF0E0022EF10 /* WeeklyProgramDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99991A61BB1AF0E0022EF10 /* WeeklyProgramDownloader.swift */; };
 		D99991A91BB1BEF90022EF10 /* HttpFileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99991A81BB1BEF90022EF10 /* HttpFileDownloader.swift */; };
 		D99EF24F1B9F59FD00026D66 /* FacebookQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99EF24E1B9F59FD00026D66 /* FacebookQuery.swift */; };
+		D9A79E151C2C2EEA003D9981 /* NanumBarunGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D9A79E131C2C2EEA003D9981 /* NanumBarunGothic.ttf */; };
+		D9A79E161C2C2EEA003D9981 /* NanumBarunGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D9A79E141C2C2EEA003D9981 /* NanumBarunGothicBold.ttf */; };
 		D9B549A81B76D7FB00BF4887 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B549A71B76D7FB00BF4887 /* SWRevealViewController.m */; };
 		D9B9B5791B4B1B0000DA476E /* splashScreen.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D9B9B5781B4B1B0000DA476E /* splashScreen.mp4 */; };
 		D9BE263D1B64A1B700C3BA7D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BE263C1B64A1B700C3BA7D /* UIColorExtension.swift */; };
@@ -121,9 +120,6 @@
 		D97C16981BAA3E990095CB0A /* CommunicationsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunicationsTableViewCell.xib; sourceTree = "<group>"; };
 		D985E04C1C0924E60057C51E /* PraiseSong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PraiseSong.swift; sourceTree = "<group>"; };
 		D986F4D81C1E4E9A00C00F7B /* WalkthroughManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughManager.swift; sourceTree = "<group>"; };
-		D989C51C1C26ECB10051ACFE /* NanumBarunGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothic.otf; sourceTree = "<group>"; };
-		D989C51D1C26ECB10051ACFE /* NanumBarunGothicBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicBold.otf; sourceTree = "<group>"; };
-		D989C51E1C26ECB10051ACFE /* NanumBarunGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicLight.otf; sourceTree = "<group>"; };
 		D989C5251C2700500051ACFE /* HolyStarIntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolyStarIntroViewController.swift; sourceTree = "<group>"; };
 		D989C5261C2700500051ACFE /* HolyStarIntroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HolyStarIntroViewController.xib; sourceTree = "<group>"; };
 		D98FEFB11B9C0C65003614A7 /* ApplyWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyWidgetView.swift; sourceTree = "<group>"; };
@@ -134,6 +130,8 @@
 		D99991A61BB1AF0E0022EF10 /* WeeklyProgramDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyProgramDownloader.swift; sourceTree = "<group>"; };
 		D99991A81BB1BEF90022EF10 /* HttpFileDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpFileDownloader.swift; sourceTree = "<group>"; };
 		D99EF24E1B9F59FD00026D66 /* FacebookQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookQuery.swift; sourceTree = "<group>"; };
+		D9A79E131C2C2EEA003D9981 /* NanumBarunGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothic.ttf; sourceTree = "<group>"; };
+		D9A79E141C2C2EEA003D9981 /* NanumBarunGothicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicBold.ttf; sourceTree = "<group>"; };
 		D9B549A61B76D7FB00BF4887 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		D9B549A71B76D7FB00BF4887 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		D9B9B5781B4B1B0000DA476E /* splashScreen.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = splashScreen.mp4; sourceTree = "<group>"; };
@@ -286,9 +284,8 @@
 		D98FEFAE1B9C0723003614A7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				D989C51C1C26ECB10051ACFE /* NanumBarunGothic.otf */,
-				D989C51D1C26ECB10051ACFE /* NanumBarunGothicBold.otf */,
-				D989C51E1C26ECB10051ACFE /* NanumBarunGothicLight.otf */,
+				D9A79E131C2C2EEA003D9981 /* NanumBarunGothic.ttf */,
+				D9A79E141C2C2EEA003D9981 /* NanumBarunGothicBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -567,9 +564,8 @@
 				D9D3CE1E1B3F372F00C8E195 /* ListOfExternalLinks.strings in Resources */,
 				D9C7563E1BA0C2A000EC22CF /* ExpandableAboutView.xib in Resources */,
 				D9965A7E1B9E5A3600AB4A74 /* NewsArticleView.xib in Resources */,
-				D989C5201C26ECB10051ACFE /* NanumBarunGothic.otf in Resources */,
-				D989C5211C26ECB10051ACFE /* NanumBarunGothicBold.otf in Resources */,
 				D9D7C5591B82CFE4003E48EA /* todolist.txt in Resources */,
+				D9A79E151C2C2EEA003D9981 /* NanumBarunGothic.ttf in Resources */,
 				D9D3CE191B3F338D00C8E195 /* Localizable.strings in Resources */,
 				D98FEFB41B9C0C8E003614A7 /* ApplyWidgetView.xib in Resources */,
 				D9B9B5791B4B1B0000DA476E /* splashScreen.mp4 in Resources */,
@@ -577,8 +573,8 @@
 				D989C5281C2700500051ACFE /* HolyStarIntroViewController.xib in Resources */,
 				D92938021C07F2820040BD6D /* PurpleSegmentedControlView.xib in Resources */,
 				D97C169A1BAA3E990095CB0A /* CommunicationsTableViewCell.xib in Resources */,
+				D9A79E161C2C2EEA003D9981 /* NanumBarunGothicBold.ttf in Resources */,
 				D9D3CE121B3F309C00C8E195 /* InfoPlist.strings in Resources */,
-				D989C5221C26ECB10051ACFE /* NanumBarunGothicLight.otf in Resources */,
 				D9D3CDF41B3F20EF00C8E195 /* Images.xcassets in Resources */,
 				D9DA04781BA5B68600F434F4 /* EvangelismApplyWidgetView.xib in Resources */,
 			);
