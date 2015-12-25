@@ -28,7 +28,7 @@
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Nti-OT-8Mi">
                     <rect key="frame" x="16" y="255" width="576" height="345"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <mutableString key="text">• 업타운
+                    <string key="text">• 업타운
   - 일시: 매주(월) 7:10AM
   - 장소: Paris Baguette (2568 Broadway, New York, NY 10025) 
 • 미드타운
@@ -47,14 +47,15 @@
   • 문의: 박준영MC (m2.nurturing@in2church.org)
 　
 • Venmo Username: @Holystar
-(홀리스타는 도네이션으로 자체운영됩니다)</mutableString>
+(홀리스타는 도네이션으로 자체운영됩니다)</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
                 </textView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxv-ML-sTg">
-                    <rect key="frame" x="16" y="40" width="568" height="83"/>
-                    <string key="text">Holy Star
-매주 평일 아침에 모여 '생명의 삶'으로 주님의 말씀을 함께 묵상하고 하루를 여는 QT 나눔 모임입니다.</string>
+                    <rect key="frame" x="16" y="40" width="568" height="110"/>
+                    <string key="text">Holy Star 
+ 매주 평일 아침에 모여 '생명의 삶'으로 주님의 말씀을 함께 묵상하고 하루를 여는 QT 나눔 모임입니다.</string>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                     <color key="textColor" red="0.99611729383468628" green="0.99587720632553101" blue="0.99216729402542114" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>

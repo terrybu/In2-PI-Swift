@@ -58,9 +58,9 @@ class WalkthroughManager: NSObject, EAIntroDelegate{
         let page = EAIntroPage()
         page.title = title
         page.titlePositionY = walkthroughVC.view.frame.size.height - 30
-        page.titleFont = UIFont(name: "NanumBarunGothicOTF", size: 21.0)
+        page.titleFont = UIFont(name: "NanumBarunGothic", size: 21.0)
         page.desc = description
-        page.descFont = UIFont(name: "NanumBarunGothicOTF", size: 20.0 * 6/8)
+        page.descFont = UIFont(name: "NanumBarunGothic", size: 20.0 * 6/8)
         page.descWidth = walkthroughVC.view.frame.size.width * 0.75
         //setting position on these work weirdly. Higher the number, Higher it goes up toward top of screen. Lower the number, more it sticks to bottom of screen
         page.descPositionY = walkthroughVC.view.frame.size.height - 30 - 32

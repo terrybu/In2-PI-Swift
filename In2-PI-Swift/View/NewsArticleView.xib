@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="NanumBarunGothic.otf">
-            <string>NanumBarunGothicOTF</string>
-            <string>NanumBarunGothicOTF</string>
-        </mutableArray>
-        <mutableArray key="NanumBarunGothicLight.otf">
-            <string>NanumBarunGothicOTFLight</string>
+        <mutableArray key="NanumBarunGothic.ttf">
+            <string>NanumBarunGothic</string>
+            <string>NanumBarunGothic</string>
+            <string>NanumBarunGothic</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -29,7 +27,6 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleGray" translatesAutoresizingMaskIntoConstraints="NO" id="0OP-jh-p7e" userLabel="backgroundImageView">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="300" id="rrF-ad-s17"/>
                     </constraints>
@@ -41,12 +38,11 @@
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기사 제목을 두줄로 이곳에 입력하십시오" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Aj-th-ja0" userLabel="articleTitleLabel">
                     <rect key="frame" x="16" y="165" width="564" height="82"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="82" id="LqO-zP-yLR"/>
                         <constraint firstAttribute="width" constant="217" id="VBH-XA-HfS"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="26"/>
+                    <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="26"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                     <variation key="default">
@@ -57,22 +53,20 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfu-yd-3gC" userLabel="articleCategoryLabel" customClass="PaddedLabel" customModule="In2_PI_Swift" customModuleProvider="target">
                     <rect key="frame" x="16" y="127" width="67" height="33"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="33" id="sSx-7d-hbi"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="16"/>
+                    <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="16"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08/08/15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leB-9p-VNW" userLabel="articleDateLabel">
                     <rect key="frame" x="16" y="267" width="66" height="21"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="Uqq-uQ-2WP"/>
                         <constraint firstAttribute="width" constant="74" id="qEI-Gs-O7L"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="NanumBarunGothicOTFLight" family="NanumBarunGothicOTF" pointSize="15"/>
+                    <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                     <variation key="default">
@@ -82,7 +76,6 @@
                     </variation>
                 </label>
             </subviews>
-            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="mfu-yd-3gC" firstAttribute="leading" secondItem="1gS-1b-BEh" secondAttribute="leading" constant="54" id="29y-JR-AQX"/>

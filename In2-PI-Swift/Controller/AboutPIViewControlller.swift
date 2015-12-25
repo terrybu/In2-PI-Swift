@@ -39,13 +39,12 @@ class AboutPIViewController: ParentViewController, UIScrollViewDelegate{
     
     private func setUpHMSegmentedControl(viewWidth: CGFloat) {
         let viewWidth = CGRectGetWidth(self.view.frame)
-//        segmentedControl = HMSegmentedControl(frame: CGRectMake(0, (navigationController?.navigationBar.frame.height)!+10, viewWidth, 50))
         segmentedControl.sectionTitles = ["In2 ", "청년부", "인사말", "위치"]
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe
         segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown
         
-        let segControlTitleFont = UIFont(name: "NanumBarunGothicOTF", size: 15.0)
+        let segControlTitleFont = UIFont(name: "NanumBarunGothic", size: 16.0)
         if let segControlTitleFont =  segControlTitleFont {
             //regular font
             segmentedControl.titleTextAttributes = [
@@ -74,7 +73,7 @@ class AboutPIViewController: ParentViewController, UIScrollViewDelegate{
         let incompleteViewCanvas = UIView(frame: CGRect(x: x, y: 30, width: width, height: height))
         let bigBoldHeaderLabel = UILabel(frame: CGRectMake(kLeftSidePadding, 0, self.view.frame.width-30, 25))
         bigBoldHeaderLabel.text = headerTitle
-        bigBoldHeaderLabel.font = UIFont(name: "NanumBarunGothicOTFBold", size: 25)
+        bigBoldHeaderLabel.font = UIFont(name: "NanumBarunGothicBold", size: 25)
         incompleteViewCanvas.addSubview(bigBoldHeaderLabel)
         return incompleteViewCanvas
     }
@@ -84,6 +83,7 @@ class AboutPIViewController: ParentViewController, UIScrollViewDelegate{
         let textDescribeLabel = UILabel(frame: CGRectMake(kLeftSidePadding, 45, self.view.frame.width-30, incompleteView.frame.size.height))
         textDescribeLabel.numberOfLines = 0
         textDescribeLabel.text = bodyText
+        textDescribeLabel.font = UIFont(name: "NanumBarunGothic", size: 16.0)
         textDescribeLabel.sizeToFit()
         incompleteView.addSubview(textDescribeLabel)
         return incompleteView
@@ -93,26 +93,26 @@ class AboutPIViewController: ParentViewController, UIScrollViewDelegate{
         let incompleteView = commonSetUpCodeCanvas(x, headerTitle: headerTitle)
         let bodyTextView = UITextView(frame: CGRectMake(kLeftSidePadding, 45, self.view.frame.width-30, incompleteView.frame.height))
         bodyTextView.text = bodyText
-        bodyTextView.font = UIFont(name: "NanumBarunGothicOTF", size: 15.0)
+        bodyTextView.font = UIFont(name: "NanumBarunGothic", size: 16.0)
         incompleteView.addSubview(bodyTextView)
         return incompleteView
     }
     private func setUpCanvas4(x: CGFloat, headerTitle: String, bodyText:String) -> UIView {
         let incompleteView = commonSetUpCodeCanvas(x, headerTitle: headerTitle)
-        let textDescribeLabel = UILabel(frame: CGRectMake(kLeftSidePadding, 45, self.view.frame.width-30, incompleteView.frame.height))
-        textDescribeLabel.numberOfLines = 0
-        textDescribeLabel.text = bodyText
-        textDescribeLabel.sizeToFit()
-        incompleteView.addSubview(textDescribeLabel)
+        let textView = UITextView(frame: CGRectMake(kLeftSidePadding, 45, self.view.frame.width-30, 100))
+        textView.text = bodyText
+        textView.editable = false
+        textView.dataDetectorTypes = .Address
+        textView.font = UIFont(name: "NanumBarunGothic", size: 16.0)
+        incompleteView.addSubview(textView)
         let imageView = UIImageView(image: UIImage(named: "churchDirections"))
-        imageView.frame = CGRectMake(0, 45 + textDescribeLabel.frame.height + 10, self.view.frame.width, 250)
+        imageView.frame = CGRectMake(0, textView.frame.height + 45, self.view.frame.width, 250)
         incompleteView.addSubview(imageView)
         return incompleteView
     }
     
     
     private func setUpHorizontalScrollView(viewWidth: CGFloat) {
-//        horizontalScrollView.backgroundColor = UIColor.whiteColor()
         horizontalScrollView.pagingEnabled = true
         horizontalScrollView.showsHorizontalScrollIndicator = false
         horizontalScrollView.contentSize = CGSizeMake(viewWidth * 4, 200)
