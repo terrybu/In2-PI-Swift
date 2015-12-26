@@ -33,5 +33,5 @@ let kOriginalAboutViewHeight: CGFloat = 54
 
 //String Constants
 let kfirstLaunchKeyForWalkthroughCheck = "FirstLaunch"
-
+let kWeeklyProgramsTableViewCellReuseIdentifier = "WeeklyProgramsTableViewCell"
 

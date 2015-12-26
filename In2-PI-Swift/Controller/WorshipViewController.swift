@@ -12,7 +12,6 @@ import Foundation
 import MBProgressHUD
 
 private let kOriginalContentViewHeight: CGFloat = 1000
-private let kWeelyProgramsTableViewCellReuseIdentifier = "WeeklyProgramsTableViewCell"
 
 class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelegate ,SFSafariViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
 
@@ -153,11 +152,9 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         var cell: UITableViewCell
         if (tableView == weeklyProgramsTableView) {
             let program = thisMonthProgramsArray[indexPath.row]
-            cell = weeklyProgramsTableView.dequeueReusableCellWithIdentifier(kWeelyProgramsTableViewCellReuseIdentifier)!
+            cell = weeklyProgramsTableView.dequeueReusableCellWithIdentifier(kWeeklyProgramsTableViewCellReuseIdentifier)!
             cell.textLabel!.text = program.title
-            if !program.cached {
-                cell.accessoryView = UIImageView(image: UIImage(named: "btn_download"))
-            }
+            cell.accessoryView = UIImageView(image: UIImage(named: "btn_download"))
         } else {
             let reuseIdentifier = "SongsTableViewCell"
             cell = songsTableView.dequeueReusableCellWithIdentifier(reuseIdentifier)!
@@ -181,12 +178,13 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
             button.setTitle("더보기", forState: UIControlState.Normal)
             button.titleLabel!.font = UIFont.boldSystemFontOfSize(16)
             button.setTitleColor(UIColor.In2DeepPurple(), forState: UIControlState.Normal)
-            button.addTarget(self, action: "seeMoreArrowWasPressed", forControlEvents: UIControlEvents.TouchUpInside)
+            button.addTarget(self, action: "seeMoreArrowWasPressedForWeeklyProgramsTableView", forControlEvents: UIControlEvents.TouchUpInside)
             headerView.addSubview(button)
+            //This is the same function as "더보기" just to the right of the text.
             let moreArrowButton = UIButton(type: UIButtonType.Custom)
             moreArrowButton.frame = CGRectMake(tableView.frame.size.width-30, 5, 30, 20)
             moreArrowButton.setImage(UIImage(named: "btn_more_B"), forState: .Normal)
-            moreArrowButton.addTarget(self, action: "seeMoreArrowWasPressed", forControlEvents: UIControlEvents.TouchUpInside)
+            moreArrowButton.addTarget(self, action: "seeMoreArrowWasPressedForWeeklyProgramsTableView", forControlEvents: UIControlEvents.TouchUpInside)
             headerView.addSubview(moreArrowButton)
         } else {
             label = UILabel(frame: CGRectMake(12, 5, 300, 18))
@@ -202,8 +200,16 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         return headerView
     }
     
-    func seeMoreArrowWasPressed() {
+    func seeMoreArrowWasPressedForWeeklyProgramsTableView() {
         print("seeMoreArrowWasPressed")
+        performSegueWithIdentifier("AllWeeklyProgramsTableViewControllerSegue", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "AllWeeklyProgramsTableViewControllerSegue" {
+            let programsVC = segue.destinationViewController as! AllWeeklyProgramsTableViewController
+            programsVC.allWeeklyProgramsArray = self.weeklyProgramsArray
+        }
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
