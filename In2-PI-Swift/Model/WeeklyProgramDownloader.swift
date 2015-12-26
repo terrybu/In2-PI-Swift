@@ -45,8 +45,12 @@ class WeeklyProgramDownloader {
                 let resultsArray = jsonData["results"].arrayValue
                 for dict:JSON in resultsArray {
                     let title = dict["tit_link/_text"].stringValue
-                    let datesArray = dict["txt_link_numbers/_source"].arrayValue
-                    let dateString = datesArray.last?.stringValue
+                    var dateString: String
+                    if dict["txt_link_numbers/_source"].arrayValue.count > 1 {
+                        dateString = (dict["txt_link_numbers/_source"].arrayValue.last?.stringValue)!
+                    } else {
+                        dateString = dict["txt_link_numbers/_source"].stringValue
+                    }
                     let pdfDownloadURL = dict["tit_link"].stringValue
                     let newWeeklyProgram = WeeklyProgram(title: title, pdfDownloadLinkPageOnnuriOrgURL: pdfDownloadURL, dateString: dateString)
                     self.weeklyProgramsArray.append(newWeeklyProgram)

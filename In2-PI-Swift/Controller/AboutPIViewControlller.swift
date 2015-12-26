@@ -44,7 +44,7 @@ class AboutPIViewController: ParentViewController, UIScrollViewDelegate{
         segmentedControl.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe
         segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown
         
-        let segControlTitleFont = UIFont(name: "NanumBarunGothic", size: 16.0)
+        let segControlTitleFont = UIFont(name: "NanumBarunGothicBold", size: 16.0)
         if let segControlTitleFont =  segControlTitleFont {
             //regular font
             segmentedControl.titleTextAttributes = [

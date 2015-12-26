@@ -12,6 +12,7 @@ import Foundation
 import MBProgressHUD
 
 private let kOriginalContentViewHeight: CGFloat = 1000
+private let kWeelyProgramsTableViewCellReuseIdentifier = "WeeklyProgramsTableViewCell"
 
 class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelegate ,SFSafariViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
 
@@ -20,7 +21,10 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     @IBOutlet var songsTableView :     UITableView!
     @IBOutlet var weeklyProgramsTableView :     UITableView!
     var songObjectsArray = [PraiseSong]()
+    
     var weeklyProgramsArray = [WeeklyProgram]()
+    var thisMonthProgramsArray = [WeeklyProgram]()
+    
     var headerTitleStringForPraiseSongsListSection: String?
     let indicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
     
@@ -44,8 +48,6 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         
         WeeklyProgramDownloader.sharedInstance.delegate = self
         WeeklyProgramDownloader.sharedInstance.getTenRecentWeeklyProgramsListFromImportIO()
-        
-
     }
     
     func getPraiseSongNamesListAndHeaderFromFacebook() {
@@ -121,7 +123,26 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (tableView == weeklyProgramsTableView) {
-            return weeklyProgramsArray.count
+            let today = NSDate()
+            let calendar = NSCalendar.currentCalendar()
+            let todayComponents = calendar.components([.Day , .Month , .Year], fromDate: today)
+            let todaysMonth = todayComponents.month //this will give you today's month
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "MM.dd.yyyy"
+            for program in weeklyProgramsArray {
+                if let dateProgramString = program.dateString {
+                    let dateProgramNSDate = dateFormatter.dateFromString(dateProgramString)
+                    if let dateProgramNSDate = dateProgramNSDate {
+                        print(dateProgramNSDate)
+                        let thisProgramDateComponents = calendar.components([.Day, .Month, .Year], fromDate: dateProgramNSDate)
+                        if thisProgramDateComponents.month == todaysMonth {
+                            print(thisProgramDateComponents)
+                            thisMonthProgramsArray.append(program)
+                        }
+                    }
+                }
+            }
+            return thisMonthProgramsArray.count
         } else if (tableView == songsTableView) {
             return songObjectsArray.count
         }
@@ -129,13 +150,10 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         var cell: UITableViewCell
-        
         if (tableView == weeklyProgramsTableView) {
-            let reuseIdentifier = "WeeklyProgramsTableViewCell"
-            cell = weeklyProgramsTableView.dequeueReusableCellWithIdentifier(reuseIdentifier)!
-            let program = weeklyProgramsArray[indexPath.row]
+            let program = thisMonthProgramsArray[indexPath.row]
+            cell = weeklyProgramsTableView.dequeueReusableCellWithIdentifier(kWeelyProgramsTableViewCellReuseIdentifier)!
             cell.textLabel!.text = program.title
             if !program.cached {
                 cell.accessoryView = UIImageView(image: UIImage(named: "btn_download"))
@@ -198,7 +216,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
             if tableView == weeklyProgramsTableView {
-                let weeklyProgram = weeklyProgramsArray[indexPath.row]
+                let weeklyProgram = thisMonthProgramsArray[indexPath.row]
                 if weeklyProgram.cached  {
                     displayPDFInWebView(NSURL.fileURLWithPath(weeklyProgram.cachedPath!))
                 } else {
