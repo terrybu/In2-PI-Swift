@@ -649,12 +649,12 @@
                                                     <outlet property="delegate" destination="k3o-Eq-0C4" id="H6d-SV-c5a"/>
                                                 </connections>
                                             </tableView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dv8-4e-YfA" userLabel="WeeklyProgramsTableView">
-                                                <rect key="frame" x="0.0" y="326" width="600" height="300"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dv8-4e-YfA" userLabel="WeeklyProgramsTableView">
+                                                <rect key="frame" x="0.0" y="326" width="600" height="200"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="9im-OQ-44M"/>
-                                                    <constraint firstAttribute="height" constant="300" id="N7K-Ok-doz"/>
+                                                    <constraint firstAttribute="height" constant="200" id="N7K-Ok-doz"/>
                                                 </constraints>
                                                 <color key="separatorColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                                 <prototypes>
