@@ -30,7 +30,7 @@ class ExpandableAboutViewHandler: ExpandableAboutViewDelegate {
     
     func didPressExpandButton() {
         if !expandableView.expanded {
-            print("did press expand button when it wasn't expanded")
+            print("Expand - pressed button when it wasn't expanded")
             
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 self.constraintExpandableViewHeight.constant = self.expandedAboutViewHeight
@@ -42,7 +42,7 @@ class ExpandableAboutViewHandler: ExpandableAboutViewDelegate {
             }
         }
         else {
-            print("did press expand button when it WAS expanded")
+            print("Collapse - pressed button when it WAS expanded")
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 self.constraintExpandableViewHeight.constant = self.originalAboutViewHeight
                 self.constraintContentViewHeight.constant =  self.originalContentViewHeight

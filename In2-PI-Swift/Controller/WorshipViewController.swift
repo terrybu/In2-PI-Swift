@@ -10,9 +10,9 @@ import UIKit
 import SafariServices
 import Foundation
 
-private let kOriginalContentViewHeight: CGFloat = 1000
+private let kOriginalContentViewHeight: CGFloat = 650
 
-class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelegate ,SFSafariViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
+class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelegate, SFSafariViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet var expandableAboutView: ExpandableAboutView!
@@ -266,6 +266,10 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     //MARK: IBActions
     @IBAction func didPressSeeMoreWorshipVideos() {
         presentSFSafariVCIfAvailable(NSURL(string: "https://www.youtube.com/user/in2ube/videos")!)
+    }
+    
+    @IBAction func didPressApplyButtonForWorshipTeam() {
+        presentSFSafariVCIfAvailable(NSURL(string: "https://docs.google.com/forms/d/15NeQ-ieXeNnphF920ocMEnvkYTguVVGHIGQOejcU3tc/viewform?c=0&w=1")!)
     }
     
 }
