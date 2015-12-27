@@ -21,7 +21,6 @@ class ParentViewController: UIViewController {
     }
     
     class func makeNavBarHairLineBarWhiteAndShort(navController: UINavigationController, view: UIView) {
-        //hairline nav
         navController.navigationBar.shadowImage = UIImage()
         let whiteHairLineCustom = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 0.5))
         whiteHairLineCustom.backgroundColor = UIColor.whiteColor()
@@ -49,7 +48,6 @@ class ParentViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         setUpLeftNavDrawerMenuWidth()
-//        print("parent vc viewdidappear")
     }
     
     

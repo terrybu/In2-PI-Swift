@@ -34,6 +34,7 @@
 		D97839821BF9305B00E4A834 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97839811BF9305B00E4A834 /* SignUpViewController.swift */; };
 		D97C16991BAA3E990095CB0A /* CommunicationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C16971BAA3E990095CB0A /* CommunicationsTableViewCell.swift */; };
 		D97C169A1BAA3E990095CB0A /* CommunicationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D97C16981BAA3E990095CB0A /* CommunicationsTableViewCell.xib */; };
+		D981A02A1C2F5F4D003BA562 /* WeeklyProgramDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981A0291C2F5F4D003BA562 /* WeeklyProgramDisplayManager.swift */; };
 		D985E04D1C0924E60057C51E /* PraiseSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = D985E04C1C0924E60057C51E /* PraiseSong.swift */; };
 		D986F4D91C1E4E9A00C00F7B /* WalkthroughManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986F4D81C1E4E9A00C00F7B /* WalkthroughManager.swift */; };
 		D989C5271C2700500051ACFE /* HolyStarIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D989C5251C2700500051ACFE /* HolyStarIntroViewController.swift */; };
@@ -119,6 +120,7 @@
 		D97839811BF9305B00E4A834 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D97C16971BAA3E990095CB0A /* CommunicationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicationsTableViewCell.swift; sourceTree = "<group>"; };
 		D97C16981BAA3E990095CB0A /* CommunicationsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunicationsTableViewCell.xib; sourceTree = "<group>"; };
+		D981A0291C2F5F4D003BA562 /* WeeklyProgramDisplayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyProgramDisplayManager.swift; sourceTree = "<group>"; };
 		D985E04C1C0924E60057C51E /* PraiseSong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PraiseSong.swift; sourceTree = "<group>"; };
 		D986F4D81C1E4E9A00C00F7B /* WalkthroughManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughManager.swift; sourceTree = "<group>"; };
 		D989C5251C2700500051ACFE /* HolyStarIntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolyStarIntroViewController.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 			children = (
 				D92295941B9BF87000C34A66 /* WorshipViewController.swift */,
 				D99274701C2F57E90055810F /* AllWeeklyProgramsTableViewController.swift */,
+				D981A0291C2F5F4D003BA562 /* WeeklyProgramDisplayManager.swift */,
 			);
 			name = Worship;
 			sourceTree = "<group>";
@@ -657,6 +660,7 @@
 				D9965A791B9E1D6800AB4A74 /* PaddedLabel.swift in Sources */,
 				D9965A801B9E5DB600AB4A74 /* NewsArticleView.swift in Sources */,
 				D99991A71BB1AF0E0022EF10 /* WeeklyProgramDownloader.swift in Sources */,
+				D981A02A1C2F5F4D003BA562 /* WeeklyProgramDisplayManager.swift in Sources */,
 				D92295951B9BF87000C34A66 /* WorshipViewController.swift in Sources */,
 				D90A7B0A1B924256003EA693 /* ParentViewController.swift in Sources */,
 				D90A7B061B92415D003EA693 /* AboutPIViewControlller.swift in Sources */,

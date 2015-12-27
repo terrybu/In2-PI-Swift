@@ -9,7 +9,6 @@
 import UIKit
 import SafariServices
 import Foundation
-import MBProgressHUD
 
 private let kOriginalContentViewHeight: CGFloat = 1000
 
@@ -210,6 +209,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
             let programsVC = segue.destinationViewController as! AllWeeklyProgramsTableViewController
             programsVC.allWeeklyProgramsArray = self.weeklyProgramsArray
         }
+        self.navigationItem.backBarButtonItem?.title = ""
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -221,55 +221,20 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-            if tableView == weeklyProgramsTableView {
-                let weeklyProgram = thisMonthProgramsArray[indexPath.row]
-                if weeklyProgram.cached  {
-                    displayPDFInWebView(NSURL.fileURLWithPath(weeklyProgram.cachedPath!))
-                } else {
-                    let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
-                    print(weeklyProgram.pdfDownloadLinkPageOnnuriOrgURL)
-                    //weeklyProgram.pdfDownloadURL has the PAGE on vision.onnuri.org that contains the link to the PDF. 
-                    //a weeklyProgram object from our weeklyprogramsArray is retrieved from import.io scraper I made that just searches for a list of URLs to hit to get to the LINK page
-                    
-                    let pdfdownloadURLString = WeeklyProgramDownloader.sharedInstance.getURLStringForSingleProgramDownload(weeklyProgram.pdfDownloadLinkPageOnnuriOrgURL)
-                    if let pdfdownloadURLString = pdfdownloadURLString {
-                        let url = NSURL(string:pdfdownloadURLString)
-                        HttpFileDownloader.sharedInstance.loadFileAsync(url!, completion:{(path:String, error:NSError!) in
-                            if error == nil {
-                                weeklyProgram.cached = true
-                                weeklyProgram.cachedPath = path
-                                let fileURL = NSURL.fileURLWithPath(path)
-                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                                    self.displayPDFInWebView(fileURL)
-                                })
-                            } else if error.code == 404 {
-                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                                    let alertController = UIAlertController(title: "Downloading Problem", message: "Oops! Looks like that file is not available right now :(", preferredStyle: UIAlertControllerStyle.Alert)
-                                    let okay = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
-                                    alertController.addAction(okay)
-                                    self.presentViewController(alertController, animated: true, completion: nil)
-                                })
-                            }
-                        })
-                    }
-                }
-            } else if tableView == songsTableView {
-                //below was when we were just doing a general search of the praise song name on youtube as a query and showing user the results
-//                let nameSong = songsTableView.cellForRowAtIndexPath(indexPath)?.textLabel!.text
-//                let escaped = nameSong!.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
-//                let urlString = "https://www.youtube.com/results?search_query=" + escaped!
-//                let url : NSURL! = NSURL(string: urlString)
-                let songObject = songObjectsArray[indexPath.row]
-                if let songURLString = songObject.songYouTubeURL {
-                    let trimSpacesFromURLString = songURLString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-                    let url = NSURL(string: trimSpacesFromURLString)
-                    if let url = url {
-                        presentSFSafariVCIfAvailable(url)
-                    }
+        if tableView == weeklyProgramsTableView {
+            let weeklyProgram = thisMonthProgramsArray[indexPath.row]
+            WeeklyProgramDisplayManager.sharedInstance.displayWeeklyProgramLogic(weeklyProgram, view: self.view, navController: self.navigationController!, viewController: self)
+        }
+        else if tableView == songsTableView {
+            let songObject = songObjectsArray[indexPath.row]
+            if let songURLString = songObject.songYouTubeURL {
+                let trimSpacesFromURLString = songURLString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+                let url = NSURL(string: trimSpacesFromURLString)
+                if let url = url {
+                    presentSFSafariVCIfAvailable(url)
                 }
             }
+        }
     }
     
     private func presentSFSafariVCIfAvailable(url: NSURL) {
@@ -289,14 +254,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         }
     }
     
-    private func displayPDFInWebView(fileURL: NSURL) {
-        let webView = UIWebView(frame: self.view.frame)
-        webView.scalesPageToFit = true
-        webView.loadRequest(NSURLRequest(URL: fileURL))
-        let vc = UIViewController()
-        vc.view = webView
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
+
     
     //Delegate method for dismissing safari vc
     @available(iOS 9.0, *)
