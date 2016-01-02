@@ -265,11 +265,11 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     
     //MARK: IBActions
     @IBAction func didPressSeeMoreWorshipVideos() {
-        presentSFSafariVCIfAvailable(NSURL(string: "https://www.youtube.com/user/in2ube/videos")!)
+        presentSFSafariVCIfAvailable(NSURL(string: kImportIOURLForScrapingTenRecentWeeklyPrograms)!)
     }
     
     @IBAction func didPressApplyButtonForWorshipTeam() {
-        presentSFSafariVCIfAvailable(NSURL(string: "https://docs.google.com/forms/d/15NeQ-ieXeNnphF920ocMEnvkYTguVVGHIGQOejcU3tc/viewform?c=0&w=1")!)
+        presentSFSafariVCIfAvailable(NSURL(string: kApplyWorshipTeamGoogleDocURL)!)
     }
     
 }

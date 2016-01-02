@@ -27,7 +27,7 @@ class NurtureViewController: ParentViewController, SFSafariViewControllerDelegat
         setUpStandardUIForViewControllers()
         setUpExpandableAboutView()
         leftNurtureApplyWidget.applyButtonPressedHandler = {(sender) -> Void in
-            self.presentSFSafariVCIfAvailable(NSURL(string:"https://docs.google.com/forms/d/1PCWAVYTbycFUQM6eUMDOqnJamYyV9oAp1HbB7VqLDE4/viewform?c=0&w=1")!)
+            self.presentSFSafariVCIfAvailable(NSURL(string: kApplyNurtureTeamGoogleDocURL)!)
         }
         rightHolyStarApplyWidget.applyButtonPressedHandler = {(sender) -> Void in
             self.openHolyStarIntroViewController()

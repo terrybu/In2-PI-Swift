@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Terry Bu. All rights reserved.
 //
 
+
+
 //Device OS version and Screen size Type related
 let Device = UIDevice.currentDevice()
 let iosVersion = NSString(string: Device.systemVersion).doubleValue
