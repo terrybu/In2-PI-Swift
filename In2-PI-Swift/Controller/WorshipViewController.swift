@@ -121,10 +121,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (tableView == weeklyProgramsTableView) {
-            let today = NSDate()
-            let calendar = NSCalendar.currentCalendar()
-            let todayComponents = calendar.components([.Day , .Month , .Year], fromDate: today)
-            let todaysMonth = todayComponents.month //this will give you today's month
+            let todaysMonth = getTodaysMonth()
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "MM.dd.yyyy"
             for program in weeklyProgramsArray {
@@ -132,7 +129,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
                     let dateProgramNSDate = dateFormatter.dateFromString(dateProgramString)
                     if let dateProgramNSDate = dateProgramNSDate {
                         print(dateProgramNSDate)
-                        let thisProgramDateComponents = calendar.components([.Day, .Month, .Year], fromDate: dateProgramNSDate)
+                        let thisProgramDateComponents = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: dateProgramNSDate)
                         if thisProgramDateComponents.month == todaysMonth {
                             print(thisProgramDateComponents)
                             thisMonthProgramsArray.append(program)
@@ -146,6 +143,34 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         }
         return 0
     }
+    
+    //Get today's month as Int
+    private func getTodaysMonth() -> Int {
+        let today = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let todayComponents = calendar.components([.Day , .Month , .Year], fromDate: today)
+        let thisMonth = todayComponents.month //this will give you today's month
+        return thisMonth
+    }
+    
+    private func getTodaysYear() -> Int {
+        let today = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let todayComponents = calendar.components([.Day , .Month , .Year], fromDate: today)
+        let thisYear = todayComponents.year //this will give you today's month
+        return thisYear
+    }
+    
+    //Display today's month as title string fit for tableview top
+    private func getTodaysMonthStringForWeeklyProgramsTableView() -> String {
+        let todaysMonthInt = getTodaysMonth()
+        let todaysYearInt = getTodaysYear()
+        let dateFormatter = NSDateFormatter()
+        let monthNames = dateFormatter.standaloneMonthSymbols
+        let monthName = monthNames[todaysMonthInt-1]
+        return "\(monthName) \(todaysYearInt) 주보 다운로드"
+    }
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell
@@ -169,8 +194,9 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         headerView.backgroundColor = UIColor.whiteColor()
         var label: UILabel
         if (tableView == weeklyProgramsTableView) {
-            label = UILabel(frame: CGRectMake(12, 5, 50, 18))
-            label.text = "주보"
+            label = UILabel(frame: CGRectMake(12, 5, tableView.frame.size.width * 0.75, 18))
+            label.text = getTodaysMonthStringForWeeklyProgramsTableView()
+            
             //"See more arrow button" to the right of section header
             let button = UIButton(type: UIButtonType.Custom)
             button.frame = CGRectMake(tableView.frame.size.width - 70, 5, 50, 20)
