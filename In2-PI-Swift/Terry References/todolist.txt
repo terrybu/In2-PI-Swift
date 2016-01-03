@@ -12,6 +12,8 @@ To-Do List as of 1/2/2016
 
 5) Home screen needs to finalized with whatever cards you want to put in there
 
+6) Adding a confirmation password textfield + birthday input for parse
+    (later user tracking)
 
 Bonus but unnecessary
 - Getting Weekly Programs accessory view to properly display which pdfs were actually already downloaded into the device with a checkmark?

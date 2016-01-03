@@ -15,17 +15,24 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet var lastNameTextField:PaddedTextField!
     @IBOutlet var userNameTextField:PaddedTextField!
     @IBOutlet var passwordTextField:PaddedTextField!
+    @IBOutlet var confirmPasswordTextField:PaddedTextField!
     @IBOutlet var emailTextField:PaddedTextField!
+    @IBOutlet var birthdayDatePicker: UIDatePicker!
+
+    convenience init() {
+        self.init(nibName: "SignUpViewController", bundle: nil)
+        //initializing the view Controller form specified NIB file
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "회원가입"
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
         userNameTextField.delegate = self
         passwordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
         emailTextField.delegate = self
-        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "navBarSignUp"), forBarMetrics: UIBarMetrics.Default)
         //for the longest time, I was wondering why sometimes navigation bar background would look a little lighter than the statusbar backround that Jin made me ... it was because they make it damn translucent by default
         navigationController?.navigationBar.translucent = false
@@ -85,8 +92,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
                 
                 // Sign up the user asynchronously
                 newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
-                    
-                    // Stop the spinner
                     spinner.stopAnimating()
                     if ((error) != nil) {
                         //error case
@@ -111,13 +116,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
                     }
                 })
             }
-
         }
-        
     }
     
     
-
     //MARK: UITextFieldDelegate Methods
     
     /**

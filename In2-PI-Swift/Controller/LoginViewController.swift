@@ -13,9 +13,13 @@ import MBProgressHUD
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var dismissBlock : (() -> Void)?
-    
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
+    @IBAction func signUpButtonWasPressed() {
+        let signUpViewController = SignUpViewController()
+        let signUpNavController = UINavigationController(rootViewController: signUpViewController)
+        presentViewController(signUpNavController, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         let backgroundGradientImageView = UIImageView(image: UIImage(named: "bg_gradient"))

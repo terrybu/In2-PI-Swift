@@ -29,6 +29,7 @@
 		D92D316A1BF9429C00040F1A /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92D31691BF9429C00040F1A /* PaddedTextField.swift */; };
 		D952B17B1B5EF5330089116C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B17A1B5EF5330089116C /* Constants.swift */; };
 		D9583F4B1C388C4D00A95D54 /* URLEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9583F4A1C388C4D00A95D54 /* URLEndpoints.swift */; };
+		D9583F4E1C38AE8500A95D54 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9583F4D1C38AE8500A95D54 /* SignUpViewController.xib */; };
 		D95EC5241B978DF000782925 /* FacebookFeedQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5231B978DF000782925 /* FacebookFeedQuery.swift */; };
 		D95EC5261B978E6400782925 /* FBFeedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5251B978E6400782925 /* FBFeedPost.swift */; };
 		D95EC5291B97963000782925 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC5281B97963000782925 /* StringExtension.swift */; };
@@ -114,6 +115,7 @@
 		D92D31691BF9429C00040F1A /* PaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		D952B17A1B5EF5330089116C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../Constants.swift; sourceTree = "<group>"; };
 		D9583F4A1C388C4D00A95D54 /* URLEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLEndpoints.swift; sourceTree = "<group>"; };
+		D9583F4D1C38AE8500A95D54 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		D95EC5231B978DF000782925 /* FacebookFeedQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookFeedQuery.swift; sourceTree = "<group>"; };
 		D95EC5251B978E6400782925 /* FBFeedPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBFeedPost.swift; sourceTree = "<group>"; };
 		D95EC5281B97963000782925 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			children = (
 				D92B56341BD5C8930085208F /* LoginViewController.swift */,
 				D97839811BF9305B00E4A834 /* SignUpViewController.swift */,
+				D9583F4D1C38AE8500A95D54 /* SignUpViewController.xib */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				D9D7C5591B82CFE4003E48EA /* todolist.txt in Resources */,
 				D9A79E151C2C2EEA003D9981 /* NanumBarunGothic.ttf in Resources */,
 				D9D3CE191B3F338D00C8E195 /* Localizable.strings in Resources */,
+				D9583F4E1C38AE8500A95D54 /* SignUpViewController.xib in Resources */,
 				D98FEFB41B9C0C8E003614A7 /* ApplyWidgetView.xib in Resources */,
 				D9B9B5791B4B1B0000DA476E /* splashScreen.mp4 in Resources */,
 				D9F8C4761BA4C33200881B94 /* TodaysQTWidget.xib in Resources */,
