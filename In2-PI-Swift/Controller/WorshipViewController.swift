@@ -22,6 +22,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     
     var weeklyProgramsArray = [WeeklyProgram]()
     var thisMonthProgramsArray = [WeeklyProgram]()
+    var thisMonthProgramsAreEmpty: Bool = false
     
     var headerTitleStringForPraiseSongsListSection: String?
     let indicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
@@ -137,7 +138,13 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
                     }
                 }
             }
-            return thisMonthProgramsArray.count
+            if !thisMonthProgramsArray.isEmpty {
+                thisMonthProgramsAreEmpty = false
+                thisMonthProgramsArray.count
+            } else {
+                thisMonthProgramsAreEmpty = true
+                return 2
+            }
         } else if (tableView == songsTableView) {
             return songObjectsArray.count
         }
@@ -168,17 +175,27 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         let dateFormatter = NSDateFormatter()
         let monthNames = dateFormatter.standaloneMonthSymbols
         let monthName = monthNames[todaysMonthInt-1]
-        return "\(monthName) \(todaysYearInt) 주보 다운로드"
+        return "\(monthName) \(todaysYearInt) 주보 보기"
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell
         if (tableView == weeklyProgramsTableView) {
-            let program = thisMonthProgramsArray[indexPath.row]
-            cell = weeklyProgramsTableView.dequeueReusableCellWithIdentifier(kWeeklyProgramsTableViewCellReuseIdentifier)!
-            cell.textLabel!.text = program.title
-            cell.accessoryView = UIImageView(image: UIImage(named: "btn_download"))
+            if thisMonthProgramsAreEmpty {
+                cell = UITableViewCell()
+                if indexPath.row == 0 {
+                    cell.textLabel!.text = "이번 달의 주보는 아직 업로드되지 않았습니다."
+                } else {
+                    cell.textLabel!.text = "지난 달의 주보는 '더보기'를 참고해주세요"
+                }
+                
+            } else {
+                let program = thisMonthProgramsArray[indexPath.row]
+                cell = weeklyProgramsTableView.dequeueReusableCellWithIdentifier(kWeeklyProgramsTableViewCellReuseIdentifier)!
+                cell.textLabel!.text = program.title
+                cell.accessoryView = UIImageView(image: UIImage(named: "btn_download"))
+            }
         } else {
             let reuseIdentifier = "SongsTableViewCell"
             cell = songsTableView.dequeueReusableCellWithIdentifier(reuseIdentifier)!

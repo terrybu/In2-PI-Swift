@@ -13,8 +13,7 @@ class AllWeeklyProgramsTableViewController: UITableViewController {
     var allWeeklyProgramsArray: [WeeklyProgram]?
     
     override func viewDidLoad() {
-        self.title = "주보"
-        
+        self.title = "주보 보기"
         let homeButton = UIBarButtonItem(image: UIImage(named: "home"), style: UIBarButtonItemStyle.Plain, target: self, action: Selector("homeButtonPressed"))
         navigationItem.rightBarButtonItem = homeButton
     }

@@ -25,6 +25,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         userNameTextField.delegate = self
         passwordTextField.delegate = self
         emailTextField.delegate = self
+        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "navBarSignUp"), forBarMetrics: UIBarMetrics.Default)
         //for the longest time, I was wondering why sometimes navigation bar background would look a little lighter than the statusbar backround that Jin made me ... it was because they make it damn translucent by default
         navigationController?.navigationBar.translucent = false
