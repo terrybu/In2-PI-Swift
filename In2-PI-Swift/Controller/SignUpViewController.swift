@@ -88,7 +88,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         newUser.password = password
         newUser.setValue(firstName, forKey: "firstName")
         newUser.setValue(lastName, forKey: "lastName")
-        newUser.setValue(email, forKey: "email")
+        newUser.setObject(birthdayDatePicker.date, forKey: "birthday")
+        
         // Sign up the user asynchronously
         newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
             spinner.stopAnimating()
@@ -118,20 +119,24 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
 
     private func validatedUserInputInTextFields(firstName: String?, lastName: String?, username: String?, password: String?, confirmationPassword: String?, email: String?, viewController: SignUpViewController) -> Bool {
         // Validate the text fields
-        if let username = username, password = password, email = email {
+        if let username = username, password = password, confirmPW = confirmationPassword, email = email {
             if username.characters.count <= 3 {
                 var alert = UIAlertView(title: "Invalid Username Input", message: "Username must be greater than 3 characters", delegate: viewController, cancelButtonTitle: "OK")
                 alert.show()
                 return false
-            } else {
-                if password.characters.count <= 3 {
-                    var alert = UIAlertView(title: "Invalid Password Input", message: "Password must be greater than 3 characters", delegate: viewController, cancelButtonTitle: "OK")
-                    alert.show()
-                    return false
-                }
+            }
+            if password.characters.count <= 3 {
+                var alert = UIAlertView(title: "Invalid Password Input", message: "Password must be greater than 3 characters", delegate: viewController, cancelButtonTitle: "OK")
+                alert.show()
+                return false
             }
             if !isValidEmail(email) {
                 let alert = UIAlertView(title: "Invalid Email Input", message: "Please enter a valid email address", delegate: viewController, cancelButtonTitle: "OK")
+                alert.show()
+                return false
+            }
+            if confirmPW != password {
+                let alert = UIAlertView(title: "Passwords Do Not Match", message: "Please make sure you've correctly entered your password in the confirmation field", delegate: viewController, cancelButtonTitle: "OK")
                 alert.show()
                 return false
             }
