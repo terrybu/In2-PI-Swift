@@ -78,6 +78,9 @@
                     <date key="date" timeIntervalSinceReferenceDate="-31530039.676064014">
                         <!--2000-01-02 01:39:20 +0000-->
                     </date>
+                    <connections>
+                        <action selector="datePickerValueChanged:" destination="-1" eventType="valueChanged" id="OvT-kd-JNK"/>
+                    </connections>
                 </datePicker>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="*생년월일을 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTE-V6-aPK">
                     <rect key="frame" x="40" y="451" width="175" height="21"/>
