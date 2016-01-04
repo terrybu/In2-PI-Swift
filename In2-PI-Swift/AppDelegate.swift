@@ -62,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     @objc
     private func moviePlayBackDidFinish() {
-            let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
+            let loginVC = LoginViewController()
             loginVC.dismissBlock = {
                 WalkthroughManager.sharedInstance.checkFirstLaunchAndShowWalkthroughIfTrue(self.window)
             }

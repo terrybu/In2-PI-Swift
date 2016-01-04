@@ -21,6 +21,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         presentViewController(signUpNavController, animated: true, completion: nil)
     }
     
+    convenience init() {
+        self.init(nibName: "LoginViewController", bundle: nil)
+        //initializing the view Controller form specified NIB file
+    }
+    
     override func viewDidLoad() {
         let backgroundGradientImageView = UIImageView(image: UIImage(named: "bg_gradient"))
         backgroundGradientImageView.frame = view.frame

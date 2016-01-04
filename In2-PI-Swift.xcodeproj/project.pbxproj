@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		615C54D683ACF2345564DCC8 /* Pods_In2_PI_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D9D85A29F7F171A635D2C8 /* Pods_In2_PI_Swift.framework */; };
+		D901C0D61C39E2CA00B350B1 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D901C0D51C39E2CA00B350B1 /* LoginViewController.xib */; };
+		D901C0D81C39EFC700B350B1 /* fonts available console output in Resources */ = {isa = PBXBuildFile; fileRef = D901C0D71C39EFC600B350B1 /* fonts available console output */; };
 		D904A3F51C02EB9A005A6EA3 /* HideKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D904A3F41C02EB9A005A6EA3 /* HideKey.swift */; };
 		D90A08231BB5D4BD0033DD6B /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = D90A081E1BB5D4BD0033DD6B /* TFHpple.m */; };
 		D90A08241BB5D4BD0033DD6B /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D90A08201BB5D4BD0033DD6B /* TFHppleElement.m */; };
@@ -91,6 +93,8 @@
 		15F9BC9F44944956571DAF7B /* Pods-In2-PI-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-In2-PI-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-In2-PI-Swift/Pods-In2-PI-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		24E64E21CAF4188A4E4E9D5B /* Pods-In2-PI-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-In2-PI-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-In2-PI-Swift/Pods-In2-PI-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		54D9D85A29F7F171A635D2C8 /* Pods_In2_PI_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_In2_PI_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D901C0D51C39E2CA00B350B1 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		D901C0D71C39EFC600B350B1 /* fonts available console output */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fonts available console output"; sourceTree = "<group>"; };
 		D904A3F41C02EB9A005A6EA3 /* HideKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKey.swift; sourceTree = "<group>"; };
 		D90A081D1BB5D4BD0033DD6B /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
 		D90A081E1BB5D4BD0033DD6B /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
@@ -268,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				D92B56341BD5C8930085208F /* LoginViewController.swift */,
+				D901C0D51C39E2CA00B350B1 /* LoginViewController.xib */,
 				D97839811BF9305B00E4A834 /* SignUpViewController.swift */,
 				D9583F4D1C38AE8500A95D54 /* SignUpViewController.xib */,
 			);
@@ -391,8 +396,8 @@
 				D9DA87E81B6DC063005D4CB6 /* Controller */,
 				D95EC5271B97961200782925 /* Extensions */,
 				D9F9C7E21B645FD100F5C17D /* Resources */,
-				D9F7F47F1B93544400D86FF7 /* Third Party */,
 				D9FB031E1B6495C3001D813D /* Terry References */,
+				D9F7F47F1B93544400D86FF7 /* Third Party */,
 				D9D3CDEA1B3F20EF00C8E195 /* Supporting Files */,
 			);
 			path = "In2-PI-Swift";
@@ -494,6 +499,7 @@
 			children = (
 				D9D7C5581B82CFE4003E48EA /* todolist.txt */,
 				D904A3F41C02EB9A005A6EA3 /* HideKey.swift */,
+				D901C0D71C39EFC600B350B1 /* fonts available console output */,
 			);
 			path = "Terry References";
 			sourceTree = "<group>";
@@ -591,8 +597,10 @@
 				D9D7C5591B82CFE4003E48EA /* todolist.txt in Resources */,
 				D9A79E151C2C2EEA003D9981 /* NanumBarunGothic.ttf in Resources */,
 				D9D3CE191B3F338D00C8E195 /* Localizable.strings in Resources */,
+				D901C0D81C39EFC700B350B1 /* fonts available console output in Resources */,
 				D9583F4E1C38AE8500A95D54 /* SignUpViewController.xib in Resources */,
 				D98FEFB41B9C0C8E003614A7 /* ApplyWidgetView.xib in Resources */,
+				D901C0D61C39E2CA00B350B1 /* LoginViewController.xib in Resources */,
 				D9B9B5791B4B1B0000DA476E /* splashScreen.mp4 in Resources */,
 				D9F8C4761BA4C33200881B94 /* TodaysQTWidget.xib in Resources */,
 				D989C5281C2700500051ACFE /* HolyStarIntroViewController.xib in Resources */,
