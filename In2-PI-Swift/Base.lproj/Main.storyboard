@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9GM-Gh-eyB">
-                                <rect key="frame" x="0.0" y="36" width="600" height="700"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Gg-pQ-EGO" userLabel="Container View">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="700"/>
@@ -76,24 +76,14 @@
                                     <constraint firstAttribute="trailing" secondItem="3Gg-pQ-EGO" secondAttribute="trailing" id="xFB-w7-uhN"/>
                                 </constraints>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vo2-3s-J4b" customClass="PurpleSegmentedControlView" customModule="In2_PI_Swift" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="36"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="zAM-ze-XDo"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="vo2-3s-J4b" secondAttribute="trailing" id="5o1-Mn-bz2"/>
+                            <constraint firstItem="9GM-Gh-eyB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="4Ay-0T-u83"/>
                             <constraint firstItem="9GM-Gh-eyB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8Za-If-eyj"/>
-                            <constraint firstItem="vo2-3s-J4b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IHj-gC-Aer"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9GM-Gh-eyB" secondAttribute="bottom" id="LkG-V4-MRq"/>
-                            <constraint firstItem="vo2-3s-J4b" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="SHr-Vp-BSU"/>
                             <constraint firstItem="9GM-Gh-eyB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="URz-mQ-JhA"/>
                             <constraint firstAttribute="trailing" secondItem="9GM-Gh-eyB" secondAttribute="trailing" id="gFI-SI-eoe"/>
-                            <constraint firstItem="9GM-Gh-eyB" firstAttribute="top" secondItem="vo2-3s-J4b" secondAttribute="bottom" id="mjR-4U-bca"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -106,7 +96,6 @@
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
                         <outlet property="newsArticleView" destination="1OI-qH-uNG" id="TP0-8i-LoB"/>
-                        <outlet property="purpleSegmentedControlView" destination="vo2-3s-J4b" id="gGd-5K-ZrF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

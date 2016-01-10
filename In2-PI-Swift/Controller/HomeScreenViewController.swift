@@ -9,20 +9,17 @@
 import UIKit
 import MBProgressHUD
 
-class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate, PurpleSegmentedControlViewDelegate {
+class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate {
     
     // MARK: Properties
     var black: UIView!
     var firstObjectID: String!
     var imageBlackOverlay: UIView?
-    @IBOutlet var purpleSegmentedControlView: PurpleSegmentedControlView!
     @IBOutlet weak var newsArticleView: NewsArticleView!
 
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Do any additional setup after loading the view, typically from a nib.
-        purpleSegmentedControlView.delegate = self
         
         setUpUniqueUIForHomeVC()
         
@@ -88,13 +85,6 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate,
         MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
     }
     
-    //MARK: PurpleSegmentedControlViewDelegate
-    func didPressMyFeedButton() {
-        print("did press my feed")
-    }
-    func didPressPIFeedButton() {
-        print("did press pi feed")
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

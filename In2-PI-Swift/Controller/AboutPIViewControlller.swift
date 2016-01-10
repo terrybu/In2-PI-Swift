@@ -8,6 +8,8 @@
 
 import UIKit
 import HMSegmentedControl
+import MapKit
+import Contacts
 
 private let kLeftSidePadding: CGFloat = 15
 
@@ -105,10 +107,23 @@ class AboutPIViewController: ParentViewController, UIScrollViewDelegate{
         textView.dataDetectorTypes = .Address
         textView.font = UIFont(name: "NanumBarunGothic", size: 16.0)
         incompleteView.addSubview(textView)
-        let imageView = UIImageView(image: UIImage(named: "churchDirections"))
-        imageView.frame = CGRectMake(0, textView.frame.height + 45, self.view.frame.width, 250)
-        incompleteView.addSubview(imageView)
+        let churchDirectionsImageView = UIImageView(image: UIImage(named: "churchDirections"))
+        churchDirectionsImageView.frame = CGRectMake(0, textView.frame.height + 45, self.view.frame.width, 250)
+        churchDirectionsImageView.userInteractionEnabled = true
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "churchDirectionsImageViewTapped")
+        churchDirectionsImageView.addGestureRecognizer(tapGestureRecognizer)
+        
+        incompleteView.addSubview(churchDirectionsImageView)
         return incompleteView
+    }
+    
+    func churchDirectionsImageViewTapped() {
+        let addressDictionary = [String(CNPostalAddressStreetKey): "165 West 86th Street, New York, NY 10024"]
+        let placemark = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 40.787738, longitude: -73.974524), addressDictionary: addressDictionary)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = "In2 West Campus at West Park Presbyterian Church"
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+        mapItem.openInMapsWithLaunchOptions(launchOptions)
     }
     
     
