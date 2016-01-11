@@ -1,5 +1,5 @@
 //
-//  EvangelismApplyWidgetView.swift
+//  EvangelismNewsWidgetView
 //  In2-PI-Swift
 //
 //  Created by Terry Bu on 9/13/15.
@@ -8,12 +8,14 @@
 
 import UIKit
 
-@IBDesignable class EvangelismApplyWidgetView:UIView {
+@IBDesignable class EvangelismNewsWidgetView:UIView {
     
     var view: UIView!
     
     @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var bigTitleLabel: UILabel!
+    @IBOutlet weak var viewMoreButton: UIButton! 
 
     @IBInspectable var categoryTitle: String? {
         get {
@@ -52,7 +54,7 @@ import UIKit
     
     func loadViewFromNib() -> UIView {
         let bundle = NSBundle(forClass: self.dynamicType)
-        let nib = UINib(nibName: "EvangelismApplyWidgetView", bundle: bundle)
+        let nib = UINib(nibName: "EvangelismNewsWidgetView", bundle: bundle)
         return nib.instantiateWithOwner(self, options: nil)[0] as! UIView
     }
     

@@ -135,14 +135,9 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
         //postURL has to nick out the second part of the _ string from firstObjectID
         let i = sender.view?.tag
         let feedObject = feedObjectsArray![i!]
-        let postURLParam = feedObject.id.componentsSeparatedByString("_").last
-        let postURL = "https://www.facebook.com/IN2PI/posts/\(postURLParam!)"
-        let wkWebView = UIWebView(frame: self.view.frame)
-        wkWebView.loadRequest(NSURLRequest(URL: NSURL(string: postURL)!))
-        let emptyVC = UIViewController()
-        emptyVC.view = wkWebView
-        navigationController?.pushViewController(emptyVC, animated: true)
+        FacebookFeedQuery.sharedInstance.displayFacebookPostObjectInWebView(feedObject, view: self.view, navigationController: navigationController)
     }
+    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let feedArticle = feedObjectsArray![indexPath.row] as FBFeedPost

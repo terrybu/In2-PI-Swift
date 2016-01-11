@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="NanumBarunGothic.ttf">
+            <string>NanumBarunGothic</string>
             <string>NanumBarunGothic</string>
         </mutableArray>
         <mutableArray key="NanumBarunGothicBold.ttf">
@@ -14,10 +14,12 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EvangelismApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EvangelismNewsWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
             <connections>
                 <outlet property="bigTitleLabel" destination="CsT-jY-WCU" id="y58-Le-tu1"/>
                 <outlet property="categoryLabel" destination="Gw7-2K-T3r" id="l9j-oG-VYH"/>
+                <outlet property="dateLabel" destination="LpY-0b-uuV" id="9j8-JR-Vgj"/>
+                <outlet property="viewMoreButton" destination="puE-jr-zUD" id="XyL-F5-FAK"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -25,43 +27,65 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="선교신청" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gw7-2K-T3r">
-                    <rect key="frame" x="20" y="10" width="61" height="20"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최신 선교뉴스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gw7-2K-T3r">
+                    <rect key="frame" x="16" y="10" width="95" height="20"/>
                     <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="17"/>
                     <color key="textColor" red="0.32941176470588235" green="0.34509803921568627" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="puE-jr-zUD">
-                    <rect key="frame" x="20" y="140" width="70" height="30"/>
+                    <rect key="frame" x="16" y="101" width="70" height="30"/>
                     <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="14"/>
                     <state key="normal" title="더보기" backgroundImage="btn_more">
                         <color key="titleColor" red="0.62352941179999999" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="선교이름 이곳에 입력하세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsT-jY-WCU">
-                    <rect key="frame" x="20" y="55" width="202" height="65"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="선교뉴스 제목" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsT-jY-WCU">
+                    <rect key="frame" x="16" y="55" width="572" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="202" id="Fl9-pP-sq7"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="28"/>
+                    <fontDescription key="fontDescription" name="NanumBarunGothicBold" family="NanumBarunGothic" pointSize="26"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Fl9-pP-sq7"/>
+                        </mask>
+                    </variation>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="날짜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LpY-0b-uuV">
+                    <rect key="frame" x="125" y="10" width="95" height="20"/>
+                    <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="17"/>
+                    <color key="textColor" red="0.3294117647" green="0.34509803919999998" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="divider_0.3pt" translatesAutoresizingMaskIntoConstraints="NO" id="BJc-N9-Bp0">
+                    <rect key="frame" x="0.0" y="199" width="600" height="1"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="BJc-N9-Bp0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6dR-JO-B2h"/>
                 <constraint firstItem="Gw7-2K-T3r" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Bfo-3r-enL"/>
-                <constraint firstItem="Gw7-2K-T3r" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="DGb-UX-lUp"/>
+                <constraint firstItem="LpY-0b-uuV" firstAttribute="centerY" secondItem="Gw7-2K-T3r" secondAttribute="centerY" id="D65-Bh-T3I"/>
+                <constraint firstItem="Gw7-2K-T3r" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="DGb-UX-lUp"/>
+                <constraint firstAttribute="bottom" secondItem="BJc-N9-Bp0" secondAttribute="bottom" id="TMI-jH-mB7"/>
+                <constraint firstAttribute="trailing" secondItem="CsT-jY-WCU" secondAttribute="trailing" constant="12" id="Tsn-92-QkY"/>
+                <constraint firstItem="puE-jr-zUD" firstAttribute="top" secondItem="CsT-jY-WCU" secondAttribute="bottom" constant="16" id="UAb-4u-gsE"/>
                 <constraint firstItem="CsT-jY-WCU" firstAttribute="leading" secondItem="puE-jr-zUD" secondAttribute="leading" id="Ywo-jX-N4u"/>
+                <constraint firstAttribute="trailing" secondItem="BJc-N9-Bp0" secondAttribute="trailing" id="eeZ-5M-Ac8"/>
                 <constraint firstItem="CsT-jY-WCU" firstAttribute="leading" secondItem="Gw7-2K-T3r" secondAttribute="leading" id="kx8-dO-AyR"/>
                 <constraint firstItem="CsT-jY-WCU" firstAttribute="top" secondItem="Gw7-2K-T3r" secondAttribute="bottom" constant="25" id="luD-Kx-bfi"/>
                 <constraint firstItem="puE-jr-zUD" firstAttribute="top" secondItem="CsT-jY-WCU" secondAttribute="bottom" constant="50" id="orA-Am-5hk"/>
+                <constraint firstItem="LpY-0b-uuV" firstAttribute="leading" secondItem="Gw7-2K-T3r" secondAttribute="trailing" constant="14" id="uAs-SZ-lXJ"/>
                 <constraint firstAttribute="bottom" secondItem="puE-jr-zUD" secondAttribute="bottom" constant="30" id="xIq-yM-S36"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="orA-Am-5hk"/>
+                    <exclude reference="xIq-yM-S36"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="192" y="90"/>
@@ -69,5 +93,6 @@
     </objects>
     <resources>
         <image name="btn_more" width="70" height="30"/>
+        <image name="divider_0.3pt" width="341" height="1"/>
     </resources>
 </document>

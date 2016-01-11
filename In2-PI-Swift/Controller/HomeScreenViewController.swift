@@ -50,7 +50,6 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
         hud.labelText = "로딩중입니다. 잠시만 기다려주세요."
     }
     
-    
     func tappedNewsArticleView(sender: UIGestureRecognizer) {
         print(firstObjectID)
         //postURL has to nick out the second part of the _ string from firstObjectID

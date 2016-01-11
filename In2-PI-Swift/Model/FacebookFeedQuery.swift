@@ -141,4 +141,19 @@ class FacebookFeedQuery: FacebookQuery {
         return result
     }
     
+    func retrieveFacebookPostDirectURLString(feedObject: FBFeedPost) -> String{
+        let postURLParam = feedObject.id.componentsSeparatedByString("_").last
+        let postURL = "https://www.facebook.com/IN2PI/posts/\(postURLParam!)"
+        return postURL
+    }
+    
+    func displayFacebookPostObjectInWebView(feedObject: FBFeedPost, view: UIView, navigationController: UINavigationController?) {
+        let postURLString = FacebookFeedQuery.sharedInstance.retrieveFacebookPostDirectURLString(feedObject)
+        let wkWebView = UIWebView(frame: view.frame)
+        wkWebView.loadRequest(NSURLRequest(URL: NSURL(string: postURLString)!))
+        let emptyVC = UIViewController()
+        emptyVC.view = wkWebView
+        navigationController?.pushViewController(emptyVC, animated: true)
+    }
+    
 }
