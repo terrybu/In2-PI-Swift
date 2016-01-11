@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-private let kOriginalContentViewHeight: CGFloat = 300
+private let kOriginalContentViewHeight: CGFloat = 454
 
 class NurtureViewController: ParentViewController, SFSafariViewControllerDelegate {
     
