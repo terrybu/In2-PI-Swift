@@ -29,7 +29,7 @@ protocol ExpandableAboutViewDelegate {
     @IBAction func expandButtonPressed(sender: UIButton) {
 
         if expanded == false {
-            arrowImageButton.setImage(UIImage(named: "btn_collapse"), forState: UIControlState.Normal)
+            arrowImageButton.setImage(UIImage(named: "btn_up_w"), forState: UIControlState.Normal)
         } else {
               arrowImageButton.setImage(UIImage(named: "btn_down_w"), forState: UIControlState.Normal)
         }

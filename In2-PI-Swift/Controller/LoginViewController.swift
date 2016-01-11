@@ -64,11 +64,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func didPressLoginbutton() {
         let username = usernameTextField.text
         let password = passwordTextField.text
-        
         if username != nil && password != nil {
             let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
             hud.labelText = "로그인 실행중입니다."
-            hud.color = UIColor.clearColor()
+//            hud.color = UIColor.clearColor()
             PFUser.logInWithUsernameInBackground(username!, password: password!) { (user, error) -> Void in
                 if let user = user {
                     print(user)
