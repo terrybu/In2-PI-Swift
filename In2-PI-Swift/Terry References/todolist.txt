@@ -1,21 +1,12 @@
-To-Do List as of 1/2/2016
+To-Do List as of 1/11/2016
 
 1) Same with communications vc + Social Services VC ... need apply cards
 - Social Services: https://docs.google.com/forms/d/1iVa3r1dZ4GTe4FzSBTHFUV4dfY4MyVIYGEN-MkXOF_g/viewform?ts=5614a6c8&edit_requested=true
 - Communications: https://docs.google.com/forms/d/14Y_lOSjF2-PDXhIwEL-Dj9mZ5sale2ttJKreRsfGBfo/viewform?c=0&w=1
 
-2) Evangelism card can be done now .. [PI 선교] look into it
+2) *** NurtureVC does not have a News card ... go back into the past ... dig up a news like 새가족공지 and make it [PI 양육]?
 
-3) *** NurtureVC does not have a News card ... go back into the past ... dig up a news like 새가족공지 and make it [PI 양육]?
+3) last big piece is 긍휼부 칼렌더.
 
-4) last big piece is 긍휼부 칼렌더.
-
-5) Home screen needs to finalized with whatever cards you want to put in there
-
-6) Adding a confirmation password textfield + birthday input for parse
-    (later user tracking)
-
-Bonus but unnecessary
-- Getting Weekly Programs accessory view to properly display which pdfs were actually already downloaded into the device with a checkmark?
-- Getting Weekly Programs into subsections using CollapsableTableView?
-- News?
+4) Home screen needs to finalized with whatever cards you want to put in there
+    - Add "News" widget in there?

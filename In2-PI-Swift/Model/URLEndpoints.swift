@@ -17,5 +17,7 @@ let kApplyWorshipTeamGoogleDocURL = "https://docs.google.com/forms/d/15NeQ-ieXeN
 
 let kApplyNurtureTeamGoogleDocURL = "https://docs.google.com/forms/d/1PCWAVYTbycFUQM6eUMDOqnJamYyV9oAp1HbB7VqLDE4/viewform?c=0&w=1"
 
+let kApplyCommunicationsTeamGoogleDocURL = "http://goo.gl/forms/elqLSFuvCA"
 
+let kApplySocialServicesTeamGoogleDocURL = "https://docs.google.com/a/in2church.org/forms/d/1iVa3r1dZ4GTe4FzSBTHFUV4dfY4MyVIYGEN-MkXOF_g/edit?usp=sharing_eid&ts=5614a6c8"
 

@@ -950,10 +950,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TeX-0v-hKw" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="605"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZr-DP-yu9" userLabel="PlaceholderForCalendar">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aZr-DP-yu9" userLabel="PlaceholderForCalendar">
                                                 <rect key="frame" x="0.0" y="93" width="600" height="225"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALENDAR???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7C-Bm-BMl">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="CALENDAR???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7C-Bm-BMl">
                                                         <rect key="frame" x="217" y="98" width="166" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -974,7 +974,7 @@
                                                     </mask>
                                                 </variation>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MdS-at-YMQ" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MdS-at-YMQ" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="93"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -991,14 +991,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Bm-1l-Zm5" userLabel="BetterFutureApply" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
-                                                <rect key="frame" x="300" y="418" width="300" height="187"/>
+                                                <rect key="frame" x="0.0" y="418" width="600" height="187"/>
                                                 <color key="backgroundColor" red="0.62352941179999999" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="187" id="GcM-tp-JQG"/>
                                                     <constraint firstAttribute="width" constant="300" id="tpp-0A-XfK"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Better Future"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="긍휼부 사역 신청"/>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="rectangle_BetterFuture"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <variation key="default">
@@ -1008,7 +1008,7 @@
                                                     </mask>
                                                 </variation>
                                             </view>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FQQ-Ls-qMi">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FQQ-Ls-qMi">
                                                 <rect key="frame" x="0.0" y="318" width="600" height="100"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -1039,27 +1039,6 @@
                                                     <outlet property="delegate" destination="68E-Sr-2Ow" id="6cM-NL-V0Z"/>
                                                 </connections>
                                             </tableView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hE-u1-Fs8" userLabel="BetterWorldApply" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="418" width="300" height="187"/>
-                                                <color key="backgroundColor" red="1" green="0.70196078429999997" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="300" id="4Cg-Mx-Jdp"/>
-                                                    <constraint firstAttribute="height" constant="200" id="mOo-Ia-d0e"/>
-                                                    <constraint firstAttribute="height" constant="200" id="zdl-u5-uDn"/>
-                                                    <constraint firstAttribute="height" constant="187" id="zh9-fJ-OSQ"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Better World"/>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="rectangle_BetterWorld"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="4Cg-Mx-Jdp"/>
-                                                        <exclude reference="mOo-Ia-d0e"/>
-                                                        <exclude reference="zdl-u5-uDn"/>
-                                                    </mask>
-                                                </variation>
-                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1067,33 +1046,22 @@
                                             <constraint firstItem="aZr-DP-yu9" firstAttribute="top" secondItem="7Bm-1l-Zm5" secondAttribute="bottom" id="2B1-zY-K4c"/>
                                             <constraint firstItem="aZr-DP-yu9" firstAttribute="leading" secondItem="TeX-0v-hKw" secondAttribute="leading" id="34o-L0-0SG"/>
                                             <constraint firstItem="aZr-DP-yu9" firstAttribute="top" secondItem="MdS-at-YMQ" secondAttribute="bottom" id="3Xz-Ns-3C8"/>
-                                            <constraint firstItem="aZr-DP-yu9" firstAttribute="top" secondItem="9hE-u1-Fs8" secondAttribute="bottom" id="9pP-Jh-WoN"/>
                                             <constraint firstAttribute="trailing" secondItem="FQQ-Ls-qMi" secondAttribute="trailing" id="B5T-m6-sre"/>
                                             <constraint firstItem="FQQ-Ls-qMi" firstAttribute="top" secondItem="aZr-DP-yu9" secondAttribute="bottom" id="DuB-Gu-JRC"/>
                                             <constraint firstAttribute="height" constant="605" id="Fof-YS-WqW"/>
-                                            <constraint firstItem="9hE-u1-Fs8" firstAttribute="width" secondItem="TeX-0v-hKw" secondAttribute="width" multiplier="1:2" id="Gqc-gN-8vl"/>
-                                            <constraint firstItem="9hE-u1-Fs8" firstAttribute="top" secondItem="FQQ-Ls-qMi" secondAttribute="bottom" id="HUs-VS-eYK"/>
-                                            <constraint firstItem="9hE-u1-Fs8" firstAttribute="top" secondItem="FQQ-Ls-qMi" secondAttribute="bottom" id="IWG-Fs-aaz"/>
-                                            <constraint firstItem="7Bm-1l-Zm5" firstAttribute="leading" secondItem="9hE-u1-Fs8" secondAttribute="trailing" id="IXn-cr-C7p"/>
+                                            <constraint firstItem="7Bm-1l-Zm5" firstAttribute="centerX" secondItem="aZr-DP-yu9" secondAttribute="centerX" id="HOi-cs-Hkp"/>
                                             <constraint firstAttribute="trailing" secondItem="7Bm-1l-Zm5" secondAttribute="trailing" id="JeP-J7-dWo"/>
                                             <constraint firstItem="FQQ-Ls-qMi" firstAttribute="leading" secondItem="TeX-0v-hKw" secondAttribute="leading" id="OUM-DM-xwc"/>
                                             <constraint firstItem="7Bm-1l-Zm5" firstAttribute="top" secondItem="TeX-0v-hKw" secondAttribute="top" constant="42" id="UUL-0V-AJz"/>
                                             <constraint firstAttribute="bottom" secondItem="7Bm-1l-Zm5" secondAttribute="bottom" id="aoX-Ml-git"/>
                                             <constraint firstItem="MdS-at-YMQ" firstAttribute="top" secondItem="TeX-0v-hKw" secondAttribute="top" id="cB9-OL-V0D"/>
                                             <constraint firstAttribute="trailing" secondItem="MdS-at-YMQ" secondAttribute="trailing" id="gRe-zQ-Exq"/>
-                                            <constraint firstItem="7Bm-1l-Zm5" firstAttribute="leading" secondItem="9hE-u1-Fs8" secondAttribute="trailing" id="iRN-UU-YKc"/>
-                                            <constraint firstItem="7Bm-1l-Zm5" firstAttribute="centerY" secondItem="9hE-u1-Fs8" secondAttribute="centerY" id="kzk-Ao-aLu"/>
-                                            <constraint firstItem="7Bm-1l-Zm5" firstAttribute="width" secondItem="9hE-u1-Fs8" secondAttribute="width" id="qtg-Uf-Eo6"/>
-                                            <constraint firstItem="9hE-u1-Fs8" firstAttribute="leading" secondItem="TeX-0v-hKw" secondAttribute="leading" id="rDC-MW-Xq6"/>
-                                            <constraint firstItem="7Bm-1l-Zm5" firstAttribute="height" secondItem="9hE-u1-Fs8" secondAttribute="height" id="tOg-Mu-HJ7"/>
                                             <constraint firstItem="7Bm-1l-Zm5" firstAttribute="top" secondItem="FQQ-Ls-qMi" secondAttribute="bottom" constant="20" id="xPh-fa-I9g"/>
                                             <constraint firstAttribute="trailing" secondItem="aZr-DP-yu9" secondAttribute="trailing" id="zWK-LW-ESK"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="2B1-zY-K4c"/>
-                                                <exclude reference="9pP-Jh-WoN"/>
-                                                <exclude reference="IWG-Fs-aaz"/>
                                                 <exclude reference="UUL-0V-AJz"/>
                                                 <exclude reference="xPh-fa-I9g"/>
                                             </mask>
@@ -1427,6 +1395,5 @@
         <image name="btn_next_purple" width="10" height="15"/>
         <image name="evangelismPhilly" width="960" height="720"/>
         <image name="rectangle_BetterFuture" width="187" height="187"/>
-        <image name="rectangle_BetterWorld" width="187" height="187"/>
     </resources>
 </document>
