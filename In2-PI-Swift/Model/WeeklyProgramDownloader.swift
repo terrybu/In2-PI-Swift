@@ -14,6 +14,8 @@ protocol WeeklyProgramDownloaderDelegate {
 }
 
 class WeeklyProgramDownloader {
+    //Note that Import.IO's Magic Framework only allows for 10 objects to be downloaded through the JSON and then requires pagination
+    //Pagination seemed complicated so right now, downloading from this API just returns 10 most recent weekly programs
     
     static let sharedInstance = WeeklyProgramDownloader()
     var delegate: WeeklyProgramDownloaderDelegate?
@@ -44,11 +46,15 @@ class WeeklyProgramDownloader {
                 for dict:JSON in resultsArray {
                     let title = dict["tit_link/_text"].stringValue
                     var dateString: String
-                    if dict["txt_link_numbers/_source"].arrayValue.count > 1 {
+                    /*if dict["txt_link_numbers/_source"].arrayValue.count > 1 {
                         dateString = (dict["txt_link_numbers/_source"].arrayValue.last?.stringValue)!
                     } else {
                         dateString = dict["txt_link_numbers/_source"].stringValue
                     }
+                    This is the old way. But API sometimes returned "1.3" for 2016 which was weird.
+                    */
+                    let tit_link_numbers_source_array = dict["tit_link_numbers/_source"].arrayValue
+                    dateString = tit_link_numbers_source_array[1].stringValue + "." + tit_link_numbers_source_array[2].stringValue + "." + tit_link_numbers_source_array[0].stringValue
                     let pdfDownloadURL = dict["tit_link"].stringValue
                     let newWeeklyProgram = WeeklyProgram(title: title, pdfDownloadLinkPageOnnuriOrgURL: pdfDownloadURL, dateString: dateString)
                     self.weeklyProgramsArray.append(newWeeklyProgram)

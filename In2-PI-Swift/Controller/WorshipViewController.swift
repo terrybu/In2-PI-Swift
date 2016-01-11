@@ -23,7 +23,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     var weeklyProgramsArray = [WeeklyProgram]()
     var thisMonthProgramsArray = [WeeklyProgram]()
     var thisMonthProgramsAreEmpty: Bool = false
-    
+
     var headerTitleStringForPraiseSongsListSection: String?
     let indicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
     
@@ -36,15 +36,13 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
         setUpExpandableAboutView()
-        
         getPraiseSongNamesListAndHeaderFromFacebook()
-        
+        weeklyProgramsTableView.hidden = true
         if weeklyProgramsArray.isEmpty {
             indicator.center = CGPointMake(view.center.x, weeklyProgramsTableView.center.y)
             view.addSubview(indicator)
             indicator.startAnimating()
         }
-        
         WeeklyProgramDownloader.sharedInstance.delegate = self
         WeeklyProgramDownloader.sharedInstance.getTenRecentWeeklyProgramsListFromImportIO()
     }
@@ -140,7 +138,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
             }
             if !thisMonthProgramsArray.isEmpty {
                 thisMonthProgramsAreEmpty = false
-                thisMonthProgramsArray.count
+                return thisMonthProgramsArray.count
             } else {
                 thisMonthProgramsAreEmpty = true
                 return 2
@@ -189,7 +187,6 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
                 } else {
                     cell.textLabel!.text = "지난 달의 주보는 '더보기'를 참고해주세요"
                 }
-                
             } else {
                 let program = thisMonthProgramsArray[indexPath.row]
                 cell = weeklyProgramsTableView.dequeueReusableCellWithIdentifier(kWeeklyProgramsTableViewCellReuseIdentifier)!
