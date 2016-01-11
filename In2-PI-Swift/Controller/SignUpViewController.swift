@@ -111,7 +111,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     //Upon success, check if it's first time run, if it is, show walkthrough. If not, show home screen.
                     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                    WalkthroughManager.sharedInstance.checkFirstLaunchAndShowWalkthroughIfTrue(appDelegate.window)
+                    WalkthroughManager.sharedInstance.redirectToHomeScreenAfterCheckingForFirstLaunch(appDelegate.window)
                 })
             }
         })

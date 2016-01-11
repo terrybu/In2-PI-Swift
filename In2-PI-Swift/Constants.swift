@@ -34,6 +34,6 @@ struct ScreenSize
 let kOriginalAboutViewHeight: CGFloat = 54
 
 //String Constants
-let kfirstLaunchKeyForWalkthroughCheck = "FirstLaunch"
+let kAppLaunchToken = "kAppLaunchToken"
 let kWeeklyProgramsTableViewCellReuseIdentifier = "WeeklyProgramsTableViewCell"
 

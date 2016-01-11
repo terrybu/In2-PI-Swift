@@ -127,6 +127,10 @@ class LeftNavDrawerController: UIViewController {
     func aboutPIButtonPressed(sender: UIButton) {
         if aboutVCNavCtrl == nil {
             aboutVCNavCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AboutVCNavCtrl") as? UINavigationController
+            
+            //TODO: I was trying to refactor out About VC to its own XIB but it didn't work below because the frames got all messed up and misaligned 
+//            let aboutVC = AboutPIViewController()
+//            aboutVCNavCtrl = UINavigationController(rootViewController: aboutVC)
         }
         purpleStatusBar.hidden = true
         revealViewController().pushFrontViewController(aboutVCNavCtrl, animated: true)

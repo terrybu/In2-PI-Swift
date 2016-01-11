@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func moviePlayBackDidFinish() {
             let loginVC = LoginViewController()
             loginVC.dismissBlock = {
-                WalkthroughManager.sharedInstance.checkFirstLaunchAndShowWalkthroughIfTrue(self.window)
+                WalkthroughManager.sharedInstance.redirectToHomeScreenAfterCheckingForFirstLaunch(self.window)
             }
             window?.rootViewController = loginVC
     }

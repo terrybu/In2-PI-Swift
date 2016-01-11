@@ -8,16 +8,14 @@
 
 import UIKit
 
-private let kOriginalContentViewHeight: CGFloat = 600
-
 class EvangelismViewController: ParentViewController {
     
     @IBOutlet var contentView: UIView!
     @IBOutlet var expandableAboutView: ExpandableAboutView!
-    //Constraints
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
     @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
     var expandedAboutViewHeight:CGFloat = 0
+    private let kOriginalContentViewHeight: CGFloat = 600
 
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()

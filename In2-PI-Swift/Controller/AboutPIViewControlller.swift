@@ -19,6 +19,11 @@ class AboutPIViewController: ParentViewController, UIScrollViewDelegate{
     @IBOutlet var segmentedControl : HMSegmentedControl!
     @IBOutlet var horizontalScrollView : UIScrollView!
 
+    convenience init() {
+        self.init(nibName: "AboutPIViewController", bundle: nil)
+        //initializing the view Controller form specified NIB file
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpStandardUIForViewControllers()

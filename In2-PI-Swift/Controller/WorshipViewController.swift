@@ -10,10 +10,10 @@ import UIKit
 import SafariServices
 import Foundation
 
-private let kOriginalContentViewHeight: CGFloat = 650
 
 class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelegate, SFSafariViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
 
+    private let kOriginalContentViewHeight: CGFloat = 650
     @IBOutlet var contentView: UIView!
     @IBOutlet var expandableAboutView: ExpandableAboutView!
     @IBOutlet var songsTableView :     UITableView!

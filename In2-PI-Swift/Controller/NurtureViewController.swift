@@ -9,18 +9,15 @@
 import UIKit
 import SafariServices
 
-private let kOriginalContentViewHeight: CGFloat = 454
-
 class NurtureViewController: ParentViewController, SFSafariViewControllerDelegate {
-    
-    @IBOutlet weak var leftNurtureApplyWidget: ApplyWidgetView!
-    @IBOutlet weak var rightHolyStarApplyWidget: ApplyWidgetView!
-    
-    //For expandable view 
+
+    private let kOriginalContentViewHeight: CGFloat = 454
     @IBOutlet var contentView: UIView!
     @IBOutlet var expandableAboutView: ExpandableAboutView!
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
     @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var leftNurtureApplyWidget: ApplyWidgetView!
+    @IBOutlet weak var rightHolyStarApplyWidget: ApplyWidgetView!
     var expandedAboutViewHeight:CGFloat = 0
 
     override func viewDidLoad() {

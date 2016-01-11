@@ -41,16 +41,16 @@ class WalkthroughManager: NSObject, EAIntroDelegate{
         window?.rootViewController = walkthroughVC
     }
     
-    func checkFirstLaunchAndShowWalkthroughIfTrue(window: UIWindow?) {
-        let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey(kfirstLaunchKeyForWalkthroughCheck)
-        if firstLaunch == false {
-            print("Not first launch. Take him straight to login or home screen without walkthrough")
-            showHomeScreen()
-        }
-        else {
-            print("First launch, setting NSUserDefault AND displaying walkthrough screen")
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: kfirstLaunchKeyForWalkthroughCheck)
+    func redirectToHomeScreenAfterCheckingForFirstLaunch(window: UIWindow?) {
+        let appLaunchToken = NSUserDefaults.standardUserDefaults().boolForKey(kAppLaunchToken)
+        if appLaunchToken == false {
+            print("App was never launched before, setting NSUserDefault AND displaying walkthrough screen")
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: kAppLaunchToken)
             WalkthroughManager.sharedInstance.displayWalkthroughScreen(window)
+        }
+        else if appLaunchToken == true {
+            print("Not first launch because App Token was found. Take him straight to login or home screen without walkthrough")
+            showHomeScreen()
         }
     }
     
