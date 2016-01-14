@@ -68,8 +68,8 @@
 		D9D3CE121B3F309C00C8E195 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9D3CE141B3F309C00C8E195 /* InfoPlist.strings */; };
 		D9D3CE191B3F338D00C8E195 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9D3CE1B1B3F338D00C8E195 /* Localizable.strings */; };
 		D9D7C5591B82CFE4003E48EA /* todolist.txt in Resources */ = {isa = PBXBuildFile; fileRef = D9D7C5581B82CFE4003E48EA /* todolist.txt */; };
-		D9DA04781BA5B68600F434F4 /* EvangelismNewsWidgetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9DA04771BA5B68600F434F4 /* EvangelismNewsWidgetView.xib */; };
-		D9DA047A1BA5B69100F434F4 /* EvangelismNewsWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA04791BA5B69100F434F4 /* EvangelismNewsWidgetView.swift */; };
+		D9DA04781BA5B68600F434F4 /* BoroSpecificNewsWidgetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9DA04771BA5B68600F434F4 /* BoroSpecificNewsWidgetView.xib */; };
+		D9DA047A1BA5B69100F434F4 /* BoroSpecificNewsWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA04791BA5B69100F434F4 /* BoroSpecificNewsWidgetView.swift */; };
 		D9DE0D4B1C138DFF00A58749 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DE0D4A1C138DFF00A58749 /* WalkthroughViewController.swift */; };
 		D9EF135F1BAA44B4006D7F78 /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF135E1BAA44B4006D7F78 /* CustomDateFormatter.swift */; };
 		D9F7F4811B93547600D86FF7 /* FacebookPhotoQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7F4801B93547600D86FF7 /* FacebookPhotoQuery.swift */; };
@@ -169,8 +169,8 @@
 		D9D3CE1A1B3F338D00C8E195 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D9D3CE1C1B3F339200C8E195 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D9D7C5581B82CFE4003E48EA /* todolist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = todolist.txt; sourceTree = "<group>"; };
-		D9DA04771BA5B68600F434F4 /* EvangelismNewsWidgetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvangelismNewsWidgetView.xib; sourceTree = "<group>"; };
-		D9DA04791BA5B69100F434F4 /* EvangelismNewsWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvangelismNewsWidgetView.swift; sourceTree = "<group>"; };
+		D9DA04771BA5B68600F434F4 /* BoroSpecificNewsWidgetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoroSpecificNewsWidgetView.xib; sourceTree = "<group>"; };
+		D9DA04791BA5B69100F434F4 /* BoroSpecificNewsWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoroSpecificNewsWidgetView.swift; sourceTree = "<group>"; };
 		D9DE0D4A1C138DFF00A58749 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		D9EF135E1BAA44B4006D7F78 /* CustomDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
 		D9F7F4801B93547600D86FF7 /* FacebookPhotoQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookPhotoQuery.swift; sourceTree = "<group>"; };
@@ -378,8 +378,8 @@
 				D9965A7D1B9E5A3600AB4A74 /* NewsArticleView.xib */,
 				D98FEFB11B9C0C65003614A7 /* ApplyWidgetView.swift */,
 				D98FEFB31B9C0C8E003614A7 /* ApplyWidgetView.xib */,
-				D9DA04791BA5B69100F434F4 /* EvangelismNewsWidgetView.swift */,
-				D9DA04771BA5B68600F434F4 /* EvangelismNewsWidgetView.xib */,
+				D9DA04791BA5B69100F434F4 /* BoroSpecificNewsWidgetView.swift */,
+				D9DA04771BA5B68600F434F4 /* BoroSpecificNewsWidgetView.xib */,
 			);
 			name = "Custom Widgets";
 			sourceTree = "<group>";
@@ -641,7 +641,7 @@
 				D9A79E161C2C2EEA003D9981 /* NanumBarunGothicBold.ttf in Resources */,
 				D9D3CE121B3F309C00C8E195 /* InfoPlist.strings in Resources */,
 				D9D3CDF41B3F20EF00C8E195 /* Images.xcassets in Resources */,
-				D9DA04781BA5B68600F434F4 /* EvangelismNewsWidgetView.xib in Resources */,
+				D9DA04781BA5B68600F434F4 /* BoroSpecificNewsWidgetView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -754,7 +754,7 @@
 				D95EC5261B978E6400782925 /* FBFeedPost.swift in Sources */,
 				D95EC5291B97963000782925 /* StringExtension.swift in Sources */,
 				D952B17B1B5EF5330089116C /* Constants.swift in Sources */,
-				D9DA047A1BA5B69100F434F4 /* EvangelismNewsWidgetView.swift in Sources */,
+				D9DA047A1BA5B69100F434F4 /* BoroSpecificNewsWidgetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

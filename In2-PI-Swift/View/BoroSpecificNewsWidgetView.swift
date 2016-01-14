@@ -1,5 +1,5 @@
 //
-//  EvangelismNewsWidgetView
+//  BoroSpecificNewsWidgetView
 //  In2-PI-Swift
 //
 //  Created by Terry Bu on 9/13/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class EvangelismNewsWidgetView:UIView {
+@IBDesignable class BoroSpecificNewsWidgetView:UIView {
     
     var view: UIView!
     
@@ -48,13 +48,12 @@ import UIKit
         view = loadViewFromNib()
         view.frame = bounds
         view.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
-        
         addSubview(view)
     }
     
     func loadViewFromNib() -> UIView {
         let bundle = NSBundle(forClass: self.dynamicType)
-        let nib = UINib(nibName: "EvangelismNewsWidgetView", bundle: bundle)
+        let nib = UINib(nibName: "BoroSpecificNewsWidgetView", bundle: bundle)
         return nib.instantiateWithOwner(self, options: nil)[0] as! UIView
     }
     
