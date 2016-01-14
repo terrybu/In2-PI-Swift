@@ -12,13 +12,15 @@ import SafariServices
 class NurtureViewController: ParentViewController, SFSafariViewControllerDelegate {
 
     private let kOriginalContentViewHeight: CGFloat = 454
+    var expandedAboutViewHeight:CGFloat = 0
     @IBOutlet var contentView: UIView!
     @IBOutlet var expandableAboutView: ExpandableAboutView!
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
     @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
     @IBOutlet weak var leftNurtureApplyWidget: ApplyWidgetView!
     @IBOutlet weak var rightHolyStarApplyWidget: ApplyWidgetView!
-    var expandedAboutViewHeight:CGFloat = 0
+    @IBOutlet weak var nurtureNewsWidget: BoroSpecificNewsWidgetView!
+
 
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
