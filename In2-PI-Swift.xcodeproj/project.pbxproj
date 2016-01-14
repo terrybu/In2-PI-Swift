@@ -42,6 +42,7 @@
 		D981A02A1C2F5F4D003BA562 /* WeeklyProgramDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981A0291C2F5F4D003BA562 /* WeeklyProgramDisplayManager.swift */; };
 		D985E04D1C0924E60057C51E /* PraiseSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = D985E04C1C0924E60057C51E /* PraiseSong.swift */; };
 		D986F4D91C1E4E9A00C00F7B /* WalkthroughManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986F4D81C1E4E9A00C00F7B /* WalkthroughManager.swift */; };
+		D9878B931C484A8700AD84D9 /* phillyMission.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D9878B921C484A8700AD84D9 /* phillyMission.mp4 */; };
 		D989C5271C2700500051ACFE /* HolyStarIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D989C5251C2700500051ACFE /* HolyStarIntroViewController.swift */; };
 		D989C5281C2700500051ACFE /* HolyStarIntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D989C5261C2700500051ACFE /* HolyStarIntroViewController.xib */; };
 		D98FEFB01B9C077F003614A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9D3CDF01B3F20EF00C8E195 /* Main.storyboard */; };
@@ -132,6 +133,7 @@
 		D981A0291C2F5F4D003BA562 /* WeeklyProgramDisplayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyProgramDisplayManager.swift; sourceTree = "<group>"; };
 		D985E04C1C0924E60057C51E /* PraiseSong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PraiseSong.swift; sourceTree = "<group>"; };
 		D986F4D81C1E4E9A00C00F7B /* WalkthroughManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughManager.swift; sourceTree = "<group>"; };
+		D9878B921C484A8700AD84D9 /* phillyMission.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = phillyMission.mp4; sourceTree = "<group>"; };
 		D989C5251C2700500051ACFE /* HolyStarIntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolyStarIntroViewController.swift; sourceTree = "<group>"; };
 		D989C5261C2700500051ACFE /* HolyStarIntroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HolyStarIntroViewController.xib; sourceTree = "<group>"; };
 		D98FEFB11B9C0C65003614A7 /* ApplyWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyWidgetView.swift; sourceTree = "<group>"; };
@@ -174,8 +176,8 @@
 		D9F7F4801B93547600D86FF7 /* FacebookPhotoQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookPhotoQuery.swift; sourceTree = "<group>"; };
 		D9F7F4821B935DFA00D86FF7 /* GalleryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
 		D9F7F4851B93687700D86FF7 /* FBPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBPhoto.swift; sourceTree = "<group>"; };
-		D9F8C46F1BA4BE4300881B94 /* TodaysQTWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysQTWidget.swift; sourceTree = "<group>"; };
-		D9F8C4751BA4C33200881B94 /* TodaysQTWidget.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodaysQTWidget.xib; sourceTree = "<group>"; };
+		D9F8C46F1BA4BE4300881B94 /* TodaysQTWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodaysQTWidget.swift; path = ../View/TodaysQTWidget.swift; sourceTree = "<group>"; };
+		D9F8C4751BA4C33200881B94 /* TodaysQTWidget.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TodaysQTWidget.xib; path = ../View/TodaysQTWidget.xib; sourceTree = "<group>"; };
 		D9F8C4771BA4CFF800881B94 /* ExpandableAboutViewHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpandableAboutViewHandler.swift; path = ../Controller/ExpandableAboutViewHandler.swift; sourceTree = "<group>"; };
 		D9F9C7E91B64873800F5C17D /* LeftNavDrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftNavDrawerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -303,6 +305,24 @@
 			name = "Five Boros Controllers";
 			sourceTree = "<group>";
 		};
+		D9878B901C4848C500AD84D9 /*  No Longer Used */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8C46F1BA4BE4300881B94 /* TodaysQTWidget.swift */,
+				D9F8C4751BA4C33200881B94 /* TodaysQTWidget.xib */,
+			);
+			name = " No Longer Used";
+			sourceTree = "<group>";
+		};
+		D9878B911C484A7200AD84D9 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				D9878B921C484A8700AD84D9 /* phillyMission.mp4 */,
+				D9B9B5781B4B1B0000DA476E /* splashScreen.mp4 */,
+			);
+			name = Videos;
+			sourceTree = "<group>";
+		};
 		D98FEFAE1B9C0723003614A7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,8 +378,6 @@
 				D9965A7D1B9E5A3600AB4A74 /* NewsArticleView.xib */,
 				D98FEFB11B9C0C65003614A7 /* ApplyWidgetView.swift */,
 				D98FEFB31B9C0C8E003614A7 /* ApplyWidgetView.xib */,
-				D9F8C46F1BA4BE4300881B94 /* TodaysQTWidget.swift */,
-				D9F8C4751BA4C33200881B94 /* TodaysQTWidget.xib */,
 				D9DA04791BA5B69100F434F4 /* EvangelismNewsWidgetView.swift */,
 				D9DA04771BA5B68600F434F4 /* EvangelismNewsWidgetView.xib */,
 			);
@@ -497,10 +515,10 @@
 		D9F9C7E21B645FD100F5C17D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D9878B911C484A7200AD84D9 /* Videos */,
 				D9D3CDF31B3F20EF00C8E195 /* Images.xcassets */,
 				D9D3CDF51B3F20EF00C8E195 /* LaunchScreen.xib */,
 				D98FEFAE1B9C0723003614A7 /* Fonts */,
-				D9B9B5781B4B1B0000DA476E /* splashScreen.mp4 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -508,6 +526,7 @@
 		D9FB031E1B6495C3001D813D /* Terry References */ = {
 			isa = PBXGroup;
 			children = (
+				D9878B901C4848C500AD84D9 /*  No Longer Used */,
 				D9D7C5581B82CFE4003E48EA /* todolist.txt */,
 				D904A3F41C02EB9A005A6EA3 /* HideKey.swift */,
 				D901C0D71C39EFC600B350B1 /* fonts available console output */,
@@ -605,6 +624,7 @@
 				D98FEFB01B9C077F003614A7 /* Main.storyboard in Resources */,
 				D976A7981C44546E00F3E8A7 /* AboutPIViewController.xib in Resources */,
 				D9C7563E1BA0C2A000EC22CF /* ExpandableAboutView.xib in Resources */,
+				D9878B931C484A8700AD84D9 /* phillyMission.mp4 in Resources */,
 				D9965A7E1B9E5A3600AB4A74 /* NewsArticleView.xib in Resources */,
 				D9D7C5591B82CFE4003E48EA /* todolist.txt in Resources */,
 				D9A79E151C2C2EEA003D9981 /* NanumBarunGothic.ttf in Resources */,

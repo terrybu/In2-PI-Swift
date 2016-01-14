@@ -15,6 +15,7 @@
             <string>NanumBarunGothic</string>
             <string>NanumBarunGothic</string>
             <string>NanumBarunGothic</string>
+            <string>NanumBarunGothic</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -853,7 +854,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="evangelismPhilly" translatesAutoresizingMaskIntoConstraints="NO" id="CEu-sA-eF1">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="evangelismPhilly" translatesAutoresizingMaskIntoConstraints="NO" id="CEu-sA-eF1" userLabel="PhillyImageView">
                                                 <rect key="frame" x="0.0" y="54" width="600" height="300"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="Z0W-jg-0Yc"/>
@@ -871,6 +872,12 @@
                                                     </mask>
                                                 </variation>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="2015년 PI 겨울 선교 필라델피아" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLh-d8-Qr7">
+                                                <rect key="frame" x="190" y="148" width="221" height="20"/>
+                                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -881,6 +888,7 @@
                                             <constraint firstAttribute="bottom" secondItem="W8o-TD-haP" secondAttribute="bottom" id="M8Q-a3-HHy"/>
                                             <constraint firstItem="W8o-TD-haP" firstAttribute="top" secondItem="Qly-Gp-4y0" secondAttribute="bottom" constant="5" id="MKM-mr-uRz"/>
                                             <constraint firstAttribute="trailing" secondItem="W8o-TD-haP" secondAttribute="trailing" id="O6m-jY-Ykg"/>
+                                            <constraint firstItem="CEu-sA-eF1" firstAttribute="top" secondItem="rLh-d8-Qr7" secondAttribute="bottom" constant="-75" id="Ojd-CO-lDD"/>
                                             <constraint firstItem="Qly-Gp-4y0" firstAttribute="top" secondItem="CEu-sA-eF1" secondAttribute="bottom" id="Yus-Jp-Xo4"/>
                                             <constraint firstItem="W8o-TD-haP" firstAttribute="bottom" secondItem="Qly-Gp-4y0" secondAttribute="bottom" id="cL7-Qc-YGC"/>
                                             <constraint firstItem="W8o-TD-haP" firstAttribute="leading" secondItem="7dl-AZ-g3d" secondAttribute="leading" id="fZq-mc-6ht"/>
@@ -890,6 +898,7 @@
                                             <constraint firstItem="CEu-sA-eF1" firstAttribute="top" secondItem="Qly-Gp-4y0" secondAttribute="bottom" id="ln7-LR-YMI"/>
                                             <constraint firstItem="Qly-Gp-4y0" firstAttribute="top" secondItem="7dl-AZ-g3d" secondAttribute="top" id="rV7-U3-A6K"/>
                                             <constraint firstItem="W8o-TD-haP" firstAttribute="top" secondItem="Qly-Gp-4y0" secondAttribute="bottom" id="sJM-zD-WhF"/>
+                                            <constraint firstItem="rLh-d8-Qr7" firstAttribute="centerX" secondItem="7dl-AZ-g3d" secondAttribute="centerX" id="xvg-ar-deN"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -924,6 +933,7 @@
                         <outlet property="constraintContentViewHeight" destination="itP-1v-EcH" id="Hit-re-72X"/>
                         <outlet property="constraintHeightExpandableView" destination="pC3-zy-icE" id="qyH-ab-X0G"/>
                         <outlet property="contentView" destination="7dl-AZ-g3d" id="XBe-E5-5UK"/>
+                        <outlet property="evangelismImageView" destination="CEu-sA-eF1" id="lr0-SV-bON"/>
                         <outlet property="evangelismNewsWidgetView" destination="W8o-TD-haP" id="tEQ-z0-TnA"/>
                         <outlet property="expandableAboutView" destination="Qly-Gp-4y0" id="GUP-a0-pVp"/>
                     </connections>

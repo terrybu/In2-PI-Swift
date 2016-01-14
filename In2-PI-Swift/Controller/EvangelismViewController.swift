@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
-class EvangelismViewController: ParentViewController {
+class EvangelismViewController: ParentViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet var contentView: UIView!
     @IBOutlet var expandableAboutView: ExpandableAboutView!
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
     @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
     @IBOutlet var evangelismNewsWidgetView: EvangelismNewsWidgetView!
+    @IBOutlet var evangelismImageView: UIImageView!
+    
     var expandedAboutViewHeight:CGFloat = 0
     private let kOriginalContentViewHeight: CGFloat = 600
     var evangelismFeedObject: FBFeedPost?
@@ -36,6 +40,22 @@ class EvangelismViewController: ParentViewController {
             evangelismNewsWidgetView.title = "최신 선교 뉴스가 없거나 Facebook 데이터 다운로드가 실패했습니다."
             return
         }
+        
+        evangelismImageView.userInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: "playVideo")
+        tapGesture.delegate = self
+        tapGesture.numberOfTapsRequired = 1
+        evangelismImageView.addGestureRecognizer(tapGesture)
+    }
+    
+    func playVideo()  {
+         let path = NSBundle.mainBundle().pathForResource("phillyMission", ofType:"mp4")
+        let player = AVPlayer(URL: NSURL(fileURLWithPath: path!))
+        let playerController = AVPlayerViewController()
+        playerController.player = player
+        self.presentViewController(playerController, animated: true) {
+            player.play()
+        }
     }
     
     @objc
@@ -50,5 +70,4 @@ class EvangelismViewController: ParentViewController {
         expandableAboutView.clipsToBounds = true
         expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: expandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
     }
-    
 }
