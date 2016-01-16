@@ -45,6 +45,7 @@
 		D9878B931C484A8700AD84D9 /* phillyMission.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D9878B921C484A8700AD84D9 /* phillyMission.mp4 */; };
 		D989C5271C2700500051ACFE /* HolyStarIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D989C5251C2700500051ACFE /* HolyStarIntroViewController.swift */; };
 		D989C5281C2700500051ACFE /* HolyStarIntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D989C5261C2700500051ACFE /* HolyStarIntroViewController.xib */; };
+		D98D55CF1C4B02A0003A40B1 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98D55CE1C4B02A0003A40B1 /* DateManager.swift */; };
 		D98FEFB01B9C077F003614A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9D3CDF01B3F20EF00C8E195 /* Main.storyboard */; };
 		D98FEFB21B9C0C65003614A7 /* ApplyWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FEFB11B9C0C65003614A7 /* ApplyWidgetView.swift */; };
 		D98FEFB41B9C0C8E003614A7 /* ApplyWidgetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98FEFB31B9C0C8E003614A7 /* ApplyWidgetView.xib */; };
@@ -136,6 +137,7 @@
 		D9878B921C484A8700AD84D9 /* phillyMission.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = phillyMission.mp4; sourceTree = "<group>"; };
 		D989C5251C2700500051ACFE /* HolyStarIntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolyStarIntroViewController.swift; sourceTree = "<group>"; };
 		D989C5261C2700500051ACFE /* HolyStarIntroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HolyStarIntroViewController.xib; sourceTree = "<group>"; };
+		D98D55CE1C4B02A0003A40B1 /* DateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		D98FEFB11B9C0C65003614A7 /* ApplyWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyWidgetView.swift; sourceTree = "<group>"; };
 		D98FEFB31B9C0C8E003614A7 /* ApplyWidgetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplyWidgetView.xib; sourceTree = "<group>"; };
 		D99274701C2F57E90055810F /* AllWeeklyProgramsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllWeeklyProgramsTableViewController.swift; sourceTree = "<group>"; };
@@ -500,6 +502,7 @@
 		D9F7F4841B93684F00D86FF7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D98D55CE1C4B02A0003A40B1 /* DateManager.swift */,
 				D9583F4C1C388CDD00A95D54 /* Constants */,
 				D910DD861BADFE2800E8A99F /* Facebook Objects */,
 				D910DD871BADFF2500E8A99F /* WeeklyProgram.swift */,
@@ -735,6 +738,7 @@
 				D90A7AFC1B923F13003EA693 /* NurtureViewController.swift in Sources */,
 				D9D3CDED1B3F20EF00C8E195 /* AppDelegate.swift in Sources */,
 				D99EF24F1B9F59FD00026D66 /* FacebookQuery.swift in Sources */,
+				D98D55CF1C4B02A0003A40B1 /* DateManager.swift in Sources */,
 				D90A08231BB5D4BD0033DD6B /* TFHpple.m in Sources */,
 				D9DE0D4B1C138DFF00A58749 /* WalkthroughViewController.swift in Sources */,
 				D9F8C4781BA4CFF800881B94 /* ExpandableAboutViewHandler.swift in Sources */,

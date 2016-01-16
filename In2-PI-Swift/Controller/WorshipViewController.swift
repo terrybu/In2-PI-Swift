@@ -120,7 +120,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (tableView == weeklyProgramsTableView) {
-            let todaysMonth = getTodaysMonth()
+            let todaysMonth = DateManager.sharedInstance.getTodaysMonth()
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "MM.dd.yyyy"
             for program in weeklyProgramsArray {
@@ -149,32 +149,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         return 0
     }
     
-    //Get today's month as Int
-    private func getTodaysMonth() -> Int {
-        let today = NSDate()
-        let calendar = NSCalendar.currentCalendar()
-        let todayComponents = calendar.components([.Day , .Month , .Year], fromDate: today)
-        let thisMonth = todayComponents.month //this will give you today's month
-        return thisMonth
-    }
-    
-    private func getTodaysYear() -> Int {
-        let today = NSDate()
-        let calendar = NSCalendar.currentCalendar()
-        let todayComponents = calendar.components([.Day , .Month , .Year], fromDate: today)
-        let thisYear = todayComponents.year //this will give you today's month
-        return thisYear
-    }
-    
-    //Display today's month as title string fit for tableview top
-    private func getTodaysMonthStringForWeeklyProgramsTableView() -> String {
-        let todaysMonthInt = getTodaysMonth()
-        let todaysYearInt = getTodaysYear()
-        let dateFormatter = NSDateFormatter()
-        let monthNames = dateFormatter.standaloneMonthSymbols
-        let monthName = monthNames[todaysMonthInt-1]
-        return "\(monthName) \(todaysYearInt) 주보 보기"
-    }
+
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -230,13 +205,25 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
             if let headerTitle = headerTitleStringForPraiseSongsListSection {
                 label.text = headerTitle
             } else {
-                label.text = "인터넷 연결이 실패했습니다"
+                label.text = "최근 찬양송 리스트가 업데이트되지 않았거나 인터넷 연결이 실패했습니다"
             }
         }
         label.font = UIFont.boldSystemFontOfSize(17)
         headerView.addSubview(label)
         
         return headerView
+    }
+    
+    
+    
+    //Display today's month as title string fit for tableview top
+    func getTodaysMonthStringForWeeklyProgramsTableView() -> String {
+        let todaysMonthInt = DateManager.sharedInstance.getTodaysMonth()
+        let todaysYearInt = DateManager.sharedInstance.getTodaysYear()
+        let dateFormatter = NSDateFormatter()
+        let monthNames = dateFormatter.standaloneMonthSymbols
+        let monthName = monthNames[todaysMonthInt-1]
+        return "\(monthName) \(todaysYearInt) 주보 보기"
     }
     
     func seeMoreArrowWasPressedForWeeklyProgramsTableView() {
@@ -305,7 +292,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     
     //MARK: IBActions
     @IBAction func didPressSeeMoreWorshipVideos() {
-        presentSFSafariVCIfAvailable(NSURL(string: kImportIOURLForScrapingTenRecentWeeklyPrograms)!)
+        presentSFSafariVCIfAvailable(NSURL(string: kYoutubeIn2WorshipVideosURL)!)
     }
     
     @IBAction func didPressApplyButtonForWorshipTeam() {

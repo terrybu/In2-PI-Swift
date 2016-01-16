@@ -81,7 +81,6 @@ class FacebookFeedQuery: FacebookQuery {
         newFeedArticleObject.parsedCategory = categoryStr
         newFeedArticleObject.parsedTitle = firstTitleStr
         newFeedArticleObject.parsedDate = CustomDateFormatter.sharedInstance.convertFBCreatedTimeDateToOurFormattedString(newFeedArticleObject)
-
     }
     
     /**
