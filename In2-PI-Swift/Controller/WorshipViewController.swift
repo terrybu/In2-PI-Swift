@@ -19,7 +19,8 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     @IBOutlet var songsTableView :     UITableView!
     @IBOutlet var weeklyProgramsTableView :     UITableView!
     var songObjectsArray = [PraiseSong]()
-    
+    var praiseSongsListIsEmpty: Bool = false
+
     var weeklyProgramsArray = [WeeklyProgram]()
     var thisMonthProgramsArray = [WeeklyProgram]()
     var thisMonthProgramsAreEmpty: Bool = false
@@ -50,14 +51,17 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     func getPraiseSongNamesListAndHeaderFromFacebook() {
         let feedPostObjects = FacebookFeedQuery.sharedInstance.FBFeedObjectsArray
         for postObject in feedPostObjects {
+            praiseSongsListIsEmpty = true
             if postObject.parsedCategory == "PI찬양" {
                 if postObject.type == "status" {
                     parseEachLineOfPraiseSongPostBodyMessageToFillSongsArray(postObject.message)
                     headerTitleStringForPraiseSongsListSection = postObject.parsedTitle
+                    praiseSongsListIsEmpty = false
                     break
                 }
             }
         }
+        songsTableView.reloadData()
     }
     
     /**
@@ -144,14 +148,16 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
                 return 2
             }
         } else if (tableView == songsTableView) {
-            return songObjectsArray.count
+            if praiseSongsListIsEmpty {
+                return 2
+            } else {
+                return songObjectsArray.count
+            }
         }
         return 0
     }
     
 
-    
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell
         if (tableView == weeklyProgramsTableView) {
@@ -169,10 +175,19 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
                 cell.accessoryView = UIImageView(image: UIImage(named: "btn_download"))
             }
         } else {
-            let reuseIdentifier = "SongsTableViewCell"
-            cell = songsTableView.dequeueReusableCellWithIdentifier(reuseIdentifier)!
-            let songObject = songObjectsArray[indexPath.row]
-            cell.textLabel!.text = songObject.songTitle!
+            if praiseSongsListIsEmpty {
+                cell = UITableViewCell()
+                if indexPath.row == 0 {
+                    cell.textLabel!.text = "최근에 찬양송 리스트가 업데이트되지 않았거나"
+                } else {
+                    cell.textLabel!.text = "인터넷 연결이 실패했습니다."
+                }
+            } else {
+                let reuseIdentifier = "SongsTableViewCell"
+                cell = songsTableView.dequeueReusableCellWithIdentifier(reuseIdentifier)!
+                let songObject = songObjectsArray[indexPath.row]
+                cell.textLabel!.text = songObject.songTitle!
+            }
         }
         return cell
     }
@@ -205,7 +220,11 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
             if let headerTitle = headerTitleStringForPraiseSongsListSection {
                 label.text = headerTitle
             } else {
-                label.text = "최근 찬양송 리스트가 업데이트되지 않았거나 인터넷 연결이 실패했습니다"
+                //something went wrong so Praise Songs List not appearing at all
+                //Two reasons: internet failure or Facebook query json data failed to retrieve Praise Songs Data in its recent 20 objects 
+                label.text = "찬양송 리스트 다운로드가 실패했습니다."
+                headerView.backgroundColor = UIColor.grayColor()
+                label.textColor = UIColor.whiteColor()
             }
         }
         label.font = UIFont.boldSystemFontOfSize(17)
