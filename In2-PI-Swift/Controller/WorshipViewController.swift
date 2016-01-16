@@ -13,21 +13,20 @@ import Foundation
 
 class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelegate, SFSafariViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
 
-    private let kOriginalContentViewHeight: CGFloat = 650
     @IBOutlet var contentView: UIView!
     @IBOutlet var expandableAboutView: ExpandableAboutView!
+    @IBOutlet var worshipVideosClickView: UIView! 
+    
     @IBOutlet var songsTableView :     UITableView!
     @IBOutlet var weeklyProgramsTableView :     UITableView!
     var songObjectsArray = [PraiseSong]()
     var praiseSongsListIsEmpty: Bool = false
-
     var weeklyProgramsArray = [WeeklyProgram]()
     var thisMonthProgramsArray = [WeeklyProgram]()
     var thisMonthProgramsAreEmpty: Bool = false
-
     var headerTitleStringForPraiseSongsListSection: String?
     let indicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
-    
+    private let kOriginalContentViewHeight: CGFloat = 650
     //Constraints
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
     @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
@@ -46,6 +45,10 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         }
         WeeklyProgramDownloader.sharedInstance.delegate = self
         WeeklyProgramDownloader.sharedInstance.getTenRecentWeeklyProgramsListFromImportIO()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: "didPressSeeMoreWorshipVideos")
+        worshipVideosClickView.userInteractionEnabled = true
+        worshipVideosClickView.addGestureRecognizer(tapGesture)
     }
     
     func getPraiseSongNamesListAndHeaderFromFacebook() {

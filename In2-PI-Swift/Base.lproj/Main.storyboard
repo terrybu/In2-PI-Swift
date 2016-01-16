@@ -574,6 +574,7 @@
                         <outlet property="expandableAboutView" destination="atY-6P-a2d" id="DYp-Wg-8kZ"/>
                         <outlet property="songsTableView" destination="Z59-kD-ayY" id="bnX-V6-rkj"/>
                         <outlet property="weeklyProgramsTableView" destination="dv8-4e-YfA" id="rnb-Bq-l9n"/>
+                        <outlet property="worshipVideosClickView" destination="ZWI-nL-skI" id="mKa-5K-LhC"/>
                         <segue destination="8BT-TO-OuE" kind="show" identifier="AllWeeklyProgramsTableViewControllerSegue" id="xtA-64-0pF"/>
                     </connections>
                 </viewController>
