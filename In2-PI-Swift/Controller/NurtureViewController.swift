@@ -13,6 +13,7 @@ class NurtureViewController: ParentViewController, SFSafariViewControllerDelegat
 
     private let kOriginalContentViewHeight: CGFloat = 454
     var expandedAboutViewHeight:CGFloat = 0
+    var nurtureFeedObject: FBFeedPost? 
     @IBOutlet var contentView: UIView!
     @IBOutlet var expandableAboutView: ExpandableAboutView!
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
@@ -31,23 +32,35 @@ class NurtureViewController: ParentViewController, SFSafariViewControllerDelegat
         rightHolyStarApplyWidget.applyButtonPressedHandler = {(sender) -> Void in
             self.openHolyStarIntroViewController()
         }
+        for feedObject in FacebookFeedQuery.sharedInstance.FBFeedObjectsArray {
+            if feedObject.parsedCategory == "PI양육" {
+                nurtureFeedObject = feedObject
+                nurtureNewsWidget.title = feedObject.parsedTitle
+                nurtureNewsWidget.dateLabel.text = feedObject.parsedDate
+                nurtureNewsWidget.viewMoreButton.addTarget(self, action: "viewMoreButtonWasPressedForNurtureNews", forControlEvents: UIControlEvents.TouchUpInside)
+                break
+            }
+        }
+        guard let nurtureFeedObject = nurtureFeedObject else {
+            nurtureNewsWidget.title = "최근 양육뉴스가 존재하지 않습니다."
+            nurtureNewsWidget.dateLabel.text = nil
+            return
+        }
+    }
+    
+    @objc
+    private func viewMoreButtonWasPressedForNurtureNews() {
+        if let feedObject = nurtureFeedObject {
+            FacebookFeedQuery.sharedInstance.displayFacebookPostObjectInWebView(feedObject, view: self.view, navigationController: navigationController)
+        }
     }
     
     private func presentSFSafariVCIfAvailable(url: NSURL) {
-        if #available(iOS 9.0, *) {
-            let sfVC = SFSafariViewController(URL: url, entersReaderIfAvailable: true)
-            sfVC.delegate = self
-            self.presentViewController(sfVC, animated: true, completion: nil)
-            //in case anybody prefers right to left push viewcontroller animation transition (below)
-            //navigationController?.pushViewController(sfVC, animated: true)
-        } else {
-            // Fallback on earlier versions
-            let webView = UIWebView(frame: view.frame)
-            webView.loadRequest(NSURLRequest(URL: url))
-            let vc = UIViewController()
-            vc.view = webView
-            navigationController?.pushViewController(vc, animated: true)
-        }
+        let sfVC = SFSafariViewController(URL: url, entersReaderIfAvailable: true)
+        sfVC.delegate = self
+        self.presentViewController(sfVC, animated: true, completion: nil)
+        //in case anybody prefers right to left push viewcontroller animation transition (below)
+        //navigationController?.pushViewController(sfVC, animated: true)
     }
     
     private func setUpExpandableAboutView() {

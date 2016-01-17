@@ -37,7 +37,8 @@ class EvangelismViewController: ParentViewController, UIGestureRecognizerDelegat
             }
         }
         guard let evangelismFeedObject = evangelismFeedObject else {
-            evangelismNewsWidgetView.title = "최신 선교 뉴스가 없거나 Facebook 데이터 다운로드가 실패했습니다."
+            evangelismNewsWidgetView.title = "최근 선교뉴스가 존재하지 않습니다."
+            evangelismNewsWidgetView.dateLabel.text = nil
             return
         }
         
