@@ -24,12 +24,24 @@ class AllWeeklyProgramsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let allWeeklyProgramsArray = allWeeklyProgramsArray {
+            if allWeeklyProgramsArray.count == 0 {
+                return 2
+            }
             return allWeeklyProgramsArray.count
         }
-        return 0
+        return 2
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if let allWeeklyProgramsArray = allWeeklyProgramsArray {
+            let cell = UITableViewCell()
+            if indexPath.row == 0 {
+                cell.textLabel!.text = "서버 에러나 인터넷 문제로 인해 주보 다운로드가"
+            } else {
+                cell.textLabel!.text = "작동하지 않고 있습니다."
+            }
+            return cell
+        }
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "AllWeeklyProgramsTableViewCellIdentifier")
         let program = allWeeklyProgramsArray![indexPath.row]
         cell.textLabel?.text = program.title

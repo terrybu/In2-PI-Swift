@@ -271,8 +271,12 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if tableView == weeklyProgramsTableView {
-            let weeklyProgram = thisMonthProgramsArray[indexPath.row]
-            WeeklyProgramDisplayManager.sharedInstance.displayWeeklyProgramLogic(weeklyProgram, view: self.view, navController: self.navigationController!, viewController: self)
+            if thisMonthProgramsAreEmpty {
+                return
+            } else {
+                let weeklyProgram = thisMonthProgramsArray[indexPath.row]
+                WeeklyProgramDisplayManager.sharedInstance.displayWeeklyProgramLogic(weeklyProgram, view: self.view, navController: self.navigationController!, viewController: self)
+            }
         }
         else if tableView == songsTableView {
             let songObject = songObjectsArray[indexPath.row]
