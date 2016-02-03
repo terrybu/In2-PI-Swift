@@ -8,7 +8,6 @@
 
 import UIKit
 import MediaPlayer
-import HockeySDK
 import AVKit
 import Parse
 import Bolts
@@ -36,10 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  
         #if RELEASE
             print("release mode")
-            BITHockeyManager.sharedHockeyManager().configureWithIdentifier   ("397fac4ea6ec1293bbf6b3aa1828b806")
-            BITHockeyManager.sharedHockeyManager().startManager()
-            BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
-            // [Optional] Track statistics around application opens.
+//            BITHockeyManager.sharedHockeyManager().configureWithIdentifier   ("397fac4ea6ec1293bbf6b3aa1828b806")
+//            BITHockeyManager.sharedHockeyManager().startManager()
+//            BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
+//            // [Optional] Track statistics around application opens.
             PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
             
             let movieURL = NSBundle.mainBundle().URLForResource("splashScreen", withExtension: "mp4")

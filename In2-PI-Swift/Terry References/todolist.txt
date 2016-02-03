@@ -15,7 +15,10 @@ To-Do List as of 1/11/2016
     - Add "News" widget in there?
     1-2 hours
 
-4) Gallery page is pulling from 3 recently updated albums, one of which is 한줄나눔 which uses a lot of same images and very uninteresting. Skip it?
+4) Sign up page looks weird on actual phone. Keep testing on actual device
+Invalid Login Alert looks weird at Login. Fix.
+
+***MiscGallery page is pulling from 3 recently updated albums, one of which is 한줄나눔 which uses a lot of same images and very uninteresting. Skip it?
     1 hour
 
 ====================
