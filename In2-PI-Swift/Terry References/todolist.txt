@@ -1,12 +1,23 @@
 To-Do List as of 1/11/2016
 
-1) Same with communications vc + Social Services VC ... need apply cards
+0) Parse code needs to be replaced with Firebase in Login/Signup code
+    1-2 hours
+
+1) Communications vc + Social Services VC ... need apply cards
 - Social Services: https://docs.google.com/forms/d/1iVa3r1dZ4GTe4FzSBTHFUV4dfY4MyVIYGEN-MkXOF_g/viewform?ts=5614a6c8&edit_requested=true
 - Communications: https://docs.google.com/forms/d/14Y_lOSjF2-PDXhIwEL-Dj9mZ5sale2ttJKreRsfGBfo/viewform?c=0&w=1
+    1 hour
 
-2) *** NurtureVC does not have a News card ... go back into the past ... dig up a news like 새가족공지 and make it [PI 양육]?
+2) last big piece is 긍휼부 칼렌더 and Admin post mode. Firebase may be used to post "strings" up there for"
+    3-4 hours
 
-3) last big piece is 긍휼부 칼렌더.
-
-4) Home screen needs to finalized with whatever cards you want to put in there
+3) Home screen needs to finalized with whatever cards you want to put in there
     - Add "News" widget in there?
+    1-2 hours
+
+4) Gallery page is pulling from 3 recently updated albums, one of which is 한줄나눔 which uses a lot of same images and very uninteresting. Skip it?
+    1 hour
+
+====================
+Expected time needed
+7 ~ 10 hours
