@@ -27,7 +27,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gw7-2K-T3r">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gw7-2K-T3r">
                     <rect key="frame" x="16" y="10" width="61" height="20"/>
                     <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="17"/>
                     <color key="textColor" red="0.32941176470588235" green="0.34509803921568627" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,8 +54,11 @@
                         </mask>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="날짜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LpY-0b-uuV">
-                    <rect key="frame" x="125" y="10" width="95" height="20"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="날짜" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LpY-0b-uuV">
+                    <rect key="frame" x="91" y="10" width="497" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" priority="750" constant="497" id="m4p-XQ-8Jv"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="17"/>
                     <color key="textColor" red="0.3294117647" green="0.34509803919999998" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -78,12 +81,15 @@
                 <constraint firstItem="CsT-jY-WCU" firstAttribute="leading" secondItem="Gw7-2K-T3r" secondAttribute="leading" id="kx8-dO-AyR"/>
                 <constraint firstItem="CsT-jY-WCU" firstAttribute="top" secondItem="Gw7-2K-T3r" secondAttribute="bottom" constant="25" id="luD-Kx-bfi"/>
                 <constraint firstItem="puE-jr-zUD" firstAttribute="top" secondItem="CsT-jY-WCU" secondAttribute="bottom" constant="50" id="orA-Am-5hk"/>
+                <constraint firstAttribute="trailing" secondItem="LpY-0b-uuV" secondAttribute="trailing" priority="250" constant="16" id="pLt-hH-55o"/>
                 <constraint firstItem="LpY-0b-uuV" firstAttribute="leading" secondItem="Gw7-2K-T3r" secondAttribute="trailing" constant="14" id="uAs-SZ-lXJ"/>
                 <constraint firstAttribute="bottom" secondItem="puE-jr-zUD" secondAttribute="bottom" constant="30" id="xIq-yM-S36"/>
+                <constraint firstAttribute="trailing" secondItem="LpY-0b-uuV" secondAttribute="trailing" constant="12" id="xt8-H5-Rkz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="pLt-hH-55o"/>
                     <exclude reference="orA-Am-5hk"/>
                     <exclude reference="xIq-yM-S36"/>
                 </mask>

@@ -121,7 +121,7 @@ class FacebookFeedQuery: FacebookQuery {
             if trimmedString == "" {
                 i += 1
                 result = ""
-                while (startingStr[i] != "\n" && i < 50) {
+                while (startingStr[i] != "\n" && i < 75) {
                     result += startingStr[i]
                     i++
                 }
