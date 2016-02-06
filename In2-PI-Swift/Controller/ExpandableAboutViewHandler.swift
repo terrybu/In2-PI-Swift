@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExpandableAboutViewHandler: NSObject, ExpandableAboutViewDelegate, UIGestureRecognizerDelegate {
+class ExpandableAboutViewHandler: NSObject, UIGestureRecognizerDelegate {
     var viewControllerView: UIView
     var expandableView: ExpandableAboutView
     var constraintExpandableViewHeight: NSLayoutConstraint

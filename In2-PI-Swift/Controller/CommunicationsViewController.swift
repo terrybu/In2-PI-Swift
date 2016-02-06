@@ -9,7 +9,7 @@
 import UIKit
 import AFNetworking
 
-class CommunicationsViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource, ExpandableAboutViewDelegate, UIGestureRecognizerDelegate{
+class CommunicationsViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate{
     
     @IBOutlet var tableView: UITableView!
     var feedObjectsArray: [FBFeedPost]?
@@ -37,7 +37,6 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
     private func setUpExpandableAboutView() {
         expandedAboutViewHeight = kOriginalAboutViewHeight + expandableAboutView.textView.frame.size.height + 30 
         expandableAboutView.clipsToBounds = true
-        expandableAboutView.delegate = self
         expandableAboutView.userInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: "tappedEntireAboutView")
         expandableAboutView.addGestureRecognizer(tapGesture)
