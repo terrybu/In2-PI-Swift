@@ -744,75 +744,10 @@
         <!--Communications-->
         <scene sceneID="lmO-dl-aZc">
             <objects>
-                <viewController storyboardIdentifier="CommunicationsViewController" title="Communications" id="0qb-bZ-sK5" customClass="CommunicationsViewController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Fnw-UQ-41w"/>
-                        <viewControllerLayoutGuide type="bottom" id="zjS-OB-V81"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="PVR-rN-I1c">
-                        <rect key="frame" x="0.0" y="64" width="600" height="836"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YW1-Xb-bsg" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="djw-L0-Wki"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="aboutLabelTitle" value="ABOUT"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="titleLabeltitle" value="소통보로는 &quot;너와 나의 연결고리!&quot;"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="textViewContentText">
-                                        <string key="value">"그리스도로부터 온몸이 각 마디를 통해 함께 연결되고 결합됩니다. 각 지체가 맡은 분량대로 기능하는 가운데 그 몸을 자라게 하며 사랑 가운데 스스로를 세워갑니다." -에베소서 4:16
- 
-파이매거진, 앱&amp;웹팀, 광고&amp;기획팀이 속한 소통보로는 예수님의 사랑을 서로서로 소통하는 공동체를 만들기 위해 힘씁니다.</string>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hwC-fN-xf5">
-                                <rect key="frame" x="0.0" y="54" width="600" height="782"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TAb-4m-Wmt" customClass="CommunicationsTableViewCell" customModule="In2_PI_Swift" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="200"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TAb-4m-Wmt" id="nDN-Bs-YXu">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="0qb-bZ-sK5" id="1gX-XI-UQL"/>
-                                    <outlet property="delegate" destination="0qb-bZ-sK5" id="tMz-E3-3Wn"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="hwC-fN-xf5" secondAttribute="bottom" id="T7T-LR-Wyk"/>
-                            <constraint firstItem="hwC-fN-xf5" firstAttribute="top" secondItem="PVR-rN-I1c" secondAttribute="top" id="Wtt-rD-OpX"/>
-                            <constraint firstItem="YW1-Xb-bsg" firstAttribute="top" secondItem="Fnw-UQ-41w" secondAttribute="bottom" id="Yai-tX-ytF"/>
-                            <constraint firstItem="hwC-fN-xf5" firstAttribute="top" secondItem="YW1-Xb-bsg" secondAttribute="bottom" id="aqh-ue-J7Z"/>
-                            <constraint firstAttribute="trailing" secondItem="hwC-fN-xf5" secondAttribute="trailing" id="ePf-tf-Pfd"/>
-                            <constraint firstItem="YW1-Xb-bsg" firstAttribute="leading" secondItem="PVR-rN-I1c" secondAttribute="leading" id="evf-Mf-cPM"/>
-                            <constraint firstAttribute="trailing" secondItem="YW1-Xb-bsg" secondAttribute="trailing" id="sSR-Zg-8Om"/>
-                            <constraint firstItem="hwC-fN-xf5" firstAttribute="leading" secondItem="PVR-rN-I1c" secondAttribute="leading" id="ymM-uL-YWr"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Wtt-rD-OpX"/>
-                            </mask>
-                        </variation>
-                    </view>
+                <viewController title="Communications" id="0qb-bZ-sK5" customClass="CommunicationsViewController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="소통부" id="CgP-7z-DhQ"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="900"/>
-                    <connections>
-                        <outlet property="constraintHeightExpandableView" destination="djw-L0-Wki" id="xEl-na-ygl"/>
-                        <outlet property="expandableAboutView" destination="YW1-Xb-bsg" id="SLe-CU-owP"/>
-                        <outlet property="tableView" destination="hwC-fN-xf5" id="nR4-W7-JWi"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QZ2-cC-KMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

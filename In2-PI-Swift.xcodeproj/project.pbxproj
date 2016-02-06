@@ -83,6 +83,7 @@
 		D9F9C7EA1B64873800F5C17D /* LeftNavDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F9C7E91B64873800F5C17D /* LeftNavDrawerController.swift */; };
 		D9FF31EB1C66A4120037DCF1 /* LongApplyWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF31EA1C66A4120037DCF1 /* LongApplyWidgetView.swift */; };
 		D9FF31ED1C66A41F0037DCF1 /* LongApplyWidgetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FF31EC1C66A41F0037DCF1 /* LongApplyWidgetView.xib */; };
+		D9FF31F01C66A68A0037DCF1 /* CommunicationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FF31EF1C66A68A0037DCF1 /* CommunicationsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,8 +133,8 @@
 		D9713E8B1B5ED166009D809A /* In2-PI-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "In2-PI-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		D976A7971C44546E00F3E8A7 /* AboutPIViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutPIViewController.xib; sourceTree = "<group>"; };
 		D97839811BF9305B00E4A834 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		D97C16971BAA3E990095CB0A /* CommunicationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicationsTableViewCell.swift; sourceTree = "<group>"; };
-		D97C16981BAA3E990095CB0A /* CommunicationsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunicationsTableViewCell.xib; sourceTree = "<group>"; };
+		D97C16971BAA3E990095CB0A /* CommunicationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommunicationsTableViewCell.swift; path = ../View/CommunicationsTableViewCell.swift; sourceTree = "<group>"; };
+		D97C16981BAA3E990095CB0A /* CommunicationsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommunicationsTableViewCell.xib; path = ../View/CommunicationsTableViewCell.xib; sourceTree = "<group>"; };
 		D981A0291C2F5F4D003BA562 /* WeeklyProgramDisplayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyProgramDisplayManager.swift; sourceTree = "<group>"; };
 		D985E04C1C0924E60057C51E /* PraiseSong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PraiseSong.swift; sourceTree = "<group>"; };
 		D986F4D81C1E4E9A00C00F7B /* WalkthroughManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughManager.swift; sourceTree = "<group>"; };
@@ -178,7 +179,7 @@
 		D9DE0D4A1C138DFF00A58749 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		D9EF135E1BAA44B4006D7F78 /* CustomDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
 		D9F7F4801B93547600D86FF7 /* FacebookPhotoQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookPhotoQuery.swift; sourceTree = "<group>"; };
-		D9F7F4821B935DFA00D86FF7 /* GalleryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
+		D9F7F4821B935DFA00D86FF7 /* GalleryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryCell.swift; path = ../View/GalleryCell.swift; sourceTree = "<group>"; };
 		D9F7F4851B93687700D86FF7 /* FBPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBPhoto.swift; sourceTree = "<group>"; };
 		D9F8C46F1BA4BE4300881B94 /* TodaysQTWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodaysQTWidget.swift; path = ../View/TodaysQTWidget.swift; sourceTree = "<group>"; };
 		D9F8C4751BA4C33200881B94 /* TodaysQTWidget.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TodaysQTWidget.xib; path = ../View/TodaysQTWidget.xib; sourceTree = "<group>"; };
@@ -186,6 +187,7 @@
 		D9F9C7E91B64873800F5C17D /* LeftNavDrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftNavDrawerController.swift; sourceTree = "<group>"; };
 		D9FF31EA1C66A4120037DCF1 /* LongApplyWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongApplyWidgetView.swift; sourceTree = "<group>"; };
 		D9FF31EC1C66A41F0037DCF1 /* LongApplyWidgetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LongApplyWidgetView.xib; sourceTree = "<group>"; };
+		D9FF31EF1C66A68A0037DCF1 /* CommunicationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunicationsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +296,7 @@
 				D901C0D51C39E2CA00B350B1 /* LoginViewController.xib */,
 				D97839811BF9305B00E4A834 /* SignUpViewController.swift */,
 				D9583F4D1C38AE8500A95D54 /* SignUpViewController.xib */,
+				D9DE0D4A1C138DFF00A58749 /* WalkthroughViewController.swift */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
@@ -304,7 +307,7 @@
 				D90A7B091B924256003EA693 /* ParentViewController.swift */,
 				D992746F1C2F57C50055810F /* Worship */,
 				D992746E1C2F57AF0055810F /* Nurture */,
-				D90A7AFF1B9240EC003EA693 /* CommunicationsViewController.swift */,
+				D9FF31EE1C66A67A0037DCF1 /* Communications */,
 				D90A7B031B92413F003EA693 /* EvangelismViewController.swift */,
 				D90A7B011B924135003EA693 /* SocialServicesViewController.swift */,
 			);
@@ -356,16 +359,6 @@
 				D981A0291C2F5F4D003BA562 /* WeeklyProgramDisplayManager.swift */,
 			);
 			name = Worship;
-			sourceTree = "<group>";
-		};
-		D99991AA1BB1CFDF0022EF10 /* TableViewCells */ = {
-			isa = PBXGroup;
-			children = (
-				D97C16971BAA3E990095CB0A /* CommunicationsTableViewCell.swift */,
-				D97C16981BAA3E990095CB0A /* CommunicationsTableViewCell.xib */,
-				D9F7F4821B935DFA00D86FF7 /* GalleryCell.swift */,
-			);
-			name = TableViewCells;
 			sourceTree = "<group>";
 		};
 		D9B549A51B76D7FB00BF4887 /* SWRevealViewController */ = {
@@ -474,7 +467,6 @@
 				D9C7563F1BA0C2C800EC22CF /* ExpandableAboutView.swift */,
 				D9C7563D1BA0C2A000EC22CF /* ExpandableAboutView.xib */,
 				D9F8C4771BA4CFF800881B94 /* ExpandableAboutViewHandler.swift */,
-				D99991AA1BB1CFDF0022EF10 /* TableViewCells */,
 				D9C756411BA0C2EB00EC22CF /* Custom Widgets */,
 				D9C756421BA0C2F300EC22CF /* Misc Subclasses */,
 			);
@@ -485,12 +477,11 @@
 			isa = PBXGroup;
 			children = (
 				D97839801BF9304700E4A834 /* Authentication */,
-				D9DE0D4A1C138DFF00A58749 /* WalkthroughViewController.swift */,
 				D9F9C7E91B64873800F5C17D /* LeftNavDrawerController.swift */,
 				D90A7AFD1B92406F003EA693 /* HomeScreenViewController.swift */,
-				D976A7961C44545F00F3E8A7 /* AboutPIViewController */,
-				D90A7B071B924164003EA693 /* GalleryViewController.swift */,
 				D980D6F31B9BDAFC001058E9 /* Five Boros Controllers */,
+				D976A7961C44545F00F3E8A7 /* AboutPIViewController */,
+				D9FF31F11C66AB9D0037DCF1 /* Gallery View Controller */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -541,6 +532,26 @@
 				D901C0D71C39EFC600B350B1 /* fonts available console output */,
 			);
 			path = "Terry References";
+			sourceTree = "<group>";
+		};
+		D9FF31EE1C66A67A0037DCF1 /* Communications */ = {
+			isa = PBXGroup;
+			children = (
+				D90A7AFF1B9240EC003EA693 /* CommunicationsViewController.swift */,
+				D9FF31EF1C66A68A0037DCF1 /* CommunicationsViewController.xib */,
+				D97C16971BAA3E990095CB0A /* CommunicationsTableViewCell.swift */,
+				D97C16981BAA3E990095CB0A /* CommunicationsTableViewCell.xib */,
+			);
+			name = Communications;
+			sourceTree = "<group>";
+		};
+		D9FF31F11C66AB9D0037DCF1 /* Gallery View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D9F7F4821B935DFA00D86FF7 /* GalleryCell.swift */,
+				D90A7B071B924164003EA693 /* GalleryViewController.swift */,
+			);
+			name = "Gallery View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -640,6 +651,7 @@
 				D9A79E151C2C2EEA003D9981 /* NanumBarunGothic.ttf in Resources */,
 				D9D3CE191B3F338D00C8E195 /* Localizable.strings in Resources */,
 				D901C0D81C39EFC700B350B1 /* fonts available console output in Resources */,
+				D9FF31F01C66A68A0037DCF1 /* CommunicationsViewController.xib in Resources */,
 				D9583F4E1C38AE8500A95D54 /* SignUpViewController.xib in Resources */,
 				D98FEFB41B9C0C8E003614A7 /* ApplyWidgetView.xib in Resources */,
 				D901C0D61C39E2CA00B350B1 /* LoginViewController.xib in Resources */,

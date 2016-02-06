@@ -9,6 +9,8 @@
 import UIKit
 import AFNetworking
 
+private let kCommunicationsTableViewCellIdentifier = "CommunicationsTableViewCell"
+
 class CommunicationsViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate{
     
     @IBOutlet var tableView: UITableView!
@@ -24,7 +26,7 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
 
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
-        tableView.registerNib(UINib(nibName: "CommunicationsTableViewCell", bundle: nil), forCellReuseIdentifier: "CommunicationsCell")
+        tableView.registerNib(UINib(nibName: "CommunicationsTableViewCell", bundle: nil), forCellReuseIdentifier: kCommunicationsTableViewCellIdentifier)
         self.feedObjectsArray = FacebookFeedQuery.sharedInstance.FBFeedObjectsArray
         
         setUpExpandableAboutView()
@@ -79,16 +81,19 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CommunicationsCell", forIndexPath: indexPath) as! CommunicationsTableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier(kCommunicationsTableViewCellIdentifier, forIndexPath: indexPath) as? CommunicationsTableViewCell
+        if cell == nil {
+            cell = CommunicationsTableViewCell()
+        }
         
-        cell.tag = indexPath.row
-        configureCell(cell, indexPath: indexPath)
+        cell!.tag = indexPath.row
+        configureCell(cell!, indexPath: indexPath)
         
         let tap = UITapGestureRecognizer(target: self, action: "tappedCell:")
-        cell.userInteractionEnabled = true
-        cell.addGestureRecognizer(tap)
+        cell!.userInteractionEnabled = true
+        cell!.addGestureRecognizer(tap)
         
-        return cell
+        return cell!
     }
     
     func configureCell(cell: CommunicationsTableViewCell, indexPath: NSIndexPath) {
@@ -145,6 +150,15 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let feedArticle = feedObjectsArray![indexPath.row] as FBFeedPost
         print(feedArticle)
+    }
+    
+    //Allowing storyboard to load this VC from XIB
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+    }
+    
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
 }
