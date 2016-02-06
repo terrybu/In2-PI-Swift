@@ -66,11 +66,12 @@ class NurtureViewController: ParentViewController, SFSafariViewControllerDelegat
     private func setUpExpandableAboutView() {
         expandedAboutViewHeight = kOriginalAboutViewHeight + expandableAboutView.textView.frame.size.height + 30
         expandableAboutView.clipsToBounds = true
-        expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: expandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
+        let handler = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: expandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
+        expandableAboutView.delegate = handler
         expandableAboutView.userInteractionEnabled = true
-        let tapGesture = UITapGestureRecognizer(target: self, action: "tappedEntireAboutView")
+        let tapGesture = UITapGestureRecognizer(target: handler, action: "tappedEntireAboutView")
         expandableAboutView.addGestureRecognizer(tapGesture)
-        tapGesture.delegate = self
+        tapGesture.delegate = handler
     }
     
     func tappedEntireAboutView() {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExpandableAboutViewHandler: ExpandableAboutViewDelegate {
+class ExpandableAboutViewHandler: NSObject, ExpandableAboutViewDelegate, UIGestureRecognizerDelegate {
     var viewControllerView: UIView
     var expandableView: ExpandableAboutView
     var constraintExpandableViewHeight: NSLayoutConstraint
@@ -28,7 +28,7 @@ class ExpandableAboutViewHandler: ExpandableAboutViewDelegate {
         self.originalContentViewHeight = originalContentViewHeight
     }
     
-    func didPressExpandButton() {
+    func tappedEntireAboutView() {
         if !expandableView.expanded {
             print("Expand - pressed button when it wasn't expanded")
             
@@ -37,7 +37,7 @@ class ExpandableAboutViewHandler: ExpandableAboutViewDelegate {
                 self.constraintContentViewHeight.constant += self.expandedAboutViewHeight - self.originalAboutViewHeight
                 self.viewControllerView.layoutIfNeeded()
                 self.expandableView.expanded = true
-
+                
                 }) { (Bool completed) -> Void in
                     //
             }
@@ -49,7 +49,7 @@ class ExpandableAboutViewHandler: ExpandableAboutViewDelegate {
                 self.constraintContentViewHeight.constant =  self.originalContentViewHeight
                 self.viewControllerView.layoutIfNeeded()
                 self.expandableView.expanded = false
-
+                
                 }) { (Bool completed) -> Void in
                     //
             }
