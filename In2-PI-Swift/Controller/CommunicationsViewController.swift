@@ -14,7 +14,6 @@ private let kCommunicationsTableViewCellIdentifier = "CommunicationsTableViewCel
 class CommunicationsViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate{
     
     @IBOutlet var tableView: UITableView!
-    @IBOutlet weak var longApplyWidgetview: LongApplyWidgetView!
     var feedObjectsArray: [FBFeedPost]?
     
     //For expandable view
@@ -35,10 +34,6 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
         operationManager = AFHTTPRequestOperationManager()
         operationManager!.responseSerializer = AFImageResponseSerializer()
         
-        longApplyWidgetview.applyButtonPressedHandler = {
-            (sender) -> Void in
-            print("apply button pressed for communications widget")
-        }
     }
     
     //MARK: ExpandableAboutViewDelegate

@@ -8,7 +8,6 @@
             <connections>
                 <outlet property="constraintHeightExpandableView" destination="sxV-AA-QRm" id="5LS-Ny-Gi4"/>
                 <outlet property="expandableAboutView" destination="lyq-qD-abU" id="kPv-1M-Xcb"/>
-                <outlet property="longApplyWidgetview" destination="c05-Ri-6s7" id="Wcb-9c-U57"/>
                 <outlet property="tableView" destination="o4F-2f-0g7" id="EQw-f3-Az7"/>
                 <outlet property="view" destination="UtZ-sG-UvY" id="iH0-YM-FUd"/>
             </connections>
@@ -34,18 +33,8 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c05-Ri-6s7" customClass="LongApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="54" width="600" height="100"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="100" id="nCP-lN-pbm"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="소통부 사역 신청서"/>
-                    </userDefinedRuntimeAttributes>
-                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o4F-2f-0g7">
-                    <rect key="frame" x="0.0" y="154" width="600" height="446"/>
+                    <rect key="frame" x="0.0" y="54" width="600" height="546"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="GQH-Ms-AWV"/>
@@ -55,23 +44,20 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="c05-Ri-6s7" firstAttribute="leading" secondItem="UtZ-sG-UvY" secondAttribute="leading" id="AJT-t6-Llt"/>
                 <constraint firstItem="lyq-qD-abU" firstAttribute="leading" secondItem="UtZ-sG-UvY" secondAttribute="leading" id="FPI-HW-aYc"/>
                 <constraint firstAttribute="trailing" secondItem="lyq-qD-abU" secondAttribute="trailing" id="Fix-Xd-7a1"/>
-                <constraint firstAttribute="trailing" secondItem="c05-Ri-6s7" secondAttribute="trailing" id="OUt-Ny-oIt"/>
-                <constraint firstItem="c05-Ri-6s7" firstAttribute="top" secondItem="lyq-qD-abU" secondAttribute="bottom" id="PBX-pQ-6mR"/>
+                <constraint firstItem="o4F-2f-0g7" firstAttribute="top" secondItem="lyq-qD-abU" secondAttribute="top" id="Pf6-qm-Ofp"/>
+                <constraint firstItem="o4F-2f-0g7" firstAttribute="top" secondItem="lyq-qD-abU" secondAttribute="bottom" id="RhK-AO-3fe"/>
                 <constraint firstItem="lyq-qD-abU" firstAttribute="top" secondItem="UtZ-sG-UvY" secondAttribute="top" id="SsO-tX-Sba"/>
-                <constraint firstItem="o4F-2f-0g7" firstAttribute="top" secondItem="c05-Ri-6s7" secondAttribute="bottom" id="XOa-6O-lXR"/>
                 <constraint firstAttribute="bottom" secondItem="o4F-2f-0g7" secondAttribute="bottom" id="eFS-hZ-R56"/>
                 <constraint firstItem="o4F-2f-0g7" firstAttribute="leading" secondItem="UtZ-sG-UvY" secondAttribute="leading" id="jSu-n8-yB4"/>
-                <constraint firstItem="c05-Ri-6s7" firstAttribute="top" secondItem="UtZ-sG-UvY" secondAttribute="top" id="o7m-D0-7tq"/>
                 <constraint firstAttribute="trailing" secondItem="o4F-2f-0g7" secondAttribute="trailing" id="wfM-rI-9bh"/>
                 <constraint firstItem="o4F-2f-0g7" firstAttribute="top" secondItem="UtZ-sG-UvY" secondAttribute="top" id="wiZ-au-eVv"/>
                 <constraint firstItem="o4F-2f-0g7" firstAttribute="top" secondItem="lyq-qD-abU" secondAttribute="bottom" id="zvt-DX-XgV"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="o7m-D0-7tq"/>
+                    <exclude reference="Pf6-qm-Ofp"/>
                     <exclude reference="wiZ-au-eVv"/>
                     <exclude reference="zvt-DX-XgV"/>
                 </mask>
