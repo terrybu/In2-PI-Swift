@@ -81,6 +81,8 @@
 		D9F8C4761BA4C33200881B94 /* TodaysQTWidget.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9F8C4751BA4C33200881B94 /* TodaysQTWidget.xib */; };
 		D9F8C4781BA4CFF800881B94 /* ExpandableAboutViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8C4771BA4CFF800881B94 /* ExpandableAboutViewHandler.swift */; };
 		D9F9C7EA1B64873800F5C17D /* LeftNavDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F9C7E91B64873800F5C17D /* LeftNavDrawerController.swift */; };
+		D9FF31EB1C66A4120037DCF1 /* LongApplyWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF31EA1C66A4120037DCF1 /* LongApplyWidgetView.swift */; };
+		D9FF31ED1C66A41F0037DCF1 /* LongApplyWidgetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FF31EC1C66A41F0037DCF1 /* LongApplyWidgetView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +184,8 @@
 		D9F8C4751BA4C33200881B94 /* TodaysQTWidget.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TodaysQTWidget.xib; path = ../View/TodaysQTWidget.xib; sourceTree = "<group>"; };
 		D9F8C4771BA4CFF800881B94 /* ExpandableAboutViewHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpandableAboutViewHandler.swift; path = ../Controller/ExpandableAboutViewHandler.swift; sourceTree = "<group>"; };
 		D9F9C7E91B64873800F5C17D /* LeftNavDrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftNavDrawerController.swift; sourceTree = "<group>"; };
+		D9FF31EA1C66A4120037DCF1 /* LongApplyWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongApplyWidgetView.swift; sourceTree = "<group>"; };
+		D9FF31EC1C66A41F0037DCF1 /* LongApplyWidgetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LongApplyWidgetView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,13 +384,15 @@
 				D9965A7D1B9E5A3600AB4A74 /* NewsArticleView.xib */,
 				D98FEFB11B9C0C65003614A7 /* ApplyWidgetView.swift */,
 				D98FEFB31B9C0C8E003614A7 /* ApplyWidgetView.xib */,
+				D9FF31EA1C66A4120037DCF1 /* LongApplyWidgetView.swift */,
+				D9FF31EC1C66A41F0037DCF1 /* LongApplyWidgetView.xib */,
 				D9DA04791BA5B69100F434F4 /* BoroSpecificNewsWidgetView.swift */,
 				D9DA04771BA5B68600F434F4 /* BoroSpecificNewsWidgetView.xib */,
 			);
 			name = "Custom Widgets";
 			sourceTree = "<group>";
 		};
-		D9C756421BA0C2F300EC22CF /* Misc Components */ = {
+		D9C756421BA0C2F300EC22CF /* Misc Subclasses */ = {
 			isa = PBXGroup;
 			children = (
 				D9965A781B9E1D6800AB4A74 /* PaddedLabel.swift */,
@@ -394,7 +400,7 @@
 				D92938031C07F3C10040BD6D /* PurpleSegmentedControlView.swift */,
 				D92938011C07F2820040BD6D /* PurpleSegmentedControlView.xib */,
 			);
-			name = "Misc Components";
+			name = "Misc Subclasses";
 			sourceTree = "<group>";
 		};
 		D9D3CDDE1B3F20EF00C8E195 = {
@@ -470,7 +476,7 @@
 				D9F8C4771BA4CFF800881B94 /* ExpandableAboutViewHandler.swift */,
 				D99991AA1BB1CFDF0022EF10 /* TableViewCells */,
 				D9C756411BA0C2EB00EC22CF /* Custom Widgets */,
-				D9C756421BA0C2F300EC22CF /* Misc Components */,
+				D9C756421BA0C2F300EC22CF /* Misc Subclasses */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -638,6 +644,7 @@
 				D98FEFB41B9C0C8E003614A7 /* ApplyWidgetView.xib in Resources */,
 				D901C0D61C39E2CA00B350B1 /* LoginViewController.xib in Resources */,
 				D9B9B5791B4B1B0000DA476E /* splashScreen.mp4 in Resources */,
+				D9FF31ED1C66A41F0037DCF1 /* LongApplyWidgetView.xib in Resources */,
 				D9F8C4761BA4C33200881B94 /* TodaysQTWidget.xib in Resources */,
 				D989C5281C2700500051ACFE /* HolyStarIntroViewController.xib in Resources */,
 				D92938021C07F2820040BD6D /* PurpleSegmentedControlView.xib in Resources */,
@@ -738,6 +745,7 @@
 				D9B549A81B76D7FB00BF4887 /* SWRevealViewController.m in Sources */,
 				D90A7AFC1B923F13003EA693 /* NurtureViewController.swift in Sources */,
 				D9D3CDED1B3F20EF00C8E195 /* AppDelegate.swift in Sources */,
+				D9FF31EB1C66A4120037DCF1 /* LongApplyWidgetView.swift in Sources */,
 				D99EF24F1B9F59FD00026D66 /* FacebookQuery.swift in Sources */,
 				D98D55CF1C4B02A0003A40B1 /* DateManager.swift in Sources */,
 				D90A08231BB5D4BD0033DD6B /* TFHpple.m in Sources */,
