@@ -25,7 +25,8 @@ class NurtureViewController: ParentViewController, SFSafariViewControllerDelegat
 
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
-        setUpExpandableAboutView()
+        setUpExpandableAboutView(kOriginalAboutViewHeight, expandableAboutView: expandableAboutView, heightBuffer: 30, view: view, constraintHeightExpandableView: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalContentviewHeight: kOriginalContentViewHeight)
+        
         leftNurtureApplyWidget.applyButtonPressedHandler = {(sender) -> Void in
             self.presentSFSafariVCIfAvailable(NSURL(string: kApplyNurtureTeamGoogleDocURL)!)
         }
@@ -63,16 +64,7 @@ class NurtureViewController: ParentViewController, SFSafariViewControllerDelegat
         //navigationController?.pushViewController(sfVC, animated: true)
     }
     
-    private func setUpExpandableAboutView() {
-        expandedAboutViewHeight = kOriginalAboutViewHeight + expandableAboutView.textView.frame.size.height + 30
-        expandableAboutView.clipsToBounds = true
-        let handler = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: expandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
-        expandableAboutView.handler = handler
-        expandableAboutView.userInteractionEnabled = true
-        let tapGesture = UITapGestureRecognizer(target: handler, action: "tappedEntireAboutView")
-        expandableAboutView.addGestureRecognizer(tapGesture)
-        tapGesture.delegate = handler
-    }
+
     
     private func openHolyStarIntroViewController() {
         let holyStarVC = HolyStarIntroViewController(nibName: "HolyStarIntroViewController", bundle: nil)

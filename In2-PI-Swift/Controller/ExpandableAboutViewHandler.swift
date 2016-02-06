@@ -30,7 +30,7 @@ class ExpandableAboutViewHandler: NSObject, UIGestureRecognizerDelegate {
     
     func tappedEntireAboutView() {
         if !expandableView.expanded {
-            print("Expand - pressed button when it wasn't expanded")
+            print("Expand - pressed view when it wasn't expanded")
             
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 self.constraintExpandableViewHeight.constant = self.expandedAboutViewHeight
@@ -43,7 +43,7 @@ class ExpandableAboutViewHandler: NSObject, UIGestureRecognizerDelegate {
             }
         }
         else {
-            print("Collapse - pressed button when it WAS expanded")
+            print("Collapse - pressed view when it WAS expanded")
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 self.constraintExpandableViewHeight.constant = self.originalAboutViewHeight
                 self.constraintContentViewHeight.constant =  self.originalContentViewHeight

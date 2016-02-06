@@ -1,8 +1,5 @@
 To-Do List as of 1/11/2016
 
-0) Parse code needs to be replaced with Firebase in Login/Signup code
-    1-2 hours
-
 1) Communications vc + Social Services VC ... need apply cards
 - Social Services: https://docs.google.com/forms/d/1iVa3r1dZ4GTe4FzSBTHFUV4dfY4MyVIYGEN-MkXOF_g/viewform?ts=5614a6c8&edit_requested=true
 - Communications: https://docs.google.com/forms/d/14Y_lOSjF2-PDXhIwEL-Dj9mZ5sale2ttJKreRsfGBfo/viewform?c=0&w=1
@@ -17,6 +14,9 @@ To-Do List as of 1/11/2016
 
 4) Sign up page looks weird on actual phone. Keep testing on actual device
 Invalid Login Alert looks weird at Login. Fix.
+
+5) Parse code needs to be replaced with Firebase in Login/Signup code
+1-2 hours ... Isn't this low priority? I can also migrate later.
 
 ***MiscGallery page is pulling from 3 recently updated albums, one of which is 한줄나눔 which uses a lot of same images and very uninteresting. Skip it?
     1 hour

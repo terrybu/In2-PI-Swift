@@ -19,13 +19,7 @@ class SocialServicesViewController: ParentViewController, UITableViewDelegate, U
 
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
-        setUpExpandableAboutView()
-    }
-    
-    private func setUpExpandableAboutView() {
-        expandedAboutViewHeight = kOriginalAboutViewHeight + expandableAboutView.textView.frame.size.height + 50
-        expandableAboutView.clipsToBounds = true
-        expandableAboutView.handler = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: expandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
+        setUpExpandableAboutView(kOriginalAboutViewHeight, expandableAboutView: expandableAboutView, heightBuffer: 50, view: view, constraintHeightExpandableView: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalContentviewHeight: kOriginalContentViewHeight)
     }
     
     

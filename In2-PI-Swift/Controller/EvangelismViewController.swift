@@ -25,7 +25,7 @@ class EvangelismViewController: ParentViewController, UIGestureRecognizerDelegat
     
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
-        setUpExpandableAboutView()
+        setUpExpandableAboutView(kOriginalAboutViewHeight, expandableAboutView: expandableAboutView, heightBuffer: 30, view: view, constraintHeightExpandableView: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalContentviewHeight: kOriginalContentViewHeight)
         
         for feedObject in FacebookFeedQuery.sharedInstance.FBFeedObjectsArray {
             if feedObject.parsedCategory == "PI선교" {
@@ -66,9 +66,4 @@ class EvangelismViewController: ParentViewController, UIGestureRecognizerDelegat
         }
     }
     
-    private func setUpExpandableAboutView() {
-        expandedAboutViewHeight = kOriginalAboutViewHeight + expandableAboutView.textView.frame.size.height + 30 
-        expandableAboutView.clipsToBounds = true
-        expandableAboutView.handler = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: expandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
-    }
 }

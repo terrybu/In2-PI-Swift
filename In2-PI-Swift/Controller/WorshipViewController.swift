@@ -35,7 +35,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     //MARK: LifeCycle
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
-        setUpExpandableAboutView()
+        setUpExpandableAboutView(kOriginalAboutViewHeight, expandableAboutView: expandableAboutView, heightBuffer: 30, view: view, constraintHeightExpandableView: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalContentviewHeight: kOriginalContentViewHeight)
         getPraiseSongNamesListAndHeaderFromFacebook()
         weeklyProgramsTableView.hidden = true
         if weeklyProgramsArray.isEmpty {
@@ -103,12 +103,6 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         print(songObjectsArray)
     }
     
-    
-    private func setUpExpandableAboutView() {
-        expandedAboutViewHeight = kOriginalAboutViewHeight + expandableAboutView.textView.frame.size.height + 30
-        expandableAboutView.clipsToBounds = true
-        expandableAboutView.handler = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: expandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
-    }
     
     //MARK: WeeklyProgramDownloader Delegate methods
     func didFinishDownloadinglistOfTenWeeklyProgramsFromImportIO(downloadedProgramsArray: [WeeklyProgram]?) {

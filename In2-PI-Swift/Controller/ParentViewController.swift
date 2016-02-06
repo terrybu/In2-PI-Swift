@@ -46,6 +46,25 @@ class ParentViewController: UIViewController {
         }
     }
     
+    
+    func setUpExpandableAboutView(originalAboutViewHeight: CGFloat, expandableAboutView: ExpandableAboutView, heightBuffer: CGFloat, view: UIView, constraintHeightExpandableView: NSLayoutConstraint, constraintContentViewHeight: NSLayoutConstraint, originalContentviewHeight: CGFloat) {
+        let expandedAboutViewHeight = originalAboutViewHeight + expandableAboutView.textView.frame.size.height + heightBuffer
+        expandableAboutView.clipsToBounds = true
+        let handler = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: originalAboutViewHeight, expandedAboutViewHeight: expandedAboutViewHeight, originalContentViewHeight: originalContentviewHeight)
+        expandableAboutView.handler = handler
+        makeExpandableAboutViewTappable(expandableAboutView, handler: handler)
+    }
+    
+    func makeExpandableAboutViewTappable(expandableView: ExpandableAboutView, handler: ExpandableAboutViewHandler) {
+        expandableView.handler = handler
+        expandableView.userInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: handler, action: "tappedEntireAboutView")
+        expandableView.addGestureRecognizer(tapGesture)
+        tapGesture.delegate = handler
+    }
+    
+    
+    
     override func viewDidAppear(animated: Bool) {
         setUpLeftNavDrawerMenuWidth()
     }
