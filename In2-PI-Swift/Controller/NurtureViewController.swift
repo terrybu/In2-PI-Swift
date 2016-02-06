@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-class NurtureViewController: ParentViewController, SFSafariViewControllerDelegate {
+class NurtureViewController: ParentViewController, SFSafariViewControllerDelegate, UIGestureRecognizerDelegate{
 
     private let kOriginalContentViewHeight: CGFloat = 454
     var expandedAboutViewHeight:CGFloat = 0
@@ -67,6 +67,14 @@ class NurtureViewController: ParentViewController, SFSafariViewControllerDelegat
         expandedAboutViewHeight = kOriginalAboutViewHeight + expandableAboutView.textView.frame.size.height + 30
         expandableAboutView.clipsToBounds = true
         expandableAboutView.delegate = ExpandableAboutViewHandler(viewControllerView: view, expandableView: expandableAboutView, constraintExpandableViewHeight: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalAboutViewHeight: kOriginalAboutViewHeight, expandedAboutViewHeight: expandedAboutViewHeight, originalContentViewHeight: kOriginalContentViewHeight)
+        expandableAboutView.userInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: "tappedEntireAboutView")
+        expandableAboutView.addGestureRecognizer(tapGesture)
+        tapGesture.delegate = self
+    }
+    
+    func tappedEntireAboutView() {
+        expandableAboutView.delegate?.didPressExpandButton()
     }
     
     private func openHolyStarIntroViewController() {

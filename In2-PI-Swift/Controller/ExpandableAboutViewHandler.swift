@@ -36,9 +36,10 @@ class ExpandableAboutViewHandler: ExpandableAboutViewDelegate {
                 self.constraintExpandableViewHeight.constant = self.expandedAboutViewHeight
                 self.constraintContentViewHeight.constant += self.expandedAboutViewHeight - self.originalAboutViewHeight
                 self.viewControllerView.layoutIfNeeded()
-                
+                self.expandableView.expanded = true
+
                 }) { (Bool completed) -> Void in
-                    self.expandableView.expanded = true
+                    //
             }
         }
         else {
@@ -47,9 +48,10 @@ class ExpandableAboutViewHandler: ExpandableAboutViewDelegate {
                 self.constraintExpandableViewHeight.constant = self.originalAboutViewHeight
                 self.constraintContentViewHeight.constant =  self.originalContentViewHeight
                 self.viewControllerView.layoutIfNeeded()
-                
+                self.expandableView.expanded = false
+
                 }) { (Bool completed) -> Void in
-                    self.expandableView.expanded = false
+                    //
             }
         }
     }

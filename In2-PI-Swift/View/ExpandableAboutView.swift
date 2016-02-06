@@ -19,22 +19,22 @@ protocol ExpandableAboutViewDelegate {
     
     var view: UIView!
     var delegate: ExpandableAboutViewDelegate?
-    var expanded: Bool
+    var expanded: Bool {
+        didSet {
+            if expanded == false {
+                //if expanded becomes false, then it means it just closed. Arrow should point down
+                arrowImageButton.setImage(UIImage(named: "btn_down_w"), forState: UIControlState.Normal)
+            } else {
+                arrowImageButton.setImage(UIImage(named: "btn_up_w"), forState: UIControlState.Normal)
+            }
+        }
+    }
     
     @IBOutlet weak var aboutLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var arrowImageButton: UIButton!
 
-    @IBAction func expandButtonPressed(sender: UIButton) {
-
-        if expanded == false {
-            arrowImageButton.setImage(UIImage(named: "btn_up_w"), forState: UIControlState.Normal)
-        } else {
-              arrowImageButton.setImage(UIImage(named: "btn_down_w"), forState: UIControlState.Normal)
-        }
-        delegate?.didPressExpandButton()
-    }
         
     //IBInspectable lets you read and write properties right in the inspector view of interface builder. Without it, there's no way for you to change properties of your custom view UI from storyboard
     @IBInspectable var aboutLabelTitle: String? {

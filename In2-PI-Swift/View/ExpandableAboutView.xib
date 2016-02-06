@@ -47,9 +47,6 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2i-F2-szr" userLabel="ExpandButton">
                             <rect key="frame" x="569" y="16" width="15" height="22"/>
                             <state key="normal" image="btn_down_w"/>
-                            <connections>
-                                <action selector="expandButtonPressed:" destination="-1" eventType="touchUpInside" id="fRr-yH-sHL"/>
-                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABOUT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vt8-gx-oqh" userLabel="AboutLabel">
                             <rect key="frame" x="16" y="18" width="54" height="19"/>
