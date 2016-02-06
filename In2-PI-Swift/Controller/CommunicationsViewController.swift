@@ -9,7 +9,7 @@
 import UIKit
 import AFNetworking
 
-class CommunicationsViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource, ExpandableAboutViewDelegate{
+class CommunicationsViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource, ExpandableAboutViewDelegate, UIGestureRecognizerDelegate{
     
     @IBOutlet var tableView: UITableView!
     var feedObjectsArray: [FBFeedPost]?
@@ -38,24 +38,28 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
         expandedAboutViewHeight = kOriginalAboutViewHeight + expandableAboutView.textView.frame.size.height + 30 
         expandableAboutView.clipsToBounds = true
         expandableAboutView.delegate = self
+        expandableAboutView.userInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: "tappedEntireAboutView")
+        expandableAboutView.addGestureRecognizer(tapGesture)
+        tapGesture.delegate = self
     }
     
-    func didPressExpandButton() {
+    func tappedEntireAboutView() {
         if !expandableAboutView.expanded {            
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 self.constraintHeightExpandableView.constant = self.expandedAboutViewHeight
                 self.view.layoutIfNeeded()
-                
+                self.expandableAboutView.expanded = true
+
                 }) { (Bool completed) -> Void in
-                    self.expandableAboutView.expanded = true
             }
         }
         else {
             UIView.animateWithDuration(0.5, animations: { () -> Void in
+                self.expandableAboutView.expanded = false
                 self.constraintHeightExpandableView.constant = kOriginalAboutViewHeight
                 self.view.layoutIfNeeded()
                 }) { (Bool completed) -> Void in
-                    self.expandableAboutView.expanded = false
             }
         }
         

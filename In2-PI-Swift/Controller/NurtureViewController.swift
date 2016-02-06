@@ -74,10 +74,6 @@ class NurtureViewController: ParentViewController, SFSafariViewControllerDelegat
         tapGesture.delegate = handler
     }
     
-    func tappedEntireAboutView() {
-        expandableAboutView.delegate?.didPressExpandButton()
-    }
-    
     private func openHolyStarIntroViewController() {
         let holyStarVC = HolyStarIntroViewController(nibName: "HolyStarIntroViewController", bundle: nil)
         holyStarVC.title = "홀리스타"

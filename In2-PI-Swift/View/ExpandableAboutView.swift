@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ExpandableAboutViewDelegate {
-    func didPressExpandButton()
+    func tappedEntireAboutView()
 }
 
 //IBDesignable lets you use Interface Builder and Storyboard to see the changes you are making to your custom view right inside Storyboard after you make the change
