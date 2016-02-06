@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import MBProgressHUD
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
     
     var dismissBlock : (() -> Void)?
     @IBOutlet var usernameTextField: UITextField!
@@ -38,6 +38,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         usernameTextField.attributedPlaceholder = usernamePlaceHolderStr
         let passwordPlaceHolderStr = NSAttributedString(string: "Password", attributes: [NSForegroundColorAttributeName:UIColor(white: 1, alpha: 0.5)])
         passwordTextField.attributedPlaceholder = passwordPlaceHolderStr
+        
+        let rectangle = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        rectangle.backgroundColor = UIColor.clearColor()
+        rectangle.userInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: "devGoThrough")
+        rectangle.addGestureRecognizer(tapGesture)
+        tapGesture.delegate = self
+        view.addSubview(rectangle)
+    }
+    
+    func devGoThrough() {
+        if let dismissBlock = self.dismissBlock {
+            dismissBlock()
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -67,7 +81,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if username != nil && password != nil {
             let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
             hud.labelText = "로그인 실행중입니다."
-//            hud.color = UIColor.clearColor()
             PFUser.logInWithUsernameInBackground(username!, password: password!) { (user, error) -> Void in
                 if let user = user {
                     print(user)
