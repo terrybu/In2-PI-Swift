@@ -19,8 +19,8 @@
         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xw2-vV-se2" userLabel="LongApplyWidgetView">
             <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qn8-Re-66Z">
-                    <rect key="frame" x="16" y="16" width="145" height="20"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qn8-Re-66Z">
+                    <rect key="frame" x="16" y="16" width="115" height="20"/>
                     <string key="text">XYZ 사역 신청서
 </string>
                     <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="17"/>
@@ -45,6 +45,11 @@
                 <constraint firstAttribute="height" constant="100" id="yUZ-l4-giI"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="yUZ-l4-giI"/>
+                </mask>
+            </variation>
         </view>
     </objects>
     <resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -26,17 +26,9 @@
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bK-sB-FoZ">
                     <rect key="frame" x="16" y="93" width="576" height="157"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="200" id="Rpe-ux-Byd"/>
-                    </constraints>
                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="Rpe-ux-Byd"/>
-                        </mask>
-                    </variation>
                 </textView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQz-O6-15V">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
@@ -62,17 +54,11 @@
                         <constraint firstAttribute="trailing" secondItem="p85-v2-MHL" secondAttribute="trailing" id="F8t-Ab-f3D"/>
                         <constraint firstItem="p85-v2-MHL" firstAttribute="top" secondItem="NQz-O6-15V" secondAttribute="top" id="aHT-fl-cf2"/>
                         <constraint firstAttribute="trailing" secondItem="f2i-F2-szr" secondAttribute="trailing" constant="16" id="bmK-fC-dxC"/>
-                        <constraint firstItem="f2i-F2-szr" firstAttribute="centerY" secondItem="vt8-gx-oqh" secondAttribute="centerY" id="fB6-uv-MqC"/>
                         <constraint firstAttribute="height" constant="54" id="hGp-cZ-BP6"/>
                         <constraint firstItem="p85-v2-MHL" firstAttribute="leading" secondItem="NQz-O6-15V" secondAttribute="leading" id="m4j-u7-Cfr"/>
                         <constraint firstItem="f2i-F2-szr" firstAttribute="centerY" secondItem="p85-v2-MHL" secondAttribute="centerY" id="qBY-Ba-4Rg"/>
                         <constraint firstItem="vt8-gx-oqh" firstAttribute="centerY" secondItem="NQz-O6-15V" secondAttribute="centerY" id="tVN-q8-JJa"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="fB6-uv-MqC"/>
-                        </mask>
-                    </variation>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TitleLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CcP-eQ-vUK">
                     <rect key="frame" x="16" y="66" width="75" height="21"/>
@@ -82,10 +68,8 @@
                 </label>
             </subviews>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="6bK-sB-FoZ" secondAttribute="bottom" id="35q-mX-nTj"/>
                 <constraint firstItem="6bK-sB-FoZ" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="3IW-dG-vDO"/>
                 <constraint firstItem="NQz-O6-15V" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="9Wz-kT-fzE"/>
-                <constraint firstAttribute="bottom" secondItem="6bK-sB-FoZ" secondAttribute="bottom" constant="12" id="GZi-mY-NlM"/>
                 <constraint firstAttribute="bottom" secondItem="6bK-sB-FoZ" secondAttribute="bottom" id="RCv-cH-N5o"/>
                 <constraint firstAttribute="trailing" secondItem="NQz-O6-15V" secondAttribute="trailing" id="ROb-x8-fqr"/>
                 <constraint firstItem="6bK-sB-FoZ" firstAttribute="leading" secondItem="CcP-eQ-vUK" secondAttribute="leading" id="S4f-Up-eyZ"/>
@@ -97,12 +81,6 @@
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="35q-mX-nTj"/>
-                    <exclude reference="GZi-mY-NlM"/>
-                </mask>
-            </variation>
             <point key="canvasLocation" x="289" y="174"/>
         </view>
     </objects>

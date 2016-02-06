@@ -548,8 +548,8 @@
 		D9FF31F11C66AB9D0037DCF1 /* Gallery View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D9F7F4821B935DFA00D86FF7 /* GalleryCell.swift */,
 				D90A7B071B924164003EA693 /* GalleryViewController.swift */,
+				D9F7F4821B935DFA00D86FF7 /* GalleryCell.swift */,
 			);
 			name = "Gallery View Controller";
 			sourceTree = "<group>";
