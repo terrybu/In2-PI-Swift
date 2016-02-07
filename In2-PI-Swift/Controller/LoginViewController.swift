@@ -88,6 +88,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
         if let email = email, password = password{
             let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
             hud.labelText = "로그인 실행중입니다 ... 잠시만 기다려주세요."
+            
+            if adminMode() == true {
+                //direct to admin page
+                
+                
+                
+                return
+            }
+            
             FirebaseManager.sharedManager.loginUser(email, password: password, completion: { (success) -> Void in
                 // completion
                 if success {
@@ -104,6 +113,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
             })
         }
+    }
+    
+    func adminMode() -> Bool {
+        let email = emailTextField.text
+        let password = passwordTextField.text
+        if let email = email, password = password {
+            if email == "admin" && password == "admin" {
+                return true
+            }
+        }
+        return false
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {

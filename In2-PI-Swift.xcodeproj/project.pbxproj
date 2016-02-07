@@ -86,6 +86,8 @@
 		D9FF31F01C66A68A0037DCF1 /* CommunicationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FF31EF1C66A68A0037DCF1 /* CommunicationsViewController.xib */; };
 		D9FF31F61C66C1E60037DCF1 /* SocialServicesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FF31F51C66C1E60037DCF1 /* SocialServicesViewController.xib */; };
 		D9FF31FB1C671BC00037DCF1 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF31FA1C671BC00037DCF1 /* FirebaseManager.swift */; };
+		D9FF31FF1C6735850037DCF1 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF31FE1C6735850037DCF1 /* AdminViewController.swift */; };
+		D9FF32011C6735960037DCF1 /* AdminViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FF32001C6735960037DCF1 /* AdminViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,6 +194,8 @@
 		D9FF31EF1C66A68A0037DCF1 /* CommunicationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunicationsViewController.xib; sourceTree = "<group>"; };
 		D9FF31F51C66C1E60037DCF1 /* SocialServicesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SocialServicesViewController.xib; sourceTree = "<group>"; };
 		D9FF31FA1C671BC00037DCF1 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		D9FF31FE1C6735850037DCF1 /* AdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
+		D9FF32001C6735960037DCF1 /* AdminViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdminViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +296,8 @@
 				D97839811BF9305B00E4A834 /* SignUpViewController.swift */,
 				D9583F4D1C38AE8500A95D54 /* SignUpViewController.xib */,
 				D9DE0D4A1C138DFF00A58749 /* WalkthroughViewController.swift */,
+				D9FF31FE1C6735850037DCF1 /* AdminViewController.swift */,
+				D9FF32001C6735960037DCF1 /* AdminViewController.xib */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
@@ -685,6 +691,7 @@
 				D92938021C07F2820040BD6D /* PurpleSegmentedControlView.xib in Resources */,
 				D97C169A1BAA3E990095CB0A /* CommunicationsTableViewCell.xib in Resources */,
 				D9A79E161C2C2EEA003D9981 /* NanumBarunGothicBold.ttf in Resources */,
+				D9FF32011C6735960037DCF1 /* AdminViewController.xib in Resources */,
 				D9D3CE121B3F309C00C8E195 /* InfoPlist.strings in Resources */,
 				D9D3CDF41B3F20EF00C8E195 /* Images.xcassets in Resources */,
 				D9DA04781BA5B68600F434F4 /* BoroSpecificNewsWidgetView.xib in Resources */,
@@ -761,6 +768,7 @@
 				D92295951B9BF87000C34A66 /* WorshipViewController.swift in Sources */,
 				D90A7B0A1B924256003EA693 /* ParentViewController.swift in Sources */,
 				D90A7B061B92415D003EA693 /* AboutPIViewControlller.swift in Sources */,
+				D9FF31FF1C6735850037DCF1 /* AdminViewController.swift in Sources */,
 				D97839821BF9305B00E4A834 /* SignUpViewController.swift in Sources */,
 				D9C756401BA0C2C800EC22CF /* ExpandableAboutView.swift in Sources */,
 				D95EC5241B978DF000782925 /* FacebookFeedQuery.swift in Sources */,
