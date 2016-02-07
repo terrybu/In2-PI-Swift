@@ -10,6 +10,9 @@ import UIKit
 
 class AdminViewController: UIViewController {
     
+    @IBOutlet weak var noticeButton: UIButton!
+    @IBOutlet weak var socialServicesScheduleButton: UIButton!
+    
     @IBAction func xButtonPressed() {
         self.navigationController?.dismissViewControllerAnimated(false, completion: nil)
     }
@@ -35,6 +38,16 @@ class AdminViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpUIForNavBarAndStatus()
+        
+        if AuthenticationManager.sharedManager.currentUserMode == .SocialServicesAdmin {
+            noticeButton.enabled = false
+        } else {
+            noticeButton.enabled = true
+        }
+    }
+    
+    private func setUpUIForNavBarAndStatus() {
         let statusBarBackgroundView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 20))
         statusBarBackgroundView.backgroundColor = UIColor(patternImage: UIImage(named:"status_bar")!)
         navigationController!.view.addSubview(statusBarBackgroundView)

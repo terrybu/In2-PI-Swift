@@ -95,6 +95,7 @@
 		D9FF320D1C6776040037DCF1 /* Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF320C1C6776040037DCF1 /* Notice.swift */; };
 		D9FF320F1C6777960037DCF1 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF320E1C6777960037DCF1 /* UIAlertControllerExtension.swift */; };
 		D9FF32111C677B0B0037DCF1 /* archivingArrayDefaultsCode in Resources */ = {isa = PBXBuildFile; fileRef = D9FF32101C677B0B0037DCF1 /* archivingArrayDefaultsCode */; };
+		D9FF32131C6788CD0037DCF1 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF32121C6788CD0037DCF1 /* AuthenticationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -210,6 +211,7 @@
 		D9FF320C1C6776040037DCF1 /* Notice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notice.swift; sourceTree = "<group>"; };
 		D9FF320E1C6777960037DCF1 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		D9FF32101C677B0B0037DCF1 /* archivingArrayDefaultsCode */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = archivingArrayDefaultsCode; sourceTree = "<group>"; };
+		D9FF32121C6788CD0037DCF1 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -520,9 +522,10 @@
 				D9FF31FA1C671BC00037DCF1 /* FirebaseManager.swift */,
 				D99991A81BB1BEF90022EF10 /* HttpFileDownloader.swift */,
 				D986F4D81C1E4E9A00C00F7B /* WalkthroughManager.swift */,
+				D9FF32121C6788CD0037DCF1 /* AuthenticationManager.swift */,
 				D9FF320B1C6775F10037DCF1 /* Objects */,
 				D910DD861BADFE2800E8A99F /* Facebook Objects */,
-				D9FF31F91C6709C50037DCF1 /* Date Related Managers */,
+				D9FF31F91C6709C50037DCF1 /* Date Related */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -587,13 +590,13 @@
 			name = WeeklyProgram;
 			sourceTree = "<group>";
 		};
-		D9FF31F91C6709C50037DCF1 /* Date Related Managers */ = {
+		D9FF31F91C6709C50037DCF1 /* Date Related */ = {
 			isa = PBXGroup;
 			children = (
 				D9EF135E1BAA44B4006D7F78 /* CustomDateFormatter.swift */,
 				D98D55CE1C4B02A0003A40B1 /* DateManager.swift */,
 			);
-			name = "Date Related Managers";
+			name = "Date Related";
 			sourceTree = "<group>";
 		};
 		D9FF32021C676E300037DCF1 /* Admin */ = {
@@ -842,6 +845,7 @@
 				D9EF135F1BAA44B4006D7F78 /* CustomDateFormatter.swift in Sources */,
 				D90A7B041B92413F003EA693 /* EvangelismViewController.swift in Sources */,
 				D90A7B021B924135003EA693 /* SocialServicesViewController.swift in Sources */,
+				D9FF32131C6788CD0037DCF1 /* AuthenticationManager.swift in Sources */,
 				D90A7B001B9240EC003EA693 /* CommunicationsViewController.swift in Sources */,
 				D99274711C2F57E90055810F /* AllWeeklyProgramsTableViewController.swift in Sources */,
 				D92B56351BD5C8930085208F /* LoginViewController.swift in Sources */,

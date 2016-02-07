@@ -89,8 +89,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
             let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
             hud.labelText = "로그인 실행중입니다 ... 잠시만 기다려주세요."
             
-            if adminMode() == true {
-                //direct to admin page
+            if adminUserDetectedAdminMustBeActivated() == true {
                 let adminVC = AdminViewController()
                 let navCtrl = UINavigationController(rootViewController: adminVC)
                 presentViewController(navCtrl, animated: true, completion: nil)
@@ -115,11 +114,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
         }
     }
     
-    func adminMode() -> Bool {
+    func adminUserDetectedAdminMustBeActivated() -> Bool {
         let email = emailTextField.text
         let password = passwordTextField.text
         if let email = email, password = password {
             if email == "admin" && password == "admin" {
+                AuthenticationManager.sharedManager.currentUserMode = .Admin
+                return true
+            } else if email == "socialservices" && password == "admin" {
+                AuthenticationManager.sharedManager.currentUserMode = .SocialServicesAdmin
                 return true
             }
         }

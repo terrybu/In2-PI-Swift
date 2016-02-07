@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AdminViewController" customModule="In2_PI_Swift" customModuleProvider="target">
             <connections>
+                <outlet property="noticeButton" destination="Hz8-c1-PR6" id="6sG-Ql-ebk"/>
+                <outlet property="socialServicesScheduleButton" destination="4In-zA-Q13" id="6BI-br-top"/>
                 <outlet property="view" destination="iN0-l3-epB" id="JlC-YS-1EM"/>
             </connections>
         </placeholder>
