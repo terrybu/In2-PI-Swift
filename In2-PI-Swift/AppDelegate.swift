@@ -55,6 +55,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             moviePlayBackDidFinish()
         #endif
      
+        //for status bar text making it white
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }

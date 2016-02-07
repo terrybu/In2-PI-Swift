@@ -44,10 +44,6 @@ class LeftNavDrawerController: UIViewController {
         self.view.addGestureRecognizer(swipeGestureRightToLeft)
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-       return UIStatusBarStyle.LightContent
-    }
-    
     override func viewWillAppear(animated: Bool) {
         purpleStatusBar.hidden = false
     }

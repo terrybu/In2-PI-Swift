@@ -91,9 +91,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
             
             if adminMode() == true {
                 //direct to admin page
-                
-                
-                
+                let adminVC = AdminViewController()
+                let navCtrl = UINavigationController(rootViewController: adminVC)
+                presentViewController(navCtrl, animated: true, completion: nil)
                 return
             }
             
@@ -124,10 +124,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
             }
         }
         return false
-    }
-    
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
     }
     
 }
