@@ -30,6 +30,10 @@ class SocialServicesEventCreationViewController: UIViewController, UITextFieldDe
     func pressedDoneButton() {
         print("pressed done")
         //firebase logic
+        let newEvent = SocialServiceEvent(title: eventTitle.text!, teamName: eventTeamName.text!, description: eventDescription.text!, date: CustomDateFormatter.sharedInstance.convertDateToFirebaseStringFormat(eventDatePicker.date))
+        FirebaseManager.sharedManager.createNewSocialServiceEventOnFirebase(newEvent) { (success) -> Void in
+            self.navigationController?.popViewControllerAnimated(true)
+        }
         
     }
     

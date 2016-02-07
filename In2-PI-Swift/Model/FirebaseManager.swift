@@ -90,6 +90,27 @@ class FirebaseManager {
             }
         }
     }
+    func createNewSocialServiceEventOnFirebase(serviceEvent: SocialServiceEvent, completion: (success: Bool)->Void) {
+        let eventsRef = rootRef.childByAppendingPath("SocialServiceEvent")
+        let eventDict = [
+            "title": serviceEvent.title,
+            "teamName": serviceEvent.teamName,
+            "description": serviceEvent.description,
+            "date": serviceEvent.date,
+        ]
+        let newEventIDRef = eventsRef.childByAutoId()
+        newEventIDRef.setValue(eventDict) { (error, firebase) -> Void in
+            if error != nil {
+                print(error)
+                completion(success: false)
+            } else {
+                print("new social service event created")
+                completion(success: true)
+            }
+        }
+    }
+    
+    
     
     func getNoticeObjectsFromFirebase(completion: (success: Bool)->Void) {
         // Get a reference to our posts
