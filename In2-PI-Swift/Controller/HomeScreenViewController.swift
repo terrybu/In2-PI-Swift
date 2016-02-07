@@ -17,6 +17,7 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
     var imageBlackOverlay: UIView?
     @IBOutlet weak var newsArticleView: NewsArticleView!
     @IBOutlet weak var noticeWidget: NoticeWidget!
+    var activeNotice: Notice?
 
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -36,10 +37,16 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
         }
         FirebaseManager.sharedManager.getNoticeObjectsFromFirebase({ (success) -> Void in
             if success {
-                self.noticeWidget.body = FirebaseManager.sharedManager.activeNotice!.title
+                self.activeNotice = FirebaseManager.sharedManager.activeNotice!
+                self.noticeWidget.body = self.activeNotice!.title
+                self.noticeWidget.viewMoreNoticeButton.addTarget(self, action: "viewMoreNotice", forControlEvents: UIControlEvents.TouchUpInside)
             }
             MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
         })
+    }
+    
+    func viewMoreNotice() {
+        UIAlertController.presentAlert(self, alertTitle: activeNotice!.title, alertMessage: "Date: \(activeNotice!.date)\n\n  \(activeNotice!.body) \n\n Link: \(activeNotice!.link)", confirmTitle: "OK")
     }
     
     private func setUpUniqueUIForHomeVC() {
