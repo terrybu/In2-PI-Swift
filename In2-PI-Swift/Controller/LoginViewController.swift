@@ -38,6 +38,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
         usernameTextField.attributedPlaceholder = usernamePlaceHolderStr
         let passwordPlaceHolderStr = NSAttributedString(string: "Password", attributes: [NSForegroundColorAttributeName:UIColor(white: 1, alpha: 0.5)])
         passwordTextField.attributedPlaceholder = passwordPlaceHolderStr
+        
+        devBypassLogin()
     }
     
     private func devBypassLogin() {

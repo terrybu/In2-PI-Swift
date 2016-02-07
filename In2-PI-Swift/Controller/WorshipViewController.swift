@@ -137,10 +137,10 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
                 }
             }
             if !thisMonthProgramsArray.isEmpty {
-                thisMonthProgramsAreEmpty = false
+                self.thisMonthProgramsAreEmpty = false
                 return thisMonthProgramsArray.count
             } else {
-                thisMonthProgramsAreEmpty = true
+                self.thisMonthProgramsAreEmpty = true
                 return 2
             }
         } else if (tableView == songsTableView) {
@@ -159,6 +159,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         if (tableView == weeklyProgramsTableView) {
             if thisMonthProgramsAreEmpty {
                 cell = UITableViewCell()
+                cell.textLabel?.font = UIFont.systemFontOfSize(12.0)
                 if indexPath.row == 0 {
                     cell.textLabel!.text = "이번 달의 주보는 아직 업로드되지 않았습니다."
                 } else {
@@ -173,6 +174,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         } else {
             if praiseSongsListIsEmpty {
                 cell = UITableViewCell()
+                cell.textLabel?.font = UIFont.systemFontOfSize(12.0)
                 if indexPath.row == 0 {
                     cell.textLabel!.text = "최근에 찬양송 리스트가 업데이트되지 않았거나"
                 } else {
@@ -218,7 +220,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
             } else {
                 //something went wrong so Praise Songs List not appearing at all
                 //Two reasons: internet failure or Facebook query json data failed to retrieve Praise Songs Data in its recent 20 objects 
-                label.text = "찬양송 리스트 다운로드가 실패했습니다."
+                label.text = "찬양송 다운로드가 작동하지 않고 있습니다."
                 headerView.backgroundColor = UIColor.grayColor()
                 label.textColor = UIColor.whiteColor()
             }
