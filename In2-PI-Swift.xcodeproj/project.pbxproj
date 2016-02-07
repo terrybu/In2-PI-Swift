@@ -26,6 +26,8 @@
 		D910DD881BADFF2500E8A99F /* WeeklyProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = D910DD871BADFF2500E8A99F /* WeeklyProgram.swift */; };
 		D91FCAB61C67927E008C7D1C /* NoticeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91FCAB51C67927E008C7D1C /* NoticeWidget.swift */; };
 		D91FCAB81C679287008C7D1C /* NoticeWidget.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91FCAB71C679287008C7D1C /* NoticeWidget.xib */; };
+		D91FCABB1C679E50008C7D1C /* SocialServicesEventAdminTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91FCAB91C679E50008C7D1C /* SocialServicesEventAdminTableViewController.swift */; };
+		D91FCABC1C679E50008C7D1C /* SocialServicesEventAdminTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91FCABA1C679E50008C7D1C /* SocialServicesEventAdminTableViewController.xib */; };
 		D92295951B9BF87000C34A66 /* WorshipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92295941B9BF87000C34A66 /* WorshipViewController.swift */; };
 		D92938021C07F2820040BD6D /* PurpleSegmentedControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92938011C07F2820040BD6D /* PurpleSegmentedControlView.xib */; };
 		D92938041C07F3C10040BD6D /* PurpleSegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92938031C07F3C10040BD6D /* PurpleSegmentedControlView.swift */; };
@@ -135,6 +137,8 @@
 		D910DD871BADFF2500E8A99F /* WeeklyProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyProgram.swift; sourceTree = "<group>"; };
 		D91FCAB51C67927E008C7D1C /* NoticeWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoticeWidget.swift; path = "In2-PI-Swift/View/NoticeWidget.swift"; sourceTree = SOURCE_ROOT; };
 		D91FCAB71C679287008C7D1C /* NoticeWidget.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NoticeWidget.xib; path = "../Terry References/NoticeWidget.xib"; sourceTree = "<group>"; };
+		D91FCAB91C679E50008C7D1C /* SocialServicesEventAdminTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialServicesEventAdminTableViewController.swift; sourceTree = "<group>"; };
+		D91FCABA1C679E50008C7D1C /* SocialServicesEventAdminTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SocialServicesEventAdminTableViewController.xib; sourceTree = "<group>"; };
 		D92295941B9BF87000C34A66 /* WorshipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorshipViewController.swift; sourceTree = "<group>"; };
 		D92938011C07F2820040BD6D /* PurpleSegmentedControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurpleSegmentedControlView.xib; sourceTree = "<group>"; };
 		D92938031C07F3C10040BD6D /* PurpleSegmentedControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurpleSegmentedControlView.swift; sourceTree = "<group>"; };
@@ -614,6 +618,8 @@
 				D9FF32041C676E5E0037DCF1 /* NoticeAdminViewController.xib */,
 				D9FF32071C67715A0037DCF1 /* NoticeCreationViewController.swift */,
 				D9FF32081C67715A0037DCF1 /* NoticeCreationViewController.xib */,
+				D91FCAB91C679E50008C7D1C /* SocialServicesEventAdminTableViewController.swift */,
+				D91FCABA1C679E50008C7D1C /* SocialServicesEventAdminTableViewController.xib */,
 			);
 			name = Admin;
 			sourceTree = "<group>";
@@ -729,6 +735,7 @@
 				D9FF31F61C66C1E60037DCF1 /* SocialServicesViewController.xib in Resources */,
 				D901C0D81C39EFC700B350B1 /* fonts available console output in Resources */,
 				D9FF31F01C66A68A0037DCF1 /* CommunicationsViewController.xib in Resources */,
+				D91FCABC1C679E50008C7D1C /* SocialServicesEventAdminTableViewController.xib in Resources */,
 				D9583F4E1C38AE8500A95D54 /* SignUpViewController.xib in Resources */,
 				D98FEFB41B9C0C8E003614A7 /* ApplyWidgetView.xib in Resources */,
 				D901C0D61C39E2CA00B350B1 /* LoginViewController.xib in Resources */,
@@ -817,6 +824,7 @@
 				D981A02A1C2F5F4D003BA562 /* WeeklyProgramDisplayManager.swift in Sources */,
 				D92295951B9BF87000C34A66 /* WorshipViewController.swift in Sources */,
 				D90A7B0A1B924256003EA693 /* ParentViewController.swift in Sources */,
+				D91FCABB1C679E50008C7D1C /* SocialServicesEventAdminTableViewController.swift in Sources */,
 				D90A7B061B92415D003EA693 /* AboutPIViewControlller.swift in Sources */,
 				D9FF31FF1C6735850037DCF1 /* AdminViewController.swift in Sources */,
 				D97839821BF9305B00E4A834 /* SignUpViewController.swift in Sources */,

@@ -20,7 +20,8 @@ class AdminViewController: UIViewController {
     
     
     @IBAction func socialServicesSchedulePressed(sender: AnyObject) {
-        
+        let socialServiceEventAdminVC = SocialServicesEventAdminTableViewController()
+        self.navigationController?.pushViewController(socialServiceEventAdminVC, animated: true)
     }
     
 
