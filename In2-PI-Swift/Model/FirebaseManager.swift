@@ -25,6 +25,10 @@ class FirebaseManager {
                     // Authentication just completed successfully :)
                     // The logged in user's unique identifier
                     print(authData.uid)
+//                    print(authData.providerData)
+//                    let providerData = authData.providerData as NSDictionary
+//                    let profileURL = providerData.objectForKey("profileImageURL")
+//                    print(profileURL) 
                     completion(success: true)
                 }
         })
