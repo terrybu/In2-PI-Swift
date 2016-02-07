@@ -7,11 +7,7 @@ To-Do List as of 1/11/2016
 2.6.2016
 = Massive problems trying to insert a UI into interface builder for Communications view controller screen
 = the "Long apply widget view" would spill out its contents over the about bar for some crazy reason
-    - Gonna remove it for now. If it ever becomes a problem, need some surgery in there. Might take some time figuring out exactly what was going wrong with Auto layout between About Expanding View and the Long Apply Widget View.
-
-
-https://docs.google.com/forms/d/14Y_lOSjF2-PDXhIwEL-Dj9mZ5sale2ttJKreRsfGBfo/viewform?c=0&w=1
-    1 hour
+    - Gonna remove it for now. If it ever becomes a problem, need some surgery in there. Might take some time figuring out exactly what was going wrong with Auto layout between About Expanding View and the Long Apply Widget View
 
 2) last big piece is 긍휼부 칼렌더 and Admin post mode. Firebase may be used to post "strings" up there for"
     3-4 hours

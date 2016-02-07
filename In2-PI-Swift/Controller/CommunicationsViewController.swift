@@ -38,12 +38,16 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
     
     //MARK: ExpandableAboutViewDelegate
     private func setUpExpandableAboutView() {
-        expandedAboutViewHeight = kOriginalAboutViewHeight + expandableAboutView.textView.frame.size.height + 30 
+        expandedAboutViewHeight = kOriginalAboutViewHeight + expandableAboutView.textView.frame.size.height + 100
         expandableAboutView.clipsToBounds = true
         expandableAboutView.userInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: "tappedEntireAboutView")
         expandableAboutView.addGestureRecognizer(tapGesture)
         tapGesture.delegate = self
+        
+        expandableAboutView.textView.dataDetectorTypes = .Link
+        expandableAboutView.textView.editable = false
+        expandableAboutView.textView.text = "   \"그리스도로부터 온몸이 각 마디를 통해 함께 연결되고 결합됩니다. 각 지체가 맡은 분량대로 기능하는 가운데 그 몸을 자라게 하며 사랑 가운데 스스로를 세워갑니다.\" -에베소서 4:16 \n\n   파이매거진, 앱&웹팀, 광고&기획팀이 속한 소통보로는 예수님의 사랑을 서로서로 소통하는 공동체를 만들기 위해 힘씁니다. \n\n   소통부 사역 신청서: https://docs.google.com/forms/d/14Y_lOSjF2-PDXhIwEL-Dj9mZ5sale2ttJKreRsfGBfo/viewform?c=0&w=1"
     }
     
     func tappedEntireAboutView() {
