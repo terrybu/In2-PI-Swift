@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import SafariServices
 
-class NurtureViewController: ParentViewController, SFSafariViewControllerDelegate, UIGestureRecognizerDelegate{
+class NurtureViewController: ParentViewController, UIGestureRecognizerDelegate{
 
     private let kOriginalContentViewHeight: CGFloat = 454
     var expandedAboutViewHeight:CGFloat = 0
@@ -55,17 +54,7 @@ class NurtureViewController: ParentViewController, SFSafariViewControllerDelegat
             FacebookFeedQuery.sharedInstance.displayFacebookPostObjectInWebView(feedObject, view: self.view, navigationController: navigationController)
         }
     }
-    
-    private func presentSFSafariVCIfAvailable(url: NSURL) {
-        let sfVC = SFSafariViewController(URL: url, entersReaderIfAvailable: true)
-        sfVC.delegate = self
-        self.presentViewController(sfVC, animated: true, completion: nil)
-        //in case anybody prefers right to left push viewcontroller animation transition (below)
-        //navigationController?.pushViewController(sfVC, animated: true)
-    }
-    
 
-    
     private func openHolyStarIntroViewController() {
         let holyStarVC = HolyStarIntroViewController(nibName: "HolyStarIntroViewController", bundle: nil)
         holyStarVC.title = "홀리스타"

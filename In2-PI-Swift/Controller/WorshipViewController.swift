@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import SafariServices
 import Foundation
 
 
-class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelegate, SFSafariViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
+class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelegate, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet var expandableAboutView: ExpandableAboutView!
@@ -283,33 +282,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
             }
         }
     }
-    
-    private func presentSFSafariVCIfAvailable(url: NSURL) {
-        if #available(iOS 9.0, *) {
-            let sfVC = SFSafariViewController(URL: url, entersReaderIfAvailable: true)
-            sfVC.delegate = self
-            self.presentViewController(sfVC, animated: true, completion: nil)
-            //in case anybody prefers right to left push viewcontroller animation transition (below)
-            //navigationController?.pushViewController(sfVC, animated: true)
-        } else {
-            // Fallback on earlier versions
-            let webView = UIWebView(frame: view.frame)
-            webView.loadRequest(NSURLRequest(URL: url))
-            let vc = UIViewController()
-            vc.view = webView
-            navigationController?.pushViewController(vc, animated: true)
-        }
-    }
-    
 
-    
-    //Delegate method for dismissing safari vc
-    @available(iOS 9.0, *)
-    func safariViewControllerDidFinish(controller: SFSafariViewController)
-    {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
     //MARK: IBActions
     @IBAction func didPressSeeMoreWorshipVideos() {
         presentSFSafariVCIfAvailable(NSURL(string: kYoutubeIn2WorshipVideosURL)!)

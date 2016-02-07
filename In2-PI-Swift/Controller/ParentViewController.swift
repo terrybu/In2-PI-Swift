@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SafariServices
 
-class ParentViewController: UIViewController {
+class ParentViewController: UIViewController, SFSafariViewControllerDelegate {
     
     func hamburgerPressed(sender: UIBarButtonItem) {
         self.revealViewController().revealToggle(sender)
@@ -63,7 +64,13 @@ class ParentViewController: UIViewController {
         tapGesture.delegate = handler
     }
     
-    
+    func presentSFSafariVCIfAvailable(url: NSURL) {
+        let sfVC = SFSafariViewController(URL: url, entersReaderIfAvailable: true)
+        sfVC.delegate = self
+        self.presentViewController(sfVC, animated: true, completion: nil)
+        //in case anybody prefers right to left push viewcontroller animation transition (below)
+        //navigationController?.pushViewController(sfVC, animated: true)
+    }
     
     override func viewDidAppear(animated: Bool) {
         setUpLeftNavDrawerMenuWidth()

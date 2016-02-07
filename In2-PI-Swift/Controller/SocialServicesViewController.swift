@@ -9,18 +9,22 @@
 import UIKit
 
 class SocialServicesViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource{
-   
+
+    private var expandedAboutViewHeight: CGFloat = 0
+    private let kOriginalContentViewHeight: CGFloat = 700
     @IBOutlet var contentView: UIView!
     @IBOutlet var expandableAboutView: ExpandableAboutView!
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
     @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
-    private var expandedAboutViewHeight: CGFloat = 0
-    private let kOriginalContentViewHeight: CGFloat = 700
     @IBOutlet var tableView: UITableView! 
-
+    @IBOutlet var applyWidgetView: ApplyWidgetView! 
+    
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
         setUpExpandableAboutView(kOriginalAboutViewHeight, expandableAboutView: expandableAboutView, heightBuffer: 30, view: view, constraintHeightExpandableView: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalContentviewHeight: kOriginalContentViewHeight)
+        applyWidgetView.applyButtonPressedHandler = { (sender) -> Void in
+            self.presentSFSafariVCIfAvailable(NSURL(string: kApplySocialServicesTeamGoogleDocURL)!)
+        }
     }
     
     
