@@ -90,6 +90,8 @@
 		D9FF32011C6735960037DCF1 /* AdminViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FF32001C6735960037DCF1 /* AdminViewController.xib */; };
 		D9FF32051C676E5E0037DCF1 /* NoticeAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF32031C676E5E0037DCF1 /* NoticeAdminViewController.swift */; };
 		D9FF32061C676E5E0037DCF1 /* NoticeAdminViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FF32041C676E5E0037DCF1 /* NoticeAdminViewController.xib */; };
+		D9FF32091C67715A0037DCF1 /* NoticeCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF32071C67715A0037DCF1 /* NoticeCreationViewController.swift */; };
+		D9FF320A1C67715A0037DCF1 /* NoticeCreationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FF32081C67715A0037DCF1 /* NoticeCreationViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +202,8 @@
 		D9FF32001C6735960037DCF1 /* AdminViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdminViewController.xib; sourceTree = "<group>"; };
 		D9FF32031C676E5E0037DCF1 /* NoticeAdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeAdminViewController.swift; sourceTree = "<group>"; };
 		D9FF32041C676E5E0037DCF1 /* NoticeAdminViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticeAdminViewController.xib; sourceTree = "<group>"; };
+		D9FF32071C67715A0037DCF1 /* NoticeCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeCreationViewController.swift; sourceTree = "<group>"; };
+		D9FF32081C67715A0037DCF1 /* NoticeCreationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticeCreationViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -592,6 +596,8 @@
 				D9FF32001C6735960037DCF1 /* AdminViewController.xib */,
 				D9FF32031C676E5E0037DCF1 /* NoticeAdminViewController.swift */,
 				D9FF32041C676E5E0037DCF1 /* NoticeAdminViewController.xib */,
+				D9FF32071C67715A0037DCF1 /* NoticeCreationViewController.swift */,
+				D9FF32081C67715A0037DCF1 /* NoticeCreationViewController.xib */,
 			);
 			name = Admin;
 			sourceTree = "<group>";
@@ -705,6 +711,7 @@
 				D989C5281C2700500051ACFE /* HolyStarIntroViewController.xib in Resources */,
 				D92938021C07F2820040BD6D /* PurpleSegmentedControlView.xib in Resources */,
 				D97C169A1BAA3E990095CB0A /* CommunicationsTableViewCell.xib in Resources */,
+				D9FF320A1C67715A0037DCF1 /* NoticeCreationViewController.xib in Resources */,
 				D9A79E161C2C2EEA003D9981 /* NanumBarunGothicBold.ttf in Resources */,
 				D9FF32011C6735960037DCF1 /* AdminViewController.xib in Resources */,
 				D9D3CE121B3F309C00C8E195 /* InfoPlist.strings in Resources */,
@@ -802,6 +809,7 @@
 				D904A3F51C02EB9A005A6EA3 /* HideKey.swift in Sources */,
 				D9B549A81B76D7FB00BF4887 /* SWRevealViewController.m in Sources */,
 				D90A7AFC1B923F13003EA693 /* NurtureViewController.swift in Sources */,
+				D9FF32091C67715A0037DCF1 /* NoticeCreationViewController.swift in Sources */,
 				D9D3CDED1B3F20EF00C8E195 /* AppDelegate.swift in Sources */,
 				D9FF31EB1C66A4120037DCF1 /* LongApplyWidgetView.swift in Sources */,
 				D99EF24F1B9F59FD00026D66 /* FacebookQuery.swift in Sources */,
