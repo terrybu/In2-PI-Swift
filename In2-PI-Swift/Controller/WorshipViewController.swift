@@ -159,7 +159,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         if (tableView == weeklyProgramsTableView) {
             if thisMonthProgramsAreEmpty {
                 cell = UITableViewCell()
-                cell.textLabel?.font = UIFont.systemFontOfSize(12.0)
+                cell.textLabel?.font = UIFont.systemFontOfSize(13.0)
                 if indexPath.row == 0 {
                     cell.textLabel!.text = "이번 달의 주보는 아직 업로드되지 않았습니다."
                 } else {
@@ -174,7 +174,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         } else {
             if praiseSongsListIsEmpty {
                 cell = UITableViewCell()
-                cell.textLabel?.font = UIFont.systemFontOfSize(12.0)
+                cell.textLabel?.font = UIFont.systemFontOfSize(13.0)
                 if indexPath.row == 0 {
                     cell.textLabel!.text = "최근에 찬양송 리스트가 업데이트되지 않았거나"
                 } else {

@@ -9,9 +9,8 @@
 import UIKit
 import EAIntroView
 
-private let sampleDescription1 = "Get latest updates on your favorite In2 PI stories and contents in MY FEED tab.";
-private let sampleDescription2 = "Stay up to date on new things happening around In2 PI in the PI FEED tab.";
-private let sampleDescription3 = "Tap the Menu icon to navigate around the app and access app settings.";
+private let sampleDescription1 = "Get latest updates on your favorite In2 PI stories and contents!";
+private let sampleDescription3 = "Tap the Hamburger Menu icon in upperleft corner to open the navigation menu";
 
 class WalkthroughManager: NSObject, EAIntroDelegate{
     
@@ -20,11 +19,10 @@ class WalkthroughManager: NSObject, EAIntroDelegate{
     func displayWalkthroughScreen(window: UIWindow?) {
         let walkthroughVC = WalkthroughViewController()
         walkthroughVC.view.frame = window!.frame
-        let page1 = setUpPageForEAIntroPage(walkthroughVC, title: "Welcome", description: sampleDescription1, imageName: "walkthroughImage1")
-        let page2 = setUpPageForEAIntroPage(walkthroughVC, title: "PI Feed", description: sampleDescription2, imageName: "walkthroughImage2") ;
-        let page3 = setUpPageForEAIntroPage(walkthroughVC, title: "Navigation Drawer", description: sampleDescription3, imageName: "walkthroughImage3") ;
+        let page1 = setUpPageForEAIntroPage(walkthroughVC, title: "Welcome", description: sampleDescription1, imageName: "walkthru01_phone")
+        let page3 = setUpPageForEAIntroPage(walkthroughVC, title: "Navigation Drawer", description: sampleDescription3, imageName: "walkthru03_phone") ;
         
-        let introView = EAIntroView(frame: walkthroughVC.view.frame, andPages: [page1,page2,page3])
+        let introView = EAIntroView(frame: walkthroughVC.view.frame, andPages: [page1, page3])
         //if you want to the navigation bar way
         //let introView = EAIntroView(frame: walkthroughVC.view.frame, andPages: [page1,page2,page3,page4])
         introView.delegate = self
