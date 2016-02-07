@@ -20,6 +20,8 @@ class SocialServicesEventAdminTableViewController: UITableViewController {
     
     func addSocialServiceEvent() {
         print("new vc to add social service")
+        let socialServiceEventCreationVC = SocialServicesEventCreationViewController()
+        self.navigationController?.pushViewController(socialServiceEventCreationVC, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

@@ -28,6 +28,9 @@
 		D91FCAB81C679287008C7D1C /* NoticeWidget.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91FCAB71C679287008C7D1C /* NoticeWidget.xib */; };
 		D91FCABB1C679E50008C7D1C /* SocialServicesEventAdminTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91FCAB91C679E50008C7D1C /* SocialServicesEventAdminTableViewController.swift */; };
 		D91FCABC1C679E50008C7D1C /* SocialServicesEventAdminTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91FCABA1C679E50008C7D1C /* SocialServicesEventAdminTableViewController.xib */; };
+		D91FCABF1C679F1C008C7D1C /* SocialServicesEventCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91FCABD1C679F1C008C7D1C /* SocialServicesEventCreationViewController.swift */; };
+		D91FCAC01C679F1C008C7D1C /* SocialServicesEventCreationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91FCABE1C679F1C008C7D1C /* SocialServicesEventCreationViewController.xib */; };
+		D91FCAC21C67A1FD008C7D1C /* SocialServiceEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91FCAC11C67A1FD008C7D1C /* SocialServiceEvent.swift */; };
 		D92295951B9BF87000C34A66 /* WorshipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92295941B9BF87000C34A66 /* WorshipViewController.swift */; };
 		D92938021C07F2820040BD6D /* PurpleSegmentedControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92938011C07F2820040BD6D /* PurpleSegmentedControlView.xib */; };
 		D92938041C07F3C10040BD6D /* PurpleSegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92938031C07F3C10040BD6D /* PurpleSegmentedControlView.swift */; };
@@ -139,6 +142,9 @@
 		D91FCAB71C679287008C7D1C /* NoticeWidget.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NoticeWidget.xib; path = "../Terry References/NoticeWidget.xib"; sourceTree = "<group>"; };
 		D91FCAB91C679E50008C7D1C /* SocialServicesEventAdminTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialServicesEventAdminTableViewController.swift; sourceTree = "<group>"; };
 		D91FCABA1C679E50008C7D1C /* SocialServicesEventAdminTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SocialServicesEventAdminTableViewController.xib; sourceTree = "<group>"; };
+		D91FCABD1C679F1C008C7D1C /* SocialServicesEventCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialServicesEventCreationViewController.swift; sourceTree = "<group>"; };
+		D91FCABE1C679F1C008C7D1C /* SocialServicesEventCreationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SocialServicesEventCreationViewController.xib; sourceTree = "<group>"; };
+		D91FCAC11C67A1FD008C7D1C /* SocialServiceEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialServiceEvent.swift; sourceTree = "<group>"; };
 		D92295941B9BF87000C34A66 /* WorshipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorshipViewController.swift; sourceTree = "<group>"; };
 		D92938011C07F2820040BD6D /* PurpleSegmentedControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurpleSegmentedControlView.xib; sourceTree = "<group>"; };
 		D92938031C07F3C10040BD6D /* PurpleSegmentedControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurpleSegmentedControlView.swift; sourceTree = "<group>"; };
@@ -620,6 +626,8 @@
 				D9FF32081C67715A0037DCF1 /* NoticeCreationViewController.xib */,
 				D91FCAB91C679E50008C7D1C /* SocialServicesEventAdminTableViewController.swift */,
 				D91FCABA1C679E50008C7D1C /* SocialServicesEventAdminTableViewController.xib */,
+				D91FCABD1C679F1C008C7D1C /* SocialServicesEventCreationViewController.swift */,
+				D91FCABE1C679F1C008C7D1C /* SocialServicesEventCreationViewController.xib */,
 			);
 			name = Admin;
 			sourceTree = "<group>";
@@ -630,6 +638,7 @@
 				D9FF31F71C67098A0037DCF1 /* WeeklyProgram */,
 				D985E04C1C0924E60057C51E /* PraiseSong.swift */,
 				D9FF320C1C6776040037DCF1 /* Notice.swift */,
+				D91FCAC11C67A1FD008C7D1C /* SocialServiceEvent.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -740,6 +749,7 @@
 				D98FEFB41B9C0C8E003614A7 /* ApplyWidgetView.xib in Resources */,
 				D901C0D61C39E2CA00B350B1 /* LoginViewController.xib in Resources */,
 				D9B9B5791B4B1B0000DA476E /* splashScreen.mp4 in Resources */,
+				D91FCAC01C679F1C008C7D1C /* SocialServicesEventCreationViewController.xib in Resources */,
 				D9FF31ED1C66A41F0037DCF1 /* LongApplyWidgetView.xib in Resources */,
 				D9F8C4761BA4C33200881B94 /* TodaysQTWidget.xib in Resources */,
 				D989C5281C2700500051ACFE /* HolyStarIntroViewController.xib in Resources */,
@@ -840,6 +850,7 @@
 				D910DD881BADFF2500E8A99F /* WeeklyProgram.swift in Sources */,
 				D985E04D1C0924E60057C51E /* PraiseSong.swift in Sources */,
 				D92938041C07F3C10040BD6D /* PurpleSegmentedControlView.swift in Sources */,
+				D91FCAC21C67A1FD008C7D1C /* SocialServiceEvent.swift in Sources */,
 				D986F4D91C1E4E9A00C00F7B /* WalkthroughManager.swift in Sources */,
 				D9583F4B1C388C4D00A95D54 /* URLEndpoints.swift in Sources */,
 				D90A7AFE1B92406F003EA693 /* HomeScreenViewController.swift in Sources */,
@@ -868,6 +879,7 @@
 				D99991A91BB1BEF90022EF10 /* HttpFileDownloader.swift in Sources */,
 				D9F7F4861B93687700D86FF7 /* FBPhoto.swift in Sources */,
 				D97C16991BAA3E990095CB0A /* CommunicationsTableViewCell.swift in Sources */,
+				D91FCABF1C679F1C008C7D1C /* SocialServicesEventCreationViewController.swift in Sources */,
 				D9F7F4831B935DFA00D86FF7 /* GalleryCell.swift in Sources */,
 				D9F7F4811B93547600D86FF7 /* FacebookPhotoQuery.swift in Sources */,
 				D989C5271C2700500051ACFE /* HolyStarIntroViewController.swift in Sources */,
