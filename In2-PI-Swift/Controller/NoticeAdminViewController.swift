@@ -35,7 +35,6 @@ class NoticeAdminViewController: UIViewController, UITableViewDataSource, UITabl
             }
             activityIndicator.stopAnimating()
         })
-        
     }
     
     func addNotice() {

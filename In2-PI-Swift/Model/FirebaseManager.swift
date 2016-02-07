@@ -15,6 +15,8 @@ class FirebaseManager {
     var rootRef = Firebase(url:"https://in2-pi.firebaseio.com")
     var noticesArray: [Notice]?
     var activeNotice: Notice?
+    var eventsArray: [SocialServiceEvent]?
+
 
     func loginUser(email: String, password: String, completion: ((success: Bool) -> Void)) {
         rootRef.authUser(email, password: password,
@@ -91,7 +93,7 @@ class FirebaseManager {
         }
     }
     func createNewSocialServiceEventOnFirebase(serviceEvent: SocialServiceEvent, completion: (success: Bool)->Void) {
-        let eventsRef = rootRef.childByAppendingPath("SocialServiceEvent")
+        let eventsRef = rootRef.childByAppendingPath("SocialServiceEvents")
         let eventDict = [
             "title": serviceEvent.title,
             "teamName": serviceEvent.teamName,
@@ -111,7 +113,7 @@ class FirebaseManager {
     }
     
     
-    
+    //MARK: Getting data from Firebase
     func getNoticeObjectsFromFirebase(completion: (success: Bool)->Void) {
         // Get a reference to our posts
         let ref = rootRef.childByAppendingPath("Notices")
@@ -148,6 +150,36 @@ class FirebaseManager {
                 completion(success: false)
         })
     }
+    
+    func getServiceEventObjectsFromFirebase(completion: (success: Bool)->Void) {
+        // Get a reference to our posts
+        let ref = rootRef.childByAppendingPath("SocialServiceEvents")
+        // Attach a closure to read the data at our posts reference
+        ref.observeEventType(.Value, withBlock: { snapshot in
+            print(snapshot.value)
+            if let snapshotDict = snapshot.value as? NSDictionary {
+                self.eventsArray = []
+                for eventObjectKey in snapshotDict.allKeys {
+                    //looping through all hashes
+                    if let eventDict = snapshotDict.objectForKey(eventObjectKey) as? NSDictionary {
+                        // get dictionary for individual record for specific hash
+                        let title = eventDict.objectForKey("title") as! String
+                        let team = eventDict.objectForKey("teamName") as! String
+                        let descr = eventDict.objectForKey("description") as! String
+                        let date = eventDict.objectForKey("date") as! String
+                        let event = SocialServiceEvent(title: title, teamName: team, description: descr, date: date)
+                        self.eventsArray?.append(event)
+                    }
+                }
+                completion(success: true)
+            }
+            }, withCancelBlock: { error in
+                print(error.description)
+                completion(success: false)
+        })
+    }
+
+    
     
     func updateNoticeObjectActiveFlag(notice: Notice, completion: (success: Bool) -> Void) {
         let noticeRef = rootRef.childByAppendingPath("Notices").childByAppendingPath(notice.firebaseID!)

@@ -9,13 +9,31 @@
 import UIKit
 
 class SocialServicesEventAdminTableViewController: UITableViewController {
-        
+    
+    var eventsArray: [SocialServiceEvent]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "긍휼부 스케줄"
         let addButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addSocialServiceEvent")
         self.navigationItem.rightBarButtonItem = addButton
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(false)
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        activityIndicator.center = CGPointMake(view.center.x, 100)
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        FirebaseManager.sharedManager.getServiceEventObjectsFromFirebase({
+            (success) -> Void in
+            if (success) {
+                self.eventsArray = FirebaseManager.sharedManager.eventsArray
+                self.tableView.reloadData()
+            }
+            activityIndicator.stopAnimating()
+        })
     }
     
     func addSocialServiceEvent() {
@@ -32,24 +50,28 @@ class SocialServicesEventAdminTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        if let eventsArray = eventsArray {
+            return eventsArray.count
+        }
         return 0
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "reuse")
 
+        let event = eventsArray![indexPath.row]
         // Configure the cell...
+        cell.textLabel!.text = event.title
+        cell.detailTextLabel!.text = event.date
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
