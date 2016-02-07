@@ -38,8 +38,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
         usernameTextField.attributedPlaceholder = usernamePlaceHolderStr
         let passwordPlaceHolderStr = NSAttributedString(string: "Password", attributes: [NSForegroundColorAttributeName:UIColor(white: 1, alpha: 0.5)])
         passwordTextField.attributedPlaceholder = passwordPlaceHolderStr
-        
-        let rectangle = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+    }
+    
+    private func devBypassLogin() {
+        let rectangle = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         rectangle.backgroundColor = UIColor.clearColor()
         rectangle.userInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: "devGoThrough")
@@ -89,7 +91,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
                     }
                 } else {
                     print(error)
-                    let alertController = UIAlertController(title: "\(error!.localizedDescription)", message: "로그인이 실패하였습니다. Username, Password 의 입력을 다시 확인해 주세요.", preferredStyle: UIAlertControllerStyle.Alert)
+                    let alertController = UIAlertController(title: "로그인 실패", message: "로그인이 실패하였습니다. Username, Password 의 입력을 다시 확인해 주세요.", preferredStyle: UIAlertControllerStyle.Alert)
                     let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
                     alertController.addAction(ok)
                     alertController.view.tintColor = UIColor.In2DeepPurple()

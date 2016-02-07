@@ -254,15 +254,6 @@
 			name = "Facebook Objects";
 			sourceTree = "<group>";
 		};
-		D9583F4C1C388CDD00A95D54 /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-				D952B17A1B5EF5330089116C /* Constants.swift */,
-				D9583F4A1C388C4D00A95D54 /* URLEndpoints.swift */,
-			);
-			name = Constants;
-			sourceTree = "<group>";
-		};
 		D95EC5221B978C0A00782925 /* Facebook Query */ = {
 			isa = PBXGroup;
 			children = (
@@ -501,15 +492,13 @@
 		D9F7F4841B93684F00D86FF7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D98D55CE1C4B02A0003A40B1 /* DateManager.swift */,
-				D9583F4C1C388CDD00A95D54 /* Constants */,
-				D910DD861BADFE2800E8A99F /* Facebook Objects */,
-				D910DD871BADFF2500E8A99F /* WeeklyProgram.swift */,
-				D99991A61BB1AF0E0022EF10 /* WeeklyProgramDownloader.swift */,
-				D9EF135E1BAA44B4006D7F78 /* CustomDateFormatter.swift */,
-				D99991A81BB1BEF90022EF10 /* HttpFileDownloader.swift */,
+				D952B17A1B5EF5330089116C /* Constants.swift */,
+				D9583F4A1C388C4D00A95D54 /* URLEndpoints.swift */,
 				D985E04C1C0924E60057C51E /* PraiseSong.swift */,
-				D986F4D81C1E4E9A00C00F7B /* WalkthroughManager.swift */,
+				D910DD861BADFE2800E8A99F /* Facebook Objects */,
+				D9FF31F71C67098A0037DCF1 /* WeeklyProgram */,
+				D9FF31F81C6709AD0037DCF1 /* Managers */,
+				D9FF31F91C6709C50037DCF1 /* Date Related Managers */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -563,6 +552,33 @@
 				D9FF31F51C66C1E60037DCF1 /* SocialServicesViewController.xib */,
 			);
 			name = "Social Services";
+			sourceTree = "<group>";
+		};
+		D9FF31F71C67098A0037DCF1 /* WeeklyProgram */ = {
+			isa = PBXGroup;
+			children = (
+				D910DD871BADFF2500E8A99F /* WeeklyProgram.swift */,
+				D99991A61BB1AF0E0022EF10 /* WeeklyProgramDownloader.swift */,
+			);
+			name = WeeklyProgram;
+			sourceTree = "<group>";
+		};
+		D9FF31F81C6709AD0037DCF1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D99991A81BB1BEF90022EF10 /* HttpFileDownloader.swift */,
+				D986F4D81C1E4E9A00C00F7B /* WalkthroughManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		D9FF31F91C6709C50037DCF1 /* Date Related Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D9EF135E1BAA44B4006D7F78 /* CustomDateFormatter.swift */,
+				D98D55CE1C4B02A0003A40B1 /* DateManager.swift */,
+			);
+			name = "Date Related Managers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

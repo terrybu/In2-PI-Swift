@@ -1,11 +1,5 @@
-To-Do List as of 1/11/2016
-
-1)
-- Social Services: https://docs.google.com/forms/d/1iVa3r1dZ4GTe4FzSBTHFUV4dfY4MyVIYGEN-MkXOF_g/viewform?ts=5614a6c8&edit_requested=true
-
 - Communications:
 2.6.2016
-= Massive problems trying to insert a UI into interface builder for Communications view controller screen
 = the "Long apply widget view" would spill out its contents over the about bar for some crazy reason
     - Gonna remove it for now. If it ever becomes a problem, need some surgery in there. Might take some time figuring out exactly what was going wrong with Auto layout between About Expanding View and the Long Apply Widget View
 
