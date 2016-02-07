@@ -90,13 +90,13 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="mVj-OH-f0H"/>
                                             <exclude reference="74y-Et-dd8"/>
+                                            <exclude reference="mVj-OH-f0H"/>
                                             <exclude reference="GGj-dT-bk0"/>
                                         </mask>
                                     </variation>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ib-KH-Rwx" userLabel="CustomApplyView">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ib-KH-Rwx" userLabel="CustomView">
                                     <rect key="frame" x="0.0" y="600" width="600" height="100"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="긍휼부 사역 신청서" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccF-d0-eCf" userLabel="titleLabel">
@@ -126,6 +126,9 @@
                                             <state key="highlighted" backgroundImage="btn_Apply_white_pressed">
                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="applyButtonPressed" destination="-1" eventType="touchUpInside" id="i4u-gM-TOe"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" red="0.62352941179999999" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>

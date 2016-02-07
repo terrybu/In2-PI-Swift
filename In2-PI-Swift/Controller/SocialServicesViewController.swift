@@ -16,15 +16,15 @@ class SocialServicesViewController: ParentViewController, UITableViewDelegate, U
     @IBOutlet var expandableAboutView: ExpandableAboutView!
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
     @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
-    @IBOutlet var tableView: UITableView! 
-    @IBOutlet var applyWidgetView: ApplyWidgetView! 
+    @IBOutlet var tableView: UITableView!
+    @IBAction func applyButtonPressed() {
+        self.presentSFSafariVCIfAvailable(NSURL(string: kApplySocialServicesTeamGoogleDocURL)!)
+        
+    }
     
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
         setUpExpandableAboutView(kOriginalAboutViewHeight, expandableAboutView: expandableAboutView, heightBuffer: 30, view: view, constraintHeightExpandableView: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalContentviewHeight: kOriginalContentViewHeight)
-//        applyWidgetView.applyButtonPressedHandler = { (sender) -> Void in
-//            self.presentSFSafariVCIfAvailable(NSURL(string: kApplySocialServicesTeamGoogleDocURL)!)
-//        }
     }
     
     
