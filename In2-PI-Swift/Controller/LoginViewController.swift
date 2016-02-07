@@ -53,8 +53,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
     }
     
     func devGoThrough() {
-        if let dismissBlock = self.dismissBlock {
-            dismissBlock()
+        FirebaseManager.sharedManager.loginUser("test@gmail.com", password: "test") { (success) -> Void in
+            if success {
+                if let dismissBlock = self.dismissBlock {	
+                    dismissBlock()
+                }
+            }
         }
     }
     

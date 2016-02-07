@@ -40,6 +40,7 @@ PODS:
     - FBSDKCoreKit/arc
   - FBSDKLoginKit (4.4.0):
     - FBSDKCoreKit
+  - Firebase (2.5.0)
   - HMSegmentedControl (1.5.2)
   - HockeySDK (3.8.2):
     - HockeySDK/AllFeaturesLib (= 3.8.2)
@@ -55,6 +56,7 @@ DEPENDENCIES:
   - EAIntroView (~> 2.7.0)
   - FBSDKCoreKit
   - FBSDKLoginKit
+  - Firebase
   - HMSegmentedControl
   - HockeySDK
   - JTSImageViewController
@@ -69,6 +71,7 @@ SPEC CHECKSUMS:
   EARestrictedScrollView: f86d61e16c61d3e93c84f8e96e83122a2a3b7631
   FBSDKCoreKit: 75bdd75c980e811db218488d99dd93b7740f4474
   FBSDKLoginKit: 02a9254a4c132412fa03577b0d53e936d068a7fb
+  Firebase: 744617c0733b45198f9486ebd5cac64ec2d10d79
   HMSegmentedControl: 83b9686022d2176fb6457d2bdb61e5d6393fed7d
   HockeySDK: 9f4ac41263acf9d8a4d59491a7f17af16529b935
   JTSImageViewController: 6a367b144e257db02cdfacdba78d684377d3777b

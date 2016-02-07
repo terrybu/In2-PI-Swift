@@ -1,6 +1,3 @@
-
-worship vc is not working again downloading joobo off server.
-
 last big piece is 긍휼부 칼렌더 and Admin post mode. Firebase may be used to post "strings" up there for"
     3-4 hours
 

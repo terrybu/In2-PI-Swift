@@ -15,5 +15,6 @@ target 'In2-PI-Swift' do
    	pod 'HMSegmentedControl'
    	pod 'Parse'
     pod 'EAIntroView', '~> 2.7.0'
+    pod 'Firebase'
 end
 
