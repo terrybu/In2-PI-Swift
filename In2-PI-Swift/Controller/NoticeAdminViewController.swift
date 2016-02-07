@@ -51,14 +51,31 @@ class NoticeAdminViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell = UITableViewCell()
+        let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: nil)
         let notice = savedNoticesArray![indexPath.row]
         cell.textLabel!.text = notice.title
+        cell.detailTextLabel!.text = notice.date
         return cell
     }
     
     //MARK: TableViewDelegate Protocol Methods
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+            cell.accessoryType = .Checkmark
+            let notice = savedNoticesArray![indexPath.row]
+            notice.active = true
+        }
+    }
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+            cell.accessoryType = .None
+            let notice = savedNoticesArray![indexPath.row]
+            notice.active = false
+        }
+    }
+    
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 40
     }

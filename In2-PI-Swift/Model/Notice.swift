@@ -14,6 +14,8 @@ class Notice {
     var body: String
     var link: String
     var date: String
+    var active = false
+    var firebaseID: String?
     
     init(title: String, body: String, link: String, date: String) {
         self.title = title

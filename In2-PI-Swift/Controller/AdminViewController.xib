@@ -31,13 +31,22 @@
                         <action selector="socialServicesSchedulePressed:" destination="-1" eventType="touchUpInside" id="M7X-Tl-Io3"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abc-9q-pfT" userLabel="xButton">
+                    <rect key="frame" x="12" y="12" width="18" height="18"/>
+                    <state key="normal" backgroundImage="btn_X"/>
+                    <connections>
+                        <action selector="xButtonPressed" destination="-1" eventType="touchUpInside" id="P56-4z-9gJ"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Hz8-c1-PR6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7Tu-Ey-6aa"/>
                 <constraint firstAttribute="bottom" secondItem="U7K-hp-MDN" secondAttribute="bottom" id="D6j-CZ-Nio"/>
+                <constraint firstItem="abc-9q-pfT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="GUN-R3-FDt"/>
                 <constraint firstAttribute="trailing" secondItem="U7K-hp-MDN" secondAttribute="trailing" id="LQO-ju-Kqs"/>
                 <constraint firstItem="U7K-hp-MDN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Y2h-Lx-uKD"/>
+                <constraint firstItem="abc-9q-pfT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="cAp-el-4AV"/>
                 <constraint firstItem="4In-zA-Q13" firstAttribute="centerX" secondItem="Hz8-c1-PR6" secondAttribute="centerX" id="cmG-7a-YuF"/>
                 <constraint firstItem="4In-zA-Q13" firstAttribute="top" secondItem="Hz8-c1-PR6" secondAttribute="bottom" constant="24" id="mEj-ms-GYv"/>
                 <constraint firstItem="U7K-hp-MDN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pWa-g1-KgS"/>
@@ -49,6 +58,7 @@
     </objects>
     <resources>
         <image name="bg_gradient" width="378" height="668"/>
+        <image name="btn_X" width="18" height="18"/>
         <image name="btn_large_Announce" width="264" height="42"/>
         <image name="btn_large_Schedule" width="264" height="42"/>
     </resources>

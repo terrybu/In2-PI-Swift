@@ -10,6 +10,9 @@ import UIKit
 
 class AdminViewController: UIViewController {
     
+    @IBAction func xButtonPressed() {
+        self.navigationController?.dismissViewControllerAnimated(false, completion: nil)
+    }
     
     @IBAction func noticeButtonPressed(sender: AnyObject) {
         let noticeVC = NoticeAdminViewController()
