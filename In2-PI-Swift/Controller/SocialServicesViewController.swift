@@ -15,11 +15,12 @@ class SocialServicesViewController: ParentViewController, UITableViewDelegate, U
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
     @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
     private var expandedAboutViewHeight: CGFloat = 0
-    private let kOriginalContentViewHeight: CGFloat = 605
+    private let kOriginalContentViewHeight: CGFloat = 700
+    @IBOutlet var tableView: UITableView! 
 
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
-        setUpExpandableAboutView(kOriginalAboutViewHeight, expandableAboutView: expandableAboutView, heightBuffer: 50, view: view, constraintHeightExpandableView: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalContentviewHeight: kOriginalContentViewHeight)
+        setUpExpandableAboutView(kOriginalAboutViewHeight, expandableAboutView: expandableAboutView, heightBuffer: 30, view: view, constraintHeightExpandableView: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalContentviewHeight: kOriginalContentViewHeight)
     }
     
     
@@ -33,7 +34,7 @@ class SocialServicesViewController: ParentViewController, UITableViewDelegate, U
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("SocialServicesCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "SocialServicesCell")
         configureCell(cell, forRowAtIndexPath: indexPath)
         return cell
     }
@@ -42,6 +43,13 @@ class SocialServicesViewController: ParentViewController, UITableViewDelegate, U
         cell.textLabel!.text = "긍휼부 이벤트 0\(forRowAtIndexPath.row)"
     }
     
+    //Allowing storyboard to load this VC from XIB
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+    }
     
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
     
 }

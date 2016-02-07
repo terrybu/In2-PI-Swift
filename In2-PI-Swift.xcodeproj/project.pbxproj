@@ -84,6 +84,7 @@
 		D9FF31EB1C66A4120037DCF1 /* LongApplyWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF31EA1C66A4120037DCF1 /* LongApplyWidgetView.swift */; };
 		D9FF31ED1C66A41F0037DCF1 /* LongApplyWidgetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FF31EC1C66A41F0037DCF1 /* LongApplyWidgetView.xib */; };
 		D9FF31F01C66A68A0037DCF1 /* CommunicationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FF31EF1C66A68A0037DCF1 /* CommunicationsViewController.xib */; };
+		D9FF31F61C66C1E60037DCF1 /* SocialServicesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FF31F51C66C1E60037DCF1 /* SocialServicesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -188,6 +189,7 @@
 		D9FF31EA1C66A4120037DCF1 /* LongApplyWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongApplyWidgetView.swift; sourceTree = "<group>"; };
 		D9FF31EC1C66A41F0037DCF1 /* LongApplyWidgetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LongApplyWidgetView.xib; sourceTree = "<group>"; };
 		D9FF31EF1C66A68A0037DCF1 /* CommunicationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunicationsViewController.xib; sourceTree = "<group>"; };
+		D9FF31F51C66C1E60037DCF1 /* SocialServicesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SocialServicesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,7 +311,7 @@
 				D992746E1C2F57AF0055810F /* Nurture */,
 				D9FF31EE1C66A67A0037DCF1 /* Communications */,
 				D90A7B031B92413F003EA693 /* EvangelismViewController.swift */,
-				D90A7B011B924135003EA693 /* SocialServicesViewController.swift */,
+				D9FF31F41C66C1CB0037DCF1 /* Social Services */,
 			);
 			name = "Five Boros Controllers";
 			sourceTree = "<group>";
@@ -554,6 +556,15 @@
 			name = "Gallery View Controller";
 			sourceTree = "<group>";
 		};
+		D9FF31F41C66C1CB0037DCF1 /* Social Services */ = {
+			isa = PBXGroup;
+			children = (
+				D90A7B011B924135003EA693 /* SocialServicesViewController.swift */,
+				D9FF31F51C66C1E60037DCF1 /* SocialServicesViewController.xib */,
+			);
+			name = "Social Services";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -650,6 +661,7 @@
 				D991C4FE1C6265BB0081A6E5 /* Launch Screen.storyboard in Resources */,
 				D9A79E151C2C2EEA003D9981 /* NanumBarunGothic.ttf in Resources */,
 				D9D3CE191B3F338D00C8E195 /* Localizable.strings in Resources */,
+				D9FF31F61C66C1E60037DCF1 /* SocialServicesViewController.xib in Resources */,
 				D901C0D81C39EFC700B350B1 /* fonts available console output in Resources */,
 				D9FF31F01C66A68A0037DCF1 /* CommunicationsViewController.xib in Resources */,
 				D9583F4E1C38AE8500A95D54 /* SignUpViewController.xib in Resources */,

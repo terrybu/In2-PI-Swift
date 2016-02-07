@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SocialServicesViewController" customModule="In2_PI_Swift" customModuleProvider="target">
+            <connections>
+                <outlet property="constraintContentViewHeight" destination="YgT-yA-jdo" id="YaY-AJ-xoE"/>
+                <outlet property="constraintHeightExpandableView" destination="6AL-TG-u7u" id="tBg-OZ-f8s"/>
+                <outlet property="contentView" destination="ORS-3t-r0f" id="ujv-3C-kSf"/>
+                <outlet property="expandableAboutView" destination="3nn-3j-jMR" id="tfm-m6-oMV"/>
+                <outlet property="tableView" destination="hpe-Ey-gxm" id="gBF-Bf-bsa"/>
+                <outlet property="view" destination="NWf-DX-3BX" id="aHr-Uj-FeR"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="NWf-DX-3BX">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jH9-Lk-7NC">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORS-3t-r0f" userLabel="Content View">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="700"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3nn-3j-jMR" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="74"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="54" id="6AL-TG-u7u"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="aboutLabelTitle" value="ABOUT"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="titleLabeltitle" value="긍휼보로, &quot;Compassion to Passion!&quot;"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="textViewContentText">
+                                            <string key="value">“마음을 다하고 지혜를 다하고 힘을 다하여 하나님을 사랑하는 것과 또 이웃을 제 몸과 같이 사랑하는 것이 전체로 드리는 모든 번제물과 기타 제물보다 나으니이다.” -마가복음 12:33
+ 
+밀알 선교팀, Better Future, Better Day, Better K-Town, 밥팀, 꽃팀, 워십댄스팀을 통해 긍휼보로는 하나님께서 주신 마음으로 이웃을 섬기는 보로입니다.</string>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hpe-Ey-gxm">
+                                    <rect key="frame" x="0.0" y="300" width="600" height="200"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="208" id="M0N-3S-cRJ"/>
+                                        <constraint firstAttribute="height" constant="208" id="WLG-qI-Wk4"/>
+                                        <constraint firstAttribute="height" constant="100" id="hSM-3k-mUg"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="208" id="jwx-J4-qt2"/>
+                                        <constraint firstAttribute="height" constant="200" id="rgJ-69-8zw"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="M0N-3S-cRJ"/>
+                                            <exclude reference="WLG-qI-Wk4"/>
+                                            <exclude reference="hSM-3k-mUg"/>
+                                            <exclude reference="jwx-J4-qt2"/>
+                                        </mask>
+                                    </variation>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="Ltg-gJ-HUS"/>
+                                        <outlet property="delegate" destination="-1" id="Mpc-ZZ-dhI"/>
+                                    </connections>
+                                </tableView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94G-hO-ntE" userLabel="BetterFutureApply" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="500" width="600" height="200"/>
+                                    <color key="backgroundColor" red="0.62352941179999999" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="300" id="7eQ-Kt-eQc"/>
+                                        <constraint firstAttribute="height" constant="200" id="GOi-wT-VtX"/>
+                                        <constraint firstAttribute="height" constant="187" id="yEZ-ox-smZ"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="긍휼부 사역 신청"/>
+                                        <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="rectangle_BetterFuture"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="7eQ-Kt-eQc"/>
+                                            <exclude reference="yEZ-ox-smZ"/>
+                                        </mask>
+                                    </variation>
+                                </view>
+                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6fn-wB-DJG" userLabel="PlaceholderForCalendar">
+                                    <rect key="frame" x="0.0" y="74" width="600" height="226"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="CALENDAR???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLP-yB-ydg">
+                                            <rect key="frame" x="217" y="98" width="166" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.62352941179999999" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="200" id="74y-Et-dd8"/>
+                                        <constraint firstItem="tLP-yB-ydg" firstAttribute="centerY" secondItem="6fn-wB-DJG" secondAttribute="centerY" id="8Ed-9a-3lG"/>
+                                        <constraint firstItem="tLP-yB-ydg" firstAttribute="top" secondItem="6fn-wB-DJG" secondAttribute="top" constant="98" id="GGj-dT-bk0"/>
+                                        <constraint firstAttribute="height" constant="200" id="mVj-OH-f0H"/>
+                                        <constraint firstItem="tLP-yB-ydg" firstAttribute="centerX" secondItem="6fn-wB-DJG" secondAttribute="centerX" id="xHZ-sW-JVT"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="mVj-OH-f0H"/>
+                                            <exclude reference="74y-Et-dd8"/>
+                                            <exclude reference="GGj-dT-bk0"/>
+                                        </mask>
+                                    </variation>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="6fn-wB-DJG" firstAttribute="top" secondItem="3nn-3j-jMR" secondAttribute="bottom" id="0Ei-oB-reL"/>
+                                <constraint firstItem="3nn-3j-jMR" firstAttribute="leading" secondItem="ORS-3t-r0f" secondAttribute="leading" id="1cm-Zu-je3"/>
+                                <constraint firstItem="94G-hO-ntE" firstAttribute="top" secondItem="hpe-Ey-gxm" secondAttribute="bottom" id="1sa-5X-pee"/>
+                                <constraint firstItem="3nn-3j-jMR" firstAttribute="top" secondItem="ORS-3t-r0f" secondAttribute="top" id="4Y5-cF-zch"/>
+                                <constraint firstItem="6fn-wB-DJG" firstAttribute="leading" secondItem="ORS-3t-r0f" secondAttribute="leading" id="5Ok-Wg-6Mc"/>
+                                <constraint firstAttribute="bottom" secondItem="94G-hO-ntE" secondAttribute="bottom" id="9Mz-al-b0l"/>
+                                <constraint firstAttribute="trailing" secondItem="3nn-3j-jMR" secondAttribute="trailing" id="A5J-HK-mYn"/>
+                                <constraint firstItem="94G-hO-ntE" firstAttribute="leading" secondItem="ORS-3t-r0f" secondAttribute="leading" id="KiS-nF-AIz"/>
+                                <constraint firstItem="hpe-Ey-gxm" firstAttribute="top" secondItem="6fn-wB-DJG" secondAttribute="bottom" id="Qky-Pa-vXw"/>
+                                <constraint firstAttribute="trailing" secondItem="6fn-wB-DJG" secondAttribute="trailing" id="QvU-e4-Llh"/>
+                                <constraint firstItem="94G-hO-ntE" firstAttribute="centerX" secondItem="6fn-wB-DJG" secondAttribute="centerX" id="Vwb-RI-xcS"/>
+                                <constraint firstAttribute="height" constant="700" id="YgT-yA-jdo"/>
+                                <constraint firstAttribute="trailing" secondItem="94G-hO-ntE" secondAttribute="trailing" id="eD6-Ur-Lyp"/>
+                                <constraint firstAttribute="trailing" secondItem="94G-hO-ntE" secondAttribute="trailing" id="gf2-Xj-oNZ"/>
+                                <constraint firstItem="hpe-Ey-gxm" firstAttribute="leading" secondItem="ORS-3t-r0f" secondAttribute="leading" id="lYN-7J-arC"/>
+                                <constraint firstAttribute="trailing" secondItem="hpe-Ey-gxm" secondAttribute="trailing" id="p6N-dv-d0a"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Vwb-RI-xcS"/>
+                                    <exclude reference="eD6-Ur-Lyp"/>
+                                </mask>
+                            </variation>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="ORS-3t-r0f" firstAttribute="top" secondItem="jH9-Lk-7NC" secondAttribute="top" id="8TF-3B-Qv9"/>
+                        <constraint firstAttribute="trailing" secondItem="ORS-3t-r0f" secondAttribute="trailing" id="FRh-NM-kPv"/>
+                        <constraint firstItem="ORS-3t-r0f" firstAttribute="centerX" secondItem="jH9-Lk-7NC" secondAttribute="centerX" id="aTV-AR-Acs"/>
+                        <constraint firstItem="ORS-3t-r0f" firstAttribute="leading" secondItem="jH9-Lk-7NC" secondAttribute="leading" id="cQe-dL-IoE"/>
+                        <constraint firstAttribute="bottom" secondItem="ORS-3t-r0f" secondAttribute="bottom" id="kmL-Wq-GZc"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="jH9-Lk-7NC" secondAttribute="trailing" id="6S8-dC-S1d"/>
+                <constraint firstAttribute="bottom" secondItem="jH9-Lk-7NC" secondAttribute="bottom" id="Jq2-6q-h2G"/>
+                <constraint firstItem="jH9-Lk-7NC" firstAttribute="leading" secondItem="NWf-DX-3BX" secondAttribute="leading" id="ZkK-iU-x4a"/>
+                <constraint firstAttribute="trailingMargin" secondItem="ORS-3t-r0f" secondAttribute="trailing" id="kKd-iU-mcV"/>
+                <constraint firstItem="jH9-Lk-7NC" firstAttribute="top" secondItem="NWf-DX-3BX" secondAttribute="top" id="lIo-KA-9YL"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="kKd-iU-mcV"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="488" y="-474"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="rectangle_BetterFuture" width="187" height="187"/>
+    </resources>
+</document>
