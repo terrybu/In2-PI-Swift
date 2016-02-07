@@ -15,8 +15,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="In2_PI_Swift" customModuleProvider="target">
             <connections>
+                <outlet property="emailTextField" destination="Q2O-WW-VpI" id="P3N-jj-aRa"/>
                 <outlet property="passwordTextField" destination="72p-I8-EZn" id="5Oy-zp-nt5"/>
-                <outlet property="usernameTextField" destination="Q2O-WW-VpI" id="DFb-6G-Fh9"/>
                 <outlet property="view" destination="heN-ZX-O7w" id="UFW-7K-BmC"/>
             </connections>
         </placeholder>

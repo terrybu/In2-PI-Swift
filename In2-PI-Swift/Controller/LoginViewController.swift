@@ -33,8 +33,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
-        let emailPlaceHolderStr = NSAttributedString(string: "Username", attributes: [NSForegroundColorAttributeName:UIColor(white: 1, alpha: 0.5)])
-        emailTextField.attributedPlaceholder = usernamePlaceHolderStr
+        let emailPlaceHolderStr = NSAttributedString(string: "Email", attributes: [NSForegroundColorAttributeName:UIColor(white: 1, alpha: 0.5)])
+        emailTextField.attributedPlaceholder = emailPlaceHolderStr
         let passwordPlaceHolderStr = NSAttributedString(string: "Password", attributes: [NSForegroundColorAttributeName:UIColor(white: 1, alpha: 0.5)])
         passwordTextField.attributedPlaceholder = passwordPlaceHolderStr
         
@@ -84,27 +84,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
     
     
     @IBAction func didPressLoginbutton() {
-        let username = usernameTextField.text
+        let email = emailTextField.text
         let password = passwordTextField.text
-        if username != nil && password != nil {
+        if let email = email, password = password{
             let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
-            hud.labelText = "로그인 실행중입니다."
-            PFUser.logInWithUsernameInBackground(username!, password: password!) { (user, error) -> Void in
-                if let user = user {
-                    print(user)
+            hud.labelText = "로그인 실행중입니다 ... 잠시만 기다려주세요."
+            FirebaseManager.sharedManager.loginUser(email, password: password, completion: { (success) -> Void in
+                // completion
+                if success {
                     if let dismissBlock = self.dismissBlock {
                         dismissBlock()
                     }
                 } else {
-                    print(error)
-                    let alertController = UIAlertController(title: "로그인 실패", message: "로그인이 실패하였습니다. Username, Password 의 입력을 다시 확인해 주세요.", preferredStyle: UIAlertControllerStyle.Alert)
+                    let alertController = UIAlertController(title: "로그인 실패", message: "로그인이 실패하였습니다. 이메일과 비밀번호 입력을 다시 확인해 주세요.", preferredStyle: UIAlertControllerStyle.Alert)
                     let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
                     alertController.addAction(ok)
                     alertController.view.tintColor = UIColor.In2DeepPurple()
                     self.presentViewController(alertController, animated: true, completion: nil)
                 }
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-            }
+            })
         }
     }
     
