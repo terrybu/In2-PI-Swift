@@ -6,14 +6,12 @@
 //  Copyright © 2015 Terry Bu. All rights reserved.
 //
 
-import Parse
 import UIKit
 
 class SignUpViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet var firstNameTextField:PaddedTextField!
     @IBOutlet var lastNameTextField:PaddedTextField!
-    @IBOutlet var userNameTextField:PaddedTextField!
     @IBOutlet var passwordTextField:PaddedTextField!
     @IBOutlet var confirmPasswordTextField:PaddedTextField!
     @IBOutlet var emailTextField:PaddedTextField!
@@ -30,7 +28,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         self.title = "회원가입"
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
-        userNameTextField.delegate = self
         passwordTextField.delegate = self
         confirmPasswordTextField.delegate = self
         emailTextField.delegate = self
@@ -65,66 +62,48 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     @IBAction func signUpButtonPressed(sender: AnyObject) {
         let firstName = self.firstNameTextField.text
         let lastName = self.lastNameTextField.text
-        let username = self.userNameTextField.text
         let password = self.passwordTextField.text
         let confirmationPassword = self.confirmPasswordTextField.text
         let email = self.emailTextField.text
         
-        if validatedUserInputInTextFields(firstName, lastName: lastName, username: username, password: password, confirmationPassword: confirmationPassword, email: email, viewController: self) == false {
+        if validatedUserInputInTextFields(firstName, lastName: lastName, password: password, confirmationPassword: confirmationPassword, email: email, viewController: self) == false {
             return
             //stop any New User Creation because it didn't pass validation
         }
         
-        createNewUserOnParseAndDirectToHomeScreen(firstName, lastName: lastName, username: username, password: password, email: email)
+        createNewUserOnFirebaseAndDirectToHomeScreen(email!, password: password!, firstName: firstName!, lastName: lastName!, birthday: self.birthdaySelected!)
     }
 
-    private func createNewUserOnParseAndDirectToHomeScreen(firstName: String?, lastName: String?, username: String?, password: String?, email: String?) {
+    private func createNewUserOnFirebaseAndDirectToHomeScreen(email: String, password: String, firstName: String, lastName: String, birthday: NSDate) {
         // Run a spinner to show a task in progress
         let spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0, 0, 150, 150)) as UIActivityIndicatorView
         spinner.startAnimating()
         
-        let newUser = PFUser()
-        newUser.username = username
-        newUser.password = password
-        newUser.setValue(firstName, forKey: "firstName")
-        newUser.setValue(lastName, forKey: "lastName")
-        newUser.setObject(birthdayDatePicker.date, forKey: "birthday")
-        
-        // Sign up the user asynchronously
-        newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
+        FirebaseManager.sharedManager.createUser(email, password: password, firstName: firstName, lastName: lastName, birthdayString: CustomDateFormatter.sharedInstance.convertDateToFirebaseStringFormat(birthday), completion: {
+            (success) -> Void in
             spinner.stopAnimating()
-            if ((error) != nil) {
-                //error case
-                let alertController = UIAlertController(title: "Please Try Again", message: "\(error!.localizedDescription)", preferredStyle: UIAlertControllerStyle.Alert)
+            if !success {
+                let alertController = UIAlertController(title: "Please Try Again", message: "회원가입이 실패하였습니다. 다시 시도해주세요.", preferredStyle: UIAlertControllerStyle.Alert)
                 let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
                 alertController.addAction(ok)
                 alertController.view.tintColor = UIColor.In2DeepPurple()
                 self.presentViewController(alertController, animated: true, completion: nil)
             } else {
-                //success case
-                let userName = PFUser.currentUser()!.username!
-                let alertController = UIAlertController(title: "Success", message: "\(userName)님, 가입/로그인에 성공하셨습니다", preferredStyle: UIAlertControllerStyle.Alert)
+                let alertController = UIAlertController(title: "Success", message: "가입/로그인에 성공하셨습니다.", preferredStyle: UIAlertControllerStyle.Alert)
                 let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
                 alertController.addAction(ok)
                 alertController.view.tintColor = UIColor.In2DeepPurple()
                 self.presentViewController(alertController, animated: true, completion: nil)
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    //Upon success, check if it's first time run, if it is, show walkthrough. If not, show home screen.
-                    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                    WalkthroughManager.sharedInstance.redirectToHomeScreenAfterCheckingForFirstLaunch(appDelegate.window)
-                })
+                //Upon success, check if it's first time run, if it is, show walkthrough. If not, show home screen.
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                WalkthroughManager.sharedInstance.redirectToHomeScreenAfterCheckingForFirstLaunch(appDelegate.window)
             }
         })
     }
 
-    private func validatedUserInputInTextFields(firstName: String?, lastName: String?, username: String?, password: String?, confirmationPassword: String?, email: String?, viewController: SignUpViewController) -> Bool {
+    private func validatedUserInputInTextFields(firstName: String?, lastName: String?, password: String?, confirmationPassword: String?, email: String?, viewController: SignUpViewController) -> Bool {
         // Validate the text fields
-        if let username = username, password = password, confirmPW = confirmationPassword, email = email {
-            if username.characters.count <= 3 {
-                var alert = UIAlertView(title: "Invalid Username Input", message: "Username must be greater than 3 characters", delegate: viewController, cancelButtonTitle: "OK")
-                alert.show()
-                return false
-            }
+        if let password = password, confirmPW = confirmationPassword, email = email {
             if password.characters.count <= 3 {
                 var alert = UIAlertView(title: "Invalid Password Input", message: "Password must be greater than 3 characters", delegate: viewController, cancelButtonTitle: "OK")
                 alert.show()

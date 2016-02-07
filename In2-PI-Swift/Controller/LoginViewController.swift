@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import Parse
 import MBProgressHUD
 
 class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
     
     var dismissBlock : (() -> Void)?
-    @IBOutlet var usernameTextField: UITextField!
+    @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBAction func signUpButtonWasPressed() {
         let signUpViewController = SignUpViewController()
@@ -31,11 +30,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
         backgroundGradientImageView.frame = view.frame
         view.insertSubview(backgroundGradientImageView, atIndex: 0)
         
-        usernameTextField.delegate = self
+        emailTextField.delegate = self
         passwordTextField.delegate = self
         
-        let usernamePlaceHolderStr = NSAttributedString(string: "Username", attributes: [NSForegroundColorAttributeName:UIColor(white: 1, alpha: 0.5)])
-        usernameTextField.attributedPlaceholder = usernamePlaceHolderStr
+        let emailPlaceHolderStr = NSAttributedString(string: "Username", attributes: [NSForegroundColorAttributeName:UIColor(white: 1, alpha: 0.5)])
+        emailTextField.attributedPlaceholder = usernamePlaceHolderStr
         let passwordPlaceHolderStr = NSAttributedString(string: "Password", attributes: [NSForegroundColorAttributeName:UIColor(white: 1, alpha: 0.5)])
         passwordTextField.attributedPlaceholder = passwordPlaceHolderStr
         
@@ -53,13 +52,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
     }
     
     func devGoThrough() {
-        FirebaseManager.sharedManager.loginUser("test@gmail.com", password: "test") { (success) -> Void in
-            if success {
-                if let dismissBlock = self.dismissBlock {	
-                    dismissBlock()
-                }
-            }
-        }
+        
+//        FirebaseManager.sharedManager.loginUser("test@gmail.com", password: "test") { (success) -> Void in
+//            if success {
+//                if let dismissBlock = self.dismissBlock {	
+//                    dismissBlock()
+//                }
+//            }
+//        }
     }
     
     override func viewDidAppear(animated: Bool) {
