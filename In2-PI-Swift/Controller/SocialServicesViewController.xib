@@ -25,14 +25,14 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="808"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jH9-Lk-7NC">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jH9-Lk-7NC">
                     <rect key="frame" x="0.0" y="8" width="600" height="600"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORS-3t-r0f" userLabel="Content View">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="700"/>
+                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ORS-3t-r0f" userLabel="Content View">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="508"/>
                             <subviews>
-                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3nn-3j-jMR" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="74"/>
+                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3nn-3j-jMR" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="92"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="54" id="6AL-TG-u7u"/>
@@ -47,7 +47,7 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hpe-Ey-gxm">
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hpe-Ey-gxm">
                                     <rect key="frame" x="0.0" y="400" width="600" height="200"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -55,7 +55,7 @@
                                         <constraint firstAttribute="height" constant="208" id="WLG-qI-Wk4"/>
                                         <constraint firstAttribute="height" constant="100" id="hSM-3k-mUg"/>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="208" id="jwx-J4-qt2"/>
-                                        <constraint firstAttribute="height" constant="200" id="rgJ-69-8zw"/>
+                                        <constraint firstAttribute="height" constant="300" id="rgJ-69-8zw"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -70,36 +70,10 @@
                                         <outlet property="delegate" destination="-1" id="Mpc-ZZ-dhI"/>
                                     </connections>
                                 </tableView>
-                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6fn-wB-DJG" userLabel="PlaceholderForCalendar">
-                                    <rect key="frame" x="0.0" y="74" width="600" height="226"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="CALENDAR???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLP-yB-ydg">
-                                            <rect key="frame" x="217" y="98" width="166" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" red="0.62352941179999999" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="200" id="74y-Et-dd8"/>
-                                        <constraint firstItem="tLP-yB-ydg" firstAttribute="centerY" secondItem="6fn-wB-DJG" secondAttribute="centerY" id="8Ed-9a-3lG"/>
-                                        <constraint firstItem="tLP-yB-ydg" firstAttribute="top" secondItem="6fn-wB-DJG" secondAttribute="top" constant="98" id="GGj-dT-bk0"/>
-                                        <constraint firstAttribute="height" constant="200" id="mVj-OH-f0H"/>
-                                        <constraint firstItem="tLP-yB-ydg" firstAttribute="centerX" secondItem="6fn-wB-DJG" secondAttribute="centerX" id="xHZ-sW-JVT"/>
-                                    </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="74y-Et-dd8"/>
-                                            <exclude reference="mVj-OH-f0H"/>
-                                            <exclude reference="GGj-dT-bk0"/>
-                                        </mask>
-                                    </variation>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ib-KH-Rwx" userLabel="CustomView">
+                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ib-KH-Rwx" userLabel="CustomView">
                                     <rect key="frame" x="0.0" y="600" width="600" height="100"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="긍휼부 사역 신청서" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccF-d0-eCf" userLabel="titleLabel">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="긍휼부 사역 신청서" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccF-d0-eCf" userLabel="titleLabel">
                                             <rect key="frame" x="205" y="16" width="190" height="29"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="200" id="I3Q-0n-jgF"/>
@@ -113,8 +87,8 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tv-VZ-zJc">
-                                            <rect key="frame" x="265" y="61" width="70" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tv-VZ-zJc">
+                                            <rect key="frame" x="265" y="131" width="70" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                             <state key="normal" title="신청" backgroundImage="btn_Apply_white">
@@ -135,29 +109,37 @@
                                     <constraints>
                                         <constraint firstItem="5tv-VZ-zJc" firstAttribute="top" secondItem="ccF-d0-eCf" secondAttribute="bottom" constant="16" id="1Cz-ig-lBz"/>
                                         <constraint firstAttribute="centerX" secondItem="ccF-d0-eCf" secondAttribute="centerX" id="SyA-EG-x9L"/>
+                                        <constraint firstItem="ccF-d0-eCf" firstAttribute="centerY" secondItem="3Ib-KH-Rwx" secondAttribute="centerY" constant="-16" id="UJf-d4-w7D"/>
                                         <constraint firstItem="ccF-d0-eCf" firstAttribute="top" secondItem="3Ib-KH-Rwx" secondAttribute="top" constant="16" id="fbt-SO-jDa"/>
                                         <constraint firstAttribute="centerX" secondItem="5tv-VZ-zJc" secondAttribute="centerX" id="jt0-we-8Qo"/>
-                                        <constraint firstAttribute="height" constant="100" id="oIM-Qe-nFh"/>
+                                        <constraint firstAttribute="height" constant="150" id="s3a-c8-tkK"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="fbt-SO-jDa"/>
+                                        </mask>
+                                    </variation>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstItem="6fn-wB-DJG" firstAttribute="top" secondItem="3nn-3j-jMR" secondAttribute="bottom" id="0Ei-oB-reL"/>
                                 <constraint firstItem="3nn-3j-jMR" firstAttribute="leading" secondItem="ORS-3t-r0f" secondAttribute="leading" id="1cm-Zu-je3"/>
                                 <constraint firstItem="3nn-3j-jMR" firstAttribute="top" secondItem="ORS-3t-r0f" secondAttribute="top" id="4Y5-cF-zch"/>
                                 <constraint firstAttribute="bottom" secondItem="3Ib-KH-Rwx" secondAttribute="bottom" id="5Mc-bh-gsV"/>
-                                <constraint firstItem="6fn-wB-DJG" firstAttribute="leading" secondItem="ORS-3t-r0f" secondAttribute="leading" id="5Ok-Wg-6Mc"/>
                                 <constraint firstAttribute="trailing" secondItem="3nn-3j-jMR" secondAttribute="trailing" id="A5J-HK-mYn"/>
-                                <constraint firstItem="hpe-Ey-gxm" firstAttribute="top" secondItem="6fn-wB-DJG" secondAttribute="bottom" id="Qky-Pa-vXw"/>
-                                <constraint firstAttribute="trailing" secondItem="6fn-wB-DJG" secondAttribute="trailing" id="QvU-e4-Llh"/>
                                 <constraint firstAttribute="height" constant="700" id="YgT-yA-jdo"/>
+                                <constraint firstItem="hpe-Ey-gxm" firstAttribute="top" secondItem="3nn-3j-jMR" secondAttribute="bottom" constant="4" id="YkF-wr-YDb"/>
                                 <constraint firstItem="3Ib-KH-Rwx" firstAttribute="top" secondItem="hpe-Ey-gxm" secondAttribute="bottom" id="kk6-af-2D3"/>
                                 <constraint firstItem="hpe-Ey-gxm" firstAttribute="leading" secondItem="ORS-3t-r0f" secondAttribute="leading" id="lYN-7J-arC"/>
                                 <constraint firstItem="3Ib-KH-Rwx" firstAttribute="leading" secondItem="ORS-3t-r0f" secondAttribute="leading" id="nK8-yz-qu0"/>
                                 <constraint firstAttribute="trailing" secondItem="hpe-Ey-gxm" secondAttribute="trailing" id="p6N-dv-d0a"/>
                                 <constraint firstAttribute="trailing" secondItem="3Ib-KH-Rwx" secondAttribute="trailing" id="q7Q-lW-r1p"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="YgT-yA-jdo"/>
+                                </mask>
+                            </variation>
                         </view>
                     </subviews>
                     <constraints>
