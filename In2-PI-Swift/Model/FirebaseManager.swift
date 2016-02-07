@@ -75,7 +75,8 @@ class FirebaseManager {
             "title": notice.title,
             "body": notice.body,
             "link": notice.link,
-            "date": notice.date
+            "date": notice.date,
+            "active": 0
         ]
         let newNoticeIDRef = noticesRef.childByAutoId()
         newNoticeIDRef.setValue(noticeDict) { (error, firebase) -> Void in
@@ -106,7 +107,10 @@ class FirebaseManager {
                         let body = noticeDictionary.objectForKey("body") as! String
                         let link = noticeDictionary.objectForKey("link") as! String
                         let date = noticeDictionary.objectForKey("date") as! String
+                        let active = noticeDictionary.objectForKey("active") as! NSNumber
                         let notice = Notice(title: title, body: body, link: link, date: date)
+                        notice.active = active.boolValue
+                        notice.firebaseID = noticeObjectKey as? String
                         self.noticesArray!.append(notice)
                     }
                 }
@@ -115,6 +119,19 @@ class FirebaseManager {
             }, withCancelBlock: { error in
                 print(error.description)
                 completion(success: false)
+        })
+    }
+    
+    func updateNoticeObjectActiveFlag(notice: Notice, completion: (success: Bool) -> Void) {
+        let noticeRef = rootRef.childByAppendingPath("Notices").childByAppendingPath(notice.firebaseID!)
+        noticeRef.updateChildValues(["active" : notice.active], withCompletionBlock: { error, firebaseRef in
+            if error == nil {
+                print("updating child values completed \(firebaseRef.key)")
+                completion(success: true)
+            } else {
+                print(error)
+                completion(success:false)
+            }
         })
     }
     

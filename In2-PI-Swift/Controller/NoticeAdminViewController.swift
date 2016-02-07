@@ -55,6 +55,9 @@ class NoticeAdminViewController: UIViewController, UITableViewDataSource, UITabl
         let notice = savedNoticesArray![indexPath.row]
         cell.textLabel!.text = notice.title
         cell.detailTextLabel!.text = notice.date
+        if notice.active == true {
+            cell.accessoryType = .Checkmark
+        }
         return cell
     }
     
@@ -65,6 +68,10 @@ class NoticeAdminViewController: UIViewController, UITableViewDataSource, UITabl
             cell.accessoryType = .Checkmark
             let notice = savedNoticesArray![indexPath.row]
             notice.active = true
+            FirebaseManager.sharedManager.updateNoticeObjectActiveFlag(notice, completion: { (success) -> Void in
+                //
+                tableView.reloadData()
+            })
         }
     }
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
@@ -72,6 +79,10 @@ class NoticeAdminViewController: UIViewController, UITableViewDataSource, UITabl
             cell.accessoryType = .None
             let notice = savedNoticesArray![indexPath.row]
             notice.active = false
+            FirebaseManager.sharedManager.updateNoticeObjectActiveFlag(notice, completion: { (success) -> Void in
+                //
+                tableView.reloadData()
+            })
         }
     }
     
