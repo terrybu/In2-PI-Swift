@@ -9,6 +9,18 @@
 import UIKit
 
 class AdminViewController: UIViewController {
+    
+    
+    @IBAction func noticeButtonPressed(sender: AnyObject) {
+        let noticeVC = NoticeAdminViewController()
+        self.navigationController?.pushViewController(noticeVC, animated: true)
+    }
+    
+    
+    @IBAction func socialServicesSchedulePressed(sender: AnyObject) {
+        
+    }
+    
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -25,7 +37,10 @@ class AdminViewController: UIViewController {
         navigationController!.view.addSubview(statusBarBackgroundView)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "navigation_bar"), forBarMetrics: UIBarMetrics.Default)
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSForegroundColorAttributeName : UIColor.whiteColor(),
+            NSFontAttributeName : UIFont(name: "NanumBarunGothic", size: 18.0)!
+        ]
         navigationController!.navigationBar.shadowImage = UIImage()
         let whiteHairLineCustom = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 0.5))
         whiteHairLineCustom.backgroundColor = UIColor.clearColor()

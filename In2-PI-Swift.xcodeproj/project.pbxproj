@@ -88,6 +88,8 @@
 		D9FF31FB1C671BC00037DCF1 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF31FA1C671BC00037DCF1 /* FirebaseManager.swift */; };
 		D9FF31FF1C6735850037DCF1 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF31FE1C6735850037DCF1 /* AdminViewController.swift */; };
 		D9FF32011C6735960037DCF1 /* AdminViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FF32001C6735960037DCF1 /* AdminViewController.xib */; };
+		D9FF32051C676E5E0037DCF1 /* NoticeAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF32031C676E5E0037DCF1 /* NoticeAdminViewController.swift */; };
+		D9FF32061C676E5E0037DCF1 /* NoticeAdminViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FF32041C676E5E0037DCF1 /* NoticeAdminViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +198,8 @@
 		D9FF31FA1C671BC00037DCF1 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		D9FF31FE1C6735850037DCF1 /* AdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		D9FF32001C6735960037DCF1 /* AdminViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdminViewController.xib; sourceTree = "<group>"; };
+		D9FF32031C676E5E0037DCF1 /* NoticeAdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeAdminViewController.swift; sourceTree = "<group>"; };
+		D9FF32041C676E5E0037DCF1 /* NoticeAdminViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticeAdminViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,8 +300,6 @@
 				D97839811BF9305B00E4A834 /* SignUpViewController.swift */,
 				D9583F4D1C38AE8500A95D54 /* SignUpViewController.xib */,
 				D9DE0D4A1C138DFF00A58749 /* WalkthroughViewController.swift */,
-				D9FF31FE1C6735850037DCF1 /* AdminViewController.swift */,
-				D9FF32001C6735960037DCF1 /* AdminViewController.xib */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
@@ -478,6 +480,7 @@
 			isa = PBXGroup;
 			children = (
 				D97839801BF9304700E4A834 /* Authentication */,
+				D9FF32021C676E300037DCF1 /* Admin */,
 				D9F9C7E91B64873800F5C17D /* LeftNavDrawerController.swift */,
 				D90A7AFD1B92406F003EA693 /* HomeScreenViewController.swift */,
 				D980D6F31B9BDAFC001058E9 /* Five Boros Controllers */,
@@ -582,6 +585,17 @@
 			name = "Date Related Managers";
 			sourceTree = "<group>";
 		};
+		D9FF32021C676E300037DCF1 /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				D9FF31FE1C6735850037DCF1 /* AdminViewController.swift */,
+				D9FF32001C6735960037DCF1 /* AdminViewController.xib */,
+				D9FF32031C676E5E0037DCF1 /* NoticeAdminViewController.swift */,
+				D9FF32041C676E5E0037DCF1 /* NoticeAdminViewController.xib */,
+			);
+			name = Admin;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -678,6 +692,7 @@
 				D991C4FE1C6265BB0081A6E5 /* Launch Screen.storyboard in Resources */,
 				D9A79E151C2C2EEA003D9981 /* NanumBarunGothic.ttf in Resources */,
 				D9D3CE191B3F338D00C8E195 /* Localizable.strings in Resources */,
+				D9FF32061C676E5E0037DCF1 /* NoticeAdminViewController.xib in Resources */,
 				D9FF31F61C66C1E60037DCF1 /* SocialServicesViewController.xib in Resources */,
 				D901C0D81C39EFC700B350B1 /* fonts available console output in Resources */,
 				D9FF31F01C66A68A0037DCF1 /* CommunicationsViewController.xib in Resources */,
@@ -795,6 +810,7 @@
 				D9DE0D4B1C138DFF00A58749 /* WalkthroughViewController.swift in Sources */,
 				D9F8C4781BA4CFF800881B94 /* ExpandableAboutViewHandler.swift in Sources */,
 				D9FF31FB1C671BC00037DCF1 /* FirebaseManager.swift in Sources */,
+				D9FF32051C676E5E0037DCF1 /* NoticeAdminViewController.swift in Sources */,
 				D9EF135F1BAA44B4006D7F78 /* CustomDateFormatter.swift in Sources */,
 				D90A7B041B92413F003EA693 /* EvangelismViewController.swift in Sources */,
 				D90A7B021B924135003EA693 /* SocialServicesViewController.swift in Sources */,

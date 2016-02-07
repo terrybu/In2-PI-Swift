@@ -20,10 +20,16 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hz8-c1-PR6">
                     <rect key="frame" x="55" y="213" width="264" height="42"/>
                     <state key="normal" backgroundImage="btn_large_Announce"/>
+                    <connections>
+                        <action selector="noticeButtonPressed:" destination="-1" eventType="touchUpInside" id="17Y-kt-0Ld"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4In-zA-Q13">
                     <rect key="frame" x="55" y="279" width="264" height="42"/>
                     <state key="normal" backgroundImage="btn_large_Schedule"/>
+                    <connections>
+                        <action selector="socialServicesSchedulePressed:" destination="-1" eventType="touchUpInside" id="M7X-Tl-Io3"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
