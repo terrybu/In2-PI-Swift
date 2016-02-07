@@ -16,6 +16,7 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
     var firstObjectID: String!
     var imageBlackOverlay: UIView?
     @IBOutlet weak var newsArticleView: NewsArticleView!
+    @IBOutlet weak var noticeWidget: NoticeWidget!
 
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -23,6 +24,8 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
         
         setUpUniqueUIForHomeVC()
         
+        let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+        hud.labelText = "로딩중입니다. 잠시만 기다려주세요."
         blackOverlayUntilFBDataFinishedLoading()
         FacebookFeedQuery.sharedInstance.delegate = self
         FacebookFeedQuery.sharedInstance.getFeedFromPIMagazine { (error) -> Void in
@@ -31,7 +34,12 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
             }
         }
-//        print("view did load + \(newsArticleView.backgroundImageView.frame.size)")
+        FirebaseManager.sharedManager.getNoticeObjectsFromFirebase({ (success) -> Void in
+            if success {
+                self.noticeWidget.body = FirebaseManager.sharedManager.activeNotice!.title
+            }
+            MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+        })
     }
     
     private func setUpUniqueUIForHomeVC() {
@@ -46,8 +54,6 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
         black = UIView(frame: view.frame)
         black.backgroundColor = UIColor.blackColor()
         view.addSubview(black)
-        let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
-        hud.labelText = "로딩중입니다. 잠시만 기다려주세요."
     }
     
     func tappedNewsArticleView(sender: UIGestureRecognizer) {

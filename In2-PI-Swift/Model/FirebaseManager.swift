@@ -14,6 +14,7 @@ class FirebaseManager {
     static let sharedManager = FirebaseManager()
     var rootRef = Firebase(url:"https://in2-pi.firebaseio.com")
     var noticesArray: [Notice]?
+    var activeNotice: Notice?
 
     func loginUser(email: String, password: String, completion: ((success: Bool) -> Void)) {
         rootRef.authUser(email, password: password,
@@ -92,7 +93,7 @@ class FirebaseManager {
     
     func getNoticeObjectsFromFirebase(completion: (success: Bool)->Void) {
         // Get a reference to our posts
-        var ref = rootRef.childByAppendingPath("Notices")
+        let ref = rootRef.childByAppendingPath("Notices")
         // Attach a closure to read the data at our posts reference
         ref.observeEventType(.Value, withBlock: { snapshot in
             print(snapshot.value)
@@ -112,6 +113,11 @@ class FirebaseManager {
                         notice.active = active.boolValue
                         notice.firebaseID = noticeObjectKey as? String
                         self.noticesArray!.append(notice)
+                        if notice.active {
+                            print(notice)
+                            print("found active notice")
+                            self.activeNotice = notice
+                        }
                     }
                 }
                 completion(success: true)
