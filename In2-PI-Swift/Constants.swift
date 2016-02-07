@@ -36,4 +36,5 @@ let kOriginalAboutViewHeight: CGFloat = 54
 //String Constants
 let kAppLaunchToken = "kAppLaunchToken"
 let kWeeklyProgramsTableViewCellReuseIdentifier = "WeeklyProgramsTableViewCell"
+let kUserDefaultsSavedNoticesArrayData = "kUserDefaultsSavedNoticesArrayData"
 

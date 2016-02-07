@@ -16,6 +16,12 @@ class CustomDateFormatter {
         return dateFormatter.stringFromDate(date)
     }
     
+    func returnTodaysDateStringInFormat() -> String {
+        self.dateFormatter.dateFormat = "MM/dd/yyyy"
+        let today = dateFormatter.stringFromDate(NSDate())
+        return today
+    }
+    
     func convertFBCreatedTimeDateToOurFormattedString(feedObject: FBFeedPost) -> String? {
         self.dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
         let date = dateFormatter.dateFromString(feedObject.created_time)

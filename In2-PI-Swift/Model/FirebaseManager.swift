@@ -12,10 +12,11 @@ import Firebase
 class FirebaseManager {
     
     static let sharedManager = FirebaseManager()
-    var firebaseDBRootRef = Firebase(url:"https://in2-pi.firebaseio.com")
+    var rootRef = Firebase(url:"https://in2-pi.firebaseio.com")
+    var noticesArray: [Notice]?
 
     func loginUser(email: String, password: String, completion: ((success: Bool) -> Void)) {
-        firebaseDBRootRef.authUser(email, password: password,
+        rootRef.authUser(email, password: password,
             withCompletionBlock: { error, authData in
                 if error != nil {
                     // There was an error logging in to this account
@@ -35,7 +36,7 @@ class FirebaseManager {
     }
     
     func createUser(email: String, password: String, firstName: String, lastName: String, birthdayString: String, completion: ((success:Bool) -> Void)) {
-        firebaseDBRootRef.createUser(email, password: password,
+        rootRef.createUser(email, password: password,
             withValueCompletionBlock: { error, result in
                 if error != nil {
                     // There was an error creating the account
@@ -54,8 +55,8 @@ class FirebaseManager {
                     ]
                     // Create a child path with a key set to the uid underneath the "users" node
                     // This creates a URL path like the following:
-                    //  - https://<YOUR-FIREBASE-APP>.firebaseio.com/users/<uid>
-                    self.firebaseDBRootRef.childByAppendingPath("users")
+                    //  - https://<YOUR-FIREBASE-APP>.firebaseio.com/Users/<uid>
+                    self.rootRef.childByAppendingPath("Users")
                         .childByAppendingPath(uid).setValue(newUser)
                     
                     //Because Firebase signup does not AUTHENTICAT the user, must fire login again 
@@ -63,6 +64,57 @@ class FirebaseManager {
                         //completion block
                     })
                 }
+        })
+    }
+    
+    //MARK: writing to firebase
+    
+    func createNewNoticeOnFirebase(notice: Notice, completion: (success: Bool)->Void) {
+        let noticesRef = rootRef.childByAppendingPath("Notices")
+        let noticeDict = [
+            "title": notice.title,
+            "body": notice.body,
+            "link": notice.link,
+            "date": notice.date
+        ]
+        let newNoticeIDRef = noticesRef.childByAutoId()
+        newNoticeIDRef.setValue(noticeDict) { (error, firebase) -> Void in
+            if error != nil {
+                print(error)
+                completion(success: false)
+            } else {
+                print("new notice created")
+                completion(success: true)
+            }
+        }
+    }
+    
+    func getNoticeObjectsFromFirebase(completion: (success: Bool)->Void) {
+        // Get a reference to our posts
+        var ref = rootRef.childByAppendingPath("Notices")
+        // Attach a closure to read the data at our posts reference
+        ref.observeEventType(.Value, withBlock: { snapshot in
+            print(snapshot.value)
+            if let snapshotDict = snapshot.value as? NSDictionary {
+                self.noticesArray = []
+                for noticeObjectKey in snapshotDict.allKeys {
+                    //looping through all hashes
+                    print(noticeObjectKey)
+                    if let noticeDictionary = snapshotDict.objectForKey(noticeObjectKey) as? NSDictionary {
+                        // get dictionary for individual record for specific hash
+                        let title = noticeDictionary.objectForKey("title") as! String
+                        let body = noticeDictionary.objectForKey("body") as! String
+                        let link = noticeDictionary.objectForKey("link") as! String
+                        let date = noticeDictionary.objectForKey("date") as! String
+                        let notice = Notice(title: title, body: body, link: link, date: date)
+                        self.noticesArray!.append(notice)
+                    }
+                }
+                completion(success: true)
+            }
+            }, withCancelBlock: { error in
+                print(error.description)
+                completion(success: false)
         })
     }
     

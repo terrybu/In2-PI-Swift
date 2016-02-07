@@ -10,6 +10,9 @@ import UIKit
 
 class NoticeAdminViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet var tableView: UITableView! 
+    var savedNoticesArray: [Notice]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,23 +21,40 @@ class NoticeAdminViewController: UIViewController, UITableViewDataSource, UITabl
         self.navigationItem.rightBarButtonItem = addButton
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(false)
+        //Get Firebase notices
+        FirebaseManager.sharedManager.getNoticeObjectsFromFirebase({
+            (success) -> Void in
+            self.savedNoticesArray = FirebaseManager.sharedManager.noticesArray
+            self.tableView.reloadData()
+        })
+        
+    }
+    
     func addNotice() {
         print("add notice button pressed")
+        let noticeCreationVC = NoticeCreationViewController()
+        self.navigationController?.pushViewController(noticeCreationVC, animated: true)
     }
     
         //MARK: TableViewDataSource Protocol Methods
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 0
+        return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return 0
+        if let savedNoticesArray = savedNoticesArray {
+            return savedNoticesArray.count
+        }
+        return 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell()
-                
+        let notice = savedNoticesArray![indexPath.row]
+        cell.textLabel!.text = notice.title
         return cell
     }
     

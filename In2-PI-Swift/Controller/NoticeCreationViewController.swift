@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NoticeCreationViewController: UIViewController {
+class NoticeCreationViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var titleTextField: PaddedTextField!
     @IBOutlet weak var bodyTextField: PaddedTextField!
@@ -16,6 +16,25 @@ class NoticeCreationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "pressedDoneButton")
+        self.navigationItem.rightBarButtonItem = doneButton
+    }
+    
+    func pressedDoneButton() {
+        print("press done")
+        if let title = titleTextField.text, body = bodyTextField.text, link = linkTextField.text {
+            let newNotice = Notice(title: title, body: body, link: link, date: CustomDateFormatter.sharedInstance.returnTodaysDateStringInFormat())
+            
+            //Push new notice into Firebase
+            FirebaseManager.sharedManager.createNewNoticeOnFirebase(newNotice, completion: { (success) -> Void in
+                self.navigationController?.popViewControllerAnimated(true)
+            })
+            
+            
+        } else {
+            UIAlertController.presentAlert(self, alertTitle: "Empty Fields", alertMessage: "Please fill out every field to submit a new Notice", confirmTitle: "OK")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,14 +43,19 @@ class NoticeCreationViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    /**
+     * Called when 'return' key pressed. return NO to ignore.
+     */
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
-    */
+    
+    /**
+     * Called when the user click on the view (outside the UITextField).
+     */
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
 }

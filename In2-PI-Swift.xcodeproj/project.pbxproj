@@ -77,7 +77,7 @@
 		D9F7F4811B93547600D86FF7 /* FacebookPhotoQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7F4801B93547600D86FF7 /* FacebookPhotoQuery.swift */; };
 		D9F7F4831B935DFA00D86FF7 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7F4821B935DFA00D86FF7 /* GalleryCell.swift */; };
 		D9F7F4861B93687700D86FF7 /* FBPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7F4851B93687700D86FF7 /* FBPhoto.swift */; };
-		D9F8C4701BA4BE4300881B94 /* TodaysQTWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8C46F1BA4BE4300881B94 /* TodaysQTWidget.swift */; };
+		D9F8C4701BA4BE4300881B94 /* TodaysQTWidget in Sources */ = {isa = PBXBuildFile; fileRef = D9F8C46F1BA4BE4300881B94 /* TodaysQTWidget */; };
 		D9F8C4761BA4C33200881B94 /* TodaysQTWidget.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9F8C4751BA4C33200881B94 /* TodaysQTWidget.xib */; };
 		D9F8C4781BA4CFF800881B94 /* ExpandableAboutViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8C4771BA4CFF800881B94 /* ExpandableAboutViewHandler.swift */; };
 		D9F9C7EA1B64873800F5C17D /* LeftNavDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F9C7E91B64873800F5C17D /* LeftNavDrawerController.swift */; };
@@ -92,6 +92,9 @@
 		D9FF32061C676E5E0037DCF1 /* NoticeAdminViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FF32041C676E5E0037DCF1 /* NoticeAdminViewController.xib */; };
 		D9FF32091C67715A0037DCF1 /* NoticeCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF32071C67715A0037DCF1 /* NoticeCreationViewController.swift */; };
 		D9FF320A1C67715A0037DCF1 /* NoticeCreationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FF32081C67715A0037DCF1 /* NoticeCreationViewController.xib */; };
+		D9FF320D1C6776040037DCF1 /* Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF320C1C6776040037DCF1 /* Notice.swift */; };
+		D9FF320F1C6777960037DCF1 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF320E1C6777960037DCF1 /* UIAlertControllerExtension.swift */; };
+		D9FF32111C677B0B0037DCF1 /* archivingArrayDefaultsCode in Resources */ = {isa = PBXBuildFile; fileRef = D9FF32101C677B0B0037DCF1 /* archivingArrayDefaultsCode */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,7 +192,7 @@
 		D9F7F4801B93547600D86FF7 /* FacebookPhotoQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookPhotoQuery.swift; sourceTree = "<group>"; };
 		D9F7F4821B935DFA00D86FF7 /* GalleryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryCell.swift; path = ../View/GalleryCell.swift; sourceTree = "<group>"; };
 		D9F7F4851B93687700D86FF7 /* FBPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBPhoto.swift; sourceTree = "<group>"; };
-		D9F8C46F1BA4BE4300881B94 /* TodaysQTWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodaysQTWidget.swift; path = ../View/TodaysQTWidget.swift; sourceTree = "<group>"; };
+		D9F8C46F1BA4BE4300881B94 /* TodaysQTWidget */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TodaysQTWidget; path = ../View/TodaysQTWidget; sourceTree = "<group>"; };
 		D9F8C4751BA4C33200881B94 /* TodaysQTWidget.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TodaysQTWidget.xib; path = ../View/TodaysQTWidget.xib; sourceTree = "<group>"; };
 		D9F8C4771BA4CFF800881B94 /* ExpandableAboutViewHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpandableAboutViewHandler.swift; path = ../Controller/ExpandableAboutViewHandler.swift; sourceTree = "<group>"; };
 		D9F9C7E91B64873800F5C17D /* LeftNavDrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftNavDrawerController.swift; sourceTree = "<group>"; };
@@ -204,6 +207,9 @@
 		D9FF32041C676E5E0037DCF1 /* NoticeAdminViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticeAdminViewController.xib; sourceTree = "<group>"; };
 		D9FF32071C67715A0037DCF1 /* NoticeCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeCreationViewController.swift; sourceTree = "<group>"; };
 		D9FF32081C67715A0037DCF1 /* NoticeCreationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticeCreationViewController.xib; sourceTree = "<group>"; };
+		D9FF320C1C6776040037DCF1 /* Notice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notice.swift; sourceTree = "<group>"; };
+		D9FF320E1C6777960037DCF1 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
+		D9FF32101C677B0B0037DCF1 /* archivingArrayDefaultsCode */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = archivingArrayDefaultsCode; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +289,7 @@
 			children = (
 				D9BE263C1B64A1B700C3BA7D /* UIColorExtension.swift */,
 				D95EC5281B97963000782925 /* StringExtension.swift */,
+				D9FF320E1C6777960037DCF1 /* UIAlertControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -324,8 +331,9 @@
 		D9878B901C4848C500AD84D9 /*  No Longer Used */ = {
 			isa = PBXGroup;
 			children = (
-				D9F8C46F1BA4BE4300881B94 /* TodaysQTWidget.swift */,
+				D9F8C46F1BA4BE4300881B94 /* TodaysQTWidget */,
 				D9F8C4751BA4C33200881B94 /* TodaysQTWidget.xib */,
+				D9FF32101C677B0B0037DCF1 /* archivingArrayDefaultsCode */,
 			);
 			name = " No Longer Used";
 			sourceTree = "<group>";
@@ -509,12 +517,11 @@
 			children = (
 				D952B17A1B5EF5330089116C /* Constants.swift */,
 				D9583F4A1C388C4D00A95D54 /* URLEndpoints.swift */,
-				D985E04C1C0924E60057C51E /* PraiseSong.swift */,
 				D9FF31FA1C671BC00037DCF1 /* FirebaseManager.swift */,
 				D99991A81BB1BEF90022EF10 /* HttpFileDownloader.swift */,
 				D986F4D81C1E4E9A00C00F7B /* WalkthroughManager.swift */,
+				D9FF320B1C6775F10037DCF1 /* Objects */,
 				D910DD861BADFE2800E8A99F /* Facebook Objects */,
-				D9FF31F71C67098A0037DCF1 /* WeeklyProgram */,
 				D9FF31F91C6709C50037DCF1 /* Date Related Managers */,
 			);
 			path = Model;
@@ -600,6 +607,16 @@
 				D9FF32081C67715A0037DCF1 /* NoticeCreationViewController.xib */,
 			);
 			name = Admin;
+			sourceTree = "<group>";
+		};
+		D9FF320B1C6775F10037DCF1 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				D9FF31F71C67098A0037DCF1 /* WeeklyProgram */,
+				D985E04C1C0924E60057C51E /* PraiseSong.swift */,
+				D9FF320C1C6776040037DCF1 /* Notice.swift */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -714,6 +731,7 @@
 				D9FF320A1C67715A0037DCF1 /* NoticeCreationViewController.xib in Resources */,
 				D9A79E161C2C2EEA003D9981 /* NanumBarunGothicBold.ttf in Resources */,
 				D9FF32011C6735960037DCF1 /* AdminViewController.xib in Resources */,
+				D9FF32111C677B0B0037DCF1 /* archivingArrayDefaultsCode in Resources */,
 				D9D3CE121B3F309C00C8E195 /* InfoPlist.strings in Resources */,
 				D9D3CDF41B3F20EF00C8E195 /* Images.xcassets in Resources */,
 				D9DA04781BA5B68600F434F4 /* BoroSpecificNewsWidgetView.xib in Resources */,
@@ -792,7 +810,9 @@
 				D90A7B061B92415D003EA693 /* AboutPIViewControlller.swift in Sources */,
 				D9FF31FF1C6735850037DCF1 /* AdminViewController.swift in Sources */,
 				D97839821BF9305B00E4A834 /* SignUpViewController.swift in Sources */,
+				D9FF320D1C6776040037DCF1 /* Notice.swift in Sources */,
 				D9C756401BA0C2C800EC22CF /* ExpandableAboutView.swift in Sources */,
+				D9FF320F1C6777960037DCF1 /* UIAlertControllerExtension.swift in Sources */,
 				D95EC5241B978DF000782925 /* FacebookFeedQuery.swift in Sources */,
 				D98FEFB21B9C0C65003614A7 /* ApplyWidgetView.swift in Sources */,
 				D9BE263D1B64A1B700C3BA7D /* UIColorExtension.swift in Sources */,
@@ -805,7 +825,7 @@
 				D986F4D91C1E4E9A00C00F7B /* WalkthroughManager.swift in Sources */,
 				D9583F4B1C388C4D00A95D54 /* URLEndpoints.swift in Sources */,
 				D90A7AFE1B92406F003EA693 /* HomeScreenViewController.swift in Sources */,
-				D9F8C4701BA4BE4300881B94 /* TodaysQTWidget.swift in Sources */,
+				D9F8C4701BA4BE4300881B94 /* TodaysQTWidget in Sources */,
 				D904A3F51C02EB9A005A6EA3 /* HideKey.swift in Sources */,
 				D9B549A81B76D7FB00BF4887 /* SWRevealViewController.m in Sources */,
 				D90A7AFC1B923F13003EA693 /* NurtureViewController.swift in Sources */,

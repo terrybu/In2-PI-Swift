@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoticeAdminViewController" customModule="In2_PI_Swift" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="FnR-Q5-Tn7" id="RJ6-Ue-tUl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
