@@ -23,11 +23,17 @@ class NoticeAdminViewController: UIViewController, UITableViewDataSource, UITabl
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(false)
-        //Get Firebase notices
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        activityIndicator.center = CGPointMake(view.center.x, 100)
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
         FirebaseManager.sharedManager.getNoticeObjectsFromFirebase({
             (success) -> Void in
-            self.savedNoticesArray = FirebaseManager.sharedManager.noticesArray
-            self.tableView.reloadData()
+            if (success) {
+                self.savedNoticesArray = FirebaseManager.sharedManager.noticesArray
+                self.tableView.reloadData()
+            }
+            activityIndicator.stopAnimating()
         })
         
     }
@@ -67,24 +73,25 @@ class NoticeAdminViewController: UIViewController, UITableViewDataSource, UITabl
         if let cell = tableView.cellForRowAtIndexPath(indexPath) {
             cell.accessoryType = .Checkmark
             let notice = savedNoticesArray![indexPath.row]
-            notice.active = true
-            FirebaseManager.sharedManager.updateNoticeObjectActiveFlag(notice, completion: { (success) -> Void in
-                //
-                tableView.reloadData()
-            })
+            UIAlertController.presentAlert(self, alertTitle: notice.title, alertMessage: "\(notice.body) \(notice.link)", confirmTitle: "OK")
+//            notice.active = true
+//            FirebaseManager.sharedManager.updateNoticeObjectActiveFlag(notice, completion: { (success) -> Void in
+//                //
+//                tableView.reloadData()
+//            })
         }
     }
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
-            cell.accessoryType = .None
-            let notice = savedNoticesArray![indexPath.row]
-            notice.active = false
-            FirebaseManager.sharedManager.updateNoticeObjectActiveFlag(notice, completion: { (success) -> Void in
-                //
-                tableView.reloadData()
-            })
-        }
-    }
+//    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+//        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+//            cell.accessoryType = .None
+//            let notice = savedNoticesArray![indexPath.row]
+//            notice.active = false
+//            FirebaseManager.sharedManager.updateNoticeObjectActiveFlag(notice, completion: { (success) -> Void in
+//                //
+//                tableView.reloadData()
+//            })
+//        }
+//    }
     
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
