@@ -92,6 +92,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
             if adminUserDetectedAdminMustBeActivated() == true {
                 let adminVC = AdminViewController()
                 let navCtrl = UINavigationController(rootViewController: adminVC)
+                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 presentViewController(navCtrl, animated: true, completion: nil)
                 return
             }

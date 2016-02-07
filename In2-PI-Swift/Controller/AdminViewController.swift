@@ -13,10 +13,6 @@ class AdminViewController: UIViewController {
     @IBOutlet weak var noticeButton: UIButton!
     @IBOutlet weak var socialServicesScheduleButton: UIButton!
     
-    @IBAction func xButtonPressed() {
-        self.navigationController?.dismissViewControllerAnimated(false, completion: nil)
-    }
-    
     @IBAction func noticeButtonPressed(sender: AnyObject) {
         let noticeVC = NoticeAdminViewController()
         self.navigationController?.pushViewController(noticeVC, animated: true)
@@ -40,11 +36,18 @@ class AdminViewController: UIViewController {
         super.viewDidLoad()
         setUpUIForNavBarAndStatus()
         
+        let backButton = UIBarButtonItem(image: UIImage(named: "btn_X"), style: UIBarButtonItemStyle.Done, target: self, action: "dismissVC")
+        self.navigationItem.leftBarButtonItem = backButton
+        
         if AuthenticationManager.sharedManager.currentUserMode == .SocialServicesAdmin {
             noticeButton.enabled = false
         } else {
             noticeButton.enabled = true
         }
+    }
+    
+    func dismissVC() {
+        self.navigationController?.dismissViewControllerAnimated(false, completion: nil)
     }
     
     private func setUpUIForNavBarAndStatus() {
