@@ -73,7 +73,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ib-KH-Rwx" userLabel="CustomView">
                                     <rect key="frame" x="0.0" y="358" width="600" height="150"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="긍휼부 사역 신청서" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccF-d0-eCf" userLabel="titleLabel">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="긍휼부 사역 신청서" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccF-d0-eCf" userLabel="titleLabel">
                                             <rect key="frame" x="205" y="45" width="190" height="29"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="200" id="I3Q-0n-jgF"/>
@@ -87,7 +87,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tv-VZ-zJc">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tv-VZ-zJc">
                                             <rect key="frame" x="265" y="90" width="70" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
@@ -165,7 +165,7 @@
                     <exclude reference="kKd-iU-mcV"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="481" y="-689"/>
+            <point key="canvasLocation" x="245" y="-816"/>
         </view>
     </objects>
     <resources>
