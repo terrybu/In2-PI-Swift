@@ -13,7 +13,7 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="In2_PI_Swift" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Win2" customModuleProvider="target">
             <connections>
                 <outlet property="emailTextField" destination="Q2O-WW-VpI" id="P3N-jj-aRa"/>
                 <outlet property="passwordTextField" destination="72p-I8-EZn" id="5Oy-zp-nt5"/>
@@ -28,8 +28,8 @@
                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="bg_gradient" translatesAutoresizingMaskIntoConstraints="NO" id="oiO-Np-C0z">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
-                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="icon_user" translatesAutoresizingMaskIntoConstraints="NO" id="cYP-js-3mq">
-                    <rect key="frame" x="80" y="283" width="12" height="15"/>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="icon_email" translatesAutoresizingMaskIntoConstraints="NO" id="cYP-js-3mq">
+                    <rect key="frame" x="80" y="286" width="16" height="10"/>
                 </imageView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Q2O-WW-VpI">
                     <rect key="frame" x="109" y="281" width="450" height="19"/>
@@ -48,7 +48,7 @@
                     </variation>
                 </textField>
                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="line_gray" translatesAutoresizingMaskIntoConstraints="NO" id="n7Z-Wr-qAw" userLabel="line_gray1">
-                    <rect key="frame" x="75" y="306" width="450" height="1"/>
+                    <rect key="frame" x="75" y="304" width="450" height="1"/>
                 </imageView>
                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="icon_PW" translatesAutoresizingMaskIntoConstraints="NO" id="18t-6l-EBZ">
                     <rect key="frame" x="80" y="326" width="12" height="15"/>
@@ -189,7 +189,7 @@
         <image name="btn_Log-In" width="264" height="42"/>
         <image name="btn_Log-In_on" width="264" height="42"/>
         <image name="icon_PW" width="12" height="15"/>
-        <image name="icon_user" width="12" height="15"/>
+        <image name="icon_email" width="16" height="10"/>
         <image name="line_gray" width="264" height="1"/>
         <image name="underline_Sign-Up" width="65" height="1"/>
     </resources>
