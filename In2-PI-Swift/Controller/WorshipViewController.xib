@@ -50,7 +50,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="iDV-Me-Azz" userLabel="Songs Table View">
-                                    <rect key="frame" x="0.0" y="114" width="600" height="200"/>
+                                    <rect key="frame" x="0.0" y="126" width="600" height="200"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="120" id="1tI-LM-ALT"/>
@@ -68,8 +68,8 @@
                                         <outlet property="delegate" destination="-1" id="kOV-ul-bwg"/>
                                     </connections>
                                 </tableView>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uQl-zN-51P" userLabel="WeeklyProgramsTableView">
-                                    <rect key="frame" x="0.0" y="326" width="600" height="200"/>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uQl-zN-51P" userLabel="WeeklyProgramsTableView">
+                                    <rect key="frame" x="0.0" y="338" width="600" height="200"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="200" id="KC1-n3-EK6"/>
@@ -87,7 +87,7 @@
                                     </connections>
                                 </tableView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jXr-Og-fpV" userLabel="ApplyView">
-                                    <rect key="frame" x="0.0" y="538" width="600" height="100"/>
+                                    <rect key="frame" x="0.0" y="550" width="600" height="100"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePS-Om-apc">
                                             <rect key="frame" x="16" y="16" width="145" height="20"/>
@@ -113,7 +113,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dFi-yP-AEH" userLabel="WorshipVideoClickView">
-                                    <rect key="frame" x="0.0" y="54" width="600" height="48"/>
+                                    <rect key="frame" x="0.0" y="66" width="600" height="48"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설교영상" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ow-4V-AkR">
                                             <rect key="frame" x="15" y="14" width="59" height="21"/>
@@ -144,7 +144,7 @@
                             </subviews>
                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstItem="dFi-yP-AEH" firstAttribute="top" secondItem="yZF-F4-KFW" secondAttribute="bottom" id="4gP-v6-JIA"/>
+                                <constraint firstItem="dFi-yP-AEH" firstAttribute="top" secondItem="yZF-F4-KFW" secondAttribute="bottom" constant="12" id="4gP-v6-JIA"/>
                                 <constraint firstAttribute="trailing" secondItem="jXr-Og-fpV" secondAttribute="trailing" id="BKZ-ul-pud"/>
                                 <constraint firstItem="iDV-Me-Azz" firstAttribute="top" secondItem="dFi-yP-AEH" secondAttribute="bottom" constant="12" id="E5K-nP-25m"/>
                                 <constraint firstAttribute="bottom" secondItem="uQl-zN-51P" secondAttribute="bottom" id="LUd-VB-egZ"/>

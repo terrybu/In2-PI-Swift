@@ -38,7 +38,7 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
     
     //MARK: ExpandableAboutViewDelegate
     private func setUpExpandableAboutView() {
-        expandedAboutViewHeight = kOriginalAboutViewHeight + expandableAboutView.textView.frame.size.height + 100
+        expandedAboutViewHeight = kOriginalAboutViewHeight + expandableAboutView.textView.frame.size.height + 70
         expandableAboutView.clipsToBounds = true
         expandableAboutView.userInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: "tappedEntireAboutView")

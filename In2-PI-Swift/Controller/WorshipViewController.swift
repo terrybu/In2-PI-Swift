@@ -34,7 +34,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
     //MARK: LifeCycle
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
-        setUpExpandableAboutView(kOriginalAboutViewHeight, expandableAboutView: expandableAboutView, heightBuffer: 30, view: view, constraintHeightExpandableView: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalContentviewHeight: kOriginalContentViewHeight)
+        setUpExpandableAboutView(kOriginalAboutViewHeight, expandableAboutView: expandableAboutView, heightBuffer: 0, view: view, constraintHeightExpandableView: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalContentviewHeight: kOriginalContentViewHeight)
         getPraiseSongNamesListAndHeaderFromFacebook()
         weeklyProgramsTableView.hidden = true
         if weeklyProgramsArray.isEmpty {
