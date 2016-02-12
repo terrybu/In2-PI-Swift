@@ -1,20 +1,9 @@
-last big piece is 긍휼부 칼렌더 and Admin post mode. Firebase may be used to post "strings" up there for"
-    3-4 hours
-
-Home screen needs to finalized with whatever cards you want to put in there
-    - Add "News" widget in there?
-    1-2 hours
-
-
 ====================
 ***Possible Improvements Backlog
 - Communications:
 2.6.2016
 = the "Long apply widget view" would spill out its contents over the about bar for some crazy reason
 - Gonna remove it for now. If it ever becomes a problem, need some surgery in there. Might take some time figuring out exactly what was going wrong with Auto layout between About Expanding View and the Long Apply Widget View
-
--Social services xib
-= What's up with the red warning??? Suprress it
 
 ***MiscGallery page is pulling from 3 recently updated albums, one of which is 한줄나눔 which uses a lot of same images and very uninteresting. Skip it?
 

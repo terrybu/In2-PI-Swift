@@ -22,6 +22,7 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Win2"
         
         setUpUniqueUIForHomeVC()
         

@@ -22,7 +22,7 @@
         <!--HomeScreenVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="HomeScreenVC" id="BYZ-38-t0r" userLabel="HomeScreenVC" customClass="HomeScreenViewController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeScreenVC" id="BYZ-38-t0r" userLabel="HomeScreenVC" customClass="HomeScreenViewController" customModule="Win2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -37,7 +37,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Gg-pQ-EGO" userLabel="Container View">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="700"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1OI-qH-uNG" customClass="NewsArticleView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1OI-qH-uNG" customClass="NewsArticleView" customModule="Win2" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="350"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -49,7 +49,7 @@
                                                     </mask>
                                                 </variation>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n3R-u9-z7n" userLabel="Todays QTWidget" customClass="NoticeWidget" customModule="In2_PI_Swift" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n3R-u9-z7n" userLabel="Todays QTWidget" customClass="NoticeWidget" customModule="Win2" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="350" width="600" height="350"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
@@ -91,7 +91,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="In2 PI" id="mNO-F8-DzW"/>
+                    <navigationItem key="navigationItem" id="mNO-F8-DzW"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
@@ -106,7 +106,7 @@
         <!--NavDrawerViewController-->
         <scene sceneID="ymH-sZ-d5F">
             <objects>
-                <viewController storyboardIdentifier="LeftNavDrawerStoryboardID" id="sG2-Rg-tvn" userLabel="NavDrawerViewController" customClass="LeftNavDrawerController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LeftNavDrawerStoryboardID" id="sG2-Rg-tvn" userLabel="NavDrawerViewController" customClass="LeftNavDrawerController" customModule="Win2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C02-Xr-dce"/>
                         <viewControllerLayoutGuide type="bottom" id="GXS-z1-sin"/>
@@ -203,8 +203,8 @@
                                     <action selector="aboutPIButtonPressed:" destination="sG2-Rg-tvn" eventType="touchUpInside" id="X6Y-o4-cxp"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About PI" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4El-qW-0GA" userLabel="About">
-                                <rect key="frame" x="208" y="494" width="58" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="About Win2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4El-qW-0GA" userLabel="About">
+                                <rect key="frame" x="197" y="494" width="81" height="18"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -329,7 +329,7 @@
         <!--Worship View Controller-->
         <scene sceneID="8a3-wH-6JY">
             <objects>
-                <viewController storyboardIdentifier="WorshipVC" title="Worship" id="k3o-Eq-0C4" userLabel="Worship View Controller" customClass="WorshipViewController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WorshipVC" title="Worship" id="k3o-Eq-0C4" userLabel="Worship View Controller" customClass="WorshipViewController" customModule="Win2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c39-zg-ajs"/>
                         <viewControllerLayoutGuide type="bottom" id="CPj-2L-Cda"/>
@@ -344,7 +344,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVQ-jT-Ckx" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="650"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atY-6P-a2d" userLabel="ExpandableAboutView" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atY-6P-a2d" userLabel="ExpandableAboutView" customClass="ExpandableAboutView" customModule="Win2" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -426,7 +426,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvo-gT-U4Y" userLabel="ApplyView">
                                                 <rect key="frame" x="0.0" y="538" width="600" height="100"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1Y-l9-fOp">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1Y-l9-fOp">
                                                         <rect key="frame" x="16" y="16" width="145" height="20"/>
                                                         <string key="text">예배보로 사역 신청서
 </string>
@@ -586,7 +586,7 @@
         <!--All Weekly Programs Table View Controller-->
         <scene sceneID="bih-fR-nQR">
             <objects>
-                <tableViewController id="8BT-TO-OuE" customClass="AllWeeklyProgramsTableViewController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="8BT-TO-OuE" customClass="AllWeeklyProgramsTableViewController" customModule="Win2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Voh-so-rjG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -615,7 +615,7 @@
         <!--Nurture-->
         <scene sceneID="Piy-Si-0pz">
             <objects>
-                <viewController storyboardIdentifier="NurtureViewController" title="Nurture" id="uhg-WV-CMh" customClass="NurtureViewController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NurtureViewController" title="Nurture" id="uhg-WV-CMh" customClass="NurtureViewController" customModule="Win2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pcV-De-r5w"/>
                         <viewControllerLayoutGuide type="bottom" id="fqb-cg-FbM"/>
@@ -630,7 +630,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldl-U4-aPo" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="454"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TP4-FC-u3x" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TP4-FC-u3x" customClass="ExpandableAboutView" customModule="Win2" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -646,7 +646,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9aj-r7-edb" userLabel="NurtureApplyWidget" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9aj-r7-edb" userLabel="NurtureApplyWidget" customClass="ApplyWidgetView" customModule="Win2" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="54" width="300" height="200"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -659,7 +659,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="양육보로 사역"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXF-su-KJq" userLabel="HolyStarViewWidget" customClass="ApplyWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXF-su-KJq" userLabel="HolyStarViewWidget" customClass="ApplyWidgetView" customModule="Win2" customModuleProvider="target">
                                                 <rect key="frame" x="300" y="54" width="300" height="200"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <userDefinedRuntimeAttributes>
@@ -668,7 +668,7 @@
                                                     <userDefinedRuntimeAttribute type="image" keyPath="applyButtonImage" value="btn_more_s"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAC-k5-o9n" customClass="BoroSpecificNewsWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAC-k5-o9n" customClass="BoroSpecificNewsWidgetView" customModule="Win2" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="254" width="600" height="200"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <userDefinedRuntimeAttributes>
@@ -745,7 +745,7 @@
         <!--Communications-->
         <scene sceneID="lmO-dl-aZc">
             <objects>
-                <viewController title="Communications" id="0qb-bZ-sK5" customClass="CommunicationsViewController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Communications" id="0qb-bZ-sK5" customClass="CommunicationsViewController" customModule="Win2" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="소통부" id="CgP-7z-DhQ"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="900"/>
@@ -757,7 +757,7 @@
         <!--Evangelism VC-->
         <scene sceneID="pVk-Y1-gKf">
             <objects>
-                <viewController storyboardIdentifier="EvangelismViewController" title="Evangelism" id="Jfi-8G-XFp" userLabel="Evangelism VC" customClass="EvangelismViewController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EvangelismViewController" title="Evangelism" id="Jfi-8G-XFp" userLabel="Evangelism VC" customClass="EvangelismViewController" customModule="Win2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cXG-9y-Yo5"/>
                         <viewControllerLayoutGuide type="bottom" id="WD6-51-ubA"/>
@@ -772,7 +772,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7dl-AZ-g3d" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="605"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qly-Gp-4y0" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qly-Gp-4y0" customClass="ExpandableAboutView" customModule="Win2" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -794,7 +794,7 @@
                                                     <constraint firstAttribute="height" constant="300" id="Z0W-jg-0Yc"/>
                                                 </constraints>
                                             </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8o-TD-haP" userLabel="EvangelismNewsWidget" customClass="BoroSpecificNewsWidgetView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8o-TD-haP" userLabel="EvangelismNewsWidget" customClass="BoroSpecificNewsWidgetView" customModule="Win2" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="354" width="600" height="251"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -809,7 +809,7 @@
                                                     </mask>
                                                 </variation>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2015년 PI 겨울 선교 필라델피아 (Tap to play video)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLh-d8-Qr7">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015년 PI 겨울 선교 필라델피아 (Tap to play video)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLh-d8-Qr7">
                                                 <rect key="frame" x="190" y="89" width="221" height="40"/>
                                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -882,7 +882,7 @@
         <!--Social Services-->
         <scene sceneID="ytw-Y9-qRi">
             <objects>
-                <viewController title="Social Services" id="68E-Sr-2Ow" customClass="SocialServicesViewController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Social Services" id="68E-Sr-2Ow" customClass="SocialServicesViewController" customModule="Win2" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="긍휼부" id="Lt9-HP-nGU"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="800"/>
@@ -894,7 +894,7 @@
         <!--AboutPIViewController-->
         <scene sceneID="otr-fz-x8h">
             <objects>
-                <viewController storyboardIdentifier="AboutPIViewController" title="About " modalPresentationStyle="formSheet" id="pFB-fa-kBo" userLabel="AboutPIViewController" customClass="AboutPIViewController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutPIViewController" title="About " modalPresentationStyle="formSheet" id="pFB-fa-kBo" userLabel="AboutPIViewController" customClass="AboutPIViewController" customModule="Win2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tEj-VJ-bZ2"/>
                         <viewControllerLayoutGuide type="bottom" id="AQR-DH-Y5C"/>
@@ -938,7 +938,7 @@
         <!--GalleryViewController-->
         <scene sceneID="m9d-tp-msS">
             <objects>
-                <viewController storyboardIdentifier="GalleryViewController" title="Gallery" id="zXL-hR-HTz" userLabel="GalleryViewController" customClass="GalleryViewController" customModule="In2_PI_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GalleryViewController" title="Gallery" id="zXL-hR-HTz" userLabel="GalleryViewController" customClass="GalleryViewController" customModule="Win2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uvp-WI-eZ0"/>
                         <viewControllerLayoutGuide type="bottom" id="1ND-mW-led"/>
@@ -962,7 +962,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GalleryCell" id="CBG-Uz-Xc9" customClass="GalleryCell" customModule="In2_PI_Swift" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GalleryCell" id="CBG-Uz-Xc9" customClass="GalleryCell" customModule="Win2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2" width="120" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">

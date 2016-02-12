@@ -10,7 +10,6 @@
 		615C54D683ACF2345564DCC8 /* Pods_In2_PI_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D9D85A29F7F171A635D2C8 /* Pods_In2_PI_Swift.framework */; };
 		D901C0D61C39E2CA00B350B1 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D901C0D51C39E2CA00B350B1 /* LoginViewController.xib */; };
 		D901C0D81C39EFC700B350B1 /* fonts available console output in Resources */ = {isa = PBXBuildFile; fileRef = D901C0D71C39EFC600B350B1 /* fonts available console output */; };
-		D904A3F51C02EB9A005A6EA3 /* HideKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D904A3F41C02EB9A005A6EA3 /* HideKey.swift */; };
 		D90A08231BB5D4BD0033DD6B /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = D90A081E1BB5D4BD0033DD6B /* TFHpple.m */; };
 		D90A08241BB5D4BD0033DD6B /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D90A08201BB5D4BD0033DD6B /* TFHppleElement.m */; };
 		D90A08251BB5D4BD0033DD6B /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = D90A08221BB5D4BD0033DD6B /* XPathQuery.m */; };
@@ -109,7 +108,6 @@
 		54D9D85A29F7F171A635D2C8 /* Pods_In2_PI_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_In2_PI_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D901C0D51C39E2CA00B350B1 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		D901C0D71C39EFC600B350B1 /* fonts available console output */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fonts available console output"; sourceTree = "<group>"; };
-		D904A3F41C02EB9A005A6EA3 /* HideKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKey.swift; sourceTree = "<group>"; };
 		D90A081D1BB5D4BD0033DD6B /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
 		D90A081E1BB5D4BD0033DD6B /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
 		D90A081F1BB5D4BD0033DD6B /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
@@ -520,7 +518,6 @@
 			children = (
 				D9878B901C4848C500AD84D9 /*  No Longer Used */,
 				D9D7C5581B82CFE4003E48EA /* todolist.txt */,
-				D904A3F41C02EB9A005A6EA3 /* HideKey.swift */,
 				D901C0D71C39EFC600B350B1 /* fonts available console output */,
 			);
 			path = "Terry References";
@@ -783,7 +780,6 @@
 				D9583F4B1C388C4D00A95D54 /* URLEndpoints.swift in Sources */,
 				D90A7AFE1B92406F003EA693 /* HomeScreenViewController.swift in Sources */,
 				D9F8C4701BA4BE4300881B94 /* TodaysQTWidget in Sources */,
-				D904A3F51C02EB9A005A6EA3 /* HideKey.swift in Sources */,
 				D9B549A81B76D7FB00BF4887 /* SWRevealViewController.m in Sources */,
 				D90A7AFC1B923F13003EA693 /* NurtureViewController.swift in Sources */,
 				D9FF32091C67715A0037DCF1 /* NoticeCreationViewController.swift in Sources */,
