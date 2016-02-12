@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:In2-PI-Swift.xcodeproj">
+      location = "group:/Users/terrybu/Desktop/Win2/In2-PI-Swift/Win2.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

@@ -73,7 +73,6 @@
 		D9C756401BA0C2C800EC22CF /* ExpandableAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7563F1BA0C2C800EC22CF /* ExpandableAboutView.swift */; };
 		D9D3CDED1B3F20EF00C8E195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D3CDEC1B3F20EF00C8E195 /* AppDelegate.swift */; };
 		D9D3CDF41B3F20EF00C8E195 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9D3CDF31B3F20EF00C8E195 /* Images.xcassets */; };
-		D9D3CE031B3F20EF00C8E195 /* In2_PI_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D3CE021B3F20EF00C8E195 /* In2_PI_SwiftTests.swift */; };
 		D9D3CE121B3F309C00C8E195 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9D3CE141B3F309C00C8E195 /* InfoPlist.strings */; };
 		D9D3CE191B3F338D00C8E195 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9D3CE1B1B3F338D00C8E195 /* Localizable.strings */; };
 		D9D7C5591B82CFE4003E48EA /* todolist.txt in Resources */ = {isa = PBXBuildFile; fileRef = D9D7C5581B82CFE4003E48EA /* todolist.txt */; };
@@ -103,16 +102,6 @@
 		D9FF32111C677B0B0037DCF1 /* archivingArrayDefaultsCode in Resources */ = {isa = PBXBuildFile; fileRef = D9FF32101C677B0B0037DCF1 /* archivingArrayDefaultsCode */; };
 		D9FF32131C6788CD0037DCF1 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF32121C6788CD0037DCF1 /* AuthenticationManager.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		D9D3CDFD1B3F20EF00C8E195 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D9D3CDDF1B3F20EF00C8E195 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D9D3CDE61B3F20EF00C8E195;
-			remoteInfo = "In2-PI-Swift";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		15F9BC9F44944956571DAF7B /* Pods-In2-PI-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-In2-PI-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-In2-PI-Swift/Pods-In2-PI-Swift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -185,14 +174,11 @@
 		D9BE263C1B64A1B700C3BA7D /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		D9C7563D1BA0C2A000EC22CF /* ExpandableAboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableAboutView.xib; sourceTree = "<group>"; };
 		D9C7563F1BA0C2C800EC22CF /* ExpandableAboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableAboutView.swift; sourceTree = "<group>"; };
-		D9D3CDE71B3F20EF00C8E195 /* In2-PI-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "In2-PI-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9D3CDE71B3F20EF00C8E195 /* Win2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Win2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D3CDEB1B3F20EF00C8E195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9D3CDEC1B3F20EF00C8E195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9D3CDF11B3F20EF00C8E195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D9D3CDF31B3F20EF00C8E195 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
-		D9D3CDFC1B3F20EF00C8E195 /* In2-PI-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "In2-PI-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9D3CE011B3F20EF00C8E195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9D3CE021B3F20EF00C8E195 /* In2_PI_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = In2_PI_SwiftTests.swift; sourceTree = "<group>"; };
 		D9D3CE101B3F307F00C8E195 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		D9D3CE151B3F30A700C8E195 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D9D3CE161B3F30A800C8E195 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -233,13 +219,6 @@
 			files = (
 				D90A08271BB5D5810033DD6B /* libxml2.2.tbd in Frameworks */,
 				615C54D683ACF2345564DCC8 /* Pods_In2_PI_Swift.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D9D3CDF91B3F20EF00C8E195 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,8 +408,7 @@
 		D9D3CDDE1B3F20EF00C8E195 = {
 			isa = PBXGroup;
 			children = (
-				D9D3CDE91B3F20EF00C8E195 /* In2-PI-Swift */,
-				D9D3CDFF1B3F20EF00C8E195 /* In2-PI-SwiftTests */,
+				D9D3CDE91B3F20EF00C8E195 /* Win2 */,
 				D9D3CDE81B3F20EF00C8E195 /* Products */,
 				5B7163E0C1D511FACCFD241C /* Pods */,
 				A278F71670A4FDDB3D2DE747 /* Frameworks */,
@@ -440,13 +418,12 @@
 		D9D3CDE81B3F20EF00C8E195 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D9D3CDE71B3F20EF00C8E195 /* In2-PI-Swift.app */,
-				D9D3CDFC1B3F20EF00C8E195 /* In2-PI-SwiftTests.xctest */,
+				D9D3CDE71B3F20EF00C8E195 /* Win2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D9D3CDE91B3F20EF00C8E195 /* In2-PI-Swift */ = {
+		D9D3CDE91B3F20EF00C8E195 /* Win2 */ = {
 			isa = PBXGroup;
 			children = (
 				D9D3CDEC1B3F20EF00C8E195 /* AppDelegate.swift */,
@@ -460,6 +437,7 @@
 				D9F7F47F1B93544400D86FF7 /* Third Party */,
 				D9D3CDEA1B3F20EF00C8E195 /* Supporting Files */,
 			);
+			name = Win2;
 			path = "In2-PI-Swift";
 			sourceTree = "<group>";
 		};
@@ -470,23 +448,6 @@
 				D9713E8B1B5ED166009D809A /* In2-PI-Swift-Bridging-Header.h */,
 				D9D3CE1B1B3F338D00C8E195 /* Localizable.strings */,
 				D9D3CE141B3F309C00C8E195 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D9D3CDFF1B3F20EF00C8E195 /* In2-PI-SwiftTests */ = {
-			isa = PBXGroup;
-			children = (
-				D9D3CE021B3F20EF00C8E195 /* In2_PI_SwiftTests.swift */,
-				D9D3CE001B3F20EF00C8E195 /* Supporting Files */,
-			);
-			path = "In2-PI-SwiftTests";
-			sourceTree = "<group>";
-		};
-		D9D3CE001B3F20EF00C8E195 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D9D3CE011B3F20EF00C8E195 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -643,9 +604,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D9D3CDE61B3F20EF00C8E195 /* In2-PI-Swift */ = {
+		D9D3CDE61B3F20EF00C8E195 /* Win2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D9D3CE061B3F20EF00C8E195 /* Build configuration list for PBXNativeTarget "In2-PI-Swift" */;
+			buildConfigurationList = D9D3CE061B3F20EF00C8E195 /* Build configuration list for PBXNativeTarget "Win2" */;
 			buildPhases = (
 				C3C4FCB0C903BE8F36E7012C /* Check Pods Manifest.lock */,
 				D9D3CDE31B3F20EF00C8E195 /* Sources */,
@@ -658,28 +619,10 @@
 			);
 			dependencies = (
 			);
-			name = "In2-PI-Swift";
+			name = Win2;
 			productName = "In2-PI-Swift";
-			productReference = D9D3CDE71B3F20EF00C8E195 /* In2-PI-Swift.app */;
+			productReference = D9D3CDE71B3F20EF00C8E195 /* Win2.app */;
 			productType = "com.apple.product-type.application";
-		};
-		D9D3CDFB1B3F20EF00C8E195 /* In2-PI-SwiftTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D9D3CE091B3F20EF00C8E195 /* Build configuration list for PBXNativeTarget "In2-PI-SwiftTests" */;
-			buildPhases = (
-				D9D3CDF81B3F20EF00C8E195 /* Sources */,
-				D9D3CDF91B3F20EF00C8E195 /* Frameworks */,
-				D9D3CDFA1B3F20EF00C8E195 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D9D3CDFE1B3F20EF00C8E195 /* PBXTargetDependency */,
-			);
-			name = "In2-PI-SwiftTests";
-			productName = "In2-PI-SwiftTests";
-			productReference = D9D3CDFC1B3F20EF00C8E195 /* In2-PI-SwiftTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -696,13 +639,9 @@
 						CreatedOnToolsVersion = 6.3.2;
 						DevelopmentTeam = JJ62WG39RU;
 					};
-					D9D3CDFB1B3F20EF00C8E195 = {
-						CreatedOnToolsVersion = 6.3.2;
-						TestTargetID = D9D3CDE61B3F20EF00C8E195;
-					};
 				};
 			};
-			buildConfigurationList = D9D3CDE21B3F20EF00C8E195 /* Build configuration list for PBXProject "In2-PI-Swift" */;
+			buildConfigurationList = D9D3CDE21B3F20EF00C8E195 /* Build configuration list for PBXProject "Win2" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -716,8 +655,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D9D3CDE61B3F20EF00C8E195 /* In2-PI-Swift */,
-				D9D3CDFB1B3F20EF00C8E195 /* In2-PI-SwiftTests */,
+				D9D3CDE61B3F20EF00C8E195 /* Win2 */,
 			);
 		};
 /* End PBXProject section */
@@ -759,13 +697,6 @@
 				D9D3CE121B3F309C00C8E195 /* InfoPlist.strings in Resources */,
 				D9D3CDF41B3F20EF00C8E195 /* Images.xcassets in Resources */,
 				D9DA04781BA5B68600F434F4 /* BoroSpecificNewsWidgetView.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D9D3CDFA1B3F20EF00C8E195 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -887,23 +818,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D9D3CDF81B3F20EF00C8E195 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D9D3CE031B3F20EF00C8E195 /* In2_PI_SwiftTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D9D3CDFE1B3F20EF00C8E195 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D9D3CDE61B3F20EF00C8E195 /* In2-PI-Swift */;
-			targetProxy = D9D3CDFD1B3F20EF00C8E195 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D9D3CDF01B3F20EF00C8E195 /* Main.storyboard */ = {
@@ -1035,7 +950,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEBUG\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.terrybu.Win2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Win2;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "In2-PI-Swift/In2-PI-Swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1056,53 +971,17 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DRELEASE\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.terrybu.Win2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Win2;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "In2-PI-Swift/In2-PI-Swift-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
-		D9D3CE0A1B3F20EF00C8E195 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "In2-PI-SwiftTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.terrybu.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/In2-PI-Swift.app/In2-PI-Swift";
-			};
-			name = Debug;
-		};
-		D9D3CE0B1B3F20EF00C8E195 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "In2-PI-SwiftTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.terrybu.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/In2-PI-Swift.app/In2-PI-Swift";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D9D3CDE21B3F20EF00C8E195 /* Build configuration list for PBXProject "In2-PI-Swift" */ = {
+		D9D3CDE21B3F20EF00C8E195 /* Build configuration list for PBXProject "Win2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D9D3CE041B3F20EF00C8E195 /* Debug */,
@@ -1111,20 +990,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D9D3CE061B3F20EF00C8E195 /* Build configuration list for PBXNativeTarget "In2-PI-Swift" */ = {
+		D9D3CE061B3F20EF00C8E195 /* Build configuration list for PBXNativeTarget "Win2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D9D3CE071B3F20EF00C8E195 /* Debug */,
 				D9D3CE081B3F20EF00C8E195 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D9D3CE091B3F20EF00C8E195 /* Build configuration list for PBXNativeTarget "In2-PI-SwiftTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D9D3CE0A1B3F20EF00C8E195 /* Debug */,
-				D9D3CE0B1B3F20EF00C8E195 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

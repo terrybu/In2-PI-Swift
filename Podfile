@@ -2,9 +2,9 @@ platform :ios, '8.0'
 inhibit_all_warnings!
 use_frameworks!
 
-link_with 'In2-PI-Swift'
+link_with 'Win2'
 
-target 'In2-PI-Swift' do
+target 'Win2' do
 	pod 'FBSDKCoreKit'
 	pod 'FBSDKLoginKit'
 	pod 'SwiftyJSON'
