@@ -210,8 +210,8 @@
                                     <action selector="aboutPIButtonPressed:" destination="sG2-Rg-tvn" eventType="touchUpInside" id="X6Y-o4-cxp"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="About Win2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4El-qW-0GA" userLabel="About">
-                                <rect key="frame" x="196" y="494" width="81" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Win2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4El-qW-0GA" userLabel="About">
+                                <rect key="frame" x="191" y="494" width="81" height="18"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -932,7 +932,7 @@
                             <constraint firstItem="Gm0-K4-ATo" firstAttribute="leading" secondItem="CsJ-cH-lxU" secondAttribute="leading" id="yT9-jo-H31"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="About PI" id="rkI-RV-fvW"/>
+                    <navigationItem key="navigationItem" title="About Win2" id="rkI-RV-fvW"/>
                     <connections>
                         <outlet property="horizontalScrollView" destination="Gm0-K4-ATo" id="k9t-wS-peK"/>
                         <outlet property="segmentedControl" destination="iDy-FS-K1P" id="0Yu-va-wbl"/>
