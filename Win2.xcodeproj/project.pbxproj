@@ -32,6 +32,7 @@
 		D91FCAC21C67A1FD008C7D1C /* SocialServiceEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91FCAC11C67A1FD008C7D1C /* SocialServiceEvent.swift */; };
 		D92295951B9BF87000C34A66 /* WorshipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92295941B9BF87000C34A66 /* WorshipViewController.swift */; };
 		D92612391C6E8BDB00BE77BA /* EvangelismViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92612381C6E8BDB00BE77BA /* EvangelismViewController.xib */; };
+		D926123B1C6E926400BE77BA /* NurtureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D926123A1C6E926400BE77BA /* NurtureViewController.xib */; };
 		D92938021C07F2820040BD6D /* PurpleSegmentedControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92938011C07F2820040BD6D /* PurpleSegmentedControlView.xib */; };
 		D92938041C07F3C10040BD6D /* PurpleSegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92938031C07F3C10040BD6D /* PurpleSegmentedControlView.swift */; };
 		D92B56351BD5C8930085208F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92B56341BD5C8930085208F /* LoginViewController.swift */; };
@@ -134,6 +135,7 @@
 		D91FCAC11C67A1FD008C7D1C /* SocialServiceEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialServiceEvent.swift; sourceTree = "<group>"; };
 		D92295941B9BF87000C34A66 /* WorshipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorshipViewController.swift; sourceTree = "<group>"; };
 		D92612381C6E8BDB00BE77BA /* EvangelismViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvangelismViewController.xib; sourceTree = "<group>"; };
+		D926123A1C6E926400BE77BA /* NurtureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NurtureViewController.xib; sourceTree = "<group>"; };
 		D92938011C07F2820040BD6D /* PurpleSegmentedControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurpleSegmentedControlView.xib; sourceTree = "<group>"; };
 		D92938031C07F3C10040BD6D /* PurpleSegmentedControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurpleSegmentedControlView.swift; sourceTree = "<group>"; };
 		D92B56341BD5C8930085208F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				D90A7AFB1B923F13003EA693 /* NurtureViewController.swift */,
+				D926123A1C6E926400BE77BA /* NurtureViewController.xib */,
 				D989C5251C2700500051ACFE /* HolyStarIntroViewController.swift */,
 				D989C5261C2700500051ACFE /* HolyStarIntroViewController.xib */,
 			);
@@ -703,6 +706,7 @@
 				D9FF32011C6735960037DCF1 /* AdminViewController.xib in Resources */,
 				D9FF32111C677B0B0037DCF1 /* archivingArrayDefaultsCode in Resources */,
 				D9D3CE121B3F309C00C8E195 /* InfoPlist.strings in Resources */,
+				D926123B1C6E926400BE77BA /* NurtureViewController.xib in Resources */,
 				D92612391C6E8BDB00BE77BA /* EvangelismViewController.xib in Resources */,
 				D9D3CDF41B3F20EF00C8E195 /* Images.xcassets in Resources */,
 				D9DA04781BA5B68600F434F4 /* BoroSpecificNewsWidgetView.xib in Resources */,
