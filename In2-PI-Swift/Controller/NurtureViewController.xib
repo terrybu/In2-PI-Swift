@@ -7,8 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NurtureViewController" customModule="Win2" customModuleProvider="target">
             <connections>
-                <outlet property="constraintContentViewHeight" destination="sbN-AR-7Up" id="NIA-zv-aLj"/>
-                <outlet property="constraintHeightExpandableView" destination="NQo-8J-wTU" id="yr6-ik-cvo"/>
+                <outlet property="constraintContentViewHeight" destination="DDA-Lt-PYX" id="qB1-fQ-RQN"/>
+                <outlet property="constraintHeightExpandableView" destination="NQo-8J-wTU" id="8GR-Si-8VF"/>
                 <outlet property="contentView" destination="FRA-TS-w0l" id="TiL-hX-JLn"/>
                 <outlet property="expandableAboutView" destination="y9J-tx-08d" id="3Uc-jy-C4d"/>
                 <outlet property="leftNurtureApplyWidget" destination="p3x-R6-sS3" id="xac-zs-M4f"/>
@@ -26,7 +26,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FRA-TS-w0l" userLabel="Content View">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="454"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y9J-tx-08d" customClass="ExpandableAboutView" customModule="Win2" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
@@ -67,31 +67,45 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="068-eS-76k" customClass="BoroSpecificNewsWidgetView" customModule="Win2" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="254" width="600" height="200"/>
+                                    <rect key="frame" x="0.0" y="254" width="600" height="180"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="180" id="FQF-Gl-s4k"/>
+                                        <constraint firstAttribute="height" constant="147" id="vAn-SG-MfN"/>
+                                    </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="categoryTitle" value="최신 양육뉴스"/>
                                     </userDefinedRuntimeAttributes>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="vAn-SG-MfN"/>
+                                        </mask>
+                                    </variation>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="p3x-R6-sS3" firstAttribute="width" secondItem="FRA-TS-w0l" secondAttribute="width" multiplier="0.5" id="9dz-dZ-8tP"/>
                                 <constraint firstItem="068-eS-76k" firstAttribute="top" secondItem="xor-Rn-oQu" secondAttribute="bottom" id="Bhy-bB-YNa"/>
+                                <constraint firstAttribute="height" constant="600" id="DDA-Lt-PYX"/>
                                 <constraint firstAttribute="trailing" secondItem="xor-Rn-oQu" secondAttribute="trailing" id="Ekr-fN-gBd"/>
                                 <constraint firstItem="xor-Rn-oQu" firstAttribute="top" secondItem="y9J-tx-08d" secondAttribute="bottom" id="IoK-Jr-ge4"/>
                                 <constraint firstItem="p3x-R6-sS3" firstAttribute="leading" secondItem="FRA-TS-w0l" secondAttribute="leading" id="N5h-HU-P4q"/>
                                 <constraint firstItem="xor-Rn-oQu" firstAttribute="width" secondItem="p3x-R6-sS3" secondAttribute="width" id="Ryb-tH-Ypp"/>
-                                <constraint firstAttribute="bottom" secondItem="068-eS-76k" secondAttribute="bottom" id="W7n-ed-wEm"/>
+                                <constraint firstAttribute="bottom" secondItem="068-eS-76k" secondAttribute="bottom" constant="160" id="W7n-ed-wEm"/>
                                 <constraint firstItem="p3x-R6-sS3" firstAttribute="top" secondItem="y9J-tx-08d" secondAttribute="bottom" id="XF8-wS-tbD"/>
                                 <constraint firstItem="y9J-tx-08d" firstAttribute="top" secondItem="FRA-TS-w0l" secondAttribute="top" id="Yn7-Ci-rCk"/>
                                 <constraint firstItem="y9J-tx-08d" firstAttribute="leading" secondItem="FRA-TS-w0l" secondAttribute="leading" id="apr-17-Fng"/>
                                 <constraint firstAttribute="trailing" secondItem="068-eS-76k" secondAttribute="trailing" id="duc-i0-cc3"/>
                                 <constraint firstItem="xor-Rn-oQu" firstAttribute="height" secondItem="p3x-R6-sS3" secondAttribute="height" id="gCc-qr-Xez"/>
                                 <constraint firstAttribute="trailing" secondItem="y9J-tx-08d" secondAttribute="trailing" id="isk-EV-gXL"/>
-                                <constraint firstAttribute="height" constant="454" id="sbN-AR-7Up"/>
                                 <constraint firstItem="068-eS-76k" firstAttribute="leading" secondItem="FRA-TS-w0l" secondAttribute="leading" id="t4v-fP-qaA"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="W7n-ed-wEm"/>
+                                </mask>
+                            </variation>
                         </view>
                     </subviews>
                     <constraints>
