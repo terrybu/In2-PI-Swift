@@ -31,7 +31,6 @@ import UIKit
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var arrowImageButton: UIButton!
 
-        
     //IBInspectable lets you read and write properties right in the inspector view of interface builder. Without it, there's no way for you to change properties of your custom view UI from storyboard
     @IBInspectable var aboutLabelTitle: String? {
         get {

@@ -62,6 +62,8 @@ class ParentViewController: UIViewController, SFSafariViewControllerDelegate {
         let tapGesture = UITapGestureRecognizer(target: handler, action: "tappedEntireAboutView")
         expandableView.addGestureRecognizer(tapGesture)
         tapGesture.delegate = handler
+        //also add the function to the arrow button
+        expandableView.arrowImageButton.addTarget(handler, action: "tappedEntireAboutView", forControlEvents: UIControlEvents.TouchUpInside)
     }
     
     func presentSFSafariVCIfAvailable(url: NSURL) {

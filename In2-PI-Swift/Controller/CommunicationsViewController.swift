@@ -44,6 +44,7 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
         let tapGesture = UITapGestureRecognizer(target: self, action: "tappedEntireAboutView")
         expandableAboutView.addGestureRecognizer(tapGesture)
         tapGesture.delegate = self
+        expandableAboutView.arrowImageButton.addTarget(self, action: "tappedEntireAboutView", forControlEvents: UIControlEvents.TouchUpInside)
         
         expandableAboutView.textView.dataDetectorTypes = .Link
         expandableAboutView.textView.editable = false

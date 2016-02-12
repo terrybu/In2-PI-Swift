@@ -62,7 +62,7 @@
                     <exclude reference="zvt-DX-XgV"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="406" y="-506"/>
+            <point key="canvasLocation" x="405" y="-584"/>
         </view>
     </objects>
 </document>
