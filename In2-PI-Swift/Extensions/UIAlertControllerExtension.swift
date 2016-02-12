@@ -15,6 +15,7 @@ extension UIAlertController {
         let confirm = UIAlertAction(title: confirmTitle, style: UIAlertActionStyle.Default, handler: nil)
         alertController.addAction(confirm)
         viewController.presentViewController(alertController, animated: true, completion: nil)
+        alertController.view.tintColor = UIColor.In2DeepPurple()
     }
     
 }

@@ -73,21 +73,15 @@
                     <rect key="frame" x="75" y="349" width="450" height="1"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G58-lj-gCZ" userLabel="LoginButton">
-                    <rect key="frame" x="168" y="382" width="264" height="42"/>
+                    <rect key="frame" x="168" y="391" width="264" height="42"/>
                     <state key="normal" backgroundImage="btn_Log-In"/>
                     <state key="highlighted" backgroundImage="btn_Log-In_on"/>
                     <connections>
                         <action selector="didPressLoginbutton" destination="-1" eventType="touchUpInside" id="jMV-cR-Je9"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Myg-1L-a8W" userLabel="Don't have an account?">
-                    <rect key="frame" x="174" y="464" width="189" height="20"/>
-                    <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="17"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQd-JU-JDa">
-                    <rect key="frame" x="371" y="458" width="61" height="32"/>
+                    <rect key="frame" x="371" y="475" width="61" height="32"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                     <state key="normal" title="Sign Up">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -97,7 +91,7 @@
                     </connections>
                 </button>
                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="underline_Sign-Up" translatesAutoresizingMaskIntoConstraints="NO" id="DBQ-Cl-pWs">
-                    <rect key="frame" x="369" y="490" width="65" height="1"/>
+                    <rect key="frame" x="369" y="507" width="65" height="1"/>
                 </imageView>
                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="WINTO_logo" translatesAutoresizingMaskIntoConstraints="NO" id="jso-vu-yIC">
                     <rect key="frame" x="215" y="128" width="171" height="57"/>
@@ -112,12 +106,18 @@
                         </mask>
                     </variation>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Myg-1L-a8W" userLabel="Don't have an account?">
+                    <rect key="frame" x="174" y="481" width="189" height="20"/>
+                    <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <constraints>
                 <constraint firstItem="DBQ-Cl-pWs" firstAttribute="centerX" secondItem="YQd-JU-JDa" secondAttribute="centerX" id="2bw-h5-4br"/>
                 <constraint firstItem="72p-I8-EZn" firstAttribute="leading" secondItem="18t-6l-EBZ" secondAttribute="trailing" constant="17" id="5ek-GT-5sL"/>
                 <constraint firstItem="oiO-Np-C0z" firstAttribute="top" secondItem="heN-ZX-O7w" secondAttribute="top" id="6JZ-sP-Fbf"/>
-                <constraint firstItem="Myg-1L-a8W" firstAttribute="top" secondItem="G58-lj-gCZ" secondAttribute="bottom" constant="40" id="72N-Cy-z4c"/>
+                <constraint firstItem="Myg-1L-a8W" firstAttribute="top" secondItem="G58-lj-gCZ" secondAttribute="bottom" constant="48" id="72N-Cy-z4c"/>
                 <constraint firstItem="72p-I8-EZn" firstAttribute="leading" secondItem="Q2O-WW-VpI" secondAttribute="leading" id="7m1-op-SSE"/>
                 <constraint firstItem="Q2O-WW-VpI" firstAttribute="trailing" secondItem="n7Z-Wr-qAw" secondAttribute="trailing" id="8AS-VR-E3L"/>
                 <constraint firstItem="cYP-js-3mq" firstAttribute="leading" secondItem="heN-ZX-O7w" secondAttribute="leadingMargin" constant="30" id="9LP-RP-97J"/>
@@ -129,7 +129,7 @@
                 <constraint firstAttribute="trailing" secondItem="oiO-Np-C0z" secondAttribute="trailing" id="GtD-7z-7Rk"/>
                 <constraint firstItem="Myg-1L-a8W" firstAttribute="top" secondItem="G58-lj-gCZ" secondAttribute="bottom" constant="40" id="Hvn-R2-32Z"/>
                 <constraint firstItem="72p-I8-EZn" firstAttribute="width" secondItem="Q2O-WW-VpI" secondAttribute="width" id="LRz-KB-04S"/>
-                <constraint firstItem="G58-lj-gCZ" firstAttribute="top" secondItem="72p-I8-EZn" secondAttribute="bottom" constant="39" id="LbD-cI-AVf"/>
+                <constraint firstItem="G58-lj-gCZ" firstAttribute="top" secondItem="72p-I8-EZn" secondAttribute="bottom" constant="48" id="LbD-cI-AVf"/>
                 <constraint firstAttribute="bottom" secondItem="oiO-Np-C0z" secondAttribute="bottom" id="Mhw-9P-A6j"/>
                 <constraint firstItem="n7Z-Wr-qAw" firstAttribute="top" secondItem="cYP-js-3mq" secondAttribute="bottom" constant="8" id="PEH-YT-wqb"/>
                 <constraint firstItem="72p-I8-EZn" firstAttribute="trailing" secondItem="Q2O-WW-VpI" secondAttribute="trailing" id="PQd-Ed-Mdx"/>
@@ -150,6 +150,7 @@
                 <constraint firstItem="cYP-js-3mq" firstAttribute="leading" secondItem="G58-lj-gCZ" secondAttribute="leading" constant="16" id="j4U-8N-4W2"/>
                 <constraint firstItem="n7Z-Wr-qAw" firstAttribute="leading" secondItem="cYP-js-3mq" secondAttribute="leading" id="jH2-df-QTc"/>
                 <constraint firstItem="cYP-js-3mq" firstAttribute="leading" secondItem="n7Z-Wr-qAw" secondAttribute="leading" constant="5" id="n5U-V5-E1F"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Myg-1L-a8W" secondAttribute="bottom" constant="48" id="pX0-WQ-BdO"/>
                 <constraint firstItem="18t-6l-EBZ" firstAttribute="leading" secondItem="cYP-js-3mq" secondAttribute="leading" id="pwz-F8-8cc"/>
                 <constraint firstItem="72p-I8-EZn" firstAttribute="centerY" secondItem="18t-6l-EBZ" secondAttribute="centerY" id="qdm-Ey-48m"/>
                 <constraint firstItem="72p-I8-EZn" firstAttribute="top" secondItem="Q2O-WW-VpI" secondAttribute="bottom" constant="24" id="sRM-YE-AjJ"/>
