@@ -10,7 +10,7 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SocialServicesViewController" customModule="In2_PI_Swift" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SocialServicesViewController" customModule="Win2" customModuleProvider="target">
             <connections>
                 <outlet property="constraintContentViewHeight" destination="YgT-yA-jdo" id="YaY-AJ-xoE"/>
                 <outlet property="constraintHeightExpandableView" destination="6AL-TG-u7u" id="tBg-OZ-f8s"/>
@@ -31,7 +31,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORS-3t-r0f" userLabel="Content View">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="508"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3nn-3j-jMR" customClass="ExpandableAboutView" customModule="In2_PI_Swift" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3nn-3j-jMR" customClass="ExpandableAboutView" customModule="Win2" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -165,7 +165,7 @@
                     <exclude reference="kKd-iU-mcV"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="245" y="-816"/>
+            <point key="canvasLocation" x="245" y="-907"/>
         </view>
     </objects>
     <resources>

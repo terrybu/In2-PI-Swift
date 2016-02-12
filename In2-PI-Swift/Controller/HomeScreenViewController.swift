@@ -22,7 +22,8 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Win2"
+        let smallLogoView = UIImageView(image: UIImage(named: "WINTO_logo_small"))
+        self.navigationItem.titleView = smallLogoView
         
         setUpUniqueUIForHomeVC()
         
