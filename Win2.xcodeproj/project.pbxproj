@@ -31,6 +31,7 @@
 		D91FCAC01C679F1C008C7D1C /* SocialServicesEventCreationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91FCABE1C679F1C008C7D1C /* SocialServicesEventCreationViewController.xib */; };
 		D91FCAC21C67A1FD008C7D1C /* SocialServiceEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91FCAC11C67A1FD008C7D1C /* SocialServiceEvent.swift */; };
 		D92295951B9BF87000C34A66 /* WorshipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92295941B9BF87000C34A66 /* WorshipViewController.swift */; };
+		D92612391C6E8BDB00BE77BA /* EvangelismViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92612381C6E8BDB00BE77BA /* EvangelismViewController.xib */; };
 		D92938021C07F2820040BD6D /* PurpleSegmentedControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92938011C07F2820040BD6D /* PurpleSegmentedControlView.xib */; };
 		D92938041C07F3C10040BD6D /* PurpleSegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92938031C07F3C10040BD6D /* PurpleSegmentedControlView.swift */; };
 		D92B56351BD5C8930085208F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92B56341BD5C8930085208F /* LoginViewController.swift */; };
@@ -132,6 +133,7 @@
 		D91FCABE1C679F1C008C7D1C /* SocialServicesEventCreationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SocialServicesEventCreationViewController.xib; sourceTree = "<group>"; };
 		D91FCAC11C67A1FD008C7D1C /* SocialServiceEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialServiceEvent.swift; sourceTree = "<group>"; };
 		D92295941B9BF87000C34A66 /* WorshipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorshipViewController.swift; sourceTree = "<group>"; };
+		D92612381C6E8BDB00BE77BA /* EvangelismViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvangelismViewController.xib; sourceTree = "<group>"; };
 		D92938011C07F2820040BD6D /* PurpleSegmentedControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurpleSegmentedControlView.xib; sourceTree = "<group>"; };
 		D92938031C07F3C10040BD6D /* PurpleSegmentedControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurpleSegmentedControlView.swift; sourceTree = "<group>"; };
 		D92B56341BD5C8930085208F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -265,6 +267,15 @@
 			name = "Facebook Objects";
 			sourceTree = "<group>";
 		};
+		D92612371C6E8BB500BE77BA /* Evangelism */ = {
+			isa = PBXGroup;
+			children = (
+				D90A7B031B92413F003EA693 /* EvangelismViewController.swift */,
+				D92612381C6E8BDB00BE77BA /* EvangelismViewController.xib */,
+			);
+			name = Evangelism;
+			sourceTree = "<group>";
+		};
 		D95EC5221B978C0A00782925 /* Facebook Query */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,7 +323,7 @@
 				D992746F1C2F57C50055810F /* Worship */,
 				D992746E1C2F57AF0055810F /* Nurture */,
 				D9FF31EE1C66A67A0037DCF1 /* Communications */,
-				D90A7B031B92413F003EA693 /* EvangelismViewController.swift */,
+				D92612371C6E8BB500BE77BA /* Evangelism */,
 				D9FF31F41C66C1CB0037DCF1 /* Social Services */,
 			);
 			name = "Five Boros Controllers";
@@ -692,6 +703,7 @@
 				D9FF32011C6735960037DCF1 /* AdminViewController.xib in Resources */,
 				D9FF32111C677B0B0037DCF1 /* archivingArrayDefaultsCode in Resources */,
 				D9D3CE121B3F309C00C8E195 /* InfoPlist.strings in Resources */,
+				D92612391C6E8BDB00BE77BA /* EvangelismViewController.xib in Resources */,
 				D9D3CDF41B3F20EF00C8E195 /* Images.xcassets in Resources */,
 				D9DA04781BA5B68600F434F4 /* BoroSpecificNewsWidgetView.xib in Resources */,
 			);
