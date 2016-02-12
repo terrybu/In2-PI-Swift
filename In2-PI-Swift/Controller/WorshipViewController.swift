@@ -156,9 +156,9 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell
+        cell = UITableViewCell()
         if (tableView == weeklyProgramsTableView) {
             if thisMonthProgramsAreEmpty {
-                cell = UITableViewCell()
                 cell.textLabel?.font = UIFont.systemFontOfSize(13.0)
                 if indexPath.row == 0 {
                     cell.textLabel!.text = "이번 달의 주보는 아직 업로드되지 않았습니다."
@@ -167,22 +167,18 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
                 }
             } else {
                 let program = thisMonthProgramsArray[indexPath.row]
-                cell = weeklyProgramsTableView.dequeueReusableCellWithIdentifier(kWeeklyProgramsTableViewCellReuseIdentifier)!
                 cell.textLabel!.text = program.title
                 cell.accessoryView = UIImageView(image: UIImage(named: "btn_download"))
             }
         } else {
             if praiseSongsListIsEmpty {
-                cell = UITableViewCell()
-                cell.textLabel?.font = UIFont.systemFontOfSize(13.0)
+                cell.textLabel?.font = UIFont.systemFontOfSize(14.0)
                 if indexPath.row == 0 {
                     cell.textLabel!.text = "최근에 찬양송 리스트가 업데이트되지 않았거나"
                 } else {
-                    cell.textLabel!.text = "인터넷 연결이 실패했습니다."
+                    cell.textLabel!.text = "인터넷 연결이 실패하였습니다."
                 }
             } else {
-                let reuseIdentifier = "SongsTableViewCell"
-                cell = songsTableView.dequeueReusableCellWithIdentifier(reuseIdentifier)!
                 let songObject = songObjectsArray[indexPath.row]
                 cell.textLabel!.text = songObject.songTitle!
             }
@@ -220,7 +216,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
             } else {
                 //something went wrong so Praise Songs List not appearing at all
                 //Two reasons: internet failure or Facebook query json data failed to retrieve Praise Songs Data in its recent 20 objects 
-                label.text = "찬양송 다운로드가 작동하지 않고 있습니다."
+                label.text = "찬양송 리스트가 작동하지 않고 있습니다."
                 headerView.backgroundColor = UIColor.grayColor()
                 label.textColor = UIColor.whiteColor()
             }

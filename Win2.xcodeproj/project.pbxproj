@@ -33,6 +33,7 @@
 		D92295951B9BF87000C34A66 /* WorshipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92295941B9BF87000C34A66 /* WorshipViewController.swift */; };
 		D92612391C6E8BDB00BE77BA /* EvangelismViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92612381C6E8BDB00BE77BA /* EvangelismViewController.xib */; };
 		D926123B1C6E926400BE77BA /* NurtureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D926123A1C6E926400BE77BA /* NurtureViewController.xib */; };
+		D926123D1C6E9FCE00BE77BA /* WorshipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D926123C1C6E9FCE00BE77BA /* WorshipViewController.xib */; };
 		D92938021C07F2820040BD6D /* PurpleSegmentedControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92938011C07F2820040BD6D /* PurpleSegmentedControlView.xib */; };
 		D92938041C07F3C10040BD6D /* PurpleSegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92938031C07F3C10040BD6D /* PurpleSegmentedControlView.swift */; };
 		D92B56351BD5C8930085208F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92B56341BD5C8930085208F /* LoginViewController.swift */; };
@@ -136,6 +137,7 @@
 		D92295941B9BF87000C34A66 /* WorshipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorshipViewController.swift; sourceTree = "<group>"; };
 		D92612381C6E8BDB00BE77BA /* EvangelismViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvangelismViewController.xib; sourceTree = "<group>"; };
 		D926123A1C6E926400BE77BA /* NurtureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NurtureViewController.xib; sourceTree = "<group>"; };
+		D926123C1C6E9FCE00BE77BA /* WorshipViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorshipViewController.xib; sourceTree = "<group>"; };
 		D92938011C07F2820040BD6D /* PurpleSegmentedControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurpleSegmentedControlView.xib; sourceTree = "<group>"; };
 		D92938031C07F3C10040BD6D /* PurpleSegmentedControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurpleSegmentedControlView.swift; sourceTree = "<group>"; };
 		D92B56341BD5C8930085208F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				D92295941B9BF87000C34A66 /* WorshipViewController.swift */,
+				D926123C1C6E9FCE00BE77BA /* WorshipViewController.xib */,
 				D99274701C2F57E90055810F /* AllWeeklyProgramsTableViewController.swift */,
 				D981A0291C2F5F4D003BA562 /* WeeklyProgramDisplayManager.swift */,
 			);
@@ -683,6 +686,7 @@
 				D9965A7E1B9E5A3600AB4A74 /* NewsArticleView.xib in Resources */,
 				D9D7C5591B82CFE4003E48EA /* todolist.txt in Resources */,
 				D991C4FE1C6265BB0081A6E5 /* Launch Screen.storyboard in Resources */,
+				D926123D1C6E9FCE00BE77BA /* WorshipViewController.xib in Resources */,
 				D9A79E151C2C2EEA003D9981 /* NanumBarunGothic.ttf in Resources */,
 				D9D3CE191B3F338D00C8E195 /* Localizable.strings in Resources */,
 				D91FCAB81C679287008C7D1C /* NoticeWidget.xib in Resources */,
