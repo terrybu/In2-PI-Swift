@@ -9,18 +9,18 @@
 import UIKit
 import EAIntroView
 
-private let sampleDescription1 = "Get latest updates on your favorite In2 PI stories and contents!";
-private let sampleDescription3 = "Tap the Hamburger Menu icon in upperleft corner to open the navigation menu";
+private let walkthroughDescription1 = "메인화면에서 Win2 청년부 공동체 최신소식과 이야기들을 확인하세요!"
+private let walkthroughDescription2 = "Tap the Hamburger Menu icon in upperleft corner to open the navigation menu"
 
 class WalkthroughManager: NSObject, EAIntroDelegate{
     
     static let sharedInstance = WalkthroughManager()
     
-    func displayWalkthroughScreen(window: UIWindow?) {
-        let walkthroughVC = WalkthroughViewController()
-        walkthroughVC.view.frame = window!.frame
-        let page1 = setUpPageForEAIntroPage(walkthroughVC, title: "Welcome", description: sampleDescription1, imageName: "walkthru01_phone")
-        let page3 = setUpPageForEAIntroPage(walkthroughVC, title: "Navigation Drawer", description: sampleDescription3, imageName: "walkthru03_phone") ;
+    func displayWalkthroughScreen(view: UIView) {
+        let walkthroughVC = UIViewController()
+        walkthroughVC.view.frame = view.frame
+        let page1 = setUpPageForEAIntroPage(walkthroughVC, title: "Welcome", description: walkthroughDescription1, imageName: "Walkthru-home")
+        let page3 = setUpPageForEAIntroPage(walkthroughVC, title: "Welcome", description: walkthroughDescription2, imageName: "walkthru03_phone") ;
         
         let introView = EAIntroView(frame: walkthroughVC.view.frame, andPages: [page1, page3])
         //if you want to the navigation bar way
@@ -34,23 +34,24 @@ class WalkthroughManager: NSObject, EAIntroDelegate{
         introView.skipButton = btn
         introView.skipButtonY = walkthroughVC.view.frame.size.height - 30
         introView.skipButtonAlignment = EAViewAlignment.Right
-        
         introView.showInView(walkthroughVC.view, animateDuration: 0.3)
-        window?.rootViewController = walkthroughVC
+        view.addSubview(introView)
     }
     
-    func redirectToHomeScreenAfterCheckingForFirstLaunch(window: UIWindow?) {
-        let appLaunchToken = NSUserDefaults.standardUserDefaults().boolForKey(kAppLaunchToken)
-        if appLaunchToken == false {
-            print("App was never launched before, setting NSUserDefault AND displaying walkthrough screen")
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: kAppLaunchToken)
-            WalkthroughManager.sharedInstance.displayWalkthroughScreen(window)
-        }
-        else if appLaunchToken == true {
-            print("Not first launch because App Token was found. Take him straight to login or home screen without walkthrough")
-            showHomeScreen()
-        }
-    }
+    //This was a weird decision. Didn't really need defaults token
+//    func redirectToHomeScreenAfterCheckingForFirstLaunch(window: UIWindow?) {
+//        let appLaunchToken = NSUserDefaults.standardUserDefaults().boolForKey(kAppLaunchToken)
+//        if appLaunchToken == false {
+//            print("App was never launched before, setting NSUserDefault AND displaying walkthrough screen")
+//            NSUserDefaults.standardUserDefaults().setBool(true, forKey: kAppLaunchToken)
+//            WalkthroughManager.sharedInstance.displayWalkthroughScreen(window)
+//        }
+//        else if appLaunchToken == true {
+//            print("Not first launch because App Token was found. Take him straight to login or home screen without walkthrough")
+//            showHomeScreen()
+//        }
+//    }
+
     
     private func setUpPageForEAIntroPage(walkthroughVC: UIViewController, title: String, description: String, imageName: String) -> EAIntroPage {
         let page = EAIntroPage()
@@ -74,11 +75,11 @@ class WalkthroughManager: NSObject, EAIntroDelegate{
     
     //MARK: EAIntroViewDelegate
     @objc func introDidFinish(introView: EAIntroView!) {
-        print("intro walkthrough finished or wasn't needed")
-        showHomeScreen()
+        print("intro walkthrough finished")
     }
     
-    func showHomeScreen() {
+    func showHomeScreen(view: UIView) {
+        displayWalkthroughScreen(view)
         let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.window?.rootViewController = revealVC

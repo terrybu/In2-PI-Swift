@@ -16,7 +16,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet var confirmPasswordTextField:PaddedTextField!
     @IBOutlet var emailTextField:PaddedTextField!
     @IBOutlet var birthdayDatePicker: UIDatePicker!
-    var birthdaySelected: NSDate?
 
     convenience init() {
         self.init(nibName: "SignUpViewController", bundle: nil)
@@ -53,12 +52,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: IBActions
-    @IBAction func datePickerValueChanged(sender: UIDatePicker) {
-        print("date changed")
-        birthdaySelected = sender.date
-    }
-    
     @IBAction func signUpButtonPressed(sender: AnyObject) {
         let firstName = self.firstNameTextField.text
         let lastName = self.lastNameTextField.text
@@ -71,7 +64,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
             //stop any New User Creation because it didn't pass validation
         }
         
-        createNewUserOnFirebaseAndDirectToHomeScreen(email!, password: password!, firstName: firstName!, lastName: lastName!, birthday: self.birthdaySelected!)
+        createNewUserOnFirebaseAndDirectToHomeScreen(email!, password: password!, firstName: firstName!, lastName: lastName!, birthday: self.birthdayDatePicker.date)
     }
 
     private func createNewUserOnFirebaseAndDirectToHomeScreen(email: String, password: String, firstName: String, lastName: String, birthday: NSDate) {
@@ -89,14 +82,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
                 alertController.view.tintColor = UIColor.In2DeepPurple()
                 self.presentViewController(alertController, animated: true, completion: nil)
             } else {
-                let alertController = UIAlertController(title: "Success", message: "가입/로그인에 성공하셨습니다.", preferredStyle: UIAlertControllerStyle.Alert)
-                let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
-                alertController.addAction(ok)
-                alertController.view.tintColor = UIColor.In2DeepPurple()
-                self.presentViewController(alertController, animated: true, completion: nil)
+                UIAlertController.presentAlert(self, alertTitle: "가입 성공", alertMessage: "앱 가입에 성공하셨습니다!", confirmTitle: "OK")
                 //Upon success, check if it's first time run, if it is, show walkthrough. If not, show home screen.
                 let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                WalkthroughManager.sharedInstance.redirectToHomeScreenAfterCheckingForFirstLaunch(appDelegate.window)
+                WalkthroughManager.sharedInstance.showHomeScreen(self.view)
             }
         })
     }

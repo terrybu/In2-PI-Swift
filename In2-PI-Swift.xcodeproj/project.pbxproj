@@ -79,7 +79,6 @@
 		D9D7C5591B82CFE4003E48EA /* todolist.txt in Resources */ = {isa = PBXBuildFile; fileRef = D9D7C5581B82CFE4003E48EA /* todolist.txt */; };
 		D9DA04781BA5B68600F434F4 /* BoroSpecificNewsWidgetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9DA04771BA5B68600F434F4 /* BoroSpecificNewsWidgetView.xib */; };
 		D9DA047A1BA5B69100F434F4 /* BoroSpecificNewsWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DA04791BA5B69100F434F4 /* BoroSpecificNewsWidgetView.swift */; };
-		D9DE0D4B1C138DFF00A58749 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DE0D4A1C138DFF00A58749 /* WalkthroughViewController.swift */; };
 		D9EF135F1BAA44B4006D7F78 /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF135E1BAA44B4006D7F78 /* CustomDateFormatter.swift */; };
 		D9F7F4811B93547600D86FF7 /* FacebookPhotoQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7F4801B93547600D86FF7 /* FacebookPhotoQuery.swift */; };
 		D9F7F4831B935DFA00D86FF7 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7F4821B935DFA00D86FF7 /* GalleryCell.swift */; };
@@ -202,7 +201,6 @@
 		D9D7C5581B82CFE4003E48EA /* todolist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = todolist.txt; sourceTree = "<group>"; };
 		D9DA04771BA5B68600F434F4 /* BoroSpecificNewsWidgetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoroSpecificNewsWidgetView.xib; sourceTree = "<group>"; };
 		D9DA04791BA5B69100F434F4 /* BoroSpecificNewsWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoroSpecificNewsWidgetView.swift; sourceTree = "<group>"; };
-		D9DE0D4A1C138DFF00A58749 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		D9EF135E1BAA44B4006D7F78 /* CustomDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
 		D9F7F4801B93547600D86FF7 /* FacebookPhotoQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookPhotoQuery.swift; sourceTree = "<group>"; };
 		D9F7F4821B935DFA00D86FF7 /* GalleryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryCell.swift; path = ../View/GalleryCell.swift; sourceTree = "<group>"; };
@@ -326,7 +324,6 @@
 				D901C0D51C39E2CA00B350B1 /* LoginViewController.xib */,
 				D97839811BF9305B00E4A834 /* SignUpViewController.swift */,
 				D9583F4D1C38AE8500A95D54 /* SignUpViewController.xib */,
-				D9DE0D4A1C138DFF00A58749 /* WalkthroughViewController.swift */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
@@ -865,7 +862,6 @@
 				D99EF24F1B9F59FD00026D66 /* FacebookQuery.swift in Sources */,
 				D98D55CF1C4B02A0003A40B1 /* DateManager.swift in Sources */,
 				D90A08231BB5D4BD0033DD6B /* TFHpple.m in Sources */,
-				D9DE0D4B1C138DFF00A58749 /* WalkthroughViewController.swift in Sources */,
 				D9F8C4781BA4CFF800881B94 /* ExpandableAboutViewHandler.swift in Sources */,
 				D9FF31FB1C671BC00037DCF1 /* FirebaseManager.swift in Sources */,
 				D9FF32051C676E5E0037DCF1 /* NoticeAdminViewController.swift in Sources */,

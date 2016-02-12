@@ -65,7 +65,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func moviePlayBackDidFinish() {
             let loginVC = LoginViewController()
             loginVC.dismissBlock = {
-                WalkthroughManager.sharedInstance.redirectToHomeScreenAfterCheckingForFirstLaunch(self.window)
+                let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
+                self.window?.rootViewController = revealVC
+                self.setUpNavBarAndStatusBarImages()
             }
             window?.rootViewController = loginVC
     }
