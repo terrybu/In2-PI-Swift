@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="NanumBarunGothic.ttf">
@@ -36,7 +36,7 @@
                     </variation>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기사 제목을 두줄로 이곳에 입력하십시오" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Aj-th-ja0" userLabel="articleTitleLabel">
-                    <rect key="frame" x="16" y="165" width="564" height="82"/>
+                    <rect key="frame" x="16" y="165" width="580" height="82"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="82" id="LqO-zP-yLR"/>
                         <constraint firstAttribute="width" constant="217" id="VBH-XA-HfS"/>
@@ -50,7 +50,7 @@
                         </mask>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfu-yd-3gC" userLabel="articleCategoryLabel" customClass="PaddedLabel" customModule="In2_PI_Swift" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfu-yd-3gC" userLabel="articleCategoryLabel" customClass="PaddedLabel" customModule="Win2" customModuleProvider="target">
                     <rect key="frame" x="16" y="127" width="67" height="33"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="33" id="sSx-7d-hbi"/>
@@ -80,7 +80,7 @@
                 <constraint firstItem="mfu-yd-3gC" firstAttribute="leading" secondItem="1gS-1b-BEh" secondAttribute="leading" constant="54" id="29y-JR-AQX"/>
                 <constraint firstAttribute="trailing" secondItem="0OP-jh-p7e" secondAttribute="trailing" id="860-fR-ai0"/>
                 <constraint firstItem="0OP-jh-p7e" firstAttribute="top" secondItem="1gS-1b-BEh" secondAttribute="top" id="BKl-pG-JAa"/>
-                <constraint firstAttribute="trailing" secondItem="7Aj-th-ja0" secondAttribute="trailing" constant="20" id="NYK-Rk-QZa"/>
+                <constraint firstAttribute="trailing" secondItem="7Aj-th-ja0" secondAttribute="trailing" constant="4" id="NYK-Rk-QZa"/>
                 <constraint firstAttribute="bottom" secondItem="0OP-jh-p7e" secondAttribute="bottom" id="QUv-cx-iv0"/>
                 <constraint firstAttribute="bottom" secondItem="leB-9p-VNW" secondAttribute="bottom" constant="12" id="f89-pj-HNH"/>
                 <constraint firstItem="mfu-yd-3gC" firstAttribute="leading" secondItem="7Aj-th-ja0" secondAttribute="leading" id="fHI-qI-ZWN"/>

@@ -33,10 +33,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Gg-pQ-EGO" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="700"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="625"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1OI-qH-uNG" customClass="NewsArticleView" customModule="Win2" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="350"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="313"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="bYt-ZF-21v"/>
@@ -48,7 +48,7 @@
                                                 </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n3R-u9-z7n" userLabel="Todays QTWidget" customClass="NoticeWidget" customModule="Win2" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="350" width="600" height="350"/>
+                                                <rect key="frame" x="0.0" y="313" width="600" height="312"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                         </subviews>
@@ -61,7 +61,7 @@
                                             <constraint firstAttribute="trailing" secondItem="n3R-u9-z7n" secondAttribute="trailing" id="YAG-Lx-qQj"/>
                                             <constraint firstItem="n3R-u9-z7n" firstAttribute="leading" secondItem="3Gg-pQ-EGO" secondAttribute="leading" id="j0W-Tq-Sgs"/>
                                             <constraint firstItem="1OI-qH-uNG" firstAttribute="top" secondItem="3Gg-pQ-EGO" secondAttribute="top" id="ot1-OI-2NQ"/>
-                                            <constraint firstAttribute="height" constant="700" id="tiz-WA-Q5G"/>
+                                            <constraint firstAttribute="height" constant="625" id="tiz-WA-Q5G"/>
                                             <constraint firstAttribute="trailing" secondItem="1OI-qH-uNG" secondAttribute="trailing" id="uQo-VP-Cx2"/>
                                         </constraints>
                                     </view>
