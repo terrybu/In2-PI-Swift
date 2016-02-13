@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="NanumBarunGothic.ttf">
@@ -23,80 +24,114 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="이벤트 제목" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7T3-Gp-7fM" customClass="PaddedTextField" customModule="Win2" customModuleProvider="target">
-                    <rect key="frame" x="32" y="32" width="536" height="39"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGf-RM-MDC">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BZh-Pi-BCb" userLabel="Content View">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="이벤트 제목" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7T3-Gp-7fM" customClass="PaddedTextField" customModule="Win2" customModuleProvider="target">
+                                    <rect key="frame" x="60" y="12" width="480" height="39"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="39" id="cfI-SC-Npq"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="VwY-St-Aqa"/>
+                                    </connections>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="팀 이름" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1zc-su-2Ft" customClass="PaddedTextField" customModule="Win2" customModuleProvider="target">
+                                    <rect key="frame" x="60" y="59" width="480" height="39"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="39" id="ndU-Kd-Ayd"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="gLV-Ym-wc2"/>
+                                    </connections>
+                                </textField>
+                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="DAd-Jh-X8C">
+                                    <rect key="frame" x="60" y="195" width="480" height="216"/>
+                                    <date key="date" timeIntervalSinceReferenceDate="476553261.92228597">
+                                        <!--2016-02-07 15:54:21 +0000-->
+                                    </date>
+                                    <connections>
+                                        <action selector="datePickerValueChanged:" destination="-1" eventType="valueChanged" id="TG2-93-cDX"/>
+                                    </connections>
+                                </datePicker>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이벤트 날짜/시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dh8-Vu-NhN">
+                                    <rect key="frame" x="60" y="173" width="104" height="18"/>
+                                    <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" placeholder="이벤트 내용" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Brt-It-Hzf" customClass="PaddedTextField" customModule="Win2" customModuleProvider="target">
+                                    <rect key="frame" x="60" y="104" width="480" height="39"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="jNy-GD-eVR"/>
+                                    </constraints>
+                                    <edgeInsets key="layoutMargins" top="16" left="16" bottom="16" right="16"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="jNy-GD-eVR"/>
+                                        </mask>
+                                    </variation>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="UsK-IA-iQg"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="1zc-su-2Ft" firstAttribute="leading" secondItem="7T3-Gp-7fM" secondAttribute="leading" id="0S8-T2-etS"/>
+                                <constraint firstItem="7T3-Gp-7fM" firstAttribute="top" secondItem="BZh-Pi-BCb" secondAttribute="top" constant="12" id="1Hr-Z3-fRS"/>
+                                <constraint firstItem="1zc-su-2Ft" firstAttribute="centerX" secondItem="7T3-Gp-7fM" secondAttribute="centerX" id="2Hu-wS-6eU"/>
+                                <constraint firstItem="dh8-Vu-NhN" firstAttribute="top" secondItem="Brt-It-Hzf" secondAttribute="bottom" constant="30" id="9ZK-BV-qFM"/>
+                                <constraint firstItem="DAd-Jh-X8C" firstAttribute="trailing" secondItem="Brt-It-Hzf" secondAttribute="trailing" id="AqK-fA-85Q"/>
+                                <constraint firstItem="DAd-Jh-X8C" firstAttribute="leading" secondItem="dh8-Vu-NhN" secondAttribute="leading" id="EPK-Y6-hEw"/>
+                                <constraint firstItem="1zc-su-2Ft" firstAttribute="width" secondItem="7T3-Gp-7fM" secondAttribute="width" id="NV9-IB-wQZ"/>
+                                <constraint firstAttribute="height" constant="600" id="Olr-am-Qlb"/>
+                                <constraint firstItem="Brt-It-Hzf" firstAttribute="leading" secondItem="1zc-su-2Ft" secondAttribute="leading" id="UbW-l6-Lf4"/>
+                                <constraint firstItem="Brt-It-Hzf" firstAttribute="top" secondItem="1zc-su-2Ft" secondAttribute="bottom" constant="6" id="cUm-4b-mb3"/>
+                                <constraint firstItem="Brt-It-Hzf" firstAttribute="width" secondItem="1zc-su-2Ft" secondAttribute="width" id="fzP-sS-7YC"/>
+                                <constraint firstItem="7T3-Gp-7fM" firstAttribute="width" secondItem="BZh-Pi-BCb" secondAttribute="width" multiplier="0.8:1" id="hff-wh-hxF"/>
+                                <constraint firstItem="DAd-Jh-X8C" firstAttribute="top" secondItem="dh8-Vu-NhN" secondAttribute="bottom" constant="4" id="i04-BB-DvN"/>
+                                <constraint firstItem="Brt-It-Hzf" firstAttribute="height" secondItem="1zc-su-2Ft" secondAttribute="height" id="nfj-CR-Y1z"/>
+                                <constraint firstItem="1zc-su-2Ft" firstAttribute="top" secondItem="7T3-Gp-7fM" secondAttribute="bottom" constant="8" id="vyb-j0-NUo"/>
+                                <constraint firstItem="7T3-Gp-7fM" firstAttribute="centerX" secondItem="BZh-Pi-BCb" secondAttribute="centerX" id="wsP-po-tOI"/>
+                                <constraint firstItem="dh8-Vu-NhN" firstAttribute="leading" secondItem="Brt-It-Hzf" secondAttribute="leading" id="ymE-hR-EwB"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="39" id="cfI-SC-Npq"/>
+                        <constraint firstAttribute="trailing" secondItem="BZh-Pi-BCb" secondAttribute="trailing" id="522-sb-28G"/>
+                        <constraint firstItem="BZh-Pi-BCb" firstAttribute="top" secondItem="NGf-RM-MDC" secondAttribute="top" id="5kZ-bR-Enh"/>
+                        <constraint firstItem="BZh-Pi-BCb" firstAttribute="leading" secondItem="NGf-RM-MDC" secondAttribute="leading" id="AEA-bc-seJ"/>
+                        <constraint firstAttribute="trailing" secondItem="BZh-Pi-BCb" secondAttribute="trailing" id="LZQ-ng-vHa"/>
+                        <constraint firstItem="BZh-Pi-BCb" firstAttribute="leading" secondItem="NGf-RM-MDC" secondAttribute="leading" id="bDg-IM-41E"/>
+                        <constraint firstAttribute="bottom" secondItem="BZh-Pi-BCb" secondAttribute="bottom" id="uIO-yx-2gO"/>
+                        <constraint firstItem="BZh-Pi-BCb" firstAttribute="width" secondItem="NGf-RM-MDC" secondAttribute="width" id="xEi-sW-i0I"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="VwY-St-Aqa"/>
-                    </connections>
-                </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="팀 이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1zc-su-2Ft" customClass="PaddedTextField" customModule="Win2" customModuleProvider="target">
-                    <rect key="frame" x="32" y="88" width="536" height="39"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="39" id="ndU-Kd-Ayd"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="gLV-Ym-wc2"/>
-                    </connections>
-                </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" placeholder="이벤트 내용" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Brt-It-Hzf" customClass="PaddedTextField" customModule="Win2" customModuleProvider="target">
-                    <rect key="frame" x="32" y="435" width="536" height="60"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="60" id="jNy-GD-eVR"/>
-                    </constraints>
-                    <edgeInsets key="layoutMargins" top="16" left="16" bottom="16" right="16"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="UsK-IA-iQg"/>
-                    </connections>
-                </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이벤트 날짜/시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dh8-Vu-NhN">
-                    <rect key="frame" x="32" y="157" width="104" height="18"/>
-                    <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
-                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="DAd-Jh-X8C">
-                    <rect key="frame" x="32" y="183" width="536" height="216"/>
-                    <date key="date" timeIntervalSinceReferenceDate="476553261.92228597">
-                        <!--2016-02-07 15:54:21 +0000-->
-                    </date>
-                    <connections>
-                        <action selector="datePickerValueChanged:" destination="-1" eventType="valueChanged" id="TG2-93-cDX"/>
-                    </connections>
-                </datePicker>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="AEA-bc-seJ"/>
+                            <exclude reference="LZQ-ng-vHa"/>
+                        </mask>
+                    </variation>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="1zc-su-2Ft" firstAttribute="top" secondItem="7T3-Gp-7fM" secondAttribute="bottom" constant="17" id="6aB-TE-uA2"/>
-                <constraint firstItem="dh8-Vu-NhN" firstAttribute="leading" secondItem="1zc-su-2Ft" secondAttribute="leading" id="6q8-IH-Nbz"/>
-                <constraint firstAttribute="trailing" secondItem="7T3-Gp-7fM" secondAttribute="trailing" constant="32" id="7KQ-6q-R5l"/>
-                <constraint firstItem="DAd-Jh-X8C" firstAttribute="trailing" secondItem="1zc-su-2Ft" secondAttribute="trailing" id="Gij-ih-Ig7"/>
-                <constraint firstItem="dh8-Vu-NhN" firstAttribute="top" secondItem="1zc-su-2Ft" secondAttribute="bottom" constant="30" id="GtP-zZ-wdJ"/>
-                <constraint firstItem="1zc-su-2Ft" firstAttribute="trailing" secondItem="7T3-Gp-7fM" secondAttribute="trailing" id="K6H-gc-dO5"/>
-                <constraint firstItem="DAd-Jh-X8C" firstAttribute="top" secondItem="dh8-Vu-NhN" secondAttribute="bottom" constant="8" id="Mes-US-haf"/>
-                <constraint firstItem="7T3-Gp-7fM" firstAttribute="top" secondItem="08g-MR-axY" secondAttribute="top" constant="32" id="N9z-G2-5pa"/>
-                <constraint firstItem="Brt-It-Hzf" firstAttribute="leading" secondItem="7T3-Gp-7fM" secondAttribute="leading" id="VwG-Ht-jOK"/>
-                <constraint firstItem="7T3-Gp-7fM" firstAttribute="leading" secondItem="08g-MR-axY" secondAttribute="leading" constant="32" id="W1a-yo-jk3"/>
-                <constraint firstItem="1zc-su-2Ft" firstAttribute="leading" secondItem="7T3-Gp-7fM" secondAttribute="leading" id="c1e-Pf-wgZ"/>
-                <constraint firstItem="Brt-It-Hzf" firstAttribute="top" secondItem="7T3-Gp-7fM" secondAttribute="bottom" constant="32" id="d4K-Jm-sIF"/>
-                <constraint firstItem="DAd-Jh-X8C" firstAttribute="leading" secondItem="1zc-su-2Ft" secondAttribute="leading" id="px7-Yp-oMJ"/>
-                <constraint firstItem="Brt-It-Hzf" firstAttribute="trailing" secondItem="7T3-Gp-7fM" secondAttribute="trailing" id="usp-np-6uh"/>
-                <constraint firstItem="Brt-It-Hzf" firstAttribute="top" secondItem="DAd-Jh-X8C" secondAttribute="bottom" constant="36" id="v1V-X3-2Lk"/>
+                <constraint firstAttribute="trailing" secondItem="NGf-RM-MDC" secondAttribute="trailing" id="2zw-m7-BkF"/>
+                <constraint firstItem="NGf-RM-MDC" firstAttribute="top" secondItem="08g-MR-axY" secondAttribute="top" id="VKs-v5-H9U"/>
+                <constraint firstItem="NGf-RM-MDC" firstAttribute="leading" secondItem="08g-MR-axY" secondAttribute="leading" id="aUX-y2-qX0"/>
+                <constraint firstAttribute="bottom" secondItem="NGf-RM-MDC" secondAttribute="bottom" id="hYU-7D-Hbw"/>
             </constraints>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="d4K-Jm-sIF"/>
-                </mask>
-            </variation>
-            <point key="canvasLocation" x="116" y="124"/>
+            <point key="canvasLocation" x="107" y="91"/>
         </view>
     </objects>
 </document>

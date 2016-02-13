@@ -106,7 +106,7 @@ class SocialServicesViewController: ParentViewController, UITableViewDelegate, U
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let event = eventsArray![indexPath.row]
-        UIAlertController.presentAlert(self, alertTitle: event.title, alertMessage: "날짜: \(event.date) \n\n Team: \(event.teamName) \n \(event.description)", confirmTitle: "OK")
+        UIAlertController.presentAlert(self, alertTitle: event.title, alertMessage: "날짜: \(event.date) \nTeam: \(event.teamName)\n\n \(event.description)", confirmTitle: "OK")
     }
 
     

@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoticeCreationViewController" customModule="In2_PI_Swift" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoticeCreationViewController" customModule="Win2" customModuleProvider="target">
             <connections>
                 <outlet property="bodyTextField" destination="juC-Sr-jQM" id="UCs-7L-9vy"/>
                 <outlet property="linkTextField" destination="YYx-Y5-Gtg" id="S7A-eI-7Fk"/>
@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="제목" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pgh-GI-PaS" customClass="PaddedTextField" customModule="In2_PI_Swift" customModuleProvider="target">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="제목" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pgh-GI-PaS" customClass="PaddedTextField" customModule="Win2" customModuleProvider="target">
                     <rect key="frame" x="32" y="32" width="536" height="39"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="39" id="QOE-Ey-4lT"/>
@@ -28,7 +28,7 @@
                         <outlet property="delegate" destination="-1" id="fPP-la-FhD"/>
                     </connections>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" placeholder="본문" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="juC-Sr-jQM" customClass="PaddedTextField" customModule="In2_PI_Swift" customModuleProvider="target">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" placeholder="본문" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="juC-Sr-jQM" customClass="PaddedTextField" customModule="Win2" customModuleProvider="target">
                     <rect key="frame" x="32" y="103" width="536" height="183"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="183" id="cri-g7-msf"/>
@@ -40,7 +40,7 @@
                         <outlet property="delegate" destination="-1" id="bCZ-UU-0N2"/>
                     </connections>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="링크" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YYx-Y5-Gtg" customClass="PaddedTextField" customModule="In2_PI_Swift" customModuleProvider="target">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="링크" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YYx-Y5-Gtg" customClass="PaddedTextField" customModule="Win2" customModuleProvider="target">
                     <rect key="frame" x="32" y="318" width="536" height="39"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="39" id="zHr-uI-Z9v"/>
