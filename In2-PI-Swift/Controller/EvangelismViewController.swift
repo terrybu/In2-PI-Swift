@@ -16,12 +16,13 @@ class EvangelismViewController: ParentViewController, UIGestureRecognizerDelegat
     @IBOutlet var expandableAboutView: ExpandableAboutView!
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
     @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
-    @IBOutlet var evangelismNewsWidgetView: BoroSpecificNewsWidgetView!
-    @IBOutlet var evangelismImageView: UIImageView!
-    
     var expandedAboutViewHeight:CGFloat = 0
     private let kOriginalContentViewHeight: CGFloat = 600
+    
     var evangelismFeedObject: FBFeedPost?
+    @IBOutlet var evangelismNewsWidgetView: BoroSpecificNewsWidgetView!
+    @IBOutlet var evangelismImageView: UIImageView!
+    @IBOutlet var playButton: UIButton!
     
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
@@ -46,6 +47,7 @@ class EvangelismViewController: ParentViewController, UIGestureRecognizerDelegat
         tapGesture.delegate = self
         tapGesture.numberOfTapsRequired = 1
         evangelismImageView.addGestureRecognizer(tapGesture)
+        playButton.addTarget(self, action: "playVideo", forControlEvents: UIControlEvents.TouchUpInside)
     }
     
     func playVideo()  {

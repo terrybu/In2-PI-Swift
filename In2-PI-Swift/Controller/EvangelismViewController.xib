@@ -17,6 +17,7 @@
                 <outlet property="evangelismImageView" destination="RQs-Po-ZrF" id="rEN-c8-EbJ"/>
                 <outlet property="evangelismNewsWidgetView" destination="mfR-rw-T9N" id="H6a-UF-a0g"/>
                 <outlet property="expandableAboutView" destination="R8W-w8-knd" id="LeD-sm-Is7"/>
+                <outlet property="playButton" destination="Ikk-J3-y9R" id="ha2-yJ-Dvl"/>
                 <outlet property="view" destination="DN5-o6-VOg" id="Hz3-uG-weq"/>
             </connections>
         </placeholder>
@@ -69,15 +70,16 @@
                                         </mask>
                                     </variation>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015년 겨울 선교 필라델피아" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwn-bu-o21">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2015년 겨울 선교 필라델피아" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwn-bu-o21">
                                     <rect key="frame" x="199" y="94" width="203" height="20"/>
                                     <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Btn_Play" translatesAutoresizingMaskIntoConstraints="NO" id="prw-vo-SJa">
-                                    <rect key="frame" x="269" y="165" width="63" height="63"/>
-                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ikk-J3-y9R">
+                                    <rect key="frame" x="269" y="157" width="63" height="63"/>
+                                    <state key="normal" backgroundImage="Btn_Play"/>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -95,13 +97,13 @@
                                 <constraint firstItem="RQs-Po-ZrF" firstAttribute="top" secondItem="R8W-w8-knd" secondAttribute="bottom" id="TPN-PR-fqb"/>
                                 <constraint firstItem="uwn-bu-o21" firstAttribute="centerX" secondItem="5F8-t9-mad" secondAttribute="centerX" id="Yca-7N-7Hc"/>
                                 <constraint firstItem="RQs-Po-ZrF" firstAttribute="leading" secondItem="5F8-t9-mad" secondAttribute="leading" id="e93-AA-V3a"/>
-                                <constraint firstItem="prw-vo-SJa" firstAttribute="top" secondItem="uwn-bu-o21" secondAttribute="bottom" constant="51" id="eJz-o3-NP9"/>
+                                <constraint firstItem="Ikk-J3-y9R" firstAttribute="top" secondItem="uwn-bu-o21" secondAttribute="bottom" constant="43" id="jr1-eS-ZiW"/>
                                 <constraint firstItem="RQs-Po-ZrF" firstAttribute="top" secondItem="5F8-t9-mad" secondAttribute="top" id="lFk-d9-YaZ"/>
+                                <constraint firstItem="Ikk-J3-y9R" firstAttribute="centerX" secondItem="uwn-bu-o21" secondAttribute="centerX" id="mSd-j4-0mg"/>
                                 <constraint firstItem="mfR-rw-T9N" firstAttribute="top" secondItem="R8W-w8-knd" secondAttribute="bottom" constant="5" id="qHX-fa-W0P"/>
                                 <constraint firstItem="mfR-rw-T9N" firstAttribute="top" secondItem="RQs-Po-ZrF" secondAttribute="bottom" id="qgq-5u-7px"/>
                                 <constraint firstAttribute="trailing" secondItem="RQs-Po-ZrF" secondAttribute="trailing" id="xbl-Nc-97t"/>
                                 <constraint firstItem="mfR-rw-T9N" firstAttribute="leading" secondItem="5F8-t9-mad" secondAttribute="leading" id="yGa-pQ-aIu"/>
-                                <constraint firstItem="prw-vo-SJa" firstAttribute="centerX" secondItem="uwn-bu-o21" secondAttribute="centerX" id="ycU-WC-Eyi"/>
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
