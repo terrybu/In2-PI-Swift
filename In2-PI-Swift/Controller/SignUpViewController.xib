@@ -11,7 +11,7 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="In2_PI_Swift" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="Win2" customModuleProvider="target">
             <connections>
                 <outlet property="birthdayDatePicker" destination="Kpn-dD-TZ2" id="3gQ-H0-bML"/>
                 <outlet property="confirmPasswordTextField" destination="Nil-Rw-qQP" id="WBd-AV-AYg"/>
@@ -27,8 +27,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" background="textfield_short" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DwB-LX-N0u" userLabel="FirstNameField" customClass="PaddedTextField" customModule="In2_PI_Swift" customModuleProvider="target">
-                    <rect key="frame" x="24" y="32" width="159" height="38"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" background="textfield_short" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DwB-LX-N0u" userLabel="FirstNameField" customClass="PaddedTextField" customModule="Win2" customModuleProvider="target">
+                    <rect key="frame" x="16" y="32" width="159" height="38"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="159" id="Fch-mF-PtS"/>
                         <constraint firstAttribute="height" constant="38" id="LgP-bY-24T"/>
@@ -36,8 +36,8 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="natural" minimumFontSize="17" background="textfield_long" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qbC-w6-vPA" userLabel="PasswordField" customClass="PaddedTextField" customModule="In2_PI_Swift" customModuleProvider="target">
-                    <rect key="frame" x="24" y="156" width="335" height="38"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="natural" minimumFontSize="17" background="textfield_long" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qbC-w6-vPA" userLabel="PasswordField" customClass="PaddedTextField" customModule="Win2" customModuleProvider="target">
+                    <rect key="frame" x="16" y="156" width="334" height="38"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
@@ -48,18 +48,29 @@
                         <action selector="signUpButtonPressed:" destination="-1" eventType="touchUpInside" id="oHa-DR-nEW"/>
                     </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" background="textfield_short" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kX8-ut-zBg" userLabel="LastNameField" customClass="PaddedTextField" customModule="In2_PI_Swift" customModuleProvider="target">
-                    <rect key="frame" x="199" y="32" width="159" height="38"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" background="textfield_short" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kX8-ut-zBg" userLabel="LastNameField" customClass="PaddedTextField" customModule="Win2" customModuleProvider="target">
+                    <rect key="frame" x="191" y="32" width="159" height="38"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" background="textfield_long" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Nil-Rw-qQP" userLabel="PasswordField" customClass="PaddedTextField" customModule="In2_PI_Swift" customModuleProvider="target">
-                    <rect key="frame" x="24" y="210" width="335" height="38"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" background="textfield_long" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Nil-Rw-qQP" userLabel="PasswordField" customClass="PaddedTextField" customModule="Win2" customModuleProvider="target">
+                    <rect key="frame" x="16" y="210" width="334" height="38"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*생년월일을 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTE-V6-aPK">
+                    <rect key="frame" x="16" y="280" width="147" height="17"/>
+                    <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" textAlignment="natural" minimumFontSize="17" background="textfield_long" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ic7-k8-T4M" userLabel="EmailField" customClass="PaddedTextField" customModule="Win2" customModuleProvider="target">
+                    <rect key="frame" x="16" y="102" width="334" height="38"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                </textField>
                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kpn-dD-TZ2">
-                    <rect key="frame" x="16" y="301" width="343" height="67"/>
+                    <rect key="frame" x="16" y="301" width="334" height="67"/>
                     <color key="tintColor" red="0.62352941179999999" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="67" id="CAg-4N-Gpu"/>
@@ -68,21 +79,12 @@
                         <!--2000-01-02 01:39:20 +0000-->
                     </date>
                 </datePicker>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*생년월일을 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTE-V6-aPK">
-                    <rect key="frame" x="24" y="280" width="147" height="17"/>
-                    <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="14"/>
-                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" textAlignment="natural" minimumFontSize="17" background="textfield_long" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ic7-k8-T4M" userLabel="EmailField" customClass="PaddedTextField" customModule="In2_PI_Swift" customModuleProvider="target">
-                    <rect key="frame" x="24" y="102" width="335" height="38"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
-                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="vTE-V6-aPK" firstAttribute="top" secondItem="ic7-k8-T4M" secondAttribute="bottom" constant="32" id="0aH-12-lu8"/>
+                <constraint firstItem="Kpn-dD-TZ2" firstAttribute="trailing" secondItem="Nil-Rw-qQP" secondAttribute="trailing" id="3hl-73-42q"/>
+                <constraint firstItem="Kpn-dD-TZ2" firstAttribute="leading" secondItem="vTE-V6-aPK" secondAttribute="leading" id="4TR-72-Edu"/>
                 <constraint firstItem="2iz-o8-NFJ" firstAttribute="top" secondItem="Kpn-dD-TZ2" secondAttribute="bottom" id="521-w3-gCV"/>
                 <constraint firstItem="ic7-k8-T4M" firstAttribute="leading" secondItem="qbC-w6-vPA" secondAttribute="leading" id="7F3-vU-6vY"/>
                 <constraint firstItem="ic7-k8-T4M" firstAttribute="leading" secondItem="qbC-w6-vPA" secondAttribute="leading" id="7Pe-q4-KsT"/>
@@ -101,6 +103,7 @@
                 <constraint firstItem="ic7-k8-T4M" firstAttribute="height" secondItem="DwB-LX-N0u" secondAttribute="height" id="ZH0-dZ-gd3"/>
                 <constraint firstItem="DwB-LX-N0u" firstAttribute="top" secondItem="2dG-SN-dIW" secondAttribute="top" constant="32" id="ZVH-ja-qPg"/>
                 <constraint firstItem="ic7-k8-T4M" firstAttribute="leading" secondItem="DwB-LX-N0u" secondAttribute="leading" id="b2r-nO-7Hz"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kX8-ut-zBg" secondAttribute="trailing" constant="8" id="b9V-9r-QT6"/>
                 <constraint firstItem="kX8-ut-zBg" firstAttribute="width" secondItem="DwB-LX-N0u" secondAttribute="width" id="dan-7a-y5T"/>
                 <constraint firstItem="ic7-k8-T4M" firstAttribute="top" secondItem="DwB-LX-N0u" secondAttribute="bottom" constant="32" id="dbd-tF-j28"/>
                 <constraint firstItem="2iz-o8-NFJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Kpn-dD-TZ2" secondAttribute="bottom" constant="4" id="dfQ-Wq-clW"/>
@@ -111,11 +114,12 @@
                 <constraint firstItem="ic7-k8-T4M" firstAttribute="height" secondItem="qbC-w6-vPA" secondAttribute="height" id="fVI-73-pjs"/>
                 <constraint firstItem="ic7-k8-T4M" firstAttribute="leading" secondItem="DwB-LX-N0u" secondAttribute="leading" id="fXa-xa-3WG"/>
                 <constraint firstItem="vTE-V6-aPK" firstAttribute="leading" secondItem="Nil-Rw-qQP" secondAttribute="leading" id="g4S-Wu-m16"/>
+                <constraint firstItem="ic7-k8-T4M" firstAttribute="trailing" secondItem="kX8-ut-zBg" secondAttribute="trailing" id="iDh-1T-nOn"/>
                 <constraint firstItem="ic7-k8-T4M" firstAttribute="leading" secondItem="qbC-w6-vPA" secondAttribute="leading" id="j7i-t7-biK"/>
                 <constraint firstItem="Nil-Rw-qQP" firstAttribute="height" secondItem="qbC-w6-vPA" secondAttribute="height" id="lWN-lU-KJz"/>
                 <constraint firstItem="2iz-o8-NFJ" firstAttribute="top" secondItem="ic7-k8-T4M" secondAttribute="bottom" constant="96" id="lcX-Bt-nBW"/>
                 <constraint firstAttribute="trailing" secondItem="ic7-k8-T4M" secondAttribute="trailing" constant="16" id="lsL-5s-zEv"/>
-                <constraint firstItem="DwB-LX-N0u" firstAttribute="leading" secondItem="2dG-SN-dIW" secondAttribute="leadingMargin" constant="16" id="mlj-SY-LgY"/>
+                <constraint firstItem="DwB-LX-N0u" firstAttribute="leading" secondItem="2dG-SN-dIW" secondAttribute="leadingMargin" constant="8" id="mlj-SY-LgY"/>
                 <constraint firstItem="Nil-Rw-qQP" firstAttribute="centerX" secondItem="ic7-k8-T4M" secondAttribute="centerX" id="nl7-2U-sSb"/>
                 <constraint firstItem="qbC-w6-vPA" firstAttribute="top" secondItem="ic7-k8-T4M" secondAttribute="bottom" constant="16" id="oht-WV-8qe"/>
                 <constraint firstItem="Kpn-dD-TZ2" firstAttribute="leading" secondItem="2dG-SN-dIW" secondAttribute="leading" constant="16" id="pKd-72-phf"/>
@@ -139,6 +143,7 @@
                     <exclude reference="dfk-Ih-vK6"/>
                     <exclude reference="fXa-xa-3WG"/>
                     <exclude reference="j7i-t7-biK"/>
+                    <exclude reference="lsL-5s-zEv"/>
                     <exclude reference="vvp-Kg-5LS"/>
                     <exclude reference="vz1-Mb-zF4"/>
                     <exclude reference="xfd-ie-6Wn"/>
@@ -151,6 +156,8 @@
                     <exclude reference="HfU-L7-fng"/>
                     <exclude reference="pNU-Ty-u6h"/>
                     <exclude reference="GGz-Yf-mzl"/>
+                    <exclude reference="OlY-X7-vAu"/>
+                    <exclude reference="pKd-72-phf"/>
                     <exclude reference="vdG-HG-Kqi"/>
                     <exclude reference="yvB-Zg-j0g"/>
                     <exclude reference="521-w3-gCV"/>
@@ -158,7 +165,7 @@
                     <exclude reference="lcX-Bt-nBW"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="440.5" y="7.5"/>
+            <point key="canvasLocation" x="405.5" y="-173.5"/>
         </view>
     </objects>
     <resources>
