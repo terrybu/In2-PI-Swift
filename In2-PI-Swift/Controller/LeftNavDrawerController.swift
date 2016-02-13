@@ -22,10 +22,21 @@ class LeftNavDrawerController: UIViewController {
     var socialServicesVCNavCtrl: UINavigationController?
     var galleryVCNavCtrl: UINavigationController?
     var swipeGestureRightToLeft: UISwipeGestureRecognizer!
+    
+    @IBOutlet var logoutButton: UIButton!
+    @IBAction func logoutPressed() {
+        print("logout")
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.window?.rootViewController = appDelegate.loginVC
+    }
 
     //MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        logoutButton.setBackgroundImage(UIImage(named: "logout")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: .Normal)
+        logoutButton.tintColor = UIColor.whiteColor()
+        
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         purpleStatusBar = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 20))
         purpleStatusBar.backgroundColor = UIColor.In2DeepPurple()

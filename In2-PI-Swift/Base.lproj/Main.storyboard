@@ -14,6 +14,7 @@
             <string>NanumBarunGothic</string>
             <string>NanumBarunGothic</string>
             <string>NanumBarunGothic</string>
+            <string>NanumBarunGothic</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -101,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="-1076" y="289"/>
         </scene>
-        <!--NavDrawerViewController-->
+        <!--LeftNavDrawerStoryboardID-->
         <scene sceneID="ymH-sZ-d5F">
             <objects>
-                <viewController storyboardIdentifier="LeftNavDrawerStoryboardID" id="sG2-Rg-tvn" userLabel="NavDrawerViewController" customClass="LeftNavDrawerController" customModule="Win2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LeftNavDrawerStoryboardID" id="sG2-Rg-tvn" userLabel="LeftNavDrawerStoryboardID" customClass="LeftNavDrawerController" customModule="Win2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C02-Xr-dce"/>
                         <viewControllerLayoutGuide type="bottom" id="GXS-z1-sin"/>
@@ -214,8 +215,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="II1-tL-aEO" userLabel="Gallery">
-                                <rect key="frame" x="343" y="456" width="40" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="II1-tL-aEO" userLabel="Gallery">
+                                <rect key="frame" x="343" y="455" width="40" height="30"/>
                                 <state key="normal" backgroundImage="btn_Gallery">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -232,9 +233,23 @@
                                     <action selector="communicationsButtonPressed:" destination="sG2-Rg-tvn" eventType="touchUpInside" id="0Wl-aD-kgy"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Gallery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMu-5U-fEd" userLabel="Gallery">
-                                <rect key="frame" x="339" y="494" width="49" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMu-5U-fEd" userLabel="Gallery">
+                                <rect key="frame" x="339" y="493" width="49" height="18"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYn-w9-sXf" userLabel="logoutButton">
+                                <rect key="frame" x="550" y="30" width="30" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="logoutPressed" destination="sG2-Rg-tvn" eventType="touchUpInside" id="nqe-36-rTn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3q-Uy-13E" userLabel="logout">
+                                <rect key="frame" x="548" y="58" width="42" height="15"/>
+                                <fontDescription key="fontDescription" name="NanumBarunGothic" family="NanumBarunGothic" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -249,6 +264,7 @@
                             <constraint firstAttribute="centerY" secondItem="kcw-H7-lL6" secondAttribute="centerY" constant="40" id="97Y-VB-S7k"/>
                             <constraint firstItem="LOV-3q-w09" firstAttribute="leading" secondItem="F1I-qW-hKr" secondAttribute="leadingMargin" constant="100" id="AGL-Ae-cGU"/>
                             <constraint firstAttribute="centerX" secondItem="kcw-H7-lL6" secondAttribute="centerX" id="BId-Yq-O23"/>
+                            <constraint firstItem="tYn-w9-sXf" firstAttribute="centerY" secondItem="s81-CE-6bz" secondAttribute="centerY" id="DYM-Q7-ULd"/>
                             <constraint firstItem="4El-qW-0GA" firstAttribute="centerX" secondItem="LOV-3q-w09" secondAttribute="centerX" id="Dl2-M7-bpc"/>
                             <constraint firstItem="Iko-ol-yX3" firstAttribute="top" secondItem="i1z-L7-mUP" secondAttribute="bottom" constant="8" id="EoF-Gu-3Kw"/>
                             <constraint firstItem="II1-tL-aEO" firstAttribute="centerY" secondItem="LOV-3q-w09" secondAttribute="centerY" id="Fjb-87-e53"/>
@@ -257,6 +273,7 @@
                             <constraint firstItem="A5i-jC-gRJ" firstAttribute="leading" secondItem="kcw-H7-lL6" secondAttribute="trailing" constant="64" id="JDg-Ig-9QH"/>
                             <constraint firstItem="i1z-L7-mUP" firstAttribute="centerX" secondItem="Iko-ol-yX3" secondAttribute="centerX" id="KBX-wN-npH"/>
                             <constraint firstItem="GXS-z1-sin" firstAttribute="top" secondItem="LOV-3q-w09" secondAttribute="bottom" constant="50" id="L6K-8L-ea7"/>
+                            <constraint firstItem="m3q-Uy-13E" firstAttribute="centerX" secondItem="tYn-w9-sXf" secondAttribute="centerX" constant="4" id="LcQ-Yb-4b9"/>
                             <constraint firstItem="d8h-1a-fI6" firstAttribute="centerX" secondItem="kcw-H7-lL6" secondAttribute="centerX" id="MLp-Mx-YJz"/>
                             <constraint firstItem="r6j-Le-j8f" firstAttribute="top" secondItem="kcw-H7-lL6" secondAttribute="bottom" constant="64" id="RCB-8Z-yNO"/>
                             <constraint firstItem="r6j-Le-j8f" firstAttribute="centerX" secondItem="kcw-H7-lL6" secondAttribute="centerX" id="RkG-d4-aa6"/>
@@ -273,14 +290,17 @@
                             <constraint firstItem="wNX-ng-MUE" firstAttribute="centerX" secondItem="A5i-jC-gRJ" secondAttribute="centerX" id="gSf-Dj-rb8"/>
                             <constraint firstItem="d8h-1a-fI6" firstAttribute="top" secondItem="kcw-H7-lL6" secondAttribute="bottom" constant="8" id="hf1-kb-HmT"/>
                             <constraint firstItem="kcw-H7-lL6" firstAttribute="leading" secondItem="QAC-HN-Uzt" secondAttribute="trailing" constant="64" id="i5V-Nf-N6f"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tYn-w9-sXf" secondAttribute="trailing" id="is7-46-74H"/>
                             <constraint firstAttribute="trailingMargin" secondItem="A5i-jC-gRJ" secondAttribute="trailing" id="jNc-IZ-d6F"/>
                             <constraint firstAttribute="centerX" secondItem="kcw-H7-lL6" secondAttribute="centerX" id="mx7-Sl-EIh"/>
                             <constraint firstItem="4El-qW-0GA" firstAttribute="top" secondItem="LOV-3q-w09" secondAttribute="bottom" constant="8" id="p6e-UV-Zz1"/>
                             <constraint firstItem="wNX-ng-MUE" firstAttribute="top" secondItem="A5i-jC-gRJ" secondAttribute="bottom" constant="8" id="pYc-vp-jV4"/>
+                            <constraint firstItem="m3q-Uy-13E" firstAttribute="top" secondItem="tYn-w9-sXf" secondAttribute="bottom" constant="-12" id="qwa-cl-xaZ"/>
                             <constraint firstItem="s81-CE-6bz" firstAttribute="top" secondItem="C02-Xr-dce" secondAttribute="bottom" constant="24" id="rHN-Z4-ZXo"/>
                             <constraint firstItem="kcw-H7-lL6" firstAttribute="centerY" secondItem="QAC-HN-Uzt" secondAttribute="centerY" id="rbO-uz-lTK"/>
                             <constraint firstItem="s81-CE-6bz" firstAttribute="leading" secondItem="F1I-qW-hKr" secondAttribute="leadingMargin" id="rke-Is-gTP"/>
                             <constraint firstItem="pMu-5U-fEd" firstAttribute="top" secondItem="II1-tL-aEO" secondAttribute="bottom" constant="8" id="ruS-ln-Sag"/>
+                            <constraint firstItem="m3q-Uy-13E" firstAttribute="top" secondItem="tYn-w9-sXf" secondAttribute="bottom" id="yyx-8Q-dj3"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -293,11 +313,15 @@
                                 <exclude reference="AGL-Ae-cGU"/>
                                 <exclude reference="HEr-pB-QH9"/>
                                 <exclude reference="c61-db-eZe"/>
+                                <exclude reference="qwa-cl-xaZ"/>
                                 <exclude reference="JDg-Ig-9QH"/>
                             </mask>
                         </variation>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="logoutButton" destination="tYn-w9-sXf" id="6ep-SS-MDp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ql6-Mp-XHC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,11 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var statusBarBackgroundView: UIView?
     var revealVCView: UIView!
+    let loginVC = LoginViewController()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        let loginVC = LoginViewController()
         loginVC.dismissBlock = {
             let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
             self.window?.rootViewController = revealVC
