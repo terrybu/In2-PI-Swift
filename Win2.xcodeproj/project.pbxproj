@@ -983,7 +983,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEBUG\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.terrybu.Win2;
 				PRODUCT_NAME = Win2;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "9fb9df8d-ec4e-4f0d-b687-c0e14f08800c";
 				SWIFT_OBJC_BRIDGING_HEADER = "In2-PI-Swift/Win2-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1004,7 +1004,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DRELEASE\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.terrybu.Win2;
 				PRODUCT_NAME = Win2;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "9fb9df8d-ec4e-4f0d-b687-c0e14f08800c";
 				SWIFT_OBJC_BRIDGING_HEADER = "In2-PI-Swift/Win2-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
