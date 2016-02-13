@@ -70,27 +70,20 @@ class NoticeAdminViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         if let cell = tableView.cellForRowAtIndexPath(indexPath) {
-            cell.accessoryType = .Checkmark
-            let notice = savedNoticesArray![indexPath.row]
-            UIAlertController.presentAlert(self, alertTitle: notice.title, alertMessage: "\(notice.body) \(notice.link)", confirmTitle: "OK")
-//            notice.active = true
-//            FirebaseManager.sharedManager.updateNoticeObjectActiveFlag(notice, completion: { (success) -> Void in
-//                //
-//                tableView.reloadData()
-//            })
+            for notice in savedNoticesArray! {
+                if notice.active {
+                    notice.active = false
+                    FirebaseManager.sharedManager.updateNoticeObjectActiveFlag(notice, completion: nil)
+                }
+            }
+            let thisNotice = savedNoticesArray![indexPath.row]
+            thisNotice.active = true
+            FirebaseManager.sharedManager.updateNoticeObjectActiveFlag(thisNotice, completion: { (success) -> Void in
+                tableView.reloadData()
+                UIAlertController.presentAlert(self, alertTitle: thisNotice.title, alertMessage: "\(thisNotice.body) \(thisNotice.link)", confirmTitle: "OK")
+            })
         }
     }
-//    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-//        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
-//            cell.accessoryType = .None
-//            let notice = savedNoticesArray![indexPath.row]
-//            notice.active = false
-//            FirebaseManager.sharedManager.updateNoticeObjectActiveFlag(notice, completion: { (success) -> Void in
-//                //
-//                tableView.reloadData()
-//            })
-//        }
-//    }
     
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

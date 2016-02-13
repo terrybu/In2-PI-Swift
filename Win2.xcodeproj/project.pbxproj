@@ -280,6 +280,28 @@
 			name = Evangelism;
 			sourceTree = "<group>";
 		};
+		D926123E1C6EA92300BE77BA /* Notices */ = {
+			isa = PBXGroup;
+			children = (
+				D9FF32031C676E5E0037DCF1 /* NoticeAdminViewController.swift */,
+				D9FF32041C676E5E0037DCF1 /* NoticeAdminViewController.xib */,
+				D9FF32071C67715A0037DCF1 /* NoticeCreationViewController.swift */,
+				D9FF32081C67715A0037DCF1 /* NoticeCreationViewController.xib */,
+			);
+			name = Notices;
+			sourceTree = "<group>";
+		};
+		D926123F1C6EA92800BE77BA /* Social Services Events */ = {
+			isa = PBXGroup;
+			children = (
+				D91FCAB91C679E50008C7D1C /* SocialServicesEventAdminTableViewController.swift */,
+				D91FCABA1C679E50008C7D1C /* SocialServicesEventAdminTableViewController.xib */,
+				D91FCABD1C679F1C008C7D1C /* SocialServicesEventCreationViewController.swift */,
+				D91FCABE1C679F1C008C7D1C /* SocialServicesEventCreationViewController.xib */,
+			);
+			name = "Social Services Events";
+			sourceTree = "<group>";
+		};
 		D95EC5221B978C0A00782925 /* Facebook Query */ = {
 			isa = PBXGroup;
 			children = (
@@ -592,14 +614,8 @@
 			children = (
 				D9FF31FE1C6735850037DCF1 /* AdminViewController.swift */,
 				D9FF32001C6735960037DCF1 /* AdminViewController.xib */,
-				D9FF32031C676E5E0037DCF1 /* NoticeAdminViewController.swift */,
-				D9FF32041C676E5E0037DCF1 /* NoticeAdminViewController.xib */,
-				D9FF32071C67715A0037DCF1 /* NoticeCreationViewController.swift */,
-				D9FF32081C67715A0037DCF1 /* NoticeCreationViewController.xib */,
-				D91FCAB91C679E50008C7D1C /* SocialServicesEventAdminTableViewController.swift */,
-				D91FCABA1C679E50008C7D1C /* SocialServicesEventAdminTableViewController.xib */,
-				D91FCABD1C679F1C008C7D1C /* SocialServicesEventCreationViewController.swift */,
-				D91FCABE1C679F1C008C7D1C /* SocialServicesEventCreationViewController.xib */,
+				D926123E1C6EA92300BE77BA /* Notices */,
+				D926123F1C6EA92800BE77BA /* Social Services Events */,
 			);
 			name = Admin;
 			sourceTree = "<group>";

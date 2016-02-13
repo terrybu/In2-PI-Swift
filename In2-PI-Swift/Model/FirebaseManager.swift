@@ -181,15 +181,19 @@ class FirebaseManager {
 
     
     
-    func updateNoticeObjectActiveFlag(notice: Notice, completion: (success: Bool) -> Void) {
+    func updateNoticeObjectActiveFlag(notice: Notice, completion: ((success: Bool) -> Void)?) {
         let noticeRef = rootRef.childByAppendingPath("Notices").childByAppendingPath(notice.firebaseID!)
         noticeRef.updateChildValues(["active" : notice.active], withCompletionBlock: { error, firebaseRef in
             if error == nil {
                 print("updating child values completed \(firebaseRef.key)")
-                completion(success: true)
+                if let completion = completion {
+                  completion(success: true)
+                }
             } else {
                 print(error)
-                completion(success:false)
+                if let completion = completion {
+                    completion(success:false)
+                }
             }
         })
     }
