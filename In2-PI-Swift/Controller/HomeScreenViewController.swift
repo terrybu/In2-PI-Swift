@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MBProgressHUD
 
 class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate {
     
@@ -18,7 +17,8 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
     @IBOutlet weak var newsArticleView: NewsArticleView!
     @IBOutlet weak var noticeWidget: NoticeWidget!
     var activeNotice: Notice?
-
+    let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
+    
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,15 +26,12 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
         self.navigationItem.titleView = smallLogoView
         
         setUpUniqueUIForHomeVC()
-        
-        let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
-        hud.labelText = "로딩중입니다. 잠시만 기다려주세요."
-        blackOverlayUntilFBDataFinishedLoading()
+        blackOverlayAndLoadingSpinnerUntilFBDataFinishedLoading()
         FacebookFeedQuery.sharedInstance.delegate = self
         FacebookFeedQuery.sharedInstance.getFeedFromPIMagazine { (error) -> Void in
             if error != nil {
                 print(error.description)
-                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                self.activityIndicator.stopAnimating()
             }
         }
         FirebaseManager.sharedManager.getNoticeObjectsFromFirebase({ (success) -> Void in
@@ -43,7 +40,6 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
                 self.noticeWidget.body = self.activeNotice!.title
                 self.noticeWidget.viewMoreNoticeButton.addTarget(self, action: "viewMoreNotice", forControlEvents: UIControlEvents.TouchUpInside)
             }
-            MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
         })
     }
     
@@ -63,10 +59,13 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
         navigationItem.leftBarButtonItem = hamburger
     }
     
-    private func blackOverlayUntilFBDataFinishedLoading() {
+    private func blackOverlayAndLoadingSpinnerUntilFBDataFinishedLoading() {
         black = UIView(frame: view.frame)
         black.backgroundColor = UIColor.blackColor()
         view.addSubview(black)
+        activityIndicator.center = view.center
+        activityIndicator.startAnimating()
+        view.addSubview(activityIndicator)
     }
     
     func tappedNewsArticleView(sender: UIGestureRecognizer) {
@@ -94,13 +93,11 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
         firstObjectID = firstObject.id
         if firstObject.type == "photo" {
             FacebookPhotoQuery.sharedInstance.getNormalSizePhotoURLStringForCommunicationsFrom(firstObject.id, completion: { (normImgUrlString) -> Void in
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.newsArticleView.backgroundImageView.setImageWithURL(NSURL(string: normImgUrlString))
-                })
+                self.black.removeFromSuperview()
+                self.activityIndicator.stopAnimating()
             })
         }
-        self.black.removeFromSuperview()
-        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
     }
     
     
