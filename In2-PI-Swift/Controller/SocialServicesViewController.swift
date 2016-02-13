@@ -11,7 +11,7 @@ import UIKit
 class SocialServicesViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource{
 
     private var expandedAboutViewHeight: CGFloat = 0
-    private let kOriginalContentViewHeight: CGFloat = 700
+    private let kOriginalContentViewHeight: CGFloat = 500
     @IBOutlet var contentView: UIView!
     @IBOutlet var expandableAboutView: ExpandableAboutView!
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
@@ -28,7 +28,7 @@ class SocialServicesViewController: ParentViewController, UITableViewDelegate, U
     
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
-        setUpExpandableAboutView(kOriginalAboutViewHeight, expandableAboutView: expandableAboutView, heightBuffer: 50, view: view, constraintHeightExpandableView: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalContentviewHeight: kOriginalContentViewHeight)
+        setUpExpandableAboutView(kOriginalAboutViewHeight, expandableAboutView: expandableAboutView, heightBuffer: 20, view: view, constraintHeightExpandableView: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalContentviewHeight: kOriginalContentViewHeight)
     }
     
     override func viewDidAppear(animated: Bool) {

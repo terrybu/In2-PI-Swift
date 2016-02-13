@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SocialServicesViewController" customModule="Win2" customModuleProvider="target">
             <connections>
-                <outlet property="constraintContentViewHeight" destination="YgT-yA-jdo" id="YaY-AJ-xoE"/>
+                <outlet property="constraintContentViewHeight" destination="8yY-eT-5Wo" id="3Li-eV-tu5"/>
                 <outlet property="constraintHeightExpandableView" destination="6AL-TG-u7u" id="tBg-OZ-f8s"/>
                 <outlet property="contentView" destination="ORS-3t-r0f" id="ujv-3C-kSf"/>
                 <outlet property="expandableAboutView" destination="3nn-3j-jMR" id="tfm-m6-oMV"/>
@@ -29,7 +29,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="808"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORS-3t-r0f" userLabel="Content View">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="508"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3nn-3j-jMR" customClass="ExpandableAboutView" customModule="Win2" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
@@ -48,7 +48,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hpe-Ey-gxm">
-                                    <rect key="frame" x="0.0" y="58" width="600" height="300"/>
+                                    <rect key="frame" x="0.0" y="66" width="600" height="300"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="208" id="M0N-3S-cRJ"/>
@@ -70,10 +70,10 @@
                                         <outlet property="delegate" destination="-1" id="Mpc-ZZ-dhI"/>
                                     </connections>
                                 </tableView>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ib-KH-Rwx" userLabel="CustomView">
-                                    <rect key="frame" x="0.0" y="358" width="600" height="150"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ib-KH-Rwx" userLabel="ApplyView">
+                                    <rect key="frame" x="0.0" y="378" width="600" height="150"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="긍휼부 사역 신청서" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccF-d0-eCf" userLabel="titleLabel">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="긍휼부 사역 신청서" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccF-d0-eCf" userLabel="titleLabel">
                                             <rect key="frame" x="205" y="45" width="190" height="29"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="200" id="I3Q-0n-jgF"/>
@@ -87,7 +87,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tv-VZ-zJc">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tv-VZ-zJc">
                                             <rect key="frame" x="265" y="90" width="70" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
@@ -125,21 +125,15 @@
                             <constraints>
                                 <constraint firstItem="3nn-3j-jMR" firstAttribute="leading" secondItem="ORS-3t-r0f" secondAttribute="leading" id="1cm-Zu-je3"/>
                                 <constraint firstItem="3nn-3j-jMR" firstAttribute="top" secondItem="ORS-3t-r0f" secondAttribute="top" id="4Y5-cF-zch"/>
-                                <constraint firstAttribute="bottom" secondItem="3Ib-KH-Rwx" secondAttribute="bottom" id="5Mc-bh-gsV"/>
+                                <constraint firstAttribute="height" constant="500" id="8yY-eT-5Wo"/>
                                 <constraint firstAttribute="trailing" secondItem="3nn-3j-jMR" secondAttribute="trailing" id="A5J-HK-mYn"/>
-                                <constraint firstAttribute="height" constant="700" id="YgT-yA-jdo"/>
-                                <constraint firstItem="hpe-Ey-gxm" firstAttribute="top" secondItem="3nn-3j-jMR" secondAttribute="bottom" constant="4" id="YkF-wr-YDb"/>
-                                <constraint firstItem="3Ib-KH-Rwx" firstAttribute="top" secondItem="hpe-Ey-gxm" secondAttribute="bottom" id="kk6-af-2D3"/>
+                                <constraint firstItem="hpe-Ey-gxm" firstAttribute="top" secondItem="3nn-3j-jMR" secondAttribute="bottom" constant="12" id="YkF-wr-YDb"/>
+                                <constraint firstItem="3Ib-KH-Rwx" firstAttribute="top" secondItem="hpe-Ey-gxm" secondAttribute="bottom" constant="12" id="kk6-af-2D3"/>
                                 <constraint firstItem="hpe-Ey-gxm" firstAttribute="leading" secondItem="ORS-3t-r0f" secondAttribute="leading" id="lYN-7J-arC"/>
                                 <constraint firstItem="3Ib-KH-Rwx" firstAttribute="leading" secondItem="ORS-3t-r0f" secondAttribute="leading" id="nK8-yz-qu0"/>
                                 <constraint firstAttribute="trailing" secondItem="hpe-Ey-gxm" secondAttribute="trailing" id="p6N-dv-d0a"/>
                                 <constraint firstAttribute="trailing" secondItem="3Ib-KH-Rwx" secondAttribute="trailing" id="q7Q-lW-r1p"/>
                             </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="YgT-yA-jdo"/>
-                                </mask>
-                            </variation>
                         </view>
                     </subviews>
                     <constraints>
@@ -148,7 +142,13 @@
                         <constraint firstItem="ORS-3t-r0f" firstAttribute="centerX" secondItem="jH9-Lk-7NC" secondAttribute="centerX" id="aTV-AR-Acs"/>
                         <constraint firstItem="ORS-3t-r0f" firstAttribute="leading" secondItem="jH9-Lk-7NC" secondAttribute="leading" id="cQe-dL-IoE"/>
                         <constraint firstAttribute="bottom" secondItem="ORS-3t-r0f" secondAttribute="bottom" id="kmL-Wq-GZc"/>
+                        <constraint firstAttribute="bottom" secondItem="ORS-3t-r0f" secondAttribute="bottom" id="zA3-ox-zL9"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="kmL-Wq-GZc"/>
+                        </mask>
+                    </variation>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
