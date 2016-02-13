@@ -11,6 +11,11 @@ class CustomDateFormatter {
     static let sharedInstance = CustomDateFormatter()
     let dateFormatter = NSDateFormatter()
     
+    func convertDateTimeToFirebaseStringFormat(date: NSDate) -> String {
+        dateFormatter.dateFormat = "yyyy-MM-dd EEE hh:mm a"
+        return dateFormatter.stringFromDate(date)
+    }
+    
     func convertDateToFirebaseStringFormat(date: NSDate) -> String {
         self.dateFormatter.dateFormat = "MM/dd/yyyy"
         return dateFormatter.stringFromDate(date)

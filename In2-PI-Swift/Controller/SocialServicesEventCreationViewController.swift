@@ -8,29 +8,27 @@
 
 import UIKit
 
-class SocialServicesEventCreationViewController: UIViewController, UITextFieldDelegate {
+class SocialServicesEventCreationViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     @IBOutlet weak var eventTitle: PaddedTextField!
     @IBOutlet weak var eventTeamName: PaddedTextField!
-    @IBOutlet weak var eventDescription: PaddedTextField!
+    @IBOutlet weak var eventDescriptionTextview: UITextView!
     @IBOutlet weak var eventDatePicker: UIDatePicker!
-    
-    @IBAction func datePickerValueChanged(sender: AnyObject) {
-        //no logic needed here?
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "pressedDoneButton")
         self.navigationItem.rightBarButtonItem = doneButton
+        
+        eventDescriptionTextview.layer.borderWidth = 1.5
+        eventDescriptionTextview.layer.borderColor = UIColor(rgba: "#BBBCBC").CGColor
     }
     
     func pressedDoneButton() {
         print("pressed done")
         //firebase logic
-        let newEvent = SocialServiceEvent(title: eventTitle.text!, teamName: eventTeamName.text!, description: eventDescription.text!, date: CustomDateFormatter.sharedInstance.convertDateToFirebaseStringFormat(eventDatePicker.date))
+        let newEvent = SocialServiceEvent(title: eventTitle.text!, teamName: eventTeamName.text!, description: eventDescriptionTextview.text!, date: CustomDateFormatter.sharedInstance.convertDateTimeToFirebaseStringFormat(eventDatePicker.date))
         FirebaseManager.sharedManager.createNewSocialServiceEventOnFirebase(newEvent) { (success) -> Void in
             self.navigationController?.popViewControllerAnimated(true)
         }
@@ -53,11 +51,14 @@ class SocialServicesEventCreationViewController: UIViewController, UITextFieldDe
         return true
     }
     
+    
+    
     /**
      * Called when the user click on the view (outside the UITextField).
      */
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
+        self.eventDescriptionTextview.endEditing(true)
     }
 
     /*
