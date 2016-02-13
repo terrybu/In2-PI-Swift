@@ -10,7 +10,7 @@ import UIKit
 
 class NurtureViewController: ParentViewController, UIGestureRecognizerDelegate{
 
-    private let kOriginalContentViewHeight: CGFloat = 454
+    private let kOriginalContentViewHeight: CGFloat = 600
     var expandedAboutViewHeight:CGFloat = 0
     var nurtureFeedObject: FBFeedPost? 
     @IBOutlet var contentView: UIView!
@@ -24,7 +24,7 @@ class NurtureViewController: ParentViewController, UIGestureRecognizerDelegate{
 
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
-        setUpExpandableAboutView(kOriginalAboutViewHeight, expandableAboutView: expandableAboutView, heightBuffer: 30, view: view, constraintHeightExpandableView: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalContentviewHeight: kOriginalContentViewHeight)
+        setUpExpandableAboutView(kOriginalAboutViewHeight, expandableAboutView: expandableAboutView, heightBuffer: 0, view: view, constraintHeightExpandableView: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalContentviewHeight: kOriginalContentViewHeight)
         
         leftNurtureApplyWidget.applyButtonPressedHandler = {(sender) -> Void in
             self.presentSFSafariVCIfAvailable(NSURL(string: kApplyNurtureTeamGoogleDocURL)!)
