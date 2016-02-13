@@ -74,7 +74,7 @@
                                         <constraint firstAttribute="height" constant="147" id="vAn-SG-MfN"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="categoryTitle" value="최신 양육뉴스"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="categoryTitle" value="양육부 소식"/>
                                     </userDefinedRuntimeAttributes>
                                     <variation key="default">
                                         <mask key="constraints">

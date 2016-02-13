@@ -11,12 +11,14 @@ import UIKit
 class SocialServicesViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource{
 
     private var expandedAboutViewHeight: CGFloat = 0
-    private let kOriginalContentViewHeight: CGFloat = 500
+    private let kOriginalContentViewHeight: CGFloat = 700
     @IBOutlet var contentView: UIView!
     @IBOutlet var expandableAboutView: ExpandableAboutView!
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
     @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
-
+    @IBOutlet var socialNewsWidgetView: BoroSpecificNewsWidgetView!
+    var socialFeedPost: FBFeedPost?
+    
     @IBOutlet var tableView: UITableView!
     var eventsArray: [SocialServiceEvent]?
     
@@ -29,6 +31,27 @@ class SocialServicesViewController: ParentViewController, UITableViewDelegate, U
     override func viewDidLoad() {
         setUpStandardUIForViewControllers()
         setUpExpandableAboutView(kOriginalAboutViewHeight, expandableAboutView: expandableAboutView, heightBuffer: 20, view: view, constraintHeightExpandableView: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalContentviewHeight: kOriginalContentViewHeight)
+        
+        for feedObject in FacebookFeedQuery.sharedInstance.FBFeedObjectsArray {
+            if feedObject.parsedCategory == "PI긍휼" {
+                socialFeedPost = feedObject
+                socialNewsWidgetView.title = feedObject.parsedTitle
+                socialNewsWidgetView.dateLabel.text = feedObject.parsedDate
+                socialNewsWidgetView.viewMoreButton.addTarget(self, action: "viewMoreButtonWasPressed", forControlEvents: UIControlEvents.TouchUpInside)
+                break
+            }
+        }
+        if socialFeedPost == nil {
+            socialNewsWidgetView.title = "최근 긍휼부 뉴스가 존재하지 않습니다."
+            socialNewsWidgetView.dateLabel.text = nil
+        }
+    }
+    
+    @objc
+    private func viewMoreButtonWasPressed() {
+        if let feedObject = socialFeedPost {
+            FacebookFeedQuery.sharedInstance.displayFacebookPostObjectInWebView(feedObject, view: self.view, navigationController: navigationController)
+        }
     }
     
     override func viewDidAppear(animated: Bool) {

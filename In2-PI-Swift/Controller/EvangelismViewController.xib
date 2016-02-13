@@ -61,7 +61,7 @@
                                         <constraint firstAttribute="height" constant="400" id="Baf-3R-on0"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="categoryTitle" value="최신 선교뉴스"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="categoryTitle" value="선교부 소식"/>
                                     </userDefinedRuntimeAttributes>
                                     <variation key="default">
                                         <mask key="constraints">

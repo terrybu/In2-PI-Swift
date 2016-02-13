@@ -16,6 +16,7 @@
                 <outlet property="constraintHeightExpandableView" destination="6AL-TG-u7u" id="tBg-OZ-f8s"/>
                 <outlet property="contentView" destination="ORS-3t-r0f" id="ujv-3C-kSf"/>
                 <outlet property="expandableAboutView" destination="3nn-3j-jMR" id="tfm-m6-oMV"/>
+                <outlet property="socialNewsWidgetView" destination="4Am-bY-ktp" id="H9i-n4-J2L"/>
                 <outlet property="tableView" destination="hpe-Ey-gxm" id="gBF-Bf-bsa"/>
                 <outlet property="view" destination="NWf-DX-3BX" id="aHr-Uj-FeR"/>
             </connections>
@@ -29,7 +30,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="808"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORS-3t-r0f" userLabel="Content View">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="700"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3nn-3j-jMR" customClass="ExpandableAboutView" customModule="Win2" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
@@ -48,14 +49,14 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hpe-Ey-gxm">
-                                    <rect key="frame" x="0.0" y="66" width="600" height="300"/>
+                                    <rect key="frame" x="0.0" y="66" width="600" height="250"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="208" id="M0N-3S-cRJ"/>
                                         <constraint firstAttribute="height" constant="208" id="WLG-qI-Wk4"/>
                                         <constraint firstAttribute="height" constant="100" id="hSM-3k-mUg"/>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="208" id="jwx-J4-qt2"/>
-                                        <constraint firstAttribute="height" constant="300" id="rgJ-69-8zw"/>
+                                        <constraint firstAttribute="height" constant="250" id="rgJ-69-8zw"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -71,7 +72,7 @@
                                     </connections>
                                 </tableView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ib-KH-Rwx" userLabel="ApplyView">
-                                    <rect key="frame" x="0.0" y="378" width="600" height="150"/>
+                                    <rect key="frame" x="0.0" y="328" width="600" height="150"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="긍휼부 사역 신청서" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccF-d0-eCf" userLabel="titleLabel">
                                             <rect key="frame" x="205" y="45" width="190" height="29"/>
@@ -120,14 +121,25 @@
                                         </mask>
                                     </variation>
                                 </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Am-bY-ktp" customClass="BoroSpecificNewsWidgetView" customModule="Win2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="477" width="600" height="223"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="categoryTitle" value="긍휼부 소식"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="3nn-3j-jMR" firstAttribute="leading" secondItem="ORS-3t-r0f" secondAttribute="leading" id="1cm-Zu-je3"/>
                                 <constraint firstItem="3nn-3j-jMR" firstAttribute="top" secondItem="ORS-3t-r0f" secondAttribute="top" id="4Y5-cF-zch"/>
-                                <constraint firstAttribute="height" constant="500" id="8yY-eT-5Wo"/>
+                                <constraint firstAttribute="height" constant="700" id="8yY-eT-5Wo"/>
+                                <constraint firstItem="4Am-bY-ktp" firstAttribute="leading" secondItem="ORS-3t-r0f" secondAttribute="leading" id="9bC-OZ-IAx"/>
                                 <constraint firstAttribute="trailing" secondItem="3nn-3j-jMR" secondAttribute="trailing" id="A5J-HK-mYn"/>
+                                <constraint firstAttribute="bottom" secondItem="4Am-bY-ktp" secondAttribute="bottom" id="NS4-5Z-aRj"/>
+                                <constraint firstItem="4Am-bY-ktp" firstAttribute="top" secondItem="3Ib-KH-Rwx" secondAttribute="bottom" constant="-1" id="Q9D-3A-bNQ"/>
                                 <constraint firstItem="hpe-Ey-gxm" firstAttribute="top" secondItem="3nn-3j-jMR" secondAttribute="bottom" constant="12" id="YkF-wr-YDb"/>
+                                <constraint firstAttribute="trailing" secondItem="4Am-bY-ktp" secondAttribute="trailing" id="bcg-kR-9Cn"/>
                                 <constraint firstItem="3Ib-KH-Rwx" firstAttribute="top" secondItem="hpe-Ey-gxm" secondAttribute="bottom" constant="12" id="kk6-af-2D3"/>
                                 <constraint firstItem="hpe-Ey-gxm" firstAttribute="leading" secondItem="ORS-3t-r0f" secondAttribute="leading" id="lYN-7J-arC"/>
                                 <constraint firstItem="3Ib-KH-Rwx" firstAttribute="leading" secondItem="ORS-3t-r0f" secondAttribute="leading" id="nK8-yz-qu0"/>

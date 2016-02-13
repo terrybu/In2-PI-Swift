@@ -36,10 +36,9 @@ class EvangelismViewController: ParentViewController, UIGestureRecognizerDelegat
                 break
             }
         }
-        guard let evangelismFeedObject = evangelismFeedObject else {
+        if evangelismFeedObject == nil {
             evangelismNewsWidgetView.title = "최근 선교뉴스가 존재하지 않습니다."
             evangelismNewsWidgetView.dateLabel.text = nil
-            return
         }
         
         evangelismImageView.userInteractionEnabled = true
