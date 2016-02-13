@@ -61,11 +61,7 @@ class AdminViewController: UIViewController {
             NSForegroundColorAttributeName : UIColor.whiteColor(),
             NSFontAttributeName : UIFont(name: "NanumBarunGothic", size: 18.0)!
         ]
-        navigationController!.navigationBar.shadowImage = UIImage()
-        let whiteHairLineCustom = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 0.5))
-        whiteHairLineCustom.backgroundColor = UIColor.clearColor()
-        whiteHairLineCustom.alpha = 0.5
-        view.addSubview(whiteHairLineCustom)
+
     }
     
 }

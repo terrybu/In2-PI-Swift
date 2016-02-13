@@ -41,3 +41,4 @@ let kUserDefaultsSavedNoticesArrayData = "kUserDefaultsSavedNoticesArrayData"
 //Keys
 let kAdminEmailInput = "admin"
 let kSocialServicesAdminEmailInput = "social"
+let kUserDidLoginBefore = "kUserDidLoginBefore"

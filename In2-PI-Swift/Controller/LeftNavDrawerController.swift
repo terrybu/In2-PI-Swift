@@ -26,6 +26,7 @@ class LeftNavDrawerController: UIViewController {
     @IBOutlet var logoutButton: UIButton!
     @IBAction func logoutPressed() {
         print("logout")
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(kUserDidLoginBefore)
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.window?.rootViewController = appDelegate.loginVC
     }

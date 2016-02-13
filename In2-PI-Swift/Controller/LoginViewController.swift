@@ -86,8 +86,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
         let email = emailTextField.text
         let password = passwordTextField.text
         if let email = email, password = password{
-//            let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
-//            hud.labelText = "로그인 실행중입니다 ... 잠시만 기다려주세요."
             if adminUserDetectedAdminMustBeActivated() == true {
                 let adminVC = AdminViewController()
                 let navCtrl = UINavigationController(rootViewController: adminVC)
@@ -101,6 +99,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
             FirebaseManager.sharedManager.loginUser(email, password: password, completion: { (success) -> Void in
                 // completion
                 if success {
+                    NSUserDefaults.standardUserDefaults().setBool(true, forKey: kUserDidLoginBefore)
                     if let dismissBlock = self.dismissBlock {
                         dismissBlock()
                     }
@@ -108,7 +107,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
                     UIAlertController.presentAlert(self, alertTitle: "로그인 실패", alertMessage: "로그인이 실패하였습니다. 이메일과 비밀번호 입력을 다시 확인해 주세요.", confirmTitle: "OK")
                 }
                 activityIndicator.stopAnimating()
-//                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
             })
         }
     }

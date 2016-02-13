@@ -83,7 +83,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
                 self.presentViewController(alertController, animated: true, completion: nil)
             } else {
                 UIAlertController.presentAlert(self, alertTitle: "가입 성공", alertMessage: "앱 가입에 성공하셨습니다!", confirmTitle: "OK")
-                //Upon success, check if it's first time run, if it is, show walkthrough. If not, show home screen.
+                NSUserDefaults.standardUserDefaults().setBool(true, forKey: kUserDidLoginBefore)
                 let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                 WalkthroughManager.sharedInstance.showHomeScreen(self.view)
             }
