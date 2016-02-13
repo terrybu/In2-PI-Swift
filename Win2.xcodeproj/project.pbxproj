@@ -23,6 +23,8 @@
 		D90A7B081B924164003EA693 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90A7B071B924164003EA693 /* GalleryViewController.swift */; };
 		D90A7B0A1B924256003EA693 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90A7B091B924256003EA693 /* ParentViewController.swift */; };
 		D910DD881BADFF2500E8A99F /* WeeklyProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = D910DD871BADFF2500E8A99F /* WeeklyProgram.swift */; };
+		D914FEE51C6F766A00461D90 /* openingVideoCode in Resources */ = {isa = PBXBuildFile; fileRef = D914FEE41C6F766A00461D90 /* openingVideoCode */; };
+		D914FEE71C6F81DB00461D90 /* HideKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D914FEE61C6F81DB00461D90 /* HideKey.swift */; };
 		D91FCAB61C67927E008C7D1C /* NoticeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91FCAB51C67927E008C7D1C /* NoticeWidget.swift */; };
 		D91FCAB81C679287008C7D1C /* NoticeWidget.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91FCAB71C679287008C7D1C /* NoticeWidget.xib */; };
 		D91FCABB1C679E50008C7D1C /* SocialServicesEventAdminTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91FCAB91C679E50008C7D1C /* SocialServicesEventAdminTableViewController.swift */; };
@@ -127,6 +129,8 @@
 		D90A7B071B924164003EA693 /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		D90A7B091B924256003EA693 /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		D910DD871BADFF2500E8A99F /* WeeklyProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyProgram.swift; sourceTree = "<group>"; };
+		D914FEE41C6F766A00461D90 /* openingVideoCode */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = openingVideoCode; sourceTree = "<group>"; };
+		D914FEE61C6F81DB00461D90 /* HideKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKey.swift; sourceTree = "<group>"; };
 		D91FCAB51C67927E008C7D1C /* NoticeWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoticeWidget.swift; path = "In2-PI-Swift/View/NoticeWidget.swift"; sourceTree = SOURCE_ROOT; };
 		D91FCAB71C679287008C7D1C /* NoticeWidget.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NoticeWidget.xib; path = "../Terry References/NoticeWidget.xib"; sourceTree = "<group>"; };
 		D91FCAB91C679E50008C7D1C /* SocialServicesEventAdminTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialServicesEventAdminTableViewController.swift; sourceTree = "<group>"; };
@@ -361,6 +365,7 @@
 				D9F8C46F1BA4BE4300881B94 /* TodaysQTWidget */,
 				D9F8C4751BA4C33200881B94 /* TodaysQTWidget.xib */,
 				D9FF32101C677B0B0037DCF1 /* archivingArrayDefaultsCode */,
+				D914FEE41C6F766A00461D90 /* openingVideoCode */,
 			);
 			name = " No Longer Used";
 			sourceTree = "<group>";
@@ -558,6 +563,7 @@
 				D9878B901C4848C500AD84D9 /*  No Longer Used */,
 				D9D7C5581B82CFE4003E48EA /* todolist.txt */,
 				D901C0D71C39EFC600B350B1 /* fonts available console output */,
+				D914FEE61C6F81DB00461D90 /* HideKey.swift */,
 			);
 			path = "Terry References";
 			sourceTree = "<group>";
@@ -717,6 +723,7 @@
 				D9B9B5791B4B1B0000DA476E /* splashScreen.mp4 in Resources */,
 				D91FCAC01C679F1C008C7D1C /* SocialServicesEventCreationViewController.xib in Resources */,
 				D9FF31ED1C66A41F0037DCF1 /* LongApplyWidgetView.xib in Resources */,
+				D914FEE51C6F766A00461D90 /* openingVideoCode in Resources */,
 				D9F8C4761BA4C33200881B94 /* TodaysQTWidget.xib in Resources */,
 				D989C5281C2700500051ACFE /* HolyStarIntroViewController.xib in Resources */,
 				D92938021C07F2820040BD6D /* PurpleSegmentedControlView.xib in Resources */,
@@ -803,6 +810,7 @@
 				D9C756401BA0C2C800EC22CF /* ExpandableAboutView.swift in Sources */,
 				D9FF320F1C6777960037DCF1 /* UIAlertControllerExtension.swift in Sources */,
 				D95EC5241B978DF000782925 /* FacebookFeedQuery.swift in Sources */,
+				D914FEE71C6F81DB00461D90 /* HideKey.swift in Sources */,
 				D98FEFB21B9C0C65003614A7 /* ApplyWidgetView.swift in Sources */,
 				D9BE263D1B64A1B700C3BA7D /* UIColorExtension.swift in Sources */,
 				D92D316A1BF9429C00040F1A /* PaddedTextField.swift in Sources */,

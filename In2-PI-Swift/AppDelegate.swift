@@ -7,10 +7,6 @@
 //
 
 import UIKit
-import MediaPlayer
-import AVKit
-import Parse
-import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,56 +18,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-//        var myArray = UIFont.familyNames() as Array
-//        print(myArray)
-//        print(UIFont.fontNamesForFamilyName("NanumBarunGothic"))
-
-        // [Optional] Power your app with Local Datastore. For more info, go to
-        // https://parse.com/docs/ios_guide#localdatastore/iOS
-        Parse.enableLocalDatastore()
-        // Initialize Parse.
-        Parse.setApplicationId("kcmNwFnHHDfanE4xbzZYzufPe5Cz74z1O4wftbej",
-            clientKey: "VYQRtVcSJWUhGhjuLuy8kA7HKQ7rzbHa7Y37Work")
- 
-        #if RELEASE
-            print("release mode")
-            BITHockeyManager.sharedHockeyManager().configureWithIdentifier   ("397fac4ea6ec1293bbf6b3aa1828b806")
-            BITHockeyManager.sharedHockeyManager().startManager()
-            BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
-            // [Optional] Track statistics around application opens.
-            PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
-            
-            let movieURL = NSBundle.mainBundle().URLForResource("splashScreen", withExtension: "mp4")
-            let moviePlayerItem = AVPlayerItem(URL: movieURL!)
-            let moviePlayer = AVPlayer(playerItem: moviePlayerItem)
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: "moviePlayBackDidFinish", name: AVPlayerItemDidPlayToEndTimeNotification, object: moviePlayerItem)
-            let playerController = AVPlayerViewController()
-            playerController.player = moviePlayer
-            playerController.showsPlaybackControls = false
-            window?.rootViewController = playerController
-            moviePlayer.play()
-        #else
-            print("debug mode")
-            moviePlayBackDidFinish()
-        #endif
+        let loginVC = LoginViewController()
+        loginVC.dismissBlock = {
+            let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
+            self.window?.rootViewController = revealVC
+            self.setUpNavBarAndStatusBarImages()
+        }
+        window?.rootViewController = loginVC
      
         //for status bar text making it white
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
-    
-    @objc
-    private func moviePlayBackDidFinish() {
-            let loginVC = LoginViewController()
-            loginVC.dismissBlock = {
-                let revealVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController") as! SWRevealViewController
-                self.window?.rootViewController = revealVC
-                self.setUpNavBarAndStatusBarImages()
-            }
-            window?.rootViewController = loginVC
-    }
-    
     
     func setUpNavBarAndStatusBarImages() {
         UINavigationBar.appearance().setBackgroundImage(UIImage(named: "navigation_bar"), forBarMetrics: UIBarMetrics.Default)

@@ -13,7 +13,6 @@ target 'Win2' do
     pod 'MBProgressHUD'
    	pod 'HockeySDK'
    	pod 'HMSegmentedControl'
-   	pod 'Parse'
     pod 'EAIntroView', '~> 2.7.0'
     pod 'Firebase'
 end
