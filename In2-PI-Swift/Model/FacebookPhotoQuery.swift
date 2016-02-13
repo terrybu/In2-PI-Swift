@@ -27,9 +27,21 @@ class FacebookPhotoQuery: FacebookQuery {
         super.getFBDataJSON(kGraphPathPIMagazineAlbumsString, params: kParamsOnlyAccessToken,
             onSuccess: { (jsonData) -> Void in
                 let albumsList = jsonData["data"]
-                let firstAlbumID = albumsList[0]["id"].stringValue
-                let secAlbumID = albumsList[1]["id"].stringValue
-                let thirdAlbumID = albumsList[2]["id"].stringValue
+                print(albumsList)
+                var firstAlbumID = albumsList[0]["id"].stringValue
+                var secAlbumID = albumsList[1]["id"].stringValue
+                var thirdAlbumID = albumsList[2]["id"].stringValue
+                //Checking for "PI 한 줄 나눔" album because it's full of useless photos
+                
+                let 한줄나눔앨범아이디 = "1552510951670885"
+                if firstAlbumID == 한줄나눔앨범아이디 {
+                    firstAlbumID = albumsList[3]["id"].stringValue
+                } else if secAlbumID == 한줄나눔앨범아이디 {
+                    secAlbumID = albumsList[3]["id"].stringValue
+                } else if thirdAlbumID == 한줄나눔앨범아이디 {
+                    thirdAlbumID = albumsList[3]["id"].stringValue
+                }
+                
                 let params = [
                     "access_token": kAppAccessToken,
                     "fields" : "photos.limit(20){picture}",
