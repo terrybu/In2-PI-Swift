@@ -48,7 +48,7 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
     }
     
     func viewMoreNotice() {
-        UIAlertController.presentAlert(self, alertTitle: activeNotice!.title, alertMessage: "Date: \(activeNotice!.date)\n\n  \(activeNotice!.body) \n\n Link: \(activeNotice!.link)", confirmTitle: "OK")
+        UIAlertController.presentAlert(self, alertTitle: activeNotice!.title, alertMessage: "날짜: \(activeNotice!.date)\n\n  \(activeNotice!.body) \n\n Link: \(activeNotice!.link)", confirmTitle: "OK")
     }
     
     private func setUpUniqueUIForHomeVC() {

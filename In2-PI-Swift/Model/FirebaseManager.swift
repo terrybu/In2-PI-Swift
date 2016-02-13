@@ -168,6 +168,7 @@ class FirebaseManager {
                         let descr = eventDict.objectForKey("description") as! String
                         let date = eventDict.objectForKey("date") as! String
                         let event = SocialServiceEvent(title: title, teamName: team, description: descr, date: date)
+                        event.firebaseID = eventObjectKey as? String
                         self.eventsArray?.append(event)
                     }
                 }
@@ -180,7 +181,7 @@ class FirebaseManager {
     }
 
     
-    
+    //MARK: Updating
     func updateNoticeObjectActiveFlag(notice: Notice, completion: ((success: Bool) -> Void)?) {
         let noticeRef = rootRef.childByAppendingPath("Notices").childByAppendingPath(notice.firebaseID!)
         noticeRef.updateChildValues(["active" : notice.active], withCompletionBlock: { error, firebaseRef in
@@ -197,5 +198,39 @@ class FirebaseManager {
             }
         })
     }
+    
+    //MARK: Deleting
+    func deleteNotice(notice: Notice, completion: ((success: Bool) -> Void)?) {
+        let noticeRef = rootRef.childByAppendingPath("Notices").childByAppendingPath(notice.firebaseID!)
+        noticeRef.removeValueWithCompletionBlock { error, firebaseRef in
+            if error == nil {
+                if let completion = completion {
+                    completion(success: true)
+                }
+            } else {
+                print(error)
+                if let completion = completion {
+                    completion(success:false)
+                }
+            }
+        }
+    }
+    
+    func deleteEvent(event: SocialServiceEvent, completion: ((success: Bool) -> Void)?) {
+        let noticeRef = rootRef.childByAppendingPath("SocialServiceEvents").childByAppendingPath(event.firebaseID!)
+        noticeRef.removeValueWithCompletionBlock { error, firebaseRef in
+            if error == nil {
+                if let completion = completion {
+                    completion(success: true)
+                }
+            } else {
+                print(error)
+                if let completion = completion {
+                    completion(success:false)
+                }
+            }
+        }
+    }
+
     
 }

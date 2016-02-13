@@ -14,6 +14,7 @@ class SocialServiceEvent {
     var teamName: String
     var description: String
     var date: String
+    var firebaseID: String?
     
     init(title: String, teamName: String, description: String, date: String) {
         self.title = title

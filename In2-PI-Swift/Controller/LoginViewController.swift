@@ -117,10 +117,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
         let email = emailTextField.text
         let password = passwordTextField.text
         if let email = email, password = password {
-            if email == "admin" && password == "admin" {
+            if email == kAdminEmailInput && password == kAdminPasswordInput {
                 AuthenticationManager.sharedManager.currentUserMode = .Admin
                 return true
-            } else if email == "socialservices" && password == "admin" {
+            } else if email == kSocialServicesAdminEmailInput && password == kAdminPasswordInput {
                 AuthenticationManager.sharedManager.currentUserMode = .SocialServicesAdmin
                 return true
             }

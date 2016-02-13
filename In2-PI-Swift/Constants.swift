@@ -38,3 +38,9 @@ let kAppLaunchToken = "kAppLaunchToken"
 let kWeeklyProgramsTableViewCellReuseIdentifier = "WeeklyProgramsTableViewCell"
 let kUserDefaultsSavedNoticesArrayData = "kUserDefaultsSavedNoticesArrayData"
 
+//Keys
+let kAdminEmailInput = "admin"
+let kAdminPasswordInput = "password"
+let kSocialServicesAdminEmailInput = "social"
+
+
