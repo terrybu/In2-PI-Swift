@@ -17,7 +17,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet var emailTextField:PaddedTextField!
     
     @IBOutlet var birthdaySwitch: UISwitch!
-    @IBOutlet var birthdayAskLabel: UILabel! 
     @IBOutlet var birthdayDatePicker: UIDatePicker!
 
     convenience init() {
@@ -34,8 +33,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         confirmPasswordTextField.delegate = self
         emailTextField.delegate = self
         
-        birthdayAskLabel.hidden = true
         birthdayDatePicker.hidden = true
+        birthdayDatePicker.alpha = 0
+
         birthdaySwitch.addTarget(self, action: "switchTurnedOn:", forControlEvents: UIControlEvents.ValueChanged)
         
         setUpUI()
@@ -44,13 +44,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     func switchTurnedOn(sender: UISwitch) {
         if sender.on == true {
             UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
-                self.birthdayAskLabel.hidden = false
                 self.birthdayDatePicker.hidden = false
+                self.birthdayDatePicker.alpha = 1.0
+
                 }, completion: nil)
         } else {
             UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
-                self.birthdayAskLabel.hidden = true
                 self.birthdayDatePicker.hidden = true
+                self.birthdayDatePicker.alpha = 0
                 }, completion: nil)
         }
     }
