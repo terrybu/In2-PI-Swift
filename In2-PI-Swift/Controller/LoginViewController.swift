@@ -45,13 +45,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
         let rectangle = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         rectangle.backgroundColor = UIColor.clearColor()
         rectangle.userInteractionEnabled = true
-        let tapGesture = UITapGestureRecognizer(target: self, action: "devGoThrough")
+        let tapGesture = UITapGestureRecognizer(target: self, action: "developerModeBypassLogin")
         rectangle.addGestureRecognizer(tapGesture)
         tapGesture.delegate = self
         view.addSubview(rectangle)
     }
     
-    func devGoThrough() {
+    func developerModeBypassLogin() {
         FirebaseManager.sharedManager.loginUser("terry@test.com", password: "password") { (success) -> Void in
             if success {
                 if let dismissBlock = self.dismissBlock {	

@@ -43,6 +43,7 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
         })
     }
     
+    
     func viewMoreNotice() {
         if activeNotice?.link != "" {
             UIAlertController.presentAlert(self, alertTitle: activeNotice!.title, alertMessage: "날짜: \(activeNotice!.date)\n\n  \(activeNotice!.body) \n\n Link: \(activeNotice!.link)", confirmTitle: "OK")
