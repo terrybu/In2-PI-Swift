@@ -15,7 +15,7 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoticeWidget" customModule="In2_PI_Swift" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoticeWidget" customModule="Win2" customModuleProvider="target">
             <connections>
                 <outlet property="noticeBodyLabel" destination="dyE-2Y-e87" id="bpH-i1-sYI"/>
                 <outlet property="noticeTitleLabel" destination="tbD-sc-5cu" id="97q-C6-s9O"/>

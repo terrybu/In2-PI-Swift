@@ -83,7 +83,6 @@
                                     </variation>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="p3x-R6-sS3" firstAttribute="width" secondItem="FRA-TS-w0l" secondAttribute="width" multiplier="0.5" id="9dz-dZ-8tP"/>
                                 <constraint firstItem="068-eS-76k" firstAttribute="top" secondItem="xor-Rn-oQu" secondAttribute="bottom" id="Bhy-bB-YNa"/>

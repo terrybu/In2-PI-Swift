@@ -61,9 +61,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         navigationController?.navigationBar.translucent = false
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
-        let statusBarBackgroundView = UIView(frame: CGRect(x: 0, y: -20, width: UIScreen.mainScreen().bounds.size.width, height: 20))
+        let statusBarBackgroundView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 20))
         statusBarBackgroundView.backgroundColor = UIColor(patternImage: UIImage(named:"status_bar")!)
-        self.navigationController?.navigationBar.addSubview(statusBarBackgroundView)
+        navigationController!.view.addSubview(statusBarBackgroundView)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "navigation_bar"), forBarMetrics: UIBarMetrics.Default)
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
         let backButton = UIBarButtonItem(image: UIImage(named: "btn_back"), style: UIBarButtonItemStyle.Plain, target: self, action: "backButtonPressed")
         navigationItem.leftBarButtonItem = backButton

@@ -81,7 +81,7 @@
                                     <state key="normal" backgroundImage="Btn_Play"/>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="mfR-rw-T9N" secondAttribute="bottom" constant="48" id="14E-W8-2WX"/>
                                 <constraint firstAttribute="height" constant="605" id="5M3-v9-Nso"/>
