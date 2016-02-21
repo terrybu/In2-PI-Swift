@@ -13,14 +13,14 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="bg_gradient" translatesAutoresizingMaskIntoConstraints="NO" id="Zlt-P1-7d3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="bg_gradient" translatesAutoresizingMaskIntoConstraints="NO" id="Zlt-P1-7d3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="WINTO_logo" translatesAutoresizingMaskIntoConstraints="NO" id="c1a-AU-DCH">
-                                <rect key="frame" x="102" y="305" width="171" height="57"/>
+                                <rect key="frame" x="122" y="340" width="171" height="57"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -33,7 +33,7 @@
                             <constraint firstItem="Zlt-P1-7d3" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="kOv-qb-Szp"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
