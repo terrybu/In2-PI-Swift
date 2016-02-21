@@ -38,24 +38,26 @@ class FirebaseManager {
         })
     }
     
-    func createUser(email: String, password: String, firstName: String, lastName: String, birthdayString: String, completion: ((success:Bool) -> Void)) {
+    func createUser(email: String, password: String, firstName: String, lastName: String, birthdayString: String?, completion: ((success:Bool, error: NSError?) -> Void)) {
         rootRef.createUser(email, password: password,
             withValueCompletionBlock: { error, result in
                 if error != nil {
                     // There was an error creating the account
                     print(error)
-                    completion(success: false)
+                    completion(success: false, error: error)
                 } else {
                     let uid = result["uid"] as? String
                     print("Successfully created user account with uid: \(uid)")
-                    completion(success: true)
+                    completion(success: true, error: nil)
                     // Create a new user dictionary accessing the user's info
                     // provided by the authData parameter
-                    let newUser = [
+                    var newUser = [
                         "firstName": firstName,
                         "lastName": lastName,
-                        "birthday": birthdayString
                     ]
+                    if let birthdayString = birthdayString {
+                        newUser["birthday"] = birthdayString
+                    }
                     // Create a child path with a key set to the uid underneath the "users" node
                     // This creates a URL path like the following:
                     //  - https://<YOUR-FIREBASE-APP>.firebaseio.com/Users/<uid>

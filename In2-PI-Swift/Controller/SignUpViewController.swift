@@ -15,6 +15,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet var passwordTextField:PaddedTextField!
     @IBOutlet var confirmPasswordTextField:PaddedTextField!
     @IBOutlet var emailTextField:PaddedTextField!
+    
+    @IBOutlet var birthdaySwitch: UISwitch!
+    @IBOutlet var birthdayAskLabel: UILabel! 
     @IBOutlet var birthdayDatePicker: UIDatePicker!
 
     convenience init() {
@@ -30,6 +33,29 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         passwordTextField.delegate = self
         confirmPasswordTextField.delegate = self
         emailTextField.delegate = self
+        
+        birthdayAskLabel.hidden = true
+        birthdayDatePicker.hidden = true
+        birthdaySwitch.addTarget(self, action: "switchTurnedOn:", forControlEvents: UIControlEvents.ValueChanged)
+        
+        setUpUI()
+    }
+    
+    func switchTurnedOn(sender: UISwitch) {
+        if sender.on == true {
+            UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+                self.birthdayAskLabel.hidden = false
+                self.birthdayDatePicker.hidden = false
+                }, completion: nil)
+        } else {
+            UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+                self.birthdayAskLabel.hidden = true
+                self.birthdayDatePicker.hidden = true
+                }, completion: nil)
+        }
+    }
+    
+    private func setUpUI() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "navBarSignUp"), forBarMetrics: UIBarMetrics.Default)
         //for the longest time, I was wondering why sometimes navigation bar background would look a little lighter than the statusbar backround that Jin made me ... it was because they make it damn translucent by default
         navigationController?.navigationBar.translucent = false
@@ -64,25 +90,36 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
             //stop any New User Creation because it didn't pass validation
         }
         
-        createNewUserOnFirebaseAndDirectToHomeScreen(email!, password: password!, firstName: firstName!, lastName: lastName!, birthday: self.birthdayDatePicker.date)
+        if birthdaySwitch.on {
+            createNewUserOnFirebaseAndDirectToHomeScreen(email!, password: password!, firstName: firstName!, lastName: lastName!, birthday: self.birthdayDatePicker.date)
+        } else {
+            createNewUserOnFirebaseAndDirectToHomeScreen(email!, password: password!, firstName: firstName!, lastName: lastName!, birthday: nil)
+        }
+        
     }
 
-    private func createNewUserOnFirebaseAndDirectToHomeScreen(email: String, password: String, firstName: String, lastName: String, birthday: NSDate) {
+    private func createNewUserOnFirebaseAndDirectToHomeScreen(email: String, password: String, firstName: String, lastName: String, birthday: NSDate?) {
         // Run a spinner to show a task in progress
         let spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0, 0, 150, 150)) as UIActivityIndicatorView
         spinner.startAnimating()
         
-        FirebaseManager.sharedManager.createUser(email, password: password, firstName: firstName, lastName: lastName, birthdayString: CustomDateFormatter.sharedInstance.convertDateToFirebaseStringFormat(birthday), completion: {
-            (success) -> Void in
+        var birthdayString: String?
+        
+        if let birthday = birthday {
+            birthdayString = CustomDateFormatter.sharedInstance.convertDateToFirebaseStringFormat(birthday)
+        }
+        
+        FirebaseManager.sharedManager.createUser(email, password: password, firstName: firstName, lastName: lastName, birthdayString: birthdayString, completion: {
+            (success, error) -> Void in
             spinner.stopAnimating()
             if !success {
-                let alertController = UIAlertController(title: "Please Try Again", message: "회원가입이 실패하였습니다. 다시 시도해주세요.", preferredStyle: UIAlertControllerStyle.Alert)
+                let alertController = UIAlertController(title: "Please Try Again", message: "회원가입이 실패하였습니다. \(error!.localizedDescription)", preferredStyle: UIAlertControllerStyle.Alert)
                 let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
                 alertController.addAction(ok)
                 alertController.view.tintColor = UIColor.In2DeepPurple()
                 self.presentViewController(alertController, animated: true, completion: nil)
             } else {
-                UIAlertController.presentAlert(self, alertTitle: "가입 성공", alertMessage: "앱 가입에 성공하셨습니다!", confirmTitle: "OK")
+                UIAlertController.presentAlert(self, alertTitle: "가입 성공", alertMessage: "Win2 앱에 환영합니다!", confirmTitle: "OK")
                 NSUserDefaults.standardUserDefaults().setBool(true, forKey: kUserDidLoginBefore)
                 let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                 WalkthroughManager.sharedInstance.showHomeScreen(self.view)
