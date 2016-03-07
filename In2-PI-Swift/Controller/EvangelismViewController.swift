@@ -29,7 +29,7 @@ class EvangelismViewController: ParentViewController, UIGestureRecognizerDelegat
         setUpExpandableAboutView(kOriginalAboutViewHeight, expandableAboutView: expandableAboutView, heightBuffer: 30, view: view, constraintHeightExpandableView: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalContentviewHeight: kOriginalContentViewHeight)
         
         for feedObject in FacebookFeedQuery.sharedInstance.FBFeedObjectsArray {
-            if feedObject.parsedCategory == "PI선교" {
+            if feedObject.parsedCategory == kEvangelismTag {
                 evangelismFeedObject = feedObject
                 evangelismNewsWidgetView.title = feedObject.parsedTitle
                 evangelismNewsWidgetView.dateLabel.text = feedObject.parsedDate

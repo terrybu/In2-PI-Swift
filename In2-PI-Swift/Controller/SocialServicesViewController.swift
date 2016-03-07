@@ -33,7 +33,8 @@ class SocialServicesViewController: ParentViewController, UITableViewDelegate, U
         setUpExpandableAboutView(kOriginalAboutViewHeight, expandableAboutView: expandableAboutView, heightBuffer: 20, view: view, constraintHeightExpandableView: constraintHeightExpandableView, constraintContentViewHeight: constraintContentViewHeight, originalContentviewHeight: kOriginalContentViewHeight)
         
         for feedObject in FacebookFeedQuery.sharedInstance.FBFeedObjectsArray {
-            if feedObject.parsedCategory == "PI긍휼" {
+            print(feedObject.parsedCategory)
+            if feedObject.parsedCategory == kSocialServicesTag {
                 socialFeedPost = feedObject
                 socialNewsWidgetView.title = feedObject.parsedTitle
                 socialNewsWidgetView.dateLabel.text = feedObject.parsedDate

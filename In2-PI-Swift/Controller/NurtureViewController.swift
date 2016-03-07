@@ -33,7 +33,7 @@ class NurtureViewController: ParentViewController, UIGestureRecognizerDelegate{
             self.openHolyStarIntroViewController()
         }
         for feedObject in FacebookFeedQuery.sharedInstance.FBFeedObjectsArray {
-            if feedObject.parsedCategory == "PI양육" {
+            if feedObject.parsedCategory == kNurtureTag {
                 nurtureFeedObject = feedObject
                 nurtureNewsWidget.title = feedObject.parsedTitle
                 nurtureNewsWidget.dateLabel.text = feedObject.parsedDate

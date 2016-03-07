@@ -142,7 +142,7 @@ class FacebookFeedQuery: FacebookQuery {
     
     func retrieveFacebookPostDirectURLString(feedObject: FBFeedPost) -> String{
         let postURLParam = feedObject.id.componentsSeparatedByString("_").last
-        let postURL = "https://www.facebook.com/IN2PI/posts/\(postURLParam!)"
+        let postURL = "\(kFacebookPageURL)\(postURLParam!)"
         return postURL
     }
     

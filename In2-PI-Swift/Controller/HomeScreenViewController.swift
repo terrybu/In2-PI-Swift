@@ -73,7 +73,7 @@ class HomeScreenViewController: ParentViewController, FacebookFeedQueryDelegate 
         print(firstObjectID)
         //postURL has to nick out the second part of the _ string from firstObjectID
         let postURLParam = firstObjectID.componentsSeparatedByString("_").last
-        let postURL = "https://www.facebook.com/IN2PI/posts/\(postURLParam!)"
+        let postURL = "\(kFacebookPageURL)\(postURLParam!)"
         let wkWebView = UIWebView(frame: self.view.frame)
         wkWebView.loadRequest(NSURLRequest(URL: NSURL(string: postURL)!))
         let emptyVC = UIViewController()

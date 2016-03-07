@@ -34,7 +34,6 @@ class LeftNavDrawerController: UIViewController {
     //MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         logoutButton.setBackgroundImage(UIImage(named: "logout")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: .Normal)
         logoutButton.tintColor = UIColor.whiteColor()
         
@@ -42,7 +41,6 @@ class LeftNavDrawerController: UIViewController {
         purpleStatusBar = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 20))
         purpleStatusBar.backgroundColor = UIColor.In2DeepPurple()
         appDelegate.window?.rootViewController?.view.addSubview(purpleStatusBar)
-        
         
         let homeNavCtrl = self.revealViewController().frontViewController as! UINavigationController
         self.homeVCNavCtrl = homeNavCtrl
@@ -60,7 +58,6 @@ class LeftNavDrawerController: UIViewController {
         purpleStatusBar.hidden = false
     }
     
-    
     func userJustSwipedFromRightToLeft(gesture: UISwipeGestureRecognizer) {
         if (gesture.direction == UISwipeGestureRecognizerDirection.Left) {
             print("swiped left")
@@ -68,7 +65,6 @@ class LeftNavDrawerController: UIViewController {
             self.revealViewController().revealToggleAnimated(true)
         }
     }
-    
     
     // MARK: IBActions
     @IBAction
