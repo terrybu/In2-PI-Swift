@@ -45,7 +45,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
         WeeklyProgramDownloader.sharedInstance.delegate = self
         WeeklyProgramDownloader.sharedInstance.getTenRecentWeeklyProgramsListFromImportIO()
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: "didPressSeeMoreWorshipVideos")
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(WorshipViewController.didPressSeeMoreWorshipVideos))
         worshipVideosClickView.userInteractionEnabled = true
         worshipVideosClickView.addGestureRecognizer(tapGesture)
     }
@@ -83,7 +83,7 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
                     newSongName = ""
                     while postBody[j] != "\n" {
                         newSongName += postBody[j]
-                        j++
+                        j += 1
                     }
                     newSongObject.songTitle = newSongName
                     //this is where we can start the logic after we end the first "songtitle" scraping? because j+1 is now the youtube URL
@@ -91,13 +91,13 @@ class WorshipViewController: ParentViewController, WeeklyProgramDownloaderDelega
                     var newYouTubeURL = ""
                     while k < postBody.characters.count && postBody[k] != "\n" {
                         newYouTubeURL += postBody[k]
-                        k++
+                        k += 1
                     }
                     newSongObject.songYouTubeURL = newYouTubeURL
                     songObjectsArray.append(newSongObject)
                 }
             }
-            i++
+            i += 1
         }
         print(songObjectsArray)
     }

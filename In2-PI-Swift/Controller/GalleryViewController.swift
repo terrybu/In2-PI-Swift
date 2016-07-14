@@ -86,7 +86,7 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
         MBProgressHUD.showHUDAddedTo(view, animated: true)
         FacebookPhotoQuery.sharedInstance.getNormalSizePhotoURLStringFrom(fbPhotoObject.id
             , completion: { (normImgUrlString) -> Void in
-                self.topImageView.setImageWithURL(NSURL(string: normImgUrlString ))
+                self.topImageView.setImageWithURL(NSURL(string: normImgUrlString )!)
                 if let completion = completion {
                     completion()
                 }
@@ -127,7 +127,7 @@ class GalleryViewController: ParentViewController, FacebookPhotoQueryDelegate, U
         
         // Configure the cell
         let photoObject = photoObjectsArray![indexPath.row]
-        cell.imageView!.setImageWithURL(NSURL(string: photoObject.albumSizePicURLString ))
+        cell.imageView!.setImageWithURL(NSURL(string: photoObject.albumSizePicURLString )!)
         
         return cell
     }

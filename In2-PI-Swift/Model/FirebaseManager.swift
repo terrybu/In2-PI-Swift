@@ -8,19 +8,19 @@
 
 import Foundation
 import Firebase
+import FirebaseDatabase
+import FirebaseAuth
 
 class FirebaseManager {
     
     static let sharedManager = FirebaseManager()
-    var rootRef = Firebase(url:"https://in2-pi.firebaseio.com")
+    var rootRef = FIRDatabase.database().reference()
     var noticesArray: [Notice]?
     var activeNotice: Notice?
     var eventsArray: [SocialServiceEvent]?
 
-
     func loginUser(email: String, password: String, completion: ((success: Bool) -> Void)) {
-        rootRef.authUser(email, password: password,
-            withCompletionBlock: { error, authData in
+        FIRAuth.auth()!.signInAnonymouslyWithCompletion() { (user, error) in
                 if error != nil {
                     // There was an error logging in to this account
                     print(error)
@@ -28,25 +28,20 @@ class FirebaseManager {
                 } else {
                     // Authentication just completed successfully :)
                     // The logged in user's unique identifier
-                    print(authData.uid)
-//                    print(authData.providerData)
-//                    let providerData = authData.providerData as NSDictionary
-//                    let profileURL = providerData.objectForKey("profileImageURL")
-//                    print(profileURL) 
+                    print ("Signed in with uid:", user!.uid)
                     completion(success: true)
                 }
-        })
+        }
     }
     
     func createUser(email: String, password: String, firstName: String, lastName: String, birthdayString: String?, completion: ((success:Bool, error: NSError?) -> Void)) {
-        rootRef.createUser(email, password: password,
-            withValueCompletionBlock: { error, result in
+            FIRAuth.auth()?.createUserWithEmail(email, password: password, completion: { (user, error) in
                 if error != nil {
                     // There was an error creating the account
                     print(error)
                     completion(success: false, error: error)
                 } else {
-                    let uid = result["uid"] as? String
+                    let uid = user?.uid
                     print("Successfully created user account with uid: \(uid)")
                     completion(success: true, error: nil)
                     // Create a new user dictionary accessing the user's info
@@ -61,21 +56,20 @@ class FirebaseManager {
                     // Create a child path with a key set to the uid underneath the "users" node
                     // This creates a URL path like the following:
                     //  - https://<YOUR-FIREBASE-APP>.firebaseio.com/Users/<uid>
-                    self.rootRef.childByAppendingPath("Users")
-                        .childByAppendingPath(uid).setValue(newUser)
-                    
-                    //Because Firebase signup does not AUTHENTICAT the user, must fire login again 
+                    self.rootRef.child("Users").child(user!.uid).setValue(newUser)
+                    //Because Firebase signup does not AUTHENTICAT the user, must fire login again
                     self.loginUser(email, password: password, completion: { (success) -> Void in
                         //completion block
                     })
                 }
-        })
+
+            })
     }
-    
+
     //MARK: writing to firebase
     
     func createNewNoticeOnFirebase(notice: Notice, completion: (success: Bool)->Void) {
-        let noticesRef = rootRef.childByAppendingPath("Notices")
+        let noticesRef = rootRef.child("Notices")
         let noticeDict = [
             "title": notice.title,
             "body": notice.body,
@@ -234,5 +228,5 @@ class FirebaseManager {
         }
     }
 
-    
 }
+

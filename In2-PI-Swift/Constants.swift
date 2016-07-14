@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Terry Bu. All rights reserved.
 //
 
-
+import UIKit
 
 //Device OS version and Screen size Type related
 let Device = UIDevice.currentDevice()

@@ -21,7 +21,7 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
     
     var cache: NSCache = NSCache()
-    var operationManager: AFHTTPRequestOperationManager?
+    var operationManager: AFHTTPSessionManager?
     var expandedAboutViewHeight:CGFloat = 0
 
     override func viewDidLoad() {
@@ -31,9 +31,8 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
         
         setUpExpandableAboutView()
         
-        operationManager = AFHTTPRequestOperationManager()
+        operationManager = AFHTTPSessionManager()
         operationManager!.responseSerializer = AFImageResponseSerializer()
-        
     }
     
     //MARK: ExpandableAboutViewDelegate
@@ -58,7 +57,7 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
                 self.view.layoutIfNeeded()
                 self.expandableAboutView.expanded = true
 
-                }) { (Bool completed) -> Void in
+                }) { (completed) -> Void in
             }
         }
         else {
@@ -66,7 +65,7 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
                 self.expandableAboutView.expanded = false
                 self.constraintHeightExpandableView.constant = kOriginalAboutViewHeight
                 self.view.layoutIfNeeded()
-                }) { (Bool completed) -> Void in
+                }) { (completed) -> Void in
             }
         }
         
@@ -120,12 +119,12 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
                 view.addSubview(activityIndicator)
                 activityIndicator.startAnimating()
                 FacebookPhotoQuery.sharedInstance.getNormalSizePhotoURLStringForCommunicationsFrom(feedObject.id, completion: { (normImgUrlString) -> Void in
-                    self.operationManager?.GET(normImgUrlString, parameters: nil, success: { (operation, responseObject) -> Void in
+                    self.operationManager!.GET(normImgUrlString, parameters: nil, success: { (operation, responseObject) -> Void in
                         //success
                         activityIndicator.stopAnimating()
 
                         if cell.tag == indexPath.row {
-                            self.cache.setObject(responseObject, forKey: "\(indexPath.row)")
+                            self.cache.setObject(responseObject!, forKey: "\(indexPath.row)")
                             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                                 self.tableView .reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
                             })
@@ -151,7 +150,6 @@ class CommunicationsViewController: ParentViewController, UITableViewDelegate, U
         let feedObject = feedObjectsArray![i!]
         FacebookFeedQuery.sharedInstance.displayFacebookPostObjectInWebView(feedObject, view: self.view, navigationController: navigationController)
     }
-    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let feedArticle = feedObjectsArray![indexPath.row] as FBFeedPost

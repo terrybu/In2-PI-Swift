@@ -40,8 +40,8 @@ class WeeklyProgramDownloader {
         manager.requestSerializer = AFJSONRequestSerializer()
         manager.responseSerializer = AFJSONResponseSerializer()
         manager.GET(kImportIOURLForScrapingTenRecentWeeklyPrograms, parameters: nil,
-            success: { (task:NSURLSessionDataTask!, responseObject:AnyObject!) -> Void in
-                let jsonData = JSON(responseObject)
+            success: { (task, responseObject) -> Void in
+                let jsonData = JSON(responseObject!)
                 let resultsArray = jsonData["results"].arrayValue
                 for dict:JSON in resultsArray {
                     let title = dict["tit_link/_text"].stringValue
@@ -61,7 +61,7 @@ class WeeklyProgramDownloader {
                 }
                 self.delegate?.didFinishDownloadinglistOfTenWeeklyProgramsFromImportIO(self.weeklyProgramsArray)
             },
-            failure: { (task:NSURLSessionDataTask!, error:NSError!) -> Void in
+            failure: { (task, error) -> Void in
                 print(error)
         })
     }

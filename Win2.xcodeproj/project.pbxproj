@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		615C54D683ACF2345564DCC8 /* Pods_In2_PI_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D9D85A29F7F171A635D2C8 /* Pods_In2_PI_Swift.framework */; };
+		C673D9A06AEC3C3A172622B1 /* Pods_Win2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F9E337A0A90D0AA5BC40D8 /* Pods_Win2.framework */; };
 		D901C0D61C39E2CA00B350B1 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D901C0D51C39E2CA00B350B1 /* LoginViewController.xib */; };
 		D901C0D81C39EFC700B350B1 /* fonts available console output in Resources */ = {isa = PBXBuildFile; fileRef = D901C0D71C39EFC600B350B1 /* fonts available console output */; };
 		D90A08231BB5D4BD0033DD6B /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = D90A081E1BB5D4BD0033DD6B /* TFHpple.m */; };
@@ -40,6 +40,8 @@
 		D92938041C07F3C10040BD6D /* PurpleSegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92938031C07F3C10040BD6D /* PurpleSegmentedControlView.swift */; };
 		D92B56351BD5C8930085208F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92B56341BD5C8930085208F /* LoginViewController.swift */; };
 		D92D316A1BF9429C00040F1A /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92D31691BF9429C00040F1A /* PaddedTextField.swift */; };
+		D93170641D380288008B09AB /* Pods-Win2.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EDE4E5A0A04B8656512CF0F8 /* Pods-Win2.release.xcconfig */; };
+		D93170651D38029A008B09AB /* Pods-Win2.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 6364A45CD8A825FD304078A7 /* Pods-Win2.debug.xcconfig */; };
 		D952B17B1B5EF5330089116C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D952B17A1B5EF5330089116C /* Constants.swift */; };
 		D9583F4B1C388C4D00A95D54 /* URLEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9583F4A1C388C4D00A95D54 /* URLEndpoints.swift */; };
 		D9583F4E1C38AE8500A95D54 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9583F4D1C38AE8500A95D54 /* SignUpViewController.xib */; };
@@ -108,9 +110,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		15F9BC9F44944956571DAF7B /* Pods-In2-PI-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-In2-PI-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-In2-PI-Swift/Pods-In2-PI-Swift.debug.xcconfig"; sourceTree = "<group>"; };
-		24E64E21CAF4188A4E4E9D5B /* Pods-In2-PI-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-In2-PI-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-In2-PI-Swift/Pods-In2-PI-Swift.release.xcconfig"; sourceTree = "<group>"; };
-		54D9D85A29F7F171A635D2C8 /* Pods_In2_PI_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_In2_PI_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6364A45CD8A825FD304078A7 /* Pods-Win2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Win2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Win2/Pods-Win2.debug.xcconfig"; sourceTree = "<group>"; };
+		A0F9E337A0A90D0AA5BC40D8 /* Pods_Win2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Win2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D901C0D51C39E2CA00B350B1 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		D901C0D71C39EFC600B350B1 /* fonts available console output */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fonts available console output"; sourceTree = "<group>"; };
 		D90A081D1BB5D4BD0033DD6B /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
@@ -218,6 +219,7 @@
 		D9FF320E1C6777960037DCF1 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		D9FF32101C677B0B0037DCF1 /* archivingArrayDefaultsCode */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = archivingArrayDefaultsCode; sourceTree = "<group>"; };
 		D9FF32121C6788CD0037DCF1 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		EDE4E5A0A04B8656512CF0F8 /* Pods-Win2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Win2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Win2/Pods-Win2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,18 +228,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D90A08271BB5D5810033DD6B /* libxml2.2.tbd in Frameworks */,
-				615C54D683ACF2345564DCC8 /* Pods_In2_PI_Swift.framework in Frameworks */,
+				C673D9A06AEC3C3A172622B1 /* Pods_Win2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5B7163E0C1D511FACCFD241C /* Pods */ = {
+		13018F646C0B4DBBFBCCFD20 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				15F9BC9F44944956571DAF7B /* Pods-In2-PI-Swift.debug.xcconfig */,
-				24E64E21CAF4188A4E4E9D5B /* Pods-In2-PI-Swift.release.xcconfig */,
+				6364A45CD8A825FD304078A7 /* Pods-Win2.debug.xcconfig */,
+				EDE4E5A0A04B8656512CF0F8 /* Pods-Win2.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -246,7 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				D90A08261BB5D5810033DD6B /* libxml2.2.tbd */,
-				54D9D85A29F7F171A635D2C8 /* Pods_In2_PI_Swift.framework */,
+				A0F9E337A0A90D0AA5BC40D8 /* Pods_Win2.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -452,8 +454,8 @@
 			children = (
 				D9D3CDE91B3F20EF00C8E195 /* Win2 */,
 				D9D3CDE81B3F20EF00C8E195 /* Products */,
-				5B7163E0C1D511FACCFD241C /* Pods */,
 				A278F71670A4FDDB3D2DE747 /* Frameworks */,
+				13018F646C0B4DBBFBCCFD20 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -644,12 +646,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9D3CE061B3F20EF00C8E195 /* Build configuration list for PBXNativeTarget "Win2" */;
 			buildPhases = (
-				C3C4FCB0C903BE8F36E7012C /* Check Pods Manifest.lock */,
+				7D971217EF3088DB9A095FC1 /* [CP] Check Pods Manifest.lock */,
 				D9D3CDE31B3F20EF00C8E195 /* Sources */,
 				D9D3CDE41B3F20EF00C8E195 /* Frameworks */,
 				D9D3CDE51B3F20EF00C8E195 /* Resources */,
-				5D5C7C803548D63F988EE20F /* Copy Pods Resources */,
-				35D28ABFAEF769E686FECDB5 /* Embed Pods Frameworks */,
+				0D359A8F8215014B17ADC2EC /* [CP] Embed Pods Frameworks */,
+				5BDFAA678D0C6B8B3851CFD5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -712,6 +714,7 @@
 				D9A79E151C2C2EEA003D9981 /* NanumBarunGothic.ttf in Resources */,
 				D9D3CE191B3F338D00C8E195 /* Localizable.strings in Resources */,
 				D91FCAB81C679287008C7D1C /* NoticeWidget.xib in Resources */,
+				D93170651D38029A008B09AB /* Pods-Win2.debug.xcconfig in Resources */,
 				D9FF32061C676E5E0037DCF1 /* NoticeAdminViewController.xib in Resources */,
 				D9FF31F61C66C1E60037DCF1 /* SocialServicesViewController.xib in Resources */,
 				D901C0D81C39EFC700B350B1 /* fonts available console output in Resources */,
@@ -720,6 +723,7 @@
 				D9583F4E1C38AE8500A95D54 /* SignUpViewController.xib in Resources */,
 				D98FEFB41B9C0C8E003614A7 /* ApplyWidgetView.xib in Resources */,
 				D901C0D61C39E2CA00B350B1 /* LoginViewController.xib in Resources */,
+				D93170641D380288008B09AB /* Pods-Win2.release.xcconfig in Resources */,
 				D9B9B5791B4B1B0000DA476E /* splashScreen.mp4 in Resources */,
 				D91FCAC01C679F1C008C7D1C /* SocialServicesEventCreationViewController.xib in Resources */,
 				D9FF31ED1C66A41F0037DCF1 /* LongApplyWidgetView.xib in Resources */,
@@ -743,44 +747,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		35D28ABFAEF769E686FECDB5 /* Embed Pods Frameworks */ = {
+		0D359A8F8215014B17ADC2EC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-In2-PI-Swift/Pods-In2-PI-Swift-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Win2/Pods-Win2-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5D5C7C803548D63F988EE20F /* Copy Pods Resources */ = {
+		5BDFAA678D0C6B8B3851CFD5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-In2-PI-Swift/Pods-In2-PI-Swift-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Win2/Pods-Win2-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C3C4FCB0C903BE8F36E7012C /* Check Pods Manifest.lock */ = {
+		7D971217EF3088DB9A095FC1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -933,6 +937,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -973,6 +978,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "$(inherited)";
+				"OTHER_LDFLAGS[arch=*]" = "$(inherited)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -981,20 +988,21 @@
 		};
 		D9D3CE071B3F20EF00C8E195 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15F9BC9F44944956571DAF7B /* Pods-In2-PI-Swift.debug.xcconfig */;
+			baseConfigurationReference = 6364A45CD8A825FD304078A7 /* Pods-Win2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Terry Bu (JJ62WG39RU)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "In2-PI-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEBUG\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.terrybu.Win2;
 				PRODUCT_NAME = Win2;
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "In2-PI-Swift/Win2-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1002,20 +1010,22 @@
 		};
 		D9D3CE081B3F20EF00C8E195 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24E64E21CAF4188A4E4E9D5B /* Pods-In2-PI-Swift.release.xcconfig */;
+			baseConfigurationReference = EDE4E5A0A04B8656512CF0F8 /* Pods-Win2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Terry Bu (JJ62WG39RU)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "In2-PI-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"OTHER_LDFLAGS[arch=*]" = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DRELEASE\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.terrybu.Win2;
 				PRODUCT_NAME = Win2;
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "In2-PI-Swift/Win2-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

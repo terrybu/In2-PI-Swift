@@ -38,7 +38,7 @@ class ExpandableAboutViewHandler: NSObject, UIGestureRecognizerDelegate {
                 self.viewControllerView.layoutIfNeeded()
                 self.expandableView.expanded = true
                 
-                }) { (Bool completed) -> Void in
+                }) { (completed) -> Void in
                     //
             }
         }
@@ -50,7 +50,7 @@ class ExpandableAboutViewHandler: NSObject, UIGestureRecognizerDelegate {
                 self.viewControllerView.layoutIfNeeded()
                 self.expandableView.expanded = false
                 
-                }) { (Bool completed) -> Void in
+                }) { (completed) -> Void in
                     //
             }
         }
